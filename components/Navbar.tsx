@@ -21,10 +21,10 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="shrink-0">
           <Image
-            src="/becker-logo-white.webp"
+            src="/images/squarespace/becker-logo-all-white.png"
             alt="The Becker Team"
-            width={64}
-            height={64}
+            width={180}
+            height={50}
             className="object-contain"
           />
         </Link>

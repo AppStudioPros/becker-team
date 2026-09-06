@@ -77,8 +77,8 @@ export default function Footer() {
           <h4 className="text-base font-semibold mb-5 tracking-wide">Connect</h4>
           <ul className="flex flex-col gap-3">
             <li>
-              <a href="tel:7204923335" className="text-sm hover:text-white transition-colors" style={{ color: '#c8960c' }}>
-                (720) 492-3335
+              <a href="tel:4706605693" className="text-sm hover:text-white transition-colors" style={{ color: '#c8960c' }}>
+                (470) 660-5693
               </a>
             </li>
             <li>

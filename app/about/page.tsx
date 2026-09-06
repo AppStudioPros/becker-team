@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Calculator, TrendingUp, CheckCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'About Jamie Becker | Colorado Mortgage Broker',
@@ -14,7 +15,7 @@ const jsonLd = {
   name: 'Jamie Becker',
   jobTitle: 'Mortgage Broker',
   url: 'https://www.thebeckerteam.com/about',
-  telephone: '(720) 492-3335',
+  telephone: '(470) 660-5693',
   email: 'Jamie@thebeckerteam.com',
   identifier: 'NMLS #794730',
   worksFor: {
@@ -157,17 +158,17 @@ export default function AboutPage() {
             </div>
 
             {/* Headshot */}
-            <div className="shrink-0 md:w-60">
+            <div className="shrink-0 md:w-72">
               <div
-                className="w-52 h-52 rounded-full overflow-hidden mx-auto bg-gray-200"
+                className="overflow-hidden rounded"
                 style={{ border: '4px solid #ede4cc' }}
               >
                 <Image
-                  src="/images/jamie-headshot.jpg"
+                  src="/images/squarespace/Edited_1.jpg"
                   alt="Jamie Becker, Colorado Mortgage Broker"
-                  width={208}
-                  height={208}
-                  className="object-cover w-full h-full"
+                  width={288}
+                  height={360}
+                  className="object-cover w-full"
                 />
               </div>
             </div>
@@ -212,7 +213,7 @@ export default function AboutPage() {
         className="relative py-20 px-6"
         style={{
           backgroundImage:
-            'linear-gradient(rgba(20,35,25,0.72), rgba(20,35,25,0.72)), url("/images/giving-back-ranch.jpg")',
+            'linear-gradient(rgba(20,35,25,0.72), rgba(20,35,25,0.72)), url("/images/squarespace/jamie-ranch-0026_websize.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundColor: '#1c3023',
@@ -366,55 +367,50 @@ export default function AboutPage() {
         >
           Resources
         </h2>
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
-          {[
-            {
-              label: 'Mortgage Calculator',
-              desc: 'Calculate your monthly payments and explore scenarios',
-              href: '/mortgage-calculator',
-              external: false,
-            },
-            {
-              label: 'Current Rates',
-              desc: 'View today\'s mortgage interest rates',
-              href: '/mortgage-interest-rates',
-              external: false,
-            },
-            {
-              label: 'Get Pre-Approved',
-              desc: 'Start your application and get moving',
-              href: 'https://2179191.my1003app.com/794730/register',
-              external: true,
-            },
-          ].map((res) =>
-            res.external ? (
-              <a
-                key={res.label}
-                href={res.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block rounded p-10 text-center hover:opacity-90 transition-opacity"
-                style={{ backgroundColor: '#1c3023' }}
-              >
-                <h3 className="font-bold uppercase text-sm tracking-widest underline underline-offset-4 mb-3 text-white">
-                  {res.label}
-                </h3>
-                <p className="text-xs text-gray-300">{res.desc}</p>
-              </a>
-            ) : (
-              <Link
-                key={res.label}
-                href={res.href}
-                className="block rounded p-10 text-center hover:opacity-90 transition-opacity"
-                style={{ backgroundColor: '#1c3023' }}
-              >
-                <h3 className="font-bold uppercase text-sm tracking-widest underline underline-offset-4 mb-3 text-white">
-                  {res.label}
-                </h3>
-                <p className="text-xs text-gray-300">{res.desc}</p>
-              </Link>
-            )
-          )}
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+          <Link
+            href="/mortgage-calculator"
+            className="block rounded border p-8 text-center hover:shadow-md transition-shadow"
+            style={{ borderColor: '#ede4cc', backgroundColor: '#fdfaf5' }}
+          >
+            <Calculator size={32} className="mx-auto mb-4" style={{ color: '#1c3023' }} />
+            <h3 className="font-bold text-sm uppercase tracking-widest mb-2" style={{ color: '#1c3023' }}>
+              Mortgage Calculator
+            </h3>
+            <p className="text-xs leading-relaxed" style={{ color: '#4a5e53' }}>
+              Calculate your monthly payments and explore different loan scenarios.
+            </p>
+          </Link>
+
+          <Link
+            href="/mortgage-interest-rates"
+            className="block rounded border p-8 text-center hover:shadow-md transition-shadow"
+            style={{ borderColor: '#ede4cc', backgroundColor: '#fdfaf5' }}
+          >
+            <TrendingUp size={32} className="mx-auto mb-4" style={{ color: '#1c3023' }} />
+            <h3 className="font-bold text-sm uppercase tracking-widest mb-2" style={{ color: '#1c3023' }}>
+              Current Rates
+            </h3>
+            <p className="text-xs leading-relaxed" style={{ color: '#4a5e53' }}>
+              View today&apos;s mortgage interest rates for all major loan types.
+            </p>
+          </Link>
+
+          <a
+            href="https://2179191.my1003app.com/794730/register"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block rounded border p-8 text-center hover:shadow-md transition-shadow"
+            style={{ borderColor: '#ede4cc', backgroundColor: '#fdfaf5' }}
+          >
+            <CheckCircle size={32} className="mx-auto mb-4" style={{ color: '#1c3023' }} />
+            <h3 className="font-bold text-sm uppercase tracking-widest mb-2" style={{ color: '#1c3023' }}>
+              Get Pre-Approved
+            </h3>
+            <p className="text-xs leading-relaxed" style={{ color: '#4a5e53' }}>
+              Start your application online and get moving toward your next home.
+            </p>
+          </a>
         </div>
       </section>
     </>

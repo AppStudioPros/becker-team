@@ -50,7 +50,7 @@ export default function PrivacyPage() {
             <a href="mailto:Jamie@thebeckerteam.com" style={{ color: '#c8960c' }} className="underline">
               Jamie@thebeckerteam.com
             </a>{' '}
-            or call <a href="tel:7204923335" style={{ color: '#c8960c' }} className="underline">(720) 492-3335</a>.
+            or call <a href="tel:4706605693" style={{ color: '#c8960c' }} className="underline">(470) 660-5693</a>.
           </p>
         </div>
       </div>

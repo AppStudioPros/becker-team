@@ -21,10 +21,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+const selfEmployedKeyFeatures = [
+  {
+    title: 'Tax Return Program',
+    desc: 'Use 2 years of personal and business tax returns. Best for borrowers with consistent income and straightforward write-offs.',
+  },
+  {
+    title: 'P&L Statement Option',
+    desc: 'A CPA-prepared profit and loss statement can substitute for tax returns. Ideal when returns don\'t reflect current business performance.',
+  },
+  {
+    title: 'Bank Statement Program',
+    desc: '12 or 24 months of personal or business bank statements used to calculate income. Great for borrowers whose deposits reflect true cash flow.',
+  },
+  {
+    title: 'Asset Depletion Option',
+    desc: 'Divide eligible assets over a set period to establish qualifying income. Useful for asset-rich borrowers with minimal documented income.',
+  },
+]
+
 export default async function LoanProgramPage({ params }: Props) {
   const { slug } = await params
   const program = getLoanProgram(slug)
   if (!program) notFound()
+
+  const isSelfEmployed = slug === 'self-employed-loans'
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -63,7 +84,7 @@ export default async function LoanProgramPage({ params }: Props) {
         className="relative py-24 px-6 text-center text-white"
         style={{
           backgroundImage:
-            'linear-gradient(rgba(20,35,25,0.6), rgba(20,35,25,0.6)), url("/images/loan-hero.jpg")',
+            'linear-gradient(rgba(20,35,25,0.6), rgba(20,35,25,0.6)), url("/images/squarespace/jamie-ranch-0001_websize.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundColor: '#1c3023',
@@ -94,6 +115,37 @@ export default async function LoanProgramPage({ params }: Props) {
               <p key={i}>{para}</p>
             ))}
           </div>
+
+          {/* ── Key Features (Self-Employed only) ── */}
+          {isSelfEmployed && (
+            <div className="mt-14">
+              <h2
+                className="text-3xl font-bold text-center mb-8"
+                style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1c3023' }}
+              >
+                Key Features
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {selfEmployedKeyFeatures.map((feat) => (
+                  <div
+                    key={feat.title}
+                    className="rounded p-6"
+                    style={{ backgroundColor: '#1a2e1a' }}
+                  >
+                    <h3
+                      className="text-lg font-bold mb-3"
+                      style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#f5ecd8' }}
+                    >
+                      {feat.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed" style={{ color: '#d4c9a8' }}>
+                      {feat.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* CTA */}
           <div className="mt-12 text-center">

@@ -79,29 +79,29 @@ export default function AboutPage() {
             <div className="flex-1 prose-becker">
               <h2
                 data-reveal="fade"
-                data-delay="80"
+                data-delay="40"
                 className="text-lg font-semibold mb-5"
                 style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
               >
                 About Jamie Becker:
               </h2>
-              <p data-reveal="fade" data-delay="160">
+              <p data-reveal="fade" data-delay="80">
                 With more than 21 years of experience in the mortgage industry, I&apos;ve helped over
                 3,500 families navigate one of the most important financial decisions of their lives: how
                 to finance a home, an investment property, or the next stage of their real estate journey.
               </p>
-              <p data-reveal="fade" data-delay="220">
+              <p data-reveal="fade" data-delay="120">
                 I&apos;m Jamie Becker, founder of The Becker Team, and I believe the best mortgage
                 guidance starts with understanding the full picture.
               </p>
-              <p data-reveal="fade" data-delay="280">
+              <p data-reveal="fade" data-delay="160">
                 A mortgage is not just a rate, a payment, or a stack of documents. It is part of a
                 larger financial strategy. That is why my background is different from that of the
                 typical loan officer. In addition to more than two decades in mortgage lending, I also
                 bring experience as a financial advisor, real estate investor, commercial property owner,
                 and developer.
               </p>
-              <p data-reveal="fade" data-delay="340">
+              <p data-reveal="fade" data-delay="200">
                 That perspective allows me to help clients think through more than whether they can
                 qualify. I help them consider how the mortgage fits into their cash flow, assets,
                 liquidity, real estate goals, and long-term financial plan.
@@ -109,7 +109,7 @@ export default function AboutPage() {
             </div>
 
             {/* Right: circular photo */}
-            <div data-reveal="fade" data-delay="200" className="shrink-0 flex justify-center w-full md:w-auto">
+            <div data-reveal="fade" data-delay="100" className="shrink-0 flex justify-center w-full md:w-auto">
               <div
                 className="rounded-full overflow-hidden w-[80vw] h-[80vw] md:w-[480px] md:h-[480px]"
                 style={{ border: '4px solid #ede4cc' }}

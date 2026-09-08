@@ -85,7 +85,7 @@ export default function ContactPage() {
         style={{
           backgroundImage: 'linear-gradient(rgba(20,35,25,0.62), rgba(20,35,25,0.62)), url("/images/contact-hero.jpg")',
           backgroundSize: 'cover',
-          backgroundPosition: 'center 60%',
+          backgroundPosition: 'center 55%',
           backgroundColor: '#1F2E2A',
         }}
       >

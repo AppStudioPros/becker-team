@@ -6,116 +6,348 @@ export const metadata: Metadata = {
     'A step-by-step guide to the home loan process with The Becker Team. From pre-qualification to closing — Jamie Becker, NMLS #794730.',
 }
 
-const steps = [
-  {
-    num: '01',
-    title: 'Pre-Qualification',
-    desc: 'We start by determining how much you can borrow based on your financial situation. This gives you a clear picture of your buying power and strengthens your position with sellers.',
-    points: [
-      'Quick online pre-qualification',
-      'Clear understanding of your buying power',
-      'Stronger negotiation position with sellers',
-    ],
-  },
-  {
-    num: '02',
-    title: 'Loan Program Selection',
-    desc: 'We help you choose the right loan program based on your goals, finances, and timeline. Whether conventional, FHA, VA, or specialty lending, we find the right fit for your situation.',
-    points: [
-      'Expert guidance on all loan options',
-      'Personalized recommendations based on your goals',
-      'Clear explanation of terms and total costs',
-    ],
-  },
-  {
-    num: '03',
-    title: 'Application and Documentation',
-    desc: 'Submit your application through our streamlined online process. We guide you through every document required and keep you informed at each step.',
-    points: [
-      'Simple online application',
-      'Clear documentation checklist',
-      'Direct communication with Jamie throughout',
-    ],
-  },
-  {
-    num: '04',
-    title: 'Processing and Underwriting',
-    desc: 'Our team handles processing efficiently, verifying documentation and working with underwriters to move your file toward approval as quickly as possible.',
-    points: [
-      'Fast processing and file management',
-      'Proactive status updates',
-      'Expert problem-solving if challenges arise',
-    ],
-  },
-  {
-    num: '05',
-    title: 'Closing',
-    desc: 'Once approved, we coordinate with all parties to ensure a smooth closing. You sign the final documents, and the home is yours.',
-    points: [
-      'Clear closing instructions provided in advance',
-      'Coordination with title, escrow, and agents',
-      'On-time closing — even in 10 days when prepared',
-    ],
-  },
-]
-
 export default function ProcessGuidePage() {
   return (
     <>
-      {/* ── Header ── */}
-      <section style={{ backgroundColor: '#1c3023' }} className="py-20 px-6 text-center text-white">
+      {/* ── Hero ── */}
+      <section style={{ backgroundColor: '#1F2E2A' }} className="py-24 px-6 text-center text-white">
         <h1
-          className="text-5xl md:text-6xl font-bold mb-4"
+          className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
         >
           Home Loan Process Guide
         </h1>
-        <p className="text-white/80 max-w-xl mx-auto">
-          A clear, step-by-step look at what to expect from application to closing.
+        <p className="text-white/80 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
+          Understanding each step of the mortgage process helps you move faster, avoid surprises, and close with confidence.
         </p>
       </section>
 
-      {/* ── Steps ── */}
-      <section style={{ backgroundColor: '#f5ecd8' }} className="py-16 px-6">
-        <div className="max-w-3xl mx-auto flex flex-col gap-10">
-          {steps.map((step) => (
-            <div
-              key={step.num}
-              className="rounded border p-8"
-              style={{ backgroundColor: 'white', borderColor: '#ede4cc' }}
+      {/* ── Step 1 — Find Out How Much You Can Borrow ── */}
+      <section className="py-14 md:py-20 px-6 bg-white">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+          {/* Left — step number + heading + description */}
+          <div>
+            <p
+              className="text-8xl font-bold leading-none mb-2 select-none"
+              style={{ color: '#1F2E2A', opacity: 0.08 }}
             >
-              <p className="text-sm font-semibold mb-1" style={{ color: '#1c3023', opacity: 0.5 }}>
-                Step {step.num}
+              01
+            </p>
+            <h2
+              className="text-2xl md:text-3xl font-bold mb-4 -mt-8"
+              style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
+            >
+              Find Out How Much You Can Borrow
+            </h2>
+            <p className="text-gray-600 leading-relaxed">
+              Before you start shopping for homes, it&apos;s essential to understand your borrowing capacity.
+              Pre-qualification gives you a realistic budget, helps you avoid wasted time, and signals to
+              sellers that you&apos;re a serious buyer.
+            </p>
+          </div>
+
+          {/* Right — dark card */}
+          <div className="rounded p-8" style={{ backgroundColor: '#1F2E2A' }}>
+            <a
+              href="https://2179191.my1003app.com/794730/register"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-center uppercase tracking-widest text-sm font-semibold px-6 py-4 rounded mb-8 transition-colors hover:opacity-90"
+              style={{ backgroundColor: '#B98942', color: '#fff' }}
+            >
+              Pre-Qualify Now
+            </a>
+
+            {/* Info block styled as accordion (always open — server component) */}
+            <div style={{ borderTop: '1px solid rgba(255,255,255,0.2)' }} className="pt-6">
+              <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                More on Pre-Qualification
               </p>
-              <h2
-                className="text-2xl font-bold mb-3"
-                style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1c3023' }}
+              <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.8)' }}>
+                Pre-qualification is a quick assessment based on self-reported income, assets, and debts.
+                It gives you an estimated loan amount and shows sellers you&apos;re serious. It does not
+                affect your credit score.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Step 2 — Select the Right Loan Program ── */}
+      <section className="py-14 md:py-20 px-6" style={{ backgroundColor: '#1F2E2A' }}>
+        <div className="max-w-7xl mx-auto">
+          <p
+            className="text-8xl font-bold leading-none mb-2 select-none"
+            style={{ color: '#ffffff', opacity: 0.08 }}
+          >
+            02
+          </p>
+          <h2
+            className="text-2xl md:text-3xl font-bold text-white mb-4 -mt-8"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
+          >
+            Select the Right Loan Program
+          </h2>
+          <p className="text-white/80 mb-10 max-w-2xl leading-relaxed">
+            Choosing the right loan affects your monthly payment, total cost, and long-term flexibility.
+            The two main categories are fixed-rate and adjustable-rate mortgages.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Fixed Rate */}
+            <div
+              className="rounded border p-8"
+              style={{ backgroundColor: '#F5EFE6', borderColor: '#ede4cc' }}
+            >
+              <h3
+                className="text-xl font-bold mb-5"
+                style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
               >
-                {step.title}
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-4">{step.desc}</p>
-              <ul className="flex flex-col gap-1.5">
-                {step.points.map((pt) => (
-                  <li key={pt} className="text-sm text-gray-700 flex items-start gap-2">
-                    <span className="mt-0.5" style={{ color: '#1c3023' }}>&#10003;</span>
+                Fixed Rate
+              </h3>
+              <ul className="flex flex-col gap-3">
+                {[
+                  'Your interest rate stays the same for the life of the loan',
+                  'Monthly payments are predictable and stable',
+                  'Best for buyers planning to stay long-term',
+                  'Rates are typically slightly higher than initial ARM rates',
+                ].map((pt) => (
+                  <li key={pt} className="text-sm flex items-start gap-2" style={{ color: '#1F2E2A' }}>
+                    <span className="mt-0.5 shrink-0" style={{ color: '#B98942' }}>&#10003;</span>
                     {pt}
                   </li>
                 ))}
               </ul>
             </div>
-          ))}
-        </div>
 
-        <div className="text-center mt-12">
-          <a
-            href="https://2179191.my1003app.com/794730/register"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-black text-white uppercase tracking-widest text-sm font-semibold px-14 py-5 hover:bg-gray-900 transition-colors"
-          >
-            Start Your Application
-          </a>
+            {/* Adjustable Rate (ARM) */}
+            <div
+              className="rounded border p-8"
+              style={{ backgroundColor: '#F5EFE6', borderColor: '#ede4cc' }}
+            >
+              <h3
+                className="text-xl font-bold mb-5"
+                style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
+              >
+                Adjustable Rate (ARM)
+              </h3>
+              <ul className="flex flex-col gap-3">
+                {[
+                  'Rate is fixed for an initial period (3, 5, 7, or 10 years), then adjusts annually',
+                  'Initial rates are often lower than fixed rates',
+                  'Best for buyers who plan to sell or refinance before the adjustment period',
+                  'Rate caps limit how much your rate can increase',
+                ].map((pt) => (
+                  <li key={pt} className="text-sm flex items-start gap-2" style={{ color: '#1F2E2A' }}>
+                    <span className="mt-0.5 shrink-0" style={{ color: '#B98942' }}>&#10003;</span>
+                    {pt}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
+      </section>
+
+      {/* ── Step 3 — Apply for a Loan ── */}
+      <section className="py-14 md:py-20 px-6" style={{ backgroundColor: '#F5EFE6' }}>
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+          {/* Left */}
+          <div>
+            <p
+              className="text-8xl font-bold leading-none mb-2 select-none"
+              style={{ color: '#1F2E2A', opacity: 0.08 }}
+            >
+              03
+            </p>
+            <h2
+              className="text-2xl md:text-3xl font-bold mb-4 -mt-8"
+              style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
+            >
+              Apply for a Loan
+            </h2>
+            <p className="text-gray-600 leading-relaxed mb-6">
+              Once you&apos;ve found a home and selected your program, it&apos;s time to formally apply.
+              Your lender will pull your credit and verify all income, asset, and employment documentation.
+            </p>
+            <p
+              className="text-xs font-bold uppercase tracking-widest mb-3"
+              style={{ color: '#1F2E2A' }}
+            >
+              What You&apos;ll Need:
+            </p>
+            <ul className="flex flex-col gap-2">
+              {[
+                'W-2s and tax returns (2 years)',
+                'Recent pay stubs (30 days)',
+                'Bank statements (2–3 months)',
+                'Photo ID',
+                'Employment history (2 years)',
+              ].map((item) => (
+                <li key={item} className="text-sm flex items-start gap-2 text-gray-700">
+                  <span className="mt-0.5 shrink-0" style={{ color: '#B98942' }}>&#10003;</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Right — dark apply card */}
+          <div
+            className="rounded p-8 flex flex-col items-center justify-center"
+            style={{ backgroundColor: '#1F2E2A', minHeight: '220px' }}
+          >
+            <p
+              className="text-white/70 text-sm uppercase tracking-widest text-center mb-6"
+            >
+              Ready to take the next step?
+            </p>
+            <a
+              href="https://2179191.my1003app.com/794730/register"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block uppercase tracking-widest text-sm font-semibold px-10 py-4 rounded transition-colors hover:opacity-90"
+              style={{ backgroundColor: '#B98942', color: '#fff' }}
+            >
+              Apply for a Loan
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Step 4 — Begin Loan Processing ── */}
+      <section className="py-14 md:py-20 px-6 bg-white">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+          {/* Left */}
+          <div>
+            <p
+              className="text-8xl font-bold leading-none mb-2 select-none"
+              style={{ color: '#1F2E2A', opacity: 0.08 }}
+            >
+              04
+            </p>
+            <h2
+              className="text-2xl md:text-3xl font-bold mb-4 -mt-8"
+              style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
+            >
+              Begin Loan Processing
+            </h2>
+            <p className="text-gray-600 leading-relaxed">
+              After your application is submitted, your file moves to processing. An underwriter reviews
+              everything to confirm you meet the loan guidelines.
+            </p>
+          </div>
+
+          {/* Right — amber tips card */}
+          <div className="rounded p-8" style={{ backgroundColor: '#B98942' }}>
+            <h3
+              className="text-lg font-bold text-white mb-5"
+              style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
+            >
+              Tips for Smooth Approval
+            </h3>
+            <ul className="flex flex-col gap-3">
+              {[
+                "Don't make large deposits without documentation",
+                "Don't open new credit accounts",
+                "Don't make major purchases (cars, furniture)",
+                "Don't change jobs during the process",
+                'Do respond quickly to any requests for additional documents',
+              ].map((tip) => (
+                <li key={tip} className="text-sm flex items-start gap-2 text-white">
+                  <span className="mt-0.5 shrink-0">&#10003;</span>
+                  {tip}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Step 5 — Closing ── */}
+      <section className="py-14 md:py-20 px-6" style={{ backgroundColor: '#1F2E2A' }}>
+        <div className="max-w-7xl mx-auto">
+          <p
+            className="text-8xl font-bold leading-none mb-2 select-none"
+            style={{ color: '#ffffff', opacity: 0.08 }}
+          >
+            05
+          </p>
+          <h2
+            className="text-2xl md:text-3xl font-bold text-white mb-4 -mt-8"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
+          >
+            At Closing, Be Prepared To:
+          </h2>
+          <p className="text-white/80 mb-8 max-w-2xl leading-relaxed">
+            Closing is the final step where you sign all loan documents and officially take ownership. The
+            process takes 1–2 hours. You&apos;ll receive a Closing Disclosure at least 3 business days
+            before closing — review it carefully.
+          </p>
+
+          <ul className="flex flex-col gap-3 mb-10">
+            {[
+              'Bring a valid government-issued photo ID',
+              'Bring a cashier\'s check or confirm wire transfer for closing costs',
+              'Review the Closing Disclosure (sent 3 days prior)',
+              'All parties on the loan must be present or have Power of Attorney',
+              'Be prepared for a final walkthrough of the property',
+            ].map((item) => (
+              <li key={item} className="text-sm flex items-start gap-3" style={{ color: '#F5EFE6' }}>
+                <span
+                  className="w-2 h-2 rounded-full mt-1.5 shrink-0"
+                  style={{ backgroundColor: '#F5EFE6' }}
+                />
+                {item}
+              </li>
+            ))}
+          </ul>
+
+          {/* Note box */}
+          <div
+            className="rounded p-6 max-w-2xl"
+            style={{
+              border: '2px solid #B98942',
+              backgroundColor: 'rgba(185,137,66,0.12)',
+            }}
+          >
+            <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.9)' }}>
+              <span className="font-semibold text-white">Note:</span> There is a mandatory
+              3-business-day waiting period after you receive your Closing Disclosure before you can
+              close. Plan accordingly.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Final CTA ── */}
+      <section
+        className="relative py-24 md:py-36 px-6 text-white text-center"
+        style={{
+          backgroundImage: 'linear-gradient(rgba(20,35,25,0.55), rgba(20,35,25,0.55)), url("/images/cta-mountain.jpg")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundColor: '#1F2E2A',
+        }}
+      >
+        <h2
+          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5"
+          style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
+        >
+          Ready to get started?
+        </h2>
+        <p className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
+          Let&apos;s discuss your unique situation and find the perfect loan for you
+        </p>
+        <a
+          href="https://2179191.my1003app.com/794730/register"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block uppercase tracking-widest text-sm font-semibold px-14 py-5 rounded btn-hover"
+          style={{ backgroundColor: '#1F2E2A', color: '#F5EFE6', border: '2px solid #F5EFE6' }}
+        >
+          Get Pre-Approved Now
+        </a>
       </section>
     </>
   )

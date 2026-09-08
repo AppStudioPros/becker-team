@@ -3,9 +3,9 @@ import Image from 'next/image'
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: '#1c3023' }} className="text-white">
+    <footer style={{ backgroundColor: '#1F2E2A' }} className="text-white">
       {/* Main footer grid */}
-      <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_1fr] gap-10">
         {/* Col 1 — Licensing */}
         <div className="md:col-span-1">
           <p className="text-sm text-gray-300 leading-relaxed mb-4">
@@ -20,7 +20,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm underline mb-4 block"
-            style={{ color: '#c8960c' }}
+            style={{ color: '#B98942' }}
           >
             NMLS Consumer Access
           </a>
@@ -30,11 +30,14 @@ export default function Footer() {
           </p>
           <p className="text-sm text-gray-300">
             Phone:{' '}
-            <a href="tel:4706605693" className="underline" style={{ color: '#c8960c' }}>
+            <a href="tel:4706605693" className="underline" style={{ color: '#B98942' }}>
               (470) 660-5693
             </a>
           </p>
         </div>
+
+        {/* Col 2 + 3 — 2-column on mobile, separate cols on desktop */}
+        <div className="grid grid-cols-2 gap-8 md:contents">
 
         {/* Col 2 — Quick Links */}
         <div>
@@ -58,6 +61,7 @@ export default function Footer() {
         {/* Col 3 — Popular Programs */}
         <div>
           <h4 className="text-base font-semibold mb-5 tracking-wide">Popular Programs</h4>
+          
           <ul className="flex flex-col gap-3">
             {[
               { label: 'Asset Qualifier', href: '/loan-programs/asset-qualifier-loans' },
@@ -72,17 +76,19 @@ export default function Footer() {
           </ul>
         </div>
 
+        </div>{/* end 2-col mobile wrapper */}
+
         {/* Col 4 — Connect */}
         <div>
           <h4 className="text-base font-semibold mb-5 tracking-wide">Connect</h4>
           <ul className="flex flex-col gap-3">
             <li>
-              <a href="tel:4706605693" className="text-sm hover:text-white transition-colors" style={{ color: '#c8960c' }}>
-                (470) 660-5693
+              <a href="tel:7204923335" className="text-sm hover:text-white transition-colors" style={{ color: '#B98942' }}>
+                (720) 492-3335
               </a>
             </li>
             <li>
-              <a href="mailto:Jamie@thebeckerteam.com" className="text-sm hover:text-white transition-colors" style={{ color: '#c8960c' }}>
+              <a href="mailto:Jamie@thebeckerteam.com" className="text-sm hover:text-white transition-colors" style={{ color: '#B98942' }}>
                 Jamie@thebeckerteam.com
               </a>
             </li>
@@ -94,27 +100,30 @@ export default function Footer() {
       </div>
 
       {/* Logo row */}
-      <div className="max-w-7xl mx-auto px-6 pb-8 flex justify-end items-center gap-4">
+      <div className="max-w-7xl mx-auto px-6 pb-8 flex justify-center md:justify-end items-center gap-4">
         <Image
           src="/images/equal-housing.png"
           alt="Equal Housing Opportunity"
-          width={50}
-          height={50}
-          className="object-contain"
+          width={40}
+          height={40}
+          loading="eager"
+          className="object-contain w-8 md:w-[50px] h-auto"
         />
         <Image
           src="/images/equal-housing-lender.png"
           alt="Equal Housing Lender"
-          width={50}
-          height={50}
-          className="object-contain"
+          width={40}
+          height={40}
+          loading="eager"
+          className="object-contain w-8 md:w-[50px] h-auto"
         />
         <Image
           src="/images/xpert-logo.png"
           alt="Xpert Home Lending"
-          width={60}
-          height={50}
-          className="object-contain"
+          width={50}
+          height={40}
+          loading="eager"
+          className="object-contain w-10 md:w-[60px] h-auto"
         />
       </div>
 

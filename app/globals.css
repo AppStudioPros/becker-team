@@ -1,20 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-forest: #1c3023;
+  --color-forest: #1F2E2A;
   --color-forest-light: #2a4030;
   --color-forest-hover: #253a2c;
-  --color-cream: #f5ecd8;
+  --color-cream: #F5EFE6;
   --color-cream-dark: #ede4cc;
   --color-cream-border: #d9cfb8;
-  --font-display: "Playfair Display", Georgia, serif;
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
 }
 
 body {
   font-family: var(--font-sans);
-  color: #1c3023;
+  color: #1F2E2A;
   background: #ffffff;
   -webkit-font-smoothing: antialiased;
 }
@@ -35,4 +34,118 @@ h1, h2, h3, h4, h5 {
   height: 1px;
   background: #ede4cc;
   margin: 1.5rem auto;
+}
+
+/* ─────────────────────────────────────────
+   Mobile: Center headings + subtext
+───────────────────────────────────────── */
+@media (max-width: 768px) {
+  section h1,
+  section h2,
+  section h3 {
+    text-align: center;
+  }
+
+  /* Sub-labels / uppercase tracking text under headings */
+  section > div > p.uppercase,
+  section > div > p.tracking-widest,
+  section p.uppercase,
+  section p.tracking-widest {
+    text-align: center;
+  }
+
+  /* Keep long-form prose left-aligned for readability */
+  .prose-becker p {
+    text-align: left;
+  }
+}
+
+/* ─────────────────────────────────────────
+   Scroll Reveal System
+   AnimationProvider (client) adds .in-view
+───────────────────────────────────────── */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-reveal="fade"]  { transform: none; }
+[data-reveal="left"]  { transform: translateX(-30px); }
+[data-reveal="right"] { transform: translateX(30px); }
+[data-reveal="scale"] { transform: scale(0.95); opacity: 0; }
+
+[data-reveal].in-view {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Allow hover transforms to work on already-revealed elements */
+[data-reveal].in-view.card-hover:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 14px 36px rgba(31, 46, 42, 0.14) !important;
+}
+[data-reveal].in-view.card-hover-dark:hover {
+  transform: translateY(-2px) !important;
+  filter: brightness(1.08) !important;
+}
+[data-reveal].in-view.btn-hover:hover {
+  transform: scale(1.03) !important;
+  opacity: 0.93 !important;
+}
+
+/* ─────────────────────────────────────────
+   Hover Effects
+───────────────────────────────────────── */
+
+/* Light cards — lift + shadow */
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 36px rgba(31, 46, 42, 0.14);
+}
+
+/* Dark cards — subtle brightness lift */
+.card-hover-dark {
+  transition: filter 0.25s ease, transform 0.2s ease !important;
+}
+.card-hover-dark:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+}
+
+/* Buttons — scale pulse */
+.btn-hover {
+  transition: transform 0.18s ease, opacity 0.18s ease, box-shadow 0.18s ease !important;
+}
+.btn-hover:hover {
+  transform: scale(1.03);
+  opacity: 0.93;
+  box-shadow: 0 6px 20px rgba(31, 46, 42, 0.18);
+}
+
+/* Nav links */
+nav a {
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+/* Amber text links */
+a[style*="#B98942"] {
+  transition: opacity 0.2s ease;
+}
+a[style*="#B98942"]:hover {
+  opacity: 0.75;
+}
+
+/* Image sections — subtle zoom on hover (for card images) */
+.img-hover-zoom {
+  overflow: hidden;
+}
+.img-hover-zoom img {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.img-hover-zoom:hover img {
+  transform: scale(1.04);
 }

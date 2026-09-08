@@ -46,6 +46,7 @@ export default async function LoanProgramPage({ params }: Props) {
   if (!program) notFound()
 
   const isSelfEmployed = slug === 'self-employed-loans'
+  const isMortgageAccelerator = slug === 'mortgage-accelerator'
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -81,32 +82,56 @@ export default async function LoanProgramPage({ params }: Props) {
 
       {/* ── Hero ── */}
       <section
-        className="relative py-24 px-6 text-center text-white"
+        className="relative py-14 md:py-24 px-6 text-center text-white"
         style={{
-          backgroundImage:
-            'linear-gradient(rgba(20,35,25,0.6), rgba(20,35,25,0.6)), url("/images/squarespace/jamie-ranch-0001_websize.jpg")',
+          backgroundImage: isMortgageAccelerator
+            ? 'linear-gradient(rgba(20,35,25,0.6), rgba(20,35,25,0.6)), url("/images/mortgage-accelerator-hero.jpg")'
+            : 'linear-gradient(rgba(20,35,25,0.6), rgba(20,35,25,0.6)), url("/images/squarespace/jamie-ranch-0001_websize.jpg")',
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundColor: '#1c3023',
+          backgroundPosition: isMortgageAccelerator ? 'center 55%' : 'center',
+          backgroundColor: '#1F2E2A',
         }}
       >
         <h1
-          className="text-5xl md:text-6xl font-bold mb-4"
+          className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
         >
           {program.shortTitle}
         </h1>
-        <p className="text-white/80 max-w-xl mx-auto text-lg">{program.heroSubtitle}</p>
+        <p className="text-white/80 max-w-xl mx-auto text-lg mb-8">{program.heroSubtitle}</p>
+        {isMortgageAccelerator && (
+          <a
+            href="https://2179191.my1003app.com/794730/register"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block uppercase tracking-widest text-sm font-semibold px-14 py-5 rounded btn-hover"
+            style={{ backgroundColor: '#1F2E2A', color: '#F5EFE6', border: '2px solid #F5EFE6' }}
+          >
+            Get Pre-Approved
+          </a>
+        )}
       </section>
 
+      {/* ── Mortgage Accelerator feature bar ── */}
+      {isMortgageAccelerator && (
+        <section className="bg-white py-7 px-6 border-b border-[#ede4cc]">
+          <p
+            className="text-center text-lg md:text-2xl leading-relaxed"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
+          >
+            Built for strong cash flow&nbsp;&bull;&nbsp;Purchase or refinance&nbsp;&bull;&nbsp;Strategy-led review with The Becker Team
+          </p>
+        </section>
+      )}
+
       {/* ── Content ── */}
-      <section style={{ backgroundColor: '#f5ecd8' }} className="py-16 px-6">
+      <section style={{ backgroundColor: '#F5EFE6' }} className="py-12 md:py-16 px-6">
         <div className="max-w-3xl mx-auto">
           <p className="text-center text-gray-600 mb-6 italic">{program.tagline}</p>
           <div className="divider" />
           <h2
             className="text-3xl font-bold text-center mb-8 mt-6"
-            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1c3023' }}
+            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
           >
             About This Program
           </h2>
@@ -121,7 +146,7 @@ export default async function LoanProgramPage({ params }: Props) {
             <div className="mt-14">
               <h2
                 className="text-3xl font-bold text-center mb-8"
-                style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1c3023' }}
+                style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
               >
                 Key Features
               </h2>
@@ -130,11 +155,11 @@ export default async function LoanProgramPage({ params }: Props) {
                   <div
                     key={feat.title}
                     className="rounded p-6"
-                    style={{ backgroundColor: '#1a2e1a' }}
+                    style={{ backgroundColor: '#1F2E2A' }}
                   >
                     <h3
                       className="text-lg font-bold mb-3"
-                      style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#f5ecd8' }}
+                      style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#F5EFE6' }}
                     >
                       {feat.title}
                     </h3>
@@ -153,7 +178,8 @@ export default async function LoanProgramPage({ params }: Props) {
               href="https://2179191.my1003app.com/794730/register"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-black text-white uppercase tracking-widest text-sm font-semibold px-14 py-5 hover:bg-gray-900 transition-colors"
+              className="inline-block uppercase tracking-widest text-sm font-semibold px-14 py-5 rounded btn-hover"
+              style={{ backgroundColor: '#1F2E2A', color: '#F5EFE6', border: '2px solid #1F2E2A' }}
             >
               Get Pre-Approved
             </a>
@@ -164,7 +190,7 @@ export default async function LoanProgramPage({ params }: Props) {
           {/* FAQ */}
           <h2
             className="text-2xl font-bold text-center mt-8 mb-8"
-            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1c3023' }}
+            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
           >
             Frequently Asked Questions
           </h2>
@@ -173,7 +199,7 @@ export default async function LoanProgramPage({ params }: Props) {
               <div key={faq.q} className="border-b border-[#ede4cc] pb-6">
                 <h3
                   className="font-semibold mb-2 text-lg"
-                  style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1c3023' }}
+                  style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
                 >
                   {faq.q}
                 </h3>
@@ -185,7 +211,7 @@ export default async function LoanProgramPage({ params }: Props) {
       </section>
 
       {/* ── Nav to other programs ── */}
-      <section style={{ backgroundColor: '#1c3023' }} className="py-12 px-6 text-center">
+      <section style={{ backgroundColor: '#1F2E2A' }} className="py-12 px-6 text-center">
         <p className="text-white/80 text-sm mb-4">Explore other programs</p>
         <div className="flex flex-wrap justify-center gap-3">
           {loanPrograms
@@ -207,6 +233,36 @@ export default async function LoanProgramPage({ params }: Props) {
             All Programs
           </Link>
         </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <section
+        className="relative py-24 md:py-36 px-6 text-white text-center"
+        style={{
+          backgroundImage: 'linear-gradient(rgba(20,35,25,0.55), rgba(20,35,25,0.55)), url("/images/cta-mountain.jpg")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundColor: '#1F2E2A',
+        }}
+      >
+        <h2
+          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5"
+          style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
+        >
+          Ready to get started?
+        </h2>
+        <p className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
+          Let&apos;s discuss your unique situation and find the perfect loan for you
+        </p>
+        <a
+          href="https://2179191.my1003app.com/794730/register"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block uppercase tracking-widest text-sm font-semibold px-14 py-5 rounded btn-hover"
+          style={{ backgroundColor: '#1F2E2A', color: '#F5EFE6', border: '2px solid #F5EFE6' }}
+        >
+          Get Pre-Approved Now
+        </a>
       </section>
     </>
   )

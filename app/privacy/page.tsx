@@ -7,11 +7,11 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <section style={{ backgroundColor: '#f5ecd8' }} className="py-16 px-6">
+    <section style={{ backgroundColor: '#F5EFE6' }} className="py-16 px-6">
       <div className="max-w-3xl mx-auto">
         <h1
           className="text-4xl font-bold mb-8"
-          style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1c3023' }}
+          style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
         >
           Privacy Policy
         </h1>
@@ -21,36 +21,36 @@ export default function PrivacyPage() {
             information. This policy explains what information we collect, how we use it, and how we
             protect it.
           </p>
-          <h2 className="text-xl font-bold mt-6 mb-3" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1c3023' }}>
+          <h2 className="text-xl font-bold mt-6 mb-3" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}>
             Information We Collect
           </h2>
           <p>
             We collect information you provide directly, such as your name, contact information, and
             financial details submitted through our application or inquiry forms.
           </p>
-          <h2 className="text-xl font-bold mt-6 mb-3" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1c3023' }}>
+          <h2 className="text-xl font-bold mt-6 mb-3" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}>
             How We Use Your Information
           </h2>
           <p>
             Information collected is used solely to process your mortgage inquiry or application, contact
             you about your loan, and comply with applicable legal and regulatory requirements.
           </p>
-          <h2 className="text-xl font-bold mt-6 mb-3" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1c3023' }}>
+          <h2 className="text-xl font-bold mt-6 mb-3" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}>
             Data Security
           </h2>
           <p>
             We use industry-standard security measures to protect your personal information. We do not
             sell or share your data with third parties for marketing purposes.
           </p>
-          <h2 className="text-xl font-bold mt-6 mb-3" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1c3023' }}>
+          <h2 className="text-xl font-bold mt-6 mb-3" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}>
             Contact
           </h2>
           <p>
             Questions about this policy? Contact us at{' '}
-            <a href="mailto:Jamie@thebeckerteam.com" style={{ color: '#c8960c' }} className="underline">
+            <a href="mailto:Jamie@thebeckerteam.com" style={{ color: '#B98942' }} className="underline">
               Jamie@thebeckerteam.com
             </a>{' '}
-            or call <a href="tel:4706605693" style={{ color: '#c8960c' }} className="underline">(470) 660-5693</a>.
+            or call <a href="tel:4706605693" style={{ color: '#B98942' }} className="underline">(470) 660-5693</a>.
           </p>
         </div>
       </div>

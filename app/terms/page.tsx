@@ -7,11 +7,11 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <section style={{ backgroundColor: '#f5ecd8' }} className="py-16 px-6">
+    <section style={{ backgroundColor: '#F5EFE6' }} className="py-16 px-6">
       <div className="max-w-3xl mx-auto">
         <h1
           className="text-4xl font-bold mb-8"
-          style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1c3023' }}
+          style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
         >
           Terms of Use
         </h1>
@@ -19,7 +19,7 @@ export default function TermsPage() {
           <p>
             By accessing and using thebeckerteam.com, you agree to the following terms and conditions.
           </p>
-          <h2 className="text-xl font-bold mt-6 mb-3" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1c3023' }}>
+          <h2 className="text-xl font-bold mt-6 mb-3" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}>
             General Use
           </h2>
           <p>
@@ -27,26 +27,26 @@ export default function TermsPage() {
             without notice. Nothing on this site constitutes a commitment to lend or a guarantee of
             loan approval.
           </p>
-          <h2 className="text-xl font-bold mt-6 mb-3" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1c3023' }}>
+          <h2 className="text-xl font-bold mt-6 mb-3" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}>
             No Legal or Financial Advice
           </h2>
           <p>
             Content on this site is general in nature and does not constitute legal, financial, or tax
             advice. Consult a qualified professional before making any financial decision.
           </p>
-          <h2 className="text-xl font-bold mt-6 mb-3" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1c3023' }}>
+          <h2 className="text-xl font-bold mt-6 mb-3" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}>
             Intellectual Property
           </h2>
           <p>
             All content on this site, including text, graphics, and logos, is the property of The Becker
             Team or its licensors. Reproduction without written permission is prohibited.
           </p>
-          <h2 className="text-xl font-bold mt-6 mb-3" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1c3023' }}>
+          <h2 className="text-xl font-bold mt-6 mb-3" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}>
             Contact
           </h2>
           <p>
             Questions? Reach us at{' '}
-            <a href="mailto:Jamie@thebeckerteam.com" style={{ color: '#c8960c' }} className="underline">
+            <a href="mailto:Jamie@thebeckerteam.com" style={{ color: '#B98942' }} className="underline">
               Jamie@thebeckerteam.com
             </a>.
           </p>

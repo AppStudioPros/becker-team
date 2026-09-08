@@ -27,7 +27,7 @@ export default function ContactForm() {
   if (submitted) {
     return (
       <div className="text-center py-16">
-        <p className="text-xl font-semibold mb-2" style={{ color: '#1c3023' }}>
+        <p className="text-xl font-semibold mb-2" style={{ color: '#1F2E2A' }}>
           Message sent!
         </p>
         <p className="text-gray-600">
@@ -44,7 +44,7 @@ export default function ContactForm() {
         <div>
           <label
             className="block text-xs font-semibold uppercase tracking-widest mb-1"
-            style={{ color: '#1c3023' }}
+            style={{ color: '#1F2E2A' }}
           >
             First Name
           </label>
@@ -54,14 +54,14 @@ export default function ContactForm() {
             value={formData.firstName}
             onChange={handleChange}
             required
-            className="w-full border border-[#ede4cc] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#1c3023]"
-            style={{ color: '#1c3023' }}
+            className="w-full border border-[#ede4cc] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#1F2E2A]"
+            style={{ color: '#1F2E2A' }}
           />
         </div>
         <div>
           <label
             className="block text-xs font-semibold uppercase tracking-widest mb-1"
-            style={{ color: '#1c3023' }}
+            style={{ color: '#1F2E2A' }}
           >
             Last Name
           </label>
@@ -71,8 +71,8 @@ export default function ContactForm() {
             value={formData.lastName}
             onChange={handleChange}
             required
-            className="w-full border border-[#ede4cc] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#1c3023]"
-            style={{ color: '#1c3023' }}
+            className="w-full border border-[#ede4cc] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#1F2E2A]"
+            style={{ color: '#1F2E2A' }}
           />
         </div>
       </div>
@@ -82,7 +82,7 @@ export default function ContactForm() {
         <div>
           <label
             className="block text-xs font-semibold uppercase tracking-widest mb-1"
-            style={{ color: '#1c3023' }}
+            style={{ color: '#1F2E2A' }}
           >
             Email
           </label>
@@ -92,14 +92,14 @@ export default function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full border border-[#ede4cc] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#1c3023]"
-            style={{ color: '#1c3023' }}
+            className="w-full border border-[#ede4cc] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#1F2E2A]"
+            style={{ color: '#1F2E2A' }}
           />
         </div>
         <div>
           <label
             className="block text-xs font-semibold uppercase tracking-widest mb-1"
-            style={{ color: '#1c3023' }}
+            style={{ color: '#1F2E2A' }}
           >
             Phone
           </label>
@@ -108,8 +108,8 @@ export default function ContactForm() {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            className="w-full border border-[#ede4cc] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#1c3023]"
-            style={{ color: '#1c3023' }}
+            className="w-full border border-[#ede4cc] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#1F2E2A]"
+            style={{ color: '#1F2E2A' }}
           />
         </div>
       </div>
@@ -118,7 +118,7 @@ export default function ContactForm() {
       <div>
         <label
           className="block text-xs font-semibold uppercase tracking-widest mb-1"
-          style={{ color: '#1c3023' }}
+          style={{ color: '#1F2E2A' }}
         >
           I&apos;m Interested In
         </label>
@@ -126,15 +126,17 @@ export default function ContactForm() {
           name="interest"
           value={formData.interest}
           onChange={handleChange}
-          className="w-full border border-[#ede4cc] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#1c3023]"
-          style={{ color: '#1c3023' }}
+          className="w-full border border-[#ede4cc] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#1F2E2A]"
+          style={{ color: '#1F2E2A' }}
         >
           <option value="">Select an option</option>
           <option value="purchase">Purchase</option>
           <option value="refinance">Refinance</option>
-          <option value="cash-out">Cash-Out Refi</option>
+          <option value="cash-out">Cash-Out Refinance</option>
+          <option value="investment">Investment Property</option>
           <option value="pre-approval">Pre-Approval</option>
           <option value="general">General Question</option>
+          <option value="other">Other</option>
         </select>
       </div>
 
@@ -142,7 +144,7 @@ export default function ContactForm() {
       <div>
         <label
           className="block text-xs font-semibold uppercase tracking-widest mb-1"
-          style={{ color: '#1c3023' }}
+          style={{ color: '#1F2E2A' }}
         >
           Message
         </label>
@@ -151,15 +153,15 @@ export default function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           rows={5}
-          className="w-full border border-[#ede4cc] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#1c3023] resize-none"
-          style={{ color: '#1c3023' }}
+          className="w-full border border-[#ede4cc] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#1F2E2A] resize-none"
+          style={{ color: '#1F2E2A' }}
         />
       </div>
 
       <button
         type="submit"
-        className="w-full uppercase tracking-widest text-sm font-semibold py-4 transition-colors hover:opacity-90"
-        style={{ backgroundColor: '#1c3023', color: '#fff' }}
+        className="w-full uppercase tracking-widest text-sm font-semibold py-4 rounded transition-colors hover:opacity-90"
+        style={{ backgroundColor: '#1F2E2A', color: '#fff' }}
       >
         Send Message
       </button>

@@ -31,9 +31,9 @@ export default function CalculatorPage() {
   return (
     <>
       {/* ── Header ── */}
-      <section style={{ backgroundColor: '#1c3023' }} className="py-20 px-6 text-center text-white">
+      <section style={{ backgroundColor: '#1F2E2A' }} className="py-20 px-6 text-center text-white">
         <h1
-          className="text-5xl md:text-6xl font-bold mb-4"
+          className="text-6xl md:text-7xl font-bold mb-4"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
         >
           Mortgage Calculator
@@ -42,7 +42,7 @@ export default function CalculatorPage() {
       </section>
 
       {/* ── Calculator ── */}
-      <section style={{ backgroundColor: '#f5ecd8' }} className="py-16 px-6">
+      <section style={{ backgroundColor: '#F5EFE6' }} className="py-16 px-6 pb-0">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Inputs */}
           <div className="flex flex-col gap-6">
@@ -55,10 +55,10 @@ export default function CalculatorPage() {
             ].map((field) => (
               <div key={field.label}>
                 <div className="flex justify-between mb-1">
-                  <label className="text-sm font-semibold" style={{ color: '#1c3023' }}>
+                  <label className="text-sm font-semibold" style={{ color: '#1F2E2A' }}>
                     {field.label}
                   </label>
-                  <span className="text-sm font-semibold" style={{ color: '#1c3023' }}>
+                  <span className="text-sm font-semibold" style={{ color: '#1F2E2A' }}>
                     {field.prefix}{field.value.toLocaleString()}
                   </span>
                 </div>
@@ -70,14 +70,14 @@ export default function CalculatorPage() {
                   value={field.value}
                   onChange={(e) => field.setter(Number(e.target.value))}
                   className="w-full h-2 rounded appearance-none cursor-pointer"
-                  style={{ accentColor: '#1c3023' }}
+                  style={{ accentColor: '#1F2E2A' }}
                 />
               </div>
             ))}
 
             {/* Loan term */}
             <div>
-              <label className="text-sm font-semibold block mb-2" style={{ color: '#1c3023' }}>
+              <label className="text-sm font-semibold block mb-2" style={{ color: '#1F2E2A' }}>
                 Loan Term
               </label>
               <div className="flex gap-3">
@@ -87,9 +87,9 @@ export default function CalculatorPage() {
                     onClick={() => setTerm(y)}
                     className="flex-1 py-2 text-sm font-semibold rounded border transition-colors"
                     style={{
-                      backgroundColor: term === y ? '#1c3023' : 'white',
-                      color: term === y ? 'white' : '#1c3023',
-                      borderColor: '#1c3023',
+                      backgroundColor: term === y ? '#1F2E2A' : 'white',
+                      color: term === y ? 'white' : '#1F2E2A',
+                      borderColor: '#1F2E2A',
                     }}
                   >
                     {y} yr
@@ -102,7 +102,7 @@ export default function CalculatorPage() {
           {/* Results */}
           <div
             className="rounded p-8 flex flex-col justify-center"
-            style={{ backgroundColor: '#1c3023' }}
+            style={{ backgroundColor: '#1F2E2A' }}
           >
             <h2
               className="text-white text-xl font-bold mb-6 text-center"
@@ -138,13 +138,43 @@ export default function CalculatorPage() {
               href="https://2179191.my1003app.com/794730/register"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 bg-white uppercase tracking-widest text-sm font-semibold px-8 py-4 text-center hover:bg-gray-100 transition-colors"
-              style={{ color: '#1c3023' }}
+              className="mt-6 bg-white uppercase tracking-widest text-sm font-semibold px-8 py-4 rounded text-center hover:bg-gray-100 transition-colors"
+              style={{ color: '#1F2E2A' }}
             >
               Get Pre-Approved
             </a>
           </div>
         </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <section
+        className="relative py-24 md:py-36 px-6 text-white text-center"
+        style={{
+          backgroundImage: 'linear-gradient(rgba(20,35,25,0.55), rgba(20,35,25,0.55)), url("/images/cta-mountain.jpg")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundColor: '#1F2E2A',
+        }}
+      >
+        <h2
+          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5"
+          style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
+        >
+          Ready to get started?
+        </h2>
+        <p className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
+          Let&apos;s discuss your unique situation and find the perfect loan for you
+        </p>
+        <a
+          href="https://2179191.my1003app.com/794730/register"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block uppercase tracking-widest text-sm font-semibold px-14 py-5 rounded btn-hover"
+          style={{ backgroundColor: '#1F2E2A', color: '#F5EFE6', border: '2px solid #F5EFE6' }}
+        >
+          Get Pre-Approved Now
+        </a>
       </section>
     </>
   )

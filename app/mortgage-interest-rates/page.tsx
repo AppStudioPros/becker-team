@@ -10,9 +10,9 @@ export default function InterestRatesPage() {
   return (
     <>
       {/* ── Header ── */}
-      <section style={{ backgroundColor: '#1c3023' }} className="py-20 px-6 text-center text-white">
+      <section style={{ backgroundColor: '#1F2E2A' }} className="py-20 px-6 text-center text-white">
         <h1
-          className="text-5xl md:text-6xl font-bold mb-4"
+          className="text-6xl md:text-7xl font-bold mb-4"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
         >
           Current Mortgage Rates
@@ -23,7 +23,7 @@ export default function InterestRatesPage() {
       </section>
 
       {/* ── Rates content ── */}
-      <section style={{ backgroundColor: '#f5ecd8' }} className="py-16 px-6">
+      <section style={{ backgroundColor: '#F5EFE6' }} className="py-16 px-6">
         <div className="max-w-3xl mx-auto">
 
           {/* Rate embed placeholder */}
@@ -33,7 +33,7 @@ export default function InterestRatesPage() {
 
           <h2
             className="text-2xl font-bold mb-6 text-center"
-            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1c3023' }}
+            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
           >
             What Affects Your Rate?
           </h2>
@@ -54,7 +54,7 @@ export default function InterestRatesPage() {
               >
                 <h3
                   className="font-bold mb-2"
-                  style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1c3023' }}
+                  style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
                 >
                   {item.title}
                 </h3>
@@ -71,12 +71,43 @@ export default function InterestRatesPage() {
               href="https://2179191.my1003app.com/794730/register"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-black text-white uppercase tracking-widest text-sm font-semibold px-14 py-5 hover:bg-gray-900 transition-colors"
+              className="inline-block uppercase tracking-widest text-sm font-semibold px-14 py-5 rounded btn-hover"
+              style={{ backgroundColor: '#1F2E2A', color: '#F5EFE6', border: '2px solid #1F2E2A' }}
             >
               Get a Rate Quote
             </a>
           </div>
         </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <section
+        className="relative py-24 md:py-36 px-6 text-white text-center"
+        style={{
+          backgroundImage: 'linear-gradient(rgba(20,35,25,0.55), rgba(20,35,25,0.55)), url("/images/cta-mountain.jpg")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundColor: '#1F2E2A',
+        }}
+      >
+        <h2
+          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5"
+          style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
+        >
+          Ready to get started?
+        </h2>
+        <p className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
+          Let&apos;s discuss your unique situation and find the perfect loan for you
+        </p>
+        <a
+          href="https://2179191.my1003app.com/794730/register"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block uppercase tracking-widest text-sm font-semibold px-14 py-5 rounded btn-hover"
+          style={{ backgroundColor: '#1F2E2A', color: '#F5EFE6', border: '2px solid #F5EFE6' }}
+        >
+          Get Pre-Approved Now
+        </a>
       </section>
     </>
   )

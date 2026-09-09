@@ -133,7 +133,14 @@ export default function Footer() {
           <strong>Loan Originator Licenses:</strong> California – DFPI Mortgage Loan Originator License (License #CA-DOC794730, #CA-DFPI794730) · Colorado Mortgage Loan Originator License (License #100027807) · Florida Mortgage Loan Originator License (License #LO147810) · Idaho Mortgage Loan Originator License (License #MLO-2080794730) · Indiana-DFI Mortgage Loan Originator License (License #74355) · Louisiana Mortgage Originator License · Michigan Mortgage Loan Originator License (License #794730) · Texas – SML Mortgage Loan Originator
         </p>
         <p className="text-xs text-gray-400 text-center">
-          &copy; {new Date().getFullYear()} The Becker Team. All rights reserved.
+          &copy; {new Date().getFullYear()} The Becker Team. All rights reserved. &nbsp;|&nbsp;
+          <a href="/privacy" className="underline hover:text-white transition-colors">Privacy Policy</a>
+          &nbsp;|&nbsp;
+          <a href="/terms" className="underline hover:text-white transition-colors">Terms of Use</a>
+          &nbsp;|&nbsp;
+          <a href="/fair-lending" className="underline hover:text-white transition-colors">Fair Lending</a>
+          &nbsp;|&nbsp;
+          <a href="/accessibility" className="underline hover:text-white transition-colors">Accessibility</a>
         </p>
       </div>
     </footer>

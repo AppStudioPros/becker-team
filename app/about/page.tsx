@@ -15,7 +15,7 @@ const jsonLd = {
   name: 'Jamie Becker',
   jobTitle: 'Mortgage Broker',
   url: 'https://www.thebeckerteam.com/about',
-  telephone: '(470) 660-5693',
+  telephone: '(720) 492-3335',
   email: 'Jamie@thebeckerteam.com',
   identifier: 'NMLS #794730',
   worksFor: {
@@ -54,9 +54,20 @@ const processSteps = [
   },
 ]
 
+const speakableJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  url: 'https://www.thebeckerteam.com/about',
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['h1', 'h2', 'p'],
+  },
+}
+
 export default function AboutPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableJsonLd) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

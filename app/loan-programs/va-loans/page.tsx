@@ -86,9 +86,48 @@ const faqJsonLd = {
   ],
 }
 
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.thebeckerteam.com' },
+    { '@type': 'ListItem', position: 2, name: 'Loan Programs', item: 'https://www.thebeckerteam.com/loan-programs' },
+    { '@type': 'ListItem', position: 3, name: 'VA Loans', item: 'https://www.thebeckerteam.com/loan-programs/va-loans' },
+  ],
+}
+
+const loanJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LoanOrCredit',
+  name: 'VA Loans',
+  description: 'VA mortgage loans for eligible veterans and active-duty service members. No down payment required. Colorado and beyond. NMLS #794730.',
+  url: 'https://www.thebeckerteam.com/loan-programs/va-loans',
+  provider: {
+    '@type': 'FinancialService',
+    name: 'The Becker Team - Xpert Home Lending',
+    url: 'https://www.thebeckerteam.com',
+    telephone: '(720) 492-3335',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '201 Columbine Street, Suite 300',
+      addressLocality: 'Denver',
+      addressRegion: 'CO',
+      postalCode: '80206',
+      addressCountry: 'US',
+    },
+  },
+  areaServed: [
+    { '@type': 'State', name: 'Colorado' },
+    { '@type': 'State', name: 'Georgia' },
+    { '@type': 'State', name: 'Oregon' },
+  ],
+}
+
 export default function VaLoansPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(loanJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <script
         type="application/ld+json"

@@ -69,9 +69,65 @@ const ratingJsonLd = {
   },
 }
 
+const serviceAreaJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FinancialService',
+  name: 'The Becker Team — Xpert Home Lending',
+  url: 'https://www.thebeckerteam.com',
+  telephone: '(720) 492-3335',
+  email: 'Jamie@thebeckerteam.com',
+  description: 'Mortgage loan origination services in Colorado, Georgia, and Oregon. Specializing in VA, FHA, conventional, jumbo, self-employed, and asset qualifier loans.',
+  founder: { '@type': 'Person', name: 'Jamie Becker', identifier: 'NMLS #794730' },
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '201 Columbine Street, Suite 300',
+    addressLocality: 'Denver',
+    addressRegion: 'CO',
+    postalCode: '80206',
+    addressCountry: 'US',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Denver', containedInPlace: { '@type': 'State', name: 'Colorado' } },
+    { '@type': 'City', name: 'Boulder', containedInPlace: { '@type': 'State', name: 'Colorado' } },
+    { '@type': 'City', name: 'Fort Collins', containedInPlace: { '@type': 'State', name: 'Colorado' } },
+    { '@type': 'City', name: 'Colorado Springs', containedInPlace: { '@type': 'State', name: 'Colorado' } },
+    { '@type': 'City', name: 'Aurora', containedInPlace: { '@type': 'State', name: 'Colorado' } },
+    { '@type': 'City', name: 'Lakewood', containedInPlace: { '@type': 'State', name: 'Colorado' } },
+    { '@type': 'City', name: 'Arvada', containedInPlace: { '@type': 'State', name: 'Colorado' } },
+    { '@type': 'City', name: 'Pueblo', containedInPlace: { '@type': 'State', name: 'Colorado' } },
+    { '@type': 'State', name: 'Georgia' },
+    { '@type': 'State', name: 'Oregon' },
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Mortgage Loan Programs',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'LoanOrCredit', name: 'VA Loans' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'LoanOrCredit', name: 'FHA Loans' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'LoanOrCredit', name: 'Conventional Loans' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'LoanOrCredit', name: 'Jumbo Loans' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'LoanOrCredit', name: 'Self Employed Loans' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'LoanOrCredit', name: 'Asset Qualifier Loans' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'LoanOrCredit', name: 'Mortgage Accelerator' } },
+    ],
+  },
+}
+
+const speakableJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  url: 'https://www.thebeckerteam.com',
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['h1', 'h2', 'p'],
+  },
+}
+
 export default function HomePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceAreaJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ratingJsonLd) }} />
       <script
         type="application/ld+json"
@@ -138,7 +194,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6" data-reveal="fade">
           {[
             {
-              img: '/images/squarespace/quick-preapproved.png',
+              img: '/images/squarespace/quick-preapproved.jpg',
               label: 'Get Pre-Approved',
               href: 'https://2179191.my1003app.com/794730/register',
               external: true,

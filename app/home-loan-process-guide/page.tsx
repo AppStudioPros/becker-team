@@ -6,9 +6,56 @@ export const metadata: Metadata = {
     'A step-by-step guide to the home loan process with The Becker Team. From pre-qualification to closing — Jamie Becker, NMLS #794730.',
 }
 
+const howToJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to Get a Home Loan — Step-by-Step Process',
+  description: 'A complete step-by-step guide to the home loan process with The Becker Team. From pre-qualification to closing.',
+  url: 'https://www.thebeckerteam.com/home-loan-process-guide',
+  estimatedCost: { '@type': 'MonetaryAmount', currency: 'USD', value: '0', description: 'Free consultation' },
+  step: [
+    {
+      '@type': 'HowToStep',
+      position: 1,
+      name: 'Find Out How Much You Can Borrow',
+      text: 'Start with a pre-qualification or pre-approval to understand your budget. Jamie reviews your income, assets, and credit to determine how much home you can afford.',
+      url: 'https://www.thebeckerteam.com/home-loan-process-guide#step-1',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 2,
+      name: 'Select the Right Loan Program',
+      text: 'Choose from VA, FHA, conventional, jumbo, self-employed, asset qualifier, or Mortgage Accelerator loans based on your situation.',
+      url: 'https://www.thebeckerteam.com/home-loan-process-guide#step-2',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 3,
+      name: 'Apply for a Loan',
+      text: 'Complete your formal mortgage application. Provide documentation including income verification, tax returns, bank statements, and identification.',
+      url: 'https://www.thebeckerteam.com/home-loan-process-guide#step-3',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 4,
+      name: 'Begin Loan Processing',
+      text: 'Your file moves to processing and underwriting. An underwriter reviews your documents and the property appraisal. Avoid major financial changes during this stage.',
+      url: 'https://www.thebeckerteam.com/home-loan-process-guide#step-4',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 5,
+      name: 'Closing',
+      text: 'Sign your final loan documents, pay closing costs, and receive the keys. The Becker Team can close in as little as 10 days.',
+      url: 'https://www.thebeckerteam.com/home-loan-process-guide#step-5',
+    },
+  ],
+}
+
 export default function ProcessGuidePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
       {/* ── Hero ── */}
       <section style={{ backgroundColor: '#1F2E2A' }} className="py-24 px-6 text-center text-white">
         <h1

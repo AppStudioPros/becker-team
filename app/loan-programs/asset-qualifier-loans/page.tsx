@@ -84,9 +84,24 @@ const faqs = [
   },
 ]
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'What is an Asset Qualifier loan?', acceptedAnswer: { '@type': 'Answer', text: 'It is a mortgage option that uses eligible assets rather than traditional income documentation for qualification.' } },
+    { '@type': 'Question', name: 'What documentation is typically required?', acceptedAnswer: { '@type': 'Answer', text: 'In the current example, the file was qualified with asset statements only. Your exact documentation will depend on the program and your scenario.' } },
+    { '@type': 'Question', name: 'Who tends to be a strong fit?', acceptedAnswer: { '@type': 'Answer', text: 'High-net-worth borrowers, retirees, and clients with complex tax returns are often strong fits.' } },
+    { '@type': 'Question', name: 'How much in assets do I need?', acceptedAnswer: { '@type': 'Answer', text: 'Current materials highlight 125% of the loan amount in assets as a key benchmark, but exact requirements depend on the borrower and current program guidelines.' } },
+    { '@type': 'Question', name: 'How many months of statements are required?', acceptedAnswer: { '@type': 'Answer', text: 'The current example used four months of portfolio statements. Our team will tell you exactly what applies to your situation.' } },
+    { '@type': 'Question', name: 'How fast can this close?', acceptedAnswer: { '@type': 'Answer', text: 'Timelines vary, but one current example closed in 3 weeks.' } },
+    { '@type': 'Question', name: 'Can this be used for a refinance?', acceptedAnswer: { '@type': 'Answer', text: 'This program is primarily positioned as a purchase-led solution, especially for borrowers who do not fit traditional underwriting well.' } }
+  ],
+}
+
 export default function AssetQualifierPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

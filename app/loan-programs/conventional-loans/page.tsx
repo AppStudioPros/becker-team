@@ -73,9 +73,23 @@ const faqs = [
   },
 ]
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'What is a conventional loan?', acceptedAnswer: { '@type': 'Answer', text: 'A conventional loan is a mortgage not insured or guaranteed by a government agency such as the FHA or VA. It is originated and serviced by a private lender, with terms based on the borrower\'s credit profile and financials.' } },
+    { '@type': 'Question', name: 'What credit score do I need?', acceptedAnswer: { '@type': 'Answer', text: 'Most conventional loans require a minimum credit score around 620, though stronger credit scores unlock better rates and terms.' } },
+    { '@type': 'Question', name: 'How much down payment is required?', acceptedAnswer: { '@type': 'Answer', text: 'Down payments can be as low as 3-5%. However, putting down 20% eliminates the requirement for private mortgage insurance.' } },
+    { '@type': 'Question', name: 'Do I need mortgage insurance?', acceptedAnswer: { '@type': 'Answer', text: 'If your down payment is less than 20%, private mortgage insurance (PMI) is typically required. It can be removed once you reach 20% equity in the home.' } },
+    { '@type': 'Question', name: 'What is the difference between conventional and FHA?', acceptedAnswer: { '@type': 'Answer', text: 'Conventional loans are not government-backed and typically require stronger credit. FHA loans are government-insured and allow lower credit scores, but require mortgage insurance for the life of the loan in most cases.' } },
+    { '@type': 'Question', name: 'Can I use a conventional loan for an investment property?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Conventional loans can be used for primary residences, second homes, and investment properties, subject to down payment and reserve requirements.' } }
+  ],
+}
+
 export default function ConventionalLoansPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -76,9 +76,23 @@ const faqs = [
   },
 ]
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'What exactly is the Home Mortgage Accelerator?', acceptedAnswer: { '@type': 'Answer', text: 'It is a cash-flow-driven mortgage strategy designed for borrowers with strong monthly net deposits. The goal is to use your actual financial flow more intentionally than a standard set-it-and-forget-it mortgage.' } },
+    { '@type': 'Question', name: 'Who is this a good fit for?', acceptedAnswer: { '@type': 'Answer', text: 'It tends to fit best for borrowers with strong, consistent net cash flow, disciplined spending habits and a serious interest in paying down their mortgage faster.' } },
+    { '@type': 'Question', name: 'Can this work for a purchase or just a refinance?', acceptedAnswer: { '@type': 'Answer', text: 'This can be positioned for both purchase and refinance scenarios, depending on the borrower and the opportunity.' } },
+    { '@type': 'Question', name: 'Have I seen this advertised as paying off a 30-year mortgage in 5-7 years?', acceptedAnswer: { '@type': 'Answer', text: 'No. That came from one illustrative comparison based on specific assumptions. Your results depend on your numbers, timing and behavior.' } },
+    { '@type': 'Question', name: 'Will you recommend this even if it does not fit?', acceptedAnswer: { '@type': 'Answer', text: 'No. If the strategy does not fit your goals or cash-flow profile, our team will tell you that directly.' } },
+    { '@type': 'Question', name: 'What information do I need to get started?', acceptedAnswer: { '@type': 'Answer', text: 'A realistic snapshot of your mortgage, monthly deposits, major expenses, available savings and payoff goals.' } }
+  ],
+}
+
 export default function MortgageAcceleratorPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

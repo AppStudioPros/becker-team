@@ -19,9 +19,27 @@ const programCells = [
   { title: 'Self Employed Loans',       href: '/loan-programs/self-employed-loans',   image: '/images/squarespace/lp-jumbo.jpg' },
 ]
 
+const itemListJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Mortgage Loan Programs — The Becker Team',
+  description: 'Full range of mortgage loan programs offered by Jamie Becker, NMLS #794730, in Colorado.',
+  url: 'https://www.thebeckerteam.com/loan-programs',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home Mortgage Accelerator', url: 'https://www.thebeckerteam.com/loan-programs/mortgage-accelerator' },
+    { '@type': 'ListItem', position: 2, name: 'Asset Qualifier Loans', url: 'https://www.thebeckerteam.com/loan-programs/asset-qualifier-loans' },
+    { '@type': 'ListItem', position: 3, name: 'Conventional Loans', url: 'https://www.thebeckerteam.com/loan-programs/conventional-loans' },
+    { '@type': 'ListItem', position: 4, name: 'FHA Loans', url: 'https://www.thebeckerteam.com/loan-programs/fha-loans' },
+    { '@type': 'ListItem', position: 5, name: 'VA Loans', url: 'https://www.thebeckerteam.com/loan-programs/va-loans' },
+    { '@type': 'ListItem', position: 6, name: 'Jumbo Loans', url: 'https://www.thebeckerteam.com/loan-programs/jumbo-loans' },
+    { '@type': 'ListItem', position: 7, name: 'Self Employed Loans', url: 'https://www.thebeckerteam.com/loan-programs/self-employed-loans' },
+  ],
+}
+
 export default function LoanProgramsPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       {/* ── Header ── */}
       <section
         className="relative py-12 md:py-20 px-6 text-center text-white"

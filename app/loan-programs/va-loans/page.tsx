@@ -73,9 +73,23 @@ const faqs = [
   },
 ]
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'Who is eligible for a VA loan?', acceptedAnswer: { '@type': 'Answer', text: 'Veterans, active-duty service members and eligible surviving spouses who meet minimum service requirements may qualify. Eligibility is confirmed through a Certificate of Eligibility (COE) from the VA.' } },
+    { '@type': 'Question', name: 'Is there really no down payment required?', acceptedAnswer: { '@type': 'Answer', text: 'In most cases, yes. Eligible VA borrowers can purchase a primary residence with zero down payment, subject to the loan amount and lender guidelines.' } },
+    { '@type': 'Question', name: 'What is the VA Funding Fee?', acceptedAnswer: { '@type': 'Answer', text: 'The funding fee is a one-time charge paid at closing in lieu of mortgage insurance. The amount varies based on your down payment, loan type and whether it is your first VA loan use. Some veterans — including those with service-connected disabilities — are exempt.' } },
+    { '@type': 'Question', name: 'Can I use my VA benefit more than once?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. VA loan entitlement can be restored and reused. If you have paid off a previous VA loan and sold the property, you may be able to restore your full entitlement.' } },
+    { '@type': 'Question', name: 'What types of properties can I buy with a VA loan?', acceptedAnswer: { '@type': 'Answer', text: 'VA loans are for primary residences only. This includes single-family homes, eligible condos, and multi-unit properties up to four units if the borrower occupies one unit.' } },
+    { '@type': 'Question', name: 'Do VA loans have loan limits?', acceptedAnswer: { '@type': 'Answer', text: 'For borrowers with full entitlement, there is no VA loan limit. For borrowers with reduced entitlement, limits may apply. Your lender can confirm how entitlement affects your specific scenario.' } }
+  ],
+}
+
 export default function VaLoansPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

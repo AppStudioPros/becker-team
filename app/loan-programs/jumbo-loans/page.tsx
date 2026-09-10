@@ -73,9 +73,23 @@ const faqs = [
   },
 ]
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'What makes a loan a jumbo loan?', acceptedAnswer: { '@type': 'Answer', text: 'A jumbo loan is any mortgage that exceeds the conforming loan limits set by the Federal Housing Finance Agency (FHFA). In most areas, that threshold is $806,500 for 2024.' } },
+    { '@type': 'Question', name: 'What credit score do I need for a jumbo loan?', acceptedAnswer: { '@type': 'Answer', text: 'Jumbo lenders typically require a minimum credit score of 700 or higher, though requirements vary by lender and loan size. Stronger credit generally means better terms.' } },
+    { '@type': 'Question', name: 'How much down payment is required?', acceptedAnswer: { '@type': 'Answer', text: 'Down payment requirements for jumbo loans are typically higher than conventional — often 10-20% or more, depending on the loan amount and lender guidelines.' } },
+    { '@type': 'Question', name: 'Are jumbo loans fixed or adjustable rate?', acceptedAnswer: { '@type': 'Answer', text: 'Both options are available. Fixed-rate jumbo loans provide payment stability over the life of the loan. Adjustable-rate jumbo loans may offer a lower initial rate for borrowers with a defined hold timeline.' } },
+    { '@type': 'Question', name: 'Do jumbo loans require mortgage insurance?', acceptedAnswer: { '@type': 'Answer', text: 'Jumbo loans are not government-backed, so they do not follow standard PMI rules. Reserve requirements and down payment minimums vary by lender and loan program.' } },
+    { '@type': 'Question', name: 'Can jumbo loans be used for second homes or investment properties?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, jumbo financing can apply to second homes and investment properties in many cases, subject to higher down payment and reserve requirements.' } }
+  ],
+}
+
 export default function JumboLoansPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

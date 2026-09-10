@@ -45,9 +45,34 @@ const jsonLd = {
   },
 }
 
+const ratingJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'The Becker Team — Xpert Home Lending',
+  url: 'https://www.thebeckerteam.com',
+  telephone: '(720) 492-3335',
+  email: 'Jamie@thebeckerteam.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '201 Columbine Street, Suite 300',
+    addressLocality: 'Denver',
+    addressRegion: 'CO',
+    postalCode: '80206',
+    addressCountry: 'US',
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5.0',
+    reviewCount: '50',
+    bestRating: '5',
+    worstRating: '1',
+  },
+}
+
 export default function HomePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ratingJsonLd) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -92,9 +92,23 @@ const faqs = [
   },
 ]
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'Do I need two years of self-employment history?', acceptedAnswer: { '@type': 'Answer', text: 'Not always. Our programs allow qualification with as little as one year of tax returns for borrowers who meet other qualifying criteria.' } },
+    { '@type': 'Question', name: 'What documentation can I use instead of W-2s?', acceptedAnswer: { '@type': 'Answer', text: 'Depending on the program, you may qualify using one year of tax returns, a 12-month rolling P&L statement, 12-24 months of bank statements, or asset depletion calculations.' } },
+    { '@type': 'Question', name: 'What is the P&L Statement Option?', acceptedAnswer: { '@type': 'Answer', text: 'A CPA or licensed accountant prepares a 12-month Profit & Loss statement that documents your business income. This can be used in place of tax returns to qualify.' } },
+    { '@type': 'Question', name: 'What is the Bank Statement Program?', acceptedAnswer: { '@type': 'Answer', text: 'Instead of tax returns, we use 12-24 months of personal or business bank statements to calculate average monthly income based on actual deposits.' } },
+    { '@type': 'Question', name: 'Can I use these programs for investment properties?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Self-employed loan programs are available for primary residences, second homes and investment properties, subject to program-specific down payment and reserve requirements.' } },
+    { '@type': 'Question', name: 'What loan amounts are available?', acceptedAnswer: { '@type': 'Answer', text: 'Loan amounts up to $3 million are available through our self-employed programs, with down payment options starting at 10% for qualified borrowers.' } }
+  ],
+}
+
 export default function SelfEmployedLoansPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

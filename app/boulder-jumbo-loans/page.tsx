@@ -68,7 +68,7 @@ export default function BoulderJumboPage() {
       <section
         className="relative py-28 md:py-40 px-6 text-white text-center"
         style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.60), rgba(20,35,25,0.60)), url("/images/cta-mountain.jpg")',
+          backgroundImage: 'linear-gradient(rgba(20,35,25,0.60), rgba(20,35,25,0.60)), url("/images/boulder-hero.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center 30%',
           backgroundColor: '#1F2E2A',

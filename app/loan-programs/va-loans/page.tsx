@@ -5,7 +5,7 @@ import { Check, ChevronLeft, ChevronRight } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'VA Loans | The Becker Team',
+  title: 'Best VA Mortgage Rates Colorado | VA Loans Colorado Springs | The Becker Team',
   description:
     'VA home loans for veterans, active-duty service members and eligible surviving spouses. No down payment, no PMI, competitive rates. Jamie Becker, NMLS #794730.',
 }
@@ -100,7 +100,7 @@ const loanJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LoanOrCredit',
   name: 'VA Loans',
-  description: 'VA mortgage loans for eligible veterans and active-duty service members. No down payment required. Colorado and beyond. NMLS #794730.',
+  description: 'Best VA mortgage rates in Colorado for veterans, active-duty service members, and eligible surviving spouses. Serving Colorado Springs, Fort Carson, Peterson SFB, Denver, and statewide. No down payment required. Jamie Becker NMLS #794730.',
   url: 'https://www.thebeckerteam.com/loan-programs/va-loans',
   provider: {
     '@type': 'FinancialService',

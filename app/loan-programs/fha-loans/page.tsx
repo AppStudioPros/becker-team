@@ -5,7 +5,7 @@ import { Check, ChevronLeft, ChevronRight } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'FHA Loans | The Becker Team',
+  title: 'Best FHA Mortgage Rates Colorado | FHA Loans Denver | The Becker Team',
   description:
     'Government-insured FHA loans with as little as 3.5% down and more flexible credit requirements. Great for first-time buyers. Jamie Becker, NMLS #794730.',
 }

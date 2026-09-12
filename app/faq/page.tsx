@@ -10,6 +10,16 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
+    category: 'Colorado Market',
+    items: [
+      { q: 'What is the CHFA loan program in Colorado?', a: "CHFA (Colorado Housing and Finance Authority) offers below-market interest rate loans and down payment assistance to qualifying first-time homebuyers and some repeat buyers across Colorado. Income limits and purchase price caps apply and vary by county. CHFA loans can be combined with other programs to reduce your upfront costs. Contact Jamie to find out if you qualify based on your income and target purchase area." },
+      { q: 'Does The Becker Team offer VA loans in Colorado Springs?', a: "Absolutely. Colorado Springs has one of the largest military concentrations in the country — Fort Carson, Peterson SFB, Schriever AFB, and the Air Force Academy. VA loans are a specialty at The Becker Team. Eligible veterans, active-duty service members, and surviving spouses can purchase with zero down, no PMI, and typically the best available rates. Jamie works with military clients at all Colorado installations and statewide." },
+      { q: 'Can I get a jumbo loan for a mountain property in Vail, Aspen, or Boulder?', a: "Yes. The Becker Team specializes in jumbo loans for Colorado's mountain resort markets. Vail, Aspen, Breckenridge, Boulder, and Summit County all qualify. Mountain resort properties sometimes require specialty financing including non-warrantable condo programs — Jamie has experience navigating all of it." },
+      { q: 'Do you offer mortgages for self-employed borrowers in Colorado?', a: "Yes. The Bank Statement Mortgage Program lets self-employed buyers, business owners, and freelancers qualify using 12-24 months of bank statements instead of tax returns. P&L and asset depletion options are also available — ideal for Colorado's large population of remote workers and tech entrepreneurs." },
+      { q: 'What Colorado cities does The Becker Team serve?', a: "The Becker Team is based in Denver and serves all of Colorado — including Denver, Aurora, Lakewood, Littleton, Colorado Springs, Boulder, Fort Collins, Vail, Aspen, Breckenridge, Steamboat Springs, Summit County, and the Western Slope. Jamie can work remotely with clients anywhere in the state." },
+    ],
+  },
+  {
     category: 'Getting Started',
     items: [
       { q: 'How do I know how much home I can afford?', a: 'Start with a pre-qualification call with Jamie. We review your income, debts, assets, and credit to give you a realistic purchase range — usually within 24 hours, at no cost.' },

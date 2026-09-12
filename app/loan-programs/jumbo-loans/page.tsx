@@ -5,7 +5,7 @@ import { Check, ChevronLeft, ChevronRight } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Jumbo Loans | The Becker Team',
+  title: 'Best Jumbo Mortgage Rates Colorado | Jumbo Loans Boulder, Vail, Aspen | The Becker Team',
   description:
     'Jumbo mortgage loans for luxury homes and high-cost properties exceeding conforming loan limits. Fixed and adjustable options available. Jamie Becker, NMLS #794730.',
 }
@@ -100,7 +100,7 @@ const loanJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LoanOrCredit',
   name: 'Jumbo Loans',
-  description: 'Jumbo mortgage loans exceeding conforming limits for luxury and high-value properties in Colorado. NMLS #794730.',
+  description: 'Best jumbo mortgage rates in Colorado for luxury and high-value properties. Serving Boulder, Aspen, Vail, Breckenridge, Summit County, and the Denver metro. Second home, vacation property, and investment jumbo financing. Jamie Becker NMLS #794730.',
   url: 'https://www.thebeckerteam.com/loan-programs/jumbo-loans',
   provider: {
     '@type': 'FinancialService',

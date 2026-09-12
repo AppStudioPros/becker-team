@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'Jamie Becker | Colorado Mortgage Broker | The Becker Team',
+  title: 'Local Colorado Mortgage Broker | Best Mortgage Rates Denver | The Becker Team',
   description:
     'Jamie Becker is a Colorado mortgage broker with 21+ years of experience helping advisors, agents, and households solve mortgage problems traditional underwriting cannot. NMLS #794730.',
 }

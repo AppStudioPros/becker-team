@@ -45,7 +45,20 @@ export function mortgageLoanSchema(name: string, desc: string, url: string) {
       },
     },
     areaServed: [
+      // Colorado — primary market
       { '@type': 'State', name: 'Colorado' },
+      { '@type': 'City', name: 'Denver', containedIn: { '@type': 'State', name: 'Colorado' } },
+      { '@type': 'City', name: 'Colorado Springs', containedIn: { '@type': 'State', name: 'Colorado' } },
+      { '@type': 'City', name: 'Boulder', containedIn: { '@type': 'State', name: 'Colorado' } },
+      { '@type': 'City', name: 'Fort Collins', containedIn: { '@type': 'State', name: 'Colorado' } },
+      { '@type': 'City', name: 'Aurora', containedIn: { '@type': 'State', name: 'Colorado' } },
+      { '@type': 'City', name: 'Lakewood', containedIn: { '@type': 'State', name: 'Colorado' } },
+      { '@type': 'City', name: 'Littleton', containedIn: { '@type': 'State', name: 'Colorado' } },
+      { '@type': 'City', name: 'Vail', containedIn: { '@type': 'State', name: 'Colorado' } },
+      { '@type': 'City', name: 'Aspen', containedIn: { '@type': 'State', name: 'Colorado' } },
+      { '@type': 'City', name: 'Breckenridge', containedIn: { '@type': 'State', name: 'Colorado' } },
+      { '@type': 'City', name: 'Steamboat Springs', containedIn: { '@type': 'State', name: 'Colorado' } },
+      // Additional states
       { '@type': 'State', name: 'Georgia' },
       { '@type': 'State', name: 'Oregon' },
     ],

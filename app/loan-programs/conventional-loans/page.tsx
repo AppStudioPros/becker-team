@@ -5,7 +5,7 @@ import { Check, ChevronLeft, ChevronRight } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Conventional Loans | The Becker Team',
+  title: 'Best Conventional Mortgage Rates Colorado | Denver Mortgage Broker | The Becker Team',
   description:
     'Conventional home loans from private lenders with flexible terms and competitive rates. As low as 3-5% down. Jamie Becker, NMLS #794730.',
 }
@@ -100,7 +100,7 @@ const loanJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LoanOrCredit',
   name: 'Conventional Loans',
-  description: 'Fixed and adjustable-rate conventional mortgage loans in Colorado. Flexible down payment options starting at 3-5%. NMLS #794730.',
+  description: 'Best conventional mortgage rates in Colorado. Local Denver mortgage broker Jamie Becker (NMLS #794730) offers 30-year fixed, 15-year fixed, and adjustable-rate conventional loans. Serving Denver, Aurora, Lakewood, Littleton, and the Front Range with as little as 3% down.',
   url: 'https://www.thebeckerteam.com/loan-programs/conventional-loans',
   provider: {
     '@type': 'FinancialService',

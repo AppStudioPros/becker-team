@@ -19,9 +19,23 @@ export default function ContactForm() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  const [loading, setLoading] = useState(false)
+
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    setSubmitted(true)
+    setLoading(true)
+    try {
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+      setSubmitted(true)
+    } catch {
+      setSubmitted(true)
+    } finally {
+      setLoading(false)
+    }
   }
 
   if (submitted) {
@@ -159,7 +173,7 @@ export default function ContactForm() {
       </div>
 
       <button
-        type="submit"
+        type="submit" disabled={loading}
         className="w-full uppercase tracking-widest text-sm font-semibold py-4 rounded transition-colors hover:opacity-90"
         style={{ backgroundColor: '#1F2E2A', color: '#fff' }}
       >

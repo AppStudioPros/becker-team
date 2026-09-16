@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
-import Image from 'next/image'
 import { createAdminClient } from '@/lib/supabase'
-import { Calendar } from 'lucide-react'
+import BlogClient from '@/components/BlogClient'
 
 export const metadata: Metadata = {
   title: 'Mortgage Blog | The Becker Team',
@@ -51,6 +49,7 @@ function formatDate(dateStr: string | null): string {
 
 export default async function BlogPage() {
   const posts = await getPublishedPosts()
+  const categories = [...new Set(posts.map(p => p.category).filter(Boolean))] as string[]
 
   return (
     <>
@@ -83,97 +82,7 @@ export default async function BlogPage() {
         style={{ backgroundColor: '#f5ecd8' }}
       >
         <div className="max-w-6xl mx-auto">
-          {posts.length === 0 ? (
-            <div className="text-center py-20">
-              <h2
-                className="text-2xl font-semibold mb-3"
-                style={{ fontFamily: 'var(--font-playfair)', color: '#1c3023' }}
-              >
-                Check Back Soon
-              </h2>
-              <p style={{ color: '#666' }}>
-                We are working on some great content. Check back shortly for mortgage tips and market updates.
-              </p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {posts.map((post) => (
-                <Link
-                  key={post.id}
-                  href={`/blog/${post.slug}`}
-                  className="block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer"
-                >
-                  {/* Feature image */}
-                  {post.feature_image ? (
-                    <div className="relative h-48 w-full overflow-hidden">
-                      <Image
-                        src={post.feature_image}
-                        alt={post.title}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                    </div>
-                  ) : (
-                    <div
-                      className="h-48 flex items-center justify-center"
-                      style={{ backgroundColor: '#ede4cc' }}
-                    >
-                      <span
-                        className="text-4xl font-bold opacity-20"
-                        style={{ fontFamily: 'var(--font-playfair)', color: '#1c3023' }}
-                      >
-                        BT
-                      </span>
-                    </div>
-                  )}
-
-                  {/* Card content */}
-                  <div className="p-6">
-                    <div className="flex items-center gap-2 mb-3 flex-wrap">
-                      {post.category && (
-                        <span
-                          className="text-xs font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full"
-                          style={{ backgroundColor: '#f5ecd8', color: '#1c3023' }}
-                        >
-                          {post.category}
-                        </span>
-                      )}
-                      {post.published_at && (
-                        <div className="flex items-center gap-1.5 text-xs" style={{ color: '#888' }}>
-                          <Calendar size={12} />
-                          <span>{formatDate(post.published_at)}</span>
-                        </div>
-                      )}
-                    </div>
-
-                    <h2
-                      className="text-lg font-semibold leading-snug mb-3"
-                      style={{ fontFamily: 'var(--font-playfair)', color: '#1c3023' }}
-                    >
-                      {post.title}
-                    </h2>
-
-                    {post.meta_description && (
-                      <p
-                        className="text-sm leading-relaxed mb-4 line-clamp-3"
-                        style={{ color: '#555' }}
-                      >
-                        {post.meta_description}
-                      </p>
-                    )}
-
-                    <span
-                      className="inline-block text-sm font-semibold"
-                      style={{ color: '#1c3023', borderBottom: '2px solid #c8972b' }}
-                    >
-                      Read More
-                    </span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          )}
+          <BlogClient posts={posts} categories={categories} />
         </div>
       </section>
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import ConditionalLayout from "@/components/ConditionalLayout";
+import ChatWidget from "@/components/ChatWidget";
 import AnimationProvider from "@/components/AnimationProvider";
 
 const playfair = Playfair_Display({
@@ -72,6 +73,7 @@ export default function RootLayout({
         <AnimationProvider />
         <ConditionalLayout>
           <main>{children}</main>
+          <ChatWidget />
         </ConditionalLayout>
       </body>
     </html>

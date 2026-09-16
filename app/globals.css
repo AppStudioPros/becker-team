@@ -153,109 +153,111 @@ a[style*="#B98942"]:hover {
 /* ─────────────────────────────────────────
    Blog Article Prose Styles
 ───────────────────────────────────────── */
-.prose h2 {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1c3023;
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
-  line-height: 1.3;
-}
+@layer components {
+  .prose h2 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1c3023;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
 
-.prose h3 {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #1c3023;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-  line-height: 1.3;
-}
+  .prose h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1c3023;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
 
-.prose p {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #333;
-  margin-bottom: 1.25rem;
-}
+  .prose p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 1.25rem;
+  }
 
-.prose strong {
-  font-weight: 600;
-  color: #1c3023;
-}
+  .prose strong {
+    font-weight: 600;
+    color: #1c3023;
+  }
 
-.prose em {
-  font-style: italic;
-}
+  .prose em {
+    font-style: italic;
+  }
 
-.prose ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-  margin-bottom: 1.25rem;
-}
+  .prose ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
 
-.prose ul li {
-  margin-bottom: 0.4rem;
-  line-height: 1.7;
-  color: #333;
-}
+  .prose ul li {
+    margin-bottom: 0.4rem;
+    line-height: 1.7;
+    color: #333;
+  }
 
-.prose ol {
-  list-style-type: decimal;
-  padding-left: 1.5rem;
-  margin-bottom: 1.25rem;
-}
+  .prose ol {
+    list-style-type: decimal;
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
 
-.prose ol li {
-  margin-bottom: 0.4rem;
-  line-height: 1.7;
-  color: #333;
-}
+  .prose ol li {
+    margin-bottom: 0.4rem;
+    line-height: 1.7;
+    color: #333;
+  }
 
-.prose a {
-  color: #1c3023;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
+  .prose a {
+    color: #1c3023;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
 
-.prose a:hover {
-  opacity: 0.75;
-}
+  .prose a:hover {
+    opacity: 0.75;
+  }
 
-.prose blockquote {
-  border-left: 4px solid #c8972b;
-  margin: 1.75rem 0;
-  padding: 0.75rem 1.25rem;
-  background-color: #fdf8ef;
-  border-radius: 0 8px 8px 0;
-}
+  .prose blockquote {
+    border-left: 4px solid #c8972b;
+    margin: 1.75rem 0;
+    padding: 0.75rem 1.25rem;
+    background-color: #fdf8ef;
+    border-radius: 0 8px 8px 0;
+  }
 
-.prose blockquote p {
-  font-size: 1.1rem;
-  font-style: italic;
-  color: #1c3023;
-  margin-bottom: 0;
-  line-height: 1.7;
-}
+  .prose blockquote p {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #1c3023;
+    margin-bottom: 0;
+    line-height: 1.7;
+  }
 
-.prose hr {
-  border: none;
-  border-top: 2px solid #ede4cc;
-  margin: 2rem 0;
-}
+  .prose hr {
+    border: none;
+    border-top: 2px solid #ede4cc;
+    margin: 2rem 0;
+  }
 
-.prose u {
-  text-underline-offset: 3px;
-}
+  .prose u {
+    text-underline-offset: 3px;
+  }
 
-.prose s {
-  opacity: 0.6;
-}
+  .prose s {
+    opacity: 0.6;
+  }
 
-.prose text-left { text-align: left; }
-.prose text-center { text-align: center; }
-.prose text-right { text-align: right; }
+  .prose [style*="text-align: left"] { text-align: left; }
+  .prose [style*="text-align: center"] { text-align: center; }
+  .prose [style*="text-align: right"] { text-align: right; }
+}
 
 /* Tiptap admin editor content */
 .ProseMirror {

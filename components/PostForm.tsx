@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import dynamic from 'next/dynamic'
 
 const TiptapEditor = dynamic(() => import('./TiptapEditor'), { ssr: false })
+const ImageUploader = dynamic(() => import('./ImageUploader'), { ssr: false })
 
 function slugify(str: string): string {
   return str
@@ -198,53 +199,30 @@ export default function PostForm({ initialData, isEdit }: PostFormProps) {
           </h2>
 
           <div className="flex flex-col gap-5">
-            <div>
-              <label className={labelClass} style={colorStyle}>
-                Feature Image URL
-              </label>
-              <input
-                type="url"
+            {/* Side-by-side image uploaders */}
+            <div className="grid grid-cols-2 gap-4">
+              <ImageUploader
+                label="Feature Image"
                 value={featureImage}
-                onChange={(e) => setFeatureImage(e.target.value)}
-                className={inputClass}
-                style={borderStyle}
-                placeholder="https://example.com/image.jpg"
+                onChange={setFeatureImage}
+              />
+              <ImageUploader
+                label="Mid-Section Image"
+                value={midImage}
+                onChange={setMidImage}
+                optional
               />
             </div>
 
+            {/* Single body editor */}
             <div>
               <label className={labelClass} style={colorStyle}>
-                Body (Top)
+                Post Content
               </label>
               <TiptapEditor
                 value={bodyTop}
                 onChange={setBodyTop}
-                placeholder="Main content above the mid-section image..."
-              />
-            </div>
-
-            <div>
-              <label className={labelClass} style={colorStyle}>
-                Mid-Section Image URL
-              </label>
-              <input
-                type="url"
-                value={midImage}
-                onChange={(e) => setMidImage(e.target.value)}
-                className={inputClass}
-                style={borderStyle}
-                placeholder="https://example.com/mid-image.jpg (optional)"
-              />
-            </div>
-
-            <div>
-              <label className={labelClass} style={colorStyle}>
-                Body (Bottom)
-              </label>
-              <TiptapEditor
-                value={bodyBottom}
-                onChange={setBodyBottom}
-                placeholder="Content below the mid-section image..."
+                placeholder="Write your post content here..."
               />
             </div>
           </div>

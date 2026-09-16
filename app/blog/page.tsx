@@ -21,13 +21,14 @@ interface BlogPost {
   feature_image: string | null
   meta_description: string | null
   category: string | null
+  hero_position: string | null
 }
 
 async function getPublishedPosts(): Promise<BlogPost[]> {
   const admin = createAdminClient()
   const { data, error } = await admin
     .from('becker_blog_posts')
-    .select('id, title, slug, published_at, feature_image, meta_description, category')
+    .select('id, title, slug, published_at, feature_image, meta_description, category, hero_position')
     .eq('status', 'published')
     .order('published_at', { ascending: false })
 

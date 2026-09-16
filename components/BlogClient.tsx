@@ -11,6 +11,7 @@ interface BlogPost {
   slug: string
   published_at: string | null
   feature_image: string | null
+  hero_position: string | null
   meta_description: string | null
   category: string | null
 }
@@ -149,6 +150,7 @@ export default function BlogClient({ posts, categories }: { posts: BlogPost[], c
                     alt={post.title}
                     fill
                     className="object-cover"
+                    style={{ objectPosition: post.hero_position || 'center center' }}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>

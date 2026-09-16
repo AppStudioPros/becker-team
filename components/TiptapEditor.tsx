@@ -65,9 +65,9 @@ export default function TiptapEditor({ value, onChange, placeholder }: TiptapEdi
 
   return (
     <div className="border rounded-lg overflow-hidden" style={{ borderColor: '#ede4cc' }}>
-      {/* Toolbar */}
+      {/* Toolbar — sticky so it stays visible while scrolling */}
       <div
-        className="flex flex-wrap items-center gap-0.5 px-3 py-2 border-b"
+        className="flex flex-wrap items-center gap-0.5 px-3 py-2 border-b sticky top-0 z-10"
         style={{ borderColor: '#ede4cc', backgroundColor: '#fafaf8' }}
       >
         {/* Text style */}

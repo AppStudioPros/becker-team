@@ -7,6 +7,7 @@ import dynamic from 'next/dynamic'
 const TiptapEditor = dynamic(() => import('./TiptapEditor'), { ssr: false })
 const ImageUploader = dynamic(() => import('./ImageUploader'), { ssr: false })
 const HeroPositionPicker = dynamic(() => import('./HeroPositionPicker'), { ssr: false })
+const PostPreviewModal = dynamic(() => import('./PostPreviewModal'), { ssr: false })
 
 function slugify(str: string): string {
   return str
@@ -42,6 +43,7 @@ export default function PostForm({ initialData, isEdit }: PostFormProps) {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [showPreview, setShowPreview] = useState(false)
 
   const [title, setTitle] = useState(initialData?.title || '')
   const [slug, setSlug] = useState(initialData?.slug || '')
@@ -385,6 +387,14 @@ export default function PostForm({ initialData, isEdit }: PostFormProps) {
           <div className="flex items-center justify-end gap-3">
             <button
               type="button"
+              onClick={() => setShowPreview(true)}
+              className="px-5 py-2.5 rounded-lg border text-sm font-semibold transition-colors hover:bg-gray-50"
+              style={{ borderColor: '#ede4cc', color: '#888' }}
+            >
+              Preview
+            </button>
+            <button
+              type="button"
               onClick={() => handleSave('draft')}
               disabled={loading}
               className="px-5 py-2.5 rounded-lg border text-sm font-semibold transition-colors hover:bg-gray-50 disabled:opacity-60"
@@ -405,5 +415,23 @@ export default function PostForm({ initialData, isEdit }: PostFormProps) {
         </div>
       </div>
     </div>
+
+    {showPreview && (
+      <PostPreviewModal
+        data={{
+          title,
+          slug,
+          feature_image: featureImage,
+          hero_position: heroPosition,
+          meta_description: metaDescription,
+          category,
+          body_top: bodyTop,
+          mid_image: midImage,
+          cta_text: ctaText,
+          cta_url: ctaUrl,
+        }}
+        onClose={() => setShowPreview(false)}
+      />
+    )}
   )
 }

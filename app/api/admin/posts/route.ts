@@ -53,6 +53,8 @@ export async function POST(req: NextRequest) {
       cta_text,
       cta_url,
       meta_description,
+      category,
+      keywords,
     } = body
 
     if (!title || !slug) {
@@ -70,6 +72,8 @@ export async function POST(req: NextRequest) {
       cta_text: cta_text || null,
       cta_url: cta_url || null,
       meta_description: meta_description || null,
+      category: category || null,
+      keywords: keywords || null,
       updated_at: new Date().toISOString(),
     }
 

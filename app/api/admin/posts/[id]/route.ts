@@ -59,6 +59,8 @@ export async function PUT(req: NextRequest, { params }: Params) {
       cta_text,
       cta_url,
       meta_description,
+      category,
+      keywords,
     } = body
 
     const updateData: Record<string, unknown> = {
@@ -72,6 +74,8 @@ export async function PUT(req: NextRequest, { params }: Params) {
       cta_text: cta_text || null,
       cta_url: cta_url || null,
       meta_description: meta_description || null,
+      category: category || null,
+      keywords: keywords || null,
       updated_at: new Date().toISOString(),
     }
 

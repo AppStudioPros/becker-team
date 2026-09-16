@@ -97,9 +97,10 @@ export default async function BlogPage() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {posts.map((post) => (
-                <article
+                <Link
                   key={post.id}
-                  className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+                  href={`/blog/${post.slug}`}
+                  className="block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer"
                 >
                   {/* Feature image */}
                   {post.feature_image ? (
@@ -154,15 +155,14 @@ export default async function BlogPage() {
                       </p>
                     )}
 
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      className="inline-block text-sm font-semibold transition-opacity hover:opacity-75"
+                    <span
+                      className="inline-block text-sm font-semibold"
                       style={{ color: '#1c3023', borderBottom: '2px solid #c8972b' }}
                     >
                       Read More
-                    </Link>
+                    </span>
                   </div>
-                </article>
+                </Link>
               ))}
             </div>
           )}

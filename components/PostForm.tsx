@@ -54,6 +54,16 @@ export default function PostForm({ initialData, isEdit }: PostFormProps) {
   const [ctaUrl, setCtaUrl] = useState(initialData?.cta_url || 'https://thebeckerteam.com/contact')
   const [category, setCategory] = useState(initialData?.category || '')
   const [keywords, setKeywords] = useState(initialData?.keywords || '')
+  const [dbCategories, setDbCategories] = useState<{ id: string; name: string }[]>([])
+  const [newCategory, setNewCategory] = useState('')
+  const [addingCategory, setAddingCategory] = useState(false)
+
+  useEffect(() => {
+    fetch('/api/admin/categories')
+      .then(r => r.json())
+      .then(setDbCategories)
+      .catch(() => {})
+  }, [])
 
   // Auto-generate slug from title
   useEffect(() => {
@@ -202,25 +212,67 @@ export default function PostForm({ initialData, isEdit }: PostFormProps) {
                 <label className={labelClass} style={colorStyle}>
                   Category
                 </label>
-                <input
-                  type="text"
+                <select
                   value={category}
-                  onChange={(e) => setCategory(e.target.value)}
+                  onChange={(e) => {
+                    if (e.target.value === '__add__') {
+                      setAddingCategory(true)
+                    } else {
+                      setCategory(e.target.value)
+                    }
+                  }}
                   className={inputClass}
                   style={borderStyle}
-                  placeholder="e.g. VA Loans, Market Updates"
-                  list="category-suggestions"
-                />
-                <datalist id="category-suggestions">
-                  <option value="Market Updates" />
-                  <option value="First-Time Buyers" />
-                  <option value="VA Loans" />
-                  <option value="FHA Loans" />
-                  <option value="Jumbo Loans" />
-                  <option value="Mortgage Tips" />
-                  <option value="Refinancing" />
-                  <option value="Colorado Real Estate" />
-                </datalist>
+                >
+                  <option value="">No category</option>
+                  {dbCategories.map(c => (
+                    <option key={c.id} value={c.name}>{c.name}</option>
+                  ))}
+                  <option value="__add__">+ Add new category...</option>
+                </select>
+                {addingCategory && (
+                  <div className="flex gap-2 mt-2">
+                    <input
+                      type="text"
+                      value={newCategory}
+                      onChange={(e) => setNewCategory(e.target.value)}
+                      className={`${inputClass} flex-1`}
+                      style={borderStyle}
+                      placeholder="New category name"
+                      autoFocus
+                    />
+                    <button
+                      type="button"
+                      onClick={async () => {
+                        if (!newCategory.trim()) return
+                        const res = await fetch('/api/admin/categories', {
+                          method: 'POST',
+                          headers: { 'Content-Type': 'application/json' },
+                          body: JSON.stringify({ name: newCategory.trim() }),
+                        })
+                        if (res.ok) {
+                          const cat = await res.json()
+                          setDbCategories(prev => [...prev, cat].sort((a, b) => a.name.localeCompare(b.name)))
+                          setCategory(cat.name)
+                          setNewCategory('')
+                          setAddingCategory(false)
+                        }
+                      }}
+                      className="px-3 py-2 text-sm font-semibold text-white rounded-lg"
+                      style={{ backgroundColor: '#1c3023' }}
+                    >
+                      Add
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => { setAddingCategory(false); setNewCategory('') }}
+                      className="px-3 py-2 text-sm rounded-lg border"
+                      style={{ borderColor: '#ede4cc', color: '#888' }}
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                )}
               </div>
 
               <div>

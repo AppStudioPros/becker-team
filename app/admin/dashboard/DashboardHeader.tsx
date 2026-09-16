@@ -90,6 +90,14 @@ export default function DashboardHeader() {
             </button>
 
             <Link
+              href="/admin/dashboard/categories"
+              className="text-sm font-semibold px-4 py-2 rounded transition-opacity hover:opacity-90 border"
+              style={{ borderColor: 'rgba(255,255,255,0.3)', color: 'white' }}
+            >
+              Categories
+            </Link>
+
+            <Link
               href="/admin/dashboard/new"
               className="bg-white text-sm font-semibold px-5 py-2 rounded transition-opacity hover:opacity-90"
               style={{ color: '#1c3023' }}

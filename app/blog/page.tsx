@@ -47,9 +47,17 @@ function formatDate(dateStr: string | null): string {
   })
 }
 
+async function getCategories(): Promise<string[]> {
+  const admin = createAdminClient()
+  const { data } = await admin
+    .from('becker_blog_categories')
+    .select('name')
+    .order('name', { ascending: true })
+  return (data || []).map(c => c.name)
+}
+
 export default async function BlogPage() {
-  const posts = await getPublishedPosts()
-  const categories = [...new Set(posts.map(p => p.category).filter(Boolean))] as string[]
+  const [posts, categories] = await Promise.all([getPublishedPosts(), getCategories()])
 
   return (
     <>

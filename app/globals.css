@@ -223,6 +223,40 @@ a[style*="#B98942"]:hover {
   opacity: 0.75;
 }
 
+.prose blockquote {
+  border-left: 4px solid #c8972b;
+  margin: 1.75rem 0;
+  padding: 0.75rem 1.25rem;
+  background-color: #fdf8ef;
+  border-radius: 0 8px 8px 0;
+}
+
+.prose blockquote p {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #1c3023;
+  margin-bottom: 0;
+  line-height: 1.7;
+}
+
+.prose hr {
+  border: none;
+  border-top: 2px solid #ede4cc;
+  margin: 2rem 0;
+}
+
+.prose u {
+  text-underline-offset: 3px;
+}
+
+.prose s {
+  opacity: 0.6;
+}
+
+.prose text-left { text-align: left; }
+.prose text-center { text-align: center; }
+.prose text-right { text-align: right; }
+
 /* Tiptap admin editor content */
 .ProseMirror {
   min-height: 160px;
@@ -265,4 +299,31 @@ a[style*="#B98942"]:hover {
   color: #aaa;
   pointer-events: none;
   height: 0;
+}
+
+.ProseMirror blockquote {
+  border-left: 4px solid #c8972b;
+  margin: 1.25rem 0;
+  padding: 0.6rem 1rem;
+  background-color: #fdf8ef;
+  border-radius: 0 6px 6px 0;
+  font-style: italic;
+  color: #1c3023;
+}
+
+.ProseMirror hr {
+  border: none;
+  border-top: 2px solid #ede4cc;
+  margin: 1.5rem 0;
+}
+
+.ProseMirror ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.ProseMirror ol li {
+  margin-bottom: 0.3rem;
+  line-height: 1.7;
 }

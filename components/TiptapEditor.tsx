@@ -64,10 +64,10 @@ export default function TiptapEditor({ value, onChange, placeholder }: TiptapEdi
   )
 
   return (
-    <div className="border rounded-lg overflow-hidden" style={{ borderColor: '#ede4cc' }}>
-      {/* Toolbar — sticky so it stays visible while scrolling */}
+    <div className="border rounded-lg" style={{ borderColor: '#ede4cc' }}>
+      {/* Toolbar — always visible above the scrollable content area */}
       <div
-        className="flex flex-wrap items-center gap-0.5 px-3 py-2 border-b sticky top-0 z-10"
+        className="flex flex-wrap items-center gap-0.5 px-3 py-2 border-b rounded-t-lg"
         style={{ borderColor: '#ede4cc', backgroundColor: '#fafaf8' }}
       >
         {/* Text style */}
@@ -108,8 +108,8 @@ export default function TiptapEditor({ value, onChange, placeholder }: TiptapEdi
         <button type="button" onClick={() => editor.chain().focus().clearNodes().unsetAllMarks().run()} className={btn(false)} title="Clear formatting"><RemoveFormatting size={15} /></button>
       </div>
 
-      {/* Editor area */}
-      <div className="relative" style={{ minHeight: '200px', backgroundColor: '#fff' }}>
+      {/* Editor area — scrolls independently so toolbar stays visible */}
+      <div className="relative rounded-b-lg" style={{ minHeight: '200px', maxHeight: '500px', overflowY: 'auto', backgroundColor: '#fff' }}>
         {!editor.getText() && placeholder && (
           <p className="absolute pointer-events-none px-4 py-3 text-sm" style={{ color: '#aaa' }}>
             {placeholder}

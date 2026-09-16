@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import ConditionalLayout from "@/components/ConditionalLayout";
 import AnimationProvider from "@/components/AnimationProvider";
 
 const playfair = Playfair_Display({
@@ -70,10 +69,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <body>
-        <Navbar />
         <AnimationProvider />
-        <main>{children}</main>
-        <Footer />
+        <ConditionalLayout>
+          <main>{children}</main>
+        </ConditionalLayout>
       </body>
     </html>
   );

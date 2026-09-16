@@ -264,62 +264,27 @@ export default function PostForm({ initialData, isEdit }: PostFormProps) {
           </div>
         </div>
 
-        {/* Status + Save buttons */}
+        {/* Save buttons */}
         <div className="bg-white rounded-xl shadow-sm p-6">
-          <div className="flex items-center justify-between gap-4 flex-wrap">
-            {/* Status toggle */}
-            <div className="flex items-center gap-3">
-              <span className="text-sm font-medium" style={colorStyle}>Status:</span>
-              <div
-                className="flex rounded-lg overflow-hidden border text-sm font-medium"
-                style={{ borderColor: '#ede4cc' }}
-              >
-                <button
-                  type="button"
-                  onClick={() => setStatus('draft')}
-                  className="px-4 py-2 transition-colors"
-                  style={{
-                    backgroundColor: status === 'draft' ? '#1c3023' : '#fff',
-                    color: status === 'draft' ? '#fff' : '#888',
-                  }}
-                >
-                  Draft
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setStatus('published')}
-                  className="px-4 py-2 transition-colors"
-                  style={{
-                    backgroundColor: status === 'published' ? '#1c3023' : '#fff',
-                    color: status === 'published' ? '#fff' : '#888',
-                  }}
-                >
-                  Published
-                </button>
-              </div>
-            </div>
-
-            {/* Save buttons */}
-            <div className="flex items-center gap-3">
-              <button
-                type="button"
-                onClick={() => handleSave('draft')}
-                disabled={loading}
-                className="px-5 py-2.5 rounded-lg border text-sm font-semibold transition-colors hover:bg-gray-50 disabled:opacity-60"
-                style={{ borderColor: '#ede4cc', color: '#1c3023' }}
-              >
-                {loading ? 'Saving...' : 'Save Draft'}
-              </button>
-              <button
-                type="button"
-                onClick={() => handleSave('published')}
-                disabled={loading}
-                className="px-5 py-2.5 rounded-lg text-white text-sm font-semibold transition-opacity hover:opacity-90 disabled:opacity-60"
-                style={{ backgroundColor: '#1c3023' }}
-              >
-                {loading ? 'Saving...' : 'Publish'}
-              </button>
-            </div>
+          <div className="flex items-center justify-end gap-3">
+            <button
+              type="button"
+              onClick={() => handleSave('draft')}
+              disabled={loading}
+              className="px-5 py-2.5 rounded-lg border text-sm font-semibold transition-colors hover:bg-gray-50 disabled:opacity-60"
+              style={{ borderColor: '#ede4cc', color: '#1c3023' }}
+            >
+              {loading ? 'Saving...' : 'Save Draft'}
+            </button>
+            <button
+              type="button"
+              onClick={() => handleSave('published')}
+              disabled={loading}
+              className="px-5 py-2.5 rounded-lg text-white text-sm font-semibold transition-opacity hover:opacity-90 disabled:opacity-60"
+              style={{ backgroundColor: '#1c3023' }}
+            >
+              {loading ? 'Saving...' : isEdit && initialData?.status === 'published' ? 'Update' : 'Publish'}
+            </button>
           </div>
         </div>
       </div>

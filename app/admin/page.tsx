@@ -3,9 +3,11 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
+import { createClient } from '@/lib/supabase/client'
 
 export default function AdminLoginPage() {
   const router = useRouter()
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
@@ -16,16 +18,16 @@ export default function AdminLoginPage() {
     setLoading(true)
 
     try {
-      const res = await fetch('/api/admin/auth', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ password }),
+      const supabase = createClient()
+      const { error: authError } = await supabase.auth.signInWithPassword({
+        email,
+        password,
       })
 
-      if (res.ok) {
-        router.push('/admin/dashboard')
+      if (authError) {
+        setError('Invalid email or password.')
       } else {
-        setError('Incorrect password. Please try again.')
+        router.push('/admin/dashboard')
       }
     } catch {
       setError('Something went wrong. Please try again.')
@@ -66,6 +68,33 @@ export default function AdminLoginPage() {
           <form onSubmit={handleSubmit} className="flex flex-col gap-5">
             <div>
               <label
+                htmlFor="email"
+                className="block text-sm font-medium mb-1"
+                style={{ color: '#1c3023' }}
+              >
+                Email
+              </label>
+              <input
+                id="email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                autoComplete="email"
+                className="w-full border rounded-lg px-4 py-3 text-sm outline-none transition-all"
+                style={{
+                  borderColor: '#ede4cc',
+                  color: '#1c3023',
+                  backgroundColor: '#fafaf8',
+                }}
+                onFocus={(e) => (e.currentTarget.style.borderColor = '#1c3023')}
+                onBlur={(e) => (e.currentTarget.style.borderColor = '#ede4cc')}
+                placeholder="you@example.com"
+              />
+            </div>
+
+            <div>
+              <label
                 htmlFor="password"
                 className="block text-sm font-medium mb-1"
                 style={{ color: '#1c3023' }}
@@ -87,7 +116,7 @@ export default function AdminLoginPage() {
                 }}
                 onFocus={(e) => (e.currentTarget.style.borderColor = '#1c3023')}
                 onBlur={(e) => (e.currentTarget.style.borderColor = '#ede4cc')}
-                placeholder="Enter admin password"
+                placeholder="Enter your password"
               />
             </div>
 
@@ -104,6 +133,10 @@ export default function AdminLoginPage() {
               {loading ? 'Signing in...' : 'Sign In'}
             </button>
           </form>
+
+          <p className="text-center text-xs mt-8" style={{ color: '#aaa' }}>
+            Need access? Contact your administrator.
+          </p>
         </div>
 
         <p className="text-center text-xs mt-6" style={{ color: '#888' }}>

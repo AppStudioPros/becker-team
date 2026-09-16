@@ -1,6 +1,6 @@
-import Link from 'next/link'
 import { createAdminClient } from '@/lib/supabase'
 import DashboardActions from './DashboardActions'
+import DashboardHeader from './DashboardHeader'
 
 export const dynamic = 'force-dynamic'
 
@@ -41,36 +41,7 @@ export default async function DashboardPage() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#f5ecd8' }}>
-      {/* Top bar */}
-      <div
-        className="sticky top-0 z-10 shadow-sm"
-        style={{ backgroundColor: '#1c3023' }}
-      >
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <h1
-            className="text-white text-xl font-semibold"
-            style={{ fontFamily: 'var(--font-playfair)' }}
-          >
-            Blog Dashboard
-          </h1>
-          <div className="flex items-center gap-4">
-            <Link
-              href="/"
-              className="text-white/70 text-sm hover:text-white transition-colors"
-              target="_blank"
-            >
-              View Site
-            </Link>
-            <Link
-              href="/admin/dashboard/new"
-              className="bg-white text-sm font-semibold px-5 py-2 rounded transition-opacity hover:opacity-90"
-              style={{ color: '#1c3023' }}
-            >
-              + New Post
-            </Link>
-          </div>
-        </div>
-      </div>
+      <DashboardHeader />
 
       <div className="max-w-6xl mx-auto px-6 py-10">
         {/* Stats bar */}
@@ -110,13 +81,13 @@ export default async function DashboardPage() {
               <p className="text-sm mb-6" style={{ color: '#888' }}>
                 Create your first blog post to get started.
               </p>
-              <Link
+              <a
                 href="/admin/dashboard/new"
                 className="inline-block px-6 py-3 rounded-lg text-white text-sm font-semibold"
                 style={{ backgroundColor: '#1c3023' }}
               >
                 Create First Post
-              </Link>
+              </a>
             </div>
           ) : (
             <div className="divide-y" style={{ borderColor: '#ede4cc' }}>
@@ -152,7 +123,10 @@ export default async function DashboardPage() {
                   </span>
 
                   {/* Date */}
-                  <span className="shrink-0 text-sm hidden sm:block" style={{ color: '#888', minWidth: '100px', textAlign: 'right' }}>
+                  <span
+                    className="shrink-0 text-sm hidden sm:block"
+                    style={{ color: '#888', minWidth: '100px', textAlign: 'right' }}
+                  >
                     {post.status === 'published'
                       ? formatDate(post.published_at)
                       : `Draft ${formatDate(post.created_at)}`}

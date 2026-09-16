@@ -1,8 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createAdminClient } from '@/lib/supabase'
+import { createClient } from '@/lib/supabase/server'
+
+async function requireSession() {
+  const supabase = await createClient()
+  const {
+    data: { session },
+  } = await supabase.auth.getSession()
+  return session
+}
 
 export async function GET() {
   try {
+    const session = await requireSession()
+    if (!session) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
     const admin = createAdminClient()
     const { data, error } = await admin
       .from('becker_blog_posts')
@@ -20,6 +34,11 @@ export async function GET() {
 
 export async function POST(req: NextRequest) {
   try {
+    const session = await requireSession()
+    if (!session) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
     const admin = createAdminClient()
     const body = await req.json()
 

@@ -98,12 +98,15 @@ export default async function DashboardPage() {
                 >
                   {/* Post info */}
                   <div className="flex-1 min-w-0">
-                    <p
-                      className="font-medium truncate"
+                    <a
+                      href={`/blog/${post.slug}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium truncate hover:underline"
                       style={{ color: '#1c3023' }}
                     >
                       {post.title}
-                    </p>
+                    </a>
                     <p className="text-xs mt-0.5 truncate" style={{ color: '#888' }}>
                       /blog/{post.slug}
                     </p>

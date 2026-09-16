@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@keyframes becker-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(28, 48, 35, 0); }
+  50% { box-shadow: 0 0 18px 8px rgba(200, 151, 43, 0.35); }
+}
+
 @theme {
   --color-forest: #1F2E2A;
   --color-forest-light: #2a4030;

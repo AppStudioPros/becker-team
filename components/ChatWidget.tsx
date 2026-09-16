@@ -261,9 +261,9 @@ export default function ChatWidget() {
         ) : (
           <NodeOrb className="w-9 h-9" />
         )}
-        {/* Pulse ring */}
+        {/* Slow glow */}
         {!open && (
-          <span className="absolute inset-0 rounded-full animate-ping opacity-20" style={{ backgroundColor: '#1c3023' }} />
+          <span className="absolute inset-0 rounded-full" style={{ animation: 'becker-glow 3s ease-in-out infinite' }} />
         )}
       </button>
     </div>

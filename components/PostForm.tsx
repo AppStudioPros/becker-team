@@ -142,6 +142,7 @@ export default function PostForm({ initialData, isEdit }: PostFormProps) {
   const colorStyle = { color: '#1c3023' }
 
   return (
+    <>
     <div className="max-w-3xl mx-auto">
       {error && (
         <div className="mb-6 bg-red-50 border border-red-200 text-red-700 rounded-lg px-4 py-3 text-sm">
@@ -433,5 +434,6 @@ export default function PostForm({ initialData, isEdit }: PostFormProps) {
         onClose={() => setShowPreview(false)}
       />
     )}
+    </>
   )
 }

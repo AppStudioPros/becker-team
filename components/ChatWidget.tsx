@@ -113,23 +113,35 @@ export default function ChatWidget() {
   const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
+  const [chatEnded, setChatEnded] = useState(false)
   const bottomRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     if (open) {
       setTimeout(() => inputRef.current?.focus(), 100)
-      bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
     }
-  }, [open, messages])
+  }, [open])
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }, [messages, loading])
+
+  function clearChat() {
+    setMessages([])
+    setChatEnded(false)
+  }
 
   async function sendMessage(text: string) {
-    if (!text.trim() || loading) return
+    if (!text.trim() || loading || chatEnded) return
     const userMsg: Message = { role: 'user', content: text.trim() }
     const next = [...messages, userMsg]
     setMessages(next)
     setInput('')
     setLoading(true)
+
+    // Add empty assistant message to stream into
+    setMessages(prev => [...prev, { role: 'assistant', content: '' }])
 
     try {
       const res = await fetch('/api/chat', {
@@ -137,10 +149,53 @@ export default function ChatWidget() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: next }),
       })
-      const data = await res.json()
-      setMessages(prev => [...prev, { role: 'assistant', content: data.message }])
+
+      if (!res.ok || !res.body) {
+        setMessages(prev => {
+          const updated = [...prev]
+          updated[updated.length - 1] = { role: 'assistant', content: "Something went wrong. You can reach Jamie at (720) 492-3335!" }
+          return updated
+        })
+        setLoading(false)
+        return
+      }
+
+      const reader = res.body.getReader()
+      const decoder = new TextDecoder()
+      let fullText = ''
+
+      while (true) {
+        const { done, value } = await reader.read()
+        if (done) break
+        const chunk = decoder.decode(value, { stream: true })
+        const lines = chunk.split('\n')
+        for (const line of lines) {
+          if (!line.startsWith('data: ')) continue
+          const raw = line.slice(6)
+          if (raw === '[DONE]') break
+          try {
+            const parsed = JSON.parse(raw)
+            if (parsed.text) {
+              fullText += parsed.text
+              const cleaned = fullText.replace('[CHAT_ENDED]', '').trim()
+              setMessages(prev => {
+                const updated = [...prev]
+                updated[updated.length - 1] = { role: 'assistant', content: cleaned }
+                return updated
+              })
+              if (fullText.includes('[CHAT_ENDED]')) {
+                setChatEnded(true)
+              }
+            }
+          } catch { /* skip malformed */ }
+        }
+      }
     } catch {
-      setMessages(prev => [...prev, { role: 'assistant', content: "Sorry about that — something went wrong on my end. Feel free to reach out to Jamie directly at thebeckerteam.com/contact!" }])
+      setMessages(prev => {
+        const updated = [...prev]
+        updated[updated.length - 1] = { role: 'assistant', content: "Something went wrong. You can reach Jamie at (720) 492-3335!" }
+        return updated
+      })
     }
     setLoading(false)
   }
@@ -168,7 +223,7 @@ export default function ChatWidget() {
               <div className="flex items-center gap-2">
                 {messages.length > 0 && (
                   <button
-                    onClick={() => setMessages([])}
+                    onClick={clearChat}
                     className="text-xs px-2.5 py-1 rounded transition-colors hover:bg-white/10"
                     style={{ color: 'rgba(245,236,216,0.6)' }}
                   >
@@ -253,29 +308,42 @@ export default function ChatWidget() {
 
           {/* Input */}
           <div className="px-3 py-3 border-t shrink-0" style={{ borderColor: '#ede4cc', backgroundColor: '#fff' }}>
-            <form
-              onSubmit={(e) => { e.preventDefault(); sendMessage(input) }}
-              className="flex items-center gap-2"
-            >
-              <input
-                ref={inputRef}
-                type="text"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                placeholder="Type a message..."
-                disabled={loading}
-                className="flex-1 text-sm px-3 py-2.5 rounded-lg border outline-none disabled:opacity-50"
-                style={{ borderColor: '#ede4cc', color: '#1c3023' }}
-              />
-              <button
-                type="submit"
-                disabled={!input.trim() || loading}
-                className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 disabled:opacity-40 transition-opacity"
-                style={{ backgroundColor: '#1c3023' }}
+            {chatEnded ? (
+              <div className="text-center">
+                <p className="text-xs mb-2" style={{ color: '#aaa' }}>This chat session has ended.</p>
+                <button
+                  onClick={clearChat}
+                  className="text-xs font-semibold px-4 py-2 rounded-lg"
+                  style={{ backgroundColor: '#1c3023', color: '#f5ecd8' }}
+                >
+                  Start a New Chat
+                </button>
+              </div>
+            ) : (
+              <form
+                onSubmit={(e) => { e.preventDefault(); sendMessage(input) }}
+                className="flex items-center gap-2"
               >
-                <Send size={14} color="#f5ecd8" />
-              </button>
-            </form>
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  placeholder="Type a message..."
+                  disabled={loading}
+                  className="flex-1 text-sm px-3 py-2.5 rounded-lg border outline-none disabled:opacity-50"
+                  style={{ borderColor: '#ede4cc', color: '#1c3023' }}
+                />
+                <button
+                  type="submit"
+                  disabled={!input.trim() || loading}
+                  className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 disabled:opacity-40 transition-opacity"
+                  style={{ backgroundColor: '#1c3023' }}
+                >
+                  <Send size={14} color="#f5ecd8" />
+                </button>
+              </form>
+            )}
           </div>
         </div>
       )}

@@ -55,17 +55,22 @@ export default async function BlogPage() {
     <>
       {/* Hero */}
       <section
-        className="py-20 px-6"
-        style={{ backgroundColor: '#1c3023' }}
+        className="relative py-24 px-6 flex items-center justify-center overflow-hidden"
+        style={{ minHeight: '320px' }}
       >
-        <div className="max-w-4xl mx-auto text-center">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: 'url("/blog-hero.jpg")' }}
+        />
+        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(11,30,61,0.72)' }} />
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
           <h1
             className="text-4xl md:text-5xl font-bold text-white mb-4"
             style={{ fontFamily: 'var(--font-playfair)' }}
           >
             Mortgage Insights
           </h1>
-          <p className="text-lg" style={{ color: 'rgba(255,255,255,0.75)' }}>
+          <p className="text-lg" style={{ color: 'rgba(255,255,255,0.8)' }}>
             Tips, updates, and real talk on home loans from Jamie Becker and The Becker Team.
           </p>
         </div>

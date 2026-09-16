@@ -61,6 +61,7 @@ export async function PUT(req: NextRequest, { params }: Params) {
       meta_description,
       category,
       keywords,
+      hero_position,
     } = body
 
     const updateData: Record<string, unknown> = {
@@ -76,6 +77,7 @@ export async function PUT(req: NextRequest, { params }: Params) {
       meta_description: meta_description || null,
       category: category || null,
       keywords: keywords || null,
+      hero_position: hero_position || 'center center',
       updated_at: new Date().toISOString(),
     }
 

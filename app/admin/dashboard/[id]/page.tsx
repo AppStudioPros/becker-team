@@ -64,6 +64,7 @@ export default async function EditPostPage({ params }: Params) {
             cta_url: post.cta_url,
             category: post.category,
             keywords: post.keywords,
+            hero_position: post.hero_position,
           }}
           isEdit
         />

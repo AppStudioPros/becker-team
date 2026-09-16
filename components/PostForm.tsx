@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic'
 
 const TiptapEditor = dynamic(() => import('./TiptapEditor'), { ssr: false })
 const ImageUploader = dynamic(() => import('./ImageUploader'), { ssr: false })
+const HeroPositionPicker = dynamic(() => import('./HeroPositionPicker'), { ssr: false })
 
 function slugify(str: string): string {
   return str
@@ -31,6 +32,7 @@ interface PostFormProps {
     cta_text?: string
     category?: string
     keywords?: string
+    hero_position?: string
     cta_url?: string
   }
   isEdit?: boolean
@@ -54,6 +56,7 @@ export default function PostForm({ initialData, isEdit }: PostFormProps) {
   const [ctaUrl, setCtaUrl] = useState(initialData?.cta_url || 'https://thebeckerteam.com/contact')
   const [category, setCategory] = useState(initialData?.category || '')
   const [keywords, setKeywords] = useState(initialData?.keywords || '')
+  const [heroPosition, setHeroPosition] = useState(initialData?.hero_position || 'center center')
   const [dbCategories, setDbCategories] = useState<{ id: string; name: string }[]>([])
   const [newCategory, setNewCategory] = useState('')
   const [addingCategory, setAddingCategory] = useState(false)
@@ -98,6 +101,7 @@ export default function PostForm({ initialData, isEdit }: PostFormProps) {
         cta_url: ctaUrl,
         category: category || null,
         keywords: keywords || null,
+        hero_position: heroPosition || 'center center',
       }
 
       let res: Response
@@ -316,6 +320,15 @@ export default function PostForm({ initialData, isEdit }: PostFormProps) {
                 optional
               />
             </div>
+
+            {/* Hero position picker — only shows when feature image is set */}
+            {featureImage && (
+              <HeroPositionPicker
+                value={heroPosition}
+                onChange={setHeroPosition}
+                previewUrl={featureImage}
+              />
+            )}
 
             {/* Single body editor */}
             <div>

@@ -55,6 +55,7 @@ export async function POST(req: NextRequest) {
       meta_description,
       category,
       keywords,
+      hero_position,
     } = body
 
     if (!title || !slug) {
@@ -74,6 +75,7 @@ export async function POST(req: NextRequest) {
       meta_description: meta_description || null,
       category: category || null,
       keywords: keywords || null,
+      hero_position: hero_position || 'center center',
       updated_at: new Date().toISOString(),
     }
 

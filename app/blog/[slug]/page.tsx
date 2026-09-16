@@ -79,6 +79,7 @@ export default async function BlogPostPage({ params }: Params) {
             alt={post.title}
             fill
             className="object-cover"
+            style={{ objectPosition: post.hero_position || 'center center' }}
             sizes="100vw"
             priority
           />

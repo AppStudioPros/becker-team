@@ -29,6 +29,8 @@ interface PostFormProps {
     mid_image?: string
     body_bottom?: string
     cta_text?: string
+    category?: string
+    keywords?: string
     cta_url?: string
   }
   isEdit?: boolean
@@ -50,6 +52,8 @@ export default function PostForm({ initialData, isEdit }: PostFormProps) {
   const [bodyBottom, setBodyBottom] = useState(initialData?.body_bottom || '')
   const [ctaText, setCtaText] = useState(initialData?.cta_text || 'Schedule a Free Strategy Call')
   const [ctaUrl, setCtaUrl] = useState(initialData?.cta_url || 'https://thebeckerteam.com/contact')
+  const [category, setCategory] = useState(initialData?.category || '')
+  const [keywords, setKeywords] = useState(initialData?.keywords || '')
 
   // Auto-generate slug from title
   useEffect(() => {
@@ -82,6 +86,8 @@ export default function PostForm({ initialData, isEdit }: PostFormProps) {
         body_bottom: bodyBottom,
         cta_text: ctaText,
         cta_url: ctaUrl,
+        category: category || null,
+        keywords: keywords || null,
       }
 
       let res: Response
@@ -188,6 +194,51 @@ export default function PostForm({ initialData, isEdit }: PostFormProps) {
               <p className="text-xs mt-1" style={{ color: '#aaa' }}>
                 {metaDescription.length}/160 characters
               </p>
+            </div>
+
+            {/* Category + Keywords side by side */}
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className={labelClass} style={colorStyle}>
+                  Category
+                </label>
+                <input
+                  type="text"
+                  value={category}
+                  onChange={(e) => setCategory(e.target.value)}
+                  className={inputClass}
+                  style={borderStyle}
+                  placeholder="e.g. VA Loans, Market Updates"
+                  list="category-suggestions"
+                />
+                <datalist id="category-suggestions">
+                  <option value="Market Updates" />
+                  <option value="First-Time Buyers" />
+                  <option value="VA Loans" />
+                  <option value="FHA Loans" />
+                  <option value="Jumbo Loans" />
+                  <option value="Mortgage Tips" />
+                  <option value="Refinancing" />
+                  <option value="Colorado Real Estate" />
+                </datalist>
+              </div>
+
+              <div>
+                <label className={labelClass} style={colorStyle}>
+                  SEO Keywords
+                </label>
+                <input
+                  type="text"
+                  value={keywords}
+                  onChange={(e) => setKeywords(e.target.value)}
+                  className={inputClass}
+                  style={borderStyle}
+                  placeholder="mortgage, Colorado, home loan, Jamie Becker"
+                />
+                <p className="text-xs mt-1" style={{ color: '#aaa' }}>
+                  Separate with commas
+                </p>
+              </div>
             </div>
           </div>
         </div>

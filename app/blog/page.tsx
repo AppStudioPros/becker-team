@@ -22,13 +22,14 @@ interface BlogPost {
   published_at: string | null
   feature_image: string | null
   meta_description: string | null
+  category: string | null
 }
 
 async function getPublishedPosts(): Promise<BlogPost[]> {
   const admin = createAdminClient()
   const { data, error } = await admin
     .from('becker_blog_posts')
-    .select('id, title, slug, published_at, feature_image, meta_description')
+    .select('id, title, slug, published_at, feature_image, meta_description, category')
     .eq('status', 'published')
     .order('published_at', { ascending: false })
 
@@ -129,15 +130,22 @@ export default async function BlogPage() {
 
                   {/* Card content */}
                   <div className="p-6">
-                    {post.published_at && (
-                      <div
-                        className="flex items-center gap-1.5 text-xs mb-3"
-                        style={{ color: '#888' }}
-                      >
-                        <Calendar size={12} />
-                        <span>{formatDate(post.published_at)}</span>
-                      </div>
-                    )}
+                    <div className="flex items-center gap-2 mb-3 flex-wrap">
+                      {post.category && (
+                        <span
+                          className="text-xs font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full"
+                          style={{ backgroundColor: '#f5ecd8', color: '#1c3023' }}
+                        >
+                          {post.category}
+                        </span>
+                      )}
+                      {post.published_at && (
+                        <div className="flex items-center gap-1.5 text-xs" style={{ color: '#888' }}>
+                          <Calendar size={12} />
+                          <span>{formatDate(post.published_at)}</span>
+                        </div>
+                      )}
+                    </div>
 
                     <h2
                       className="text-lg font-semibold leading-snug mb-3"

@@ -42,6 +42,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   return {
     title: post.title,
     description: post.meta_description || undefined,
+    keywords: post.keywords || undefined,
     alternates: {
       canonical: `https://www.thebeckerteam.com/blog/${post.slug}`,
     },
@@ -104,15 +105,22 @@ export default async function BlogPostPage({ params }: Params) {
 
           {/* Post header */}
           <header className="mb-10">
-            {post.published_at && (
-              <div
-                className="flex items-center gap-1.5 text-sm mb-4"
-                style={{ color: '#888' }}
-              >
-                <Calendar size={14} />
-                <span>{formatDate(post.published_at)}</span>
-              </div>
-            )}
+            <div className="flex items-center gap-3 mb-4 flex-wrap">
+              {post.category && (
+                <span
+                  className="text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full"
+                  style={{ backgroundColor: '#f5ecd8', color: '#1c3023' }}
+                >
+                  {post.category}
+                </span>
+              )}
+              {post.published_at && (
+                <div className="flex items-center gap-1.5 text-sm" style={{ color: '#888' }}>
+                  <Calendar size={14} />
+                  <span>{formatDate(post.published_at)}</span>
+                </div>
+              )}
+            </div>
             <h1
               className="text-3xl md:text-4xl font-bold leading-tight"
               style={{ fontFamily: 'var(--font-playfair)', color: '#1c3023' }}

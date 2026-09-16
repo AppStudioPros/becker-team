@@ -48,8 +48,8 @@ export default function PostForm({ initialData, isEdit }: PostFormProps) {
   const [bodyTop, setBodyTop] = useState(initialData?.body_top || '')
   const [midImage, setMidImage] = useState(initialData?.mid_image || '')
   const [bodyBottom, setBodyBottom] = useState(initialData?.body_bottom || '')
-  const [ctaText, setCtaText] = useState(initialData?.cta_text || '')
-  const [ctaUrl, setCtaUrl] = useState(initialData?.cta_url || '')
+  const [ctaText, setCtaText] = useState(initialData?.cta_text || 'Schedule a Free Strategy Call')
+  const [ctaUrl, setCtaUrl] = useState(initialData?.cta_url || 'https://thebeckerteam.com/contact')
 
   // Auto-generate slug from title
   useEffect(() => {

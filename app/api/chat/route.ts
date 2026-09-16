@@ -37,8 +37,8 @@ export async function POST(req: NextRequest) {
       'content-type': 'application/json',
     },
     body: JSON.stringify({
-      model: 'claude-haiku-4-5',
-      max_tokens: 200,
+      model: 'claude-3-haiku-20240307',
+      max_tokens: 180,
       system: SYSTEM_PROMPT,
       messages: messages.slice(-6), // keep last 3 turns for context
     }),

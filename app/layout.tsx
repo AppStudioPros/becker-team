@@ -73,8 +73,8 @@ export default function RootLayout({
         <AnimationProvider />
         <ConditionalLayout>
           <main>{children}</main>
-          <ChatWidget />
         </ConditionalLayout>
+        <ChatWidget />
       </body>
     </html>
   );

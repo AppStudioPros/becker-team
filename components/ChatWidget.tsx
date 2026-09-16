@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { X, Send, ChevronDown } from 'lucide-react'
 
 // ── 4-Node Orb (Becker colors) ──────────────────────────────────────────────
@@ -109,7 +110,10 @@ const STARTERS = [
 // ── Main Widget ──────────────────────────────────────────────────────────────
 
 export default function ChatWidget() {
+  const pathname = usePathname()
   const [open, setOpen] = useState(false)
+
+  if (pathname?.startsWith('/admin')) return null
   const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)

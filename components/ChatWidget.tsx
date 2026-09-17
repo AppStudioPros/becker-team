@@ -143,6 +143,7 @@ export default function ChatWidget() {
     const next = [...messages, userMsg]
     setMessages(next)
     setInput('')
+    setTimeout(() => inputRef.current?.focus(), 50)
     setLoading(true)
 
     // Add empty assistant message to stream into

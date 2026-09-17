@@ -372,7 +372,7 @@ export default function ChatWidget() {
       <button
         onClick={() => setOpen(o => !o)}
         className="relative w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-105 active:scale-95"
-        style={{ backgroundColor: '#1c3023' }}
+        style={{ background: 'radial-gradient(circle at 35% 30%, #3a6b4a, #1c3023 55%, #0e1a12)', border: '1px solid rgba(255,255,255,0.12)', boxShadow: 'inset 0 1px 3px rgba(255,255,255,0.18), inset 0 -2px 4px rgba(0,0,0,0.3)' }}
         aria-label="Chat with us"
       >
         {open ? (

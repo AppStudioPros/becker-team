@@ -3,6 +3,7 @@ import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import ConditionalLayout from "@/components/ConditionalLayout";
 import ChatWidget from "@/components/ChatWidget";
+import AccessibilityWidget from "@/components/AccessibilityWidget";
 import AnimationProvider from "@/components/AnimationProvider";
 
 const playfair = Playfair_Display({
@@ -74,6 +75,7 @@ export default function RootLayout({
         <ConditionalLayout>
           <main>{children}</main>
         </ConditionalLayout>
+        <AccessibilityWidget />
         <ChatWidget />
       </body>
     </html>

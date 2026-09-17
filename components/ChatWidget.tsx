@@ -163,6 +163,7 @@ export default function ChatWidget() {
           return updated
         })
         setLoading(false)
+    setTimeout(() => inputRef.current?.focus(), 10)
         return
       }
 
@@ -204,6 +205,7 @@ export default function ChatWidget() {
       })
     }
     setLoading(false)
+    setTimeout(() => inputRef.current?.focus(), 10)
   }
 
   return (

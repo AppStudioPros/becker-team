@@ -65,20 +65,6 @@ export default async function DashboardPage() {
           ))}
         </div>
 
-        {/* Admin */}
-        <div className="bg-white rounded-2xl shadow-sm overflow-hidden mb-8">
-          <div className="px-6 py-4 border-b" style={{ borderColor: '#ede4cc' }}>
-            <h2 className="font-semibold" style={{ color: '#1c3023' }}>Admin</h2>
-          </div>
-          <div className="px-6 py-4">
-            <a href="/admin/users"
-              className="inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-lg transition-opacity hover:opacity-90"
-              style={{ backgroundColor: '#f5ecd8', color: '#1c3023', border: '1.5px solid #1c3023' }}>
-              👥 Manage Users
-            </a>
-          </div>
-        </div>
-
         {/* Posts table */}
         <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
           <div className="px-6 py-4 border-b" style={{ borderColor: '#ede4cc' }}>

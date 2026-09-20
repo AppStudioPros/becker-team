@@ -24,11 +24,7 @@ export default function DashboardHeader() {
             <Link href="/" className="text-white/70 text-sm hover:text-white transition-colors" target="_blank">
               View Site
             </Link>
-            <Link href="/admin/users"
-              className="text-sm font-medium px-4 py-2 rounded border transition-colors"
-              style={{ borderColor: 'rgba(255,255,255,0.3)', color: 'white' }}>
-              Users
-            </Link>
+            {/* Users link hidden — invite flow being rebuilt */}
             <Link href="/admin/dashboard/categories"
               className="text-sm font-semibold px-4 py-2 rounded transition-opacity hover:opacity-90 border"
               style={{ borderColor: 'rgba(255,255,255,0.3)', color: 'white' }}>

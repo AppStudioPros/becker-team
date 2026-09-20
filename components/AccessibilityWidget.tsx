@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import { X, Type, Contrast, Eye, RotateCcw } from 'lucide-react'
 
 function A11yIcon({ size = 28 }: { size?: number }) {
@@ -40,8 +41,11 @@ interface A11ySettings {
 const DEFAULT: A11ySettings = { fontSize: 1, contrast: 'normal', underlineLinks: false, highlightFocus: false, reducedMotion: false }
 
 export default function AccessibilityWidget() {
+  const pathname = usePathname()
   const [open, setOpen] = useState(false)
   const [settings, setSettings] = useState<A11ySettings>(DEFAULT)
+
+  if (pathname?.startsWith('/admin')) return null
 
   useEffect(() => {
     try {

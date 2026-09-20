@@ -2,6 +2,16 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Calculator, TrendingUp, CheckCircle } from 'lucide-react'
+import { createClient } from '@supabase/supabase-js'
+
+async function getGivingBack() {
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  )
+  const { data } = await supabase.from('giving_back_section').select('*').eq('id', 1).single()
+  return data
+}
 
 export const metadata: Metadata = {
   title: 'About Jamie Becker | Colorado Mortgage Broker',
@@ -64,7 +74,8 @@ const speakableJsonLd = {
   },
 }
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const gb = await getGivingBack()
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableJsonLd) }} />
@@ -252,40 +263,25 @@ export default function AboutPage() {
                 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-2"
                 style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
               >
-                Giving Back
+                {gb?.heading ?? 'Giving Back'}
               </h2>
               <p data-reveal="fade" data-delay="80" className="text-white/80 text-sm uppercase tracking-widest mb-8">
-                Keep Climbing Foundation — Board Member
+                {gb?.subheading ?? 'Keep Climbing Foundation — Board Member'}
               </p>
-              <p data-reveal="fade" data-delay="160" className="text-gray-200 leading-relaxed mb-5">
-                Jamie Becker has been an integral part of the{' '}
-                <a
-                  href="https://keepclimbingfoundation.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline text-white hover:text-gray-200"
-                >
-                  Keep Climbing Foundation
-                </a>{' '}
-                since 2019, joining the Climb for the Kids team with unwavering dedication. Over the
-                years, Jamie has taken on remarkable challenges, including climbing Chimborazo and
-                Cotopaxi, conquering numerous Colorado 14ers, and exploring the Alaska Range, all while
-                raising tens of thousands of dollars for the foundation&apos;s charitable partners.
-              </p>
-              <p className="text-gray-200 leading-relaxed mb-8">
-                An avid adventurer, Jamie is a competitive mountain biker who has completed some of the
-                world&apos;s toughest races, including the grueling Leadville 100 MTB. When winter
-                arrives, you can find Jamie snowmobiling through deep powder in some of the nation&apos;s
-                most remote backcountry terrain.
-              </p>
+              <div
+                data-reveal="fade"
+                data-delay="160"
+                className="text-gray-200 leading-relaxed mb-8 prose prose-invert prose-sm max-w-none"
+                dangerouslySetInnerHTML={{ __html: gb?.body_html ?? '' }}
+              />
               <a
-                href="https://keepclimbingfoundation.org/"
+                href={gb?.button_url ?? 'https://keepclimbingfoundation.org/'}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block uppercase tracking-widest text-sm font-semibold px-10 py-4 rounded btn-hover"
                 style={{ backgroundColor: '#1F2E2A', color: '#F5EFE6', border: '2px solid #F5EFE6' }}
               >
-                Visit Keep Climbing Foundation
+                {gb?.button_text ?? 'Visit Keep Climbing Foundation'}
               </a>
             </div>
 
@@ -295,8 +291,8 @@ export default function AboutPage() {
               <iframe
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/ZNH3-t-zF8I"
-                title="Keep Climbing Foundation"
+                src={gb?.youtube_url ?? 'https://www.youtube.com/embed/ZNH3-t-zF8I'}
+                title={gb?.heading ?? 'Keep Climbing Foundation'}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="w-full h-full"

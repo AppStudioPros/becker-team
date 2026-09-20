@@ -91,7 +91,7 @@ export default function UsersPage() {
         </form>
         {inviteMsg && <p className="text-sm text-green-600 mt-2">{inviteMsg}</p>}
         {inviteError && <p className="text-sm text-red-600 mt-2">{inviteError}</p>}
-        <p className="text-xs text-gray-400 mt-2">Invite links expire after 24 hours.</p>
+        <p className="text-xs text-gray-400 mt-2">Invite links expire after 7 days.</p>
       </div>
 
       {/* Users table */}

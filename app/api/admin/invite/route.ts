@@ -41,10 +41,13 @@ export async function POST(req: NextRequest) {
 
     if (error) {
       console.error('Invite error:', error)
-      return NextResponse.json(
-        { error: error.message || 'Failed to send invite' },
-        { status: 400 }
-      )
+      const msg = error.message?.toLowerCase() ?? ''
+      const friendly = msg.includes('already registered') || msg.includes('already been registered')
+        ? 'That email is already registered as an admin user.'
+        : msg.includes('invalid') || msg.includes('email')
+        ? 'Please enter a valid email address.'
+        : error.message || 'Failed to send invite — please try again.'
+      return NextResponse.json({ error: friendly }, { status: 400 })
     }
 
     return NextResponse.json({ success: true })

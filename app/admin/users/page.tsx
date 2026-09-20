@@ -6,9 +6,11 @@ import { useRouter } from 'next/navigation'
 interface User {
   id: string
   email: string
+  display_name: string | null
+  role: string
   created_at: string
   last_sign_in_at: string | null
-  confirmed: boolean
+  confirmed_at: string | null
 }
 
 export default function UsersPage() {
@@ -52,13 +54,13 @@ export default function UsersPage() {
     setDeleting(null)
   }
 
-  async function resendInvite(email: string) {
+  async function resendInvite(userId: string, email: string) {
     setResending(email)
     setRowMsg(prev => ({ ...prev, [email]: '' }))
-    const res = await fetch('/api/admin/invite', {
+    const res = await fetch(`/api/admin/users/${userId}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, resend: true }),
+      body: JSON.stringify({ action: 'resend_invite', email }),
     })
     const d = await res.json()
     setResending(null)
@@ -151,8 +153,8 @@ export default function UsersPage() {
                 <tr key={u.id} className="border-b border-gray-50 last:border-0">
                   <td className="px-6 py-4 text-sm text-gray-800 font-medium">{u.email}</td>
                   <td className="px-6 py-4">
-                    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold ${u.confirmed ? 'bg-green-100 text-green-700' : 'bg-amber-100 text-amber-700'}`}>
-                      {u.confirmed ? 'Active' : 'Invite Pending'}
+                    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold ${u.confirmed_at ? 'bg-green-100 text-green-700' : 'bg-amber-100 text-amber-700'}`}>
+                      {u.confirmed_at ? 'Active' : 'Invite Pending'}
                     </span>
                   </td>
                   <td className="px-6 py-4 text-sm text-gray-400">
@@ -165,9 +167,9 @@ export default function UsersPage() {
                           {rowMsg[u.email ?? '']}
                         </span>
                       )}
-                      {!u.confirmed && (
+                      {!u.confirmed_at && (
                         <button
-                          onClick={() => resendInvite(u.email ?? '')}
+                          onClick={() => resendInvite(u.id, u.email ?? '')}
                           disabled={resending === u.email}
                           className="text-xs text-[#1c3023] hover:underline font-medium disabled:opacity-40">
                           {resending === u.email ? 'Sending...' : 'Resend Invite'}

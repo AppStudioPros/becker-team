@@ -15,22 +15,30 @@ export default function AcceptInvitePage() {
   const [sessionReady, setSessionReady] = useState(false)
 
   useEffect(() => {
-    // Supabase processes the hash token automatically on the client.
-    // Wait briefly to let the auth state settle.
     const supabase = createClient()
+    let settled = false
+
     const { data: listener } = supabase.auth.onAuthStateChange((event) => {
-      if (event === 'SIGNED_IN' || event === 'USER_UPDATED') {
-        setSessionReady(true)
+      if (['SIGNED_IN', 'USER_UPDATED', 'INITIAL_SESSION', 'PASSWORD_RECOVERY'].includes(event)) {
+        supabase.auth.getSession().then(({ data }) => {
+          if (data.session) { settled = true; setSessionReady(true) }
+        })
       }
     })
 
-    // Also check immediately in case session is already there
+    // Check immediately in case session is already there
     supabase.auth.getSession().then(({ data }) => {
-      if (data.session) setSessionReady(true)
+      if (data.session) { settled = true; setSessionReady(true) }
     })
+
+    // Timeout — if not verified in 8 seconds, show error
+    const timeout = setTimeout(() => {
+      if (!settled) setError('This invite link has expired or is invalid. Please ask to be re-invited.')
+    }, 8000)
 
     return () => {
       listener.subscription.unsubscribe()
+      clearTimeout(timeout)
     }
   }, [])
 
@@ -107,9 +115,11 @@ export default function AcceptInvitePage() {
             </div>
           ) : !sessionReady ? (
             <div className="text-center py-6">
-              <p className="text-sm" style={{ color: '#888' }}>
-                Verifying your invite link...
-              </p>
+              {error ? (
+                <p className="text-sm text-red-600">{error}</p>
+              ) : (
+                <p className="text-sm" style={{ color: '#888' }}>Verifying your invite link...</p>
+              )}
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">

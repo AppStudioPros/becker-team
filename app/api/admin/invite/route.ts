@@ -28,13 +28,21 @@ export async function POST(req: NextRequest) {
     }
 
     const body = await req.json()
-    const { email } = body
+    const { email, resend } = body
 
     if (!email || typeof email !== 'string') {
       return NextResponse.json({ error: 'Email is required' }, { status: 400 })
     }
 
     const adminClient = createServiceClient()
+
+    // If resending, delete the existing unconfirmed user first so invite works cleanly
+    if (resend) {
+      const { data } = await adminClient.auth.admin.listUsers()
+      const existing = data?.users?.find(u => u.email === email && !u.email_confirmed_at)
+      if (existing) await adminClient.auth.admin.deleteUser(existing.id)
+    }
+
     const { error } = await adminClient.auth.admin.inviteUserByEmail(email, {
       redirectTo: 'https://thebeckerteam.com/admin/accept-invite',
     })

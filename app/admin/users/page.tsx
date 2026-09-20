@@ -16,10 +16,12 @@ export default function UsersPage() {
   const [users, setUsers] = useState<User[]>([])
   const [loading, setLoading] = useState(true)
   const [deleting, setDeleting] = useState<string | null>(null)
+  const [resending, setResending] = useState<string | null>(null)
   const [inviteEmail, setInviteEmail] = useState('')
   const [inviteLoading, setInviteLoading] = useState(false)
   const [inviteMsg, setInviteMsg] = useState('')
   const [inviteError, setInviteError] = useState('')
+  const [rowMsg, setRowMsg] = useState<Record<string, string>>({})
 
   async function load() {
     setLoading(true)
@@ -36,9 +38,35 @@ export default function UsersPage() {
   async function deleteUser(id: string, email: string) {
     if (!confirm(`Remove ${email} from admin access?`)) return
     setDeleting(id)
-    await fetch('/api/admin/users', { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ userId: id }) })
-    await load()
+    // Optimistically remove from UI immediately
+    setUsers(prev => prev.filter(u => u.id !== id))
+    const res = await fetch('/api/admin/users', {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ userId: id }),
+    })
+    if (!res.ok) {
+      // If delete failed, reload to restore accurate state
+      await load()
+    }
     setDeleting(null)
+  }
+
+  async function resendInvite(email: string) {
+    setResending(email)
+    setRowMsg(prev => ({ ...prev, [email]: '' }))
+    const res = await fetch('/api/admin/invite', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, resend: true }),
+    })
+    const d = await res.json()
+    setResending(null)
+    setRowMsg(prev => ({
+      ...prev,
+      [email]: res.ok ? 'Invite resent!' : (d.error ?? 'Failed to resend'),
+    }))
+    setTimeout(() => setRowMsg(prev => ({ ...prev, [email]: '' })), 4000)
   }
 
   async function sendInvite(e: React.FormEvent) {
@@ -53,8 +81,13 @@ export default function UsersPage() {
     })
     const d = await res.json()
     setInviteLoading(false)
-    if (res.ok) { setInviteMsg(`Invite sent to ${inviteEmail}`); setInviteEmail(''); load() }
-    else setInviteError(d.error ?? 'Failed to send invite')
+    if (res.ok) {
+      setInviteMsg(`Invite sent to ${inviteEmail}`)
+      setInviteEmail('')
+      await load()
+    } else {
+      setInviteError(d.error ?? 'Failed to send invite')
+    }
   }
 
   return (
@@ -102,7 +135,7 @@ export default function UsersPage() {
         {loading ? (
           <div className="px-6 py-8 text-sm text-gray-400 text-center">Loading...</div>
         ) : users.length === 0 ? (
-          <div className="px-6 py-8 text-sm text-gray-400 text-center">No users found.</div>
+          <div className="px-6 py-8 text-sm text-gray-400 text-center">No users yet. Send an invite above.</div>
         ) : (
           <table className="w-full">
             <thead>
@@ -126,10 +159,27 @@ export default function UsersPage() {
                     {u.last_sign_in_at ? new Date(u.last_sign_in_at).toLocaleDateString() : 'Never'}
                   </td>
                   <td className="px-6 py-4 text-right">
-                    <button onClick={() => deleteUser(u.id, u.email ?? '')} disabled={deleting === u.id}
-                      className="text-xs text-red-500 hover:text-red-700 font-medium disabled:opacity-40">
-                      {deleting === u.id ? 'Removing...' : 'Remove'}
-                    </button>
+                    <div className="flex items-center justify-end gap-3">
+                      {rowMsg[u.email ?? ''] && (
+                        <span className={`text-xs ${rowMsg[u.email ?? ''].includes('resent') ? 'text-green-600' : 'text-red-500'}`}>
+                          {rowMsg[u.email ?? '']}
+                        </span>
+                      )}
+                      {!u.confirmed && (
+                        <button
+                          onClick={() => resendInvite(u.email ?? '')}
+                          disabled={resending === u.email}
+                          className="text-xs text-[#1c3023] hover:underline font-medium disabled:opacity-40">
+                          {resending === u.email ? 'Sending...' : 'Resend Invite'}
+                        </button>
+                      )}
+                      <button
+                        onClick={() => deleteUser(u.id, u.email ?? '')}
+                        disabled={deleting === u.id}
+                        className="text-xs text-red-500 hover:text-red-700 font-medium disabled:opacity-40">
+                        {deleting === u.id ? 'Removing...' : 'Remove'}
+                      </button>
+                    </div>
                   </td>
                 </tr>
               ))}

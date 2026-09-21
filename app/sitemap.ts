@@ -48,6 +48,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/fair-lending`, lastModified: now, changeFrequency: 'yearly', priority: 0.4 },
     { url: `${BASE}/accessibility`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${BASE}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    // GEO landing pages
+    { url: `${BASE}/denver-mortgage`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE}/boulder-jumbo-loans`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/colorado-springs-va-loans`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/fort-collins-mortgage`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/aurora-home-loans`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/lakewood-mortgage`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/littleton-mortgage`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/westminster-mortgage`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
     ...blogEntries,
   ]
 }

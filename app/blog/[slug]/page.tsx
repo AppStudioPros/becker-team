@@ -49,7 +49,16 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     openGraph: {
       title: post.title,
       description: post.meta_description || undefined,
-      images: post.feature_image ? [{ url: post.feature_image }] : undefined,
+      type: 'article',
+      publishedTime: post.published_at || undefined,
+      authors: ['Jamie Becker'],
+      images: post.feature_image ? [{ url: post.feature_image, width: 1200, height: 630 }] : undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.meta_description || undefined,
+      images: post.feature_image ? [post.feature_image] : undefined,
     },
   }
 }
@@ -69,8 +78,48 @@ export default async function BlogPostPage({ params }: Params) {
 
   if (!post) notFound()
 
+  const BASE = 'https://www.thebeckerteam.com'
+
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.meta_description || undefined,
+    image: post.feature_image || undefined,
+    url: `${BASE}/blog/${post.slug}`,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${BASE}/blog/${post.slug}` },
+    datePublished: post.published_at || undefined,
+    dateModified: post.updated_at || post.published_at || undefined,
+    author: {
+      '@type': 'Person',
+      name: 'Jamie Becker',
+      url: `${BASE}/about`,
+      identifier: 'NMLS #794730',
+      sameAs: ['https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/794730'],
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'The Becker Team',
+      url: BASE,
+      logo: { '@type': 'ImageObject', url: `${BASE}/images/becker-team-logo.png` },
+    },
+    ...(post.category ? { articleSection: post.category } : {}),
+  }
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: BASE },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${BASE}/blog` },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `${BASE}/blog/${post.slug}` },
+    ],
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       {/* Feature Image */}
       {post.feature_image && (
         <div className="relative w-full h-64 md:h-96 overflow-hidden">

@@ -63,7 +63,7 @@ const ratingJsonLd = {
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '5.0',
-    reviewCount: '232',
+    reviewCount: '250',
     bestRating: '5',
     worstRating: '1',
   },

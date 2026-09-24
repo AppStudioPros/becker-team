@@ -19,16 +19,25 @@ async function isAuthenticated() {
     { cookies: { getAll: () => cookieStore.getAll() } }
   )
   const { data: { user } } = await supabase.auth.getUser()
-  return !!user
+  if (!user) return false
+
+  // Verify they have a profile in becker_admin_profiles
+  const admin = getServiceClient()
+  const { data } = await admin
+    .from('becker_admin_profiles')
+    .select('id')
+    .eq('id', user.id)
+    .single()
+
+  return !!data
 }
 
-// GET — list all users from profiles table enriched with confirmed status
+// GET — list all users
 export async function GET() {
   if (!(await isAuthenticated())) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   const supabase = getServiceClient()
 
-  // Get profiles
   const { data: profiles, error } = await supabase
     .from('becker_admin_profiles')
     .select('*')
@@ -36,7 +45,6 @@ export async function GET() {
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
 
-  // Get auth users to check confirmed_at
   const { data: authData } = await supabase.auth.admin.listUsers({ perPage: 100 })
   const authUsers = authData?.users ?? []
   const authMap = new Map(authUsers.map(u => [u.id, {
@@ -65,7 +73,6 @@ export async function DELETE(req: NextRequest) {
   if (!userId) return NextResponse.json({ error: 'userId required' }, { status: 400 })
 
   const supabase = getServiceClient()
-  // Profile row deletes via CASCADE when auth user is deleted
   const { error } = await supabase.auth.admin.deleteUser(userId)
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
 

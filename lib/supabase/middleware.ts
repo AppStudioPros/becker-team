@@ -26,12 +26,14 @@ export async function updateSession(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   // Public admin paths — no redirect needed
-  const publicPaths = ['/admin/login', '/admin/auth/callback', '/admin/accept-invite']
+  const publicPaths = ['/admin/auth/callback', '/admin/accept-invite']
   const isPublic = publicPaths.some(p => pathname.startsWith(p))
+  // The root /admin page IS the login page
+  const isLoginPage = pathname === '/admin' || pathname === '/admin/'
 
-  // Protect all /admin/* routes
-  if (pathname.startsWith('/admin') && !isPublic && !user) {
-    return NextResponse.redirect(new URL('/admin/login', request.url))
+  // Protect all /admin/* routes except the login page itself
+  if (pathname.startsWith('/admin') && !isPublic && !isLoginPage && !user) {
+    return NextResponse.redirect(new URL('/admin', request.url))
   }
 
   return supabaseResponse

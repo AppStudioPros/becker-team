@@ -64,11 +64,23 @@ const faqs = [
   { q: 'Do you serve the entire Denver metro?', a: 'Yes. The Becker Team serves all of Denver and the surrounding metro — including Aurora, Lakewood, Littleton, Centennial, Englewood, Highlands Ranch, Parker, Castle Rock, Broomfield, and Westminster. As a local lender, Jamie knows the neighborhoods and can move quickly.' },
 ]
 
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+}
+
 export default function DenverMortgagePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero */}
       <section

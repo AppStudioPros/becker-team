@@ -65,11 +65,23 @@ const faqs = [
   { q: 'Do you serve Castle Rock and Centennial?', a: 'Yes. The Becker Team serves all of the south Denver corridor — Littleton, Highlands Ranch, Lone Tree, Castle Rock, Centennial, Englewood, and surrounding communities.' },
 ]
 
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+}
+
 export default function LittletonMortgagePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="relative py-28 md:py-40 px-6 text-white text-center" style={{ background: 'linear-gradient(135deg, #1c3023 0%, #0f1e14 60%, #162518 100%)' }}>
         <p className="text-sm uppercase tracking-widest font-semibold mb-4 text-white/70">Littleton, Colorado</p>

@@ -55,11 +55,23 @@ const faqs = [
   { q: 'Can I use my VA loan benefit more than once?', a: 'Yes. Your VA entitlement is reusable. If you\'ve paid off a previous VA loan or sold the home, your entitlement is typically restored. Many Colorado Springs veterans have used their VA benefit for multiple homes throughout their careers.' },
 ]
 
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+}
+
 export default function ColoradoSpringsVaPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero */}
       <section

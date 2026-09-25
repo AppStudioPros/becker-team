@@ -58,11 +58,23 @@ const faqs = [
   { q: 'Do you offer jumbo loans for second homes in Colorado?', a: 'Yes. Second home jumbo financing is available for Colorado mountain properties — ski homes, cabins, and resort condos. These typically require 10-20% down and that the property be used personally for a portion of the year (not rented full-time, which would classify it as investment property).' },
 ]
 
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+}
+
 export default function BoulderJumboPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero */}
       <section

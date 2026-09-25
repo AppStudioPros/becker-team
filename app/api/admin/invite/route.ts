@@ -26,8 +26,9 @@ export async function POST(req: NextRequest) {
   const user = await getAuthenticatedUser()
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
-  const { email } = await req.json()
+  const { email, role = 'user' } = await req.json()
   if (!email) return NextResponse.json({ error: 'Email is required' }, { status: 400 })
+  if (!['admin', 'user'].includes(role)) return NextResponse.json({ error: 'Invalid role' }, { status: 400 })
 
   const supabase = getServiceClient()
   const siteUrl = 'https://thebeckerteam.com'
@@ -51,7 +52,7 @@ export async function POST(req: NextRequest) {
     id: userId,
     email,
     display_name: null,
-    role: 'user',
+    role,
   }, { onConflict: 'id' })
 
   // Send beautiful branded invite email via Resend (mail.thebeckerteam.com)

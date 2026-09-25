@@ -93,6 +93,25 @@ async function sendBeckerEmail(to: string, subject: string, html: string) {
   if (!res.ok) console.error('Resend error:', await res.text())
 }
 
+// PATCH /api/admin/users/[id] — update role
+export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  if (!(await isAuthenticated())) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+
+  const { role } = await req.json()
+  const { id } = await params
+
+  if (!['admin', 'user'].includes(role)) return NextResponse.json({ error: 'Invalid role' }, { status: 400 })
+
+  const supabase = getServiceClient()
+  const { error } = await supabase
+    .from('becker_admin_profiles')
+    .update({ role })
+    .eq('id', id)
+
+  if (error) return NextResponse.json({ error: error.message }, { status: 500 })
+  return NextResponse.json({ success: true })
+}
+
 // POST /api/admin/users/[id] — actions: resend_invite | reset_password
 export async function POST(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   if (!(await isAuthenticated())) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })

@@ -42,6 +42,25 @@ export async function proxy(request: NextRequest) {
       return NextResponse.redirect(new URL('/admin', request.url))
     }
 
+    // Protect users page — admin role only
+    if (pathname.startsWith('/admin/users')) {
+      const { createClient: createServiceClient } = await import('@supabase/supabase-js')
+      const service = createServiceClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.SUPABASE_SERVICE_ROLE_KEY!,
+        { auth: { autoRefreshToken: false, persistSession: false } }
+      )
+      const { data: profile } = await service
+        .from('becker_admin_profiles')
+        .select('role')
+        .eq('id', session.user.id)
+        .single()
+
+      if (!profile || profile.role !== 'admin') {
+        return NextResponse.redirect(new URL('/admin/dashboard', request.url))
+      }
+    }
+
     return supabaseResponse
   }
 

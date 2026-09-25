@@ -5,13 +5,18 @@ import { createServerClient } from '@supabase/ssr'
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
 
-  // Accept-invite page needs no auth — always allow through
-  if (pathname.startsWith('/admin/accept-invite')) {
+  // Public admin paths — always allow through
+  const publicPaths = ['/admin/accept-invite', '/admin/auth/callback']
+  if (publicPaths.some(p => pathname.startsWith(p))) {
+    return NextResponse.next()
+  }
+  // Root /admin page is the login page — allow through
+  if (pathname === '/admin' || pathname === '/admin/') {
     return NextResponse.next()
   }
 
-  // Protect all /admin/dashboard routes
-  if (pathname.startsWith('/admin/dashboard')) {
+  // Protect all /admin/* routes
+  if (pathname.startsWith('/admin')) {
     let supabaseResponse = NextResponse.next({ request })
 
     const supabase = createServerClient(
@@ -19,13 +24,9 @@ export async function proxy(request: NextRequest) {
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
       {
         cookies: {
-          getAll() {
-            return request.cookies.getAll()
-          },
+          getAll() { return request.cookies.getAll() },
           setAll(cookiesToSet) {
-            cookiesToSet.forEach(({ name, value }) =>
-              request.cookies.set(name, value)
-            )
+            cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value))
             supabaseResponse = NextResponse.next({ request })
             cookiesToSet.forEach(({ name, value, options }) =>
               supabaseResponse.cookies.set(name, value, options)
@@ -35,14 +36,10 @@ export async function proxy(request: NextRequest) {
       }
     )
 
-    // Refresh the session
-    const {
-      data: { session },
-    } = await supabase.auth.getSession()
+    const { data: { session } } = await supabase.auth.getSession()
 
     if (!session) {
-      const loginUrl = new URL('/admin', request.url)
-      return NextResponse.redirect(loginUrl)
+      return NextResponse.redirect(new URL('/admin', request.url))
     }
 
     return supabaseResponse
@@ -52,5 +49,5 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/admin/dashboard/:path*', '/admin/accept-invite/:path*'],
+  matcher: ['/admin/:path*'],
 }

@@ -31,6 +31,51 @@ async function isAuthenticated() {
   return !!data
 }
 
+function beckerEmailHtml(actionUrl: string, ctaLabel: string, bodyText: string) {
+  return `<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:0;background:#f5ecd8;font-family:Georgia,serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f5ecd8;padding:40px 16px;">
+    <tr><td align="center">
+      <table width="560" cellpadding="0" cellspacing="0" style="max-width:560px;width:100%;">
+        <tr>
+          <td style="background:#1c3023;border-radius:12px 12px 0 0;padding:36px 40px;text-align:center;">
+            <p style="margin:0 0 6px;color:rgba(245,236,216,0.6);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;">Blog Admin</p>
+            <h1 style="margin:0;color:#f5ecd8;font-size:26px;font-weight:700;">The Becker Team</h1>
+          </td>
+        </tr>
+        <tr><td style="background:#c9a96e;height:3px;"></td></tr>
+        <tr>
+          <td style="background:#fff;padding:40px 40px 32px;border-left:1px solid #ede4cc;border-right:1px solid #ede4cc;">
+            <p style="margin:0 0 28px;font-size:15px;color:#444;line-height:1.8;">${bodyText}</p>
+            <table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td align="center" style="padding:0 0 32px;">
+                  <a href="${actionUrl}" style="display:inline-block;background:#1c3023;color:#f5ecd8;font-family:Georgia,serif;font-size:15px;font-weight:700;letter-spacing:0.04em;padding:16px 44px;border-radius:6px;text-decoration:none;">${ctaLabel}</a>
+                </td>
+              </tr>
+            </table>
+            <hr style="border:none;border-top:1px solid #ede4cc;margin:0 0 24px;" />
+            <p style="margin:0;font-size:12px;color:#aaa;text-align:center;line-height:1.7;">
+              This link expires in <strong>24 hours</strong>.<br>
+              If you weren't expecting this email, you can safely ignore it.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="background:#f5ecd8;border:1px solid #ede4cc;border-top:none;border-radius:0 0 12px 12px;padding:20px 40px;text-align:center;">
+            <p style="margin:0;font-size:11px;color:#b0a090;">The Becker Team &nbsp;&bull;&nbsp; Xpert Home Lending &nbsp;&bull;&nbsp; NMLS #794730</p>
+            <p style="margin:6px 0 0;font-size:11px;"><a href="https://thebeckerteam.com" style="color:#c9a96e;text-decoration:none;">thebeckerteam.com</a></p>
+          </td>
+        </tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>`
+}
+
 async function sendBeckerEmail(to: string, subject: string, html: string) {
   const res = await fetch('https://api.resend.com/emails', {
     method: 'POST',
@@ -61,24 +106,15 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
     const { data: linkData, error } = await supabase.auth.admin.generateLink({
       type: 'invite',
       email,
-      options: { redirectTo: `${siteUrl}/admin/auth/callback?next=/admin/accept-invite` },
+      options: { redirectTo: `${siteUrl}/admin/accept-invite` },
     })
     if (error) return NextResponse.json({ error: error.message }, { status: 500 })
 
-    await sendBeckerEmail(email, "You've been invited to The Becker Team admin", `
-      <div style="font-family: Georgia, serif; max-width: 560px; margin: 0 auto;">
-        <div style="background: #1c3023; padding: 24px 32px; border-radius: 8px 8px 0 0; text-align: center;">
-          <h1 style="color: #f5ecd8; font-size: 18px; margin: 0;">The Becker Team</h1>
-        </div>
-        <div style="background: #fafaf8; padding: 28px 32px; border: 1px solid #ede4cc; border-top: none; border-radius: 0 0 8px 8px;">
-          <p style="color: #333; font-size: 15px; line-height: 1.7;">Your invite link has been resent. Click below to set your password.</p>
-          <div style="text-align: center; margin: 24px 0;">
-            <a href="${linkData.properties.action_link}" style="background: #1c3023; color: #f5ecd8; padding: 12px 32px; border-radius: 6px; text-decoration: none; font-weight: 700;">Accept Invite</a>
-          </div>
-          <p style="font-size: 12px; color: #999; text-align: center;">This link expires in 24 hours.</p>
-        </div>
-      </div>
-    `)
+    await sendBeckerEmail(email, "You've been invited to The Becker Team admin", beckerEmailHtml(
+      linkData.properties.action_link,
+      'Set My Password',
+      "Your invite has been resent. Click the button below to set your password and activate your account."
+    ))
 
     return NextResponse.json({ success: true })
   }
@@ -87,24 +123,15 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
     const { data: linkData, error } = await supabase.auth.admin.generateLink({
       type: 'recovery',
       email,
-      options: { redirectTo: `${siteUrl}/admin/auth/callback?next=/admin/accept-invite` },
+      options: { redirectTo: `${siteUrl}/admin/accept-invite` },
     })
     if (error) return NextResponse.json({ error: error.message }, { status: 500 })
 
-    await sendBeckerEmail(email, 'Reset your Becker Team admin password', `
-      <div style="font-family: Georgia, serif; max-width: 560px; margin: 0 auto;">
-        <div style="background: #1c3023; padding: 24px 32px; border-radius: 8px 8px 0 0; text-align: center;">
-          <h1 style="color: #f5ecd8; font-size: 18px; margin: 0;">The Becker Team</h1>
-        </div>
-        <div style="background: #fafaf8; padding: 28px 32px; border: 1px solid #ede4cc; border-top: none; border-radius: 0 0 8px 8px;">
-          <p style="color: #333; font-size: 15px; line-height: 1.7;">Click below to reset your admin password.</p>
-          <div style="text-align: center; margin: 24px 0;">
-            <a href="${linkData.properties.action_link}" style="background: #1c3023; color: #f5ecd8; padding: 12px 32px; border-radius: 6px; text-decoration: none; font-weight: 700;">Reset Password</a>
-          </div>
-          <p style="font-size: 12px; color: #999; text-align: center;">This link expires in 24 hours.</p>
-        </div>
-      </div>
-    `)
+    await sendBeckerEmail(email, 'Reset your Becker Team admin password', beckerEmailHtml(
+      linkData.properties.action_link,
+      'Reset My Password',
+      "We received a request to reset your admin password. Click the button below to choose a new one."
+    ))
 
     return NextResponse.json({ success: true })
   }

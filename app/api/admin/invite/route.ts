@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
     type: 'invite',
     email,
     options: {
-      redirectTo: `${siteUrl}/admin/auth/callback?next=/admin/accept-invite`,
+      redirectTo: `${siteUrl}/admin/accept-invite`,
     },
   })
 
@@ -54,31 +54,77 @@ export async function POST(req: NextRequest) {
     role: 'user',
   }, { onConflict: 'id' })
 
-  // Send branded invite email via Resend (mail.thebeckerteam.com)
+  // Send beautiful branded invite email via Resend (mail.thebeckerteam.com)
   const html = `
-    <div style="font-family: Georgia, serif; max-width: 560px; margin: 0 auto; color: #1c3023;">
-      <div style="background: #1c3023; padding: 28px 32px; border-radius: 8px 8px 0 0; text-align: center;">
-        <h1 style="color: #f5ecd8; font-size: 20px; font-weight: 700; margin: 0;">The Becker Team</h1>
-        <p style="color: rgba(245,236,216,0.7); font-size: 12px; margin: 6px 0 0;">Blog Admin Access</p>
-      </div>
-      <div style="background: #fafaf8; padding: 32px; border: 1px solid #ede4cc; border-top: none; border-radius: 0 0 8px 8px;">
-        <p style="font-size: 15px; color: #333; line-height: 1.7; margin-bottom: 24px;">
-          You've been invited to manage The Becker Team blog. Click the button below to set your password and get started.
-        </p>
-        <div style="text-align: center; margin: 28px 0;">
-          <a href="${inviteUrl}" style="display: inline-block; background: #1c3023; color: #f5ecd8; font-weight: 700; font-size: 15px; padding: 14px 36px; border-radius: 6px; text-decoration: none;">
-            Accept Invite
-          </a>
-        </div>
-        <p style="font-size: 12px; color: #999; text-align: center; margin-top: 24px;">
-          This link expires in 24 hours. If you didn't expect this invite, you can safely ignore this email.
-        </p>
-        <hr style="border: none; border-top: 1px solid #ede4cc; margin: 20px 0;" />
-        <p style="font-size: 12px; color: #999; text-align: center; margin: 0;">
-          The Becker Team &bull; Xpert Home Lending &bull; thebeckerteam.com
-        </p>
-      </div>
-    </div>
+    <!DOCTYPE html>
+    <html>
+    <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+    <body style="margin:0;padding:0;background:#f5ecd8;font-family:Georgia,serif;">
+      <table width="100%" cellpadding="0" cellspacing="0" style="background:#f5ecd8;padding:40px 16px;">
+        <tr><td align="center">
+          <table width="560" cellpadding="0" cellspacing="0" style="max-width:560px;width:100%;">
+
+            <!-- Header -->
+            <tr>
+              <td style="background:#1c3023;border-radius:12px 12px 0 0;padding:36px 40px;text-align:center;">
+                <p style="margin:0 0 6px;color:rgba(245,236,216,0.6);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;">You're invited</p>
+                <h1 style="margin:0;color:#f5ecd8;font-size:26px;font-weight:700;letter-spacing:0.02em;">The Becker Team</h1>
+                <p style="margin:8px 0 0;color:rgba(245,236,216,0.55);font-size:13px;">Blog Management Admin</p>
+              </td>
+            </tr>
+
+            <!-- Divider accent -->
+            <tr>
+              <td style="background:#c9a96e;height:3px;"></td>
+            </tr>
+
+            <!-- Body -->
+            <tr>
+              <td style="background:#fff;padding:40px 40px 32px;border-left:1px solid #ede4cc;border-right:1px solid #ede4cc;">
+                <p style="margin:0 0 20px;font-size:16px;color:#2d2d2d;line-height:1.75;">Hi there,</p>
+                <p style="margin:0 0 28px;font-size:15px;color:#444;line-height:1.8;">
+                  You've been given access to manage <strong style="color:#1c3023;">The Becker Team</strong> blog. Click the button below to set your password and activate your account.
+                </p>
+
+                <!-- CTA Button -->
+                <table width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td align="center" style="padding:8px 0 32px;">
+                      <a href="${inviteUrl}"
+                        style="display:inline-block;background:#1c3023;color:#f5ecd8;font-family:Georgia,serif;font-size:15px;font-weight:700;letter-spacing:0.04em;padding:16px 44px;border-radius:6px;text-decoration:none;">
+                        Set My Password
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Divider -->
+                <hr style="border:none;border-top:1px solid #ede4cc;margin:0 0 24px;" />
+
+                <p style="margin:0;font-size:12px;color:#aaa;line-height:1.7;text-align:center;">
+                  This link expires in <strong>24 hours</strong>.<br>
+                  If you weren't expecting this invite, you can safely ignore this email.
+                </p>
+              </td>
+            </tr>
+
+            <!-- Footer -->
+            <tr>
+              <td style="background:#f5ecd8;border:1px solid #ede4cc;border-top:none;border-radius:0 0 12px 12px;padding:20px 40px;text-align:center;">
+                <p style="margin:0;font-size:11px;color:#b0a090;letter-spacing:0.05em;">
+                  The Becker Team &nbsp;&bull;&nbsp; Xpert Home Lending &nbsp;&bull;&nbsp; NMLS #794730
+                </p>
+                <p style="margin:6px 0 0;font-size:11px;">
+                  <a href="https://thebeckerteam.com" style="color:#c9a96e;text-decoration:none;">thebeckerteam.com</a>
+                </p>
+              </td>
+            </tr>
+
+          </table>
+        </td></tr>
+      </table>
+    </body>
+    </html>
   `
 
   const resendRes = await fetch('https://api.resend.com/emails', {

@@ -7,39 +7,46 @@ import { createClient } from '@/lib/supabase/client'
 
 export default function AcceptInvitePage() {
   const router = useRouter()
+  const supabase = createClient()
+
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirm, setConfirm] = useState('')
-  const [error, setError] = useState('')
-  const [success, setSuccess] = useState(false)
   const [loading, setLoading] = useState(false)
-  const [sessionReady, setSessionReady] = useState(false)
+  const [error, setError] = useState('')
+  const [ready, setReady] = useState(false)
 
   useEffect(() => {
-    const supabase = createClient()
-    let settled = false
-
-    const { data: listener } = supabase.auth.onAuthStateChange((event) => {
-      if (['SIGNED_IN', 'USER_UPDATED', 'INITIAL_SESSION', 'PASSWORD_RECOVERY'].includes(event)) {
-        supabase.auth.getSession().then(({ data }) => {
-          if (data.session) { settled = true; setSessionReady(true) }
-        })
+    async function init() {
+      // Read #access_token hash from Supabase redirect
+      if (typeof window !== 'undefined' && window.location.hash) {
+        const params = new URLSearchParams(window.location.hash.substring(1))
+        const accessToken = params.get('access_token')
+        const refreshToken = params.get('refresh_token')
+        if (accessToken && refreshToken) {
+          await supabase.auth.setSession({ access_token: accessToken, refresh_token: refreshToken })
+          window.history.replaceState(null, '', window.location.pathname)
+        }
       }
-    })
 
-    // Check immediately in case session is already there
-    supabase.auth.getSession().then(({ data }) => {
-      if (data.session) { settled = true; setSessionReady(true) }
-    })
+      // Retry up to 3x for cookie propagation
+      let user = null
+      for (let i = 0; i < 3; i++) {
+        const { data } = await supabase.auth.getUser()
+        if (data.user) { user = data.user; break }
+        await new Promise((r) => setTimeout(r, 500))
+      }
 
-    // Timeout — if not verified in 8 seconds, show error
-    const timeout = setTimeout(() => {
-      if (!settled) setError('This invite link has expired or is invalid. Please ask to be re-invited.')
-    }, 8000)
-
-    return () => {
-      listener.subscription.unsubscribe()
-      clearTimeout(timeout)
+      if (user) {
+        setEmail(user.email ?? '')
+        setReady(true)
+      } else {
+        router.replace('/admin?error=invite_expired')
+      }
     }
+
+    init()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   async function handleSubmit(e: React.FormEvent) {
@@ -50,40 +57,40 @@ export default function AcceptInvitePage() {
       setError('Password must be at least 8 characters.')
       return
     }
-
     if (password !== confirm) {
-      setError('Passwords do not match.')
+      setError("Passwords don't match.")
       return
     }
 
     setLoading(true)
-
-    try {
-      const supabase = createClient()
-      const { error: updateError } = await supabase.auth.updateUser({ password })
-
-      if (updateError) {
-        setError(updateError.message || 'Failed to set password. Please try again.')
-      } else {
-        setSuccess(true)
-        setTimeout(() => router.push('/admin/dashboard'), 2000)
-      }
-    } catch {
-      setError('Something went wrong. Please try again.')
-    } finally {
+    const { error: updateError } = await supabase.auth.updateUser({ password })
+    if (updateError) {
+      setError(updateError.message)
       setLoading(false)
+      return
     }
+
+    router.push('/admin/dashboard')
+    router.refresh()
+  }
+
+  if (!ready) {
+    return (
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#f5ecd8' }}>
+        <div className="bg-white rounded-2xl px-8 py-6 text-center shadow-lg">
+          <p className="text-sm" style={{ color: '#888' }}>Setting up your account…</p>
+        </div>
+      </div>
+    )
   }
 
   return (
-    <div
-      className="min-h-screen flex items-center justify-center px-4"
-      style={{ backgroundColor: '#f5ecd8' }}
-    >
+    <div className="min-h-screen flex items-center justify-center px-4" style={{ backgroundColor: '#f5ecd8' }}>
       <div className="w-full max-w-md">
         <div className="bg-white rounded-2xl shadow-lg p-10">
-          {/* Logo / Branding */}
-          <div className="flex justify-center mb-8">
+
+          {/* Logo */}
+          <div className="flex justify-center mb-6">
             <Image
               src="/images/squarespace/becker-logo-all-white.png"
               alt="The Becker Team"
@@ -94,109 +101,87 @@ export default function AcceptInvitePage() {
             />
           </div>
 
-          <h1
-            className="text-2xl font-bold text-center mb-2"
-            style={{ fontFamily: 'var(--font-playfair)', color: '#1c3023' }}
-          >
-            Set Your Password
+          <h1 className="text-2xl font-bold text-center mb-1" style={{ fontFamily: 'var(--font-playfair)', color: '#1c3023' }}>
+            Welcome!
           </h1>
-          <p className="text-center text-sm mb-8" style={{ color: '#555' }}>
-            Choose a password to complete your account setup.
+          <p className="text-center text-sm mb-8" style={{ color: '#888' }}>
+            Create a password to activate your account.
           </p>
 
-          {success ? (
-            <div className="text-center py-6">
-              <p className="text-green-700 font-medium text-sm mb-2">
-                Password set successfully!
-              </p>
-              <p className="text-sm" style={{ color: '#888' }}>
-                Redirecting to dashboard...
-              </p>
+          <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+
+            {/* Email — read only */}
+            <div>
+              <label className="block text-xs font-semibold uppercase tracking-wider mb-1.5" style={{ color: '#1c3023' }}>
+                Email
+              </label>
+              <input
+                type="email"
+                value={email}
+                disabled
+                className="w-full border rounded-lg px-4 py-3 text-sm"
+                style={{ borderColor: '#ede4cc', backgroundColor: '#fafaf8', color: '#888' }}
+              />
             </div>
-          ) : !sessionReady ? (
-            <div className="text-center py-6">
-              {error ? (
-                <p className="text-sm text-red-600">{error}</p>
-              ) : (
-                <p className="text-sm" style={{ color: '#888' }}>Verifying your invite link...</p>
-              )}
+
+            <div>
+              <label htmlFor="password" className="block text-xs font-semibold uppercase tracking-wider mb-1.5" style={{ color: '#1c3023' }}>
+                Password
+              </label>
+              <input
+                id="password"
+                type="password"
+                required
+                autoComplete="new-password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full border rounded-lg px-4 py-3 text-sm outline-none transition-all"
+                style={{ borderColor: '#ede4cc', backgroundColor: '#fafaf8', color: '#1c3023' }}
+                onFocus={(e) => (e.currentTarget.style.borderColor = '#1c3023')}
+                onBlur={(e) => (e.currentTarget.style.borderColor = '#ede4cc')}
+                placeholder="At least 8 characters"
+              />
             </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-              <div>
-                <label
-                  htmlFor="password"
-                  className="block text-sm font-medium mb-1"
-                  style={{ color: '#1c3023' }}
-                >
-                  New Password
-                </label>
-                <input
-                  id="password"
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  autoComplete="new-password"
-                  minLength={8}
-                  className="w-full border rounded-lg px-4 py-3 text-sm outline-none transition-all"
-                  style={{
-                    borderColor: '#ede4cc',
-                    color: '#1c3023',
-                    backgroundColor: '#fafaf8',
-                  }}
-                  onFocus={(e) => (e.currentTarget.style.borderColor = '#1c3023')}
-                  onBlur={(e) => (e.currentTarget.style.borderColor = '#ede4cc')}
-                  placeholder="At least 8 characters"
-                />
+
+            <div>
+              <label htmlFor="confirm" className="block text-xs font-semibold uppercase tracking-wider mb-1.5" style={{ color: '#1c3023' }}>
+                Confirm Password
+              </label>
+              <input
+                id="confirm"
+                type="password"
+                required
+                autoComplete="new-password"
+                value={confirm}
+                onChange={(e) => setConfirm(e.target.value)}
+                className="w-full border rounded-lg px-4 py-3 text-sm outline-none transition-all"
+                style={{ borderColor: '#ede4cc', backgroundColor: '#fafaf8', color: '#1c3023' }}
+                onFocus={(e) => (e.currentTarget.style.borderColor = '#1c3023')}
+                onBlur={(e) => (e.currentTarget.style.borderColor = '#ede4cc')}
+                placeholder="Re-enter your password"
+              />
+            </div>
+
+            {error && (
+              <div className="px-4 py-3 rounded-lg bg-red-50 border border-red-100 text-sm text-red-700">
+                {error}
               </div>
+            )}
 
-              <div>
-                <label
-                  htmlFor="confirm"
-                  className="block text-sm font-medium mb-1"
-                  style={{ color: '#1c3023' }}
-                >
-                  Confirm Password
-                </label>
-                <input
-                  id="confirm"
-                  type="password"
-                  value={confirm}
-                  onChange={(e) => setConfirm(e.target.value)}
-                  required
-                  autoComplete="new-password"
-                  className="w-full border rounded-lg px-4 py-3 text-sm outline-none transition-all"
-                  style={{
-                    borderColor: '#ede4cc',
-                    color: '#1c3023',
-                    backgroundColor: '#fafaf8',
-                  }}
-                  onFocus={(e) => (e.currentTarget.style.borderColor = '#1c3023')}
-                  onBlur={(e) => (e.currentTarget.style.borderColor = '#ede4cc')}
-                  placeholder="Re-enter your password"
-                />
-              </div>
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full py-3 rounded-lg font-semibold text-sm tracking-wide transition-opacity hover:opacity-90 disabled:opacity-60"
+              style={{ backgroundColor: '#1c3023', color: '#f5ecd8' }}
+            >
+              {loading ? 'Creating your account…' : 'Create Account & Sign In'}
+            </button>
+          </form>
 
-              {error && (
-                <p className="text-sm text-red-600 text-center">{error}</p>
-              )}
-
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full py-3 rounded-lg text-white font-semibold text-sm tracking-wide transition-opacity disabled:opacity-60"
-                style={{ backgroundColor: '#1c3023' }}
-              >
-                {loading ? 'Setting password...' : 'Set Password'}
-              </button>
-            </form>
-          )}
+          <p className="text-center text-xs mt-8" style={{ color: '#aaa' }}>
+            The Becker Team &mdash; Xpert Home Lending, NMLS #794730
+          </p>
         </div>
-
-        <p className="text-center text-xs mt-6" style={{ color: '#888' }}>
-          The Becker Team &mdash; Xpert Home Lending, NMLS #794730
-        </p>
       </div>
     </div>
   )

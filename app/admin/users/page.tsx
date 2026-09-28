@@ -131,10 +131,19 @@ export default function UsersPage() {
   }
 
   const roleBadge = (role: string) => {
-    const isAdmin = role === 'admin'
+    if (role === 'super_admin') return (
+      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-purple-900 text-purple-100">
+        Super Admin
+      </span>
+    )
+    if (role === 'admin') return (
+      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#1c3023] text-[#f5ecd8]">
+        Admin
+      </span>
+    )
     return (
-      <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold ${isAdmin ? 'bg-[#1c3023] text-[#f5ecd8]' : 'bg-gray-100 text-gray-600'}`}>
-        {isAdmin ? 'Admin' : 'User'}
+      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-gray-100 text-gray-600">
+        User
       </span>
     )
   }
@@ -221,15 +230,17 @@ export default function UsersPage() {
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-2">
                       {roleBadge(u.role)}
-                      <select
-                        value={u.role}
-                        disabled={changingRole === u.id}
-                        onChange={e => changeRole(u.id, u.email, e.target.value as 'admin' | 'user')}
-                        className="text-xs border border-gray-200 rounded px-2 py-1 bg-white text-gray-500 disabled:opacity-40"
-                      >
-                        <option value="user">User</option>
-                        <option value="admin">Admin</option>
-                      </select>
+                      {u.role !== 'super_admin' && (
+                        <select
+                          value={u.role}
+                          disabled={changingRole === u.id}
+                          onChange={e => changeRole(u.id, u.email, e.target.value as 'admin' | 'user')}
+                          className="text-xs border border-gray-200 rounded px-2 py-1 bg-white text-gray-500 disabled:opacity-40"
+                        >
+                          <option value="user">User</option>
+                          <option value="admin">Admin</option>
+                        </select>
+                      )}
                     </div>
                   </td>
                   <td className="px-6 py-4">
@@ -259,10 +270,12 @@ export default function UsersPage() {
                           {resettingPw === u.email ? 'Sending...' : 'Reset Password'}
                         </button>
                       )}
-                      <button onClick={() => deleteUser(u.id, u.email ?? '')} disabled={deleting === u.id}
-                        className="text-xs text-red-500 hover:text-red-700 font-medium disabled:opacity-40">
-                        {deleting === u.id ? 'Removing...' : 'Remove'}
-                      </button>
+                      {u.role !== 'super_admin' && (
+                        <button onClick={() => deleteUser(u.id, u.email ?? '')} disabled={deleting === u.id}
+                          className="text-xs text-red-500 hover:text-red-700 font-medium disabled:opacity-40">
+                          {deleting === u.id ? 'Removing...' : 'Remove'}
+                        </button>
+                      )}
                     </div>
                   </td>
                 </tr>

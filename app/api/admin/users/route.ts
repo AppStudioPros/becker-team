@@ -11,7 +11,7 @@ function getServiceClient() {
   )
 }
 
-async function isAuthenticated() {
+async function getCurrentUserProfile() {
   const cookieStore = await cookies()
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -19,22 +19,25 @@ async function isAuthenticated() {
     { cookies: { getAll: () => cookieStore.getAll() } }
   )
   const { data: { user } } = await supabase.auth.getUser()
-  if (!user) return false
+  if (!user) return null
 
-  // Verify they have a profile in becker_admin_profiles
   const admin = getServiceClient()
   const { data } = await admin
     .from('becker_admin_profiles')
-    .select('id')
+    .select('id, role')
     .eq('id', user.id)
     .single()
 
-  return !!data
+  return data ?? null
 }
 
-// GET — list all users
+// GET — list users (super_admin sees all; admin sees all except super_admin)
 export async function GET() {
-  if (!(await isAuthenticated())) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  const profile = await getCurrentUserProfile()
+  if (!profile) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  if (!['admin', 'super_admin'].includes(profile.role)) {
+    return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+  }
 
   const supabase = getServiceClient()
 
@@ -52,7 +55,7 @@ export async function GET() {
     last_sign_in_at: u.last_sign_in_at ?? null,
   }]))
 
-  const enriched = (profiles ?? []).map(p => ({
+  const allUsers = (profiles ?? []).map(p => ({
     id: p.id,
     email: p.email,
     display_name: p.display_name,
@@ -62,17 +65,38 @@ export async function GET() {
     last_sign_in_at: authMap.get(p.id)?.last_sign_in_at ?? null,
   }))
 
-  return NextResponse.json({ users: enriched })
+  // Non-super-admins cannot see super_admin accounts
+  const visible = profile.role === 'super_admin'
+    ? allUsers
+    : allUsers.filter(u => u.role !== 'super_admin')
+
+  return NextResponse.json({ users: visible })
 }
 
-// DELETE — remove user from auth AND profiles
+// DELETE — remove user (cannot delete a super_admin)
 export async function DELETE(req: NextRequest) {
-  if (!(await isAuthenticated())) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  const profile = await getCurrentUserProfile()
+  if (!profile) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  if (!['admin', 'super_admin'].includes(profile.role)) {
+    return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+  }
 
   const { userId } = await req.json()
   if (!userId) return NextResponse.json({ error: 'userId required' }, { status: 400 })
 
   const supabase = getServiceClient()
+
+  // Block deletion of super_admin accounts
+  const { data: target } = await supabase
+    .from('becker_admin_profiles')
+    .select('role')
+    .eq('id', userId)
+    .single()
+
+  if (target?.role === 'super_admin') {
+    return NextResponse.json({ error: 'Cannot remove a super admin.' }, { status: 403 })
+  }
+
   const { error } = await supabase.auth.admin.deleteUser(userId)
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
 

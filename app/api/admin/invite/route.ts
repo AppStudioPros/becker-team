@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
 
   const { email, role = 'user' } = await req.json()
   if (!email) return NextResponse.json({ error: 'Email is required' }, { status: 400 })
-  if (!['admin', 'user'].includes(role)) return NextResponse.json({ error: 'Invalid role' }, { status: 400 })
+  if (!['admin', 'user'].includes(role)) return NextResponse.json({ error: 'Invalid role' }, { status: 400 }) // super_admin is never invitable — set directly in DB
 
   const supabase = getServiceClient()
   const siteUrl = 'https://thebeckerteam.com'

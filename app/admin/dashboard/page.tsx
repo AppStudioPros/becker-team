@@ -102,7 +102,7 @@ export default async function DashboardPage() {
                       href={`/blog/${post.slug}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-medium truncate hover:underline"
+                      className="font-medium block truncate hover:underline"
                       style={{ color: '#1c3023' }}
                     >
                       {post.title}

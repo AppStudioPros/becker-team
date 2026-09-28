@@ -19,6 +19,7 @@ export default function UsersPage() {
   const [loading, setLoading] = useState(true)
   const [deleting, setDeleting] = useState<string | null>(null)
   const [resending, setResending] = useState<string | null>(null)
+  const [resettingPw, setResettingPw] = useState<string | null>(null)
   const [changingRole, setChangingRole] = useState<string | null>(null)
   const [inviteEmail, setInviteEmail] = useState('')
   const [inviteRole, setInviteRole] = useState<'admin' | 'user'>('user')
@@ -71,6 +72,23 @@ export default function UsersPage() {
       setRowMsg(prev => ({ ...prev, [email]: 'Failed to update role' }))
     }
     setChangingRole(null)
+  }
+
+  async function resetPassword(userId: string, email: string) {
+    setResettingPw(email)
+    setRowMsg(prev => ({ ...prev, [email]: '' }))
+    const res = await fetch(`/api/admin/users/${userId}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'reset_password', email }),
+    })
+    const d = await res.json()
+    setResettingPw(null)
+    setRowMsg(prev => ({
+      ...prev,
+      [email]: res.ok ? 'Reset email sent!' : (d.error ?? 'Failed to send reset'),
+    }))
+    setTimeout(() => setRowMsg(prev => ({ ...prev, [email]: '' })), 4000)
   }
 
   async function resendInvite(userId: string, email: string) {
@@ -232,7 +250,13 @@ export default function UsersPage() {
                       {!u.confirmed_at && (
                         <button onClick={() => resendInvite(u.id, u.email ?? '')} disabled={resending === u.email}
                           className="text-xs text-[#1c3023] hover:underline font-medium disabled:opacity-40">
-                          {resending === u.email ? 'Sending...' : 'Resend'}
+                          {resending === u.email ? 'Sending...' : 'Resend Invite'}
+                        </button>
+                      )}
+                      {u.confirmed_at && (
+                        <button onClick={() => resetPassword(u.id, u.email ?? '')} disabled={resettingPw === u.email}
+                          className="text-xs text-[#1c3023] hover:underline font-medium disabled:opacity-40">
+                          {resettingPw === u.email ? 'Sending...' : 'Reset Password'}
                         </button>
                       )}
                       <button onClick={() => deleteUser(u.id, u.email ?? '')} disabled={deleting === u.id}

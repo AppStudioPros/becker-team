@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from '@vercel/analytics/react';
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import ConditionalLayout from "@/components/ConditionalLayout";
@@ -77,6 +78,7 @@ export default function RootLayout({
         </ConditionalLayout>
         <AccessibilityWidget />
         <ChatWidget />
+        <Analytics />
       </body>
     </html>
   );

@@ -81,6 +81,29 @@ export default function Footer() {
 
         {/* Col 4 — Connect */}
         <div>
+          <h4 className="text-base font-semibold mb-5 tracking-wide">Service Areas</h4>
+          <ul className="flex flex-col gap-2 mb-6">
+            {[
+              { label: 'Denver', href: '/denver-mortgage' },
+              { label: 'Aurora', href: '/aurora-home-loans' },
+              { label: 'Lakewood', href: '/lakewood-mortgage' },
+              { label: 'Westminster', href: '/westminster-mortgage' },
+              { label: 'Broomfield', href: '/broomfield-mortgage' },
+              { label: 'Thornton', href: '/thornton-mortgage' },
+              { label: 'Centennial', href: '/centennial-mortgage' },
+              { label: 'Englewood', href: '/englewood-mortgage' },
+              { label: 'Longmont', href: '/longmont-mortgage' },
+              { label: 'Loveland', href: '/loveland-mortgage' },
+              { label: 'Littleton', href: '/littleton-mortgage' },
+              { label: 'Fort Collins', href: '/fort-collins-mortgage' },
+            ].map((l) => (
+              <li key={l.href}>
+                <Link href={l.href} className="text-sm text-gray-300 hover:text-white transition-colors">
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
           <h4 className="text-base font-semibold mb-5 tracking-wide">Connect</h4>
           <ul className="flex flex-col gap-3">
             <li>

@@ -57,6 +57,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/lakewood-mortgage`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/littleton-mortgage`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/westminster-mortgage`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/broomfield-mortgage`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/englewood-mortgage`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/longmont-mortgage`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/loveland-mortgage`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/thornton-mortgage`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/centennial-mortgage`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/mountain-home-loans`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/self-employed-mortgage-colorado`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/second-home-loans-colorado`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/va-loans-denver`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/chfa-loan-colorado`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/down-payment-assistance-colorado`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
     ...blogEntries,
   ]
 }

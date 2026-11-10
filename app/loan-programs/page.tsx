@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: 'Mortgage Loan Programs | The Becker Team Colorado',
   description:
     'VA, FHA, conventional, jumbo, self-employed, asset qualifier, and Mortgage Accelerator loans in Colorado and beyond. Jamie Becker, NMLS #794730.',
+  alternates: { canonical: 'https://www.thebeckerteam.com/loan-programs' },
 }
 
 // Program cards in display order (images fixed, titles/hrefs assigned per Kelsi 2026-09-07)

@@ -7,7 +7,8 @@ import FaqAccordion from '@/components/FaqAccordion'
 export const metadata: Metadata = {
   title: 'Self-Employed Mortgage Colorado | Bank Statement Mortgage Program | The Becker Team',
   description:
-    'Mortgage loans for self-employed borrowers, business owners and entrepreneurs. Qualify with 1 year of tax returns, bank statements, or a P&L — no W-2 required. Jamie Becker, NMLS #794730.',
+    'Explore Colorado self-employed mortgage options, including bank statement and alternative documentation loans. Talk with Jamie Becker, NMLS #794730.',
+  alternates: { canonical: 'https://www.thebeckerteam.com/loan-programs/self-employed-loans' },
 }
 
 const jsonLd = {

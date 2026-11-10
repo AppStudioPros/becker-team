@@ -162,6 +162,20 @@ export default function BroomfieldMortgagePage() {
         </div>
       </section>
 
+      <section className="bg-white px-6 py-10 border-y border-stone-200">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold mb-3" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}>
+            Self-Employed or Have Nontraditional Income?
+          </h2>
+          <p className="leading-relaxed mb-4" style={{ color: '#4a5e53' }}>
+            If tax returns do not reflect your full cash flow, learn how bank statement mortgage programs may help qualifying Colorado borrowers.
+          </p>
+          <Link href="/blog/bank-statement-loans-colorado" className="font-semibold underline underline-offset-4" style={{ color: '#1F2E2A' }}>
+            Read our Colorado bank statement loan guide
+          </Link>
+        </div>
+      </section>
+
       <section className="bg-white py-16 md:py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 data-reveal className="text-3xl md:text-4xl font-bold text-center mb-10" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}>

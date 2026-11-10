@@ -4,9 +4,9 @@ import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Broomfield CO Mortgage Broker | Home Loans Broomfield Colorado | The Becker Team',
+  title: 'Broomfield Mortgage Broker & Home Loans, CO',
   description:
-    'Broomfield CO mortgage broker Jamie Becker (NMLS #794730). Conventional, FHA, VA, and jumbo loans for Broomfield, Westminster, Superior, and Louisville. Tech corridor specialists. Fast pre-approvals.',
+    'Looking for a Broomfield mortgage broker? Explore conventional, FHA, VA, jumbo and specialty home loans with Jamie Becker, NMLS #794730.',
   alternates: { canonical: 'https://www.thebeckerteam.com/broomfield-mortgage' },
 }
 

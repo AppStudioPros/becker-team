@@ -343,6 +343,21 @@ export default function SelfEmployedLoansPage() {
         </div>
       </section>
 
+      {/* Related guide for borrowers comparing documentation options */}
+      <section className="bg-white py-12 px-6">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold mb-3" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}>
+            Considering a Bank Statement Mortgage?
+          </h2>
+          <p className="mb-4 leading-relaxed" style={{ color: '#4a5e53' }}>
+            Learn how bank statement loans work in Colorado and what self-employed borrowers should ask before applying.
+          </p>
+          <Link href="/blog/bank-statement-loans-colorado" className="font-semibold underline underline-offset-4" style={{ color: '#1F2E2A' }}>
+            Read the Colorado bank statement loan guide
+          </Link>
+        </div>
+      </section>
+
       {/* ── FAQ ── */}
       <section style={{ backgroundColor: '#F5EFE6' }} className="py-16 md:py-20 px-6">
         <div className="max-w-3xl mx-auto">

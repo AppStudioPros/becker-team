@@ -4,9 +4,9 @@ import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Broomfield CO Mortgage Broker | Home Loans Broomfield Colorado | The Becker Team',
+  title: 'Broomfield Mortgage Broker & Home Loans, CO',
   description:
-    'Broomfield CO mortgage broker Jamie Becker (NMLS #794730). Conventional, FHA, VA, and jumbo loans for Broomfield, Westminster, Superior, and Louisville. Tech corridor specialists. Fast pre-approvals.',
+    'Looking for a Broomfield mortgage broker? Explore conventional, FHA, VA, jumbo and specialty home loans with Jamie Becker, NMLS #794730.',
   alternates: { canonical: 'https://www.thebeckerteam.com/broomfield-mortgage' },
 }
 
@@ -159,6 +159,20 @@ export default function BroomfieldMortgagePage() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-6 py-10 border-y border-stone-200">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold mb-3" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}>
+            Self-Employed or Have Nontraditional Income?
+          </h2>
+          <p className="leading-relaxed mb-4" style={{ color: '#4a5e53' }}>
+            If tax returns do not reflect your full cash flow, learn how bank statement mortgage programs may help qualifying Colorado borrowers.
+          </p>
+          <Link href="/blog/bank-statement-loans-colorado" className="font-semibold underline underline-offset-4" style={{ color: '#1F2E2A' }}>
+            Read our Colorado bank statement loan guide
+          </Link>
         </div>
       </section>
 

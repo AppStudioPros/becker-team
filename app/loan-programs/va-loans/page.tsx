@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: 'Best VA Mortgage Rates Colorado | VA Loans Colorado Springs | The Becker Team',
   description:
     'VA home loans for veterans, active-duty service members and eligible surviving spouses. No down payment, no PMI, competitive rates. Jamie Becker, NMLS #794730.',
+  alternates: { canonical: '/loan-programs/va-loans' },
 }
 
 const jsonLd = {

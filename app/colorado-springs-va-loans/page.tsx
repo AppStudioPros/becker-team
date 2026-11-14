@@ -50,7 +50,18 @@ const faqs = [
   { q: 'Who is eligible for a VA loan in Colorado Springs?', a: 'VA loan eligibility requires meeting service requirements: 90 days active duty during wartime, 181 days during peacetime, 6 years in the Guard/Reserves, or being a surviving spouse of a service member who died in the line of duty. Most active-duty members at Fort Carson, Peterson SFB, Schriever AFB, and USAFA qualify.' },
   { q: 'Do I need a down payment for a VA loan?', a: 'No. Eligible veterans and service members can purchase a home with zero down payment using a VA loan. There are no PMI requirements. The only upfront cost unique to VA loans is the funding fee, which can be financed into the loan and is waived for veterans with service-connected disabilities.' },
   { q: 'What is the VA funding fee?', a: 'The VA funding fee is a one-time fee paid to the VA at closing. It ranges from 1.25% to 3.3% of the loan amount depending on your down payment and whether it\'s your first VA loan use. It can be financed into the loan. Veterans with service-connected disabilities rated 10% or higher are exempt.' },
-  { q: 'Can I use a VA loan to buy in Colorado Springs while stationed elsewhere?', a: 'Yes. You can use your VA loan benefit to purchase in Colorado Springs even if you\'re currently stationed at another installation — many veterans choose this ahead of PCS orders or to establish a home base in the Springs.' },
+  {
+    q: 'Can I use a VA loan to buy near Fort Carson before I transfer there?',
+    a: 'You may be able to buy a home near Fort Carson before a permanent change of station (PCS). You need a VA Certificate of Eligibility, and you must meet VA and lender requirements, including the rules for moving into the home as your primary residence. Share your orders and expected move-in date with your lender so they can review the timing before you set a closing date.',
+  },
+  {
+    q: 'How soon do I need to move in after closing on a VA loan near Fort Carson?',
+    a: 'The VA generally expects you to move in within 60 days of closing. A later move-in date may qualify if you can give a specific date and identify the event that will let you move in, such as reporting to Fort Carson. If you are on active duty and cannot move in on time, your spouse or dependent child may be able to meet the occupancy requirement.',
+  },
+  {
+    q: 'How do I get a VA Certificate of Eligibility while stationed at Fort Carson?',
+    a: 'You can request a Certificate of Eligibility (COE) online through VA.gov or ask your lender to request it. If you are on active duty, the VA asks for a statement of service signed by your commander, adjutant, or personnel officer. The COE confirms eligibility for the VA home loan benefit. Your lender still reviews your credit, income, and other loan requirements.',
+  },
   { q: 'What are current VA mortgage rates in Colorado Springs?', a: 'VA rates change daily. Because the VA guaranty reduces lender risk, VA rates are typically among the lowest available. Contact Jamie for a current quote — we work with multiple wholesale lenders to find the most competitive VA rate for your situation and credit profile.' },
   { q: 'Can I use my VA loan benefit more than once?', a: 'Yes. Your VA entitlement is reusable. If you\'ve paid off a previous VA loan or sold the home, your entitlement is typically restored. Many Colorado Springs veterans have used their VA benefit for multiple homes throughout their careers.' },
 ]
@@ -176,6 +187,14 @@ export default function ColoradoSpringsVaPage() {
             VA Loan FAQ — Colorado Springs
           </h2>
           <FaqAccordion items={faqs} />
+          <div className="mt-6 text-sm text-gray-600">
+            <p className="font-semibold">Official VA home loan guidance</p>
+            <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-2">
+              <li><a className="underline" href="https://www.va.gov/housing-assistance/home-loans/loan-types/purchase-loan/">VA purchase loans</a></li>
+              <li><a className="underline" href="https://www.va.gov/housing-assistance/home-loans/how-to-request-coe/">Request a Certificate of Eligibility</a></li>
+              <li><a className="underline" href="https://benefits.va.gov/WARMS/docs/admin26/pamphlet/pam26_7/vap26-7-chapter3-the-va-loan-and-guaranty.pdf#page=11">VA occupancy rules (PDF)</a></li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -197,7 +216,7 @@ export default function ColoradoSpringsVaPage() {
           You Earned This Benefit
         </h2>
         <p data-reveal="fade" data-delay="150" className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
-          The VA loan is one of the strongest home financing tools available. Let's put it to work for you in Colorado Springs.
+          The VA loan is one of the strongest home financing tools available. Let&apos;s put it to work for you in Colorado Springs.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a

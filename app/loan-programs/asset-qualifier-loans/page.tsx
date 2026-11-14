@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: 'Asset Qualifier Loans | The Becker Team',
   description:
     'Qualify for a mortgage using your assets instead of traditional income documentation. Ideal for retirees, investors, and high-net-worth borrowers. Jamie Becker, NMLS #794730.',
+  alternates: { canonical: '/loan-programs/asset-qualifier-loans' },
 }
 
 const jsonLd = {

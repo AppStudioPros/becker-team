@@ -8,6 +8,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: ['/api/', '/_next/'],
       },
+      { userAgent: 'OAI-SearchBot', allow: '/', disallow: ['/api/', '/_next/'] },
       { userAgent: 'GPTBot', allow: '/' },
       { userAgent: 'ChatGPT-User', allow: '/' },
       { userAgent: 'PerplexityBot', allow: '/' },

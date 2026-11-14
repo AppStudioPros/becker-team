@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: 'Best Jumbo Mortgage Rates Colorado | Jumbo Loans Boulder, Vail, Aspen | The Becker Team',
   description:
     'Jumbo mortgage loans for luxury homes and high-cost properties exceeding conforming loan limits. Fixed and adjustable options available. Jamie Becker, NMLS #794730.',
+  alternates: { canonical: '/loan-programs/jumbo-loans' },
 }
 
 const jsonLd = {
@@ -185,7 +186,7 @@ export default function JumboLoansPage() {
             What This Program Does — and Why It Matters
           </h2>
           <p className="text-gray-700 leading-relaxed mb-12 max-w-3xl text-center mx-auto">
-            When a property's price exceeds the conforming loan limits set by Fannie Mae and Freddie Mac, conventional financing stops being an option. Jumbo loans fill that gap — providing access to larger loan amounts for qualified borrowers purchasing luxury homes, high-value properties, or homes in markets where prices simply run higher.
+            When a property&apos;s price exceeds the conforming loan limits set by Fannie Mae and Freddie Mac, conventional financing stops being an option. Jumbo loans fill that gap — providing access to larger loan amounts for qualified borrowers purchasing luxury homes, high-value properties, or homes in markets where prices simply run higher.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {highlights.map((h, i) => (

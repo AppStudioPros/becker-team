@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: 'Best FHA Mortgage Rates Colorado | FHA Loans Denver | The Becker Team',
   description:
     'Government-insured FHA loans with as little as 3.5% down and more flexible credit requirements. Great for first-time buyers. Jamie Becker, NMLS #794730.',
+  alternates: { canonical: '/loan-programs/fha-loans' },
 }
 
 const jsonLd = {
@@ -185,7 +186,7 @@ export default function FhaLoansPage() {
             What This Program Does — and Why It Matters
           </h2>
           <p className="text-gray-700 leading-relaxed mb-12 max-w-3xl text-center mx-auto">
-            FHA loans exist to make homeownership accessible for buyers who aren't yet positioned for conventional financing. The government backing removes some of the risk for lenders — which translates into more forgiving credit requirements, lower down payments, and a real path to homeownership for buyers who would otherwise be turned away.
+            FHA loans exist to make homeownership accessible for buyers who aren&apos;t yet positioned for conventional financing. The government backing removes some of the risk for lenders — which translates into more forgiving credit requirements, lower down payments, and a real path to homeownership for buyers who would otherwise be turned away.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {highlights.map((h, i) => (
@@ -351,7 +352,7 @@ export default function FhaLoansPage() {
           A Real Path to Homeownership
         </h2>
         <p data-reveal="fade" data-delay="150" className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
-          If your credit or down payment isn't quite where it needs to be for conventional, FHA may be the right move right now. Let's take a look at your numbers together.
+          If your credit or down payment isn&apos;t quite where it needs to be for conventional, FHA may be the right move right now. Let&apos;s take a look at your numbers together.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a

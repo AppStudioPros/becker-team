@@ -104,7 +104,7 @@ export default function SelfEmployedMortgagePage() {
           Self-Employed Mortgage Colorado
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Bank statement loans, asset qualifier programs, and non-QM options for Colorado freelancers, 1099 workers, business owners, and entrepreneurs. Your tax return does not have to define your loan.
+          Jamie Becker of The Becker Team helps Colorado freelancers, independent contractors, and business owners explore bank statement mortgages and other options for self-employed buyers.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -128,7 +128,9 @@ export default function SelfEmployedMortgagePage() {
 
       <section className="bg-white py-5 px-6 border-b border-stone-200">
         <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-2 text-sm font-semibold" style={{ color: '#1F2E2A' }}>
-          <span>✦ Bank Statement Loan Specialists</span>
+          <Link href="/loan-programs/self-employed-loans" className="underline underline-offset-4">
+            Explore self-employed loan programs
+          </Link>
           <span>✦ 1099 and Non-QM Programs</span>
           <span>✦ No W-2 Required</span>
           <span>✦ 21+ Years Experience</span>

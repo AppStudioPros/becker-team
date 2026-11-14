@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: 'Home Mortgage Accelerator Strategy | The Becker Team',
   description:
     'A cash-flow-driven mortgage strategy for homeowners with strong monthly net deposits. Use your cash flow intentionally to pay down your mortgage faster. Jamie Becker, NMLS #794730.',
+  alternates: { canonical: '/loan-programs/mortgage-accelerator' },
 }
 
 const jsonLd = {

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: 'Best Conventional Mortgage Rates Colorado | Denver Mortgage Broker | The Becker Team',
   description:
     'Conventional home loans from private lenders with flexible terms and competitive rates. As low as 3-5% down. Jamie Becker, NMLS #794730.',
+  alternates: { canonical: '/loan-programs/conventional-loans' },
 }
 
 const jsonLd = {

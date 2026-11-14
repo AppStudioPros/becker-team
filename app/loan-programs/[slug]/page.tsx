@@ -18,6 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${program.title} | The Becker Team`,
     description: program.tagline + ' Jamie Becker, Colorado mortgage broker, NMLS #794730.',
+    alternates: { canonical: `/loan-programs/${program.slug}` },
   }
 }
 

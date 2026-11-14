@@ -211,6 +211,15 @@ export default async function BlogPostPage({ params }: Params) {
               dangerouslySetInnerHTML={{ __html: post.body_bottom }}
             />
           )}
+          {post.slug === 'bank-statement-loans-colorado' && (
+            <p className="mt-8 text-[#1c3023]">
+              Buying in Colorado with self-employment income?{' '}
+              <Link href="/loan-programs/self-employed-loans" className="font-semibold underline underline-offset-4">
+                See how The Becker Team can help with bank statement mortgages
+              </Link>
+              .
+            </p>
+          )}
         </div>
 
         {/* CTA Section */}

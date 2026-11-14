@@ -5,6 +5,8 @@ const nextConfig: NextConfig = {
     return [
       // Old Squarespace homepage slug
       { source: '/home', destination: '/', permanent: true },
+      { source: '/giving-back', destination: '/about#givingback', permanent: true },
+      { source: '/current-mortgage-rates', destination: '/mortgage-interest-rates', permanent: true },
     ]
   },
 

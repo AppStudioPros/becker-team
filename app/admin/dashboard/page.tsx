@@ -1,3 +1,4 @@
+import { canViewSearchReports } from '@/lib/reporting-access'
 import { createAdminClient } from '@/lib/supabase'
 import DashboardActions from './DashboardActions'
 import DashboardHeader from './DashboardHeader'
@@ -37,11 +38,11 @@ function formatDate(dateStr: string | null): string {
 }
 
 export default async function DashboardPage() {
-  const posts = await getPosts()
+  const [posts, showReports] = await Promise.all([getPosts(), canViewSearchReports()])
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#f5ecd8' }}>
-      <DashboardHeader />
+      <DashboardHeader showReports={showReports} />
 
       <div className="max-w-6xl mx-auto px-6 py-10">
         {/* Stats bar */}

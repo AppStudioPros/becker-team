@@ -117,6 +117,15 @@ export default function Footer() {
               </a>
             </li>
             <li>
+              <p className="text-sm text-gray-300 mb-1">Local Office</p>
+              <a
+                href="https://www.google.com/maps/search/?api=1&amp;query=201%20Columbine%20St%20Unit%20300%2C%20Denver%2C%20CO%2080206"
+                className="text-sm text-gray-300 underline hover:text-white transition-colors"
+              >
+                201 Columbine St Unit 300,<br />Denver, CO 80206
+              </a>
+            </li>
+            <li>
               <span className="text-sm text-gray-300">NMLS #794730</span>
             </li>
           </ul>

@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer style={{ backgroundColor: '#1F2E2A' }} className="text-white">
       {/* Main footer grid */}
-      <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1.2fr_1fr] gap-10">
+      <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.7fr_1fr_1.2fr_2fr] gap-10 lg:gap-8">
         {/* Col 1 — Licensing */}
         <div className="md:col-span-1">
           <p className="text-sm text-gray-300 leading-relaxed mb-4">
@@ -104,7 +104,7 @@ export default function Footer() {
 
         <div>
           <h4 className="text-base font-semibold mb-5 tracking-wide">Service Areas</h4>
-          <ul className="flex flex-col gap-2">
+          <ul className="columns-2 gap-6 [&>li]:mb-2 [&>li]:break-inside-avoid" data-footer-service-areas>
             {[
               { label: 'Denver', href: '/denver-mortgage' },
               { label: 'Aurora', href: '/aurora-home-loans' },

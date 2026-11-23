@@ -92,13 +92,15 @@ export default function Footer() {
             </li>
           </ul>
           <div className="mt-4">
-            <p className="text-sm text-gray-300 mb-1">Local Office</p>
-            <a
-              href="https://www.google.com/maps/search/?api=1&amp;query=201%20Columbine%20St%20Unit%20300%2C%20Denver%2C%20CO%2080206"
-              className="text-sm text-gray-300 underline hover:text-white transition-colors"
-            >
-              201 Columbine St Unit 300,<br />Denver, CO 80206
-            </a>
+            <p className="text-sm text-gray-300 mb-1">Local Office:</p>
+            <p className="text-sm text-gray-300">
+              <a
+                href="https://www.google.com/maps/search/?api=1&amp;query=201%20Columbine%20St%20Unit%20300%2C%20Denver%2C%20CO%2080206"
+                className="underline hover:text-white transition-colors"
+              >
+                201 Columbine St Unit 300,<br />Denver, CO 80206
+              </a>
+            </p>
           </div>
         </div>
 

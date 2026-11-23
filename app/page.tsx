@@ -101,7 +101,7 @@ const speakableJsonLd = {
 }
 
 
-const googleReviewsUrl = 'https://www.google.com/maps/search/?api=1&query=The+Becker+Team+201+Columbine+St+Denver+CO'
+const googleReviewsUrl = 'https://www.google.com/maps?cid=14064244300182174262'
 
 type GoogleReview = {
   reviewId: string
@@ -110,10 +110,32 @@ type GoogleReview = {
   comment?: string
 }
 
+const featuredGoogleReviews = [
+  { name: 'Jon Dwight', excerpt: 'Everything was seamless and we didn’t have to worry when we got to the closing table.' },
+  { name: 'Sally Johnston', excerpt: 'He was always there to help and anticipated any challenges we could have had.' },
+  { name: 'The Hiker', excerpt: 'Jamie is creative, hardworking, and pays incredible attention to detail.' },
+]
+
+function FeaturedGoogleReviews() {
+  return (
+    <div className="mt-8">
+      <p className="mb-4 text-sm">Featured five-star reviews from Google Maps</p>
+      <ul className="grid gap-4 text-left md:grid-cols-3">
+        {featuredGoogleReviews.map(({ name, excerpt }) => (
+          <li key={name} className="rounded border border-[#ede4cc] bg-[#F5EFE6] p-5">
+            <p className="mb-2 text-sm font-semibold">{name} · 5 out of 5 stars</p>
+            <blockquote className="text-sm leading-relaxed">“{excerpt}”</blockquote>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
 async function GoogleReviewCards() {
   const { GOOGLE_GBP_CLIENT_ID, GOOGLE_GBP_CLIENT_SECRET, GOOGLE_GBP_REFRESH_TOKEN, GOOGLE_GBP_ACCOUNT_ID, GOOGLE_GBP_LOCATION_ID } = process.env
   if (!GOOGLE_GBP_CLIENT_ID || !GOOGLE_GBP_CLIENT_SECRET || !GOOGLE_GBP_REFRESH_TOKEN ||
-      !GOOGLE_GBP_ACCOUNT_ID || !GOOGLE_GBP_LOCATION_ID) return null
+      !GOOGLE_GBP_ACCOUNT_ID || !GOOGLE_GBP_LOCATION_ID) return <FeaturedGoogleReviews />
 
   const signal = AbortSignal.timeout(4000)
   try {

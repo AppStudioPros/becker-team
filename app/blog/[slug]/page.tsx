@@ -177,6 +177,10 @@ export default async function BlogPostPage({ params }: Params) {
             >
               {post.title}
             </h1>
+            <p className="mt-4 text-sm text-[#1c3023]">
+              By <Link href="/about" className="font-semibold underline underline-offset-4">Jamie Becker</Link>
+              {' · Colorado mortgage broker · NMLS #794730'}
+            </p>
           </header>
 
           {/* Body Top */}

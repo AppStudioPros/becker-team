@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Current Mortgage Interest Rates | The Becker Team Colorado',
@@ -26,9 +27,19 @@ export default function InterestRatesPage() {
       <section style={{ backgroundColor: '#F5EFE6' }} className="py-16 px-6">
         <div className="max-w-3xl mx-auto">
 
-          {/* Rate embed placeholder */}
-          <div className="border border-dashed border-[#ede4cc] rounded py-16 text-center text-gray-400 mb-12 bg-white">
-            <p className="text-sm">Live rate widget — paste your embed code here</p>
+          <div className="mx-auto mb-12 max-w-[648px] overflow-hidden rounded border border-[#ede4cc] bg-white">
+            <iframe
+              title="Mortgage News Daily mortgage rate averages"
+              src="https://widgets.mortgagenewsdaily.com/widget/f/rates?t=large&sn=true&c=85a3b3&u=&cbu=&w=648&h=290"
+              className="block h-[290px] w-full border-0"
+            />
+            <p className="px-4 pb-4 pt-3 text-sm text-gray-700">
+              These are national market averages.{' '}
+              <a href="https://www.mortgagenewsdaily.com/mortgage-rates" className="underline">
+                See rates on Mortgage News Daily
+              </a>
+              {' '}or <Link href="/contact" className="underline">ask Jamie for a personalized quote</Link>.
+            </p>
           </div>
 
           <h2
@@ -67,15 +78,13 @@ export default function InterestRatesPage() {
             <p className="text-gray-600 mb-6">
               Ready to find out what rate you qualify for?
             </p>
-            <a
-              href="https://2179191.my1003app.com/794730/register"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/contact"
               className="inline-block uppercase tracking-widest text-sm font-semibold px-14 py-5 rounded btn-hover"
               style={{ backgroundColor: '#1F2E2A', color: '#F5EFE6', border: '2px solid #1F2E2A' }}
             >
               Get a Rate Quote
-            </a>
+            </Link>
           </div>
         </div>
       </section>

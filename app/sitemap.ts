@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { createAdminClient } from '@/lib/supabase'
+import { mortgageServiceAreas } from '@/lib/mortgageServiceAreas'
 
 const BASE = 'https://www.thebeckerteam.com'
 
@@ -69,6 +70,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/va-loans-denver`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/chfa-loan-colorado`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/down-payment-assistance-colorado`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    ...mortgageServiceAreas.map(({ slug }) => ({
+      url: BASE + '/service-areas/' + slug,
+      changeFrequency: 'monthly' as const,
+      priority: 0.85,
+    })),
     ...blogEntries,
   ]
 }

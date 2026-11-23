@@ -4,9 +4,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'Local Colorado Mortgage Broker | Best Mortgage Rates Denver | The Becker Team',
+  title: { absolute: 'Colorado Mortgage Broker | The Becker Team' },
+  alternates: { canonical: '/' },
   description:
-    'Jamie Becker is a Colorado mortgage broker with 21+ years of experience helping advisors, agents, and households solve mortgage problems traditional underwriting cannot. NMLS #794730.',
+    'Work with Jamie Becker, a Colorado mortgage broker, to compare home loans for your first purchase, next home, or self-employed income.',
 }
 
 const loanProgramCells = [
@@ -42,30 +43,6 @@ const jsonLd = {
     name: 'Jamie Becker',
     jobTitle: 'Mortgage Broker',
     identifier: 'NMLS #794730',
-  },
-}
-
-const ratingJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'The Becker Team — Xpert Home Lending',
-  url: 'https://www.thebeckerteam.com',
-  telephone: '(720) 492-3335',
-  email: 'Jamie@thebeckerteam.com',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '201 Columbine Street, Suite 300',
-    addressLocality: 'Denver',
-    addressRegion: 'CO',
-    postalCode: '80206',
-    addressCountry: 'US',
-  },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5.0',
-    reviewCount: '250',
-    bestRating: '5',
-    worstRating: '1',
   },
 }
 
@@ -128,7 +105,6 @@ export default function HomePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceAreaJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ratingJsonLd) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -149,24 +125,15 @@ export default function HomePage() {
           className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 leading-tight"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
         >
-          Your Mortgage Expert
+          A Colorado mortgage broker for the way you buy
         </h1>
         <p
           className="text-lg md:text-xl max-w-2xl mb-8 text-white/90 leading-relaxed"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
         >
-          We are dedicated to helping advisors, agents &amp; households solve mortgage problems
-          that traditional underwriting can&apos;t. Let&apos;s find the right solution for your
-          client or personal needs.
+          I&apos;m Jamie Becker. Tell me what you&apos;re buying, how you earn, and what payment feels comfortable.
+          I&apos;ll help you compare loans before you commit to one.
         </p>
-
-        {/* Badge */}
-        <div
-          className="inline-block px-6 py-2 rounded-full text-xs font-semibold uppercase tracking-widest mb-10"
-          style={{ backgroundColor: '#B98942', color: '#fff' }}
-        >
-          Close Your Loan in as Fast as 10 Days
-        </div>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4">
@@ -246,6 +213,41 @@ export default function HomePage() {
               </Link>
             );
           })}
+        </div>
+      </section>
+
+      <section className="bg-white px-6 py-16 text-[#1F2E2A]">
+        <div className="mx-auto grid max-w-5xl items-center gap-8 md:grid-cols-[240px_1fr] md:gap-12">
+          <Image
+            src="/images/squarespace/jamie-fishing.jpg"
+            alt="Jamie Becker, Colorado mortgage broker"
+            width={384}
+            height={384}
+            sizes="(min-width: 768px) 240px, 320px"
+            className="aspect-square w-full max-w-xs rounded object-cover object-top"
+          />
+          <div>
+            <h2 className="mb-4 font-serif text-3xl md:text-4xl">Meet Jamie Becker</h2>
+            <p className="mb-4 leading-relaxed">
+              I run The Becker Team through Xpert Home Lending. If you&apos;re buying your first
+              place in Denver, using business income to qualify, or looking at a second home
+              in the mountains, we can start with the questions you have right now.
+            </p>
+            <p className="mb-5 leading-relaxed">
+              I&apos;ll walk you through what you might need at closing, how the monthly payment
+              fits your budget, and what we should check about the property before you write an offer.
+            </p>
+            <p className="mb-5 text-sm">Colorado mortgage broker · NMLS #794730</p>
+            <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold">
+              <Link href="/about" className="underline underline-offset-4">More about Jamie</Link>
+              <a
+                href="https://www.zillow.com/lender-profile/Jamie%20Becker/"
+                className="underline underline-offset-4"
+              >
+                Read Jamie&apos;s Zillow reviews
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 

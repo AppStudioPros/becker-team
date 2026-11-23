@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { mortgageServiceAreas } from '@/lib/mortgageServiceAreas'
 
 export default function Footer() {
   return (
@@ -105,6 +106,7 @@ export default function Footer() {
               { label: 'Loveland', href: '/loveland-mortgage' },
               { label: 'Littleton', href: '/littleton-mortgage' },
               { label: 'Fort Collins', href: '/fort-collins-mortgage' },
+              ...mortgageServiceAreas.map(({ city, slug }) => ({ label: city, href: '/service-areas/' + slug })),
             ].map((l) => (
               <li key={l.href}>
                 <Link href={l.href} className="text-sm text-gray-300 hover:text-white transition-colors">

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const loanProgramCells = [
   { title: 'Asset Qualifier Loans',     tagline: 'Qualify with assets, not income — flexible alternative lending',       href: '/loan-programs/asset-qualifier-loans' },
-  { title: 'Mortgage Accelerator',      tagline: 'Accelerate mortgage payoff before retirement',                          href: '/loan-programs/mortgage-accelerator' },
+  { title: 'Home Mortgage Accelerator',      tagline: 'Accelerate mortgage payoff before retirement',                          href: '/loan-programs/mortgage-accelerator' },
   { title: 'Conventional Loans',        tagline: 'Mortgage loans from private lenders with as little as 3-5% down',       href: '/loan-programs/conventional-loans' },
   { title: 'FHA Loans',                 tagline: 'Insured by FHA with down payments as low as 3.5%',                      href: '/loan-programs/fha-loans' },
   { title: 'VA Loans',                  tagline: 'No down payment loans for eligible veterans and service members',        href: '/loan-programs/va-loans' },

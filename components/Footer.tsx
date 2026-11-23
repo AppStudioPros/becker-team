@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer style={{ backgroundColor: '#1F2E2A' }} className="text-white">
       {/* Main footer grid */}
-      <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_1fr] gap-10">
+      <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1.2fr_1fr] gap-10">
         {/* Col 1 — Licensing */}
         <div className="md:col-span-1">
           <p className="text-sm text-gray-300 leading-relaxed mb-4">
@@ -35,6 +35,62 @@ export default function Footer() {
               (470) 660-5693
             </a>
           </p>
+        </div>
+
+        <div className="space-y-8">
+          <div>
+            <h4 className="text-base font-semibold mb-5 tracking-wide">Quick Links</h4>
+            <ul className="flex flex-col gap-3">
+              {[
+                { label: 'Home', href: '/' },
+                { label: 'About Us', href: '/about' },
+                { label: 'Programs', href: '/loan-programs' },
+                { label: 'FAQ', href: '/faq' },
+                { label: 'Contact', href: '/contact' },
+              ].map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="text-sm text-gray-300 hover:text-white transition-colors">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-base font-semibold mb-5 tracking-wide">Popular Programs</h4>
+
+            <ul className="flex flex-col gap-3">
+              {[
+                { label: 'Asset Qualifier', href: '/loan-programs/asset-qualifier-loans' },
+                { label: 'Mortgage Accelerator', href: '/loan-programs/mortgage-accelerator' },
+              ].map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="text-sm text-gray-300 hover:text-white transition-colors">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <h4 className="text-base font-semibold mb-5 tracking-wide">Connect</h4>
+          <ul className="flex flex-col gap-3">
+            <li>
+              <a href="tel:7204923335" className="text-sm hover:text-white transition-colors" style={{ color: '#B98942' }}>
+                (720) 492-3335
+              </a>
+            </li>
+            <li>
+              <a href="mailto:Jamie@thebeckerteam.com" className="text-sm hover:text-white transition-colors" style={{ color: '#B98942' }}>
+                Jamie@thebeckerteam.com
+              </a>
+            </li>
+            <li>
+              <span className="text-sm text-gray-300">NMLS #794730</span>
+            </li>
+          </ul>
           <div className="mt-4">
             <p className="text-sm text-gray-300 mb-1">Local Office</p>
             <a
@@ -46,53 +102,9 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Col 2 + 3 — 2-column on mobile, separate cols on desktop */}
-        <div className="grid grid-cols-2 gap-8 md:contents">
-
-        {/* Col 2 — Quick Links */}
-        <div>
-          <h4 className="text-base font-semibold mb-5 tracking-wide">Quick Links</h4>
-          <ul className="flex flex-col gap-3">
-            {[
-              { label: 'Home', href: '/' },
-              { label: 'About Us', href: '/about' },
-              { label: 'Programs', href: '/loan-programs' },
-              { label: 'FAQ', href: '/faq' },
-              { label: 'Contact', href: '/contact' },
-            ].map((l) => (
-              <li key={l.href}>
-                <Link href={l.href} className="text-sm text-gray-300 hover:text-white transition-colors">
-                  {l.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Col 3 — Popular Programs */}
-        <div>
-          <h4 className="text-base font-semibold mb-5 tracking-wide">Popular Programs</h4>
-          
-          <ul className="flex flex-col gap-3">
-            {[
-              { label: 'Asset Qualifier', href: '/loan-programs/asset-qualifier-loans' },
-              { label: 'Mortgage Accelerator', href: '/loan-programs/mortgage-accelerator' },
-            ].map((l) => (
-              <li key={l.href}>
-                <Link href={l.href} className="text-sm text-gray-300 hover:text-white transition-colors">
-                  {l.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        </div>{/* end 2-col mobile wrapper */}
-
-        {/* Col 4 — Connect */}
         <div>
           <h4 className="text-base font-semibold mb-5 tracking-wide">Service Areas</h4>
-          <ul className="flex flex-col gap-2 mb-6">
+          <ul className="flex flex-col gap-2">
             {[
               { label: 'Denver', href: '/denver-mortgage' },
               { label: 'Aurora', href: '/aurora-home-loans' },
@@ -114,22 +126,6 @@ export default function Footer() {
                 </Link>
               </li>
             ))}
-          </ul>
-          <h4 className="text-base font-semibold mb-5 tracking-wide">Connect</h4>
-          <ul className="flex flex-col gap-3">
-            <li>
-              <a href="tel:7204923335" className="text-sm hover:text-white transition-colors" style={{ color: '#B98942' }}>
-                (720) 492-3335
-              </a>
-            </li>
-            <li>
-              <a href="mailto:Jamie@thebeckerteam.com" className="text-sm hover:text-white transition-colors" style={{ color: '#B98942' }}>
-                Jamie@thebeckerteam.com
-              </a>
-            </li>
-            <li>
-              <span className="text-sm text-gray-300">NMLS #794730</span>
-            </li>
           </ul>
         </div>
       </div>

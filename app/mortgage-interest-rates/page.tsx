@@ -27,19 +27,32 @@ export default function InterestRatesPage() {
       <section style={{ backgroundColor: '#F5EFE6' }} className="py-16 px-6">
         <div className="max-w-3xl mx-auto">
 
-          <div className="mx-auto mb-12 max-w-[648px] overflow-hidden rounded border border-[#ede4cc] bg-white">
-            <iframe
-              title="Mortgage News Daily mortgage rate averages"
-              src="https://widgets.mortgagenewsdaily.com/widget/f/rates?t=large&sn=true&c=85a3b3&u=&cbu=&w=648&h=290"
-              className="block h-[290px] w-full border-0"
-            />
-            <p className="px-4 pb-4 pt-3 text-sm text-gray-700">
-              These are national market averages.{' '}
-              <a href="https://www.mortgagenewsdaily.com/mortgage-rates" className="underline">
-                See rates on Mortgage News Daily
+          <div className="mx-auto mb-12 max-w-[680px] overflow-hidden rounded-lg border border-[#ede4cc] bg-white">
+            <h2 className="px-4 pt-5 text-center font-serif text-2xl font-bold text-[#1F2E2A]">
+              National Mortgage Rate Averages
+            </h2>
+            <div className="py-3">
+              <iframe
+                title="Mortgage News Daily rates and 30-year rate chart"
+                src="https://widgets.mortgagenewsdaily.com/widget/f/rates?t=large&sn=false&c=85a3b3&w=648&h=230"
+                scrolling="no"
+                className="mx-auto hidden h-[230px] w-[648px] border-0 md:block"
+              />
+              <iframe
+                title="Mortgage News Daily rates"
+                src="https://widgets.mortgagenewsdaily.com/widget/f/rates?t=small&sc=false&c=85a3b3&w=260&h=170"
+                scrolling="no"
+                className="mx-auto block h-[170px] w-[260px] border-0 md:hidden"
+              />
+            </div>
+            <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 border-t border-[#ede4cc] px-4 py-4 text-center text-sm text-[#1F2E2A]">
+              <a href="https://www.mortgagenewsdaily.com/mortgage-rates" className="underline underline-offset-4">
+                See more rates on Mortgage News Daily
               </a>
-              {' '}or <Link href="/contact" className="underline">ask Jamie for a personalized quote</Link>.
-            </p>
+              <Link href="/contact" className="font-semibold underline underline-offset-4">
+                Ask Jamie for a personalized quote
+              </Link>
+            </div>
           </div>
 
           <h2

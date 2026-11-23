@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import Script from 'next/script'
+import { Suspense } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -98,6 +98,67 @@ const speakableJsonLd = {
     '@type': 'SpeakableSpecification',
     cssSelector: ['h1', 'h2', 'p'],
   },
+}
+
+
+const googleReviewsUrl = 'https://www.google.com/maps/search/?api=1&query=The+Becker+Team+201+Columbine+St+Denver+CO'
+
+type GoogleReview = {
+  reviewId: string
+  reviewer?: { displayName?: string }
+  starRating: 'ONE' | 'TWO' | 'THREE' | 'FOUR' | 'FIVE'
+  comment?: string
+}
+
+async function GoogleReviewCards() {
+  const { GOOGLE_GBP_CLIENT_ID, GOOGLE_GBP_CLIENT_SECRET, GOOGLE_GBP_REFRESH_TOKEN, GOOGLE_GBP_ACCOUNT_ID, GOOGLE_GBP_LOCATION_ID } = process.env
+  if (!GOOGLE_GBP_CLIENT_ID || !GOOGLE_GBP_CLIENT_SECRET || !GOOGLE_GBP_REFRESH_TOKEN ||
+      !GOOGLE_GBP_ACCOUNT_ID || !GOOGLE_GBP_LOCATION_ID) return null
+
+  const signal = AbortSignal.timeout(4000)
+  try {
+    const tokenResponse = await fetch('https://oauth2.googleapis.com/token', {
+      method: 'POST',
+      body: new URLSearchParams({
+        grant_type: 'refresh_token',
+        client_id: GOOGLE_GBP_CLIENT_ID,
+        client_secret: GOOGLE_GBP_CLIENT_SECRET,
+        refresh_token: GOOGLE_GBP_REFRESH_TOKEN,
+      }),
+      cache: 'no-store',
+      signal,
+    })
+    if (!tokenResponse.ok) return null
+    const { access_token } = await tokenResponse.json()
+    if (typeof access_token !== 'string') return null
+
+    const account = encodeURIComponent(GOOGLE_GBP_ACCOUNT_ID)
+    const location = encodeURIComponent(GOOGLE_GBP_LOCATION_ID)
+    const response = await fetch(
+      `https://mybusiness.googleapis.com/v4/accounts/${account}/locations/${location}/reviews?pageSize=6&orderBy=updateTime%20desc`,
+      { headers: { Authorization: `Bearer ${access_token}` }, cache: 'no-store', signal },
+    )
+    if (!response.ok) return null
+    const { reviews = [] }: { reviews?: GoogleReview[] } = await response.json()
+    const ratings = { ONE: 1, TWO: 2, THREE: 3, FOUR: 4, FIVE: 5 }
+    const cards = reviews.filter(({ comment }) => comment?.trim()).slice(0, 3)
+    if (cards.length === 0) return null
+
+    return (
+      <ul className="mt-8 grid gap-4 text-left md:grid-cols-3">
+        {cards.map((review) => (
+          <li key={review.reviewId} className="rounded border border-[#ede4cc] bg-[#F5EFE6] p-5">
+            <p className="mb-2 text-sm font-semibold">
+              {review.reviewer?.displayName || 'Google reviewer'} · {ratings[review.starRating]} out of 5 stars
+            </p>
+            <p className="whitespace-pre-line break-words text-sm leading-relaxed">{review.comment}</p>
+          </li>
+        ))}
+      </ul>
+    )
+  } catch {
+    return null
+  }
 }
 
 export default function HomePage() {
@@ -321,14 +382,15 @@ export default function HomePage() {
         </Link>
       </section>
 
-      {/* ── Google Reviews ── */}
-      <section className="bg-white py-16 px-6">
-        <div className="max-w-7xl mx-auto">
-          <Script src="https://elfsightcdn.com/platform.js" strategy="afterInteractive" />
-          <div
-            className="elfsight-app-7e2ddd0a-d3c6-4a82-b7dc-ad36c6bb28be"
-            data-elfsight-app-lazy
-          />
+      <section className="bg-white px-6 py-16 text-center text-[#1F2E2A]">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="mb-4 font-serif text-3xl md:text-4xl">Google Reviews</h2>
+          <a href={googleReviewsUrl} className="font-semibold underline underline-offset-4">
+            Read reviews on Google Maps
+          </a>
+          <Suspense fallback={null}>
+            <GoogleReviewCards />
+          </Suspense>
         </div>
       </section>
 

@@ -116,16 +116,27 @@ const featuredGoogleReviews = [
   { name: 'The Hiker', excerpt: 'Jamie is creative, hardworking, and pays incredible attention to detail.' },
 ]
 
+function ReviewCard({ name, rating, quote }: { name: string; rating: number; quote: string }) {
+  return (
+    <li className="flex flex-col items-center rounded-lg border border-[#ede4cc] border-t-2 border-t-[#B98942] bg-[#F5EFE6] px-6 py-8 text-center">
+      <p className="font-serif text-xl font-semibold md:text-2xl">{name}</p>
+      <div className="mt-2 text-lg leading-none tracking-widest text-[#8A601F]" role="img" aria-label={`${rating} of 5 stars`}>
+        <span aria-hidden="true">{'★'.repeat(rating)}{'☆'.repeat(5 - rating)}</span>
+      </div>
+      <blockquote className="mt-5 max-w-xs whitespace-pre-line break-words border-t border-[#dfd1b8] pt-5 text-sm leading-relaxed">
+        “{quote}”
+      </blockquote>
+    </li>
+  )
+}
+
 function FeaturedGoogleReviews() {
   return (
     <div className="mt-8">
-      <p className="mb-4 text-sm">Featured five-star reviews from Google Maps</p>
-      <ul className="grid gap-4 text-left md:grid-cols-3">
+      <p className="mb-5 text-sm">Featured five-star reviews from Google Maps</p>
+      <ul className="grid gap-5 md:grid-cols-3">
         {featuredGoogleReviews.map(({ name, excerpt }) => (
-          <li key={name} className="rounded border border-[#ede4cc] bg-[#F5EFE6] p-5">
-            <p className="mb-2 text-sm font-semibold">{name} · 5 out of 5 stars</p>
-            <blockquote className="text-sm leading-relaxed">“{excerpt}”</blockquote>
-          </li>
+          <ReviewCard key={name} name={name} rating={5} quote={excerpt} />
         ))}
       </ul>
     </div>
@@ -167,14 +178,14 @@ async function GoogleReviewCards() {
     if (cards.length === 0) return null
 
     return (
-      <ul className="mt-8 grid gap-4 text-left md:grid-cols-3">
+      <ul className="mt-8 grid gap-5 md:grid-cols-3">
         {cards.map((review) => (
-          <li key={review.reviewId} className="rounded border border-[#ede4cc] bg-[#F5EFE6] p-5">
-            <p className="mb-2 text-sm font-semibold">
-              {review.reviewer?.displayName || 'Google reviewer'} · {ratings[review.starRating]} out of 5 stars
-            </p>
-            <p className="whitespace-pre-line break-words text-sm leading-relaxed">{review.comment}</p>
-          </li>
+          <ReviewCard
+            key={review.reviewId}
+            name={review.reviewer?.displayName || 'Google reviewer'}
+            rating={ratings[review.starRating]}
+            quote={review.comment ?? ''}
+          />
         ))}
       </ul>
     )

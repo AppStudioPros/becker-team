@@ -113,7 +113,7 @@ type GoogleReview = {
 const featuredGoogleReviews = [
   { name: 'Jon Dwight', excerpt: 'Everything was seamless and we didn’t have to worry when we got to the closing table.' },
   { name: 'Sally Johnston', excerpt: 'He was always there to help and anticipated any challenges we could have had.' },
-  { name: 'The Hiker', excerpt: 'Jamie is creative, hardworking, and pays incredible attention to detail.' },
+  { name: 'Brianna Trujillo', excerpt: 'They worked hard from the start of the process all the way to the end.' },
 ]
 
 function ReviewCard({ name, rating, quote }: { name: string; rating: number; quote: string }) {

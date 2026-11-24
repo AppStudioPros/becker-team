@@ -133,7 +133,7 @@ function ReviewCard({ name, rating, quote }: { name: string; rating: number; quo
 function FeaturedGoogleReviews() {
   return (
     <div className="mt-8">
-      <p className="mb-5 text-sm">Featured five-star reviews from Google Maps</p>
+      <p className="mb-5 text-sm">See what past clients have to say</p>
       <ul className="grid gap-5 md:grid-cols-3">
         {featuredGoogleReviews.map(({ name, excerpt }) => (
           <ReviewCard key={name} name={name} rating={5} quote={excerpt} />
@@ -419,7 +419,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-5xl">
           <h2 className="mb-4 font-serif text-3xl md:text-4xl">Google Reviews</h2>
           <a href={googleReviewsUrl} className="font-semibold underline underline-offset-4">
-            Read reviews on Google Maps
+            More reviews
           </a>
           <Suspense fallback={null}>
             <GoogleReviewCards />

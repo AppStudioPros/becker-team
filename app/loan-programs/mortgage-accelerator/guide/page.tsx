@@ -20,11 +20,11 @@ const sections = [
 ]
 
 const displayFont = { fontFamily: '"Playfair Display", Georgia, serif' }
-const heading = 'mx-auto mb-6 max-w-4xl text-center text-3xl font-bold leading-tight text-balance md:text-5xl'
+const heading = 'scroll-mt-32 mx-auto mb-6 max-w-4xl text-center text-3xl font-bold leading-tight text-balance md:text-5xl'
 const subheading = 'mb-3 text-xl font-semibold leading-snug text-forest md:text-2xl'
 const sourceLink = 'font-semibold text-forest underline decoration-[#B98942] underline-offset-4 hover:decoration-forest'
 const button = 'btn-hover inline-block max-w-full rounded px-6 py-4 text-center text-sm font-semibold uppercase tracking-widest sm:px-10'
-const section = 'scroll-mt-24 px-6 py-14 md:py-20'
+const section = 'px-6 py-14 md:py-20'
 
 export default function MortgageAcceleratorGuide() {
   return (
@@ -52,10 +52,13 @@ export default function MortgageAcceleratorGuide() {
       <nav aria-label="In this guide" className="border-b border-cream-dark bg-white px-6 py-6">
         <div className="mx-auto max-w-5xl text-center">
           <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-forest">In this guide</p>
-          <ul className="flex flex-wrap justify-center gap-x-6 gap-y-1">
+          <ul className="flex flex-wrap justify-center gap-x-2 gap-y-1">
             {sections.map(({ id, label }) => (
               <li key={id}>
-                <a className="inline-block py-2 text-sm font-semibold underline decoration-[#B98942] underline-offset-4 hover:decoration-forest" href={'#' + id}>
+                <a
+                  href={'#' + id}
+                  className="inline-flex min-h-11 cursor-pointer items-center rounded px-3 py-2 text-sm font-semibold underline decoration-[#B98942] underline-offset-4 hover:bg-cream hover:decoration-forest focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest"
+                >
                   {label}
                 </a>
               </li>
@@ -64,9 +67,9 @@ export default function MortgageAcceleratorGuide() {
         </div>
       </nav>
 
-      <section id="how-it-works" className={section + ' bg-cream'}>
+      <section className={section + ' bg-cream'}>
         <div className="mx-auto max-w-5xl">
-          <h2 className={heading} style={displayFont}>How the strategy works, step by step</h2>
+          <h2 id="how-it-works" tabIndex={-1} className={heading} style={displayFont}>How the strategy works, step by step</h2>
           <div className="prose-becker mx-auto mb-9 max-w-3xl">
             <p>The Becker Team describes its Accelerator as a mortgage strategy that uses a home-secured line of credit for everyday banking. Income deposited into the account reduces the amount borrowed. Paying household bills from it brings the balance back up. What matters is how much you owe between those transactions and how much of each deposit you can leave against the debt after expenses and interest.</p>
           </div>
@@ -91,9 +94,9 @@ export default function MortgageAcceleratorGuide() {
         </div>
       </section>
 
-      <section id="worked-example" className={section + ' bg-white'}>
+      <section className={section + ' bg-white'}>
         <div className="mx-auto max-w-5xl">
-          <h2 className={heading} style={displayFont}>A month from The Becker Team’s example</h2>
+          <h2 id="worked-example" tabIndex={-1} className={heading} style={displayFont}>A month from The Becker Team’s example</h2>
           <div className="prose-becker mx-auto max-w-3xl">
             <p>Page 3 of the original PDF shows a March 2026 row for each loan. The figures below come from those rows. They are the inputs and results of a simulation, rather than a record of a borrower’s payments or an offer of financing.</p>
             <div className="my-7 overflow-x-auto rounded border border-cream-border">
@@ -120,9 +123,9 @@ export default function MortgageAcceleratorGuide() {
         </div>
       </section>
 
-      <section id="payoff-options" className={section + ' bg-cream'}>
+      <section className={section + ' bg-cream'}>
         <div className="mx-auto max-w-5xl">
-          <h2 className={heading} style={displayFont}>Compare three ways to use the same money</h2>
+          <h2 id="payoff-options" tabIndex={-1} className={heading} style={displayFont}>Compare three ways to use the same money</h2>
           <div className="prose-becker mx-auto mb-8 max-w-3xl">
             <p>Start each option with the same debt and the same pool of savings. If you plan to put $50,000 toward the home loan today, apply it on both sides of the comparison. If that money needs to stay in savings, leave it there in both cases. Then decide how much of your take-home pay you can commit over a full year. Hold that amount constant while you compare the different ways to send it.</p>
           </div>
@@ -152,12 +155,11 @@ export default function MortgageAcceleratorGuide() {
       </section>
 
       <section
-        id="who-it-fits"
         className={section + ' bg-forest bg-cover bg-center text-white'}
         style={{ backgroundImage: 'linear-gradient(rgba(20,35,25,0.88), rgba(20,35,25,0.88)), url("/images/ma-coins-houses.jpg")' }}
       >
         <div className="mx-auto max-w-5xl">
-          <h2 className={heading} style={displayFont}>Who is likely to find it useful?</h2>
+          <h2 id="who-it-fits" tabIndex={-1} className={heading} style={displayFont}>Who is likely to find it useful?</h2>
           <div className="mx-auto grid gap-6 text-base leading-relaxed text-white/90 md:grid-cols-2 md:gap-12">
             <p>The Becker Team identifies consistent positive cash flow as a reason to explore the Accelerator. Look at what remains after the bills clear across several ordinary months, including a month with an unusually large expense. A steady surplus and a willingness to track transactions give you something meaningful to model. If your goal is to enter retirement with less debt, ask for a second projection using the income you expect after leaving work. A projection that assumes today’s full paycheck until the final payment can miss the very transition you are planning for.</p>
             <p>This structure may be a poor fit if you routinely draw savings to meet regular expenses, rely on a single unpredictable bonus to get ahead, or would have to put your entire emergency fund into the loan. It can also be a poor trade if replacing an existing loan means giving up a rate or payment you value. Homeowners in any of those situations can ask what happens if they keep their existing mortgage and send extra principal only in months when the money is actually available.</p>
@@ -165,9 +167,9 @@ export default function MortgageAcceleratorGuide() {
         </div>
       </section>
 
-      <section id="risks-and-costs" className={section + ' bg-white'}>
+      <section className={section + ' bg-white'}>
         <div className="mx-auto max-w-5xl">
-          <h2 className={heading} style={displayFont}>What could make the strategy cost more?</h2>
+          <h2 id="risks-and-costs" tabIndex={-1} className={heading} style={displayFont}>What could make the strategy cost more?</h2>
           <div className="grid items-start gap-5 md:grid-cols-2">
             <div className="h-full rounded border border-cream-border bg-cream p-6 md:p-8">
               <h3 className={subheading} style={displayFont}>A rate change or an expensive refinance</h3>

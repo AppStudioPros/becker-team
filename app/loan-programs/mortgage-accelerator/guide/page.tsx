@@ -27,7 +27,7 @@ const section = 'px-6 py-14 md:py-20'
 
 export default function MortgageAcceleratorGuide() {
   return (
-    <article className="bg-white text-forest">
+    <article className="bg-white text-center text-forest [&_.prose-becker_p]:text-center!">
       <header
         className="bg-forest bg-cover px-6 py-14 text-center text-white md:py-24"
         style={{
@@ -95,10 +95,10 @@ export default function MortgageAcceleratorGuide() {
           <div className="prose-becker mx-auto max-w-3xl">
             <p>Start with a $425,000 balance. In our one-month example, $10,000 comes in and $1,500 goes back out for expenses. That leaves $8,500 for interest and principal on the Accelerator. The traditional mortgage receives its scheduled payment of $2,500.76. Those are two different payment amounts. Here’s how those payments break down. We’ll also compare the two loans with the same $8,500 going toward each.</p>
             <div className="my-7 overflow-x-auto rounded border border-cream-border">
-              <table className="w-full border-collapse text-left text-xs sm:text-base">
-                <caption className="bg-forest px-3 py-4 text-left font-semibold text-cream sm:px-5">Where the monthly payment goes</caption>
+              <table className="w-full border-collapse text-center text-xs sm:text-base">
+                <caption className="bg-forest px-3 py-4 text-center font-semibold text-cream sm:px-5">Where the monthly payment goes</caption>
                 <thead className="border-b border-cream-border bg-cream">
-                  <tr><th scope="col" className="px-2 py-3 sm:px-5 sm:py-4">Monthly activity</th><th scope="col" className="px-2 py-3 sm:px-5 sm:py-4 text-right">Accelerator</th><th scope="col" className="px-2 py-3 sm:px-5 sm:py-4 text-right">Standard loan</th></tr>
+                  <tr><th scope="col" className="px-2 py-3 sm:px-5 sm:py-4">Monthly activity</th><th scope="col" className="px-2 py-3 sm:px-5 sm:py-4">Accelerator</th><th scope="col" className="px-2 py-3 sm:px-5 sm:py-4">Standard loan</th></tr>
                 </thead>
                 <tbody className="divide-y divide-cream-border tabular-nums [&_tr:last-child]:bg-cream/60 [&_tr:last-child]:font-semibold">
                   <tr><th scope="row" className="px-2 py-3 sm:px-5 sm:py-4 font-normal">Total toward the loan</th><td className="px-2 py-3 sm:px-5 sm:py-4 text-right">$8,500.00</td><td className="px-2 py-3 sm:px-5 sm:py-4 text-right">$2,500.76</td></tr>
@@ -178,7 +178,7 @@ export default function MortgageAcceleratorGuide() {
           </div>
           <div className="mt-10 rounded bg-forest px-6 py-10 text-center text-white md:px-12 md:py-12">
             <h3 className="mb-4 text-2xl font-bold md:text-3xl" style={displayFont}>What to bring when we talk</h3>
-            <p className="mx-auto mb-7 max-w-3xl text-left leading-relaxed text-white/90">Bring your current mortgage statement, a few months of deposits and bills, and any written loan offer you’d like us to compare. Tell us how much you want to keep in savings and when you expect a change in pay or a large expense. We’ll use your numbers to walk through what you’d pay in interest, how much would reach principal and how much cash you’d have on hand. You can then decide whether to keep your current payment, pay extra yourself or explore the Accelerator with us.</p>
+            <p className="mx-auto mb-7 max-w-3xl leading-relaxed text-white/90">Bring your current mortgage statement, a few months of deposits and bills, and any written loan offer you’d like us to compare. Tell us how much you want to keep in savings and when you expect a change in pay or a large expense. We’ll use your numbers to walk through what you’d pay in interest, how much would reach principal and how much cash you’d have on hand. You can then decide whether to keep your current payment, pay extra yourself or explore the Accelerator with us.</p>
             <Link href="/contact" className={button + ' border-2 border-cream text-cream'}>Talk with Jamie about your mortgage</Link>
           </div>
         </div>

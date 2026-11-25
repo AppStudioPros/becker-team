@@ -234,6 +234,17 @@ export default function JumboLoansPage() {
             </table>
           </div>
           <p className="mx-auto mt-6 max-w-2xl text-center leading-relaxed">The year refers to when Fannie Mae or Freddie Mac acquires the loan. If you’re closing near year-end, we can check which limit your lender will use. You can also <a href={fhfaLimitsUrl} className="font-semibold underline underline-offset-4">look up your county and property size with FHFA</a>.</p>
+          <nav aria-label="Local Colorado buying guides" className="mt-8 border-t border-[#ded4be] pt-5 text-center">
+            <p className="mb-3 font-semibold">Explore local home prices and buying guides</p>
+            <ul className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm font-semibold underline underline-offset-4">
+              <li><Link href="/denver-mortgage#local-buying-guide">Denver</Link></li>
+              <li><Link href="/service-areas/boulder#local-buying-guide">Boulder</Link></li>
+              <li><Link href="/service-areas/breckenridge#local-buying-guide">Breckenridge</Link></li>
+              <li><Link href="/service-areas/silverthorne#local-buying-guide">Silverthorne</Link></li>
+              <li><Link href="/service-areas/vail#local-buying-guide">Vail</Link></li>
+              <li><Link href="/fort-collins-mortgage#local-buying-guide">Fort Collins</Link></li>
+            </ul>
+          </nav>
         </div>
       </section>
 

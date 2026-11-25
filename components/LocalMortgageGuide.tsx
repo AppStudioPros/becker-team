@@ -33,7 +33,7 @@ export default function LocalMortgageGuide({ city }: { city: string }) {
           <strong>{dollars.format(limit[2027])}</strong>. A mortgage above the applicable limit is jumbo.
         </p>
         <p className="mt-3 leading-relaxed">{market.financing}</p>
-        <Link href="/loan-programs/jumbo-loans#county-loan-limits" className={`${linkStyle} mt-3 inline-block`}>Compare Colorado county limits and see which year applies</Link>
+        <Link href="/loan-programs/jumbo-loans#county-loan-limits" className={`${linkStyle} mt-3 inline-block`}>Compare Colorado county loan limits</Link>
 
         <h3 className="mb-3 mt-9 text-2xl font-bold">{market.condoHeading}</h3>
         <p className="leading-relaxed">{market.condo}</p>

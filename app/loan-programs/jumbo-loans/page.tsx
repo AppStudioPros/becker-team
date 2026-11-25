@@ -214,7 +214,7 @@ export default function JumboLoansPage() {
           <p className="mb-6 text-center leading-relaxed">These are the maximum conforming loan amounts for a one-unit property, including a single condo. A mortgage above the amount shown is jumbo. Properties with two to four units have different limits.</p>
           <div className="overflow-x-auto rounded border border-[#d4c9b5]">
             <table className="w-full text-left text-sm sm:text-base">
-              <caption className="sr-only">Maximum one-unit conforming loan amounts by county and acquisition year</caption>
+              <caption className="sr-only">Maximum one-unit conforming loan amounts by county for 2026 and 2027</caption>
               <thead className="bg-[#1F2E2A] text-white">
                 <tr>
                   <th scope="col" className="px-3 py-3 sm:px-5">Location</th>
@@ -233,7 +233,7 @@ export default function JumboLoansPage() {
               </tbody>
             </table>
           </div>
-          <p className="mx-auto mt-6 max-w-2xl text-center leading-relaxed">The year refers to when Fannie Mae or Freddie Mac acquires the loan. If you’re closing near year-end, we can check which limit your lender will use. You can also <a href={fhfaLimitsUrl} className="font-semibold underline underline-offset-4">look up your county and property size with FHFA</a>.</p>
+          <p className="mx-auto mt-6 max-w-2xl text-center leading-relaxed">Closing in December or January? We’ll check which year’s limit applies to your loan. You can also <a href={fhfaLimitsUrl} className="font-semibold underline underline-offset-4">look up the loan limit for your county</a>.</p>
           <nav aria-label="Local Colorado buying guides" className="mt-8 border-t border-[#ded4be] pt-5 text-center">
             <p className="mb-3 font-semibold">Explore local home prices and buying guides</p>
             <ul className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm font-semibold underline underline-offset-4">

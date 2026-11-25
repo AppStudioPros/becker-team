@@ -11,6 +11,21 @@ export const metadata: Metadata = {
     'Work with Jamie Becker, a Colorado mortgage broker, to compare home loans for your first purchase, next home, or self-employed income.',
 }
 
+const homeFaqs = [
+  {
+    q: 'Should I get pre-approved before I start looking at homes?',
+    a: 'If you’re ready to tour homes, it’s a good time to talk about pre-approval. We’ll review your income, savings and debts and talk through a monthly payment you’re comfortable with. A pre-approval letter can help you make an offer. Your lender will still need to approve the loan and the property.',
+  },
+  {
+    q: 'How much cash will I need at closing?',
+    a: 'Look for “Estimated Cash to Close” on the first page of your Loan Estimate. It accounts for your down payment and closing costs, along with any earnest money you’ve already paid and credits listed on the estimate. We can walk through the numbers with you before closing day.',
+  },
+  {
+    q: 'Can I get a mortgage if I’m self-employed?',
+    a: 'Yes. If you work for yourself, we’ll start by asking how you get paid. Tax returns may document your income, and some loan programs also accept personal or business bank statements. We’ll help you compare those options and explain which records the lender will need from you.',
+  },
+]
+
 const loanProgramCells = [
   { title: 'Asset Qualifier Loans',     tagline: 'Qualify with assets, not income — flexible alternative lending',       href: '/loan-programs/asset-qualifier-loans' },
   { title: 'Home Mortgage Accelerator',      tagline: 'Accelerate mortgage payoff before retirement',                          href: '/loan-programs/mortgage-accelerator' },
@@ -226,6 +241,7 @@ export default function HomePage() {
           className="text-lg md:text-xl max-w-2xl mb-8 text-white/90 leading-relaxed"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
         >
+          <span className="mb-3 block">I’m Jamie Becker, a Denver mortgage broker with The Becker Team.</span>
           We are dedicated to helping advisors, agents &amp; households solve mortgage problems
           that traditional underwriting can&apos;t. Let&apos;s find the right solution for your
           client or personal needs.
@@ -403,6 +419,38 @@ export default function HomePage() {
           <Suspense fallback={null}>
             <GoogleReviewCards />
           </Suspense>
+        </div>
+      </section>
+
+      <section
+        id="mortgage-faq"
+        aria-labelledby="mortgage-faq-heading"
+        className="scroll-mt-24 px-6 py-16 text-center md:py-20"
+        style={{ backgroundColor: '#F5EFE6', color: '#1F2E2A' }}
+      >
+        <div className="mx-auto max-w-3xl">
+          <h2
+            id="mortgage-faq-heading"
+            className="mb-8 text-3xl font-bold md:text-5xl"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
+          >
+            Colorado Mortgage FAQ
+          </h2>
+          <div className="divide-y divide-[#ded6c4] border-y border-[#ded6c4]">
+            {homeFaqs.map(({ q, a }) => (
+              <div key={q} className="py-6">
+                <h3 className="mb-2 text-xl font-semibold md:text-2xl">{q}</h3>
+                <p className="mx-auto max-w-2xl leading-relaxed text-gray-700">{a}</p>
+              </div>
+            ))}
+          </div>
+          <Link
+            href="/faq"
+            className="mt-8 inline-block rounded px-10 py-4 text-sm font-semibold uppercase tracking-widest btn-hover"
+            style={{ backgroundColor: '#1F2E2A', color: '#F5EFE6' }}
+          >
+            View the Full Mortgage FAQ
+          </Link>
         </div>
       </section>
 

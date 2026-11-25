@@ -22,7 +22,6 @@ const contactCards = [
     icon: Mail,
     label: 'Email Me',
     value: 'Jamie@thebeckerteam.com',
-    sub: "I'll respond within 24 hours",
     href: 'mailto:Jamie@thebeckerteam.com',
   },
   {
@@ -164,7 +163,7 @@ export default function ContactPage() {
                   ) : (
                     <p className="text-sm font-semibold mb-1" style={{ color: '#1F2E2A' }}>{card.value}</p>
                   )}
-                  <p className="text-xs" style={{ color: '#4a5e53' }}>{card.sub}</p>
+                  {card.sub && <p className="text-xs" style={{ color: '#4a5e53' }}>{card.sub}</p>}
                 </div>
               )
             })}

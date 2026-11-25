@@ -95,8 +95,8 @@ export default function MortgageAcceleratorGuide() {
           <div className="prose-becker mx-auto max-w-3xl">
             <p>Start with a $425,000 balance. In our one-month example, $10,000 comes in and $1,500 goes back out for expenses. That leaves $8,500 for interest and principal on the Accelerator. The traditional mortgage receives its scheduled payment of $2,500.76. Those are two different payment amounts. Here’s how those payments break down. We’ll also compare the two loans with the same $8,500 going toward each.</p>
             <div className="my-7 overflow-x-auto rounded border border-cream-border">
-              <table className="w-full border-collapse text-center text-xs sm:text-base">
-                <caption className="bg-forest px-3 py-4 text-center font-semibold text-cream sm:px-5">Where the monthly payment goes</caption>
+              <table className="w-full border-collapse text-left text-xs sm:text-base [&_th]:text-left">
+                <caption className="bg-forest px-3 py-4 text-left font-semibold text-cream sm:px-5">Where the monthly payment goes</caption>
                 <thead className="border-b border-cream-border bg-cream">
                   <tr><th scope="col" className="px-2 py-3 sm:px-5 sm:py-4">Monthly activity</th><th scope="col" className="px-2 py-3 sm:px-5 sm:py-4">Accelerator</th><th scope="col" className="px-2 py-3 sm:px-5 sm:py-4">Standard loan</th></tr>
                 </thead>

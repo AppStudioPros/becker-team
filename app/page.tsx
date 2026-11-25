@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Suspense } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import ZillowReviews from '@/components/ZillowReviews'
 
 export const metadata: Metadata = {
   title: { absolute: 'Colorado Mortgage Broker | The Becker Team' },
@@ -318,6 +319,8 @@ export default function HomePage() {
           })}
         </div>
       </section>
+
+      <ZillowReviews />
 
       {/* ── Loan Programs ── */}
       <section style={{ backgroundColor: '#F5EFE6' }} className="py-20 px-6">

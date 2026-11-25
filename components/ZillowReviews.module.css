@@ -1,0 +1,79 @@
+.section {
+  --ink: #1f302b;
+  --secondary: #54615b;
+  --gold: #b58c52;
+  --sand: #faf7f1;
+  --line: #e2d9ca;
+  --gap: clamp(10px, 1.6vw, 21px);
+  container-type: inline-size;
+  scroll-margin-top: 6rem;
+  padding: clamp(24px, 4.2vw, 64px) clamp(14px, 3.4vw, 55px);
+  border-block: 5px solid #f2ede4;
+  background: white;
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.intro, .carousel { max-width: 1160px; margin-inline: auto; }
+.intro { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-bottom: clamp(20px, 3vw, 34px); }
+.eyebrow { display: flex; align-items: center; gap: 9px; margin: 0 0 9px; color: #605344; font-size: 11px; line-height: 1.4; letter-spacing: .15em; font-weight: 700; text-transform: uppercase; }
+.eyebrow::before { content: ''; width: 23px; height: 2px; background: var(--gold); }
+.section h2 { margin: 0; max-width: 21em; text-align: left; color: var(--ink); font: 400 clamp(32px, 4.6vw, 59px)/1.06 Georgia, 'Times New Roman', serif; letter-spacing: -.037em; text-wrap: balance; }
+.meet { display: inline-flex; align-items: center; justify-content: center; gap: 15px; min-height: 44px; padding: 11px 17px; border-radius: 4px; background: var(--ink); color: white; white-space: nowrap; text-decoration: none; font: 600 14px/1.3 Arial, sans-serif; }
+.meet:hover { background: #344a40; }
+.carousel { min-width: 0; }
+.window { overflow: hidden; touch-action: pan-y pinch-zoom; }
+.track {
+  --columns: 3;
+  --step: calc((100% + var(--gap)) / var(--columns));
+  display: flex;
+  gap: var(--gap);
+  align-items: stretch;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.track > li {
+  flex: 0 0 calc(var(--step) - var(--gap));
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--sand);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--gold);
+  border-radius: 6px;
+  padding: clamp(16px, 2.1vw, 30px) clamp(12px, 1.8vw, 25px) 17px;
+}
+/* Keep the preceding card just outside the window so the loop can slide in either direction. */
+.track > li:last-child { order: -1; margin-inline-start: calc(-1 * var(--step)); }
+.track h3 { color: var(--ink); font: 400 clamp(21px, 2.55vw, 33px)/1.18 Georgia, 'Times New Roman', serif; margin: 0; overflow-wrap: anywhere; letter-spacing: -.035em; }
+.stars { height: 16px; margin: 8px 0 13px; background: url('/images/zillow-star.svg') repeat-x left center / 16px 16px; }
+.track blockquote { border: none; padding: 0; margin: 0 auto 18px; font: 400 clamp(15px, 1.45vw, 20px)/1.45 Georgia, 'Times New Roman', serif; color: var(--ink); max-width: 29ch; text-wrap: pretty; }
+.track p { color: var(--secondary); margin: auto 0 0; font: 400 12px/1.55 Arial, sans-serif; }
+.track p span { padding-inline: 3px; }
+.track time { white-space: nowrap; }
+.actions, .source, .controls { display: flex; align-items: center; }
+.actions { justify-content: space-between; gap: 16px; margin-top: 14px; flex-wrap: wrap; }
+.source { gap: 16px; }
+.source img { display: block; max-width: none; }
+.more { border-left: 1px solid var(--line); padding: 3px 0 3px 15px; text-decoration: underline; text-underline-offset: 3px; color: var(--ink); font: 600 13px/1.5 Arial, sans-serif; }
+.controls { gap: 6px; }
+.count { font: 400 12px/1 Arial, sans-serif; color: var(--secondary); font-variant-numeric: tabular-nums; margin-right: 5px; }
+.controls button { display: inline-flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 50%; width: 38px; height: 38px; padding: 0; background: white; border: 1px solid #c7c7ba; color: var(--ink); }
+.controls button svg { display: block; width: 16px; height: 16px; }
+.controls button:hover { border-color: var(--ink); background: var(--sand); }
+.section :is(a, button):focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.context { margin: 10px 0 0; font: 400 12px/1.5 Arial, sans-serif; color: var(--secondary); }
+@container (max-width: 800px) {
+  .track { --columns: 2; }
+}
+@container (max-width: 590px) {
+  .intro { align-items: flex-start; flex-direction: column; gap: 14px; }
+  .track { --columns: 1; }
+  .actions { row-gap: 8px; }
+}
+@media (pointer: coarse) {
+  .controls button { height: 44px; width: 44px; }
+}

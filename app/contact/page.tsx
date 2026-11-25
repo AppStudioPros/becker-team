@@ -117,7 +117,7 @@ export default function ContactPage() {
               Whether you have a specific loan in mind or just want to talk through your situation,
               Jamie is ready to connect. Reach out any time.
             </p>
-            <div className="flex flex-col items-start gap-3">
+            <div className="grid w-fit max-w-full gap-3">
               <Link
                 href="/mortgage-calculator"
                 className="inline-block text-center uppercase tracking-widest text-sm font-semibold px-10 py-4 rounded btn-hover"

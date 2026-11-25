@@ -101,7 +101,7 @@ export default function ContactPage() {
         </p>
       </section>
 
-      {/* ── Contact Info + Quick Actions ── */}
+      {/* ── Contact Information ── */}
       <section className="py-14 md:py-20 px-6" style={{ backgroundColor: '#1F2E2A' }}>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Left */}
@@ -117,11 +117,10 @@ export default function ContactPage() {
               Whether you have a specific loan in mind or just want to talk through your situation,
               Jamie is ready to connect. Reach out any time.
             </p>
-            <p className="text-white/50 mb-4 text-xs font-bold uppercase tracking-widest">Quick Actions</p>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col items-start gap-3">
               <Link
                 href="/mortgage-calculator"
-                className="block w-full text-center uppercase tracking-widest text-sm font-semibold py-4 px-6 rounded btn-hover"
+                className="inline-block text-center uppercase tracking-widest text-sm font-semibold px-10 py-4 rounded btn-hover"
                 style={{ backgroundColor: 'transparent', color: '#F5EFE6', border: '2px solid #F5EFE6' }}
               >
                 Calculate Payment
@@ -130,14 +129,14 @@ export default function ContactPage() {
                 href="https://2179191.my1003app.com/794730/register"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full text-center uppercase tracking-widest text-sm font-semibold py-4 px-6 rounded btn-hover"
+                className="inline-block text-center uppercase tracking-widest text-sm font-semibold px-10 py-4 rounded btn-hover"
                 style={{ backgroundColor: '#B98942', color: '#fff', border: '2px solid #B98942' }}
               >
                 Get Pre-Approved
               </a>
               <Link
                 href="/mortgage-interest-rates"
-                className="block w-full text-center uppercase tracking-widest text-sm font-semibold py-4 px-6 rounded btn-hover"
+                className="inline-block text-center uppercase tracking-widest text-sm font-semibold px-10 py-4 rounded btn-hover"
                 style={{ backgroundColor: 'transparent', color: '#F5EFE6', border: '2px solid #F5EFE6' }}
               >
                 Check Rates

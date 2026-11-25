@@ -410,37 +410,6 @@ export default function AssetQualifierPage() {
         </div>
       </section>
 
-      {/* ── Important Program Notes + Nav ── */}
-      <section style={{ backgroundColor: '#F5EFE6' }} className="py-14 px-6">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2
-            className="text-xl font-bold mb-4"
-            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
-          >
-            Important Program Notes
-          </h2>
-          <p className="text-sm leading-relaxed italic" style={{ color: '#4a5e53' }}>
-            Loan approval is subject to product availability, borrower profile, current guidelines, lender approval, asset verification, borrower eligibility and underwriting review. Terms, timelines, documentation and eligibility vary by scenario.
-          </p>
-        </div>
-        <div className="max-w-5xl mx-auto mt-10 flex justify-between items-center">
-          <Link
-            href="/loan-programs/mortgage-accelerator"
-            className="inline-flex items-center gap-2 font-semibold"
-            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
-          >
-            <ChevronLeft size={18} /> Home Mortgage Accelerator
-          </Link>
-          <Link
-            href="/loan-programs/conventional-loans"
-            className="inline-flex items-center gap-2 font-semibold"
-            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
-          >
-            Conventional Loans <ChevronRight size={18} />
-          </Link>
-        </div>
-      </section>
-
       {/* ── Why Work with Jamie ── */}
       <section id="why-work-with-jamie" className="bg-white py-16 md:py-24 px-6">
         <div className="max-w-5xl mx-auto">
@@ -480,6 +449,37 @@ export default function AssetQualifierPage() {
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── Important Program Notes + Nav ── */}
+      <section style={{ backgroundColor: '#F5EFE6' }} className="py-14 px-6">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2
+            className="text-xl font-bold mb-4"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
+          >
+            Important Program Notes
+          </h2>
+          <p className="text-sm leading-relaxed italic" style={{ color: '#4a5e53' }}>
+            Loan approval is subject to product availability, borrower profile, current guidelines, lender approval, asset verification, borrower eligibility and underwriting review. Terms, timelines, documentation and eligibility vary by scenario.
+          </p>
+        </div>
+        <div className="max-w-5xl mx-auto mt-10 flex justify-between items-center">
+          <Link
+            href="/loan-programs/mortgage-accelerator"
+            className="inline-flex items-center gap-2 font-semibold"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
+          >
+            <ChevronLeft size={18} /> Home Mortgage Accelerator
+          </Link>
+          <Link
+            href="/loan-programs/conventional-loans"
+            className="inline-flex items-center gap-2 font-semibold"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
+          >
+            Conventional Loans <ChevronRight size={18} />
+          </Link>
         </div>
       </section>
 

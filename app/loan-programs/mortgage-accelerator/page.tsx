@@ -337,33 +337,6 @@ export default function MortgageAcceleratorPage() {
         </div>
       </section>
 
-      {/* ── Important Program Notes + Page Nav ── */}
-      <section style={{ backgroundColor: '#F5EFE6' }} className="py-14 px-6">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2
-            className="text-xl font-bold mb-4"
-            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
-          >
-            What affects your results?
-          </h2>
-          <p className="text-sm leading-relaxed italic" style={{ color: '#4a5e53' }}>
-            This strategy is not a guarantee of savings, interest reduction or payoff timeline. Results vary
-            based on borrower behavior, deposits, withdrawals, timing, rate, loan structure, program
-            availability and lending guidelines.
-          </p>
-        </div>
-        {/* Page navigation */}
-        <div className="max-w-5xl mx-auto mt-10 flex justify-end">
-          <Link
-            href="/loan-programs/asset-qualifier-loans"
-            className="inline-flex items-center gap-2 font-semibold"
-            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
-          >
-            Asset Qualifier Loans <ChevronRight size={18} />
-          </Link>
-        </div>
-      </section>
-
       {/* ── Why Work with Jamie ── */}
       <section id="why-work-with-jamie" className="bg-white py-16 md:py-24 px-6">
         <div className="max-w-5xl mx-auto">
@@ -410,6 +383,33 @@ export default function MortgageAcceleratorPage() {
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── Important Program Notes + Page Nav ── */}
+      <section style={{ backgroundColor: '#F5EFE6' }} className="py-14 px-6">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2
+            className="text-xl font-bold mb-4"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
+          >
+            What affects your results?
+          </h2>
+          <p className="text-sm leading-relaxed italic" style={{ color: '#4a5e53' }}>
+            This strategy is not a guarantee of savings, interest reduction or payoff timeline. Results vary
+            based on borrower behavior, deposits, withdrawals, timing, rate, loan structure, program
+            availability and lending guidelines.
+          </p>
+        </div>
+        {/* Page navigation */}
+        <div className="max-w-5xl mx-auto mt-10 flex justify-end">
+          <Link
+            href="/loan-programs/asset-qualifier-loans"
+            className="inline-flex items-center gap-2 font-semibold"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
+          >
+            Asset Qualifier Loans <ChevronRight size={18} />
+          </Link>
         </div>
       </section>
 

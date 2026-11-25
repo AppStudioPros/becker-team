@@ -261,37 +261,6 @@ export default function ConventionalLoansPage() {
         </div>
       </section>
 
-      {/* ── Program Notes + Nav ── */}
-      <section className="bg-white py-14 px-6">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2
-            className="text-xl font-bold mb-4"
-            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
-          >
-            Important Program Notes
-          </h2>
-          <p className="text-sm leading-relaxed italic" style={{ color: '#4a5e53' }}>
-            All loans subject to credit approval, income verification and program availability. Rates, terms and down payment requirements vary by borrower profile and lender guidelines.
-          </p>
-        </div>
-        <div className="max-w-5xl mx-auto mt-10 flex justify-between items-center">
-          <Link
-            href="/loan-programs/asset-qualifier-loans"
-            className="inline-flex items-center gap-2 font-semibold"
-            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
-          >
-            <ChevronLeft size={18} /> Asset Qualifier Loans
-          </Link>
-          <Link
-            href="/loan-programs/fha-loans"
-            className="inline-flex items-center gap-2 font-semibold"
-            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
-          >
-            FHA Loans <ChevronRight size={18} />
-          </Link>
-        </div>
-      </section>
-
       {/* ── Why Work with Jamie ── */}
       <section id="why-work-with-jamie" className="bg-white py-16 md:py-24 px-6">
         <div className="max-w-5xl mx-auto">
@@ -331,6 +300,37 @@ export default function ConventionalLoansPage() {
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── Program Notes + Nav ── */}
+      <section className="bg-white py-14 px-6">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2
+            className="text-xl font-bold mb-4"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
+          >
+            Important Program Notes
+          </h2>
+          <p className="text-sm leading-relaxed italic" style={{ color: '#4a5e53' }}>
+            All loans subject to credit approval, income verification and program availability. Rates, terms and down payment requirements vary by borrower profile and lender guidelines.
+          </p>
+        </div>
+        <div className="max-w-5xl mx-auto mt-10 flex justify-between items-center">
+          <Link
+            href="/loan-programs/asset-qualifier-loans"
+            className="inline-flex items-center gap-2 font-semibold"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
+          >
+            <ChevronLeft size={18} /> Asset Qualifier Loans
+          </Link>
+          <Link
+            href="/loan-programs/fha-loans"
+            className="inline-flex items-center gap-2 font-semibold"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
+          >
+            FHA Loans <ChevronRight size={18} />
+          </Link>
         </div>
       </section>
 

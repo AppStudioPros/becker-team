@@ -334,30 +334,6 @@ export default function SelfEmployedLoansPage() {
         </div>
       </section>
 
-      {/* ── Program Notes + Nav ── */}
-      <section className="bg-white py-14 px-6">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2
-            className="text-xl font-bold mb-4"
-            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
-          >
-            Important Program Notes
-          </h2>
-          <p className="text-sm leading-relaxed italic" style={{ color: '#4a5e53' }}>
-            All loans subject to credit approval, income and asset verification, and program availability. Documentation requirements, loan amounts and terms vary by program and borrower profile. Responsible lending guidelines apply.
-          </p>
-        </div>
-        <div className="max-w-5xl mx-auto mt-10 flex justify-start items-center">
-          <Link
-            href="/loan-programs/jumbo-loans"
-            className="inline-flex items-center gap-2 font-semibold"
-            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
-          >
-            <ChevronLeft size={18} /> Jumbo Loans
-          </Link>
-        </div>
-      </section>
-
       {/* ── Why Work with Jamie ── */}
       <section id="why-work-with-jamie" className="bg-white py-16 md:py-24 px-6">
         <div className="max-w-5xl mx-auto">
@@ -397,6 +373,30 @@ export default function SelfEmployedLoansPage() {
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── Program Notes + Nav ── */}
+      <section className="bg-white py-14 px-6">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2
+            className="text-xl font-bold mb-4"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
+          >
+            Important Program Notes
+          </h2>
+          <p className="text-sm leading-relaxed italic" style={{ color: '#4a5e53' }}>
+            All loans subject to credit approval, income and asset verification, and program availability. Documentation requirements, loan amounts and terms vary by program and borrower profile. Responsible lending guidelines apply.
+          </p>
+        </div>
+        <div className="max-w-5xl mx-auto mt-10 flex justify-start items-center">
+          <Link
+            href="/loan-programs/jumbo-loans"
+            className="inline-flex items-center gap-2 font-semibold"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
+          >
+            <ChevronLeft size={18} /> Jumbo Loans
+          </Link>
         </div>
       </section>
 

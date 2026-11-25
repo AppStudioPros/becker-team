@@ -5,9 +5,9 @@ import { Check, ChevronLeft, ChevronRight } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Asset Qualifier Loans | The Becker Team',
+  title: 'Colorado Asset Qualifier Loans',
   description:
-    'Qualify for a mortgage using your assets instead of traditional income documentation. Ideal for retirees, investors, and high-net-worth borrowers. Jamie Becker, NMLS #794730.',
+    'Explore asset-based mortgages in Colorado with Jamie Becker. See which accounts we review and how our Asset Qualifier loan differs from an asset depletion loan.',
   alternates: { canonical: '/loan-programs/asset-qualifier-loans' },
 }
 
@@ -76,8 +76,8 @@ const faqs = [
     a: 'Before you make an offer, we can review your credit and tell you the minimum score for the loan you are considering. Meeting the asset benchmark is one part of qualifying.',
   },
   {
-    q: 'Do you turn my account balance into monthly income?',
-    a: 'For this Asset Qualifier program, we compare your eligible assets after closing with the amount you want to borrow. You do not need to turn those assets into a monthly income figure.',
+    q: 'Is an Asset Qualifier loan the same as an asset depletion loan?',
+    a: 'An asset depletion loan uses eligible assets to calculate monthly qualifying income. Some lenders call that approach asset utilization. For our Asset Qualifier loan, we compare the eligible balance left after closing with the amount you want to borrow. Our benchmark is 125% of the loan amount.',
   },
   {
     q: 'How many months of statements are required?',
@@ -199,10 +199,10 @@ export default function AssetQualifierPage() {
             className="text-3xl md:text-5xl font-bold mb-5 text-center"
             style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
           >
-            What This Program Does — and Why It Matters
+            How an Asset-Based Mortgage Works
           </h2>
           <p className="text-gray-700 leading-relaxed mb-12 max-w-3xl text-center mx-auto">
-            Some borrowers are financially strong but look difficult on paper. A tax return that is highly optimized, a retirement that removed the paycheck, a portfolio that dwarfs the loan request — none of that shows up cleanly in a conventional file. Asset Qualifier starts with the balance sheet and builds from there, removing the documentation burden for the borrowers who need it least.
+            If you’ve retired or your income varies from year to year, you may have substantial investments and little income on your tax return. An asset depletion loan can use those investments to calculate monthly income. With our Asset Qualifier loan, we look at how much you’ll have left in eligible accounts after closing.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {highlights.map((h, i) => (
@@ -282,7 +282,7 @@ export default function AssetQualifierPage() {
             How The Asset Qualifier Review Works
           </h2>
           <p className="text-gray-700 text-sm leading-relaxed mb-12 max-w-2xl text-center mx-auto">
-            No guesswork, no buried requirements. Here is exactly what happens when you start the conversation.
+            If you’re comparing asset utilization loans, two questions are worth asking up front. Which accounts count, and how much of each balance can you use? Here’s how we review your accounts for our Asset Qualifier program.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {steps.map((s, i) => (
@@ -306,7 +306,7 @@ export default function AssetQualifierPage() {
 
           <div id="eligible-assets" className="mx-auto mt-12 max-w-3xl scroll-mt-28 rounded bg-white p-6 text-center md:p-8" style={{ border: '2px solid #1F2E2A' }}>
             <h3 className="mb-3 text-2xl font-bold" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}>
-              Which assets can I use?
+              Which accounts can I use for an asset-based mortgage?
             </h3>
             <p className="mx-auto mb-5 max-w-xl leading-relaxed text-gray-700">
               We start with the accounts you own and the funds you can access. We typically review three kinds of accounts.

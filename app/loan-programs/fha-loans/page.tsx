@@ -247,48 +247,6 @@ export default function FhaLoansPage() {
         </div>
       </section>
 
-      {/* ── Why Work with Jamie ── */}
-      <section className="bg-white py-16 md:py-24 px-6">
-        <div className="max-w-5xl mx-auto">
-          <h2
-            data-reveal
-            className="text-3xl md:text-5xl font-bold text-center mb-10"
-            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
-          >
-            Why Work with Jamie Becker
-          </h2>
-          <div className="flex flex-col md:flex-row gap-0 rounded overflow-hidden">
-            <div className="flex-1 flex flex-col justify-between p-10 md:p-12" style={{ backgroundColor: '#F5EFE6' }}>
-              <div className="prose-becker mb-10">
-                <p>
-                  First-time buyers and buyers rebuilding their financial profile deserve the same clear, honest guidance as any other client. Jamie Becker brings 21 years of mortgage experience to every conversation — and that includes knowing exactly when an FHA loan is the right move and when a different path makes more sense.
-                </p>
-                <p>
-                  No pressure, no upsell. If FHA is your best option right now, we will make it as clean and straightforward as possible.
-                </p>
-              </div>
-              <Link
-                href="/about"
-                className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest"
-                style={{ color: '#B98942' }}
-              >
-                Learn More About Jamie <ChevronRight size={16} />
-              </Link>
-            </div>
-            <div className="shrink-0 w-full md:w-[420px] min-h-[400px] relative">
-              <Image
-                src="/images/jamie-becker-barn.jpg"
-                alt="Jamie Becker, Colorado mortgage broker"
-                fill
-                className="object-cover"
-                style={{ objectPosition: 'center 55%' }}
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ── FAQ ── */}
       <section style={{ backgroundColor: '#F5EFE6' }} className="py-16 md:py-20 px-6">
         <div className="max-w-3xl mx-auto">
@@ -331,6 +289,48 @@ export default function FhaLoansPage() {
           >
             VA Loans <ChevronRight size={18} />
           </Link>
+        </div>
+      </section>
+
+      {/* ── Why Work with Jamie ── */}
+      <section id="why-work-with-jamie" className="bg-white py-16 md:py-24 px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2
+            data-reveal
+            className="text-3xl md:text-5xl font-bold text-center mb-10"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
+          >
+            Why Work with Jamie Becker
+          </h2>
+          <div className="flex flex-col md:flex-row gap-0 rounded overflow-hidden">
+            <div className="flex-1 flex flex-col justify-between p-10 md:p-12" style={{ backgroundColor: '#F5EFE6' }}>
+              <div className="prose-becker mb-10">
+                <p>
+                  First-time buyers and buyers rebuilding their financial profile deserve the same clear, honest guidance as any other client. Jamie Becker brings 21 years of mortgage experience to every conversation — and that includes knowing exactly when an FHA loan is the right move and when a different path makes more sense.
+                </p>
+                <p>
+                  No pressure, no upsell. If FHA is your best option right now, we will make it as clean and straightforward as possible.
+                </p>
+              </div>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest"
+                style={{ color: '#B98942' }}
+              >
+                Learn More About Jamie <ChevronRight size={16} />
+              </Link>
+            </div>
+            <div className="shrink-0 w-full md:w-[420px] min-h-[400px] relative">
+              <Image
+                src="/images/jamie-becker-barn.jpg"
+                alt="Jamie Becker, Colorado mortgage broker"
+                fill
+                className="object-cover"
+                style={{ objectPosition: 'center 55%' }}
+                priority
+              />
+            </div>
+          </div>
         </div>
       </section>
 

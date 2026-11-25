@@ -247,48 +247,6 @@ export default function JumboLoansPage() {
         </div>
       </section>
 
-      {/* ── Why Work with Jamie ── */}
-      <section className="bg-white py-16 md:py-24 px-6">
-        <div className="max-w-5xl mx-auto">
-          <h2
-            data-reveal
-            className="text-3xl md:text-5xl font-bold text-center mb-10"
-            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
-          >
-            Why Work with Jamie Becker
-          </h2>
-          <div className="flex flex-col md:flex-row gap-0 rounded overflow-hidden">
-            <div className="flex-1 flex flex-col justify-between p-10 md:p-12" style={{ backgroundColor: '#F5EFE6' }}>
-              <div className="prose-becker mb-10">
-                <p>
-                  Jumbo purchases are high-stakes transactions. The property is larger, the loan is larger, and the margin for error is smaller. Jamie Becker brings 21 years of mortgage experience — including complex, high-value files — and the financial advisory background to match loan structure with long-term strategy.
-                </p>
-                <p>
-                  Whether you are choosing between fixed and adjustable rates or navigating stricter documentation requirements, our team will make the process clear from the first conversation.
-                </p>
-              </div>
-              <Link
-                href="/about"
-                className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest"
-                style={{ color: '#B98942' }}
-              >
-                Learn More About Jamie <ChevronRight size={16} />
-              </Link>
-            </div>
-            <div className="shrink-0 w-full md:w-[420px] min-h-[400px] relative">
-              <Image
-                src="/images/jamie-becker-barn.jpg"
-                alt="Jamie Becker, Colorado mortgage broker"
-                fill
-                className="object-cover"
-                style={{ objectPosition: 'center 55%' }}
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ── FAQ ── */}
       <section style={{ backgroundColor: '#F5EFE6' }} className="py-16 md:py-20 px-6">
         <div className="max-w-3xl mx-auto">
@@ -331,6 +289,48 @@ export default function JumboLoansPage() {
           >
             Self Employed Loans <ChevronRight size={18} />
           </Link>
+        </div>
+      </section>
+
+      {/* ── Why Work with Jamie ── */}
+      <section id="why-work-with-jamie" className="bg-white py-16 md:py-24 px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2
+            data-reveal
+            className="text-3xl md:text-5xl font-bold text-center mb-10"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
+          >
+            Why Work with Jamie Becker
+          </h2>
+          <div className="flex flex-col md:flex-row gap-0 rounded overflow-hidden">
+            <div className="flex-1 flex flex-col justify-between p-10 md:p-12" style={{ backgroundColor: '#F5EFE6' }}>
+              <div className="prose-becker mb-10">
+                <p>
+                  Jumbo purchases are high-stakes transactions. The property is larger, the loan is larger, and the margin for error is smaller. Jamie Becker brings 21 years of mortgage experience — including complex, high-value files — and the financial advisory background to match loan structure with long-term strategy.
+                </p>
+                <p>
+                  Whether you are choosing between fixed and adjustable rates or navigating stricter documentation requirements, our team will make the process clear from the first conversation.
+                </p>
+              </div>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest"
+                style={{ color: '#B98942' }}
+              >
+                Learn More About Jamie <ChevronRight size={16} />
+              </Link>
+            </div>
+            <div className="shrink-0 w-full md:w-[420px] min-h-[400px] relative">
+              <Image
+                src="/images/jamie-becker-barn.jpg"
+                alt="Jamie Becker, Colorado mortgage broker"
+                fill
+                className="object-cover"
+                style={{ objectPosition: 'center 55%' }}
+                priority
+              />
+            </div>
+          </div>
         </div>
       </section>
 

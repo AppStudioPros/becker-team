@@ -28,7 +28,7 @@ export default function InterestRatesPage() {
         <div className="max-w-3xl mx-auto">
 
           <div className="mx-auto mb-12 max-w-[680px] overflow-hidden rounded-lg border border-[#ede4cc] bg-white">
-            <h2 className="px-4 pt-5 text-center font-serif text-2xl font-bold text-[#1F2E2A]">
+            <h2 className="px-4 pt-5 text-center text-2xl font-bold text-[#1F2E2A]">
               National Mortgage Rate Averages
             </h2>
             <div className="py-3">

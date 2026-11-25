@@ -119,7 +119,7 @@ const featuredGoogleReviews = [
 function ReviewCard({ name, rating, quote }: { name: string; rating: number; quote: string }) {
   return (
     <li className="flex flex-col items-center rounded-lg border border-[#ede4cc] border-t-2 border-t-[#B98942] bg-[#F5EFE6] px-6 py-8 text-center">
-      <p className="font-serif text-xl font-semibold md:text-2xl">{name}</p>
+      <p className="text-xl font-semibold md:text-2xl">{name}</p>
       <div className="mt-2 text-lg leading-none tracking-widest text-[#8A601F]" role="img" aria-label={`${rating} of 5 stars`}>
         <span aria-hidden="true">{'★'.repeat(rating)}{'☆'.repeat(5 - rating)}</span>
       </div>
@@ -321,7 +321,7 @@ export default function HomePage() {
             className="aspect-square w-full max-w-xs rounded object-cover object-top"
           />
           <div>
-            <h2 className="mb-4 font-serif text-3xl md:text-4xl">Meet Jamie Becker</h2>
+            <h2 className="mb-4 text-3xl md:text-4xl">Meet Jamie Becker</h2>
             <p className="mb-4 leading-relaxed">
               I run The Becker Team through Xpert Home Lending. If you&apos;re buying your first
               place in Denver, using business income to qualify, or looking at a second home
@@ -417,7 +417,7 @@ export default function HomePage() {
 
       <section className="bg-white px-6 py-16 text-center text-[#1F2E2A]">
         <div className="mx-auto max-w-5xl">
-          <h2 className="mb-4 font-serif text-3xl md:text-4xl">Google Reviews</h2>
+          <h2 className="mb-4 text-3xl md:text-4xl">Google Reviews</h2>
           <a href={googleReviewsUrl} className="font-semibold underline underline-offset-4">
             More reviews
           </a>

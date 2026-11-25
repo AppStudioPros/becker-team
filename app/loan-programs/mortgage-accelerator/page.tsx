@@ -364,16 +364,16 @@ export default function MortgageAcceleratorPage() {
             className="text-3xl md:text-5xl font-bold mb-6"
             style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
           >
-            See How One Household Budget Compares
+            Compare Payoff Options on a $425,000 Mortgage
           </h2>
           <p className="text-gray-500 text-sm uppercase tracking-widest mb-6">
-            See How the Strategy Can Change the Numbers
+            One Month of Interest and Principal
           </p>
           <div className="prose-becker text-left mb-10">
             <p>
-              Follow two paychecks through a month of bills on a $360,000 balance. See how much goes
-              toward interest and principal, then compare the Accelerator with biweekly payments
-              and paying extra on an existing mortgage.
+              We’ll show you how much of a payment goes to interest and how much pays down your home.
+              See what changes when you put the same $8,500 toward the Accelerator and a traditional
+              mortgage, and how paying every two weeks compares with paying extra principal.
             </p>
           </div>
           <Link

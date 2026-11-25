@@ -6,7 +6,7 @@ const overview = '/loan-programs/mortgage-accelerator'
 
 export const metadata: Metadata = {
   title: 'Home Mortgage Accelerator Guide and Payoff Example',
-  description: 'Follow two paychecks through a $360,000 mortgage example. Compare a credit line, extra principal and biweekly payments using one household budget.',
+  description: 'See how deposits, spending and interest affect a $425,000 mortgage balance. Compare our Accelerator with biweekly payments and paying extra principal.',
   alternates: { canonical: '/loan-programs/mortgage-accelerator/guide' },
 }
 
@@ -41,11 +41,7 @@ export default function MortgageAcceleratorGuide() {
         <h1 className="mx-auto mb-4 max-w-5xl text-4xl font-bold leading-tight text-balance md:text-6xl lg:text-7xl" style={displayFont}>
           How the Home Mortgage Accelerator works
         </h1>
-        <p className="mx-auto max-w-2xl text-lg leading-relaxed text-white/90">
-          What happens to your mortgage when your paycheck comes in and the bills go out?
-          Follow two paychecks through a month of bills, then see what you
-          could do with the same dollars on your existing mortgage.
-        </p>
+        <p className="mx-auto max-w-2xl text-lg leading-relaxed text-white/90">When your paycheck goes in and your bills come out, how much actually goes toward your home? We’ll walk you through one month on a $425,000 balance and show you what happens when you put the same money toward a traditional mortgage.</p>
       </header>
 
       <nav aria-label="In this guide" className="border-b border-cream-dark bg-white px-6 py-6">
@@ -70,24 +66,24 @@ export default function MortgageAcceleratorGuide() {
         <div className="mx-auto max-w-5xl">
           <h2 id="how-it-works" tabIndex={-1} className={heading} style={displayFont}>How the strategy works, step by step</h2>
           <div className="prose-becker mx-auto mb-9 max-w-3xl">
-            <p>With the Home Mortgage Accelerator, you use a line of credit secured by your home for everyday banking. Income deposited into the account reduces the amount borrowed. Paying household bills from it brings the balance back up. What matters is how much you owe between those transactions and how much of each deposit you can leave against the debt after expenses and interest.</p>
+            <p>With our Home Mortgage Accelerator, you use a line of credit secured by your home for everyday banking. When your paycheck goes in, the amount you owe goes down. When you pay a bill from the line, that amount goes back onto your balance. Interest depends on how much you owe while the money is there. Paying down your home over time depends on how much you can leave there after bills and interest.</p>
           </div>
           <div className="grid gap-5 text-gray-700 leading-relaxed md:grid-cols-2">
             <div className="rounded border-2 border-forest bg-white p-6 md:p-8">
               <h3 className={subheading} style={displayFont}>1. Start with the mortgage you have</h3>
-              <p>Take your balance, interest rate, remaining term and required principal-and-interest payment from your most recent statement. Separate taxes and insurance if you pay them through escrow. Those bills still belong in your household budget under either option. For a refinance, also get the amount needed to pay off the existing loan and an itemized list of new costs. A balance copied from a monthly statement and a payoff quote for a particular closing date can differ.</p>
+              <p>We start with your current mortgage statement. We look at how much you owe, your interest rate, how many years you have left and how much of your payment goes to principal and interest. If your lender collects property taxes and homeowners insurance through escrow, we keep those costs in your budget under every option. If you’re considering a refinance, we also use a payoff quote for the expected closing date. It can differ from the balance on your last statement because interest accrues between payments.</p>
             </div>
             <div className="rounded border-2 border-forest bg-white p-6 md:p-8">
               <h3 className={subheading} style={displayFont}>2. Follow a paycheck through the account</h3>
-              <p>Write down when your take-home pay actually arrives and when you expect to pay bills. In the linked-account model, a deposit can lower the balance used to calculate interest while that money stays in the account. When you use the line to pay a bill, you borrow that amount back. Two households can bring home the same pay and finish the month owing different amounts because their expenses differ. Even with identical expenses, the dates matter when the lender calculates interest on daily balances.</p>
+              <p>Look at the dates your pay reaches your account and the dates your bills clear. On a line that calculates interest daily, a paycheck can reduce the balance used for interest as soon as the deposit posts. Paying a bill from the line raises the balance again. If most of your bills clear right after payday, the full deposit may only lower your balance for a day or two. We use your actual paydays and due dates when we compare options with you.</p>
             </div>
             <div className="rounded border-2 border-forest bg-white p-6 md:p-8">
               <h3 className={subheading} style={displayFont}>3. Account for interest and every withdrawal</h3>
-              <p>Keep a running balance as you work through the month. Once you account for the interest, you can see how much of your paycheck actually went toward the home. Include bills that arrive outside a typical month, such as insurance renewals, property taxes paid directly or a repair you have been putting off. If a projection omits one of those bills, the money appears available to reduce the mortgage even though your household will need to spend it.</p>
+              <p>Before you count money as available for the mortgage, look beyond this month’s bills. Property taxes, insurance renewals, car repairs and other irregular expenses still need a place in your budget. Include the money you want to set aside for them, even in a month when nothing is due. Then look at the interest charge. What remains after spending and interest is the amount that actually reduces what you owe.</p>
             </div>
             <div className="rounded border-2 border-forest bg-white p-6 md:p-8">
               <h3 className={subheading} style={displayFont}>4. Test the plan with your own calendar</h3>
-              <p>Ask Jamie to run it once using your usual deposits and again using a tighter month from your actual statements. Set aside any cash you intend to keep available outside the loan. For each run, ask for the ending debt, interest charged, fees paid and cash still on hand. Those four figures let you see whether reaching a lower loan balance would leave you short of cash for something important.</p>
+              <p>Bring us a typical month and one when money was tighter. We’ll compare the interest, fees and ending loan balance in each, along with how much cash you’d still have in the bank. If paying down the line means using money you’ll need for an upcoming expense, we’ll include that withdrawal on the date you expect to make it. That way you can see what happens to the balance after the bill is paid.</p>
             </div>
           </div>
         </div>
@@ -95,28 +91,26 @@ export default function MortgageAcceleratorGuide() {
 
       <section className={section + ' bg-white'}>
         <div className="mx-auto max-w-5xl">
-          <h2 id="worked-example" tabIndex={-1} className={heading} style={displayFont}>What happens to a $360,000 balance in one month?</h2>
+          <h2 id="worked-example" tabIndex={-1} className={heading} style={displayFont}>One month on a $425,000 balance</h2>
           <div className="prose-becker mx-auto max-w-3xl">
-            <p>Picture two Denver homeowners who take home $8,000 a month. They owe $360,000 and want to put a little more toward their home without dipping into emergency savings. Their budget leaves $2,800 for the home loan after living expenses and savings. Each option gets that same budget. The figures are hypothetical. Neither loan gets a lump-sum payment, and the comparison assumes no fees.</p>
-            <p>Where does the other $5,200 go? The couple budgets $1,400 for groceries and transportation, close to the combined monthly amount in <a className={sourceLink} href="https://livingwage.mit.edu/counties/08031">MIT’s Denver County estimates</a> for two adults without children. They allow $1,100 for property taxes, homeowners insurance and utilities, $1,500 for out-of-pocket health costs, everyday spending and other bills, and $1,200 for savings, repairs and irregular expenses. Property taxes and insurance are already covered in that budget, so the mortgage figures below include only principal and interest.</p>
-            <h3 className={subheading} style={displayFont}>Two paychecks and a month of bills</h3>
-            <p>Suppose their credit line charges 7% interest for a 30-day month. Two $4,000 paychecks post on the 1st and 16th. To keep the calendar easy to follow, the couple’s bills and savings transfers are grouped into two $2,600 withdrawals. Each transaction changes what they owe starting that day.</p>
+            <p>Start with a $425,000 balance. In our one-month example, $10,000 comes in and $1,500 goes back out for expenses. That leaves $8,500 for interest and principal on the Accelerator. The traditional mortgage receives its scheduled payment of $2,500.76. Those are two different payment amounts. Here’s how those payments break down. We’ll also compare the two loans with the same $8,500 going toward each.</p>
             <div className="my-7 overflow-x-auto rounded border border-cream-border">
               <table className="w-full border-collapse text-left text-xs sm:text-base">
-                <caption className="bg-forest px-3 py-4 text-left font-semibold text-cream sm:px-5">The couple’s credit line through the month</caption>
+                <caption className="bg-forest px-3 py-4 text-left font-semibold text-cream sm:px-5">Where the monthly payment goes</caption>
                 <thead className="border-b border-cream-border bg-cream">
-                  <tr><th scope="col" className="px-2 py-3 sm:px-5">Days</th><th scope="col" className="px-2 py-3 sm:px-5">What posts on the first day</th><th scope="col" className="px-2 py-3 text-right sm:px-5">Balance before interest</th></tr>
+                  <tr><th scope="col" className="px-2 py-3 sm:px-5 sm:py-4">Monthly activity</th><th scope="col" className="px-2 py-3 sm:px-5 sm:py-4 text-right">Accelerator</th><th scope="col" className="px-2 py-3 sm:px-5 sm:py-4 text-right">Standard loan</th></tr>
                 </thead>
-                <tbody className="divide-y divide-cream-border tabular-nums">
-                  <tr><th scope="row" className="px-2 py-3 font-normal sm:px-5">1–7</th><td className="px-2 py-3 sm:px-5">$4,000 paycheck</td><td className="px-2 py-3 text-right sm:px-5">$356,000</td></tr>
-                  <tr><th scope="row" className="px-2 py-3 font-normal sm:px-5">8–15</th><td className="px-2 py-3 sm:px-5">$2,600 goes out</td><td className="px-2 py-3 text-right sm:px-5">$358,600</td></tr>
-                  <tr><th scope="row" className="px-2 py-3 font-normal sm:px-5">16–22</th><td className="px-2 py-3 sm:px-5">$4,000 paycheck</td><td className="px-2 py-3 text-right sm:px-5">$354,600</td></tr>
-                  <tr><th scope="row" className="px-2 py-3 font-normal sm:px-5">23–30</th><td className="px-2 py-3 sm:px-5">$2,600 goes out</td><td className="px-2 py-3 text-right sm:px-5">$357,200</td></tr>
+                <tbody className="divide-y divide-cream-border tabular-nums [&_tr:last-child]:bg-cream/60 [&_tr:last-child]:font-semibold">
+                  <tr><th scope="row" className="px-2 py-3 sm:px-5 sm:py-4 font-normal">Total toward the loan</th><td className="px-2 py-3 sm:px-5 sm:py-4 text-right">$8,500.00</td><td className="px-2 py-3 sm:px-5 sm:py-4 text-right">$2,500.76</td></tr>
+                  <tr><th scope="row" className="px-2 py-3 sm:px-5 sm:py-4 font-normal">Interest</th><td className="px-2 py-3 sm:px-5 sm:py-4 text-right">$1,720.96</td><td className="px-2 py-3 sm:px-5 sm:py-4 text-right">$2,059.48</td></tr>
+                  <tr><th scope="row" className="px-2 py-3 sm:px-5 sm:py-4 font-normal">Principal paid</th><td className="px-2 py-3 sm:px-5 sm:py-4 text-right">$6,779.04</td><td className="px-2 py-3 sm:px-5 sm:py-4 text-right">$441.28</td></tr>
+                  <tr><th scope="row" className="px-2 py-3 sm:px-5 sm:py-4 font-normal">Balance after payment</th><td className="px-2 py-3 sm:px-5 sm:py-4 text-right">$418,220.96</td><td className="px-2 py-3 sm:px-5 sm:py-4 text-right">$424,558.72</td></tr>
                 </tbody>
               </table>
             </div>
-            <p>The average balance over those 30 days is $356,686.67. Using daily simple interest and a 365-day year, the month’s interest comes to $2,052.17. Add that interest to the $357,200 balance and the couple owes $359,252.17. Their debt fell by <strong>$747.83</strong> after interest. Interest is rounded to the nearest cent after adding up the 30 daily charges.</p>
-            <p>How much did depositing the paychecks early help? Suppose the couple kept their pay in checking, paid bills there and put the same $2,800 onto the same credit line on day 30. The balance would stay at $360,000 for 29 days, then fall to $357,200 for one day. Interest would be $2,070.70. Moving the paychecks earlier saved <strong>$18.53</strong> on that line for the month. Most of the debt reduction came from the money they could afford to leave in the account.</p>
+            <p>On the Accelerator, the $8,500 left after expenses covers $1,720.96 in interest. The remaining <strong>$6,779.04</strong> reduces the balance. Subtract that from $425,000 and you finish the month owing <strong>$418,220.96</strong>. The $1,500 expense figure matters here. If you spend more of the same deposit, you have less left to put toward your home.</p>
+            <p>On the traditional mortgage, $2,059.48 of the $2,500.76 payment covers interest. The remaining <strong>$441.28</strong> goes to principal, leaving a balance of <strong>$424,558.72</strong>. That’s the result of making the scheduled payment alone. You can keep this same mortgage and pay more toward principal whenever your budget and loan terms allow.</p>
+            <p>Now put $8,500 toward each loan. On the traditional mortgage, $8,500 minus $2,059.48 in interest leaves <strong>$6,440.52</strong> for principal. The new balance is <strong>$418,559.48</strong>. With equal dollars going in, the Accelerator reduces the balance by <strong>$338.52 more</strong> for this month. That’s exactly the difference between the two interest charges. Your own interest charges depend on your loan terms, your balance and when your payments post. When we look at your payoff date, we use your rates and your payment schedule.</p>
           </div>
         </div>
       </section>
@@ -125,27 +119,27 @@ export default function MortgageAcceleratorGuide() {
         <div className="mx-auto max-w-5xl">
           <h2 id="payoff-options" tabIndex={-1} className={heading} style={displayFont}>Compare three ways to use the same money</h2>
           <div className="prose-becker mx-auto mb-8 max-w-3xl">
-            <p>Our couple has $2,800 a month for the loan, or $33,600 over a year if their budget holds. Their emergency savings stay in the bank under all three options. When you compare your own choices, use the same starting balance, keep the same cash cushion and look at the same date on each payment schedule.</p>
+            <p>When we compare payoff options with you, we start each one with the same debt, savings and amount available from your pay. If you want to make a lump-sum payment, we apply it to every option. If you want to keep that money in savings, it stays there in every comparison. Then we look at how much interest you pay and what you’ll still owe on a date that matters to you.</p>
           </div>
           <div className="space-y-5">
             <div className="grid gap-x-10 gap-y-1 rounded border border-cream-border bg-white p-6 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] md:p-8">
               <h3 className={subheading} style={displayFont}>Extra principal on your current mortgage</h3>
               <div className="space-y-4 leading-relaxed text-gray-700">
-                <p>Suppose the couple’s existing mortgage has a fixed rate of 6.5% with 30 years remaining on the $360,000 balance. Their required monthly payment for principal and interest is $2,275.44. Of that, $1,950 is interest in the first month and $325.44 pays down principal. Their $2,800 budget leaves $524.56 for an extra principal payment. If the servicer applies it that month without a fee, their debt falls by <strong>$850</strong> to <strong>$359,150</strong>. That puts them $102.17 ahead of the 7% credit line in this example. The two loans charge different rates and calculate interest differently. A different pair of loans could give a different result.</p>
-                <p>Check how your servicer wants you to mark an extra principal payment. After it posts, look at the principal balance on your statement. If money is tighter next month, you can make just the required payment under this example and keep the $524.56 for something else.</p>
+                <p>In our $425,000 example, getting from the scheduled $2,500.76 payment to the full $8,500 takes an extra $5,999.24. Your regular payment already includes $441.28 of principal. Add $5,999.24 and you get the $6,440.52 of principal paid that month. This assumes the company that manages your mortgage applies the extra money to principal that month without a fee.</p>
+                <p>Before sending extra, ask your servicer how to mark a principal-only payment and whether your loan has a prepayment penalty. On your next statement, look for the extra amount in the principal column. If you’d like to pay ahead only in months when you have cash to spare, we can compare that schedule with making the same extra payment every month.</p>
               </div>
             </div>
             <div className="grid gap-x-10 gap-y-1 rounded border border-cream-border bg-white p-6 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] md:p-8">
               <h3 className={subheading} style={displayFont}>Biweekly payments through your servicer</h3>
               <div className="space-y-4 leading-relaxed text-gray-700">
-                <p>Half the couple’s scheduled payment is $1,137.72. Paying that amount every two weeks for 26 payments sends $29,580.72 in a year. That is one full payment more than paying half twice a month. It also falls $4,019.28 short of their $33,600 annual mortgage budget. They could send that difference as extra principal over the year to compare all three options using the same money. The dates their servicer applies each payment affect the interest they actually pay.</p>
-                <p>Before sending half a payment, ask whether the servicer accepts <a className={sourceLink} href="https://www.consumerfinance.gov/consumer-tools/mortgages/answers/key-terms/#bi-weekly-payment">biweekly payments</a>, charges an enrollment fee or <a className={sourceLink} href="https://www.consumerfinance.gov/consumer-tools/mortgages/your-mortgage-servicer-must-comply-with-federal-rules/">holds the first half until a full payment arrives</a>. If taxes and insurance are in your payment, ask how the extra amount is allocated. With two paychecks a month, most months would have two debits, but a three-debit month would cost $3,413.16. Check the actual dates against your checking balance before you enroll.</p>
+                <p>With a scheduled payment of $2,500.76, half is $1,250.38. Send that amount every two weeks for 26 payments and you’ll pay $32,509.88 over the year. Send it twice a month for 24 payments and you’ll pay $30,009.12, the same total as 12 regular monthly payments. The difference is one full payment of $2,500.76. To compare the schedules fairly, we give the monthly option that same extra $2,500.76 over the year.</p>
+                <p>Before switching to <a className={sourceLink} href="https://www.consumerfinance.gov/consumer-tools/mortgages/answers/key-terms/#bi-weekly-payment">biweekly payments</a>, find out whether your servicer accepts half-payments, charges an enrollment fee or <a className={sourceLink} href="https://www.consumerfinance.gov/consumer-tools/mortgages/your-mortgage-servicer-must-comply-with-federal-rules/">holds a partial payment until the rest arrives</a>. The date the money reaches your principal balance matters. If your payment includes taxes and insurance, also ask how much of the extra payment will go toward principal. And if you’re paid twice a month, check which months would have three mortgage withdrawals before you sign up.</p>
               </div>
             </div>
             <div className="grid gap-x-10 gap-y-1 rounded border border-cream-border bg-white p-6 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] md:p-8">
               <h3 className={subheading} style={displayFont}>The Accelerator with the same budget</h3>
               <div className="space-y-4 leading-relaxed text-gray-700">
-                <p>Give Jamie the same starting balance, savings contribution and annual cash commitment you used for the other options, along with the dates you receive and spend money. Ask for a schedule showing when interest posts and when fees are paid. Pick a date that matters to you, such as your expected move or retirement, and compare debt remaining, interest and fees through that date. A lifetime total is less useful if you expect to sell the home in a few years.</p>
+                <p>We use the same starting balance and the same annual payment budget, then put your deposits and withdrawals on the days you expect them to post. That lets you see how much of your progress comes from paying more and how much comes from differences in interest. If you expect to move or retire before the loan ends, we compare the balance and total costs through that date. Savings projected for later years won’t help cover the cost of a refinance you pay for today.</p>
               </div>
             </div>
           </div>
@@ -159,8 +153,8 @@ export default function MortgageAcceleratorGuide() {
         <div className="mx-auto max-w-5xl">
           <h2 id="who-it-fits" tabIndex={-1} className={heading} style={displayFont}>Who is likely to find it useful?</h2>
           <div className="mx-auto grid gap-6 text-base leading-relaxed text-white/90 md:grid-cols-2 md:gap-12">
-            <p>After you cover your bills and set money aside for surprises, how much of each paycheck can you leave against the loan? Look at what remains after the bills clear across several ordinary months, including a month with an unusually large expense. A steady surplus and a willingness to track transactions give you something meaningful to model. If your goal is to enter retirement with less debt, ask for a second projection using the income you expect after leaving work. A projection that assumes today’s full paycheck until the final payment can miss the very transition you are planning for.</p>
-            <p>This structure may be a poor fit if you routinely draw savings to meet regular expenses, rely on a single unpredictable bonus to get ahead, or would have to put your entire emergency fund into the loan. It can also be a poor trade if replacing an existing loan means giving up a rate or payment you value. Homeowners in any of those situations can ask what happens if they keep their existing mortgage and send extra principal only in months when the money is actually available.</p>
+            <p>We look first at what’s left after your bills clear. If you consistently have money left over, like to keep track of your accounts and want to pay down your home faster, the Accelerator is worth comparing with the mortgage you already have. If retirement is your goal, we can look at the years before and after your last paycheck separately. Tell us which income will continue and which expenses will change, so you can see whether the payment still fits when you’re no longer working.</p>
+            <p>If you regularly use savings to cover ordinary bills, count on an unpredictable bonus or need all your available cash for emergencies, keeping your current mortgage may fit you better. The same goes if you already have a low fixed rate that would be expensive to replace. We can show you what happens if you keep your loan and send extra principal only when you have money to spare. That leaves you the option to skip the extra payment in a tight month.</p>
           </div>
         </div>
       </section>
@@ -172,20 +166,20 @@ export default function MortgageAcceleratorGuide() {
             <div className="h-full rounded border border-cream-border bg-cream p-6 md:p-8">
               <h3 className={subheading} style={displayFont}>A rate change or an expensive refinance</h3>
               <div className="space-y-4 leading-relaxed text-gray-700">
-                <p>Get the proposed rate and fees in writing. If the rate is variable, ask what index it follows, what the lender adds to that index, when it can change and whether it has a cap. Ask for a second projection at a higher rate while holding income and spending steady. For a refinance, include <a className={sourceLink} href="https://myhome.freddiemac.com/refinancing/costs-of-refinancing">upfront costs</a> and any charges rolled into the balance. For a home equity line, ask about <a className={sourceLink} href="https://www.consumerfinance.gov/ask-cfpb/what-fees-can-my-lender-charge-if-i-take-out-a-heloc-en-249/">annual charges and early cancellation fees</a>. If you plan to move, compare those costs with the interest difference you would actually see before the sale. On the daily balances in our example, an 8% rate would cost $2,345.34 in interest for the month. That leaves $454.66 of the same $2,800 budget to reduce the debt.</p>
+                <p>If the proposed rate can change, we’ll walk through what it’s tied to, how often it can adjust and how high it can go under the loan terms. We can also run the same budget at a higher rate so you see how much less of your deposit would reach principal. For a refinance, we include <a className={sourceLink} href="https://myhome.freddiemac.com/refinancing/costs-of-refinancing">closing costs</a>, including any you add to the balance. On a home equity line, <a className={sourceLink} href="https://www.consumerfinance.gov/ask-cfpb/what-fees-can-my-lender-charge-if-i-take-out-a-heloc-en-249/">annual or early cancellation fees</a> can also matter. If you plan to sell, we’ll compare those costs with the interest you could save before the sale.</p>
               </div>
             </div>
             <div className="h-full rounded border border-cream-border bg-cream p-6 md:p-8">
               <h3 className={subheading} style={displayFont}>Losing access to cash when you need it</h3>
               <div className="space-y-4 leading-relaxed text-gray-700">
-                <p>Cash held in a savings account and unused borrowing capacity on a home-secured line serve different purposes. A lender may <a className={sourceLink} href="https://www.consumerfinance.gov/ask-cfpb/what-is-a-home-equity-line-of-credit-heloc-en-107/">restrict further draws</a> in certain circumstances, including a significant drop in home value. Ask how you would cover a repair or a gap between paychecks if a draw were unavailable. On a loan secured by your home, failure to repay can put the home at risk.</p>
+                <p>Money in your savings account is yours to spend. Drawing on a credit line means borrowing against your home again. A lender may <a className={sourceLink} href="https://www.consumerfinance.gov/ask-cfpb/what-is-a-home-equity-line-of-credit-heloc-en-107/">limit further withdrawals</a> in certain circumstances, including a significant drop in your home’s value. Think about how you’d pay for an urgent repair or cover a gap in pay if the line were frozen. Because your home secures the loan, falling behind on payments could put your home at risk.</p>
               </div>
             </div>
           </div>
           <div className="mt-10 rounded bg-forest px-6 py-10 text-center text-white md:px-12 md:py-12">
-            <h3 className="mb-4 text-2xl font-bold md:text-3xl" style={displayFont}>What to bring to a review with Jamie</h3>
-            <p className="mx-auto mb-7 max-w-3xl text-left leading-relaxed text-white/90">Bring your current mortgage statement, recent deposit and spending records, any written offer you are comparing, and a list of money you need to keep accessible. Mark any upcoming change in income, property taxes or household expenses. Ask for a schedule you can trace from the opening balance to the first month’s ending balance, just as you did above. Then do the same check for a lean month. That gives you a practical basis for deciding whether to change loans, send extra principal yourself or keep your current payment schedule.</p>
-            <Link href="/contact" className={button + ' border-2 border-cream text-cream'}>Ask Jamie Becker about your mortgage scenario</Link>
+            <h3 className="mb-4 text-2xl font-bold md:text-3xl" style={displayFont}>What to bring when we talk</h3>
+            <p className="mx-auto mb-7 max-w-3xl text-left leading-relaxed text-white/90">Bring your current mortgage statement, a few months of deposits and bills, and any written loan offer you’d like us to compare. Tell us how much you want to keep in savings and when you expect a change in pay or a large expense. We’ll use your numbers to walk through what you’d pay in interest, how much would reach principal and how much cash you’d have on hand. You can then decide whether to keep your current payment, pay extra yourself or explore the Accelerator with us.</p>
+            <Link href="/contact" className={button + ' border-2 border-cream text-cream'}>Talk with Jamie about your mortgage</Link>
           </div>
         </div>
       </section>

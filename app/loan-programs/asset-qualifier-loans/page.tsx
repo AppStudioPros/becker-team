@@ -28,7 +28,7 @@ const highlights = [
   },
   {
     title: 'Qualify on Your Balance Sheet',
-    body: 'Only need 125% of the loan amount in assets. No income documentation, no W-2s, no tax return requirements.',
+    body: 'We compare your eligible assets after closing with a benchmark of 125% of your loan amount. You can qualify without W-2s or tax returns.',
   },
   {
     title: 'No DTI. No Collateralization.',
@@ -72,6 +72,14 @@ const faqs = [
     a: 'Current materials highlight 125% of the loan amount in assets as a key benchmark, but exact requirements depend on the borrower and current program guidelines.',
   },
   {
+    q: 'What credit score do I need?',
+    a: 'Before you make an offer, we can review your credit and tell you the minimum score for the loan you are considering. Meeting the asset benchmark is one part of qualifying.',
+  },
+  {
+    q: 'Do you turn my account balance into monthly income?',
+    a: 'For this Asset Qualifier program, we compare your eligible assets after closing with the amount you want to borrow. You do not need to turn those assets into a monthly income figure.',
+  },
+  {
     q: 'How many months of statements are required?',
     a: 'The current example used four months of portfolio statements. Our team will tell you exactly what applies to your situation.',
   },
@@ -88,15 +96,11 @@ const faqs = [
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: [
-    { '@type': 'Question', name: 'What is an Asset Qualifier loan?', acceptedAnswer: { '@type': 'Answer', text: 'It is a mortgage option that uses eligible assets rather than traditional income documentation for qualification.' } },
-    { '@type': 'Question', name: 'What documentation is typically required?', acceptedAnswer: { '@type': 'Answer', text: 'In the current example, the file was qualified with asset statements only. Your exact documentation will depend on the program and your scenario.' } },
-    { '@type': 'Question', name: 'Who tends to be a strong fit?', acceptedAnswer: { '@type': 'Answer', text: 'High-net-worth borrowers, retirees, and clients with complex tax returns are often strong fits.' } },
-    { '@type': 'Question', name: 'How much in assets do I need?', acceptedAnswer: { '@type': 'Answer', text: 'Current materials highlight 125% of the loan amount in assets as a key benchmark, but exact requirements depend on the borrower and current program guidelines.' } },
-    { '@type': 'Question', name: 'How many months of statements are required?', acceptedAnswer: { '@type': 'Answer', text: 'The current example used four months of portfolio statements. Our team will tell you exactly what applies to your situation.' } },
-    { '@type': 'Question', name: 'How fast can this close?', acceptedAnswer: { '@type': 'Answer', text: 'Timelines vary, but one current example closed in 3 weeks.' } },
-    { '@type': 'Question', name: 'Can this be used for a refinance?', acceptedAnswer: { '@type': 'Answer', text: 'This program is primarily positioned as a purchase-led solution, especially for borrowers who do not fit traditional underwriting well.' } }
-  ],
+  mainEntity: faqs.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
 }
 
 const breadcrumbJsonLd = {
@@ -299,6 +303,23 @@ export default function AssetQualifierPage() {
               </div>
             ))}
           </div>
+
+          <div id="eligible-assets" className="mx-auto mt-12 max-w-3xl scroll-mt-28 rounded bg-white p-6 text-center md:p-8" style={{ border: '2px solid #1F2E2A' }}>
+            <h3 className="mb-3 text-2xl font-bold" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}>
+              Which assets can I use?
+            </h3>
+            <p className="mx-auto mb-5 max-w-xl leading-relaxed text-gray-700">
+              We start with the accounts you own and the funds you can access. We typically review three kinds of accounts.
+            </p>
+            <ul className="space-y-2 text-gray-700">
+              <li><strong>Bank accounts</strong> such as checking, savings and money market accounts.</li>
+              <li><strong>Investment accounts</strong> holding stocks, bonds, mutual funds or exchange-traded funds.</li>
+              <li><strong>Retirement accounts</strong> such as IRAs and vested 401(k) balances.</li>
+            </ul>
+            <p className="mx-auto mt-5 max-w-xl leading-relaxed text-gray-700">
+              Your statements help us determine which funds count and how much will still be available after your down payment and closing costs.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -355,7 +376,7 @@ export default function AssetQualifierPage() {
             Real-World Example
           </h2>
           <p className="text-gray-600 text-base leading-relaxed mb-10 text-center max-w-xl mx-auto">
-            One example from current Asset Qualifier materials shows how clean this process can be for the right borrower.
+            Here’s how one buyer financed a $1 million purchase with 20% down.
           </p>
 
           {/* Grid — explicit placement so equal row heights work */}
@@ -381,7 +402,7 @@ export default function AssetQualifierPage() {
             </div>
             <div className="col-start-2 row-start-2 rounded bg-white p-5 flex flex-col gap-3" style={{ border: '2px solid #1F2E2A' }}>
               <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#1F2E2A' }}>Required Assets Post-Closing</p>
-              <p className="text-sm text-gray-600">$1,008,000 (125% of loan)</p>
+              <p className="text-sm text-gray-600">$1,008,000</p>
             </div>
             <div className="col-start-2 row-start-3 rounded bg-white p-5 flex flex-col gap-3" style={{ border: '2px solid #1F2E2A' }}>
               <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#1F2E2A' }}>Required Paperwork</p>
@@ -400,12 +421,19 @@ export default function AssetQualifierPage() {
             </div>
           </div>
 
-          {/* Bottom note */}
-          <div
-            className="mt-3 rounded bg-white px-6 py-4 text-center text-sm text-gray-600 italic"
-            style={{ border: '2px solid #1F2E2A' }}
-          >
-            No tax returns, no income documents and no employment information.
+          <div id="colorado-example" className="mx-auto mt-12 max-w-2xl scroll-mt-28 text-center">
+            <h3 className="mb-4 text-2xl font-bold md:text-3xl" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}>
+              Buying a home in Loveland after retirement
+            </h3>
+            <p className="mb-4 leading-relaxed text-gray-700">
+              If you’re retired and shopping in Loveland, how much would you need to keep in your accounts after closing? Consider a $486,000 home, the median sale price in Loveland for the three months ending in October 2026.
+            </p>
+            <p className="mb-4 leading-relaxed text-gray-700">
+              With 25% down, you’d put <strong>$121,500</strong> toward the purchase and borrow <strong>$364,500</strong>. At 125% of that loan amount, the benchmark is <strong>$455,625</strong> in eligible assets after closing.
+            </p>
+            <p className="leading-relaxed text-gray-700">
+              If you plan to use your investment or retirement accounts, we’d review the balance you can access after paying the down payment and closing costs. The money you spend at closing can’t also count toward the $455,625.
+            </p>
           </div>
         </div>
       </section>

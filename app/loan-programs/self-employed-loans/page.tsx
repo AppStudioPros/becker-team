@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Check, ChevronLeft, ChevronRight } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
+import ProgramReviews from '@/components/ProgramReviews'
 
 export const metadata: Metadata = {
   title: 'Bank Statement Mortgages for Self-Employed Buyers',
@@ -369,6 +370,7 @@ export default function SelfEmployedLoansPage() {
               />
             </div>
           </div>
+          <ProgramReviews reviewers={['lala7499', '4belle1rose5']} />
         </div>
       </section>
 

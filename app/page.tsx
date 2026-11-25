@@ -387,9 +387,10 @@ export default function HomePage() {
         </Link>
       </section>
 
-      <section className="bg-white px-6 py-16 text-center text-[#1F2E2A]">
+      <section id="google-reviews" className="scroll-mt-24 bg-white px-6 py-16 text-center text-[#1F2E2A]">
         <div className="mx-auto max-w-5xl">
           <h2 className="mb-4 text-3xl md:text-4xl">Google Reviews</h2>
+          <p className="mb-3 text-lg">5.0 out of 5 from 232 Google reviews as of November 2026.</p>
           <a href={googleReviewsUrl} className="font-semibold underline underline-offset-4">
             More reviews
           </a>

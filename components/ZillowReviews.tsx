@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, Pause, Play } from 'lucide-react'
 import reviews from './zillow-reviews.json'
+import ZillowReviewCard from './ZillowReviewCard'
 import styles from './ZillowReviews.module.css'
 
 const profile = 'https://www.zillow.com/lender-profile/Jamie%20Becker/#reviews'
@@ -113,12 +114,7 @@ export default function ZillowReviews() {
             {reviews.map((_, offset) => {
               const review = reviews[(position.index + offset) % total]
               return (
-                <li key={review.name} aria-hidden={offset >= columns || undefined}>
-                  <h3>{review.name}</h3>
-                  <span className={styles.stars} style={{ width: review.rating * 16 }} role="img" aria-label={`${review.rating} out of 5 stars`} />
-                  <blockquote>“{review.quote}”</blockquote>
-                  <p>{review.city} <span aria-hidden="true">·</span> <time dateTime={review.date}>{review.dateLabel}</time></p>
-                </li>
+                <ZillowReviewCard key={review.name} review={review} hidden={offset >= columns} />
               )
             })}
           </ul>

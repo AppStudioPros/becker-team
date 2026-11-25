@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Check, ChevronLeft, ChevronRight } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
+import ProgramReviews from '@/components/ProgramReviews'
 
 export const metadata: Metadata = {
   title: 'Colorado Asset Qualifier Loans',
@@ -445,6 +446,7 @@ export default function AssetQualifierPage() {
               />
             </div>
           </div>
+          <ProgramReviews reviewers={['4belle1rose5', 'Dina Mckinley']} />
         </div>
       </section>
 

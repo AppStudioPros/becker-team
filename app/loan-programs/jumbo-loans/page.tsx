@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Check, ChevronLeft, ChevronRight } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
+import ProgramReviews from '@/components/ProgramReviews'
 import { dollars, oneUnitLimits } from '@/lib/conformingLimits'
 
 export const metadata: Metadata = {
@@ -333,6 +334,7 @@ export default function JumboLoansPage() {
               />
             </div>
           </div>
+          <ProgramReviews reviewers={['Adam W', 'Emily Drennan']} />
         </div>
       </section>
 

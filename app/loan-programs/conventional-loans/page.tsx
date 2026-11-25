@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Check, ChevronLeft, ChevronRight } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
+import ProgramReviews from '@/components/ProgramReviews'
 
 export const metadata: Metadata = {
   title: 'Colorado Conventional Home Loans',
@@ -296,6 +297,7 @@ export default function ConventionalLoansPage() {
               />
             </div>
           </div>
+          <ProgramReviews reviewers={['Emily Drennan', 'lala7499']} />
         </div>
       </section>
 

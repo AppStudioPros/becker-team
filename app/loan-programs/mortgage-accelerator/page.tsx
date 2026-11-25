@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { Check, ChevronRight } from 'lucide-react'
 import StrategyReviewModal from '@/components/StrategyReviewModal'
 import FaqAccordion from '@/components/FaqAccordion'
+import ProgramReviews from '@/components/ProgramReviews'
 
 export const metadata: Metadata = {
   title: 'Home Mortgage Accelerator Strategy',
@@ -379,6 +380,7 @@ export default function MortgageAcceleratorPage() {
               />
             </div>
           </div>
+          <ProgramReviews reviewers={['user4272651', '4belle1rose5']} />
         </div>
       </section>
 

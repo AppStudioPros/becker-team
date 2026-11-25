@@ -1,10 +1,13 @@
-.section {
+.section, .program {
   --ink: #1f302b;
   --secondary: #54615b;
   --gold: #b58c52;
   --sand: #faf7f1;
   --line: #e2d9ca;
   --gap: clamp(10px, 1.6vw, 21px);
+}
+
+.section {
   container-type: inline-size;
   scroll-margin-top: 6rem;
   padding: clamp(24px, 4.2vw, 64px) clamp(14px, 3.4vw, 55px);
@@ -33,8 +36,8 @@
   padding: 0;
   margin: 0;
 }
-.track > li {
-  flex: 0 0 calc(var(--step) - var(--gap));
+.track > li { flex: 0 0 calc(var(--step) - var(--gap)); }
+.card {
   min-width: 0;
   display: flex;
   flex-direction: column;
@@ -48,12 +51,12 @@
 }
 /* Keep the preceding card just outside the window so the loop can slide in either direction. */
 .track > li:last-child { order: -1; margin-inline-start: calc(-1 * var(--step)); }
-.track h3 { color: var(--ink); font: 400 clamp(21px, 2.55vw, 33px)/1.18 Georgia, 'Times New Roman', serif; margin: 0; overflow-wrap: anywhere; letter-spacing: -.035em; }
+.name { color: var(--ink); font: 400 clamp(21px, 2.55vw, 33px)/1.18 Georgia, 'Times New Roman', serif; margin: 0; overflow-wrap: anywhere; letter-spacing: -.035em; }
 .stars { height: 16px; margin: 8px 0 13px; background: url('/images/zillow-star.svg') repeat-x left center / 16px 16px; }
-.track blockquote { border: none; padding: 0; margin: 0 auto 18px; font: 400 clamp(15px, 1.45vw, 20px)/1.45 Georgia, 'Times New Roman', serif; color: var(--ink); max-width: 29ch; text-wrap: pretty; }
-.track p { color: var(--secondary); margin: auto 0 0; font: 400 12px/1.55 Arial, sans-serif; }
-.track p span { padding-inline: 3px; }
-.track time { white-space: nowrap; }
+.card blockquote { border: none; padding: 0; margin: 0 auto 18px; font: 400 clamp(15px, 1.45vw, 20px)/1.45 Georgia, 'Times New Roman', serif; color: var(--ink); max-width: 29ch; text-wrap: pretty; }
+.card p { color: var(--secondary); margin: auto 0 0; font: 400 12px/1.55 Arial, sans-serif; }
+.card p span { padding-inline: 3px; }
+.card time { white-space: nowrap; }
 .actions, .source, .controls { display: flex; align-items: center; }
 .actions { justify-content: space-between; gap: 16px; margin-top: 14px; flex-wrap: wrap; }
 .source { gap: 16px; }

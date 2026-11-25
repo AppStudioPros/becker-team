@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import LocalMortgageGuide from '@/components/LocalMortgageGuide'
 import { notFound } from 'next/navigation'
 import { mortgageServiceAreas } from '@/lib/mortgageServiceAreas'
 
@@ -63,6 +64,7 @@ export default async function MortgageServiceAreaPage({ params }: Props) {
           </p>
         </div>
       </section>
+      <LocalMortgageGuide city={area.slug} />
     </>
   )
 }

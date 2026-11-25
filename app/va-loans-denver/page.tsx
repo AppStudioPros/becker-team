@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { dollars, oneUnitLimits } from '@/lib/conformingLimits'
 import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
@@ -62,7 +63,7 @@ const faqs = [
   },
   {
     q: 'What is the VA loan limit in Denver?',
-    a: 'For veterans with full entitlement (no active VA loan currently outstanding), there is effectively no VA loan limit. You can borrow above the conforming limit without a down payment. For veterans with reduced entitlement (you currently have an active VA loan or have not fully restored your entitlement from a previous use), county loan limits apply. Denver County\'s limit is $806,500 for 2026. Jamie will check your entitlement status and let you know exactly where you stand.',
+    a: `For borrowers with full entitlement, VA does not set a county loan limit. Your lender still reviews what you can afford. With remaining entitlement, the county limit is part of the guaranty calculation. Denver County’s 2026 one-unit limit is ${dollars.format(oneUnitLimits.Denver[2026])}. We can review your Certificate of Eligibility and whether a down payment is needed.`,
   },
   {
     q: 'How do I compete with conventional buyers using a VA loan?',

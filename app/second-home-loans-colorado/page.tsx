@@ -50,7 +50,7 @@ const benefits = [
   { title: 'Lower Rates Than Investment Properties', body: 'Second homes carry lower mortgage rates than investment properties because the occupancy classification is different. Getting this distinction right from the start saves you real money every month.' },
   { title: 'Conventional and Jumbo Options', body: 'Whether your mountain cabin is $350,000 or your ski condo is $1.5M, Jamie has conventional and jumbo second home programs with competitive rates across the full price range.' },
   { title: 'Non-Warrantable Condo Solutions', body: 'Many resort condo complexes in Breckenridge, Vail, and Steamboat are non-warrantable. Most banks cannot finance them. Jamie has portfolio and specialty programs that can handle these properties.' },
-  { title: 'Part-Time Rental Allowed', body: 'You can rent your second home when you are not using it personally. The key is that the property must be used by you for part of the year. Occasional Airbnb or VRBO rentals are generally fine with second home financing.' },
+  { title: 'Personal Use and Rental Rules', body: 'Before counting on occasional rental income, check the town’s rules and the HOA covenants. Tell us how you plan to occupy the home so we can review the loan requirements.' },
   { title: 'Multiple Lender Access', body: 'As a broker, Jamie shops your second home loan across wholesale lenders. Second home programs vary more than primary residence products, so having access to multiple lenders matters.' },
 ]
 
@@ -65,7 +65,7 @@ const faqs = [
   },
   {
     q: 'Can I rent out my Colorado second home on Airbnb or VRBO?',
-    a: 'Yes, in most cases. Lenders expect that a second home will be used personally by the borrower for a portion of the year. Renting it out when you are not there is generally acceptable. The line you cannot cross is treating it purely as a rental business with no personal use. If the property is rented full-time and managed by a property management company year-round, lenders will likely classify it as an investment property instead. That changes the loan terms and down payment requirements.',
+    a: 'It depends on the property, loan program, local license rules and HOA covenants. For a Fannie Mae second-home loan, you must personally occupy the home during part of the year, retain control over occupancy and qualify without the rental income. If rentals are essential to your budget, we can review investment-property options.',
   },
   {
     q: 'What areas in Colorado qualify for second home financing?',

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import LocalMortgageGuide from '@/components/LocalMortgageGuide'
 import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
@@ -147,6 +148,8 @@ export default function DenverMortgagePage() {
           </p>
         </div>
       </section>
+
+      <LocalMortgageGuide city="denver" />
 
       {/* Loan programs */}
       <section style={{ backgroundColor: '#F5EFE6' }} className="py-16 md:py-20 px-6">

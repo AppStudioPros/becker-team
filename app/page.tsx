@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Suspense } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import FaqAccordion from '@/components/FaqAccordion'
 import ZillowReviews from '@/components/ZillowReviews'
 
 export const metadata: Metadata = {
@@ -422,35 +423,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section
-        id="mortgage-faq"
-        aria-labelledby="mortgage-faq-heading"
-        className="scroll-mt-24 px-6 py-16 text-center md:py-20"
-        style={{ backgroundColor: '#F5EFE6', color: '#1F2E2A' }}
-      >
-        <div className="mx-auto max-w-3xl">
+      <section id="mortgage-faq" aria-labelledby="mortgage-faq-heading" style={{ backgroundColor: '#F5EFE6' }} className="scroll-mt-24 py-16 md:py-20 px-6">
+        <div className="max-w-3xl mx-auto">
           <h2
             id="mortgage-faq-heading"
-            className="mb-8 text-3xl font-bold md:text-5xl"
-            style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
+            data-reveal
+            className="text-3xl md:text-5xl font-bold text-center mb-10"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
           >
-            Colorado Mortgage FAQ
+            Frequently Asked Questions
           </h2>
-          <div className="divide-y divide-[#ded6c4] border-y border-[#ded6c4]">
-            {homeFaqs.map(({ q, a }) => (
-              <div key={q} className="py-6">
-                <h3 className="mb-2 text-xl font-semibold md:text-2xl">{q}</h3>
-                <p className="mx-auto max-w-2xl leading-relaxed text-gray-700">{a}</p>
-              </div>
-            ))}
+          <FaqAccordion items={homeFaqs} />
+          <div className="text-center">
+            <Link
+              href="/faq"
+              className="mt-8 inline-block rounded px-10 py-4 text-sm font-semibold uppercase tracking-widest btn-hover"
+              style={{ backgroundColor: '#1F2E2A', color: '#F5EFE6' }}
+            >
+              View the Full Mortgage FAQ
+            </Link>
           </div>
-          <Link
-            href="/faq"
-            className="mt-8 inline-block rounded px-10 py-4 text-sm font-semibold uppercase tracking-widest btn-hover"
-            style={{ backgroundColor: '#1F2E2A', color: '#F5EFE6' }}
-          >
-            View the Full Mortgage FAQ
-          </Link>
         </div>
       </section>
 

@@ -16,6 +16,7 @@ Client: Jamie Becker / The Becker Team (Xpert Home Lending, NMLS #794730)
 - Body: Inter (sans-serif)
 
 ## Rules
+- Match new sections to the structure, typography, spacing, and interactions of comparable sections on the site. Reuse their shared components, including `FaqAccordion` for FAQ sections like the one on the Mortgage Accelerator page.
 - No em dashes (—) anywhere in content
 - No AI-tell words (seamlessly, leverage, delve, tapestry, etc.)
 - All pages must have unique <title> tags with Colorado + mortgage keywords

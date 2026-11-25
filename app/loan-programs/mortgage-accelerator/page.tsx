@@ -64,8 +64,8 @@ const faqs = [
     a: 'This can be positioned for both purchase and refinance scenarios, depending on the borrower and the opportunity.',
   },
   {
-    q: 'Have I seen this advertised as paying off a 30-year mortgage in 5-7 years?',
-    a: 'No. That came from one illustrative comparison based on specific assumptions. Your results depend on your numbers, timing and behavior.',
+    q: 'How can I estimate my payoff date?',
+    a: 'Start with your current balance, loan terms and the amount left after your bills. Jamie can use those figures to compare payoff schedules and show what changes if your rate goes up or your income drops.',
   },
   {
     q: 'Will you recommend this even if it does not fit?',
@@ -84,7 +84,7 @@ const faqJsonLd = {
     { '@type': 'Question', name: 'What exactly is the Home Mortgage Accelerator?', acceptedAnswer: { '@type': 'Answer', text: 'It is a cash-flow-driven mortgage strategy designed for borrowers with strong monthly net deposits. The goal is to use your actual financial flow more intentionally than a standard set-it-and-forget-it mortgage.' } },
     { '@type': 'Question', name: 'Who is this a good fit for?', acceptedAnswer: { '@type': 'Answer', text: 'It tends to fit best for borrowers with strong, consistent net cash flow, disciplined spending habits and a serious interest in paying down their mortgage faster.' } },
     { '@type': 'Question', name: 'Can this work for a purchase or just a refinance?', acceptedAnswer: { '@type': 'Answer', text: 'This can be positioned for both purchase and refinance scenarios, depending on the borrower and the opportunity.' } },
-    { '@type': 'Question', name: 'Have I seen this advertised as paying off a 30-year mortgage in 5-7 years?', acceptedAnswer: { '@type': 'Answer', text: 'No. That came from one illustrative comparison based on specific assumptions. Your results depend on your numbers, timing and behavior.' } },
+    { '@type': 'Question', name: 'How can I estimate my payoff date?', acceptedAnswer: { '@type': 'Answer', text: 'Start with your current balance, loan terms and the amount left after your bills. Jamie can use those figures to compare payoff schedules and show what changes if your rate goes up or your income drops.' } },
     { '@type': 'Question', name: 'Will you recommend this even if it does not fit?', acceptedAnswer: { '@type': 'Answer', text: 'No. If the strategy does not fit your goals or cash-flow profile, our team will tell you that directly.' } },
     { '@type': 'Question', name: 'What information do I need to get started?', acceptedAnswer: { '@type': 'Answer', text: 'A realistic snapshot of your mortgage, monthly deposits, major expenses, available savings and payoff goals.' } }
   ],
@@ -356,7 +356,7 @@ export default function MortgageAcceleratorPage() {
         </div>
       </section>
 
-      {/* ── See a Real Example ── */}
+      {/* ── Payoff example ── */}
       <section className="bg-white py-16 md:py-24 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <h2
@@ -364,18 +364,16 @@ export default function MortgageAcceleratorPage() {
             className="text-3xl md:text-5xl font-bold mb-6"
             style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
           >
-            See a Real Home Mortgage Accelerator Example
+            See How One Household Budget Compares
           </h2>
           <p className="text-gray-500 text-sm uppercase tracking-widest mb-6">
             See How the Strategy Can Change the Numbers
           </p>
           <div className="prose-becker text-left mb-10">
             <p>
-              Every homeowner&apos;s situation is different. Rather than relying on theory, we build
-              personalized comparisons that show how different mortgage structures can affect interest
-              paid, payoff timeline, and monthly cash flow. Below is an example of one modeled
-              scenario. Open the guide to see the calculations, compare payoff options and download
-              the original example PDF.
+              Follow two paychecks through a month of bills on a $360,000 balance. See how much goes
+              toward interest and principal, then compare the Accelerator with biweekly payments
+              and paying extra on an existing mortgage.
             </p>
           </div>
           <Link
@@ -395,7 +393,7 @@ export default function MortgageAcceleratorPage() {
             className="text-xl font-bold mb-4"
             style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
           >
-            Important Program Notes
+            What affects your results?
           </h2>
           <p className="text-sm leading-relaxed italic" style={{ color: '#4a5e53' }}>
             This strategy is not a guarantee of savings, interest reduction or payoff timeline. Results vary

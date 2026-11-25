@@ -219,7 +219,7 @@ export default function HomePage() {
           className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 leading-tight"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
         >
-          Your Mortgage Expert
+          Your Colorado Mortgage Expert
         </h1>
         <p
           className="text-lg md:text-xl max-w-2xl mb-8 text-white/90 leading-relaxed"

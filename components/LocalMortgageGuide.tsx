@@ -14,6 +14,11 @@ export default function LocalMortgageGuide({ city }: { city: string }) {
       <div className="mx-auto max-w-3xl">
         <h2 id="local-buying-heading" className="mb-4 text-3xl font-bold md:text-4xl">Buying a home in {market.city}</h2>
         <p className="mb-6 leading-relaxed">
+          From May 7, 2025, through October 28, 2026, about 8 in 10 recorded home sales in {market.city} fell between{' '}
+          <strong>{dollars.format(market.salePriceRange.percentile10)}</strong> and{' '}
+          <strong>{dollars.format(market.salePriceRange.percentile90)}</strong>.
+        </p>
+        <p className="mb-6 leading-relaxed">
           Median sale prices in {market.marketScope} for {market.period}
         </p>
         <dl className="mb-8 grid gap-3 sm:grid-cols-2">

@@ -7,6 +7,7 @@ type LocalMarket = {
   marketScope: string
   attached: string
   detached: string
+  salePriceRange: { percentile10: number; percentile90: number }
   financing: string
   condoHeading: string
   condo: string
@@ -18,6 +19,8 @@ type LocalMarket = {
 export const localMortgageMarkets: Partial<Record<string, LocalMarket>> = {
   denver: {
     city: 'Denver',
+    // Recorded residential sales, May 7, 2025 through October 28, 2026: https://www.realie.ai/data/CO/DENVER/DENVER
+    salePriceRange: { percentile10: 278100, percentile90: 1400000 },
     county: 'Denver',
     period: 'October 2026',
     marketScope: 'Denver County',
@@ -34,6 +37,8 @@ export const localMortgageMarkets: Partial<Record<string, LocalMarket>> = {
   },
   boulder: {
     city: 'Boulder',
+    // Recorded residential sales, May 7, 2025 through October 28, 2026: https://www.realie.ai/data/CO/BOULDER/BOULDER
+    salePriceRange: { percentile10: 360000, percentile90: 2281400 },
     county: 'Boulder',
     period: 'September 2026',
     marketScope: 'the city of Boulder',
@@ -49,6 +54,8 @@ export const localMortgageMarkets: Partial<Record<string, LocalMarket>> = {
   },
   'fort-collins': {
     city: 'Fort Collins',
+    // Recorded residential sales, May 7, 2025 through October 28, 2026: https://www.realie.ai/data/CO/LARIMER/FORT-COLLINS
+    salePriceRange: { percentile10: 318300, percentile90: 975000 },
     county: 'Larimer',
     period: 'October 2026',
     marketScope: 'the Fort Collins Board of REALTORS reporting area',
@@ -64,6 +71,8 @@ export const localMortgageMarkets: Partial<Record<string, LocalMarket>> = {
   },
   breckenridge: {
     city: 'Breckenridge',
+    // Recorded residential sales, May 7, 2025 through October 28, 2026: https://www.realie.ai/data/CO/SUMMIT/BRECKENRIDGE
+    salePriceRange: { percentile10: 519000, percentile90: 3634000 },
     county: 'Summit',
     period: 'January through October 2026',
     marketScope: 'Breckenridge',
@@ -79,6 +88,8 @@ export const localMortgageMarkets: Partial<Record<string, LocalMarket>> = {
   },
   silverthorne: {
     city: 'Silverthorne',
+    // Recorded residential sales, May 7, 2025 through October 28, 2026: https://www.realie.ai/data/CO/SUMMIT/SILVERTHORNE
+    salePriceRange: { percentile10: 333000, percentile90: 2757500 },
     county: 'Summit',
     period: 'January through October 2026',
     marketScope: 'Silverthorne',
@@ -94,6 +105,8 @@ export const localMortgageMarkets: Partial<Record<string, LocalMarket>> = {
   },
   vail: {
     city: 'Vail',
+    // Recorded residential sales, May 7, 2025 through October 28, 2026: https://www.realie.ai/data/CO/EAGLE/VAIL
+    salePriceRange: { percentile10: 516500, percentile90: 5070000 },
     county: 'Eagle',
     period: 'January through October 2026',
     marketScope: 'Vail',

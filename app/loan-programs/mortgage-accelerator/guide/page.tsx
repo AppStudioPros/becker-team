@@ -140,7 +140,7 @@ export default function MortgageAcceleratorGuide() {
               <h3 className={subheading} style={displayFont}>Biweekly payments through your servicer</h3>
               <div className="space-y-4 leading-relaxed text-gray-700">
                 <p>Every two weeks and twice a month are different schedules. With 26 half-payments, you send the equivalent of 13 full monthly payments in a year. With 24 half-payments, you send 12. Using the standard payment from the illustration, half is $1,250.38. Sending that amount 26 times totals $32,509.88, compared with $30,009.12 for 12 regular payments. The difference is $2,500.76 for the year. A fair comparison gives the extra-principal option that same annual amount.</p>
-                <p>Before sending half a payment, ask whether the servicer accepts biweekly payments, charges an enrollment fee or holds the first half until a full payment arrives. If taxes and insurance are in your payment, ask how the extra amount is allocated. The figures above use only the payment shown in the example. Your servicer can tell you the amount and timing that will keep your own account current.</p>
+                <p>Before sending half a payment, ask whether the servicer accepts <a className={sourceLink} href="https://www.consumerfinance.gov/consumer-tools/mortgages/answers/key-terms/#bi-weekly-payment">biweekly payments</a>, charges an enrollment fee or <a className={sourceLink} href="https://www.consumerfinance.gov/consumer-tools/mortgages/your-mortgage-servicer-must-comply-with-federal-rules/">holds the first half until a full payment arrives</a>. If taxes and insurance are in your payment, ask how the extra amount is allocated. The figures above use only the payment shown in the example. Your servicer can tell you the amount and timing that will keep your own account current.</p>
               </div>
             </div>
             <div className="grid gap-x-10 gap-y-1 rounded border border-cream-border bg-white p-6 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] md:p-8">
@@ -150,7 +150,6 @@ export default function MortgageAcceleratorGuide() {
               </div>
             </div>
           </div>
-          <p className="mt-6 text-sm leading-relaxed text-gray-700">Payment references: <a className={sourceLink} href="https://www.consumerfinance.gov/consumer-tools/mortgages/answers/key-terms/#bi-weekly-payment">CFPB guide to biweekly payments</a> and <a className={sourceLink} href="https://www.consumerfinance.gov/consumer-tools/mortgages/your-mortgage-servicer-must-comply-with-federal-rules/">how a servicer handles payments</a>.</p>
         </div>
       </section>
 
@@ -174,14 +173,13 @@ export default function MortgageAcceleratorGuide() {
             <div className="h-full rounded border border-cream-border bg-cream p-6 md:p-8">
               <h3 className={subheading} style={displayFont}>A rate change or an expensive refinance</h3>
               <div className="space-y-4 leading-relaxed text-gray-700">
-                <p>Get the proposed rate and fees in writing. If the rate is variable, ask what index it follows, what the lender adds to that index, when it can change and whether it has a cap. Ask for a second projection at a higher rate while holding income and spending steady. For a refinance, include upfront costs and any charges rolled into the balance. If you plan to move, compare those costs with the interest difference you would actually see before the sale. The original PDF shows a rate assumption for a simulation. Your written terms determine what you would pay.</p>
-                <p><a className={sourceLink} href="https://myhome.freddiemac.com/refinancing/costs-of-refinancing">Freddie Mac explains refinance costs</a>. The <a className={sourceLink} href="https://www.consumerfinance.gov/ask-cfpb/what-fees-can-my-lender-charge-if-i-take-out-a-heloc-en-249/">CFPB lists fees to ask about on a home equity line</a>, including annual charges and possible early cancellation fees.</p>
+                <p>Get the proposed rate and fees in writing. If the rate is variable, ask what index it follows, what the lender adds to that index, when it can change and whether it has a cap. Ask for a second projection at a higher rate while holding income and spending steady. For a refinance, include <a className={sourceLink} href="https://myhome.freddiemac.com/refinancing/costs-of-refinancing">upfront costs</a> and any charges rolled into the balance. For a home equity line, ask about <a className={sourceLink} href="https://www.consumerfinance.gov/ask-cfpb/what-fees-can-my-lender-charge-if-i-take-out-a-heloc-en-249/">annual charges and early cancellation fees</a>. If you plan to move, compare those costs with the interest difference you would actually see before the sale. The original PDF shows a rate assumption for a simulation. Your written terms determine what you would pay.</p>
               </div>
             </div>
             <div className="h-full rounded border border-cream-border bg-cream p-6 md:p-8">
               <h3 className={subheading} style={displayFont}>Losing access to cash when you need it</h3>
               <div className="space-y-4 leading-relaxed text-gray-700">
-                <p>Cash held in a savings account and unused borrowing capacity on a home-secured line serve different purposes. The CFPB explains that a lender may restrict further draws in certain circumstances, including a significant drop in home value. Ask how you would cover a repair or a gap between paychecks if a draw were unavailable. On a loan secured by your home, failure to repay can put the home at risk. The <a className={sourceLink} href="https://www.consumerfinance.gov/ask-cfpb/what-is-a-home-equity-line-of-credit-heloc-en-107/">CFPB’s guide to home equity lines</a> explains borrowing limits and repayment periods.</p>
+                <p>Cash held in a savings account and unused borrowing capacity on a home-secured line serve different purposes. A lender may <a className={sourceLink} href="https://www.consumerfinance.gov/ask-cfpb/what-is-a-home-equity-line-of-credit-heloc-en-107/">restrict further draws</a> in certain circumstances, including a significant drop in home value. Ask how you would cover a repair or a gap between paychecks if a draw were unavailable. On a loan secured by your home, failure to repay can put the home at risk.</p>
               </div>
             </div>
           </div>

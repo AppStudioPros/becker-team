@@ -64,8 +64,8 @@ const faqs = [
     a: 'This can be positioned for both purchase and refinance scenarios, depending on the borrower and the opportunity.',
   },
   {
-    q: 'How can I compare payoff dates fairly?',
-    a: 'Start each option with the same debt, savings and spare income. Ask for a side-by-side estimate using the written rates and fees for each option. Compare total interest and fees, and the balance you would owe on the same date. A payoff estimate can change if your rate, deposits or withdrawals change.',
+    q: 'Have I seen this advertised as paying off a 30-year mortgage in 5-7 years?',
+    a: 'No. That came from one illustrative comparison based on specific assumptions. Your results depend on your numbers, timing and behavior.',
   },
   {
     q: 'Will you recommend this even if it does not fit?',
@@ -80,11 +80,14 @@ const faqs = [
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: faqs.map(({ q, a }) => ({
-    '@type': 'Question',
-    name: q,
-    acceptedAnswer: { '@type': 'Answer', text: a },
-  })),
+  mainEntity: [
+    { '@type': 'Question', name: 'What exactly is the Home Mortgage Accelerator?', acceptedAnswer: { '@type': 'Answer', text: 'It is a cash-flow-driven mortgage strategy designed for borrowers with strong monthly net deposits. The goal is to use your actual financial flow more intentionally than a standard set-it-and-forget-it mortgage.' } },
+    { '@type': 'Question', name: 'Who is this a good fit for?', acceptedAnswer: { '@type': 'Answer', text: 'It tends to fit best for borrowers with strong, consistent net cash flow, disciplined spending habits and a serious interest in paying down their mortgage faster.' } },
+    { '@type': 'Question', name: 'Can this work for a purchase or just a refinance?', acceptedAnswer: { '@type': 'Answer', text: 'This can be positioned for both purchase and refinance scenarios, depending on the borrower and the opportunity.' } },
+    { '@type': 'Question', name: 'Have I seen this advertised as paying off a 30-year mortgage in 5-7 years?', acceptedAnswer: { '@type': 'Answer', text: 'No. That came from one illustrative comparison based on specific assumptions. Your results depend on your numbers, timing and behavior.' } },
+    { '@type': 'Question', name: 'Will you recommend this even if it does not fit?', acceptedAnswer: { '@type': 'Answer', text: 'No. If the strategy does not fit your goals or cash-flow profile, our team will tell you that directly.' } },
+    { '@type': 'Question', name: 'What information do I need to get started?', acceptedAnswer: { '@type': 'Answer', text: 'A realistic snapshot of your mortgage, monthly deposits, major expenses, available savings and payoff goals.' } }
+  ],
 }
 
 const breadcrumbJsonLd = {
@@ -101,7 +104,7 @@ const loanJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LoanOrCredit',
   name: 'Home Mortgage Accelerator',
-  description: 'A mortgage payoff strategy for homeowners comparing how household deposits, withdrawals, rates and fees affect their loan balance. NMLS #794730.',
+  description: 'Proprietary mortgage accelerator program designed to pay off your home loan faster and reduce total interest paid. NMLS #794730.',
   url: 'https://www.thebeckerteam.com/loan-programs/mortgage-accelerator',
   provider: {
     '@type': 'FinancialService',
@@ -353,56 +356,35 @@ export default function MortgageAcceleratorPage() {
         </div>
       </section>
 
-      <section id="compare-payoff-options" className="bg-white py-16 md:py-24 px-6">
-        <div className="max-w-3xl mx-auto">
+      {/* ── See a Real Example ── */}
+      <section className="bg-white py-16 md:py-24 px-6">
+        <div className="max-w-3xl mx-auto text-center">
           <h2
+            data-reveal
             className="text-3xl md:text-5xl font-bold mb-6"
             style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
           >
-            Compare three ways to pay down your mortgage
+            See a Real Home Mortgage Accelerator Example
           </h2>
-          <div className="prose-becker mb-10">
+          <p className="text-gray-500 text-sm uppercase tracking-widest mb-6">
+            See How the Strategy Can Change the Numbers
+          </p>
+          <div className="prose-becker text-left mb-10">
             <p>
-              Suppose the principal and interest on your current mortgage are $2,400 a month.
-              After bills and emergency savings, you have $200 a month to spare. Here is how to
-              compare three options using the same starting debt and the same $2,400 extra per year,
-              before fees.
-            </p>
-            <ol className="list-decimal pl-6 space-y-4">
-              <li>
-                <strong>Pay extra principal each month.</strong> Make your regular payment and
-                send an extra $200 toward principal. Ask your servicer how to direct the payment
-                and whether your loan has a prepayment penalty.
-              </li>
-              <li>
-                <strong>Use a biweekly plan your servicer accepts.</strong> Paying $1,200 every
-                two weeks for 26 payments totals $31,200. Twelve regular payments total $28,800.
-                The difference is the same $2,400. Check for fees and ask when each payment is
-                credited before changing your schedule.
-              </li>
-              <li>
-                <strong>Model the Home Mortgage Accelerator.</strong> Ask Jamie to use the same
-                $2,400 annual surplus with no upfront lump sum. If the proposed loan uses a credit
-                line, deposits can reduce the balance used to calculate interest. Taking money
-                back out raises the balance again.
-              </li>
-            </ol>
-            <p>
-              Ask for written rates, closing costs and ongoing fees. Compare total interest and
-              fees, and the balance you would owe on the same date. If the rate can change, ask
-              what happens if it rises or if you go a month without extra cash. Missed payments
-              on a line of credit secured by your home can put your home at risk.
+              Every homeowner&apos;s situation is different. Rather than relying on theory, we build
+              personalized comparisons that show how different mortgage structures can affect interest
+              paid, payoff timeline, and monthly cash flow. Below is an example of one modeled
+              scenario. Open the guide to see the calculations, compare payoff options and download
+              the original example PDF.
             </p>
           </div>
-          <a
-            href="/mortgage-accelerator-example.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block uppercase tracking-widest text-sm font-semibold px-8 py-5 rounded btn-hover"
+          <Link
+            href="/loan-programs/mortgage-accelerator/guide"
+            className="inline-block uppercase tracking-widest text-sm font-semibold px-14 py-5 rounded btn-hover"
             style={{ backgroundColor: '#1F2E2A', color: '#F5EFE6' }}
           >
-            Download the borrower guide (PDF)
-          </a>
+            Read the Home Mortgage Accelerator Guide
+          </Link>
         </div>
       </section>
 

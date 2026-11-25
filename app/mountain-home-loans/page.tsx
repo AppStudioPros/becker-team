@@ -5,7 +5,7 @@ import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Mountain Home Loans Colorado | Vail, Aspen, Breckenridge Mortgage | The Becker Team',
+  title: 'Colorado Mountain Home Loans for Ski Towns',
   description:
     'Mountain home loans for Colorado ski towns. Jumbo loans, second home financing, non-warrantable condo programs for Vail, Aspen, Breckenridge, Steamboat, Telluride, and Crested Butte. Jamie Becker NMLS #794730.',
   alternates: { canonical: 'https://www.thebeckerteam.com/mountain-home-loans' },

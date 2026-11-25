@@ -6,7 +6,7 @@ import StrategyReviewModal from '@/components/StrategyReviewModal'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Home Mortgage Accelerator Strategy | The Becker Team',
+  title: 'Home Mortgage Accelerator Strategy',
   description:
     'A cash-flow-driven mortgage strategy for homeowners with strong monthly net deposits. Use your cash flow intentionally to pay down your mortgage faster. Jamie Becker, NMLS #794730.',
   alternates: { canonical: '/loan-programs/mortgage-accelerator' },

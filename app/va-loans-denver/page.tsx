@@ -5,7 +5,7 @@ import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'VA Loans Denver CO | Denver Veterans Home Loans | The Becker Team',
+  title: 'VA Home Loans for Denver Veterans',
   description:
     'VA home loans for Denver metro veterans, active-duty service members, and surviving spouses. Zero down, no PMI. Buckley SFB, Fitzsimons veterans. Jamie Becker NMLS #794730.',
   alternates: { canonical: 'https://www.thebeckerteam.com/va-loans-denver' },

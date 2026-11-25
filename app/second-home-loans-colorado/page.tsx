@@ -4,7 +4,7 @@ import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Second Home Loans Colorado | Vacation Home Mortgage | The Becker Team',
+  title: 'Colorado Second Home and Vacation Home Loans',
   description:
     'Second home loans for Colorado vacation properties. Mountain cabins, ski condos, lake houses. 10% down, competitive rates. Summit County, Grand County, Estes Park, and statewide. Jamie Becker NMLS #794730.',
   alternates: { canonical: 'https://www.thebeckerteam.com/second-home-loans-colorado' },

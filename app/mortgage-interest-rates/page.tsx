@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Current Mortgage Interest Rates | The Becker Team Colorado',
+  title: 'Current Mortgage Interest Rates',
   description:
     'See national mortgage rate averages and ask Colorado mortgage broker Jamie Becker for a quote based on your loan, down payment and property.',
 }

@@ -5,7 +5,7 @@ import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Centennial CO Mortgage Lender | Home Loans Centennial Colorado | The Becker Team',
+  title: 'Centennial, CO Mortgage Lender and Home Loans',
   description:
     'Centennial CO mortgage lender Jamie Becker (NMLS #794730). Conventional, jumbo, and VA loans for Centennial, Greenwood Village, Parker, Lone Tree, and Highlands Ranch. South Denver tech corridor specialists.',
   alternates: { canonical: 'https://www.thebeckerteam.com/centennial-mortgage' },

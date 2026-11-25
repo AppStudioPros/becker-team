@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Fair Lending Notice | The Becker Team',
+  title: 'Fair Lending Notice',
   description:
     'Fair lending notice for The Becker Team — our commitment to equal credit opportunity, non-discrimination, and compliance with federal fair lending laws including ECOA and the Fair Housing Act.',
 }

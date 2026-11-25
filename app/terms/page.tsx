@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Terms of Use | The Becker Team',
+  title: 'Terms of Use',
   description:
     'Terms of use for thebeckerteam.com — limitations of liability, content accuracy, and conditions for use of mortgage information provided on this site.',
 }

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Home Loan Process Guide | The Becker Team Colorado',
+  title: 'Colorado Home Loan Process Guide',
   description:
     'A step-by-step guide to the home loan process with The Becker Team. From pre-qualification to closing — Jamie Becker, NMLS #794730.',
 }

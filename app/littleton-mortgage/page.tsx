@@ -4,7 +4,7 @@ import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Littleton CO Mortgage Broker | Home Loans Littleton Colorado | The Becker Team',
+  title: 'Littleton, CO Mortgage Broker and Home Loans',
   description:
     'Littleton CO mortgage broker Jamie Becker (NMLS #794730). Conventional, FHA, VA, jumbo, and specialty loans for Littleton buyers. Serving Littleton, Highlands Ranch, Lone Tree, Castle Rock, and the south Denver metro. Fast pre-approvals.',
   alternates: { canonical: 'https://www.thebeckerteam.com/littleton-mortgage' },

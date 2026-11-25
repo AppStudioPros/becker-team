@@ -5,7 +5,7 @@ import { Check, ChevronLeft, ChevronRight } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Self-Employed Mortgage Colorado | Bank Statement Mortgage Program | The Becker Team',
+  title: 'Bank Statement Mortgages for Self-Employed Buyers',
   description:
     'Explore bank statement mortgages and other loan options for self-employed Colorado buyers with Jamie Becker of The Becker Team. NMLS #794730.',
   alternates: { canonical: '/loan-programs/self-employed-loans' },

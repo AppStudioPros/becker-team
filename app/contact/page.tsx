@@ -4,7 +4,7 @@ import { Phone, Mail, Building2, MapPin } from 'lucide-react'
 import ContactForm from '@/components/ContactForm'
 
 export const metadata: Metadata = {
-  title: 'Contact | The Becker Team | Colorado Mortgage Broker',
+  title: 'Contact Jamie Becker, Colorado Mortgage Broker',
   description:
     'Contact Jamie Becker to discuss your mortgage needs. Call (720) 492-3335 or email Jamie@thebeckerteam.com. NMLS #794730.',
 }

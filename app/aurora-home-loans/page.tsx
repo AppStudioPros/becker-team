@@ -4,7 +4,7 @@ import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Aurora CO Mortgage Broker | Home Loans Aurora Colorado | The Becker Team',
+  title: 'Aurora, CO Mortgage Broker and Home Loans',
   description:
     'Aurora CO mortgage broker Jamie Becker (NMLS #794730) offers VA, FHA, conventional, jumbo, and specialty loans. Serving Aurora, Centennial, Parker, and the Denver metro. Fast pre-approvals, competitive rates, personal service.',
   alternates: { canonical: 'https://www.thebeckerteam.com/aurora-home-loans' },

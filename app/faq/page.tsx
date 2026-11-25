@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Mortgage FAQ | The Becker Team Colorado',
+  title: 'Colorado Mortgage FAQ',
   description:
     'Answers to the most common mortgage questions — down payments, credit scores, VA loans, FHA loans, closing timelines, and more. Jamie Becker, NMLS #794730, Denver CO.',
   alternates: { canonical: 'https://www.thebeckerteam.com/faq' },

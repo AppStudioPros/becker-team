@@ -4,7 +4,7 @@ import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Lakewood CO Mortgage Broker | Home Loans Lakewood Colorado | The Becker Team',
+  title: 'Lakewood, CO Mortgage Broker and Home Loans',
   description:
     'Lakewood CO mortgage broker Jamie Becker (NMLS #794730). Conventional, FHA, VA, jumbo, and specialty loans for Lakewood buyers. Serving Lakewood, Wheat Ridge, Golden, Morrison, and the West Denver metro. Fast pre-approvals.',
   alternates: { canonical: 'https://www.thebeckerteam.com/lakewood-mortgage' },

@@ -5,7 +5,7 @@ import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Fort Collins Mortgage Broker | Home Loans Fort Collins CO | The Becker Team',
+  title: 'Fort Collins, CO Mortgage Broker and Home Loans',
   description:
     'Local Fort Collins mortgage broker Jamie Becker (NMLS #794730) offers conventional, FHA, VA, jumbo, and specialty loans. Fast pre-approvals, competitive rates, personal service. Serving Fort Collins, Loveland, Greeley, Windsor, and Northern Colorado.',
   alternates: { canonical: 'https://www.thebeckerteam.com/fort-collins-mortgage' },

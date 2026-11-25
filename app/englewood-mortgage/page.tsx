@@ -4,7 +4,7 @@ import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Englewood CO Mortgage Lender | Home Loans Englewood Colorado | The Becker Team',
+  title: 'Englewood, CO Mortgage Broker and Home Loans',
   description:
     'Englewood CO mortgage lender Jamie Becker (NMLS #794730). FHA, conventional, VA, and jumbo loans for Englewood, Sheridan, Cherry Hills Village, Greenwood Village, and Centennial. Fast pre-approvals.',
   alternates: { canonical: 'https://www.thebeckerteam.com/englewood-mortgage' },

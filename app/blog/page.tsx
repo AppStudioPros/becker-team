@@ -3,7 +3,7 @@ import { createAdminClient } from '@/lib/supabase'
 import BlogClient from '@/components/BlogClient'
 
 export const metadata: Metadata = {
-  title: 'Mortgage Blog | The Becker Team',
+  title: 'Colorado Mortgage Blog',
   description:
     'Mortgage tips, market updates, and home loan insights from Jamie Becker and The Becker Team. Colorado mortgage broker with 21+ years of experience.',
   alternates: {

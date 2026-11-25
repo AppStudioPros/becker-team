@@ -21,7 +21,6 @@ const sections = [
 const displayFont = { fontFamily: '"Playfair Display", Georgia, serif' }
 const heading = 'scroll-mt-32 mx-auto mb-6 max-w-4xl text-center text-3xl font-bold leading-tight text-balance md:text-5xl'
 const subheading = 'mb-3 text-xl font-semibold leading-snug text-forest md:text-2xl'
-const sourceLink = 'font-semibold text-forest underline decoration-[#B98942] underline-offset-4 hover:decoration-forest'
 const button = 'btn-hover inline-block max-w-full rounded px-6 py-4 text-center text-sm font-semibold uppercase tracking-widest sm:px-10'
 const section = 'px-6 py-14 md:py-20'
 
@@ -133,7 +132,7 @@ export default function MortgageAcceleratorGuide() {
               <h3 className={subheading} style={displayFont}>Biweekly payments through your servicer</h3>
               <div className="space-y-4 leading-relaxed text-gray-700">
                 <p>With a scheduled payment of $2,500.76, half is $1,250.38. Send that amount every two weeks for 26 payments and you’ll pay $32,509.88 over the year. Send it twice a month for 24 payments and you’ll pay $30,009.12, the same total as 12 regular monthly payments. The difference is one full payment of $2,500.76. To compare the schedules fairly, we give the monthly option that same extra $2,500.76 over the year.</p>
-                <p>Before switching to <a className={sourceLink} href="https://www.consumerfinance.gov/consumer-tools/mortgages/answers/key-terms/#bi-weekly-payment">biweekly payments</a>, find out whether your servicer accepts half-payments, charges an enrollment fee or <a className={sourceLink} href="https://www.consumerfinance.gov/consumer-tools/mortgages/your-mortgage-servicer-must-comply-with-federal-rules/">holds a partial payment until the rest arrives</a>. The date the money reaches your principal balance matters. If your payment includes taxes and insurance, also ask how much of the extra payment will go toward principal. And if you’re paid twice a month, check which months would have three mortgage withdrawals before you sign up.</p>
+                <p>Before switching to biweekly payments, find out whether your servicer accepts half-payments, charges an enrollment fee or holds a partial payment until the rest arrives. The date the money reaches your principal balance matters. If your payment includes taxes and insurance, also ask how much of the extra payment will go toward principal. And if you’re paid twice a month, check which months would have three mortgage withdrawals before you sign up.</p>
               </div>
             </div>
             <div className="grid gap-x-10 gap-y-1 rounded border border-cream-border bg-white p-6 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] md:p-8">
@@ -166,13 +165,13 @@ export default function MortgageAcceleratorGuide() {
             <div className="h-full rounded border border-cream-border bg-cream p-6 md:p-8">
               <h3 className={subheading} style={displayFont}>A rate change or an expensive refinance</h3>
               <div className="space-y-4 leading-relaxed text-gray-700">
-                <p>If the proposed rate can change, we’ll walk through what it’s tied to, how often it can adjust and how high it can go under the loan terms. We can also run the same budget at a higher rate so you see how much less of your deposit would reach principal. For a refinance, we include <a className={sourceLink} href="https://myhome.freddiemac.com/refinancing/costs-of-refinancing">closing costs</a>, including any you add to the balance. On a home equity line, <a className={sourceLink} href="https://www.consumerfinance.gov/ask-cfpb/what-fees-can-my-lender-charge-if-i-take-out-a-heloc-en-249/">annual or early cancellation fees</a> can also matter. If you plan to sell, we’ll compare those costs with the interest you could save before the sale.</p>
+                <p>If the proposed rate can change, we’ll walk through what it’s tied to, how often it can adjust and how high it can go under the loan terms. We can also run the same budget at a higher rate so you see how much less of your deposit would reach principal. For a refinance, we include closing costs, including any you add to the balance. On a home equity line, annual or early cancellation fees can also matter. If you plan to sell, we’ll compare those costs with the interest you could save before the sale.</p>
               </div>
             </div>
             <div className="h-full rounded border border-cream-border bg-cream p-6 md:p-8">
               <h3 className={subheading} style={displayFont}>Losing access to cash when you need it</h3>
               <div className="space-y-4 leading-relaxed text-gray-700">
-                <p>Money in your savings account is yours to spend. Drawing on a credit line means borrowing against your home again. A lender may <a className={sourceLink} href="https://www.consumerfinance.gov/ask-cfpb/what-is-a-home-equity-line-of-credit-heloc-en-107/">limit further withdrawals</a> in certain circumstances, including a significant drop in your home’s value. Think about how you’d pay for an urgent repair or cover a gap in pay if the line were frozen. Because your home secures the loan, falling behind on payments could put your home at risk.</p>
+                <p>Money in your savings account is yours to spend. Drawing on a credit line means borrowing against your home again. A lender may limit further withdrawals in certain circumstances, including a significant drop in your home’s value. Think about how you’d pay for an urgent repair or cover a gap in pay if the line were frozen. Because your home secures the loan, falling behind on payments could put your home at risk.</p>
               </div>
             </div>
           </div>

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Check, ChevronLeft, ChevronRight } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
-import { dollars, fhfaLimitsUrl, oneUnitLimits } from '@/lib/conformingLimits'
+import { dollars, oneUnitLimits } from '@/lib/conformingLimits'
 
 export const metadata: Metadata = {
   title: 'Colorado Jumbo Loans and County Loan Limits',
@@ -211,7 +211,7 @@ export default function JumboLoansPage() {
       <section id="county-loan-limits" aria-labelledby="county-limits-heading" className="scroll-mt-24 bg-white px-6 py-14 text-[#1F2E2A] md:py-20">
         <div className="mx-auto max-w-3xl">
           <h2 id="county-limits-heading" className="mb-4 text-center text-3xl font-bold md:text-4xl">Where does jumbo financing start in Colorado?</h2>
-          <p className="mb-6 text-center leading-relaxed">These are the maximum conforming loan amounts for a one-unit property, including a single condo. A mortgage above the amount shown is jumbo. Buying a duplex, triplex or fourplex? <a href={fhfaLimitsUrl} className="font-semibold underline underline-offset-4">Check the limit for the number of units in your property</a>.</p>
+          <p className="mb-6 text-center leading-relaxed">These are the maximum conforming loan amounts for a one-unit property, including a single condo. A mortgage above the amount shown is jumbo. Duplexes, triplexes and fourplexes have different limits.</p>
           <div className="overflow-x-auto rounded border border-[#d4c9b5]">
             <table className="w-full text-left text-sm sm:text-base">
               <caption className="sr-only">Maximum one-unit conforming loan amounts by county for 2026 and 2027</caption>

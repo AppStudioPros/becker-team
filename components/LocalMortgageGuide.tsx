@@ -14,7 +14,7 @@ export default function LocalMortgageGuide({ city }: { city: string }) {
       <div className="mx-auto max-w-3xl">
         <h2 id="local-buying-heading" className="mb-4 text-3xl font-bold md:text-4xl">Buying a home in {market.city}</h2>
         <p className="mb-6 leading-relaxed">
-          Median sale prices in {market.marketScope} for <a className={linkStyle} href={market.marketUrl}>{market.period}</a>
+          Median sale prices in {market.marketScope} for {market.period}
         </p>
         <dl className="mb-8 grid gap-3 sm:grid-cols-2">
           <div className="rounded border border-[#ded4be] bg-[#F5EFE6] px-4 py-5">
@@ -40,10 +40,7 @@ export default function LocalMortgageGuide({ city }: { city: string }) {
 
         <h3 className="mb-3 mt-9 text-2xl font-bold">{market.occupancyHeading}</h3>
         <p className="leading-relaxed">{market.occupancy}</p>
-        <div className="mt-3 flex flex-wrap justify-center gap-x-6 gap-y-2">
-          <a className={linkStyle} href={market.rulesUrl}>{market.rulesLabel}</a>
-          <Link className={linkStyle} href="/second-home-loans-colorado">Explore second-home financing</Link>
-        </div>
+        <Link className={`${linkStyle} mt-3 inline-block`} href="/second-home-loans-colorado">Explore second-home financing</Link>
 
         {market.review && (
           <div className="mt-9 border-t border-[#ded4be] pt-6">

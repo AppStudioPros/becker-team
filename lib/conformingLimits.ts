@@ -1,4 +1,4 @@
-// FHFA limits for one-unit mortgages, by year of agency acquisition.
+// FHFA one-unit limits by acquisition year: https://www.fhfa.gov/data/conforming-loan-limit
 export const oneUnitLimits = {
   'U.S. baseline': { 2026: 832750, 2027: 855400 },
   Denver: { 2026: 862500, 2027: 862500 },
@@ -9,8 +9,6 @@ export const oneUnitLimits = {
   Eagle: { 2026: 1249125, 2027: 1283100 },
   Pitkin: { 2026: 1209750, 2027: 1209750 },
 } as const
-
-export const fhfaLimitsUrl = 'https://www.fhfa.gov/data/conforming-loan-limit'
 
 export const dollars = new Intl.NumberFormat('en-US', {
   style: 'currency',

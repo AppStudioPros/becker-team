@@ -139,7 +139,6 @@ export default function ZillowReviews() {
             <button type="button" aria-label="Next review" onClick={() => move(1)}><ArrowRight /></button>
           </div>
         </div>
-        <p className={styles.context}>These clients reviewed Jamie while he was with The Home Loan Expert.</p>
         <span className="sr-only" role="status" aria-atomic="true">
           {position.manual ? `Review ${position.index + 1} of ${total}, ${reviews[position.index].name}` : ''}
         </span>

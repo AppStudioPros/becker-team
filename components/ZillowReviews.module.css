@@ -65,7 +65,6 @@
 .controls button svg { display: block; width: 16px; height: 16px; }
 .controls button:hover { border-color: var(--ink); background: var(--sand); }
 .section :is(a, button):focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
-.context { margin: 10px 0 0; font: 400 12px/1.5 Arial, sans-serif; color: var(--secondary); }
 @container (max-width: 800px) {
   .track { --columns: 2; }
 }

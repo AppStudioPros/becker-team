@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { jamieLicensedStates } from '@/lib/jamieLicenses'
 import { Suspense } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -38,40 +39,20 @@ const loanProgramCells = [
   { title: 'Not Sure, I Can Help',      tagline: "Not sure what you can apply for? I can help, let's chat.",              href: '/contact' },
 ]
 
-const jsonLd = {
+const serviceAreaJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FinancialService',
   name: 'The Becker Team',
   url: 'https://www.thebeckerteam.com',
-  telephone: '(470) 660-5693',
-  email: 'Jamie@thebeckerteam.com',
-  description:
-    'Colorado mortgage broker specializing in VA, FHA, jumbo, self-employed, and non-QM loan programs. 21+ years of experience. NMLS #794730.',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Denver',
-    addressRegion: 'CO',
-    postalCode: '80206',
-    streetAddress: '201 Columbine Street, Suite 300',
-  },
-  areaServed: ['Colorado', 'California', 'Texas', 'Florida', 'Idaho', 'Indiana', 'Louisiana', 'Michigan'],
-  employee: {
-    '@type': 'Person',
-    name: 'Jamie Becker',
-    jobTitle: 'Mortgage Broker',
-    identifier: 'NMLS #794730',
-  },
-}
-
-const serviceAreaJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FinancialService',
-  name: 'The Becker Team — Xpert Home Lending',
-  url: 'https://www.thebeckerteam.com',
   telephone: '(720) 492-3335',
   email: 'Jamie@thebeckerteam.com',
-  description: 'Mortgage loan origination services in Colorado, Georgia, and Oregon. Specializing in VA, FHA, conventional, jumbo, self-employed, and asset qualifier loans.',
-  founder: { '@type': 'Person', name: 'Jamie Becker', identifier: 'NMLS #794730' },
+  description: 'Colorado mortgage broker Jamie Becker (Individual NMLS #794730) specializes in VA, FHA, conventional, jumbo, self-employed and asset qualifier loans.',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Xpert Home Lending, Inc.',
+    identifier: 'Company NMLS #2179191',
+  },
+  founder: { '@type': 'Person', name: 'Jamie Becker', jobTitle: 'Mortgage Broker', identifier: 'Individual NMLS #794730' },
   address: {
     '@type': 'PostalAddress',
     streetAddress: '201 Columbine Street, Suite 300',
@@ -89,8 +70,7 @@ const serviceAreaJsonLd = {
     { '@type': 'City', name: 'Lakewood', containedInPlace: { '@type': 'State', name: 'Colorado' } },
     { '@type': 'City', name: 'Arvada', containedInPlace: { '@type': 'State', name: 'Colorado' } },
     { '@type': 'City', name: 'Pueblo', containedInPlace: { '@type': 'State', name: 'Colorado' } },
-    { '@type': 'State', name: 'Georgia' },
-    { '@type': 'State', name: 'Oregon' },
+    ...jamieLicensedStates.map(name => ({ '@type': 'State', name })),
   ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
@@ -216,10 +196,6 @@ export default function HomePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceAreaJsonLd) }} />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
 
       {/* ── Hero ── */}
       <section

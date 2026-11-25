@@ -1,10 +1,11 @@
+import { jamieLicenses } from '@/lib/jamieLicenses'
 import Link from 'next/link'
 import Image from 'next/image'
 import { mortgageServiceAreas } from '@/lib/mortgageServiceAreas'
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: '#1F2E2A' }} className="text-white">
+    <footer id="site-footer" style={{ backgroundColor: '#1F2E2A' }} className="text-white">
       {/* Main footer grid */}
       <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.7fr_1fr_1.2fr_2fr] gap-10 lg:gap-8">
         {/* Col 1 — Licensing */}
@@ -15,7 +16,7 @@ export default function Footer() {
           <p className="text-sm text-gray-300 leading-relaxed mb-4">
             Xpert Home Lending, Inc. is a Real Estate Broker Licensed by the California Department of Real Estate
           </p>
-          <p className="text-sm text-gray-300 mb-1">DRE #02166758 &nbsp; NMLS: 2179191</p>
+          <p className="text-sm text-gray-300 mb-1">DRE #02166758 &nbsp; Company NMLS #2179191</p>
           <a
             href="https://www.nmlsconsumeraccess.org/EntityDetails.aspx/COMPANY/2179191"
             target="_blank"
@@ -25,12 +26,12 @@ export default function Footer() {
           >
             NMLS Consumer Access
           </a>
-          <p className="text-sm text-gray-300 mb-1">Corporate Office:</p>
+          <p className="text-sm text-gray-300 mb-1">Xpert corporate office</p>
           <p className="text-sm text-gray-300 mb-3">
             100 Highpoint Park Way, Suite 202,<br />Braselton, GA 30517
           </p>
           <p className="text-sm text-gray-300">
-            Phone:{' '}
+            Corporate phone{' '}
             <a href="tel:4706605693" className="underline" style={{ color: '#B98942' }}>
               (470) 660-5693
             </a>
@@ -88,17 +89,17 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <span className="text-sm text-gray-300">NMLS #794730</span>
+              <span className="text-sm text-gray-300">Jamie Becker · Individual NMLS #794730</span>
             </li>
           </ul>
           <div className="mt-4">
-            <p className="text-sm text-gray-300 mb-1">Local Office:</p>
+            <p className="text-sm text-gray-300 mb-1">Denver office</p>
             <p className="text-sm text-gray-300">
               <a
-                href="https://www.google.com/maps/search/?api=1&amp;query=201%20Columbine%20St%20Unit%20300%2C%20Denver%2C%20CO%2080206"
+                href="https://www.google.com/maps/search/?api=1&amp;query=201%20Columbine%20St%20Suite%20300%2C%20Denver%2C%20CO%2080206"
                 className="underline hover:text-white transition-colors"
               >
-                201 Columbine St Unit 300,<br />Denver, CO 80206
+                201 Columbine St, Suite 300,<br />Denver, CO 80206
               </a>
             </p>
           </div>
@@ -163,7 +164,8 @@ export default function Footer() {
       {/* License strip */}
       <div className="border-t border-white/10 py-5 px-6">
         <p className="text-xs text-gray-400 text-center max-w-6xl mx-auto leading-relaxed mb-3">
-          <strong>Loan Originator Licenses:</strong> California – DFPI Mortgage Loan Originator License (License #CA-DFPI794730) · Colorado Mortgage Loan Originator License (License #100027807) · Florida Mortgage Loan Originator License (License #LO147810) · Idaho Mortgage Loan Originator License (License #MLO-2080794730) · Indiana-DFI Mortgage Loan Originator License (License #74355) · Louisiana Mortgage Loan Originator License · Michigan Mortgage Loan Originator License (License #794730) · Texas – SML Mortgage Loan Originator License
+          <strong>Jamie Becker’s loan originator licenses</strong>{' · '}
+          {jamieLicenses.map(({ title, number }) => number ? `${title} (License #${number})` : title).join(' · ')}
         </p>
         <p className="text-xs text-gray-400 text-center">
           &copy; {new Date().getFullYear()} The Becker Team. All rights reserved. &nbsp;|&nbsp;

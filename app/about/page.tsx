@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { jamieLicenses, jamieLicensedStates } from '@/lib/jamieLicenses'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Calculator, TrendingUp, CheckCircle } from 'lucide-react'
@@ -38,7 +39,7 @@ const jsonLd = {
   worksFor: {
     '@type': 'Organization',
     name: 'Xpert Home Lending',
-    legalName: 'Xpert Home Lending',
+    legalName: 'Xpert Home Lending, Inc.',
     identifier: 'NMLS #2179191',
     url: 'https://www.thebeckerteam.com',
   },
@@ -50,9 +51,9 @@ const jsonLd = {
     postalCode: '80206',
     addressCountry: 'US',
   },
-  areaServed: ['Colorado', 'Georgia', 'Oregon'],
+  areaServed: jamieLicensedStates,
   description:
-    '21+ years in mortgage lending. Background in financial advising, real estate investing, and commercial property. Licensed in CO, CA, TX, FL, ID, IN, LA, MI.',
+    '21+ years in mortgage lending. Background in financial advising, real estate investing, and commercial property.',
 }
 
 const processSteps = [
@@ -225,13 +226,13 @@ export default function AboutPage() {
       </section>
 
       {/* ── Jamie License Info Bar ── */}
-      <section style={{ backgroundColor: '#1F2E2A' }} className="py-16 px-6">
+      <section id="licensing" style={{ backgroundColor: '#1F2E2A' }} className="scroll-mt-20 py-16 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-white text-center">
           <div>
             <p className="text-2xl font-bold mb-2" style={{ fontFamily: '"Playfair Display", Georgia, serif' }}>
               Jamie Becker
             </p>
-            <p className="text-base text-gray-300 mb-2">NMLS# 794730</p>
+            <p className="text-base text-gray-300 mb-2">Individual NMLS #794730</p>
             <a
               href="https://www.thebeckerteam.com"
               className="text-base underline"
@@ -241,16 +242,16 @@ export default function AboutPage() {
             </a>
           </div>
           <div>
-            <p className="text-base font-semibold mb-3 text-gray-300">License Information:</p>
-            <p className="text-base text-gray-300">CA: CA-DOC794730</p>
-            <p className="text-base text-gray-300">CO: 100027807</p>
-            <p className="text-base text-gray-300">TX: 794730</p>
+            <p className="text-base font-semibold mb-3 text-gray-300">Jamie Becker’s state licenses</p>
+            <ul className="text-base text-gray-300">
+              {jamieLicenses.map(({ state, number }) => (
+                <li key={state}>{state}{number && ` #${number}`}</li>
+              ))}
+            </ul>
           </div>
           <div>
-            <p className="text-base font-semibold mb-3 text-gray-300">Xpert Home Lending, NMLS 2179191</p>
-            <p className="text-base text-gray-300">
-              <span className="font-semibold text-white">Licensed to work in:</span> Colorado (100027807), Texas
-            </p>
+            <p className="text-base font-semibold mb-3 text-gray-300">Xpert Home Lending, Inc.</p>
+            <p className="text-base text-gray-300">Company NMLS #2179191</p>
           </div>
         </div>
       </section>

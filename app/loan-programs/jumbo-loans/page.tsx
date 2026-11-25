@@ -115,11 +115,7 @@ const loanJsonLd = {
       addressCountry: 'US',
     },
   },
-  areaServed: [
-    { '@type': 'State', name: 'Colorado' },
-    { '@type': 'State', name: 'Georgia' },
-    { '@type': 'State', name: 'Oregon' },
-  ],
+  areaServed: { '@type': 'State', name: 'Colorado' },
 }
 
 export default function JumboLoansPage() {

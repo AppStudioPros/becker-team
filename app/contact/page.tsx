@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { jamieLicensedStates } from '@/lib/jamieLicenses'
 import Link from 'next/link'
 import { Phone, Mail, Building2, MapPin } from 'lucide-react'
 import ContactForm from '@/components/ContactForm'
@@ -26,9 +27,9 @@ const contactCards = [
   },
   {
     icon: Building2,
-    label: 'Company',
-    value: 'The Becker Team',
-    sub: 'NMLS #794730',
+    label: 'Licensing',
+    value: 'Jamie Becker · Individual NMLS #794730',
+    sub: 'Xpert Home Lending, Inc. · Company NMLS #2179191',
     href: null,
   },
   {
@@ -44,7 +45,7 @@ const localBusinessJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'MortgageLender',
   name: 'The Becker Team',
-  description: 'Colorado mortgage broker Jamie Becker — 21+ years experience, VA, FHA, Jumbo, Self-Employed, and specialty loan programs. NMLS #794730.',
+  description: 'Jamie Becker (Individual NMLS #794730) is a Colorado mortgage broker with 21+ years of experience in VA, FHA, jumbo, self-employed and specialty loan programs.',
   url: 'https://www.thebeckerteam.com',
   telephone: '+17204923335',
   email: 'Jamie@thebeckerteam.com',
@@ -63,7 +64,7 @@ const localBusinessJsonLd = {
   },
   openingHours: 'Mo-Fr 09:00-18:00',
   priceRange: '$$',
-  areaServed: ['Colorado', 'California', 'Texas'],
+  areaServed: jamieLicensedStates,
   founder: {
     '@type': 'Person',
     name: 'Jamie Becker',
@@ -102,7 +103,7 @@ export default function ContactPage() {
       </section>
 
       {/* ── Contact Information ── */}
-      <section className="py-14 md:py-20 px-6" style={{ backgroundColor: '#1F2E2A' }}>
+      <section id="contact-information" className="scroll-mt-20 py-14 md:py-20 px-6" style={{ backgroundColor: '#1F2E2A' }}>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Left */}
           <div>

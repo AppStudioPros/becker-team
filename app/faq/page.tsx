@@ -24,7 +24,7 @@ const faqs = [
     items: [
       { q: 'How do I know how much home I can afford?', a: 'Start with a pre-qualification call with Jamie. We review your income, debts, assets, and credit to give you a realistic purchase range — usually within 24 hours, at no cost.' },
       { q: 'What is the difference between pre-qualification and pre-approval?', a: 'Pre-qualification is a quick estimate based on self-reported information. Pre-approval is a verified review of your financials with a formal credit pull — sellers take pre-approvals more seriously.' },
-      { q: 'How long does the mortgage process take?', a: 'If you have a closing date in mind, tell us before you make an offer. A 10-day target depends on how quickly the lender can approve your documents, get any required appraisal and clear the title work. For most home purchases, you also need to receive your Closing Disclosure at least three business days before signing.' },
+      { q: 'How long does the mortgage process take?', a: 'Your closing date depends on when your lender approves the loan, whether the home needs an appraisal, and when the title work is complete. Tell us the date you’re considering and we’ll walk you through what needs to happen before then. For most home purchases, you also need to receive your Closing Disclosure at least three business days before signing.' },
       { q: 'Do I need to sell my current home before buying a new one?', a: 'Not necessarily. Bridge loans, contingent offers, or properly timed closings can allow you to buy before you sell. We help structure the right solution for your situation.' },
     ],
   },

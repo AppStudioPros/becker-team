@@ -383,7 +383,7 @@ export default function HomePage() {
           Before you make an offer
         </p>
         <p className="max-w-lg mx-auto text-white/90 mb-10 leading-relaxed">
-          A 10-day closing may be possible if your loan documents are ready, the title is clear, and any required appraisal can be finished in time. Before you put that date in your offer, call us. We’ll check the timing with you.
+          Tell us when you’d like to close. We’ll review your loan paperwork and help you plan for title work and any required appraisal, so you can put a realistic date in your offer.
         </p>
         <Link
           href="/home-loan-process-guide"

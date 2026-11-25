@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 const loanProgramCells = [
   { title: 'Asset Qualifier Loans',     tagline: 'Qualify with assets, not income — flexible alternative lending',       href: '/loan-programs/asset-qualifier-loans' },
   { title: 'Home Mortgage Accelerator',      tagline: 'Accelerate mortgage payoff before retirement',                          href: '/loan-programs/mortgage-accelerator' },
-  { title: 'Conventional Loans',        tagline: 'Mortgage loans from private lenders with as little as 3-5% down',       href: '/loan-programs/conventional-loans' },
-  { title: 'FHA Loans',                 tagline: 'Insured by FHA with down payments as low as 3.5%',                      href: '/loan-programs/fha-loans' },
+  { title: 'Conventional Loans',        tagline: 'Compare fixed and adjustable rates for your home purchase',       href: '/loan-programs/conventional-loans' },
+  { title: 'FHA Loans',                 tagline: 'FHA-insured home loans with flexible credit requirements',                      href: '/loan-programs/fha-loans' },
   { title: 'VA Loans',                  tagline: 'No down payment loans for eligible veterans and service members',        href: '/loan-programs/va-loans' },
   { title: 'Jumbo Loans',               tagline: 'Loans exceeding conforming limits for luxury and high-cost homes',       href: '/loan-programs/jumbo-loans' },
   { title: 'Self Employed Loans',       tagline: 'We make it easier for business owners and entrepreneurs',                href: '/loan-programs/self-employed-loans' },
@@ -231,13 +231,14 @@ export default function HomePage() {
           client or personal needs.
         </p>
 
-        {/* Badge */}
-        <div
+        {/* Closing timeline */}
+        <a
+          href="#fast-closings"
           className="inline-block px-6 py-2 rounded-full text-xs font-semibold uppercase tracking-widest mb-10"
           style={{ backgroundColor: '#B98942', color: '#fff' }}
         >
-          Close Your Loan in as Fast as 10 Days
-        </div>
+          How fast can I close?
+        </a>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4">
@@ -360,7 +361,8 @@ export default function HomePage() {
 
       {/* ── Fast Closings ── */}
       <section
-        className="relative py-16 md:py-28 px-6 text-white text-center"
+        id="fast-closings"
+        className="relative scroll-mt-24 py-16 md:py-28 px-6 text-white text-center"
         style={{
           backgroundImage:
             'linear-gradient(rgba(20,35,25,0.65), rgba(20,35,25,0.65)), url("/images/squarespace/fast-closings-bg.jpg")',
@@ -378,10 +380,10 @@ export default function HomePage() {
           Fast Closings
         </h2>
         <p className="uppercase tracking-widest text-sm mb-6 text-white/80">
-          Time Is Money in Real Estate
+          Before you make an offer
         </p>
         <p className="max-w-lg mx-auto text-white/90 mb-10 leading-relaxed">
-          Close your loan in as little as 10 days. Our streamlined process and expert team ensure you never miss a deadline.
+          A 10-day closing may be possible if your loan documents are ready, the title is clear, and any required appraisal can be finished in time. Before you put that date in your offer, call us. We’ll check the timing with you.
         </p>
         <Link
           href="/home-loan-process-guide"

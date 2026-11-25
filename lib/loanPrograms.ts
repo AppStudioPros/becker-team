@@ -17,7 +17,7 @@ export const loanPrograms: LoanProgram[] = [
     heroSubtitle: 'Flexible financing for borrowers with strong credit and steady income',
     body: [
       'Conventional loans are mortgage loans issued by private lenders and not backed by a federal government agency. They typically offer competitive interest rates, flexible terms, and a wide range of loan amounts — making them the most commonly used mortgage product for home purchases and refinances.',
-      'To qualify for a conventional loan, lenders generally look for a credit score of 620 or higher, though borrowers with scores above 740 often access the best rates. Down payments start as low as 3% for first-time buyers and 5% for repeat buyers. If your down payment is less than 20%, private mortgage insurance (PMI) is required until you reach 20% equity.',
+      'Lenders review your credit history, debt and down payment when determining the conventional loan options and rates available to you. Down payments start as low as 3% for first-time buyers and 5% for repeat buyers. If your down payment is less than 20%, private mortgage insurance (PMI) is required until you reach 20% equity.',
       'Conventional loans come in two main categories: conforming and non-conforming. Conforming loans meet the loan limits set by the Federal Housing Finance Agency (FHFA). The applicable limit depends on the county, number of units and year. A loan above that amount is jumbo.',
       'One of the biggest advantages of a conventional loan is flexibility. You can use one to purchase a primary residence, a second home, or an investment property. You can choose between fixed-rate and adjustable-rate terms. And once you have 20% equity, PMI drops off automatically — something government-backed loans do not always allow.',
       'At The Becker Team, we work with a wide network of lenders to find the right conventional loan for your situation. Whether you are a first-time buyer, upgrading to a larger home, or refinancing an existing mortgage, we can walk you through your options and help you close quickly.',
@@ -26,7 +26,7 @@ export const loanPrograms: LoanProgram[] = [
     faqs: [
       {
         q: 'What credit score do I need for a conventional loan?',
-        a: 'Most lenders require a minimum score of 620. Borrowers with scores of 740 or higher typically qualify for the lowest rates and best terms.',
+        a: 'Credit requirements vary by lender and program. Your credit history, down payment and other application details affect which loans and rates are available to you.',
       },
       {
         q: 'How much do I need to put down on a conventional loan?',
@@ -38,7 +38,7 @@ export const loanPrograms: LoanProgram[] = [
       },
       {
         q: 'How long does it take to close a conventional loan?',
-        a: 'Closings typically take 21 to 30 days, though The Becker Team has closed loans in as few as 10 days with proper preparation.',
+        a: 'If you have a closing date in mind, share it with us before you make an offer. We’ll review the documents your lender needs, the appraisal schedule and the title work.',
       },
     ],
   },

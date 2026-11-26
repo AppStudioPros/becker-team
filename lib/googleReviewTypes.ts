@@ -9,7 +9,7 @@ export interface ReviewCardData {
 }
 
 export interface ReviewsPayload {
-  source: 'google' | 'testimonials'
+  source: 'google' | 'review-links'
   reviews: ReviewCardData[]
   attributions: { name: string; uri?: string }[]
   googleSummary?: { rating: number; count: number }

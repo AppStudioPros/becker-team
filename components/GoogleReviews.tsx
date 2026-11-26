@@ -5,12 +5,13 @@ import { ArrowLeft, ArrowRight, Pause, Play } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import useReviewCarousel from './useReviewCarousel'
 import type { ReviewCardData, ReviewsPayload } from '@/lib/googleReviewTypes'
-import { staticGoogleReviews } from '@/lib/approvedGoogleReviews'
+import { staticGoogleReviews } from '@/lib/monthlyGoogleReviews'
 import styles from './GoogleReviews.module.css'
 
 const listing = 'https://www.google.com/maps?cid=14064244300182174262'
+const pendingReviews: ReviewsPayload = { source: 'google', reviews: [], attributions: [] }
 
-function ReviewCard({ review, hidden }: { review: ReviewCardData; hidden: boolean }) {
+function ReviewCard({ review, hidden, linked }: { review: ReviewCardData; hidden: boolean; linked: boolean }) {
   const author = (
     <>
       {review.photoUri && <Image unoptimized src={review.photoUri} width={40} height={40} alt="" className={styles.avatar} />}
@@ -27,8 +28,14 @@ function ReviewCard({ review, hidden }: { review: ReviewCardData; hidden: boolea
           {'★'.repeat(review.rating)}
         </span>
       )}
-      <blockquote className={review.reviewUri ? styles.excerpt : undefined}>{review.text}</blockquote>
-      {review.reviewUri && <a className={styles.full} href={review.reviewUri}>Read full review</a>}
+      {linked
+        ? <p className={styles.topic}>{review.text}</p>
+        : <blockquote className={review.reviewUri ? styles.excerpt : undefined}>{review.text}</blockquote>}
+      {review.reviewUri && (
+        <a className={styles.full} href={review.reviewUri} aria-label={`Read the full review by ${review.name} on Google`}>
+          Read full review
+        </a>
+      )}
     </li>
   )
 }
@@ -38,12 +45,12 @@ export default function GoogleReviews() {
   const request = useRef<Promise<ReviewsPayload> | null>(null)
   const touch = useRef<{ x: number; y: number } | null>(null)
   const suppressClick = useRef(false)
-  const [payload, setPayload] = useState<ReviewsPayload>(staticGoogleReviews)
+  const [payload, setPayload] = useState<ReviewsPayload>(pendingReviews)
   const { reviews, attributions, source, googleSummary } = payload
   const count = reviews.length
   const { track, position, paused, scrollable, move, setTouching, togglePause, hoverEvents, focusEvents } = useReviewCarousel(count)
-  const google = source === 'google' && count > 0
-  const showGoogleAttribution = google || !!googleSummary
+  const linked = source === 'review-links'
+  const showGoogleAttribution = count > 0 || !!googleSummary
 
   useEffect(() => {
     let mounted = true
@@ -84,7 +91,7 @@ export default function GoogleReviews() {
     : reviews
   // The leading card fills the left edge during a forward slide, including the wrap from last to first.
   const cards = scrollable ? [ordered[count - 1], ...ordered] : ordered
-  const label = google ? 'Google reviews' : 'Client testimonials'
+  const label = 'Google reviews'
 
   return (
     <section ref={section} id="google-reviews" className={styles.section} aria-label={count ? label : 'More reviews'}
@@ -126,7 +133,7 @@ export default function GoogleReviews() {
             >
               <ul ref={track} className={styles.track} data-scrollable={scrollable}>
                 {cards.map((review, i) => (
-                  <ReviewCard key={scrollable && i === 0 ? `leading-${review.id}` : review.id}
+                  <ReviewCard key={scrollable && i === 0 ? `leading-${review.id}` : review.id} linked={linked}
                     review={review} hidden={scrollable && i === 0} />
                 ))}
               </ul>

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     'Privacy policy for The Becker Team powered by Xpert Home Lending — how we collect, use, and protect your personal and financial information under the Gramm-Leach-Bliley Act.',
 }
 
-const EFFECTIVE = 'September 1, 2026'
+const EFFECTIVE = 'November 26, 2026'
 const COMPANY = 'The Becker Team, powered by Xpert Home Lending (NMLS #2179191)'
 const CONTACT_EMAIL = 'Jamie@thebeckerteam.com'
 const CONTACT_PHONE = '(720) 492-3335'
@@ -105,6 +105,7 @@ export default function PrivacyPage() {
           <div>
             <h2 style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }} className="text-xl font-bold mb-3">8. Third-Party Links</h2>
             <p>This website may contain links to third-party websites, including our loan application portal. We are not responsible for the privacy practices or content of those sites and encourage you to review their privacy policies before submitting any information.</p>
+            <p>Our homepage can display reviews from Google Maps. When your browser loads a reviewer’s photo or you open a Google Maps link, Google receives your request. The <a href="https://policies.google.com/privacy" className="underline">Google Privacy Policy</a> applies to those features.</p>
           </div>
 
           <div>

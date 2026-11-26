@@ -6,7 +6,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 export const metadata: Metadata = {
   title: 'Lakewood, CO Mortgage Broker and Home Loans',
   description:
-    'Lakewood CO mortgage broker Jamie Becker (NMLS #794730). Conventional, FHA, VA, jumbo, and specialty loans for Lakewood buyers. Serving Lakewood, Wheat Ridge, Golden, Morrison, and the West Denver metro. Fast pre-approvals.',
+    'Lakewood CO mortgage broker Jamie Becker (NMLS #794730). Conventional, FHA, VA, jumbo, and specialty loans for Lakewood buyers. Serving Lakewood, Wheat Ridge, Golden, Morrison, and the West Denver metro.',
   alternates: { canonical: 'https://www.thebeckerteam.com/lakewood-mortgage' },
 }
 
@@ -60,7 +60,7 @@ const faqs = [
   { q: 'Is Lakewood CO a good place to buy a home?', a: "Lakewood is one of the most desirable suburbs in the Denver metro — close to the mountains, well-connected by light rail, and more affordable than central Denver for comparable square footage. Green Mountain, Belmar, and the Union corridor have all seen strong demand. Long-term, Lakewood holds value well because of its location between Denver and the foothills." },
   { q: 'What are current mortgage rates in Lakewood, CO?', a: 'Rates in Lakewood track the national market and vary daily based on your credit profile, loan type, down payment, and term. As a broker, Jamie shops your loan to multiple wholesale lenders and can typically match or beat what you might get at a single bank. Contact the team for a current personalized rate quote.' },
   { q: 'Do you offer jumbo loans for Golden and Green Mountain properties?', a: 'Yes. Properties near the foothills in Golden, Morrison, and west Lakewood often exceed conforming loan limits. Jamie offers jumbo loan programs with competitive rates and flexible underwriting for higher-value properties in these areas.' },
-  { q: 'Can I use a VA loan in Lakewood, CO?', a: 'Yes. VA loans are available for eligible veterans and active-duty service members throughout Lakewood and the west Denver metro. No down payment, no PMI, and competitive rates. Jamie can confirm your eligibility and get a pre-approval letter in most cases the same day.' },
+  { q: 'Can I use a VA loan in Lakewood, CO?', a: 'Yes. Eligible Lakewood buyers may qualify for a VA-backed loan with no down payment and no monthly mortgage insurance. Jamie can help you understand the eligibility and loan requirements.' },
   { q: 'Are there programs for Lakewood condos and townhomes?', a: "Yes, though condo financing has specific eligibility requirements depending on the complex. FHA and VA condo loans require the complex to be on the approved lists. Conventional condo loans have more flexibility. Jamie can quickly determine which programs apply to a specific property before you make an offer." },
   { q: 'Do you serve Wheat Ridge, Golden, and Arvada?', a: 'Yes. The Becker Team serves all of the west Denver metro including Lakewood, Wheat Ridge, Golden, Morrison, Edgewater, Arvada, and surrounding communities.' },
 ]
@@ -109,7 +109,7 @@ export default function LakewoodMortgagePage() {
         <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-2 text-sm font-semibold" style={{ color: '#1F2E2A' }}>
           <span>✦ West Denver Mortgage Lender</span>
           <span>✦ Lakewood Home Loans</span>
-          <span>✦ Same-Day Pre-Approvals</span>
+          <span>✦ Purchase Pre-Approval</span>
           <span>✦ 21+ Years Experience</span>
         </div>
       </section>
@@ -120,7 +120,7 @@ export default function LakewoodMortgagePage() {
             Your Lakewood Mortgage Expert
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            Lakewood sits at the intersection of Denver convenience and mountain access — and the housing market reflects it. Buyers here want a mortgage partner who can move quickly, knows the west-side neighborhoods, and has the programs to handle everything from a Belmar condo to a Green Mountain single-family home. Jamie Becker (NMLS #794730) has spent 21+ years helping buyers across the Denver metro, including Lakewood, Wheat Ridge, Golden, and Arvada. As a broker, Jamie works with multiple wholesale lenders to find you the best rate and terms — not just whatever one bank happens to offer that day.
+            Lakewood sits at the intersection of Denver convenience and mountain access — and the housing market reflects it. Buyers here want a mortgage partner who can move quickly, knows the west-side neighborhoods, and has the programs to handle everything from a Belmar condo to a Green Mountain single-family home. Jamie Becker (NMLS #794730) has spent 21+ years helping buyers across the Denver metro, including Lakewood, Wheat Ridge, Golden, and Arvada. As a broker, Jamie works with multiple wholesale lenders to compare rates, lender fees and closing costs.
           </p>
         </div>
       </section>
@@ -153,9 +153,9 @@ export default function LakewoodMortgagePage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { title: 'Multiple Lender Options', body: "As a broker, Jamie shops your loan across multiple wholesale lenders — which usually means better rates and more flexibility than a single bank can offer." },
+              { title: 'Multiple Lender Options', body: 'Jamie compares options with multiple wholesale lenders and helps you understand which terms apply to the home you’re buying.' },
               { title: 'Foothills and Condo Expertise', body: "From Green Mountain single-family homes to Belmar condos to Golden foothills properties, Jamie knows the different underwriting requirements for each property type." },
-              { title: 'Fast Pre-Approvals', body: "Same-day pre-approval letters in most cases. In Lakewood's competitive market, showing up with a strong pre-approval is the difference between winning and losing an offer." },
+              { title: 'Pre-Approval Before You Shop', body: 'Discuss your price range and how much cash you want to set aside. If you plan to buy a condo, Jamie can explain what the lender needs from the association.' },
               { title: 'Direct, Personal Service', body: "No handoffs, no call centers. Jamie handles your file from pre-approval through closing and is reachable throughout the process." },
             ].map((item) => (
               <div key={item.title} className="flex gap-4">

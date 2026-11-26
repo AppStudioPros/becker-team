@@ -74,11 +74,11 @@ const faqs = [
   },
   {
     q: 'What are current mortgage rates in Loveland, CO?',
-    a: 'Rates change daily. As a broker, Jamie shops your loan across multiple wholesale lenders to find the most competitive rate for your specific situation, credit profile, and loan type. Contact the team for a current personalized quote.',
+    a: 'Rates change with the market and depend on your credit profile, loan type and down payment. Jamie can help you compare current quotes and their fees.',
   },
   {
     q: 'How long does it take to close on a home in Loveland?',
-    a: 'The Becker Team targets 10-day closings on qualifying purchases. Loveland\'s market can be competitive when well-priced homes hit the market, and a fast pre-approval paired with a strong lender puts you in a better position from the start.',
+    a: 'The loan, any required appraisal and title work affect your closing date. If you’re buying in Loveland or a nearby town, tell Jamie the date on the offer so you can check the timing together.',
   },
 ]
 
@@ -125,7 +125,7 @@ export default function LovelandMortgagePage() {
         <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-2 text-sm font-semibold" style={{ color: '#1F2E2A' }}>
           <span>✦ Northern Colorado Lender</span>
           <span>✦ USDA and VA Specialists</span>
-          <span>✦ Same-Day Pre-Approvals</span>
+          <span>✦ Purchase Pre-Approval</span>
           <span>✦ 21+ Years Experience</span>
         </div>
       </section>
@@ -133,7 +133,7 @@ export default function LovelandMortgagePage() {
       <section className="bg-white py-16 md:py-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <h2 data-reveal className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}>
-            Northern Colorado's Affordable Alternative
+            Northern Colorado&apos;s Affordable Alternative
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
             Loveland has carved out a strong identity as a place where people actually want to live. The arts scene is real, the mountain access is excellent, and the price point is noticeably lower than Fort Collins just to the north. Median home prices around $430,000-$480,000 in 2026 attract first-time buyers, retirees relocating from higher-cost states, and remote workers who do not need to commute daily. The surrounding communities of Johnstown, Windsor, and Milliken have also grown quickly, with rural areas that can qualify for USDA zero-down financing. Jamie Becker (NMLS #794730) has 21+ years working with Colorado buyers across all loan types, including the rural and small-town markets that bigger lenders often do not understand as well.
@@ -171,7 +171,7 @@ export default function LovelandMortgagePage() {
             {[
               { title: 'USDA Eligibility Check', body: 'Many buyers in the Loveland area are surprised to find that rural properties near Milliken, Johnstown, and Berthoud qualify for USDA zero-down loans. Jamie checks property eligibility as part of every pre-approval consultation.' },
               { title: 'Retiree Programs', body: 'Loveland draws a lot of retirees who have significant assets but limited current income. Asset qualifier programs let you qualify using investment and retirement accounts. This is not a niche product, it is exactly what these programs were built for.' },
-              { title: 'Multiple Lender Options', body: 'As a broker, Jamie shops your loan across multiple wholesale lenders. Better rates and more program options than any single bank, with one application and one point of contact throughout.' },
+              { title: 'Multiple Lender Options', body: 'Jamie compares rates, fees and loan terms from multiple wholesale lenders. You work directly with Jamie throughout the process.' },
               { title: 'Northern Colorado Expertise', body: 'Jamie has worked with buyers throughout northern Colorado and understands the market dynamics in Loveland, Windsor, and the surrounding communities. Local knowledge matters when you are navigating property types and price points unique to the region.' },
             ].map((item) => (
               <div key={item.title} className="flex gap-4">

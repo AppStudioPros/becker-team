@@ -17,11 +17,11 @@ export const loanPrograms: LoanProgram[] = [
     heroSubtitle: 'Flexible financing for borrowers with strong credit and steady income',
     body: [
       'Conventional loans are mortgage loans issued by private lenders and not backed by a federal government agency. They typically offer competitive interest rates, flexible terms, and a wide range of loan amounts — making them the most commonly used mortgage product for home purchases and refinances.',
-      'Lenders review your credit history, debt and down payment when determining the conventional loan options and rates available to you. Down payments start as low as 3% for first-time buyers and 5% for repeat buyers. If your down payment is less than 20%, private mortgage insurance (PMI) is required until you reach 20% equity.',
+      'Lenders review your credit history, debts and down payment. Some conventional programs allow eligible borrowers to put 3% down on a one-unit primary home. Income limits or first-time buyer requirements can apply. With less than 20% down, monthly private mortgage insurance is common.',
       'Conventional loans come in two main categories: conforming and non-conforming. Conforming loans meet the loan limits set by the Federal Housing Finance Agency (FHFA). The applicable limit depends on the county, number of units and year. A loan above that amount is jumbo.',
-      'One of the biggest advantages of a conventional loan is flexibility. You can use one to purchase a primary residence, a second home, or an investment property. You can choose between fixed-rate and adjustable-rate terms. And once you have 20% equity, PMI drops off automatically — something government-backed loans do not always allow.',
+      'Conventional mortgages can finance a primary residence, second home or investment property, with different terms for each use. On most covered loans, you can request PMI cancellation at 80% of the original home value if you meet the conditions. It generally ends automatically when the balance is scheduled to reach 78% and payments are current.',
       'At The Becker Team, we work with a wide network of lenders to find the right conventional loan for your situation. Whether you are a first-time buyer, upgrading to a larger home, or refinancing an existing mortgage, we can walk you through your options and help you close quickly.',
-      'If you are a business owner, self-employed borrower, or have nontraditional income, a conventional loan may still be possible with the right documentation. We also offer conventional options with bank statement qualifying and asset depletion for borrowers whose income does not show up cleanly on a tax return.',
+      'If you are self-employed, a conventional lender can review your tax returns and business records. If that approach does not fit, ask about bank statement programs or asset-based alternatives and compare their terms with the conventional offer.',
     ],
     faqs: [
       {
@@ -30,7 +30,7 @@ export const loanPrograms: LoanProgram[] = [
       },
       {
         q: 'How much do I need to put down on a conventional loan?',
-        a: 'Down payments start at 3% for first-time buyers. Putting 20% down eliminates the requirement for private mortgage insurance (PMI).',
+        a: 'Eligible buyers may be able to put 3% down on a one-unit primary residence. The minimum depends on the program and occupancy. With 20% down, PMI is generally unnecessary.',
       },
       {
         q: 'Can I use a conventional loan to buy an investment property?',
@@ -85,8 +85,8 @@ export const loanPrograms: LoanProgram[] = [
     body: [
       'Asset qualifier loans allow borrowers to qualify for a mortgage based on their total liquid assets rather than traditional income documentation. If you have significant savings, investment accounts, retirement funds, or other financial assets but do not show enough income on paper to qualify through conventional underwriting, an asset qualifier loan may be the right path.',
       'This program is particularly useful for retirees living off investment portfolios, high-net-worth individuals who have recently sold a business or property, or borrowers who receive large annual distributions rather than a steady monthly salary.',
-      'The qualifying formula works by taking your total verified assets, subtracting a down payment and closing costs, and then dividing the remaining balance over a set number of months — typically 60 to 120 months depending on the lender. The resulting figure becomes your "monthly income" for qualification purposes.',
-      'Eligible assets typically include checking and savings accounts, money market accounts, stocks, bonds, mutual funds, ETFs, vested retirement accounts such as 401(k)s and IRAs, and proceeds from the sale of a business or property. Assets must be fully documented and verified.',
+      'For the Asset Qualifier program, the benchmark is 125% of the loan amount in eligible assets remaining after the down payment and closing costs. An $800,000 loan has a $1,000,000 benchmark. Asset depletion is a separate method that converts eligible assets to monthly qualifying income.',
+      'Your lender can review your bank, investment and vested retirement account statements, including account ownership and access restrictions. The amount you need for the purchase is deducted before the remaining eligible assets are compared with the benchmark.',
       'Asset qualifier loans generally require a strong credit score, a meaningful down payment, and a clear paper trail on all assets. Rates are typically higher than conforming loan rates, but for borrowers who fit the profile, this program opens doors that traditional underwriting keeps closed.',
       'At The Becker Team, we have worked with retirees, executives, entrepreneurs, and investors who all qualified through asset-based programs. We help structure the application to present your financial picture in the strongest possible light.',
       'If you have significant wealth but limited traditional income, contact us to find out whether an asset qualifier loan makes sense for your situation.',
@@ -98,15 +98,15 @@ export const loanPrograms: LoanProgram[] = [
       },
       {
         q: 'Do I need to liquidate my assets to qualify?',
-        a: 'No. You do not need to sell or liquidate assets. The lender uses a depletion formula to calculate a monthly income equivalent from your documented assets.',
+        a: 'Document the accounts you plan to use for qualification and identify how you will pay your down payment and closing costs. The lender checks which assets are accessible and eligible to count after closing.',
       },
       {
         q: 'What credit score is needed for an asset qualifier loan?',
-        a: 'Most asset qualifier programs require a credit score of at least 680, with better pricing available for scores above 720 or 740.',
+        a: 'Credit requirements depend on the lender and loan terms. The lender reviews your credit as well as how much you will hold in eligible assets after closing.',
       },
       {
         q: 'Is this program available for investment properties?',
-        a: 'Yes. Asset qualifier loans can be used for primary residences, second homes, and investment properties. Terms vary by property type.',
+        a: 'Tell your lender how you intend to use the property. Occupancy affects which programs are available, and the lender must confirm eligibility for your purchase.',
       },
     ],
   },
@@ -117,25 +117,25 @@ export const loanPrograms: LoanProgram[] = [
     tagline: 'Accelerate mortgage payoff before retirement',
     heroSubtitle: 'A strategic approach to eliminating your mortgage faster and building equity sooner',
     body: [
-      'The Mortgage Accelerator is a strategic loan product designed to help homeowners pay off their mortgage significantly faster than a traditional 30-year fixed loan, often without dramatically increasing their monthly payment.',
-      'The program works by linking your mortgage to a line of credit that functions as your primary checking account. Your income deposits reduce your outstanding principal balance each month, and your expenses are paid from the same line. Because mortgage interest is typically calculated daily on the outstanding principal, reducing your average daily balance — even temporarily — cuts the total interest you pay over the life of the loan.',
-      'For many borrowers, especially those nearing retirement who want to eliminate their housing payment, the Mortgage Accelerator can shave years or even decades off their payoff timeline. A homeowner who might otherwise spend 30 years paying off a mortgage may pay it off in 12 to 18 years while keeping their lifestyle largely intact.',
-      'This product is best suited for borrowers who have consistent income deposits and relatively stable monthly expenses. It requires discipline in how you manage your checking account but does not require you to dramatically change your spending habits.',
+      'The Mortgage Accelerator uses a credit line secured by your home. Deposits lower the balance, while withdrawals to pay bills increase it. The amount you leave on the line after expenses and interest determines your principal reduction.',
+      'Interest on the line depends on the rate and outstanding balance as deposits and withdrawals post. Compare it with your current mortgage using the same starting debt and the same money available for principal and interest.',
+      'If you are planning for retirement, compare balances and total interest and fees through that date. Test a month with lower income, a large expense or a higher line rate to see how each would affect the result.',
+      'A homeowner with steady surplus cash can also make extra principal payments on an existing mortgage. Compare that option before replacing your loan, and consider whether you have enough savings if access to the line is reduced.',
       'Jamie Becker has years of experience explaining and implementing the Mortgage Accelerator for Colorado homeowners and those in other licensed states. He takes the time to run through the numbers with each client, model different scenarios, and make sure the program is the right fit before moving forward.',
       'If you are approaching retirement and want to enter that phase of life without a mortgage payment, or if you simply want to build equity faster and reduce total interest paid, the Mortgage Accelerator is worth exploring.',
     ],
     faqs: [
       {
         q: 'Is the Mortgage Accelerator the same as a HELOC?',
-        a: 'It operates similarly to a HELOC in that it is a revolving line of credit tied to your home equity, but it is structured specifically to function as your primary banking account and optimize principal reduction.',
+        a: 'It uses a revolving line of credit secured by the home. Your deposits reduce the balance while they remain on the line. When you withdraw money, you borrow against the home again.',
       },
       {
         q: 'How much faster can I pay off my mortgage?',
-        a: 'Results vary based on income, expenses, and deposit patterns, but many borrowers reduce a 30-year payoff timeline to 12 to 18 years without making larger payments.',
+        a: 'The payoff date depends on available cash, rates, fees and when payments post. Compare the line with paying the same extra amount toward your current mortgage to see whether the payoff date changes.',
       },
       {
         q: 'Do I need to change how I spend money?',
-        a: 'Not dramatically. The program works best when your income deposits consistently exceed your monthly expenses. The key is keeping your average daily balance as low as possible.',
+        a: 'Review what is left after routine and irregular expenses. If most of your pay goes back out to cover bills, you may have little cash left to reduce principal after interest.',
       },
       {
         q: 'Is this available in Colorado?',
@@ -147,13 +147,13 @@ export const loanPrograms: LoanProgram[] = [
     slug: 'va-loans',
     title: 'VA Home Loans for Veterans in Colorado',
     shortTitle: 'VA Loans',
-    tagline: 'No down payment loans for eligible veterans and service members',
-    heroSubtitle: 'Exclusive benefit for veterans, active-duty service members, and eligible spouses',
+    tagline: 'VA purchase loans with low or no down payment for eligible borrowers',
+    heroSubtitle: 'Home financing for eligible veterans, service members and surviving spouses',
     body: [
       'VA loans are mortgage loans guaranteed by the U.S. Department of Veterans Affairs and available to eligible veterans, active-duty service members, National Guard and Reserve members, and surviving spouses. They are one of the most powerful home financing tools available — and one of the most underutilized.',
-      'The most well-known feature of a VA loan is no down payment. Eligible borrowers can finance 100% of the purchase price without putting anything down. There is also no requirement for private mortgage insurance (PMI), which can save hundreds of dollars per month compared to other low-down-payment options.',
+      'With full entitlement, eligible buyers can generally finance a primary home up to its appraised value without a down payment. An appraisal gap or remaining entitlement may require cash. VA loans do not require monthly private mortgage insurance.',
       'VA loans generally offer competitive interest rates, often lower than conventional rates for comparable borrowers. They also carry more flexible credit and income guidelines, making them accessible to veterans who may not qualify for a conventional loan.',
-      'One unique feature of VA loans is the VA funding fee — a one-time fee that helps sustain the program. The fee varies based on your service type, down payment amount, and whether it is your first or subsequent use of a VA loan. Some veterans with service-connected disabilities are exempt from the funding fee entirely.',
+      'Most VA purchase loans have a one-time funding fee based on the down payment and prior use of the benefit. You can pay it at closing or finance it. Veterans receiving VA compensation for a service-connected disability are among those exempt. Ask the lender to verify your status.',
       'VA loans can be used to purchase a primary residence — including single-family homes, condos, and multi-unit properties up to four units — or to refinance an existing VA loan through the VA Interest Rate Reduction Refinance Loan (IRRRL), also known as a VA streamline refinance.',
       'At The Becker Team, Jamie Becker has helped dozens of veterans and active-duty service members access their VA benefit in Colorado and other licensed states. We walk you through eligibility, Certificate of Eligibility (COE) requirements, and the full loan process from application through closing.',
       'If you served and have not yet used your VA loan benefit — or have used it before and want to use it again — contact us to discuss your options.',
@@ -161,19 +161,19 @@ export const loanPrograms: LoanProgram[] = [
     faqs: [
       {
         q: 'Who is eligible for a VA loan?',
-        a: 'Eligible borrowers include veterans, active-duty service members, National Guard and Reserve members with qualifying service, and surviving spouses of veterans who died in service or from a service-connected disability.',
+        a: 'VA considers service dates, length, type of service and, for veterans, character of discharge. Guard and Reserve members may qualify. Certain surviving spouses qualify under separate rules. A VA Certificate of Eligibility establishes benefit eligibility, while the lender also reviews credit, income and occupancy.',
       },
       {
         q: 'Is there a VA loan limit?',
-        a: 'VA loans no longer have a maximum loan amount for eligible borrowers with full entitlement. County conforming loan limits only apply if you have reduced entitlement from a prior VA loan.',
+        a: 'VA sets no county loan limit for borrowers with full entitlement. With remaining entitlement, the county limit helps determine the available guaranty and possible down payment. The lender reviews what you can afford and the home’s appraised value.',
       },
       {
         q: 'Can I use a VA loan more than once?',
-        a: 'Yes. You can use your VA loan benefit multiple times throughout your life. If you have paid off a prior VA loan, your full entitlement is restored.',
+        a: 'Yes. You can request restoration of entitlement after selling the property and repaying the previous VA loan in full. Other restoration rules may apply. If you still own the property, ask about the remaining entitlement shown on your Certificate of Eligibility.',
       },
       {
         q: 'How fast can I close a VA loan?',
-        a: 'VA loans typically close in 30 to 45 days. With preparation and organization, The Becker Team can often close faster.',
+        a: 'Ask your lender to review the proposed contract date, outstanding documents, appraisal schedule and any condo project approval before you agree to a deadline.',
       },
     ],
   },
@@ -185,7 +185,7 @@ export const loanPrograms: LoanProgram[] = [
     heroSubtitle: 'Government-backed financing with more flexible credit and income requirements',
     body: [
       'FHA loans are mortgages insured by the Federal Housing Administration and issued by approved private lenders. They are designed to make homeownership more accessible, particularly for first-time buyers or borrowers who may not qualify for a conventional loan.',
-      'The hallmark of an FHA loan is a lower barrier to entry. Borrowers with a credit score of 580 or higher can put as little as 3.5% down. Borrowers with credit scores between 500 and 579 may still qualify with a 10% down payment. FHA guidelines also allow for higher debt-to-income ratios than conventional loans, which can help borrowers with existing debts.',
+      'For a typical FHA purchase, a qualifying credit score of at least 580 may allow a 3.5% down payment. With a score of 500 to 579, FHA generally requires at least 10% down. Lenders can set higher requirements and also check your income, debts and property.',
       'FHA loans require two forms of mortgage insurance: an upfront mortgage insurance premium (UFMIP) of 1.75% of the loan amount, typically rolled into the loan, and an annual mortgage insurance premium (MIP) paid monthly. Unlike PMI on a conventional loan, FHA MIP remains for the life of the loan if your down payment is less than 10%.',
       'FHA loans are only available for primary residences. They can be used to purchase single-family homes, 2-4 unit properties, condos that are FHA-approved, and manufactured homes. FHA loan limits are set by county and adjusted annually.',
       'Gift funds from family members are fully allowed for the down payment on an FHA loan, making it a practical option for buyers receiving financial help from relatives.',
@@ -194,7 +194,7 @@ export const loanPrograms: LoanProgram[] = [
     faqs: [
       {
         q: 'What credit score do I need for an FHA loan?',
-        a: 'A score of 580 qualifies you for the 3.5% down payment option. Scores between 500 and 579 may still qualify but require 10% down.',
+        a: 'A qualifying score of at least 580 may allow 3.5% down. With a score of 500 to 579, FHA generally requires at least 10% down. A lender can require a higher score and must also review the rest of the application.',
       },
       {
         q: 'Can I use gift money for the down payment?',
@@ -202,7 +202,7 @@ export const loanPrograms: LoanProgram[] = [
       },
       {
         q: 'Does FHA mortgage insurance ever go away?',
-        a: 'For loans with less than 10% down, FHA mortgage insurance remains for the life of the loan. To remove it, you would need to refinance into a conventional loan once you have enough equity.',
+        a: 'On a new standard 30-year FHA purchase mortgage, the annual premium lasts 11 years with an original loan-to-value ratio of 90% or lower. Above 90%, it generally lasts for the loan term.',
       },
       {
         q: 'What is the FHA loan limit in Colorado?',
@@ -218,7 +218,7 @@ export const loanPrograms: LoanProgram[] = [
     heroSubtitle: 'Financing for homes that go beyond standard loan limits',
     body: [
       'Jumbo loans are mortgage loans that exceed the conforming loan limits set by the Federal Housing Finance Agency (FHFA). Compare the original loan amount with the limit for the county, number of units and year. A loan exactly at the limit is within the conforming size limit.',
-      'Because jumbo loans are not eligible for purchase by the government-sponsored enterprises, lenders carry the risk directly. As a result, qualification requirements are stricter than those for conforming loans. Most jumbo lenders require a credit score of at least 700 to 720, a down payment of 10% to 20% or more, and strong reserves — often 12 months or more of mortgage payments in liquid assets.',
+      'Jumbo lenders set their own credit, income, down payment and reserve requirements. Ask which rules apply to the loan amount and the way you plan to occupy the home.',
       'Despite stricter qualification, jumbo loans are widely available and offer competitive interest rates for well-qualified borrowers. In some market conditions, jumbo rates are actually lower than conforming rates due to the higher creditworthiness of jumbo borrowers.',
       'Jumbo loans can be used for primary residences, second homes, and investment properties. They are available as fixed-rate and adjustable-rate products, with terms typically ranging from 15 to 30 years.',
       'In Colorado, luxury properties in the Denver metro area, mountain communities, and other high-demand markets frequently exceed conforming loan limits. The Becker Team has experience financing high-value properties and working with lenders that specialize in jumbo and super-jumbo products.',
@@ -227,7 +227,7 @@ export const loanPrograms: LoanProgram[] = [
     faqs: [
       {
         q: 'What is the minimum credit score for a jumbo loan?',
-        a: 'Most lenders require 700 to 720 for a jumbo loan. Some programs allow scores as low as 680 with strong compensating factors.',
+        a: 'Jumbo lenders set their own credit requirements. The minimum depends on the program, loan amount and your overall application.',
       },
       {
         q: 'How much do I need to put down on a jumbo loan?',

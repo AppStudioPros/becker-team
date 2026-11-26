@@ -6,7 +6,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 export const metadata: Metadata = {
   title: 'Englewood, CO Mortgage Broker and Home Loans',
   description:
-    'Englewood CO mortgage lender Jamie Becker (NMLS #794730). FHA, conventional, VA, and jumbo loans for Englewood, Sheridan, Cherry Hills Village, Greenwood Village, and Centennial. Fast pre-approvals.',
+    'Englewood CO mortgage lender Jamie Becker (NMLS #794730). FHA, conventional, VA, and jumbo loans for Englewood, Sheridan, Cherry Hills Village, Greenwood Village, and Centennial.',
   alternates: { canonical: 'https://www.thebeckerteam.com/englewood-mortgage' },
 }
 
@@ -74,11 +74,11 @@ const faqs = [
   },
   {
     q: 'What are current mortgage rates in Englewood, CO?',
-    a: 'Rates move daily and depend on your credit profile, loan type, and down payment. As a broker, Jamie shops across multiple wholesale lenders to find the most competitive rate for your situation. Contact the team for a current personalized rate quote.',
+    a: 'Your rate can change with the market and depends on your credit profile, loan type and down payment. Jamie can compare current quotes from multiple wholesale lenders.',
   },
   {
     q: 'How fast can I close on a home in Englewood?',
-    a: 'The Becker Team targets 10-day closings on qualifying purchases. In Englewood\'s active market, a fast close and strong pre-approval can set your offer apart from other buyers, especially in the more competitive price ranges near light rail and schools.',
+    a: 'The lender needs time to review the loan and property and complete any required appraisal. Title work also affects the schedule. Jamie can review those steps with you before you commit to a closing date.',
   },
 ]
 
@@ -125,7 +125,7 @@ export default function EnglewoodMortgagePage() {
         <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-2 text-sm font-semibold" style={{ color: '#1F2E2A' }}>
           <span>✦ South Denver Metro Lender</span>
           <span>✦ FHA, Conventional, Jumbo</span>
-          <span>✦ Same-Day Pre-Approvals</span>
+          <span>✦ Purchase Pre-Approval</span>
           <span>✦ 21+ Years Experience</span>
         </div>
       </section>
@@ -133,10 +133,10 @@ export default function EnglewoodMortgagePage() {
       <section className="bg-white py-16 md:py-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <h2 data-reveal className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}>
-            South Denver's Most Diverse Housing Market
+            South Denver&apos;s Most Diverse Housing Market
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            Englewood is one of the south metro's most flexible markets for buyers. The housing stock runs from entry-level condos to established single-family neighborhoods to luxury estates in neighboring Cherry Hills Village, all within a few miles of each other. Light rail access makes Englewood a practical choice for commuters who want to avoid I-25, and ongoing development along South Broadway has brought new restaurants, retail, and attention from buyers who want an urban feel without downtown Denver prices. Median home prices sit around $450,000-$500,000 in 2026, making this an attainable market for a wide range of buyers. Jamie Becker (NMLS #794730) has 21+ years of experience helping buyers across all price points in the south metro find the right loan.
+            Englewood is one of the south metro&apos;s most flexible markets for buyers. The housing stock runs from entry-level condos to established single-family neighborhoods to luxury estates in neighboring Cherry Hills Village, all within a few miles of each other. Light rail access makes Englewood a practical choice for commuters who want to avoid I-25, and ongoing development along South Broadway has brought new restaurants, retail, and attention from buyers who want an urban feel without downtown Denver prices. Median home prices sit around $450,000-$500,000 in 2026, making this an attainable market for a wide range of buyers. Jamie Becker (NMLS #794730) has 21+ years of experience helping buyers across all price points in the south metro find the right loan.
           </p>
         </div>
       </section>
@@ -171,8 +171,8 @@ export default function EnglewoodMortgagePage() {
             {[
               { title: 'Full Range Coverage', body: 'Whether you are buying a starter condo in Englewood or a luxury estate in Cherry Hills Village, Jamie has the right loan program. Not every lender covers both ends of the market well.' },
               { title: 'First-Time Buyer Guidance', body: 'Englewood is a popular entry point into the south Denver market. Jamie helps first-time buyers understand FHA, CHFA assistance, and conventional options so they start strong.' },
-              { title: 'Multiple Lender Options', body: 'As a broker, Jamie shops your file across wholesale lenders. That means better rates and more flexibility than a single bank — important when you are comparing a $320k condo and a $1.2M Cherry Hills home.' },
-              { title: 'Fast Closings', body: 'Same-day pre-approvals and 10-day close targets. Englewood moves fast when a well-priced home hits the market. Having a strong lender behind you matters.' },
+              { title: 'Multiple Lender Options', body: 'Jamie compares loan terms from multiple wholesale lenders. A condo and a Cherry Hills single-family home may call for different options.' },
+              { title: 'Closing Date Planning', body: 'Jamie can review your proposed closing date and explain what the title company and lender still need before signing.' },
             ].map((item) => (
               <div key={item.title} className="flex gap-4">
                 <Check size={22} className="flex-shrink-0 mt-1" style={{ color: '#1F2E2A' }} />

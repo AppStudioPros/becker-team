@@ -55,11 +55,11 @@ const faqs = [
   },
   {
     q: 'What credit score do I need for an FHA loan?',
-    a: 'Most FHA lenders require a minimum credit score of 580 for the 3.5% down payment option. Borrowers with scores between 500-579 may still qualify with a 10% down payment, subject to lender requirements.',
+    a: 'For a typical FHA purchase, a qualifying score of at least 580 may allow 3.5% down. With a score of 500 to 579, FHA generally requires at least 10% down. Lenders may set stricter requirements and also review income, debts and the property.',
   },
   {
     q: 'What is mortgage insurance on an FHA loan?',
-    a: 'FHA loans require an upfront mortgage insurance premium (MIP) and an annual MIP paid monthly. Unlike conventional PMI, FHA mortgage insurance typically stays for the life of the loan if your down payment is less than 10%.',
+    a: 'Most FHA purchases have an upfront mortgage insurance premium and an annual premium collected monthly. On a new standard 30-year FHA loan, the annual premium lasts 11 years when the original loan-to-value ratio is 90% or lower. Above 90%, it generally lasts for the loan term.',
   },
   {
     q: 'Can I use an FHA loan to buy any type of home?',
@@ -67,7 +67,7 @@ const faqs = [
   },
   {
     q: 'How does FHA differ from conventional?',
-    a: 'FHA loans are government-backed with more flexible credit and down payment requirements, but require mortgage insurance for most borrowers. Conventional loans have stricter credit requirements but offer more flexibility once you have 20% equity.',
+    a: 'FHA insures the loan and sets mortgage insurance rules based on the original loan-to-value ratio. A conventional loan may require private mortgage insurance if you put less than 20% down. Ask each lender for the monthly insurance cost and the conditions for ending it.',
   },
   {
     q: 'Are there loan limits for FHA loans?',
@@ -78,14 +78,11 @@ const faqs = [
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: [
-    { '@type': 'Question', name: 'What is an FHA loan?', acceptedAnswer: { '@type': 'Answer', text: 'An FHA loan is a mortgage insured by the Federal Housing Administration. The government backing allows private lenders to offer more flexible terms to borrowers who may not qualify for conventional financing.' } },
-    { '@type': 'Question', name: 'What credit score do I need for an FHA loan?', acceptedAnswer: { '@type': 'Answer', text: 'Most FHA lenders require a minimum credit score of 580 for the 3.5% down payment option. Borrowers with scores between 500-579 may still qualify with a 10% down payment, subject to lender requirements.' } },
-    { '@type': 'Question', name: 'What is mortgage insurance on an FHA loan?', acceptedAnswer: { '@type': 'Answer', text: 'FHA loans require an upfront mortgage insurance premium (MIP) and an annual MIP paid monthly. Unlike conventional PMI, FHA mortgage insurance typically stays for the life of the loan if your down payment is less than 10%.' } },
-    { '@type': 'Question', name: 'Can I use an FHA loan to buy any type of home?', acceptedAnswer: { '@type': 'Answer', text: 'FHA loans are intended for primary residences only. The property must meet FHA minimum property standards, which can affect eligibility for some fixer-uppers or unique property types.' } },
-    { '@type': 'Question', name: 'How does FHA differ from conventional?', acceptedAnswer: { '@type': 'Answer', text: 'FHA loans are government-backed with more flexible credit and down payment requirements, but require mortgage insurance for most borrowers. Conventional loans have stricter credit requirements but offer more flexibility once you have 20% equity.' } },
-    { '@type': 'Question', name: 'Are there loan limits for FHA loans?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. FHA loan limits vary by county and are updated annually. Our team can confirm current limits for your area and purchase price.' } }
-  ],
+  mainEntity: faqs.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
 }
 
 const breadcrumbJsonLd = {

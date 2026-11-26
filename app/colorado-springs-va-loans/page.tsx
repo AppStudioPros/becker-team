@@ -14,7 +14,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FinancialService',
   name: 'The Becker Team — VA Loans Colorado Springs',
-  description: 'VA mortgage specialist serving veterans and service members in Colorado Springs, Fort Carson, Peterson SFB, Schriever AFB, and USAFA.',
+  description: 'VA mortgage specialist serving veterans and service members in Colorado Springs, Fort Carson, Peterson SFB, Schriever SFB, and USAFA.',
   url: 'https://www.thebeckerteam.com/colorado-springs-va-loans',
   telephone: '(720) 492-3335',
   email: 'Jamie@thebeckerteam.com',
@@ -38,17 +38,17 @@ const breadcrumb = {
 }
 
 const vaBenefits = [
-  { title: 'Zero Down Payment', body: 'Eligible veterans can purchase a home with no down payment — preserving cash for moving, furnishing, or emergency reserves.' },
-  { title: 'No Private Mortgage Insurance', body: 'VA loans have no PMI requirement regardless of down payment amount — a significant monthly savings over conventional loans.' },
+  { title: 'Low or No Down Payment', body: 'Eligible veterans can purchase a home with no down payment — preserving cash for moving, furnishing, or emergency reserves.' },
+  { title: 'No Private Mortgage Insurance', body: 'VA purchase loans have no monthly private mortgage insurance. A one-time funding fee may apply, depending on your exemption status.' },
   { title: 'Compare VA Loan Rates', body: 'Each lender sets its own rate and fees. We’ll help you compare what you would pay at closing and each month.' },
-  { title: 'Flexible Credit Requirements', body: 'VA loans are often more forgiving on credit history than conventional programs — important for service members transitioning out.' },
-  { title: 'Reusable Benefit', body: 'Your VA entitlement can be used multiple times. Many Colorado Springs veterans have used their VA loan benefit for 2-3 homes over their career.' },
+  { title: 'Flexible Credit Requirements', body: 'VA sets no minimum credit score. Your lender reviews your credit history and income and may have its own credit score requirement.' },
+  { title: 'Reusable Benefit', body: 'If you have used your benefit before, your Certificate of Eligibility helps the lender determine what entitlement is still available for another home.' },
   { title: 'No Prepayment Penalty', body: 'Pay off your loan early without penalty — helpful if you receive BAH allowances or want to build equity faster.' },
 ]
 
 const faqs = [
-  { q: 'Who is eligible for a VA loan in Colorado Springs?', a: 'VA loan eligibility requires meeting service requirements: 90 days active duty during wartime, 181 days during peacetime, 6 years in the Guard/Reserves, or being a surviving spouse of a service member who died in the line of duty. Most active-duty members at Fort Carson, Peterson SFB, Schriever AFB, and USAFA qualify.' },
-  { q: 'Do I need a down payment for a VA loan?', a: 'No. Eligible veterans and service members can purchase a home with zero down payment using a VA loan. There are no PMI requirements. The only upfront cost unique to VA loans is the funding fee, which can be financed into the loan and is waived for veterans with service-connected disabilities.' },
+  { q: 'Who is eligible for a VA loan in Colorado Springs?', a: 'VA considers your dates, length and type of service. Active-duty members, veterans and some Guard or Reserve members can qualify. Certain surviving spouses qualify under separate rules. Request a Certificate of Eligibility to establish your VA benefit. Your lender also reviews income, credit and occupancy.' },
+  { q: 'Do I need a down payment for a VA loan?', a: 'With full entitlement, eligible buyers can generally buy with no down payment if the price is within the VA appraised value. An appraisal gap or remaining entitlement may require cash. VA purchase loans have no monthly mortgage insurance, but closing costs and a funding fee may apply.' },
   { q: 'What is the VA funding fee?', a: 'For a VA-backed purchase, the one-time funding fee ranges from 1.25% to 3.3% of the loan amount unless you qualify for an exemption. The fee depends on your down payment and prior use of the benefit. You can pay it at closing or finance it. Veterans receiving VA compensation for a service-connected disability are among those exempt.' },
   {
     q: 'Can I use a VA loan to buy near Fort Carson before I transfer there?',
@@ -63,7 +63,7 @@ const faqs = [
     a: 'You can request a Certificate of Eligibility (COE) online through VA.gov or ask your lender to request it. If you are on active duty, the VA asks for a statement of service signed by your commander, adjutant, or personnel officer. The COE confirms eligibility for the VA home loan benefit. Your lender still reviews your credit, income, and other loan requirements.',
   },
   { q: 'What are current VA mortgage rates in Colorado Springs?', a: 'VA lenders set their own rates, and pricing can change daily. Ask Jamie for quotes for the same loan amount and term so you can compare the interest rate, APR and upfront lender fees.' },
-  { q: 'Can I use my VA loan benefit more than once?', a: 'Yes. Your VA entitlement is reusable. If you\'ve paid off a previous VA loan or sold the home, your entitlement is typically restored. Many Colorado Springs veterans have used their VA benefit for multiple homes throughout their careers.' },
+  { q: 'Can I use my VA loan benefit more than once?', a: 'Yes. You can request restoration of entitlement after selling the property and repaying the VA loan in full. Other restoration rules may apply. If you keep the property, ask the lender to check the entitlement available on your Certificate of Eligibility.' },
 ]
 
 
@@ -127,7 +127,7 @@ export default function ColoradoSpringsVaPage() {
       {/* Feature bar */}
       <section className="bg-white py-5 px-6 border-b border-stone-200">
         <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-2 text-sm font-semibold" style={{ color: '#1F2E2A' }}>
-          <span>✦ Zero Down Payment</span>
+          <span>✦ Low or No Down Payment</span>
           <span>✦ No Private Mortgage Insurance</span>
           <span>✦ Compare VA Loan Options</span>
           <span>✦ Fort Carson · Peterson SFB · USAFA</span>

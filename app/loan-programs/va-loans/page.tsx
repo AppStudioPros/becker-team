@@ -8,7 +8,7 @@ import ProgramReviews from '@/components/ProgramReviews'
 export const metadata: Metadata = {
   title: 'Colorado VA Home Loans',
   description:
-    'VA home loans for veterans, active-duty service members and eligible surviving spouses. No down payment, no PMI, competitive rates. Jamie Becker, NMLS #794730.',
+    'Explore Colorado VA purchase loans with Jamie Becker, NMLS #794730. Learn how service, entitlement, appraised value and funding fees affect your options.',
   alternates: { canonical: '/loan-programs/va-loans' },
 }
 
@@ -24,12 +24,12 @@ const jsonLd = {
 
 const highlights = [
   {
-    title: 'No Down Payment Required',
+    title: 'Low or No Down Payment',
     body: 'Eligible borrowers can purchase a home with zero down — one of the most significant financial benefits available to veterans and active-duty service members.',
   },
   {
     title: 'No Private Mortgage Insurance',
-    body: 'VA loans do not require PMI, regardless of down payment. That eliminates a monthly cost that conventional borrowers without 20% equity must carry.',
+    body: 'VA purchase loans do not require monthly private mortgage insurance. If you compare loan offers, include the VA funding fee and any mortgage insurance quoted on the conventional loan.',
   },
   {
     title: 'Competitive Rates and Flexible Terms',
@@ -42,24 +42,24 @@ const highlights = [
 ]
 
 const fitProfiles = [
-  { label: 'Veterans', body: 'Honorably discharged veterans who meet minimum service requirements are eligible for this benefit.' },
+  { label: 'Veterans', body: 'VA considers when and how long you served, your type of service and character of discharge. Qualifying service can include Guard and Reserve duty.' },
   { label: 'Active-duty service members', body: 'Current members of the Armed Forces who meet service length requirements can use their VA benefit while still serving.' },
-  { label: 'Eligible surviving spouses', body: 'Unremarried surviving spouses of veterans who died in service or from a service-connected disability may qualify.' },
+  { label: 'Eligible surviving spouses', body: 'Certain surviving spouses can qualify based on the veteran’s service or circumstances of death. VA also has specific rules about remarriage.' },
   { label: 'Buyers who want to maximize purchasing power', body: 'Zero down payment means more capital preserved — a meaningful advantage for buyers who qualify.' },
 ]
 
 const faqs = [
   {
     q: 'Who is eligible for a VA loan?',
-    a: 'Veterans, active-duty service members and eligible surviving spouses who meet minimum service requirements may qualify. Eligibility is confirmed through a Certificate of Eligibility (COE) from the VA.',
+    a: 'VA issues a Certificate of Eligibility (COE) based on your dates, type and length of service and, for veterans, character of discharge. National Guard and Reserve members may qualify. Some surviving spouses qualify under separate rules. The lender still checks credit, income and occupancy.',
   },
   {
     q: 'Is there really no down payment required?',
-    a: 'In most cases, yes. Eligible VA borrowers can purchase a primary residence with zero down payment, subject to the loan amount and lender guidelines.',
+    a: 'Eligible buyers with full entitlement can usually buy with no down payment when the purchase price is within the VA appraised value. If the price exceeds the appraisal or you have only remaining entitlement, a down payment may be needed. Budget separately for closing costs.',
   },
   {
     q: 'What is the VA Funding Fee?',
-    a: 'The funding fee is a one-time charge paid at closing in lieu of mortgage insurance. The amount varies based on your down payment, loan type and whether it is your first VA loan use. Some veterans — including those with service-connected disabilities — are exempt.',
+    a: 'The funding fee is a one-time charge that you can pay at closing or finance. On a purchase it depends on your down payment and prior use of the benefit. Exempt groups include veterans receiving VA disability compensation for a service-connected disability. Ask the lender to verify your exemption.',
   },
   {
     q: 'Can I use my VA benefit more than once?',
@@ -71,21 +71,18 @@ const faqs = [
   },
   {
     q: 'Do VA loans have loan limits?',
-    a: 'For borrowers with full entitlement, there is no VA loan limit. For borrowers with reduced entitlement, limits may apply. Your lender can confirm how entitlement affects your specific scenario.',
+    a: 'With full entitlement, VA does not set a county loan limit. Your lender still determines what you can borrow based on your finances and the appraisal. With remaining entitlement, the county limit helps determine the available VA guaranty and any down payment.',
   },
 ]
 
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: [
-    { '@type': 'Question', name: 'Who is eligible for a VA loan?', acceptedAnswer: { '@type': 'Answer', text: 'Veterans, active-duty service members and eligible surviving spouses who meet minimum service requirements may qualify. Eligibility is confirmed through a Certificate of Eligibility (COE) from the VA.' } },
-    { '@type': 'Question', name: 'Is there really no down payment required?', acceptedAnswer: { '@type': 'Answer', text: 'In most cases, yes. Eligible VA borrowers can purchase a primary residence with zero down payment, subject to the loan amount and lender guidelines.' } },
-    { '@type': 'Question', name: 'What is the VA Funding Fee?', acceptedAnswer: { '@type': 'Answer', text: 'The funding fee is a one-time charge paid at closing in lieu of mortgage insurance. The amount varies based on your down payment, loan type and whether it is your first VA loan use. Some veterans — including those with service-connected disabilities — are exempt.' } },
-    { '@type': 'Question', name: 'Can I use my VA benefit more than once?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. VA loan entitlement can be restored and reused. If you have paid off a previous VA loan and sold the property, you may be able to restore your full entitlement.' } },
-    { '@type': 'Question', name: 'What types of properties can I buy with a VA loan?', acceptedAnswer: { '@type': 'Answer', text: 'VA loans are for primary residences only. This includes single-family homes, eligible condos, and multi-unit properties up to four units if the borrower occupies one unit.' } },
-    { '@type': 'Question', name: 'Do VA loans have loan limits?', acceptedAnswer: { '@type': 'Answer', text: 'For borrowers with full entitlement, there is no VA loan limit. For borrowers with reduced entitlement, limits may apply. Your lender can confirm how entitlement affects your specific scenario.' } }
-  ],
+  mainEntity: faqs.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
 }
 
 const breadcrumbJsonLd = {
@@ -149,7 +146,7 @@ export default function VaLoansPage() {
           VA Loans
         </h1>
         <p className="text-white/80 max-w-xl mx-auto text-lg mb-8">
-          An exclusive home loan benefit for veterans, active-duty service members and eligible surviving spouses — with no down payment and no PMI.
+          A primary-home loan for eligible service members, veterans and surviving spouses, with no monthly mortgage insurance and the possibility of buying with no down payment.
         </p>
         <a
           href="https://2179191.my1003app.com/794730/register"
@@ -168,7 +165,7 @@ export default function VaLoansPage() {
           className="text-center text-lg md:text-2xl leading-relaxed"
           style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
         >
-          Exclusive benefit for veterans&nbsp;&bull;&nbsp;No down payment required&nbsp;&bull;&nbsp;No private mortgage insurance
+          VA-backed purchase loans&nbsp;&bull;&nbsp;Low or no down payment&nbsp;&bull;&nbsp;No private mortgage insurance
         </p>
       </section>
 
@@ -183,7 +180,7 @@ export default function VaLoansPage() {
             What This Program Does — and Why It Matters
           </h2>
           <p className="text-gray-700 leading-relaxed mb-12 max-w-3xl text-center mx-auto">
-            The VA loan benefit exists because of service. It is one of the most powerful mortgage options available — no down payment, no private mortgage insurance, and competitive rates backed by the Department of Veterans Affairs. For eligible borrowers, it can meaningfully change what homeownership looks like financially.
+            Start with your Certificate of Eligibility to see what entitlement is available. Then ask for an estimate using the purchase price, any down payment and your funding fee status. It should show how much cash you need at closing and what you would pay each month.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {highlights.map((h, i) => (
@@ -272,7 +269,7 @@ export default function VaLoansPage() {
             <div className="flex-1 flex flex-col justify-between p-10 md:p-12" style={{ backgroundColor: '#F5EFE6' }}>
               <div className="prose-becker mb-10">
                 <p>
-                  VA loans have their own rules, timelines and documentation requirements. Working with a lender who understands the process makes a difference — especially for first-time VA buyers navigating the Certificate of Eligibility and funding fee for the first time.
+                  If you’re comparing <Link href="/va-loans-denver" className="underline decoration-[#B98942] underline-offset-4">VA loans in Denver</Link>, check condo project approval before making an offer. For a move to Fort Carson, our <Link href="/colorado-springs-va-loans" className="underline decoration-[#B98942] underline-offset-4">Colorado Springs VA loan guide</Link> explains how to discuss PCS orders and your move-in date with your lender.
                 </p>
                 <p>
                   Jamie Becker brings 21 years of mortgage experience to every file, and our team is committed to making this benefit as clear and easy to use as it should be.

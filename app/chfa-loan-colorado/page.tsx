@@ -6,7 +6,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 export const metadata: Metadata = {
   title: 'Colorado CHFA Loans and Down Payment Assistance',
   description:
-    'CHFA loan programs in Colorado. Down payment assistance, income limits, purchase price limits for 2026. Colorado Housing and Finance Authority approved lender. Jamie Becker NMLS #794730.',
+    'Compare Colorado Housing and Finance Authority home loans, income limits, grants and deferred second mortgages with Jamie Becker, NMLS #794730.',
   alternates: { canonical: 'https://www.thebeckerteam.com/chfa-loan-colorado' },
 }
 
@@ -14,7 +14,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FinancialService',
   name: 'The Becker Team — CHFA Loan Colorado',
-  description: 'CHFA-approved lender offering Colorado Housing and Finance Authority down payment assistance programs statewide.',
+  description: 'Colorado mortgage guidance on CHFA income limits, first mortgages and down payment assistance.',
   url: 'https://www.thebeckerteam.com/chfa-loan-colorado',
   telephone: '(720) 492-3335',
   email: 'Jamie@thebeckerteam.com',
@@ -40,38 +40,38 @@ const breadcrumb = {
 }
 
 const benefits = [
-  { title: 'Down Payment Assistance', body: 'CHFA provides a second mortgage (up to 4% of the first loan amount) that covers your down payment and closing costs. This second loan has a 0% interest rate and no monthly payments required during the life of the loan.' },
-  { title: 'Below-Market Interest Rates', body: 'CHFA first mortgage rates are typically competitive with or below standard market rates. Combined with the down payment assistance, the total cost of homeownership drops significantly for qualifying buyers.' },
-  { title: 'Works with FHA, VA, and Conventional', body: 'CHFA assistance pairs with FHA, VA, and conventional first mortgages. Jamie will determine which underlying loan type gives you the best overall terms based on your credit, income, and purchase price.' },
-  { title: 'Available Statewide', body: 'CHFA is not limited to any one city or county. Buyers across Colorado, from Denver and Boulder to Grand Junction and Pueblo, can access CHFA programs as long as they meet income and purchase price requirements.' },
-  { title: 'No First-Time Buyer Requirement', body: 'Despite common belief, CHFA does not require you to be a first-time buyer. If you have not owned a home in the past 3 years, or if you are purchasing in a targeted area, you may qualify even as a repeat buyer.' },
-  { title: 'Required Homebuyer Education', body: 'CHFA requires completion of a homebuyer education course before closing. These courses are available online and typically take 4-8 hours. Jamie will connect you with approved providers early in the process so it does not delay your closing.' },
+  { title: 'Down Payment and Closing Costs', body: 'With an eligible first mortgage, the standard CHFA grant can cover up to 3% of the first mortgage and the deferred second loan up to 4%. Each is capped at $25,000.' },
+  { title: 'Compare the Interest Rate', body: 'CHFA charges a higher first mortgage rate when you use its assistance. Ask for both quotes and compare your monthly payment with the cash you would save at closing.' },
+  { title: 'Eligible First Mortgages', body: 'SmartStep Plus can pair assistance with an eligible FHA, VA or USDA purchase mortgage. CHFA also has conventional options. The participating lender checks which program fits your application.' },
+  { title: 'Buying in Colorado', body: 'The home must be your primary residence. Income limits depend on the program. Some programs also limit the purchase price for your county.' },
+  { title: 'Options for Repeat Buyers', body: 'Some CHFA programs accept repeat buyers. FirstStep generally requires first-time buyer status, with exceptions for qualified veterans and homes in designated targeted areas.' },
+  { title: 'Homebuyer Education', body: 'CHFA requires approved homebuyer education before closing. You can take the course online or in person through a participating housing counseling agency.' },
 ]
 
 const faqs = [
   {
     q: 'What is a CHFA loan?',
-    a: 'CHFA stands for Colorado Housing and Finance Authority. It is a state agency that provides affordable mortgage financing and down payment assistance to Colorado homebuyers. CHFA does not lend directly. Instead, it works through approved lenders like The Becker Team. The program typically includes a competitive-rate first mortgage plus a second mortgage that provides down payment and closing cost assistance.',
+    a: 'A CHFA participating lender originates the mortgage under a Colorado Housing and Finance Authority program. Some first mortgages can be paired with a grant or a deferred second mortgage to help cover down payment and closing costs.',
   },
   {
     q: 'Who qualifies for CHFA in Colorado?',
-    a: 'CHFA has three main qualification criteria: (1) your household income must be below the program limits for your county; (2) the purchase price must be below the maximum for your county; and (3) the property must be your primary residence. You also need a minimum credit score (typically 620-640 depending on the program), and you must complete a homebuyer education course. The income limits are higher than many buyers expect, especially in Denver and Boulder counties.',
+    a: 'You must plan to use the home as your primary residence and meet the requirements of the specific program and first mortgage. A participating lender reviews credit, income, your required contribution, applicable purchase price limits and homebuyer education.',
   },
   {
     q: 'What are the income limits for CHFA in 2026?',
-    a: 'CHFA income limits vary by county and are adjusted annually. In 2026, the limits for the Denver metro area are approximately $137,000-$150,000 for a household, depending on the specific county and program. Boulder County limits are similar. Less expensive counties have lower limits. These are household limits, meaning all adult income in the home counts. Jamie can check current limits for your specific county and household size during your pre-approval consultation.',
+    a: 'Under the November 2, 2026 schedule, Denver County FirstStep has a $144,000 gross annual income limit for a one- or two-person household outside a targeted area, and a purchase price limit of $832,750. SmartStep uses a $178,920 qualifying-income limit regardless of household size. Your program, county and address determine which limits apply.',
   },
   {
     q: 'How much down payment assistance does CHFA provide?',
-    a: 'CHFA\'s down payment assistance typically comes as a second mortgage of up to 4% of the first loan amount. On a $400,000 purchase, that is up to $16,000 toward your down payment and closing costs. This second loan carries a 0% interest rate and requires no monthly payments. It is due when you sell, refinance, or pay off the first mortgage. For many buyers, this assistance is the difference between buying now and waiting years to save enough.',
+    a: 'On a $400,000 first mortgage, the standard grant can provide up to $12,000 with no repayment. The standard 0% deferred second mortgage can provide up to $16,000, with no monthly payments. Each option has a $25,000 cap. The second loan becomes due upon sale, refinance, first mortgage payoff or when the home stops being your primary residence.',
   },
   {
     q: 'Does CHFA work with FHA and VA loans?',
-    a: 'Yes. CHFA down payment assistance can pair with FHA, VA, and conventional first mortgages. For most buyers with credit scores between 620-680, FHA with CHFA assistance is the strongest combination. For buyers with stronger credit (700+), conventional with CHFA can result in lower total costs because you avoid FHA\'s upfront mortgage insurance premium. VA-eligible buyers can also use CHFA assistance to cover closing costs. Jamie will model all options and recommend the best combination for your situation.',
+    a: 'Yes. SmartStep Plus includes eligible FHA and VA purchase loans. For a VA loan, the lender must also verify VA entitlement and occupancy. Ask a participating lender for an estimate showing the first mortgage rate, assistance amount and cash due at closing.',
   },
   {
     q: 'Do I need to be a first-time buyer to use CHFA?',
-    a: 'No. While CHFA is popular with first-time buyers, the program does not strictly require it. If you have not owned a home in the past 3 years, you qualify. If you are purchasing in a CHFA "targeted area" (certain census tracts with higher need), the 3-year requirement may be waived. Jamie can check whether your situation and target purchase area meet CHFA eligibility.',
+    a: 'It depends on the program. SmartStep can serve repeat buyers. FirstStep generally requires that you have had no ownership interest in a principal residence in the previous three years. Qualified veterans and buyers in designated targeted areas may qualify for exceptions.',
   },
 ]
 
@@ -104,7 +104,7 @@ export default function ChfaLoanPage() {
           CHFA Loans in Colorado
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Colorado Housing and Finance Authority down payment assistance programs. Up to 4% toward your down payment and closing costs. Competitive rates. Available statewide.
+          Compare Colorado Housing and Finance Authority grants and deferred loans, including what you pay at closing and what you may owe when you sell.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -128,8 +128,8 @@ export default function ChfaLoanPage() {
 
       <section className="bg-white py-5 px-6 border-b border-stone-200">
         <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-2 text-sm font-semibold" style={{ color: '#1F2E2A' }}>
-          <span>✦ Up to 4% Down Payment Assistance</span>
-          <span>✦ CHFA Approved Lender</span>
+          <span>✦ Down Payment Assistance</span>
+          <span>✦ Grant and Loan Options</span>
           <span>✦ FHA, VA, and Conventional</span>
           <span>✦ 21+ Years Experience</span>
         </div>
@@ -142,10 +142,10 @@ export default function ChfaLoanPage() {
             className="text-3xl md:text-4xl font-bold mb-6"
             style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
           >
-            Down Payment Is the Biggest Barrier. CHFA Helps Remove It.
+            How Much Cash Will You Need at Closing?
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            For most Colorado buyers, especially first-time buyers, the biggest obstacle to homeownership is not the monthly payment. It is the down payment and closing costs. Coming up with $15,000-$25,000 in cash while also paying rent and managing daily expenses feels impossible for many families. That is exactly what CHFA was designed to address. The Colorado Housing and Finance Authority provides up to 4% of your loan amount as a 0% interest second mortgage, covering your down payment and much of your closing costs. No monthly payments on the second loan. Combined with an FHA or conventional first mortgage, CHFA can put homeownership within reach years sooner than saving alone. Jamie Becker (NMLS #794730) is a CHFA-approved lender with 21+ years of experience helping Colorado buyers access these programs and close successfully.
+            Start with the cash you have for the down payment and closing costs. A CHFA participating lender can quote the same purchase with and without assistance so you can compare the rate, payment and cash needed. You can also compare <Link href="/down-payment-assistance-colorado" className="underline decoration-[#B98942] underline-offset-4">other Colorado down payment assistance programs</Link> for the address you plan to buy.
           </p>
         </div>
       </section>
@@ -200,7 +200,7 @@ export default function ChfaLoanPage() {
           Let CHFA Help You Get Home
         </h2>
         <p data-reveal="fade" data-delay="150" className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Find out if you qualify for CHFA down payment assistance. Pre-approval takes less than a day.
+          Talk through your purchase price, savings and questions about CHFA assistance.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a

@@ -70,15 +70,15 @@ const faqs = [
   },
   {
     q: 'How much in assets do I need?',
-    a: 'Current materials highlight 125% of the loan amount in assets as a key benchmark, but exact requirements depend on the borrower and current program guidelines.',
+    a: 'Our benchmark is 125% of the loan amount in eligible assets left after closing. For an $800,000 loan, that works out to $1,000,000. We review which assets count and what the program requires for your loan.',
   },
   {
     q: 'What credit score do I need?',
-    a: 'Before you make an offer, we can review your credit and tell you the minimum score for the loan you are considering. Meeting the asset benchmark is one part of qualifying.',
+    a: 'The minimum credit score depends on the loan terms and lender guidelines. Meeting the asset benchmark is one part of qualifying. We can confirm the credit requirements for your loan before you make an offer.',
   },
   {
     q: 'Is an Asset Qualifier loan the same as an asset depletion loan?',
-    a: 'An asset depletion loan uses eligible assets to calculate monthly qualifying income. Some lenders call that approach asset utilization. For our Asset Qualifier loan, we compare the eligible balance left after closing with the amount you want to borrow. Our benchmark is 125% of the loan amount.',
+    a: 'The Asset Qualifier uses the eligible balance left after closing and compares it with 125% of the loan amount. An asset depletion or asset utilization loan uses eligible assets to calculate monthly qualifying income.',
   },
   {
     q: 'How many months of statements are required?',
@@ -331,7 +331,7 @@ export default function AssetQualifierPage() {
             Real-World Example
           </h2>
           <p className="text-gray-600 text-base leading-relaxed mb-10 text-center max-w-xl mx-auto">
-            Here’s how one buyer financed a $1 million purchase with 20% down.
+            One buyer financed a $1 million purchase with 20% down. The 125% asset benchmark for the $800,000 loan is $1 million in eligible assets after closing.
           </p>
 
           {/* Grid — explicit placement so equal row heights work */}
@@ -346,7 +346,7 @@ export default function AssetQualifierPage() {
               <p className="text-sm text-gray-600">$800,000</p>
             </div>
             <div className="col-start-1 row-start-3 rounded bg-white p-5 flex flex-col gap-3" style={{ border: '2px solid #1F2E2A' }}>
-              <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#1F2E2A' }}>Statements Required</p>
+              <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#1F2E2A' }}>Statements Used</p>
               <p className="text-sm text-gray-600">4 months of portfolio statements</p>
             </div>
 
@@ -356,11 +356,11 @@ export default function AssetQualifierPage() {
               <p className="text-sm text-gray-600">20%</p>
             </div>
             <div className="col-start-2 row-start-2 rounded bg-white p-5 flex flex-col gap-3" style={{ border: '2px solid #1F2E2A' }}>
-              <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#1F2E2A' }}>Required Assets Post-Closing</p>
-              <p className="text-sm text-gray-600">$1,008,000</p>
+              <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#1F2E2A' }}>Asset Benchmark After Closing</p>
+              <p className="text-sm text-gray-600">$1,000,000</p>
             </div>
             <div className="col-start-2 row-start-3 rounded bg-white p-5 flex flex-col gap-3" style={{ border: '2px solid #1F2E2A' }}>
-              <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#1F2E2A' }}>Required Paperwork</p>
+              <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#1F2E2A' }}>Documentation Used</p>
               <p className="text-sm text-gray-600">Asset statements only</p>
             </div>
 

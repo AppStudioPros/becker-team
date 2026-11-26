@@ -1,9 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import type { Metadata } from 'next'
-
-// Note: 'use client' pages don't export metadata — set it in a parent layout if needed
+import { useState } from 'react'
 
 function formatCurrency(n: number): string {
   return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(n)
@@ -47,15 +44,15 @@ export default function CalculatorPage() {
           {/* Inputs */}
           <div className="flex flex-col gap-6">
             {[
-              { label: 'Home Price', value: price, setter: setPrice, min: 50000, max: 5000000, step: 5000, prefix: '$' },
-              { label: 'Down Payment (%)', value: down, setter: setDown, min: 0, max: 100, step: 1, prefix: '' },
-              { label: 'Interest Rate (%)', value: rate, setter: setRate, min: 0.5, max: 20, step: 0.1, prefix: '' },
-              { label: 'Monthly Property Tax', value: tax, setter: setTax, min: 0, max: 3000, step: 50, prefix: '$' },
-              { label: 'Monthly Insurance', value: insurance, setter: setInsurance, min: 0, max: 2000, step: 25, prefix: '$' },
+              { id: 'home-price', label: 'Home Price', value: price, setter: setPrice, min: 50000, max: 5000000, step: 5000, prefix: '$' },
+              { id: 'down-payment', label: 'Down Payment (%)', value: down, setter: setDown, min: 0, max: 100, step: 1, prefix: '' },
+              { id: 'interest-rate', label: 'Interest Rate (%)', value: rate, setter: setRate, min: 0.5, max: 20, step: 0.1, prefix: '' },
+              { id: 'property-tax', label: 'Monthly Property Tax', value: tax, setter: setTax, min: 0, max: 3000, step: 50, prefix: '$' },
+              { id: 'home-insurance', label: 'Monthly Insurance', value: insurance, setter: setInsurance, min: 0, max: 2000, step: 25, prefix: '$' },
             ].map((field) => (
               <div key={field.label}>
                 <div className="flex justify-between mb-1">
-                  <label className="text-sm font-semibold" style={{ color: '#1F2E2A' }}>
+                  <label htmlFor={field.id} className="text-sm font-semibold" style={{ color: '#1F2E2A' }}>
                     {field.label}
                   </label>
                   <span className="text-sm font-semibold" style={{ color: '#1F2E2A' }}>
@@ -63,6 +60,7 @@ export default function CalculatorPage() {
                   </span>
                 </div>
                 <input
+                  id={field.id}
                   type="range"
                   min={field.min}
                   max={field.max}
@@ -77,13 +75,14 @@ export default function CalculatorPage() {
 
             {/* Loan term */}
             <div>
-              <label className="text-sm font-semibold block mb-2" style={{ color: '#1F2E2A' }}>
+              <span id="loan-term-label" className="text-sm font-semibold block mb-2" style={{ color: '#1F2E2A' }}>
                 Loan Term
-              </label>
-              <div className="flex gap-3">
+              </span>
+              <div role="group" aria-labelledby="loan-term-label" className="flex gap-3">
                 {[10, 15, 20, 30].map((y) => (
                   <button
                     key={y}
+                    aria-pressed={term === y}
                     onClick={() => setTerm(y)}
                     className="flex-1 py-2 text-sm font-semibold rounded border transition-colors"
                     style={{
@@ -112,7 +111,7 @@ export default function CalculatorPage() {
             </h2>
 
             <div className="text-center mb-8">
-              <p className="text-5xl font-bold text-white mb-1">{formatCurrency(total)}</p>
+              <p role="status" aria-live="polite" aria-atomic="true" className="text-5xl font-bold text-white mb-1"><span className="sr-only">Estimated monthly payment: </span>{formatCurrency(total)}</p>
               <p className="text-white/60 text-sm">per month (estimated)</p>
             </div>
 
@@ -131,7 +130,7 @@ export default function CalculatorPage() {
             </div>
 
             <p className="text-white/50 text-xs mt-6 text-center">
-              This is an estimate for informational purposes only. Contact Jamie for an accurate quote.
+              This estimate excludes mortgage insurance and HOA dues. If either applies, add it to your monthly budget.
             </p>
 
             <a

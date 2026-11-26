@@ -52,7 +52,7 @@ export default function InterestRatesPage() {
               <a href="https://www.mortgagenewsdaily.com/mortgage-rates" className="underline underline-offset-4">
                 See more rates on Mortgage News Daily
               </a>
-              <Link href="/contact" className="font-semibold underline underline-offset-4">
+              <Link href="/contact#contact-form" className="font-semibold underline underline-offset-4">
                 Ask Jamie for a personalized quote
               </Link>
             </div>
@@ -95,7 +95,7 @@ export default function InterestRatesPage() {
               Ready to find out what rate you qualify for?
             </p>
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="inline-block uppercase tracking-widest text-sm font-semibold px-14 py-5 rounded btn-hover"
               style={{ backgroundColor: '#1F2E2A', color: '#F5EFE6', border: '2px solid #1F2E2A' }}
             >

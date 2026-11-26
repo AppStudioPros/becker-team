@@ -60,7 +60,7 @@ const faqs = [
   { q: 'How do I compare mortgage lenders in Denver?', a: 'Compare written Loan Estimates for the same loan amount and term. Look at the rate, lender fees and cash you’ll need at closing. We’ll walk you through the differences and talk through the closing date in your offer.' },
   { q: 'What are current mortgage rates in Denver, CO?', a: 'Mortgage rates in Denver change daily based on market conditions. Your actual rate depends on your credit score, loan type, down payment, and loan term. Contact Jamie for a current rate quote tailored to your specific situation — rates are available for conventional, FHA, VA, and jumbo loans.' },
   { q: 'How much do I need for a down payment in Denver?', a: 'Denver down payments vary by loan type. FHA purchase loans may allow 3.5% down with a qualifying credit score of at least 580. Certain conventional programs allow 3% down on a one-unit primary home. Eligible VA buyers can often purchase with no down payment. Jumbo loans typically require 10-20%. Given Denver\'s price points, CHFA down payment assistance is also available for qualifying buyers.' },
-  { q: 'What is the CHFA program and can I use it in Denver?', a: 'CHFA (Colorado Housing and Finance Authority) offers mortgage programs and down payment assistance to qualifying buyers in Denver and elsewhere in Colorado. Income and purchase price limits apply. Jamie can tell you quickly if you qualify.' },
+  { q: 'What is the CHFA program and can I use it in Denver?', a: 'Colorado Housing and Finance Authority first mortgages and down payment assistance may be available to eligible Denver buyers. A CHFA participating lender checks program-specific income, occupancy and any purchase price limits for your address.' },
   { q: 'How long does a mortgage take to close in Denver?', a: 'If the seller has a closing date in mind, bring it to us before you sign the contract. We’ll check what your lender still needs and how much time to allow for title work and any required appraisal.' },
   { q: 'Do you serve the entire Denver metro?', a: 'Yes. The Becker Team serves all of Denver and the surrounding metro — including Aurora, Lakewood, Littleton, Centennial, Englewood, Highlands Ranch, Parker, Castle Rock, Broomfield, and Westminster. As a local lender, Jamie knows the neighborhoods and can move quickly.' },
 ]
@@ -141,10 +141,10 @@ export default function DenverMortgagePage() {
             className="text-3xl md:text-4xl font-bold mb-6"
             style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
           >
-            Denver's Local Mortgage Expert
+            Denver&apos;s Local Mortgage Expert
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            Jamie Becker (NMLS #794730) has been helping Denver buyers, homeowners, and investors navigate one of the country's most competitive housing markets for over 20 years. Jamie compares loan options from multiple wholesale lenders and walks you through the rate, monthly payment and closing costs. Whether you're buying your first home in Aurora, moving up in Lakewood, or investing in the Denver metro, you get direct access to an expert who picks up the phone.
+            Jamie Becker (NMLS #794730) has been helping Denver buyers, homeowners, and investors navigate one of the country&apos;s most competitive housing markets for over 20 years. Jamie compares loan options from multiple wholesale lenders and walks you through the rate, monthly payment and closing costs. Whether you&apos;re buying your first home in Aurora, moving up in Lakewood, or investing in the Denver metro, you get direct access to an expert who picks up the phone.
           </p>
         </div>
       </section>
@@ -242,7 +242,7 @@ export default function DenverMortgagePage() {
           Ready to Buy in Denver?
         </h2>
         <p data-reveal="fade" data-delay="150" className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Get pre-approved today and move fast in Denver's market. Jamie picks up the phone.
+          Get pre-approved today and move fast in Denver&apos;s market. Jamie picks up the phone.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a

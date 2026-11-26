@@ -6,7 +6,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 export const metadata: Metadata = {
   title: 'Aurora, CO Mortgage Broker and Home Loans',
   description:
-    'Aurora CO mortgage broker Jamie Becker (NMLS #794730) offers VA, FHA, conventional, jumbo, and specialty loans. Serving Aurora, Centennial, Parker, and the Denver metro. Fast pre-approvals, competitive rates, personal service.',
+    'Aurora CO mortgage broker Jamie Becker (NMLS #794730) offers VA, FHA, conventional, jumbo, and specialty loans. Serving Aurora, Centennial, Parker, and the Denver metro.',
   alternates: { canonical: 'https://www.thebeckerteam.com/aurora-home-loans' },
 }
 
@@ -58,10 +58,10 @@ const programs = [
 
 const faqs = [
   { q: 'Is Aurora CO a good place to buy a home?', a: "Aurora is one of Colorado's fastest-growing cities and consistently offers more affordable entry points than central Denver while still being close to major employment centers, DIA, and the Denver metro. The city has strong long-term fundamentals — diverse neighborhoods, improving infrastructure, and steady demand from military families, healthcare workers, and young professionals." },
-  { q: 'Are VA loans available in Aurora, CO?', a: "Yes. Aurora is home to a large military community, particularly near Buckley Space Force Base. VA loans are one of Jamie's areas of deep expertise — zero down payment, no PMI, and competitive rates for eligible veterans, active-duty members, and surviving spouses. Same-day pre-approvals are available." },
+  { q: 'Are VA loans available in Aurora, CO?', a: 'Yes. Eligible veterans, active-duty service members and surviving spouses in Aurora may qualify for a VA-backed loan with no down payment and no monthly mortgage insurance. A funding fee may apply.' },
   { q: 'What is the median home price in Aurora, CO?', a: "Aurora's median home prices are generally lower than central Denver, making it one of the more accessible entry points into the Denver metro. Exact pricing changes with the market — contact Jamie for current data and a pre-approval range based on your budget." },
   { q: 'Do you offer FHA loans in Aurora?', a: 'Yes. FHA loans are a strong option for Aurora first-time buyers with limited down payment funds or credit scores in the 580+ range. Colorado FHA loan limits accommodate a wide range of Aurora home prices.' },
-  { q: 'How fast can I close on an Aurora home?', a: 'The Becker Team targets 10-day closings on qualifying purchases. In Aurora, where competition can be strong near light rail corridors and established neighborhoods, a fast close and a solid pre-approval give you a real edge.' },
+  { q: 'How fast can I close on an Aurora home?', a: 'The timing depends on underwriting, any required appraisal and title work. If the seller has a specific date in mind, Jamie can walk you through what needs to happen before you agree to it.' },
   { q: 'Do you serve Centennial and Parker?', a: 'Yes. The Becker Team serves all of the Denver metro south and east — Aurora, Centennial, Parker, Lone Tree, Englewood, Foxfield, and surrounding communities.' },
 ]
 
@@ -89,7 +89,7 @@ export default function AuroraHomeLoansPage() {
           Aurora Mortgage Broker
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/80 leading-relaxed">
-          VA loans, FHA, conventional, and specialty programs for Aurora buyers — with fast pre-approvals and personal service from a lender who knows the market.
+          Compare VA, FHA, conventional and specialty loans with a mortgage broker who works with Aurora buyers.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="https://2179191.my1003app.com/794730/register" target="_blank" rel="noopener noreferrer"
@@ -109,7 +109,7 @@ export default function AuroraHomeLoansPage() {
         <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-2 text-sm font-semibold" style={{ color: '#1F2E2A' }}>
           <span>✦ VA Loan Specialist</span>
           <span>✦ Aurora CO Home Loans</span>
-          <span>✦ Same-Day Pre-Approvals</span>
+          <span>✦ Purchase Pre-Approval</span>
           <span>✦ 21+ Years Experience</span>
         </div>
       </section>
@@ -120,7 +120,7 @@ export default function AuroraHomeLoansPage() {
             Serving Aurora and the Denver Metro East
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            Aurora is one of Colorado's most dynamic cities — large, diverse, and offering some of the best value in the Denver metro. Jamie Becker (NMLS #794730) has worked with Aurora buyers across every price range and loan type for more than 20 years. The military community near Buckley Space Force Base makes Aurora one of the strongest VA loan markets in Colorado, and that's an area where Jamie has deep expertise. Whether you're a veteran using your benefit for the first time, a growing family looking for more space east of Denver, or an investor building a portfolio, the right loan structure makes a real difference.
+            Aurora is one of Colorado&apos;s most dynamic cities — large, diverse, and offering some of the best value in the Denver metro. Jamie Becker (NMLS #794730) has worked with Aurora buyers across every price range and loan type for more than 20 years. The military community near Buckley Space Force Base makes Aurora one of the strongest VA loan markets in Colorado, and that&apos;s an area where Jamie has deep expertise. Whether you&apos;re a veteran using your benefit for the first time, a growing family looking for more space east of Denver, or an investor building a portfolio, the right loan structure makes a real difference.
           </p>
         </div>
       </section>
@@ -154,9 +154,9 @@ export default function AuroraHomeLoansPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               { title: 'VA Loan Expertise', body: "Aurora's military community is one of Colorado's largest. Jamie has helped hundreds of veterans use their VA benefit and understands the nuances of the COE process, funding fee exemptions, and VA appraisals." },
-              { title: 'Broker Access — Not One Bank', body: "Being a broker means Jamie shops your loan across multiple wholesale lenders. Aurora buyers typically see better rates and more flexibility than going directly to a single bank." },
+              { title: 'Multiple Lender Options', body: 'Jamie compares loan options from multiple wholesale lenders and explains the rate, fees and cash due at closing.' },
               { title: 'First-Time Buyer Programs', body: "Aurora offers some of the most accessible entry-level pricing in the Denver metro. FHA loans, CHFA assistance programs, and conventional 3% down options are all available for qualifying buyers." },
-              { title: 'Personal Service, Fast Close', body: "No call centers. Jamie knows your name and your file. Most straightforward purchases close in 10 days — an important edge in Aurora's competitive neighborhoods." },
+              { title: 'Direct Access to Jamie', body: 'Jamie reviews your financing with you and explains what the lender still needs before closing.' },
             ].map((item) => (
               <div key={item.title} className="flex gap-4">
                 <Check size={22} className="flex-shrink-0 mt-1" style={{ color: '#1F2E2A' }} />

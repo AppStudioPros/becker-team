@@ -237,7 +237,7 @@ export default function SelfEmployedLoansPage() {
             Four Ways to Qualify
           </h2>
           <p className="text-white/70 text-sm leading-relaxed mb-12 max-w-2xl text-center mx-auto">
-            Most self-employed borrowers can qualify through one of these four documentation paths. Our team reviews your situation and determines which fits best.
+            Compare <Link href="/self-employed-mortgage-colorado" className="underline underline-offset-4">Colorado mortgage options for self-employed buyers</Link> to see how each approach documents your income. We’ll help you choose which records to gather.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {qualPaths.map((q, i) => (

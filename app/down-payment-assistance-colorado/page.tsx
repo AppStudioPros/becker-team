@@ -6,7 +6,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 export const metadata: Metadata = {
   title: 'Colorado Down Payment Assistance for Homebuyers',
   description:
-    'Complete guide to Colorado down payment assistance programs: CHFA, Metro DPA, Denver HOAP, and more. Grants, second loans, and income limits for 2026. Jamie Becker NMLS #794730.',
+    'Explore Colorado down payment assistance, including CHFA grants, deferred second mortgages and Denver metroDPA. Compare cash at closing and repayment terms.',
   alternates: { canonical: 'https://www.thebeckerteam.com/down-payment-assistance-colorado' },
 }
 
@@ -14,7 +14,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FinancialService',
   name: 'The Becker Team — Down Payment Assistance Colorado',
-  description: 'Colorado down payment assistance programs including CHFA, Metro DPA, Denver HOAP, and statewide options for first-time and qualifying buyers.',
+  description: 'Colorado down payment assistance guidance on CHFA, metroDPA, participating lenders and shared-equity options.',
   url: 'https://www.thebeckerteam.com/down-payment-assistance-colorado',
   telephone: '(720) 492-3335',
   email: 'Jamie@thebeckerteam.com',
@@ -40,38 +40,38 @@ const breadcrumb = {
 }
 
 const benefits = [
-  { title: 'CHFA (Statewide)', body: 'Colorado Housing and Finance Authority offers up to 4% of the first loan amount as a 0% interest second mortgage. No monthly payments. Available statewide to buyers who meet income and purchase price limits. Pairs with FHA, VA, and conventional first mortgages.' },
-  { title: 'Metro DPA (Denver Metro)', body: 'Metro Mortgage Assistance Plus provides down payment assistance to buyers in the Denver metro area through select lender programs. Amounts and terms vary by lender and program year. Can combine with conventional and FHA loans.' },
-  { title: 'City of Denver HOAP', body: 'The Denver Homeownership Assistance Program (HOAP) offers financial assistance to Denver residents purchasing their first home within city limits. Amounts and availability change yearly based on funding. Income-limited and targeted to Denver city buyers.' },
-  { title: 'Elevation Community Land Trust', body: 'Elevation CLT provides permanently affordable homeownership opportunities in the Denver metro by retaining land ownership while the buyer owns the home. This reduces purchase prices significantly and provides long-term affordability protections.' },
-  { title: 'Combining DPA with Loan Types', body: 'Many DPA programs work alongside FHA, VA, USDA, and conventional first mortgages. Combining a CHFA second mortgage with an FHA first mortgage is one of the most common structures in Colorado. Jamie will identify which combinations are available for your situation.' },
-  { title: 'Grant vs. Second Loan Programs', body: 'Some DPA programs provide a true grant (money that never needs to be repaid). Others provide a second mortgage with deferred payments. Understanding the structure matters for your long-term costs. Jamie explains the real difference and recommends accordingly.' },
+  { title: 'CHFA (Statewide)', body: 'With an eligible CHFA first mortgage, the standard grant can provide up to 3% of the first mortgage and the standard deferred second loan up to 4%. Both have a $25,000 cap. Assistance carries a higher first mortgage rate.' },
+  { title: 'metroDPA (Denver Area)', body: 'In participating communities, buyers can apply through a metroDPA-approved lender for a 30-year fixed-rate first mortgage. Assistance is a 0% deferred second loan, due if you pay off the first mortgage through sale or refinance, stop occupying the home as your principal residence, or reach the 30-year term.' },
+  { title: 'City and County Programs', body: 'Local programs can have their own service boundaries, application windows and funding limits. Check the property address and ask the program administrator whether it is accepting applications before you count on assistance.' },
+  { title: 'Elevation Community Land Trust', body: 'With a community land trust, you buy the home and lease the land. The ground lease sets resale terms that help keep the home affordable for the next buyer.' },
+  { title: 'Using Assistance with a First Mortgage', body: 'Ask which first mortgages the assistance program permits. A participating lender can show your required contribution, how much assistance you can use and any closing costs you still need to pay.' },
+  { title: 'Grant or Deferred Loan?', body: 'CHFA’s standard grant requires no repayment. A deferred second mortgage remains a debt. Ask what would trigger repayment if you move, sell or refinance.' },
 ]
 
 const faqs = [
   {
     q: 'What down payment assistance programs exist in Colorado?',
-    a: 'Colorado has several DPA programs at different levels. CHFA (statewide) is the most widely used, providing up to 4% as a 0% interest second mortgage. Metro DPA covers the Denver metro area with similar structures through select lenders. The City of Denver has its own HOAP program for Denver residents. Elevation Community Land Trust offers a different approach through shared equity. There are also occasional county-specific and municipal programs. Jamie stays current on all active programs and will match you with every option you qualify for.',
+    a: 'CHFA offers assistance with eligible first mortgages statewide. Denver’s metroDPA serves participating communities. Local housing agencies may offer other programs. Check the administrator for your address, its funding status and the participating lender requirement.',
   },
   {
     q: 'Can I combine down payment assistance with an FHA loan?',
-    a: 'Yes. This is one of the most common loan structures in Colorado. An FHA first mortgage requires 3.5% down, and CHFA or Metro DPA can cover that entire amount plus some or all of your closing costs. The result is that many buyers close with very little out-of-pocket cash. The key is that the DPA program must be compatible with the FHA loan, which CHFA and most Metro DPA programs are.',
+    a: 'Some programs allow this. For example, an eligible FHA purchase mortgage can pair with CHFA SmartStep Plus. Ask the participating lender to verify the required borrower contribution and the cash you would still owe after assistance.',
   },
   {
     q: 'Is down payment assistance a grant or a loan?',
-    a: 'It depends on the program. CHFA provides a second mortgage with 0% interest and no monthly payments. It is technically a loan, repayable when you sell, refinance, or pay off the first mortgage. Some Metro DPA programs are structured as forgivable loans, meaning the balance can be forgiven after a period of time (often 3-5 years) if you stay in the home. A few programs, particularly at the municipal level, offer true grants that never need repayment. Jamie will explain the structure of each program you qualify for.',
+    a: 'CHFA offers both. Its standard grant requires no repayment. Its standard deferred second mortgage becomes payable when you sell, refinance, pay off the first mortgage or stop using the home as your primary residence. Denver’s metroDPA also uses a repayable deferred second loan with a 30-year term.',
   },
   {
     q: 'What income limits apply to DPA programs in Colorado?',
-    a: 'Income limits vary by program and county. CHFA limits are typically around $137,000-$150,000 for the Denver metro in 2026, adjusted by county and household size. Metro DPA and Denver HOAP have their own limits that may be lower or higher depending on the program year. Many buyers who assume they earn too much are surprised to find they qualify. Jamie checks all applicable limits during your pre-approval consultation.',
+    a: 'The limit depends on the program. For example, CHFA SmartStep uses qualifying income while FirstStep uses gross annual income and accounts for household size and targeted areas. Local programs set their own limits. Confirm the program name, county and address with a participating lender.',
   },
   {
     q: 'Can I use down payment assistance if I have owned a home before?',
-    a: 'For most programs, yes, if you have not owned a home in the past 3 years. CHFA defines a "first-time buyer" as someone who has not had ownership interest in a primary residence in the past 3 years. If you have been renting for that period after previously owning, you qualify. Some programs also waive the 3-year requirement for purchases in targeted census tracts or for veterans.',
+    a: 'Some programs accept repeat buyers, including CHFA SmartStep and metroDPA. Others require first-time buyer status or a qualifying exception. The lender also checks the property and the requirements of the first mortgage.',
   },
   {
     q: 'How do I know which DPA program is best for my situation?',
-    a: 'The right program depends on your income, purchase price, location, credit score, and the type of first mortgage you qualify for. CHFA is available statewide and works well for most buyers. Metro DPA can sometimes provide better terms in the Denver metro. Denver HOAP is limited to city of Denver purchases. Jamie will run the numbers on every program you qualify for and recommend the one (or combination) that gives you the best overall terms.',
+    a: 'Compare written estimates for the same home with and without assistance. Look at the cash needed at closing, the first mortgage rate and monthly payment, and what you would owe if you sold or refinanced.',
   },
 ]
 
@@ -104,7 +104,7 @@ export default function DownPaymentAssistancePage() {
           Down Payment Assistance Colorado
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/80 leading-relaxed">
-          CHFA, Metro DPA, Denver HOAP, and more. Colorado has real programs that help buyers close with less cash out of pocket. Find out what you qualify for.
+          Compare CHFA and metroDPA options for your address, including the money you could use at closing and when repayment is due.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -128,7 +128,7 @@ export default function DownPaymentAssistancePage() {
 
       <section className="bg-white py-5 px-6 border-b border-stone-200">
         <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-2 text-sm font-semibold" style={{ color: '#1F2E2A' }}>
-          <span>✦ CHFA Approved Lender</span>
+          <span>✦ Colorado Homebuyer Assistance</span>
           <span>✦ Multiple DPA Programs</span>
           <span>✦ Grants and Second Loans</span>
           <span>✦ 21+ Years Experience</span>
@@ -142,10 +142,10 @@ export default function DownPaymentAssistancePage() {
             className="text-3xl md:text-4xl font-bold mb-6"
             style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
           >
-            Colorado Has More DPA Options Than Most Buyers Realize
+            Which Programs Cover Your Address?
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            The down payment is the biggest obstacle for most first-time buyers in Colorado. Coming up with $15,000-$25,000 in cash while paying rent is a math problem that does not work for many families. But Colorado has some of the strongest down payment assistance programs in the country, and many buyers who qualify never learn about them because their bank does not offer them. CHFA alone provides up to 4% of the loan amount as a 0% interest second mortgage with no monthly payments. Metro DPA, Denver HOAP, and community land trust programs add more options in specific areas. Jamie Becker (NMLS #794730) is a CHFA-approved lender who knows every active DPA program in the state. Instead of just telling you what you qualify for at one bank, Jamie checks every program, models the numbers, and recommends the best combination for your situation.
+            A Denver mailing address alone does not determine which local programs cover the home. Start with the city or county where the property is located, then ask a participating lender to compare assistance with an unassisted loan. Use both the upfront savings and the ongoing payment to decide what fits your budget.
           </p>
         </div>
       </section>
@@ -200,7 +200,7 @@ export default function DownPaymentAssistancePage() {
           Stop Saving. Start Buying.
         </h2>
         <p data-reveal="fade" data-delay="150" className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Find out which down payment assistance programs you qualify for. Pre-approval takes less than a day.
+          Share the property address and your purchase budget to discuss assistance options.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a

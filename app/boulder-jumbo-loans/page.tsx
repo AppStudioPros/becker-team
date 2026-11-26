@@ -52,10 +52,10 @@ const programs = [
 
 const faqs = [
   { q: 'What counts as a jumbo loan in Colorado?', a: `For a one-unit property in Boulder County, a loan above ${dollars.format(oneUnitLimits.Boulder[2026])} exceeds the 2026 limit. The 2027 limit is ${dollars.format(oneUnitLimits.Boulder[2027])}. Use the loan amount after your down payment and the county where the property is located.` },
-  { q: 'What are current jumbo mortgage rates in Colorado?', a: 'Jumbo rates are competitive and change daily with the market. Historically, jumbo rates are close to — and sometimes lower than — conforming rates, depending on the lender and loan profile. Contact Jamie for a current quote based on your property type, down payment, and credit profile.' },
+  { q: 'What are current jumbo mortgage rates in Colorado?', a: 'Jumbo rates change with the market and depend on the lender, property type, down payment and credit profile. Jamie can help you compare current quotes, including lender fees and cash to close.' },
   { q: 'How much down payment do I need for a jumbo loan?', a: 'Most jumbo loans require 10-20% down. Some programs allow 10% down for well-qualified borrowers with strong credit and reserves. Investment property and second home jumbo loans typically require 15-25% down.' },
   { q: 'Can I get a jumbo loan for a condo in Vail or Breckenridge?', a: 'Yes, but resort area condos often fall into the non-warrantable category — meaning they don\'t meet standard Fannie/Freddie condo guidelines due to high investor concentration or resort-hotel features. The Becker Team has access to specialty programs specifically designed for non-warrantable condo financing in mountain resort buildings.' },
-  { q: 'What credit score do I need for a jumbo loan?', a: 'Most jumbo lenders require a minimum credit score of 700-720. Stronger scores (740+) unlock the best rates. Reserves (typically 6-12 months of mortgage payments in liquid assets) are also typically required for jumbo approval.' },
+  { q: 'What credit score do I need for a jumbo loan?', a: 'Credit and reserve requirements depend on the lender, loan amount, down payment and property. Jamie can tell you what a lender will review and how much it expects you to have left after closing.' },
   { q: 'Do you offer jumbo loans for second homes in Colorado?', a: 'Yes. Second home jumbo financing is available for Colorado mountain properties — ski homes, cabins, and resort condos. These typically require 10-20% down and that the property be used personally for a portion of the year (not rented full-time, which would classify it as investment property).' },
 ]
 
@@ -92,7 +92,7 @@ export default function BoulderJumboPage() {
           className="text-4xl md:text-6xl font-bold mb-6"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
         >
-          Jumbo Loans for Colorado's Luxury Market
+          Jumbo Loans for Colorado&apos;s Luxury Market
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/80 leading-relaxed">
           Compare jumbo financing for a primary residence, a second home or a resort condo in Boulder and the Colorado mountains.
@@ -120,7 +120,7 @@ export default function BoulderJumboPage() {
       {/* Feature bar */}
       <section className="bg-white py-5 px-6 border-b border-stone-200">
         <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-2 text-sm font-semibold" style={{ color: '#1F2E2A' }}>
-          <span>✦ Best Jumbo Mortgage Rates Colorado</span>
+          <span>✦ Compare Jumbo Loan Options</span>
           <span>✦ Second Home Financing</span>
           <span>✦ Non-Warrantable Condos</span>
           <span>✦ Mountain Resort Markets</span>
@@ -201,7 +201,7 @@ export default function BoulderJumboPage() {
           The Mountain Property You Want Is Within Reach
         </h2>
         <p data-reveal="fade" data-delay="150" className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Jumbo financing for Colorado's most sought-after markets. Let's talk through your numbers.
+          Jumbo financing for Colorado&apos;s most sought-after markets. Let&apos;s talk through your numbers.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a

@@ -12,7 +12,7 @@ const faqs = [
   {
     category: 'Colorado Market',
     items: [
-      { q: 'What is the CHFA loan program in Colorado?', a: "CHFA (Colorado Housing and Finance Authority) offers below-market interest rate loans and down payment assistance to qualifying first-time homebuyers and some repeat buyers across Colorado. Income limits and purchase price caps apply and vary by county. CHFA loans can be combined with other programs to reduce your upfront costs. Contact Jamie to find out if you qualify based on your income and target purchase area." },
+      { q: 'What is the CHFA loan program in Colorado?', a: 'The Colorado Housing and Finance Authority offers first mortgages through participating lenders. Eligible buyers may pair a CHFA first mortgage with a down payment assistance grant or a second mortgage. Income limits and first-time buyer rules vary by program, and homebuyer education is required.' },
       { q: 'Does The Becker Team offer VA loans in Colorado Springs?', a: "Absolutely. Colorado Springs has one of the largest military concentrations in the country — Fort Carson, Peterson SFB, Schriever AFB, and the Air Force Academy. VA loans are a specialty at The Becker Team. Eligible veterans, active-duty service members, and surviving spouses can purchase with no down payment in many cases and no monthly mortgage insurance. Each lender sets its own rate and fees. Jamie works with military clients at all Colorado installations and statewide." },
       { q: 'Can I get a jumbo loan for a mountain property in Vail, Aspen, or Boulder?', a: "Yes. The Becker Team specializes in jumbo loans for Colorado's mountain resort markets. Vail, Aspen, Breckenridge, Boulder, and Summit County all qualify. Mountain resort properties sometimes require specialty financing including non-warrantable condo programs — Jamie has experience navigating all of it." },
       { q: 'Do you offer mortgages for self-employed borrowers in Colorado?', a: "Yes. The Bank Statement Mortgage Program lets self-employed buyers, business owners, and freelancers qualify using 12-24 months of bank statements instead of tax returns. P&L and asset depletion options are also available — ideal for Colorado's large population of remote workers and tech entrepreneurs." },
@@ -22,7 +22,7 @@ const faqs = [
   {
     category: 'Getting Started',
     items: [
-      { q: 'How do I know how much home I can afford?', a: 'Start with a pre-qualification call with Jamie. We review your income, debts, assets, and credit to give you a realistic purchase range — usually within 24 hours, at no cost.' },
+      { q: 'How do I know how much home I can afford?', a: 'Start by deciding what monthly payment and cash at closing fit your budget. Jamie can review your income, debts, assets and credit to estimate a purchase range.' },
       { q: 'What is the difference between pre-qualification and pre-approval?', a: 'Pre-qualification is a quick estimate based on self-reported information. Pre-approval is a verified review of your financials with a formal credit pull — sellers take pre-approvals more seriously.' },
       { q: 'How long does the mortgage process take?', a: 'Your closing date depends on when your lender approves the loan, whether the home needs an appraisal, and when the title work is complete. Tell us the date you’re considering and we’ll walk you through what needs to happen before then. For most home purchases, you also need to receive your Closing Disclosure at least three business days before signing.' },
       { q: 'Do I need to sell my current home before buying a new one?', a: 'Not necessarily. Bridge loans, contingent offers, or properly timed closings can allow you to buy before you sell. We help structure the right solution for your situation.' },
@@ -32,20 +32,20 @@ const faqs = [
     category: 'Down Payments & Credit',
     items: [
       { q: 'How much of a down payment do I need?', a: 'It depends on the loan type. Eligible VA buyers can often purchase with no down payment. FHA purchase loans may allow 3.5% down with a qualifying credit score of at least 580. Some conventional programs allow 3% down on a one-unit primary home. Jumbo loans typically require 10-20%.' },
-      { q: 'What credit score do I need to buy a home?', a: 'Most loan programs require a minimum score of 580-620. VA loans are sometimes more flexible. Lenders consider your score along with your down payment and loan type when they set your rate. We can review your credit and identify quick ways to improve your score before applying.' },
-      { q: 'Can I buy a home with bad credit?', a: 'It depends on how low the score is and the overall picture. FHA loans are more flexible with lower scores. In some cases, taking 3-6 months to build credit before applying saves you significantly on rate and terms.' },
+      { q: 'What credit score do I need to buy a home?', a: 'It depends on the program and lender. FHA may allow 3.5% down with a qualifying score of 580 or higher. CHFA generally requires a 620 mid-credit score, with possible exceptions for borrowers who have no score. VA sets no minimum score, though individual lenders may set one.' },
+      { q: 'Can I buy a home with bad credit?', a: 'Some programs may work with lower scores. Under FHA rules, buyers with a qualifying score of 500 to 579 may be eligible with at least 10% down. Lenders can set higher minimums and also review your finances and credit history.' },
       { q: 'Can down payment funds come from a gift?', a: 'Yes — gift funds from family members are acceptable on most loan programs including FHA and conventional loans. VA loans also allow gift funds. Proper documentation of the gift is required.' },
     ],
   },
   {
     category: 'Loan Programs',
     items: [
-      { q: 'What is a VA loan and who qualifies?', a: 'VA loans are mortgage loans backed by the Department of Veterans Affairs for eligible veterans, active-duty service members, and surviving spouses. They require no down payment, no PMI, and typically offer competitive rates.' },
-      { q: 'What is an FHA loan?', a: 'FHA loans are government-insured mortgages with down payments as low as 3.5% and more flexible credit requirements than conventional loans. Mortgage insurance is required for the life of the loan in most cases.' },
+      { q: 'What is a VA loan and who qualifies?', a: 'The Department of Veterans Affairs backs these loans for eligible veterans, active-duty service members and surviving spouses. Eligible buyers may qualify with no down payment and no monthly mortgage insurance. A VA funding fee may apply.' },
+      { q: 'What is an FHA loan?', a: 'An FHA loan is a mortgage insured by the Federal Housing Administration. Buyers may qualify with as little as 3.5% down and a qualifying credit score of at least 580. FHA loans require mortgage insurance.' },
       { q: 'What is a jumbo loan?', a: 'A jumbo loan exceeds the conforming loan limit for the property’s county, number of units and applicable year. Compare the amount you plan to borrow after the down payment with the FHFA county limit.' },
-      { q: 'What is an asset qualifier loan?', a: 'Asset qualifier loans allow borrowers to qualify based on assets rather than traditional income. Ideal for retirees, investors, or high-net-worth individuals with significant savings or investments but non-traditional income documentation.' },
+      { q: 'What is an asset qualifier loan?', a: 'This loan uses the eligible assets you have left after closing to help you qualify. Our benchmark is 125% of the loan amount. This can help buyers with substantial savings or investments, including retirees and buyers with complex tax returns.' },
       { q: 'I am self-employed — can I still get a mortgage?', a: 'Absolutely. We specialize in self-employed borrowers. Bank statement loans use 12-24 months of deposits instead of tax returns to determine qualifying income — a strong option when write-offs reduce taxable income on paper.' },
-      { q: 'What is the Mortgage Accelerator program?', a: 'The Mortgage Accelerator is a proprietary program designed to dramatically reduce the time it takes to pay off your mortgage — cutting years off the loan and saving significant interest — without increasing your monthly payment.' },
+      { q: 'What is the Mortgage Accelerator program?', a: 'The Accelerator uses a line of credit secured by your home for everyday banking. Deposits reduce the balance and withdrawals increase it. Paying down the balance faster depends on how much extra cash you can leave after bills and interest. Compare both loans using the same amount of money before deciding.' },
     ],
   },
   {

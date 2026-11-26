@@ -6,7 +6,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 export const metadata: Metadata = {
   title: 'Thornton, CO Mortgage Broker and Home Loans',
   description:
-    'Thornton CO mortgage broker Jamie Becker (NMLS #794730). FHA, conventional, VA, and CHFA loans for Thornton, Northglenn, Commerce City, Brighton, and Henderson. Fast pre-approvals.',
+    'Thornton CO mortgage broker Jamie Becker (NMLS #794730). FHA, conventional, VA, and CHFA loans for Thornton, Northglenn, Commerce City, Brighton, and Henderson.',
   alternates: { canonical: 'https://www.thebeckerteam.com/thornton-mortgage' },
 }
 
@@ -74,11 +74,11 @@ const faqs = [
   },
   {
     q: 'What are current mortgage rates in Thornton, CO?',
-    a: 'Rates change daily. As a broker, Jamie shops your loan across multiple wholesale lenders to find the most competitive rate for your credit profile, down payment, and loan type. Reach out for a current personalized rate quote.',
+    a: 'Your rate depends on the market, credit profile, down payment and loan type. Jamie can compare current quotes from multiple wholesale lenders.',
   },
   {
     q: 'How fast can I close a home loan in Thornton?',
-    a: 'The Becker Team targets 10-day closings on qualifying purchases. In Thornton\'s competitive price range, a strong pre-approval letter and a fast close timeline can make the difference when multiple buyers are interested in the same home.',
+    a: 'The timeline depends on underwriting, any required appraisal and title work. If you’re buying new construction, also check when the builder expects the home to be ready.',
   },
 ]
 
@@ -125,7 +125,7 @@ export default function ThorntonMortgagePage() {
         <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-2 text-sm font-semibold" style={{ color: '#1F2E2A' }}>
           <span>✦ North Denver Metro Lender</span>
           <span>✦ FHA and CHFA Specialists</span>
-          <span>✦ Same-Day Pre-Approvals</span>
+          <span>✦ Purchase Pre-Approval</span>
           <span>✦ 21+ Years Experience</span>
         </div>
       </section>
@@ -171,8 +171,8 @@ export default function ThorntonMortgagePage() {
             {[
               { title: 'First-Time Buyer Specialists', body: 'Thornton is a primary entry point into the Denver metro for first-time buyers. Jamie walks you through FHA, CHFA, and conventional options in plain language, then recommends what actually makes sense for your situation.' },
               { title: 'New Construction Experience', body: 'The Brighton and Henderson corridors are active new construction markets. Jamie works with builders, can often lock your rate during construction, and helps you avoid the pitfalls of builder financing that is not always in your best interest.' },
-              { title: 'Multiple Lender Options', body: 'As a broker, Jamie shops across wholesale lenders. Not just one bank\'s products. Better rates and more flexibility, especially important when every dollar of down payment matters.' },
-              { title: 'Fast Closings', body: 'Same-day pre-approvals and 10-day close targets. In Thornton\'s $400k-$500k range, homes move quickly when priced right. Having your financing ready before you find the house matters.' },
+              { title: 'Multiple Lender Options', body: 'Jamie can compare rates, lender fees and how much cash you’d need at closing with different wholesale lenders.' },
+              { title: 'Closing Date Planning', body: 'Jamie can help you factor underwriting and appraisal into your offer. For a new build, bring the builder’s expected completion date.' },
             ].map((item) => (
               <div key={item.title} className="flex gap-4">
                 <Check size={22} className="flex-shrink-0 mt-1" style={{ color: '#1F2E2A' }} />

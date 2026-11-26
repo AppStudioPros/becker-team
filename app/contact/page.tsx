@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import { jamieLicensedStates } from '@/lib/jamieLicenses'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Phone, Mail, Building2, MapPin } from 'lucide-react'
 import ContactForm from '@/components/ContactForm'
+import ContactMap from '@/components/ContactMap'
 
 export const metadata: Metadata = {
   title: 'Contact Jamie Becker, Colorado Mortgage Broker',
@@ -81,14 +83,24 @@ export default function ContactPage() {
       />
       {/* ── Hero ── */}
       <section
-        className="relative py-16 md:py-28 px-6 text-center text-white"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.62), rgba(20,35,25,0.62)), url("/images/contact-hero.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 55%',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate py-16 md:py-28 px-6 text-center text-white"
+        style={{ backgroundColor: '#1F2E2A' }}
       >
+        <Image
+          src="/images/contact-hero.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          loading="eager"
+          fetchPriority="high"
+          className="-z-20 object-cover"
+          style={{ objectPosition: 'center 55%' }}
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10"
+          style={{ backgroundImage: 'linear-gradient(rgba(20,35,25,0.62), rgba(20,35,25,0.62))' }}
+        />
         <h1
           data-reveal="fade"
           className="text-4xl md:text-6xl lg:text-7xl font-bold"
@@ -157,7 +169,7 @@ export default function ContactPage() {
                     </p>
                   </div>
                   {card.href ? (
-                    <a href={card.href} className="text-sm font-semibold block mb-1" style={{ color: '#1F2E2A' }}>
+                    <a href={card.href} className="text-sm font-semibold block mb-1 [overflow-wrap:anywhere]" style={{ color: '#1F2E2A' }}>
                       {card.value}
                     </a>
                   ) : (
@@ -172,9 +184,10 @@ export default function ContactPage() {
       </section>
 
       {/* ── Send Me a Message ── */}
-      <section className="py-14 md:py-20 px-6" style={{ backgroundColor: '#F5EFE6' }}>
+      <section id="contact-form" aria-labelledby="contact-form-title" tabIndex={-1} className="scroll-mt-32 py-14 md:py-20 px-6" style={{ backgroundColor: '#F5EFE6' }}>
         <div className="max-w-3xl mx-auto">
           <h2
+            id="contact-form-title"
             data-reveal="fade"
             className="text-3xl md:text-5xl font-bold text-center mb-10"
             style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
@@ -198,18 +211,7 @@ export default function ContactPage() {
           <p data-reveal="fade" data-delay="80" className="text-center text-gray-500 text-sm mb-8">
             Visit our office in Denver, Colorado — 201 Columbine Street, Suite 300
           </p>
-          <div data-reveal="fade" data-delay="120" className="w-full rounded overflow-hidden mb-10" style={{ height: '400px', border: '2px solid #ede4cc' }}>
-            <iframe
-              title="Office Location — Denver, CO"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3068.8831940116006!2d-104.96006832402334!3d39.71980767156022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c7e95cc4494a7%3A0xa8d5ddd4b9d21e58!2s201%20Columbine%20St%2C%20Denver%2C%20CO%2080206%2C%20USA!5e0!3m2!1sen!2sgr!4v1788866893265!5m2!1sen!2sgr"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="eager"
-              referrerPolicy="strict-origin-when-cross-origin"
-            />
-          </div>
+          <ContactMap />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
               { title: 'Parking', desc: 'Free parking available in the building lot.' },
@@ -238,14 +240,21 @@ export default function ContactPage() {
 
       {/* ── Mountain CTA ── */}
       <section
-        className="relative py-24 md:py-36 px-6 text-white text-center"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.55), rgba(20,35,25,0.55)), url("/images/cta-mountain.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate py-24 md:py-36 px-6 text-white text-center"
+        style={{ backgroundColor: '#1F2E2A' }}
       >
+        <Image
+          src="/images/cta-mountain.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="-z-20 object-cover"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10"
+          style={{ backgroundImage: 'linear-gradient(rgba(20,35,25,0.55), rgba(20,35,25,0.55))' }}
+        />
         <h2
           data-reveal="fade"
           className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5"

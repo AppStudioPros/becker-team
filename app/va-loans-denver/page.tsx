@@ -7,7 +7,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 export const metadata: Metadata = {
   title: 'VA Home Loans for Denver Veterans',
   description:
-    'VA home loans for Denver metro veterans, active-duty service members, and surviving spouses. Zero down, no PMI. Buckley SFB, Fitzsimons veterans. Jamie Becker NMLS #794730.',
+    'Explore VA purchase loans in Denver, including Certificate of Eligibility requirements, funding fee exemptions, condos and down payment options.',
   alternates: { canonical: 'https://www.thebeckerteam.com/va-loans-denver' },
 }
 
@@ -48,18 +48,18 @@ const breadcrumb = {
 }
 
 const benefits = [
-  { title: 'Zero Down Payment', body: 'VA loans require no down payment. In a metro where the median home price approaches $600,000, that saves Denver veterans $30,000-$60,000 in upfront cash versus a conventional loan.' },
-  { title: 'No Private Mortgage Insurance', body: 'VA loans have no PMI at any down payment level. On a $550,000 purchase, that is roughly $200-$400 per month in savings compared to a conventional loan with less than 20% down.' },
-  { title: 'Competitive Interest Rates', body: 'VA loans consistently carry some of the lowest rates available because the VA guaranty reduces lender risk. Jamie shops your VA loan across multiple wholesale lenders to find the best available rate.' },
-  { title: 'Flexible Credit Guidelines', body: 'VA loans are more flexible on credit history than conventional programs. If you have had credit challenges during or after service, VA financing may still be available.' },
-  { title: 'Reusable Benefit', body: 'Your VA entitlement can be used more than once. Many Denver veterans have used their benefit for 2-3 homes as they moved, upgraded, or relocated within the metro.' },
-  { title: 'VA Funding Fee Exemptions', body: 'Veterans with a service-connected disability rated 10% or higher are exempt from the VA funding fee. This saves 1.25-3.3% of the loan amount at closing.' },
+  { title: 'Buying with No Down Payment', body: 'With full entitlement, eligible buyers can often finance a home up to its appraised value without a down payment. If the agreed price is higher, you may need cash for the difference.' },
+  { title: 'No Private Mortgage Insurance', body: 'VA loans have no monthly private mortgage insurance. Compare the funding fee, closing costs and monthly payment with your conventional loan estimate.' },
+  { title: 'Compare VA Loan Rates', body: 'VA guarantees part of the loan. Each lender sets its rate and fees. Compare written estimates for the same purchase price, loan amount and term.' },
+  { title: 'Credit and Income Review', body: 'VA sets no minimum credit score. Lenders may set their own minimum and must assess credit history, income and your ability to repay.' },
+  { title: 'Using a Previous VA Benefit', body: 'If you already used a VA loan, your Certificate of Eligibility shows the entitlement available for another purchase. Ask about restoring entitlement if you sold the home and repaid the prior loan.' },
+  { title: 'VA Funding Fee Exemptions', body: 'Veterans receiving VA compensation for a service-connected disability are among those exempt. Have your lender confirm your status before including the fee in your closing costs.' },
 ]
 
 const faqs = [
   {
     q: 'Can I use a VA loan in Denver\'s competitive market?',
-    a: 'Yes, and you should. The old perception that VA loans are slow or that sellers avoid VA offers is outdated. With The Becker Team, VA buyers get same-day pre-approval letters and 10-day close timelines. A clean VA pre-approval backed by a fast, experienced lender is competitive with any conventional offer. The key is having a lender who processes VA loans efficiently and communicates clearly with listing agents.',
+    a: 'Yes. A lender can review your Certificate of Eligibility, income and credit before you make an offer. Share the proposed closing date so your lender can check the appraisal schedule and remaining underwriting steps.',
   },
   {
     q: 'What is the VA loan limit in Denver?',
@@ -67,19 +67,19 @@ const faqs = [
   },
   {
     q: 'How do I compete with conventional buyers using a VA loan?',
-    a: 'Three things make VA offers competitive in Denver: (1) a pre-approval letter from a lender with a strong VA track record, not just a generic pre-qualification; (2) a fast close timeline, The Becker Team targets 10 days; and (3) clear communication from your lender to the listing agent about the strength of your file. Many listing agents have outdated concerns about VA appraisals and timelines. A proactive lender resolves those concerns before they become objections.',
+    a: 'Ask for a pre-approval based on your documents. If you are buying a condo, check the project’s VA approval early. Your lender can explain the financing timeline to your agent before you set the deadlines in your offer.',
   },
   {
     q: 'Is there PMI on a VA loan in Denver?',
-    a: 'No. VA loans never have Private Mortgage Insurance (PMI), regardless of your down payment amount. This is one of the strongest financial benefits of VA financing. On a $550,000 Denver home with zero down, skipping PMI saves roughly $200-$400 per month compared to a conventional loan without 20% down.',
+    a: 'No. VA purchase loans have no monthly private mortgage insurance. A one-time funding fee may apply unless you qualify for an exemption. Your Loan Estimate shows the other costs due at closing.',
   },
   {
     q: 'Who is eligible for a VA loan in the Denver metro?',
-    a: 'VA loan eligibility requires minimum service time: 90 days active duty during wartime, 181 days during peacetime, 6 years in the Guard or Reserves, or being the surviving spouse of a service member who died in the line of duty. Many Denver-area veterans served at Buckley Space Force Base in Aurora, the former Fitzsimons Army Medical Center campus, or transitioned after service at installations nationwide. If you have a DD-214 or are currently serving, Jamie can verify your eligibility quickly.',
+    a: 'The same VA rules apply nationwide. Eligibility depends on when, how long and in what capacity you served, including qualifying Guard or Reserve service. Some surviving spouses qualify under separate rules. VA issues the Certificate of Eligibility, and the lender reviews credit, income and occupancy.',
   },
   {
     q: 'Can I use a VA loan to buy a condo in Denver?',
-    a: 'Yes, as long as the condo complex is VA-approved or can be approved. Many Denver metro condo complexes are already on the VA approved list. If yours is not, Jamie can help initiate the approval process. VA condo approval requires that the complex meet certain standards around owner occupancy, financial health, and insurance. It adds some steps but is usually workable.',
+    a: 'The condo must be in a VA-approved project. Give the lender the project name and address before you make an offer. If approval is pending or needs to be requested, ask what that means for your closing date.',
   },
 ]
 
@@ -112,7 +112,7 @@ export default function VaLoansDenverPage() {
           VA Loans for Denver Veterans
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Zero down. No PMI. Competitive rates for Denver metro veterans, active-duty service members, and surviving spouses. Buckley SFB, Fitzsimons, and veterans statewide.
+          Buying a primary home in the Denver metro? Check your VA entitlement, compare lender offers and see whether you can buy with no down payment.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -136,7 +136,7 @@ export default function VaLoansDenverPage() {
 
       <section className="bg-white py-5 px-6 border-b border-stone-200">
         <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-2 text-sm font-semibold" style={{ color: '#1F2E2A' }}>
-          <span>✦ Zero Down Payment</span>
+          <span>✦ Low or No Down Payment</span>
           <span>✦ No Private Mortgage Insurance</span>
           <span>✦ Competitive VA Rates</span>
           <span>✦ Buckley SFB · Fitzsimons Veterans</span>
@@ -150,10 +150,10 @@ export default function VaLoansDenverPage() {
             className="text-3xl md:text-4xl font-bold mb-6"
             style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
           >
-            Denver Has One of the Largest Veteran Populations in the West
+            Buying a Home Near Buckley Space Force Base
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            The Denver metro is home to Buckley Space Force Base in Aurora, the former Fitzsimons Army Medical Center campus, and the VA Eastern Colorado Healthcare System. Thousands of veterans and active-duty members live and work throughout the metro, from Aurora and Centennial to Lakewood and Westminster. The VA loan is one of the most powerful mortgage products available: zero down payment, no PMI, and rates that are typically lower than conventional loans. But using it effectively in Denver's competitive market requires a lender who knows how to process VA loans quickly and position VA buyers to win. Jamie Becker (NMLS #794730) has 21+ years of experience working with military buyers across Colorado, with the speed and programs to make your VA offer as competitive as any conventional one.
+            If you are relocating to Buckley Space Force Base in Aurora, bring your orders and expected move-in date when you compare Denver-area homes. Your lender can check occupancy timing, your available entitlement and whether you will need cash for an appraisal gap. For a condo, ask about VA project approval before you agree to a closing date.
           </p>
         </div>
       </section>

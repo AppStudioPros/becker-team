@@ -6,7 +6,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 export const metadata: Metadata = {
   title: 'Westminster, CO Mortgage Broker and Home Loans',
   description:
-    'Westminster CO mortgage broker Jamie Becker (NMLS #794730). Conventional, FHA, VA, jumbo, and specialty loans for Westminster buyers. Serving Westminster, Broomfield, Thornton, and the Denver-Boulder corridor. Fast pre-approvals.',
+    'Westminster CO mortgage broker Jamie Becker (NMLS #794730). Conventional, FHA, VA, jumbo, and specialty loans for Westminster buyers. Serving Westminster, Broomfield, Thornton, and the Denver-Boulder corridor.',
   alternates: { canonical: 'https://www.thebeckerteam.com/westminster-mortgage' },
 }
 
@@ -61,7 +61,7 @@ const faqs = [
   { q: 'What are current mortgage rates in Westminster, CO?', a: 'Westminster mortgage rates track the national market daily and vary based on your credit profile, loan type, and down payment. As a broker, Jamie shops your loan across multiple lenders and can typically match or beat single-bank pricing. Contact the team for a current personalized rate quote.' },
   { q: 'Do you offer VA loans in Westminster and Thornton?', a: 'Yes. VA loans are available for eligible veterans, active-duty service members, and surviving spouses throughout the north Denver metro including Westminster, Thornton, and Northglenn. Zero down payment, no PMI required.' },
   { q: 'Can tech workers in Broomfield qualify for special mortgage programs?', a: "Many Broomfield and Westminster tech workers are W-2 employees who qualify easily for conventional loans. But if you're a contractor, work on equity compensation, or have variable bonus income, those income structures can create complications. Jamie has programs for non-standard income situations and can often find solutions that standard bank underwriting won't accommodate." },
-  { q: 'How long does it take to close a mortgage in Westminster, CO?', a: "The Becker Team targets 10-day closings on straightforward purchases. In Westminster's competitive market near top schools and the US 36 corridor, a fast close and a strong pre-approval can make your offer significantly more attractive to sellers." },
+  { q: 'How long does it take to close a mortgage in Westminster, CO?', a: 'The timing depends on underwriting, any required appraisal and title work. Share the seller’s proposed date with Jamie so you can plan for those steps before you sign.' },
   { q: 'Do you serve Broomfield, Thornton, and Northglenn?', a: 'Yes. The Becker Team serves all of the north Denver metro — Westminster, Broomfield, Thornton, Northglenn, Federal Heights, Commerce City, and surrounding communities.' },
 ]
 
@@ -89,7 +89,7 @@ export default function WestminsterMortgagePage() {
           Westminster Mortgage Broker
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Home loans for Westminster, Broomfield, Thornton, and the Denver-Boulder corridor — competitive rates, personal service, fast closings.
+          Compare home loans for Westminster, Broomfield, Thornton and the Denver-Boulder corridor with Jamie Becker.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="https://2179191.my1003app.com/794730/register" target="_blank" rel="noopener noreferrer"
@@ -109,7 +109,7 @@ export default function WestminsterMortgagePage() {
         <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-2 text-sm font-semibold" style={{ color: '#1F2E2A' }}>
           <span>✦ Denver-Boulder Corridor Lender</span>
           <span>✦ Westminster Home Loans</span>
-          <span>✦ Same-Day Pre-Approvals</span>
+          <span>✦ Purchase Pre-Approval</span>
           <span>✦ 21+ Years Experience</span>
         </div>
       </section>
@@ -117,7 +117,7 @@ export default function WestminsterMortgagePage() {
       <section className="bg-white py-16 md:py-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <h2 data-reveal className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}>
-            The Denver-Boulder Corridor's Mortgage Expert
+            The Denver-Boulder Corridor&apos;s Mortgage Expert
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
             Westminster and Broomfield attract buyers who want the best of both worlds — Denver employment access and Boulder proximity, without paying Boulder prices. The US 36 tech corridor has made this one of the fastest-growing employment areas in Colorado, which means more buyers with tech compensation structures, equity, and non-standard income. Jamie Becker (NMLS #794730) has 21+ years of experience helping buyers across the Denver metro, with specialty programs designed for exactly those situations. As a broker, Jamie shops your loan across multiple lenders to find the right rate and terms — not just the one product a single bank can offer.
@@ -154,9 +154,9 @@ export default function WestminsterMortgagePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               { title: 'Tech Corridor Expertise', body: "Westminster and Broomfield attract buyers with RSUs, bonuses, and contract income. Standard banks often struggle with non-W-2 income structures — Jamie has the programs to handle them." },
-              { title: 'Multiple Lender Access', body: "As a broker, Jamie shops your loan across wholesale lenders. That typically means better rates and more product options than going to a single bank, especially at higher loan amounts." },
+              { title: 'Multiple Lender Access', body: 'Jamie compares rates, lender fees and loan terms from multiple wholesale lenders, including options for higher loan amounts.' },
               { title: 'First-Time Buyer Programs', body: "Thornton and parts of Westminster offer entry-level pricing that's accessible with FHA loans and CHFA assistance programs. Jamie can identify which programs you qualify for quickly." },
-              { title: 'Fast Pre-Approvals and Closings', body: "Same-day pre-approval letters and 10-day closings on qualifying purchases. In Westminster's competitive neighborhoods near US 36, speed matters as much as rate." },
+              { title: 'Pre-Approval and Closing', body: 'Jamie can review the documents needed for pre-approval and check a proposed closing date when you’re ready to make an offer.' },
             ].map((item) => (
               <div key={item.title} className="flex gap-4">
                 <Check size={22} className="flex-shrink-0 mt-1" style={{ color: '#1F2E2A' }} />

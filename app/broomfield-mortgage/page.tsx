@@ -6,7 +6,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 export const metadata: Metadata = {
   title: 'Broomfield, CO Mortgage Broker and Home Loans',
   description:
-    'Broomfield CO mortgage broker Jamie Becker (NMLS #794730). Conventional, FHA, VA, and jumbo loans for Broomfield, Westminster, Superior, and Louisville. Tech corridor specialists. Fast pre-approvals.',
+    'Broomfield CO mortgage broker Jamie Becker (NMLS #794730). Conventional, FHA, VA, and jumbo loans for Broomfield, Westminster, Superior, and Louisville. Tech corridor specialists.',
   alternates: { canonical: 'https://www.thebeckerteam.com/broomfield-mortgage' },
 }
 
@@ -70,15 +70,15 @@ const faqs = [
   },
   {
     q: 'How does being a mortgage broker help Broomfield buyers?',
-    a: 'As a broker, Jamie shops your loan across multiple wholesale lenders instead of offering you one bank\'s products. That typically means better rates and more loan options, especially important in Broomfield where jumbo loans and non-standard income situations are common. One application, multiple lender quotes.',
+    a: 'Jamie can compare options from several wholesale lenders. That gives you written terms to compare for your loan amount, property and income.',
   },
   {
     q: 'What are current mortgage rates in Broomfield, CO?',
-    a: 'Rates change daily and depend on your credit score, loan amount, down payment, and loan type. Jamie will pull real-time quotes from multiple lenders to find the most competitive rate for your specific scenario. Contact the team for a personalized rate quote.',
+    a: 'Rates change with the market and depend on your credit score, loan amount, down payment and loan type. Jamie can compare quotes from multiple lenders and explain the fees and cash to close.',
   },
   {
     q: 'How fast can I close a home loan in Broomfield?',
-    a: 'The Becker Team targets 10-day closings on qualifying purchases. In competitive Broomfield neighborhoods near US 36 and the tech campuses, a fast close and clean pre-approval make a meaningful difference when multiple offers are common.',
+    a: 'Closing depends on the loan, any required appraisal and title work. Tell Jamie the date you’re considering so he can review what needs to be ready first.',
   },
 ]
 
@@ -105,7 +105,7 @@ export default function BroomfieldMortgagePage() {
           Broomfield Mortgage Broker
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Home loans for Broomfield, Westminster, Superior, Louisville, and the US 36 tech corridor. Competitive rates, personal service, fast closings.
+          Compare home loans for Broomfield, Westminster, Superior, Louisville and the US 36 corridor with Jamie Becker.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="https://2179191.my1003app.com/794730/register" target="_blank" rel="noopener noreferrer"
@@ -125,7 +125,7 @@ export default function BroomfieldMortgagePage() {
         <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-2 text-sm font-semibold" style={{ color: '#1F2E2A' }}>
           <span>✦ Broomfield City-County Lender</span>
           <span>✦ US 36 Tech Corridor Specialist</span>
-          <span>✦ Same-Day Pre-Approvals</span>
+          <span>✦ Purchase Pre-Approval</span>
           <span>✦ 21+ Years Experience</span>
         </div>
       </section>
@@ -172,7 +172,7 @@ export default function BroomfieldMortgagePage() {
               { title: 'Tech Income Expertise', body: 'RSUs, bonuses, contractor pay, and equity compensation are common in Broomfield. Jamie has programs built for these income structures that most bank loan officers cannot handle.' },
               { title: 'Multiple Lender Access', body: 'As a broker, Jamie shops your loan across wholesale lenders. That means better pricing and more product options than any single bank can offer, especially important on jumbo and non-QM loans.' },
               { title: 'Jumbo Loan Specialists', body: 'Many Broomfield homes exceed conforming limits. Jamie has access to competitive jumbo programs for buyers purchasing in the $700k+ range without the rigid requirements of a single-bank jumbo product.' },
-              { title: 'Fast Pre-Approvals', body: 'Same-day pre-approval letters and 10-day closing targets. Broomfield is a competitive market, and sellers take notice when your offer comes with a strong, fast lender behind it.' },
+              { title: 'Pre-Approval Before You Shop', body: 'Bring your income documents and details about any bonuses or equity compensation. Jamie can walk you through what the lender needs to review.' },
             ].map((item) => (
               <div key={item.title} className="flex gap-4">
                 <Check size={22} className="flex-shrink-0 mt-1" style={{ color: '#1F2E2A' }} />

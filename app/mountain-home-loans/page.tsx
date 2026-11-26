@@ -53,7 +53,7 @@ const benefits = [
   { title: 'Non-Warrantable Condo Programs', body: 'Many ski town condo associations have commercial space, heavy short-term rental concentration, or investor ownership above Fannie/Freddie limits. These are non-warrantable condos, and most banks cannot finance them. Jamie has specific programs that can.' },
   { title: 'Investment Property Loans', body: 'If you plan to rent your mountain home as a primary source of income, it qualifies as investment property. Different loan terms apply. Jamie will help you structure the purchase correctly from the start.' },
   { title: 'Flexible Income Documentation', body: 'Many mountain property buyers are business owners, retirees, or investors with complex income. Bank statement loans and asset qualifier programs are available when W-2 documentation does not tell the full story.' },
-  { title: 'Fast Pre-Approvals', body: 'Mountain property markets, especially Breckenridge and Steamboat, can move quickly. Same-day pre-approval letters and focused service mean you can act when the right property comes available.' },
+  { title: 'Pre-Approval Before You Shop', body: 'Talk through your budget and how you plan to use the home. If you’re looking at a resort condo, Jamie can explain what the lender will need to review about the building.' },
 ]
 
 const faqs = [

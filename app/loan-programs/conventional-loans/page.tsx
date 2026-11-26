@@ -55,7 +55,7 @@ const faqs = [
   },
   {
     q: 'What credit score do I need?',
-    a: 'Credit requirements vary by lender and program. Your credit history, down payment and other application details affect which loans and rates are available to you.',
+    a: 'Credit requirements vary by lender, program and underwriting method. Fannie Mae’s Desktop Underwriter evaluates the overall application without a universal minimum credit score. Other programs or lenders may set a minimum. A score alone cannot establish approval.',
   },
   {
     q: 'How much down payment is required?',
@@ -63,11 +63,11 @@ const faqs = [
   },
   {
     q: 'Do I need mortgage insurance?',
-    a: 'If your down payment is less than 20%, private mortgage insurance (PMI) is typically required. It can be removed once you reach 20% equity in the home.',
+    a: 'With less than 20% down, private mortgage insurance is typically required. On most covered loans, you can request cancellation at 80% of the original home value if you meet the conditions. Automatic termination generally occurs when the balance is scheduled to reach 78% and payments are current.',
   },
   {
     q: 'What is the difference between conventional and FHA?',
-    a: 'Conventional loans are not government-backed and typically require stronger credit. FHA loans are government-insured and allow lower credit scores, but require mortgage insurance for the life of the loan in most cases.',
+    a: 'FHA insures the mortgage and charges upfront and annual mortgage insurance premiums on most purchases. Conventional loans are privately issued and may require PMI depending on the down payment. Compare the full monthly payment and insurance duration for each offer.',
   },
   {
     q: 'Can I use a conventional loan for an investment property?',
@@ -78,14 +78,11 @@ const faqs = [
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: [
-    { '@type': 'Question', name: 'What is a conventional loan?', acceptedAnswer: { '@type': 'Answer', text: 'A conventional loan is a mortgage not insured or guaranteed by a government agency such as the FHA or VA. It is originated and serviced by a private lender, with terms based on the borrower\'s credit profile and financials.' } },
-    { '@type': 'Question', name: 'What credit score do I need?', acceptedAnswer: { '@type': 'Answer', text: 'Credit requirements vary by lender and program. Your credit history, down payment and other application details affect which loans and rates are available to you.' } },
-    { '@type': 'Question', name: 'How much down payment is required?', acceptedAnswer: { '@type': 'Answer', text: 'Some conventional programs allow 3% down on a one-unit primary home. Eligibility depends on the program and may include income limits or first-time buyer requirements. With 20% down, private mortgage insurance is generally unnecessary.' } },
-    { '@type': 'Question', name: 'Do I need mortgage insurance?', acceptedAnswer: { '@type': 'Answer', text: 'If your down payment is less than 20%, private mortgage insurance (PMI) is typically required. It can be removed once you reach 20% equity in the home.' } },
-    { '@type': 'Question', name: 'What is the difference between conventional and FHA?', acceptedAnswer: { '@type': 'Answer', text: 'Conventional loans are not government-backed and typically require stronger credit. FHA loans are government-insured and allow lower credit scores, but require mortgage insurance for the life of the loan in most cases.' } },
-    { '@type': 'Question', name: 'Can I use a conventional loan for an investment property?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Conventional loans can be used for primary residences, second homes, and investment properties, subject to down payment and reserve requirements.' } }
-  ],
+  mainEntity: faqs.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
 }
 
 const breadcrumbJsonLd = {

@@ -6,7 +6,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 export const metadata: Metadata = {
   title: 'Longmont, CO Mortgage Broker and Home Loans',
   description:
-    'Longmont CO mortgage broker Jamie Becker (NMLS #794730). CHFA, FHA, conventional, and VA loans for Longmont, Firestone, Frederick, Mead, and Berthoud. First-time buyer specialists. Fast pre-approvals.',
+    'Longmont CO mortgage broker Jamie Becker (NMLS #794730). CHFA, FHA, conventional, and VA loans for Longmont, Firestone, Frederick, Mead, and Berthoud. First-time buyer specialists. Purchase financing.',
   alternates: { canonical: 'https://www.thebeckerteam.com/longmont-mortgage' },
 }
 
@@ -47,7 +47,7 @@ const breadcrumb = {
 }
 
 const programs = [
-  { label: 'CHFA Loans', desc: 'Colorado Housing and Finance Authority programs pair with FHA and conventional loans to provide down payment assistance for Longmont first-time buyers.', href: '/chfa-loan-colorado' },
+  { label: 'CHFA Loans', desc: 'Eligible CHFA first mortgages can include a grant or a deferred loan. The program and a participating lender determine eligibility.', href: '/chfa-loan-colorado' },
   { label: 'FHA Loans', desc: '3.5% down and flexible credit requirements. One of the most popular loan types for first-time buyers in Longmont, Firestone, and Frederick.', href: '/loan-programs/fha-loans' },
   { label: 'Conventional Loans', desc: 'Competitive rates for Longmont buyers with good credit. Works for everything from townhomes to single-family homes in established neighborhoods.', href: '/loan-programs/conventional-loans' },
   { label: 'VA Loans', desc: 'Zero down payment for eligible veterans and service members. No PMI. Available throughout Longmont and the northern Front Range.', href: '/loan-programs/va-loans' },
@@ -62,7 +62,7 @@ const faqs = [
   },
   {
     q: 'What mortgage programs are best for Longmont first-time buyers?',
-    a: 'FHA loans are popular in Longmont because of the lower down payment (3.5%) and more forgiving credit requirements. CHFA programs can layer on top of FHA to provide additional down payment assistance and potentially reduce closing costs. For buyers who have better credit and 5% or more saved, conventional loans can offer lower long-term costs by avoiding FHA mortgage insurance premiums long-term.',
+    a: 'Compare conventional and FHA offers for the same home. If you need help with cash at closing, a CHFA participating lender can check whether the property and your finances qualify for assistance, along with any change to your first mortgage rate.',
   },
   {
     q: 'Do you serve Firestone, Frederick, and Mead?',
@@ -78,7 +78,7 @@ const faqs = [
   },
   {
     q: 'How long does it take to close a home loan in Longmont?',
-    a: 'The Becker Team targets 10-day closings on qualifying purchases. In Longmont\'s competitive market, especially for well-priced homes near good schools and the downtown core, a fast pre-approval and quick close can make your offer stand out.',
+    a: 'Before agreeing to a closing date, ask which items still need review. The appraisal, title report, income documents and any assistance approval can each affect the timeline.',
   },
 ]
 
@@ -124,8 +124,8 @@ export default function LongmontMortgagePage() {
       <section className="bg-white py-5 px-6 border-b border-stone-200">
         <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-2 text-sm font-semibold" style={{ color: '#1F2E2A' }}>
           <span>✦ Northern Front Range Lender</span>
-          <span>✦ CHFA and FHA Specialists</span>
-          <span>✦ Same-Day Pre-Approvals</span>
+          <span>✦ CHFA and FHA Options</span>
+          <span>✦ Purchase Pre-Approvals</span>
           <span>✦ 21+ Years Experience</span>
         </div>
       </section>
@@ -169,10 +169,10 @@ export default function LongmontMortgagePage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { title: 'CHFA Expertise', body: 'Colorado Housing and Finance Authority programs can significantly reduce what first-time buyers need upfront. Jamie is a CHFA-approved lender who can identify which programs you qualify for and layer them with FHA or conventional loans.' },
+              { title: 'Down Payment Assistance', body: 'We can help you compare cash needed with and without assistance. A CHFA participating lender determines eligibility and confirms the terms for your address.' },
               { title: 'First-Time Buyer Focus', body: 'Longmont attracts a lot of first-time buyers from Boulder and the Denver metro. Jamie walks you through the process clearly, no jargon, no pressure. Just straight answers about what you qualify for and what it will cost.' },
               { title: 'Multiple Lender Options', body: 'As a broker, Jamie shops your loan across wholesale lenders. That means better rates and more flexibility. Especially valuable when you are trying to stretch a down payment in a market like Longmont.' },
-              { title: 'Fast Pre-Approvals', body: 'Same-day pre-approval letters and 10-day close targets. Longmont\'s most affordable homes move quickly. Having your pre-approval ready before you start looking puts you in a strong position.' },
+              { title: 'Planning Your Closing', body: 'Bring your target date when you request pre-approval. We can review what documents and lender decisions are still needed before you make an offer.' },
             ].map((item) => (
               <div key={item.title} className="flex gap-4">
                 <Check size={22} className="flex-shrink-0 mt-1" style={{ color: '#1F2E2A' }} />

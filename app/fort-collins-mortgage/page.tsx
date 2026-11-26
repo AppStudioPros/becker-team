@@ -7,7 +7,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 export const metadata: Metadata = {
   title: 'Fort Collins, CO Mortgage Broker and Home Loans',
   description:
-    'Local Fort Collins mortgage broker Jamie Becker (NMLS #794730) offers conventional, FHA, VA, jumbo, and specialty loans. Fast pre-approvals, competitive rates, personal service. Serving Fort Collins, Loveland, Greeley, Windsor, and Northern Colorado.',
+    'Local Fort Collins mortgage broker Jamie Becker (NMLS #794730) offers conventional, FHA, VA, jumbo, and specialty loans. Serving Fort Collins, Loveland, Greeley, Windsor, and Northern Colorado.',
   alternates: { canonical: 'https://www.thebeckerteam.com/fort-collins-mortgage' },
 }
 
@@ -59,10 +59,10 @@ const programs = [
 
 const faqs = [
   { q: 'How do I compare a Fort Collins condo with a house?', a: 'Start with the full monthly payment for each home. For a condo, include HOA dues and check what insurance and maintenance the association pays for. For a detached house, budget for those costs yourself. We can compare both payments using the same down payment and loan term.' },
-  { q: 'What are mortgage rates in Fort Collins, CO?', a: 'Mortgage rates in Fort Collins track the national market daily and vary based on your credit score, loan type, down payment, and loan term. As a broker, Jamie shops your loan across multiple lenders to find the most competitive rate for your situation. Contact the team for a personalized rate quote.' },
+  { q: 'What are mortgage rates in Fort Collins, CO?', a: 'Rates change with the market and depend on the loan type, credit profile, down payment and term. Jamie can compare current quotes from multiple lenders for the same loan amount and term.' },
   { q: 'Do you offer VA loans in Fort Collins?', a: 'Yes. VA loans are available for eligible veterans, active-duty service members, and surviving spouses throughout Northern Colorado. Zero down payment, no PMI, and competitive rates. Jamie can walk you through the Certificate of Eligibility process and get you pre-approved quickly.' },
   { q: 'Can I get a mortgage in Fort Collins if I am self-employed?', a: 'Absolutely. Many Fort Collins professionals run their own businesses or work as consultants in the tech and biotech industries. Jamie specializes in bank statement loans and asset qualifier programs designed for borrowers who cannot show traditional W-2 income.' },
-  { q: 'How fast can I close on a home in Fort Collins?', a: "The Becker Team targets 10-day closings on straightforward purchases. In Fort Collins's competitive market, a fast close and a strong pre-approval letter can be the difference between winning and losing an offer." },
+  { q: 'How fast can I close on a home in Fort Collins?', a: 'Closing depends on underwriting, any required appraisal and title work. If your Fort Collins offer has a proposed closing date, Jamie can review whether it fits the loan and the property.' },
   { q: 'Do you serve Loveland and Greeley as well?', a: 'Yes. The Becker Team serves all of Northern Colorado — Fort Collins, Loveland, Greeley, Windsor, Timnath, Wellington, and surrounding communities. Colorado licensing covers the full state.' },
 ]
 
@@ -112,7 +112,7 @@ export default function FortCollinsMortgagePage() {
         <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-2 text-sm font-semibold" style={{ color: '#1F2E2A' }}>
           <span>✦ Northern Colorado Lender</span>
           <span>✦ Fort Collins Home Loans</span>
-          <span>✦ Same-Day Pre-Approvals</span>
+          <span>✦ Purchase Pre-Approval</span>
           <span>✦ 21+ Years Experience</span>
         </div>
       </section>
@@ -121,7 +121,7 @@ export default function FortCollinsMortgagePage() {
       <section className="bg-white py-16 md:py-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <h2 data-reveal className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}>
-            Northern Colorado's Mortgage Expert
+            Northern Colorado&apos;s Mortgage Expert
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
             Whether you’re looking near CSU, moving closer to work, or comparing a Fort Collins address with a home in Timnath or Windsor, bring us the listings. We can compare the loan amount, property taxes, insurance and any HOA dues for each home so you can see what fits your budget.
@@ -161,8 +161,8 @@ export default function FortCollinsMortgagePage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { title: 'Access to Multiple Lenders', body: "As a broker, Jamie isn't limited to one bank's products. Your loan is shopped to multiple wholesale lenders, which typically means better rates and more flexibility." },
-              { title: 'Fast Pre-Approvals', body: "Fort Collins's market moves quickly. Same-day pre-approval letters give you a genuine competitive edge when making an offer in a multiple-offer situation." },
+              { title: 'Access to Multiple Lenders', body: 'Jamie compares rates and fees from multiple wholesale lenders and walks you through the written estimates.' },
+              { title: 'Pre-Approval Before You Shop', body: 'Review the payment, down payment and cash to close before you make an offer. Jamie can also tell you which documents the lender needs.' },
               { title: 'Specialty Programs Available', body: "Whether you're a CSU researcher, a tech contractor, or a remote worker, specialty programs exist for borrowers who don't fit the standard mold. Jamie knows which ones apply to you." },
               { title: 'Direct Access, Personal Service', body: "No call centers, no handoffs. Jamie handles your loan from application through closing and is reachable throughout the process." },
             ].map((item) => (
@@ -194,7 +194,7 @@ export default function FortCollinsMortgagePage() {
           Ready to Buy in Fort Collins?
         </h2>
         <p data-reveal="fade" data-delay="150" className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Get pre-approved today and be ready to move in Northern Colorado's competitive market.
+          Get pre-approved today and be ready to move in Northern Colorado&apos;s competitive market.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="https://2179191.my1003app.com/794730/register" target="_blank" rel="noopener noreferrer"

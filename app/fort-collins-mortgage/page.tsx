@@ -1,3 +1,4 @@
+import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import LocalMortgageGuide from '@/components/LocalMortgageGuide'
@@ -13,20 +14,11 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'FinancialService',
+  '@type': 'Service',
   name: 'The Becker Team — Fort Collins Mortgage Broker',
   description: 'Local mortgage lender serving Fort Collins, Loveland, Greeley, Windsor, and Northern Colorado.',
   url: 'https://www.thebeckerteam.com/fort-collins-mortgage',
-  telephone: '(720) 492-3335',
-  email: 'Jamie@thebeckerteam.com',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '201 Columbine Street, Suite 300',
-    addressLocality: 'Denver',
-    addressRegion: 'CO',
-    postalCode: '80206',
-    addressCountry: 'US',
-  },
+  provider: teamReference,
   areaServed: [
     { '@type': 'City', name: 'Fort Collins' },
     { '@type': 'City', name: 'Loveland' },
@@ -35,8 +27,6 @@ const jsonLd = {
     { '@type': 'City', name: 'Timnath' },
     { '@type': 'City', name: 'Wellington' },
   ],
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', reviewCount: '250', bestRating: '5' },
-  founder: { '@type': 'Person', name: 'Jamie Becker', identifier: 'NMLS #794730' },
 }
 
 const breadcrumb = {
@@ -49,7 +39,7 @@ const breadcrumb = {
 }
 
 const programs = [
-  { label: 'Conventional Loans', desc: '3-5% down with competitive rates — the standard choice for most Fort Collins buyers.', href: '/loan-programs/conventional-loans' },
+  { label: 'Conventional Loans', desc: 'Compare conventional loans for a Fort Collins home and see how a larger or smaller down payment affects monthly costs.', href: '/loan-programs/conventional-loans' },
   { label: 'FHA Loans', desc: 'Great for first-time buyers and CSU graduates entering the Fort Collins market. 3.5% down, flexible credit.', href: '/loan-programs/fha-loans' },
   { label: 'VA Loans', desc: 'Zero down for eligible veterans and active-duty service members in Northern Colorado.', href: '/loan-programs/va-loans' },
   { label: 'Jumbo Loans', desc: 'Financing above conforming limits for higher-value Fort Collins and Northern Colorado properties.', href: '/loan-programs/jumbo-loans' },
@@ -60,7 +50,7 @@ const programs = [
 const faqs = [
   { q: 'How do I compare a Fort Collins condo with a house?', a: 'Start with the full monthly payment for each home. For a condo, include HOA dues and check what insurance and maintenance the association pays for. For a detached house, budget for those costs yourself. We can compare both payments using the same down payment and loan term.' },
   { q: 'What are mortgage rates in Fort Collins, CO?', a: 'Rates change with the market and depend on the loan type, credit profile, down payment and term. Jamie can compare current quotes from multiple lenders for the same loan amount and term.' },
-  { q: 'Do you offer VA loans in Fort Collins?', a: 'Yes. VA loans are available for eligible veterans, active-duty service members, and surviving spouses throughout Northern Colorado. Zero down payment, no PMI, and competitive rates. Jamie can walk you through the Certificate of Eligibility process and get you pre-approved quickly.' },
+  { q: 'Do you offer VA loans in Fort Collins?', a: 'Yes. We can help eligible veterans, service members and surviving spouses in northern Colorado review their VA loan options. Start with your Certificate of Eligibility so we can check your entitlement and discuss down payment requirements for the home you want.' },
   { q: 'Can I get a mortgage in Fort Collins if I am self-employed?', a: 'Absolutely. Many Fort Collins professionals run their own businesses or work as consultants in the tech and biotech industries. Jamie specializes in bank statement loans and asset qualifier programs designed for borrowers who cannot show traditional W-2 income.' },
   { q: 'How fast can I close on a home in Fort Collins?', a: 'Closing depends on underwriting, any required appraisal and title work. If your Fort Collins offer has a proposed closing date, Jamie can review whether it fits the loan and the property.' },
   { q: 'Do you serve Loveland and Greeley as well?', a: 'Yes. The Becker Team serves all of Northern Colorado — Fort Collins, Loveland, Greeley, Windsor, Timnath, Wellington, and surrounding communities. Colorado licensing covers the full state.' },
@@ -91,7 +81,7 @@ export default function FortCollinsMortgagePage() {
           Fort Collins Mortgage Broker
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Personal service, competitive rates, and every loan program you need — from a lender who knows Northern Colorado.
+          Compare home loans for a Fort Collins house, townhome or condo with Jamie Becker.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="https://2179191.my1003app.com/794730/register" target="_blank" rel="noopener noreferrer"

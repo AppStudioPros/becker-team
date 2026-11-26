@@ -1,3 +1,4 @@
+import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -58,39 +59,35 @@ const steps = [
 const faqs = [
   {
     q: 'What is an Asset Qualifier loan?',
-    a: 'It is a mortgage option that uses eligible assets rather than traditional income documentation for qualification.',
+    a: 'Our Asset Qualifier is an asset-based mortgage for buyers who can document enough eligible funds after closing. We review the accounts you own, what you can access and how much you’ll use for the purchase. That can help if your pay stubs or tax returns tell only part of your financial story.',
   },
   {
-    q: 'What documentation is typically required?',
-    a: 'In the current example, the file was qualified with asset statements only. Your exact documentation will depend on the program and your scenario.',
+    q: 'Which account statements do I need, and how many months should I gather?',
+    a: 'Start with recent bank, brokerage or retirement statements that show your name, account balances and any limits on withdrawals. The purchase example on this page used four months of portfolio statements. We’ll confirm how much history the lender needs for your accounts and which pages to include before you gather them.',
   },
   {
     q: 'Who tends to be a strong fit?',
-    a: 'High-net-worth borrowers, retirees, and clients with complex tax returns are often strong fits.',
+    a: 'A retiree with substantial savings and a modest monthly pension is one example. If you’re buying a home in Colorado, we can look at what will remain in your accounts after the down payment and closing costs. That helps us see whether qualifying on assets makes sense for your purchase.',
   },
   {
     q: 'How much in assets do I need?',
-    a: 'Our benchmark is 125% of the loan amount in eligible assets left after closing. For an $800,000 loan, that works out to $1,000,000. We review which assets count and what the program requires for your loan.',
+    a: 'Our benchmark is 125% of the loan amount in eligible assets left after closing. For an $800,000 loan, that works out to $1 million. The money you spend on your down payment and closing costs comes out first, so we’ll check what portion of your remaining balances can count.',
   },
   {
     q: 'What credit score do I need?',
-    a: 'The minimum credit score depends on the loan terms and lender guidelines. Meeting the asset benchmark is one part of qualifying. We can confirm the credit requirements for your loan before you make an offer.',
+    a: 'The credit requirement depends on the lender and the loan terms. Having enough assets after closing covers one part of the review. Share the loan amount, your planned down payment and your credit history, and we can check the applicable minimum before you make an offer.',
   },
   {
     q: 'Is an Asset Qualifier loan the same as an asset depletion loan?',
-    a: 'The Asset Qualifier uses the eligible balance left after closing and compares it with 125% of the loan amount. An asset depletion or asset utilization loan uses eligible assets to calculate monthly qualifying income.',
-  },
-  {
-    q: 'How many months of statements are required?',
-    a: 'The current example used four months of portfolio statements. Our team will tell you exactly what applies to your situation.',
+    a: 'They use different calculations. Our Asset Qualifier looks at how much eligible money you’ll have left after closing and compares that balance with your loan amount. An asset depletion or asset utilization loan calculates monthly qualifying income from eligible assets. The lender’s rules determine which balances count and how they’re treated.',
   },
   {
     q: 'How fast can this close?',
-    a: 'Timelines vary, but one current example closed in 3 weeks.',
+    a: 'A closing date depends on when the lender can verify your accounts, review the property and finish underwriting. If you have a date in mind, share it when we first talk. We’ll check which documents you already have and what still needs to happen before you commit to a date in your offer.',
   },
   {
     q: 'Can this be used for a refinance?',
-    a: 'This program is primarily positioned as a purchase-led solution, especially for borrowers who do not fit traditional underwriting well.',
+    a: 'We generally discuss the Asset Qualifier with buyers. If you already own your home, tell us what you owe, the rate on your current loan and what you want to accomplish by refinancing. We can review your accounts and check which refinance options are available for your situation.',
   },
 ]
 
@@ -120,20 +117,7 @@ const loanJsonLd = {
   name: 'Asset Qualifier Loans',
   description: 'Asset-based mortgage qualification for borrowers with significant assets but non-traditional income. Colorado. NMLS #794730.',
   url: 'https://www.thebeckerteam.com/loan-programs/asset-qualifier-loans',
-  provider: {
-    '@type': 'FinancialService',
-    name: 'The Becker Team - Xpert Home Lending',
-    url: 'https://www.thebeckerteam.com',
-    telephone: '(720) 492-3335',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '201 Columbine Street, Suite 300',
-      addressLocality: 'Denver',
-      addressRegion: 'CO',
-      postalCode: '80206',
-      addressCountry: 'US',
-    },
-  },
+  provider: teamReference,
   areaServed: { '@type': 'State', name: 'Colorado' },
 }
 

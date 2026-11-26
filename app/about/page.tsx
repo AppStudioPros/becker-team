@@ -1,5 +1,6 @@
+import { jamieBecker } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
-import { jamieLicenses, jamieLicensedStates } from '@/lib/jamieLicenses'
+import { jamieLicenses } from '@/lib/jamieLicenses'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Calculator, TrendingUp, CheckCircle } from 'lucide-react'
@@ -12,18 +13,7 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'Jamie Becker',
-  jobTitle: 'Mortgage Broker',
-  url: 'https://www.thebeckerteam.com/about',
-  telephone: '(720) 492-3335',
-  email: 'Jamie@thebeckerteam.com',
-  identifier: 'NMLS #794730',
-  sameAs: [
-    'https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/794730',
-    'https://www.linkedin.com/in/jamie-becker-mortgage',
-    'https://www.thebeckerteam.com',
-  ],
+  ...jamieBecker,
   knowsAbout: [
     'VA Loans',
     'FHA Loans',
@@ -36,22 +26,6 @@ const jsonLd = {
     'Home Loan Process',
     'Mortgage Refinancing',
   ],
-  worksFor: {
-    '@type': 'Organization',
-    name: 'Xpert Home Lending',
-    legalName: 'Xpert Home Lending, Inc.',
-    identifier: 'NMLS #2179191',
-    url: 'https://www.thebeckerteam.com',
-  },
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '201 Columbine Street, Suite 300',
-    addressLocality: 'Denver',
-    addressRegion: 'CO',
-    postalCode: '80206',
-    addressCountry: 'US',
-  },
-  areaServed: jamieLicensedStates,
   description:
     '21+ years in mortgage lending. Background in financial advising, real estate investing, and commercial property.',
 }

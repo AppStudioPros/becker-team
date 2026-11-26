@@ -12,4 +12,5 @@ export interface ReviewsPayload {
   source: 'google' | 'testimonials'
   reviews: ReviewCardData[]
   attributions: { name: string; uri?: string }[]
+  googleSummary?: { rating: number; count: number }
 }

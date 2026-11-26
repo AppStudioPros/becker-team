@@ -1,7 +1,9 @@
+import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
+import { dollars, oneUnitLimits } from '@/lib/conformingLimits'
 
 export const metadata: Metadata = {
   title: 'Broomfield, CO Mortgage Broker and Home Loans',
@@ -12,20 +14,11 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'FinancialService',
+  '@type': 'Service',
   name: 'The Becker Team — Broomfield Colorado Mortgage Broker',
   description: 'Local mortgage lender serving Broomfield, Westminster, Thornton, Superior, and Louisville in the Denver-Boulder tech corridor.',
   url: 'https://www.thebeckerteam.com/broomfield-mortgage',
-  telephone: '(720) 492-3335',
-  email: 'Jamie@thebeckerteam.com',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '201 Columbine Street, Suite 300',
-    addressLocality: 'Denver',
-    addressRegion: 'CO',
-    postalCode: '80206',
-    addressCountry: 'US',
-  },
+  provider: teamReference,
   areaServed: [
     { '@type': 'City', name: 'Broomfield' },
     { '@type': 'City', name: 'Westminster' },
@@ -33,8 +26,6 @@ const jsonLd = {
     { '@type': 'City', name: 'Superior' },
     { '@type': 'City', name: 'Louisville' },
   ],
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', reviewCount: '250', bestRating: '5' },
-  founder: { '@type': 'Person', name: 'Jamie Becker', identifier: 'NMLS #794730' },
 }
 
 const breadcrumb = {
@@ -47,22 +38,24 @@ const breadcrumb = {
 }
 
 const programs = [
-  { label: 'Conventional Loans', desc: 'The go-to choice for most Broomfield and Superior buyers. Competitive rates, flexible terms, and no upfront mortgage insurance with 20% down.', href: '/loan-programs/conventional-loans' },
-  { label: 'Jumbo Loans', desc: 'Broomfield home prices regularly exceed conforming limits. Jumbo loans with competitive rates and flexible underwriting for higher-value purchases.', href: '/loan-programs/jumbo-loans' },
+  { label: 'Conventional Loans', desc: 'Compare a conventional mortgage for a Broomfield or Superior home. Ask how your down payment affects the payment, mortgage insurance and cash due at closing.', href: '/loan-programs/conventional-loans' },
+  { label: 'Jumbo Loans', desc: 'Explore jumbo financing when the amount you plan to borrow exceeds the conforming loan limit for your property.', href: '/loan-programs/jumbo-loans' },
   { label: 'FHA Loans', desc: '3.5% down and flexible credit requirements for Thornton and Broomfield first-time buyers stepping into the market.', href: '/loan-programs/fha-loans' },
   { label: 'VA Loans', desc: 'Zero down for eligible veterans and active-duty service members. No PMI ever. Available throughout Broomfield and the north metro.', href: '/loan-programs/va-loans' },
   { label: 'Self-Employed Loans', desc: 'Bank statement programs for contractors, consultants, and tech professionals whose income does not fit the standard W-2 mold.', href: '/loan-programs/self-employed-loans' },
   { label: 'Asset Qualifier Loans', desc: 'Qualify using investment accounts and liquid assets instead of income documentation. A strong fit for Broomfield executives and retirees.', href: '/loan-programs/asset-qualifier-loans' },
 ]
 
+// October 2026 Colorado Association of REALTORS® Local Market Update for Broomfield County.
+// https://car-co.stats.showingtime.com/docs/lmu/x/BroomfieldCounty?src=map
 const faqs = [
   {
     q: 'What is the housing market like in Broomfield, CO?',
-    a: 'Broomfield is one of the few cities in the country that is also its own county. It sits directly on US 36 between Denver and Boulder, which has made it a hub for corporate campuses — Oracle, DISH Network, and Ball Aerospace all have major operations here. Home prices reflect that demand: the median sits around $550,000-$600,000 in 2026, with higher-end homes and new builds pushing into jumbo territory. It is a competitive market with strong long-term fundamentals.',
+    a: 'In October 2026, the median sale price in Broomfield County was $700,000 for single-family homes and $475,000 for condos and townhomes. When you compare the two, include HOA dues, taxes and insurance alongside the mortgage payment.',
   },
   {
-    q: 'What mortgage programs are most popular in Broomfield?',
-    a: 'Conventional loans dominate in Broomfield because most buyers have strong credit and at least 10-20% down from equity in a previous home. Jumbo loans come up frequently given the price point. For tech workers with equity compensation, contractor income, or RSUs, Jamie has specialty programs that handle non-standard income structures that standard bank underwriting struggles with.',
+    q: 'Which home loans should I compare in Broomfield?',
+    a: `Start with how much you expect to borrow. For a one-unit home in Broomfield County, the conforming loan limit is ${dollars.format(oneUnitLimits.Broomfield[2026])} for both 2026 and 2027. If you earn bonuses, stock compensation or contract income, we can review which records the lender will need.`,
   },
   {
     q: 'Do you serve Superior and Louisville?',
@@ -136,7 +129,7 @@ export default function BroomfieldMortgagePage() {
             Broomfield: Where Denver Meets Boulder
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            Broomfield is unique in Colorado. It is both a city and its own county, sitting squarely on the US 36 corridor between Denver and Boulder. That positioning has made it a magnet for corporate campuses: Oracle, DISH Network, and Ball Aerospace all have major operations here, and dozens of smaller tech and biotech firms have followed. The result is a high-income buyer pool with complex income situations, strong demand for move-up homes, and a median price around $550,000-$600,000 in 2026. Jamie Becker (NMLS #794730) has 21+ years of experience navigating exactly this kind of market, with programs designed for tech professionals, executives, contractors, and first-time buyers alike.
+            Broomfield is both a city and a county along US 36 between Denver and Boulder. If you plan to use equity from a home sale for your next down payment, we can compare the amount you expect to borrow with the county loan limit. For buyers with stock compensation or contract income, we can also review what the lender will count toward that purchase. Jamie Becker (NMLS #794730) has 21+ years of experience navigating exactly this kind of market, with programs designed for tech professionals, executives, contractors, and first-time buyers alike.
           </p>
         </div>
       </section>
@@ -169,9 +162,9 @@ export default function BroomfieldMortgagePage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { title: 'Tech Income Expertise', body: 'RSUs, bonuses, contractor pay, and equity compensation are common in Broomfield. Jamie has programs built for these income structures that most bank loan officers cannot handle.' },
-              { title: 'Multiple Lender Access', body: 'As a broker, Jamie shops your loan across wholesale lenders. That means better pricing and more product options than any single bank can offer, especially important on jumbo and non-QM loans.' },
-              { title: 'Jumbo Loan Specialists', body: 'Many Broomfield homes exceed conforming limits. Jamie has access to competitive jumbo programs for buyers purchasing in the $700k+ range without the rigid requirements of a single-bank jumbo product.' },
+              { title: 'Tech Income Expertise', body: 'If stock awards or bonuses will help you qualify, bring your vesting schedule or pay records. We can review how the lender treats each part of your income.' },
+              { title: 'Multiple Lender Access', body: 'We can compare quotes from wholesale lenders using the same loan amount and term, so you can see the rate, lender fees and cash due at closing for each option.' },
+              { title: 'Jumbo Loan Specialists', body: 'On a $1 million Broomfield purchase, a $150,000 down payment leaves an $850,000 mortgage, below the 2026 and 2027 one-unit limit. Putting $100,000 down leaves a $900,000 mortgage, above it.' },
               { title: 'Pre-Approval Before You Shop', body: 'Bring your income documents and details about any bonuses or equity compensation. Jamie can walk you through what the lender needs to review.' },
             ].map((item) => (
               <div key={item.title} className="flex gap-4">

@@ -1,3 +1,4 @@
+import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Check } from 'lucide-react'
@@ -12,20 +13,11 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'FinancialService',
+  '@type': 'Service',
   name: 'The Becker Team — Littleton Colorado Mortgage Broker',
   description: 'Local mortgage lender serving Littleton, Highlands Ranch, Lone Tree, Castle Rock, and the south Denver suburbs.',
   url: 'https://www.thebeckerteam.com/littleton-mortgage',
-  telephone: '(720) 492-3335',
-  email: 'Jamie@thebeckerteam.com',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '201 Columbine Street, Suite 300',
-    addressLocality: 'Denver',
-    addressRegion: 'CO',
-    postalCode: '80206',
-    addressCountry: 'US',
-  },
+  provider: teamReference,
   areaServed: [
     { '@type': 'City', name: 'Littleton' },
     { '@type': 'City', name: 'Highlands Ranch' },
@@ -34,8 +26,6 @@ const jsonLd = {
     { '@type': 'City', name: 'Englewood' },
     { '@type': 'City', name: 'Centennial' },
   ],
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', reviewCount: '250', bestRating: '5' },
-  founder: { '@type': 'Person', name: 'Jamie Becker', identifier: 'NMLS #794730' },
 }
 
 const breadcrumb = {
@@ -48,8 +38,8 @@ const breadcrumb = {
 }
 
 const programs = [
-  { label: 'Conventional Loans', desc: "The most common loan type for Littleton and Highlands Ranch move-up buyers. Competitive rates, 3-5% down for qualifying buyers.", href: '/loan-programs/conventional-loans' },
-  { label: 'Jumbo Loans', desc: "Lone Tree and Highlands Ranch prices often exceed conforming limits. Jumbo loans with competitive rates and flexible underwriting for higher-value properties.", href: '/loan-programs/jumbo-loans' },
+  { label: 'Conventional Loans', desc: "Compare conventional mortgage options for your next Littleton or Highlands Ranch home, including how much cash you can keep after closing.", href: '/loan-programs/conventional-loans' },
+  { label: 'Jumbo Loans', desc: "Look at jumbo financing for a Lone Tree or Highlands Ranch property if the mortgage amount exceeds its county loan limit.", href: '/loan-programs/jumbo-loans' },
   { label: 'VA Loans', desc: "Zero down for eligible veterans and service members throughout the south Denver metro.", href: '/loan-programs/va-loans' },
   { label: 'FHA Loans', desc: "For first-time buyers entering the Littleton and Englewood market with limited down payment funds or flexible credit requirements.", href: '/loan-programs/fha-loans' },
   { label: 'Self-Employed Loans', desc: "Bank statement programs for Littleton and Castle Rock business owners. No tax returns required — qualify on actual cash flow.", href: '/loan-programs/self-employed-loans' },
@@ -59,7 +49,7 @@ const programs = [
 const faqs = [
   { q: 'Is Littleton CO a good place to buy a home?', a: "Littleton is one of the most established and family-friendly communities in the Denver metro. Downtown Littleton has a genuine walkable character, and neighborhoods like Highlands Ranch, Columbine, and South Platte Park hold value consistently. It's a suburb with real long-term staying power, especially for families prioritizing school districts and quality of life." },
   { q: 'What are typical home prices in Littleton, CO?', a: "Littleton home prices vary widely depending on the neighborhood — from entry-level condos near the light rail to $800K+ Highlands Ranch and Lone Tree properties. Prices shift with the broader market. Contact Jamie for a current pre-approval range based on your budget and the specific area you're targeting." },
-  { q: 'Do you offer jumbo loans in Highlands Ranch and Lone Tree?', a: "Yes. Properties in Highlands Ranch, Lone Tree, and parts of Centennial frequently exceed conforming loan limits. Jamie offers jumbo loan programs with competitive rates and more flexible underwriting than many banks provide for these loan amounts." },
+  { q: 'Do you offer jumbo loans in Highlands Ranch and Lone Tree?', a: "Yes. Let us know the address, price and down payment you are considering. We can check the one-unit limit for that county and explain how jumbo lenders would review the loan and your cash reserves." },
   { q: 'When should I get pre-approved for a Littleton mortgage?', a: 'Start before you make an offer. Jamie can review your documents and let you know when a pre-approval letter may be ready. Share any offer deadline when you get in touch.' },
   { q: 'What is the mortgage process like for Littleton buyers?', a: 'Start with pre-approval before you make an offer. After you go under contract, the lender reviews the loan and property, coordinates any required appraisal and works with the title company to prepare for closing.' },
   { q: 'Do you serve Castle Rock and Centennial?', a: 'Yes. The Becker Team serves all of the south Denver corridor — Littleton, Highlands Ranch, Lone Tree, Castle Rock, Centennial, Englewood, and surrounding communities.' },
@@ -153,7 +143,7 @@ export default function LittletonMortgagePage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { title: 'Jumbo and High-Balance Programs', body: "Highlands Ranch and Lone Tree prices regularly exceed conforming limits. Jamie has jumbo programs with flexible underwriting that banks often can't match." },
+              { title: 'Jumbo and High-Balance Programs', body: "If you are selling one home to buy another, we can show how applying more of the sale proceeds to your down payment would change the loan amount and financing options." },
               { title: 'Broker Access to Multiple Lenders', body: 'Jamie can compare different lenders’ rates and fees for the same loan amount and term.' },
               { title: 'Specialty Programs for Complex Situations', body: "Business owners, high-net-worth buyers, and borrowers with non-traditional income have more options than most people realize. Jamie specializes in finding the right program for the situation." },
               { title: 'Closing Date Planning', body: 'Share the seller’s closing date before you sign. Jamie can review the proposed date against the loan and any appraisal or title work still needed.' },

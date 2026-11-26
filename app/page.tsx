@@ -1,3 +1,4 @@
+import { beckerTeam } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import { jamieLicensedStates } from '@/lib/jamieLicenses'
 import Link from 'next/link'
@@ -7,7 +8,7 @@ import ZillowReviews from '@/components/ZillowReviews'
 import GoogleReviews from '@/components/GoogleReviews'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Colorado Mortgage Broker | The Becker Team' },
+  title: { absolute: 'Jamie Becker, Denver Mortgage Broker | The Becker Team' },
   alternates: { canonical: '/' },
   description:
     'Work with Jamie Becker, a Colorado mortgage broker, to compare home loans for your first purchase, next home, or self-employed income.',
@@ -41,26 +42,8 @@ const loanProgramCells = [
 
 const serviceAreaJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'FinancialService',
-  name: 'The Becker Team',
-  url: 'https://www.thebeckerteam.com',
-  telephone: '(720) 492-3335',
-  email: 'Jamie@thebeckerteam.com',
-  description: 'Colorado mortgage broker Jamie Becker (Individual NMLS #794730) specializes in VA, FHA, conventional, jumbo, self-employed and asset qualifier loans.',
-  parentOrganization: {
-    '@type': 'Organization',
-    name: 'Xpert Home Lending, Inc.',
-    identifier: 'Company NMLS #2179191',
-  },
-  founder: { '@type': 'Person', name: 'Jamie Becker', jobTitle: 'Mortgage Broker', identifier: 'Individual NMLS #794730' },
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '201 Columbine Street, Suite 300',
-    addressLocality: 'Denver',
-    addressRegion: 'CO',
-    postalCode: '80206',
-    addressCountry: 'US',
-  },
+  ...beckerTeam,
+  description: 'Denver mortgage broker Jamie Becker (Individual NMLS #794730) specializes in VA, FHA, conventional, jumbo, self-employed and asset qualifier loans.',
   areaServed: [
     { '@type': 'City', name: 'Denver', containedInPlace: { '@type': 'State', name: 'Colorado' } },
     { '@type': 'City', name: 'Boulder', containedInPlace: { '@type': 'State', name: 'Colorado' } },

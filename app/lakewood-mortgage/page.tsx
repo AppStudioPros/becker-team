@@ -1,3 +1,4 @@
+import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Check } from 'lucide-react'
@@ -12,20 +13,11 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'FinancialService',
+  '@type': 'Service',
   name: 'The Becker Team — Lakewood Colorado Mortgage Broker',
   description: 'Local mortgage lender serving Lakewood, Wheat Ridge, Golden, Morrison, and west Denver communities.',
   url: 'https://www.thebeckerteam.com/lakewood-mortgage',
-  telephone: '(720) 492-3335',
-  email: 'Jamie@thebeckerteam.com',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '201 Columbine Street, Suite 300',
-    addressLocality: 'Denver',
-    addressRegion: 'CO',
-    postalCode: '80206',
-    addressCountry: 'US',
-  },
+  provider: teamReference,
   areaServed: [
     { '@type': 'City', name: 'Lakewood' },
     { '@type': 'City', name: 'Wheat Ridge' },
@@ -34,8 +26,6 @@ const jsonLd = {
     { '@type': 'City', name: 'Edgewater' },
     { '@type': 'City', name: 'Arvada' },
   ],
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', reviewCount: '250', bestRating: '5' },
-  founder: { '@type': 'Person', name: 'Jamie Becker', identifier: 'NMLS #794730' },
 }
 
 const breadcrumb = {
@@ -48,7 +38,7 @@ const breadcrumb = {
 }
 
 const programs = [
-  { label: 'Conventional Loans', desc: "Competitive rates with 3-5% down for Lakewood's wide range of single-family homes, townhomes, and condos.", href: '/loan-programs/conventional-loans' },
+  { label: 'Conventional Loans', desc: "Explore conventional financing for a detached home, townhome or condo in Lakewood. We can compare down payment options for the property you choose.", href: '/loan-programs/conventional-loans' },
   { label: 'FHA Loans', desc: 'Flexible credit and 3.5% down — a strong option for first-time Lakewood buyers entering the market.', href: '/loan-programs/fha-loans' },
   { label: 'VA Loans', desc: 'Zero down for eligible veterans and service members. Available throughout the west Denver metro.', href: '/loan-programs/va-loans' },
   { label: 'Jumbo Loans', desc: 'Financing above conforming limits for Golden foothills properties and higher-value Lakewood homes near Green Mountain.', href: '/loan-programs/jumbo-loans' },
@@ -58,8 +48,8 @@ const programs = [
 
 const faqs = [
   { q: 'Is Lakewood CO a good place to buy a home?', a: "Lakewood is one of the most desirable suburbs in the Denver metro — close to the mountains, well-connected by light rail, and more affordable than central Denver for comparable square footage. Green Mountain, Belmar, and the Union corridor have all seen strong demand. Long-term, Lakewood holds value well because of its location between Denver and the foothills." },
-  { q: 'What are current mortgage rates in Lakewood, CO?', a: 'Rates in Lakewood track the national market and vary daily based on your credit profile, loan type, down payment, and term. As a broker, Jamie shops your loan to multiple wholesale lenders and can typically match or beat what you might get at a single bank. Contact the team for a current personalized rate quote.' },
-  { q: 'Do you offer jumbo loans for Golden and Green Mountain properties?', a: 'Yes. Properties near the foothills in Golden, Morrison, and west Lakewood often exceed conforming loan limits. Jamie offers jumbo loan programs with competitive rates and flexible underwriting for higher-value properties in these areas.' },
+  { q: 'What are current mortgage rates in Lakewood, CO?', a: 'Rates change daily. We can compare mortgage quotes for your Lakewood home using the same loan amount and term. Ask about the lock period, points and fees so you can compare what each option would cost.' },
+  { q: 'Do you offer jumbo loans for Golden and Green Mountain properties?', a: 'Yes. Start with the amount you plan to borrow after your down payment. We can check the county limit for the address, then compare the terms and reserve requirements for jumbo financing if your loan exceeds it.' },
   { q: 'Can I use a VA loan in Lakewood, CO?', a: 'Yes. Eligible Lakewood buyers may qualify for a VA-backed loan with no down payment and no monthly mortgage insurance. Jamie can help you understand the eligibility and loan requirements.' },
   { q: 'Are there programs for Lakewood condos and townhomes?', a: "Yes, though condo financing has specific eligibility requirements depending on the complex. FHA and VA condo loans require the complex to be on the approved lists. Conventional condo loans have more flexibility. Jamie can quickly determine which programs apply to a specific property before you make an offer." },
   { q: 'Do you serve Wheat Ridge, Golden, and Arvada?', a: 'Yes. The Becker Team serves all of the west Denver metro including Lakewood, Wheat Ridge, Golden, Morrison, Edgewater, Arvada, and surrounding communities.' },
@@ -89,7 +79,7 @@ export default function LakewoodMortgagePage() {
           Lakewood Mortgage Broker
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Competitive mortgage rates and personal service for Lakewood, Golden, Wheat Ridge, and the west Denver metro.
+          Compare home loans for Lakewood, Golden, Wheat Ridge and the west Denver metro with Jamie Becker.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="https://2179191.my1003app.com/794730/register" target="_blank" rel="noopener noreferrer"

@@ -1,3 +1,4 @@
+import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -51,15 +52,15 @@ const fitProfiles = [
 const faqs = [
   {
     q: 'What is a conventional loan?',
-    a: 'A conventional loan is a mortgage not insured or guaranteed by a government agency such as the FHA or VA. It is originated and serviced by a private lender, with terms based on the borrower\'s credit profile and financials.',
+    a: 'A conventional loan is a mortgage from a private lender without insurance or a guarantee from a federal housing agency. You can use one to buy a home or refinance. We’ll review your income, debts, credit history and down payment to see which loan terms fit your budget.',
   },
   {
     q: 'What credit score do I need?',
-    a: 'Credit requirements vary by lender, program and underwriting method. Fannie Mae’s Desktop Underwriter evaluates the overall application without a universal minimum credit score. Other programs or lenders may set a minimum. A score alone cannot establish approval.',
+    a: 'There’s no single credit score that covers every conventional loan. Fannie Mae’s automated review considers your credit history and the rest of your application without a universal score cutoff. Individual lenders and programs can set minimums. We can review your credit alongside your income, debts and available down payment.',
   },
   {
     q: 'How much down payment is required?',
-    a: 'Some conventional programs allow 3% down on a one-unit primary home. Eligibility depends on the program and may include income limits or first-time buyer requirements. With 20% down, private mortgage insurance is generally unnecessary.',
+    a: 'Some conventional programs allow as little as 3% down on a one-unit home you’ll live in. Depending on the program, income limits or first-time buyer rules may apply. We can compare the monthly payment and mortgage insurance at different down payments so you can decide how much cash to keep.',
   },
   {
     q: 'Do I need mortgage insurance?',
@@ -67,11 +68,11 @@ const faqs = [
   },
   {
     q: 'What is the difference between conventional and FHA?',
-    a: 'FHA insures the mortgage and charges upfront and annual mortgage insurance premiums on most purchases. Conventional loans are privately issued and may require PMI depending on the down payment. Compare the full monthly payment and insurance duration for each offer.',
+    a: 'FHA loans carry government mortgage insurance and usually have both an upfront premium and a monthly insurance charge. With a conventional loan, private mortgage insurance generally applies when you put less than 20% down. Ask us to compare cash due at closing, monthly payments and how long the insurance lasts.',
   },
   {
     q: 'Can I use a conventional loan for an investment property?',
-    a: 'Yes. Conventional loans can be used for primary residences, second homes, and investment properties, subject to down payment and reserve requirements.',
+    a: 'Yes. A conventional loan can finance a rental property. Tell us whether you plan to live in any part of the home, how many units it has and whether tenants are already there. Those details help us check the down payment, how rental income can count and how much cash you need in reserve.',
   },
 ]
 
@@ -101,20 +102,7 @@ const loanJsonLd = {
   name: 'Conventional Loans',
   description: 'Colorado mortgage broker Jamie Becker helps buyers compare fixed and adjustable rates, lender fees and down payment options for a conventional home loan.',
   url: 'https://www.thebeckerteam.com/loan-programs/conventional-loans',
-  provider: {
-    '@type': 'FinancialService',
-    name: 'The Becker Team - Xpert Home Lending',
-    url: 'https://www.thebeckerteam.com',
-    telephone: '(720) 492-3335',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '201 Columbine Street, Suite 300',
-      addressLocality: 'Denver',
-      addressRegion: 'CO',
-      postalCode: '80206',
-      addressCountry: 'US',
-    },
-  },
+  provider: teamReference,
   areaServed: { '@type': 'State', name: 'Colorado' },
 }
 

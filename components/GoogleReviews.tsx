@@ -5,10 +5,10 @@ import { ArrowLeft, ArrowRight, Pause, Play } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import useReviewCarousel from './useReviewCarousel'
 import type { ReviewCardData, ReviewsPayload } from '@/lib/googleReviewTypes'
+import { staticGoogleReviews } from '@/lib/approvedGoogleReviews'
 import styles from './GoogleReviews.module.css'
 
 const listing = 'https://www.google.com/maps?cid=14064244300182174262'
-const empty: ReviewsPayload = { source: 'testimonials', reviews: [], attributions: [] }
 
 function ReviewCard({ review, hidden }: { review: ReviewCardData; hidden: boolean }) {
   const author = (
@@ -38,18 +38,19 @@ export default function GoogleReviews() {
   const request = useRef<Promise<ReviewsPayload> | null>(null)
   const touch = useRef<{ x: number; y: number } | null>(null)
   const suppressClick = useRef(false)
-  const [payload, setPayload] = useState(empty)
-  const { reviews, attributions, source } = payload
+  const [payload, setPayload] = useState<ReviewsPayload>(staticGoogleReviews)
+  const { reviews, attributions, source, googleSummary } = payload
   const count = reviews.length
   const { track, position, paused, scrollable, move, setTouching, togglePause, hoverEvents, focusEvents } = useReviewCarousel(count)
   const google = source === 'google' && count > 0
+  const showGoogleAttribution = google || !!googleSummary
 
   useEffect(() => {
     let mounted = true
     function load() {
       request.current ??= fetch('/api/google-reviews', { cache: 'no-store' })
-        .then(async response => response.ok ? await response.json() as ReviewsPayload : empty)
-        .catch(() => empty)
+        .then(async response => response.ok ? await response.json() as ReviewsPayload : staticGoogleReviews)
+        .catch(() => staticGoogleReviews)
       void request.current.then(result => { if (mounted) setPayload(result) })
     }
     const observer = new IntersectionObserver(([entry]) => {
@@ -77,8 +78,9 @@ export default function GoogleReviews() {
     return () => observer.disconnect()
   }, [count, scrollable, track])
 
+  const index = count ? position.index % count : 0
   const ordered = scrollable
-    ? reviews.map((_, offset) => reviews[(position.index + offset) % count])
+    ? reviews.map((_, offset) => reviews[(index + offset) % count])
     : reviews
   // The leading card fills the left edge during a forward slide, including the wrap from last to first.
   const cards = scrollable ? [ordered[count - 1], ...ordered] : ordered
@@ -133,15 +135,18 @@ export default function GoogleReviews() {
         )}
         <div className={styles.footer} data-empty={count === 0}>
           <div className={styles.source}>
+            {googleSummary && <span className={styles.attribution}>
+              {googleSummary.rating.toFixed(1)} out of 5 · {googleSummary.count.toLocaleString('en-US')} Google {googleSummary.count === 1 ? 'review' : 'reviews'}
+            </span>}
             <a href={listing} className={styles.more}>More reviews</a>
-            {google && <Image src="/images/google-maps-attribution.svg" alt="Google Maps" width={98} height={18} className={styles.maps} />}
-            {google && attributions.map(({ name, uri }) => uri
+            {showGoogleAttribution && <Image src="/images/google-maps-attribution.svg" alt="Google Maps" width={98} height={18} className={styles.maps} />}
+            {showGoogleAttribution && attributions.map(({ name, uri }) => uri
               ? <a key={name + uri} href={uri} className={styles.attribution}>{name}</a>
               : <span key={name} className={styles.attribution}>{name}</span>)}
           </div>
           {scrollable && (
             <div className={styles.controls} role="group" aria-label="Review controls">
-              <span aria-hidden="true">{position.index + 1} / {count}</span>
+              <span aria-hidden="true">{index + 1} / {count}</span>
               <button type="button" aria-label="Previous review" onClick={() => move(-1)}><ArrowLeft /></button>
               <button type="button" aria-label={paused ? 'Play automatic scrolling' : 'Pause automatic scrolling'} onClick={togglePause}>
                 {paused ? <Play /> : <Pause />}
@@ -150,7 +155,7 @@ export default function GoogleReviews() {
             </div>
           )}
         </div>
-        <span className="sr-only" role="status">{scrollable && position.manual ? `Review ${position.index + 1} of ${count}, ${reviews[position.index].name}` : ''}</span>
+        <span className="sr-only" role="status">{scrollable && position.manual ? `Review ${index + 1} of ${count}, ${reviews[index].name}` : ''}</span>
       </div>
     </section>
   )

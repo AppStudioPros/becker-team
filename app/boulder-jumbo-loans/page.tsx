@@ -1,3 +1,4 @@
+import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { dollars, oneUnitLimits } from '@/lib/conformingLimits'
@@ -13,12 +14,11 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'FinancialService',
+  '@type': 'Service',
   name: 'The Becker Team — Jumbo Loans Colorado',
   description: 'Jumbo mortgage specialist serving Boulder, Aspen, Vail, Breckenridge, Summit County, and Colorado\'s luxury and mountain resort markets.',
   url: 'https://www.thebeckerteam.com/boulder-jumbo-loans',
-  telephone: '(720) 492-3335',
-  email: 'Jamie@thebeckerteam.com',
+  provider: teamReference,
   areaServed: [
     { '@type': 'City', name: 'Boulder' },
     { '@type': 'City', name: 'Vail' },
@@ -29,7 +29,6 @@ const jsonLd = {
     { '@type': 'AdministrativeArea', name: 'Eagle County' },
     { '@type': 'AdministrativeArea', name: 'Pitkin County' },
   ],
-  founder: { '@type': 'Person', name: 'Jamie Becker', identifier: 'NMLS #794730' },
 }
 
 const breadcrumb = {
@@ -42,7 +41,7 @@ const breadcrumb = {
 }
 
 const programs = [
-  { title: 'Primary Residence Jumbo', body: 'Purchase or refinance your primary home above conforming limits. Competitive rates, strong underwriting, and multiple term options.' },
+  { title: 'Primary Residence Jumbo', body: 'Compare rates, lender fees and reserve requirements for a purchase or refinance when your mortgage exceeds the county limit.' },
   { title: 'Second Home & Vacation Property', body: 'Finance a ski chalet in Vail, a mountain retreat in Aspen, or a summer home in Summit County — second home jumbo programs available.' },
   { title: 'Investment Property Jumbo', body: 'Expand your portfolio with investment property jumbo financing. Ideal for rental properties in high-demand Colorado resort and tech corridors.' },
   { title: 'Non-Warrantable Condo Financing', body: 'Many Colorado mountain resort condos don\'t meet conventional or conforming guidelines. We have specialty programs for non-warrantable condo purchases in resort buildings.' },

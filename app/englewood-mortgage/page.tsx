@@ -1,3 +1,4 @@
+import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Check } from 'lucide-react'
@@ -12,20 +13,11 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'FinancialService',
+  '@type': 'Service',
   name: 'The Becker Team — Englewood Colorado Mortgage Lender',
   description: 'Local mortgage lender serving Englewood, Sheridan, Cherry Hills Village, Greenwood Village, and Centennial.',
   url: 'https://www.thebeckerteam.com/englewood-mortgage',
-  telephone: '(720) 492-3335',
-  email: 'Jamie@thebeckerteam.com',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '201 Columbine Street, Suite 300',
-    addressLocality: 'Denver',
-    addressRegion: 'CO',
-    postalCode: '80206',
-    addressCountry: 'US',
-  },
+  provider: teamReference,
   areaServed: [
     { '@type': 'City', name: 'Englewood' },
     { '@type': 'City', name: 'Sheridan' },
@@ -33,8 +25,6 @@ const jsonLd = {
     { '@type': 'City', name: 'Greenwood Village' },
     { '@type': 'City', name: 'Centennial' },
   ],
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', reviewCount: '250', bestRating: '5' },
-  founder: { '@type': 'Person', name: 'Jamie Becker', identifier: 'NMLS #794730' },
 }
 
 const breadcrumb = {
@@ -50,7 +40,7 @@ const programs = [
   { label: 'FHA Loans', desc: '3.5% down and flexible credit requirements make FHA a great entry point for Englewood and Sheridan first-time buyers. Strong demand in this market.', href: '/loan-programs/fha-loans' },
   { label: 'Conventional Loans', desc: 'The most common loan type in Englewood. Works well across the full range from starter condos to luxury single-family homes in Cherry Hills Village.', href: '/loan-programs/conventional-loans' },
   { label: 'VA Loans', desc: 'Zero down for eligible veterans and active-duty service members. No PMI. Available throughout Englewood and the south Denver metro.', href: '/loan-programs/va-loans' },
-  { label: 'Jumbo Loans', desc: 'Cherry Hills Village and Greenwood Village luxury homes regularly exceed conforming limits. Competitive jumbo programs with flexible underwriting.', href: '/loan-programs/jumbo-loans' },
+  { label: 'Jumbo Loans', desc: 'For a home in Cherry Hills Village or Greenwood Village, compare jumbo options if your expected mortgage exceeds the county limit.', href: '/loan-programs/jumbo-loans' },
   { label: 'Self-Employed Loans', desc: 'Bank statement programs for Englewood business owners, freelancers, and contractors who prefer alternatives to W-2 income documentation.', href: '/loan-programs/self-employed-loans' },
   { label: 'Asset Qualifier Loans', desc: 'Qualify using liquid assets and investment accounts — a strong fit for Cherry Hills and Greenwood Village buyers with substantial net worth.', href: '/loan-programs/asset-qualifier-loans' },
 ]

@@ -1,6 +1,7 @@
 'use client'
 
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useRef } from 'react'
+import useReviewCarousel from './useReviewCarousel'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, Pause, Play } from 'lucide-react'
@@ -9,82 +10,15 @@ import ZillowReviewCard from './ZillowReviewCard'
 import styles from './ZillowReviews.module.css'
 
 const profile = 'https://www.zillow.com/lender-profile/Jamie%20Becker/#reviews'
-const motionQuery = '(prefers-reduced-motion: reduce)'
 const total = reviews.length
 
 export default function ZillowReviews() {
-  const track = useRef<HTMLUListElement>(null)
-  const animation = useRef<Animation | null>(null)
+  const { track, columns, position, paused, move, setTouching, togglePause, hoverEvents, focusEvents } = useReviewCarousel(total)
   const touch = useRef<{ x: number; y: number } | null>(null)
-  const [position, setPosition] = useState({ index: 0, direction: 0, manual: false })
-  const [columns, setColumns] = useState(3)
-  const [paused, setPaused] = useState(true)
-  const [hovered, setHovered] = useState(false)
-  const [keyboardFocus, setKeyboardFocus] = useState(false)
-  const [touching, setTouching] = useState(false)
-  const [inView, setInView] = useState(false)
-  const [pageVisible, setPageVisible] = useState(true)
-  const hold = paused || hovered || keyboardFocus || touching || !inView || !pageVisible
-
-  function move(direction: number, manual = true) {
-    setPosition(({ index }) => ({ index: (index + direction + total) % total, direction, manual }))
-  }
-
-  useEffect(() => {
-    const list = track.current
-    if (!list) return
-    const motion = window.matchMedia(motionQuery)
-    const motionChanged = () => { if (motion.matches) setPaused(true) }
-    const visibilityChanged = () => setPageVisible(!document.hidden)
-    const resize = () => setColumns(Number(getComputedStyle(list).getPropertyValue('--columns')))
-    setPaused(motion.matches)
-    visibilityChanged()
-    resize()
-    const intersection = new IntersectionObserver(([entry]) => setInView(entry.isIntersecting))
-    const size = new ResizeObserver(resize)
-    intersection.observe(list)
-    size.observe(list)
-    motion.addEventListener('change', motionChanged)
-    document.addEventListener('visibilitychange', visibilityChanged)
-    return () => {
-      intersection.disconnect()
-      size.disconnect()
-      motion.removeEventListener('change', motionChanged)
-      document.removeEventListener('visibilitychange', visibilityChanged)
-    }
-  }, [])
-
-  useEffect(() => {
-    if (hold) return
-    const timer = window.setTimeout(() => move(1, false), 6500)
-    return () => window.clearTimeout(timer)
-  }, [position, hold])
-
-  useLayoutEffect(() => {
-    const list = track.current
-    if (!list || !position.direction || window.matchMedia(motionQuery).matches) return
-    const step = list.children[1].getBoundingClientRect().left - list.children[0].getBoundingClientRect().left
-    const slide = list.animate(
-      [{ transform: `translateX(${step * position.direction}px)` }, { transform: 'translateX(0)' }],
-      { duration: 440, easing: 'cubic-bezier(.2,.7,.2,1)' },
-    )
-    animation.current = slide
-    return () => { slide.cancel(); animation.current = null }
-  }, [position])
-
-  useLayoutEffect(() => {
-    const slide = animation.current
-    if (!slide || position.manual || slide.playState === 'finished') return
-    if (hold) slide.pause()
-    else if (slide.playState === 'paused') slide.play()
-  }, [hold, position])
 
   return (
     <section id="becker-home-reviews" className={styles.section} aria-labelledby="becker-voices-title"
-      onPointerEnter={e => { if (e.pointerType !== 'touch') setHovered(true) }}
-      onPointerLeave={() => setHovered(false)}
-      onFocus={e => setKeyboardFocus(e.target !== e.currentTarget && e.target.matches(':focus-visible'))}
-      onBlur={e => { if (!e.currentTarget.contains(e.relatedTarget)) setKeyboardFocus(false) }}
+      {...focusEvents}
     >
       <header className={styles.intro}>
         <div>
@@ -96,7 +30,6 @@ export default function ZillowReviews() {
       <div
         className={styles.carousel} role="region" aria-roledescription="carousel" aria-label="Jamie Becker’s Zillow reviews"
         onKeyDown={e => {
-          setKeyboardFocus(true)
           if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
             e.preventDefault()
             move(e.key === 'ArrowLeft' ? -1 : 1)
@@ -105,6 +38,7 @@ export default function ZillowReviews() {
       >
         <div
           className={styles.window}
+          {...hoverEvents}
           onPointerDown={e => {
             if (!e.isPrimary || e.pointerType === 'mouse') return
             touch.current = { x: e.clientX, y: e.clientY }
@@ -140,7 +74,7 @@ export default function ZillowReviews() {
           <div className={styles.controls} role="group" aria-label="Review controls">
             <span className={styles.count} aria-hidden="true">{position.index + 1} / {total}</span>
             <button type="button" aria-label="Previous review" onClick={() => move(-1)}><ArrowLeft /></button>
-            <button type="button" aria-label={paused ? 'Resume automatic scrolling' : 'Pause automatic scrolling'} onClick={() => setPaused(p => !p)}>
+            <button type="button" aria-label={paused ? 'Resume automatic scrolling' : 'Pause automatic scrolling'} onClick={togglePause}>
               {paused ? <Play /> : <Pause />}
             </button>
             <button type="button" aria-label="Next review" onClick={() => move(1)}><ArrowRight /></button>

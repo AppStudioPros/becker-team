@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useId, useState } from 'react'
 
 interface FaqItem {
   q: string
@@ -12,18 +12,14 @@ interface Props {
 }
 
 function FaqItem({ faq, isOpen, onToggle }: { faq: FaqItem; isOpen: boolean; onToggle: () => void }) {
-  const bodyRef = useRef<HTMLDivElement>(null)
-  const [height, setHeight] = useState(0)
-
-  useEffect(() => {
-    if (bodyRef.current) {
-      setHeight(isOpen ? bodyRef.current.scrollHeight : 0)
-    }
-  }, [isOpen])
+  const answerId = useId()
 
   return (
     <div style={{ borderTop: '1px solid #ded6c4' }}>
       <button
+        type="button"
+        aria-expanded={isOpen}
+        aria-controls={answerId}
         onClick={onToggle}
         className="w-full flex items-center justify-between text-left py-5 gap-6 group"
       >
@@ -37,6 +33,7 @@ function FaqItem({ faq, isOpen, onToggle }: { faq: FaqItem; isOpen: boolean; onT
           {faq.q}
         </span>
         <span
+          aria-hidden="true"
           className="shrink-0 text-2xl leading-none transition-transform duration-300"
           style={{ color: '#B98942', transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)' }}
         >
@@ -44,14 +41,17 @@ function FaqItem({ faq, isOpen, onToggle }: { faq: FaqItem; isOpen: boolean; onT
         </span>
       </button>
       <div
+        id={answerId}
+        aria-hidden={!isOpen}
         style={{
-          height: `${height}px`,
+          display: 'grid',
+          gridTemplateRows: isOpen ? '1fr' : '0fr',
           overflow: 'hidden',
-          transition: 'height 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+          transition: 'grid-template-rows 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
         }}
       >
-        <div ref={bodyRef} className="pb-5 pr-10">
-          <p className="text-sm text-gray-600 leading-relaxed">{faq.a}</p>
+        <div className="min-h-0 overflow-hidden pr-10">
+          <p className="pb-5 text-sm text-gray-600 leading-relaxed">{faq.a}</p>
         </div>
       </div>
     </div>

@@ -1,3 +1,4 @@
+import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Check } from 'lucide-react'
@@ -6,26 +7,17 @@ import FaqAccordion from '@/components/FaqAccordion'
 export const metadata: Metadata = {
   title: 'Colorado Second Home and Vacation Home Loans',
   description:
-    'Second home loans for Colorado vacation properties. Mountain cabins, ski condos, lake houses. 10% down, competitive rates. Summit County, Grand County, Estes Park, and statewide. Jamie Becker NMLS #794730.',
+    'Compare financing for Colorado cabins, ski condos and vacation homes with Jamie Becker. See how personal use, rental plans and the property affect your loan.',
   alternates: { canonical: 'https://www.thebeckerteam.com/second-home-loans-colorado' },
 }
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'FinancialService',
+  '@type': 'Service',
   name: 'The Becker Team — Second Home Loans Colorado',
   description: 'Second home and vacation property mortgage financing for Colorado mountain cabins, ski condos, and lake houses.',
   url: 'https://www.thebeckerteam.com/second-home-loans-colorado',
-  telephone: '(720) 492-3335',
-  email: 'Jamie@thebeckerteam.com',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '201 Columbine Street, Suite 300',
-    addressLocality: 'Denver',
-    addressRegion: 'CO',
-    postalCode: '80206',
-    addressCountry: 'US',
-  },
+  provider: teamReference,
   areaServed: [
     { '@type': 'State', name: 'Colorado' },
     { '@type': 'AdministrativeArea', name: 'Summit County' },
@@ -33,7 +25,6 @@ const jsonLd = {
     { '@type': 'AdministrativeArea', name: 'Eagle County' },
     { '@type': 'AdministrativeArea', name: 'Larimer County' },
   ],
-  founder: { '@type': 'Person', name: 'Jamie Becker', identifier: 'NMLS #794730' },
 }
 
 const breadcrumb = {
@@ -47,9 +38,9 @@ const breadcrumb = {
 
 const benefits = [
   { title: '10% Minimum Down Payment', body: 'Second home loans typically require just 10% down, lower than investment property minimums. This makes vacation property ownership more accessible for buyers who have equity in their primary residence.' },
-  { title: 'Lower Rates Than Investment Properties', body: 'Second homes carry lower mortgage rates than investment properties because the occupancy classification is different. Getting this distinction right from the start saves you real money every month.' },
-  { title: 'Conventional and Jumbo Options', body: 'Whether your mountain cabin is $350,000 or your ski condo is $1.5M, Jamie has conventional and jumbo second home programs with competitive rates across the full price range.' },
-  { title: 'Non-Warrantable Condo Solutions', body: 'Many resort condo complexes in Breckenridge, Vail, and Steamboat are non-warrantable. Most banks cannot finance them. Jamie has portfolio and specialty programs that can handle these properties.' },
+  { title: 'How Occupancy Affects Pricing', body: 'Tell us how you will use the home. A home you visit for part of the year and a property you buy to rent out can have different pricing and down payment requirements.' },
+  { title: 'Conventional and Jumbo Options', body: 'We can compare the amount you plan to borrow with the conforming loan limit for that county and explain when a jumbo second-home mortgage applies.' },
+  { title: 'Non-Warrantable Condo Solutions', body: 'For a resort condo, share any rental agreement and HOA documents. Hotel services or limits on your personal use can affect whether a particular lender will finance the unit.' },
   { title: 'Personal Use and Rental Rules', body: 'Before counting on occasional rental income, check the town’s rules and the HOA covenants. Tell us how you plan to occupy the home so we can review the loan requirements.' },
   { title: 'Multiple Lender Access', body: 'As a broker, Jamie shops your second home loan across wholesale lenders. Second home programs vary more than primary residence products, so having access to multiple lenders matters.' },
 ]
@@ -61,7 +52,7 @@ const faqs = [
   },
   {
     q: 'How is a second home loan different from a primary residence mortgage?',
-    a: 'Second home loans require a higher down payment (10% vs 3-5% for primary), typically carry slightly higher interest rates than primary residence loans (but lower than investment property rates), and have stricter occupancy requirements. You need to intend to use the property personally for part of the year. Your lender will also consider your ability to carry both your primary mortgage and the second home payment.',
+    a: 'Tell the lender how much of the year you will use the home, whether a management company controls bookings and whether you plan to count rent toward the payment. Those details affect which loans apply. Your credit, down payment and existing mortgage also factor into the review.',
   },
   {
     q: 'Can I rent out my Colorado second home on Airbnb or VRBO?',
@@ -77,7 +68,7 @@ const faqs = [
   },
   {
     q: 'What credit score do I need for a second home loan?',
-    a: 'Most second home programs require a minimum credit score of 680-700. Higher scores get better rates. For jumbo second home loans, some programs require 700-720 or higher. Jamie shops across multiple lenders, so even if one program has a score minimum you do not meet, there are often alternatives available.',
+    a: 'Credit requirements depend on the loan program and lender. Share the price, intended use and planned down payment with us. We can check the credit and cash reserve requirements for a second-home mortgage at that loan amount.',
   },
 ]
 
@@ -110,7 +101,7 @@ export default function SecondHomeLoansPage() {
           Second Home Loans Colorado
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Vacation home mortgage financing for Colorado mountain cabins, ski condos, and lake houses. 10% down, competitive rates, part-time rental allowed.
+          Compare financing for a Colorado cabin, ski condo or lake house. We’ll look at how you plan to use it and what you want to borrow.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -151,7 +142,7 @@ export default function SecondHomeLoansPage() {
             Colorado Is Built for Second Homes
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            Whether it is a ski condo in Breckenridge, a cabin near Grand Lake, a retreat outside Estes Park, or a family place in Steamboat, Colorado draws second home buyers from across the country. The financing is different from buying your primary home. Down payments are higher, rate structures change based on occupancy classification, and resort condo complexes often have non-warrantable condo issues that standard banks cannot handle. Getting the occupancy classification right at the start is critical because it affects your rate, your down payment, and your tax treatment. Jamie Becker (NMLS #794730) has 21+ years of experience helping buyers structure second home purchases correctly, with access to multiple lenders who specialize in vacation and resort property financing.
+            Whether it is a ski condo in Breckenridge, a cabin near Grand Lake, a retreat outside Estes Park, or a family place in Steamboat, Colorado draws second home buyers from across the country. The financing is different from buying your primary home. Your plans for personal use and rentals can affect which loans are available. For a ski condo, we can also look at whether hotel services, rental management or building insurance change your financing options. Jamie Becker (NMLS #794730) has 21+ years of experience helping buyers structure second home purchases correctly, with access to multiple lenders who specialize in vacation and resort property financing.
           </p>
         </div>
       </section>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import RatesWidget from '@/components/RatesWidget'
 
 export const metadata: Metadata = {
   title: 'Current Mortgage Interest Rates',
@@ -35,18 +36,7 @@ export default function InterestRatesPage() {
               Mortgage News Daily tracks rates across lenders. Your Loan Estimate shows your own interest rate, annual percentage rate (APR) and closing costs.
             </p>
             <div className="py-3">
-              <iframe
-                title="Mortgage News Daily rates and 30-year rate chart"
-                src="https://widgets.mortgagenewsdaily.com/widget/f/rates?t=large&sn=false&c=85a3b3&w=648&h=230"
-                scrolling="no"
-                className="mx-auto hidden h-[230px] w-[648px] border-0 md:block"
-              />
-              <iframe
-                title="Mortgage News Daily rates"
-                src="https://widgets.mortgagenewsdaily.com/widget/f/rates?t=small&sc=false&c=85a3b3&w=260&h=170"
-                scrolling="no"
-                className="mx-auto block h-[170px] w-[260px] border-0 md:hidden"
-              />
+              <RatesWidget />
             </div>
             <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 border-t border-[#ede4cc] px-4 py-4 text-center text-sm text-[#1F2E2A]">
               <a href="https://www.mortgagenewsdaily.com/mortgage-rates" className="underline underline-offset-4">

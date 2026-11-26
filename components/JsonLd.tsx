@@ -1,3 +1,4 @@
+import { teamReference } from '@/lib/siteIdentity'
 // Reusable JSON-LD injector
 export default function JsonLd({ data }: { data: Record<string, unknown> | Record<string, unknown>[] }) {
   return (
@@ -30,20 +31,7 @@ export function mortgageLoanSchema(name: string, desc: string, url: string) {
     name,
     description: desc,
     url,
-    provider: {
-      '@type': 'FinancialService',
-      name: 'The Becker Team — Xpert Home Lending',
-      url: 'https://www.thebeckerteam.com',
-      telephone: '(720) 492-3335',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: '201 Columbine Street, Suite 300',
-        addressLocality: 'Denver',
-        addressRegion: 'CO',
-        postalCode: '80206',
-        addressCountry: 'US',
-      },
-    },
+    provider: teamReference,
     areaServed: [
       // Colorado — primary market
       { '@type': 'State', name: 'Colorado' },

@@ -1,3 +1,4 @@
+import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { dollars, oneUnitLimits } from '@/lib/conformingLimits'
@@ -13,20 +14,11 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'FinancialService',
+  '@type': 'Service',
   name: 'The Becker Team — Mountain Home Loans Colorado',
   description: 'Jumbo loans, second home financing, and non-warrantable condo programs for Colorado ski towns and mountain communities.',
   url: 'https://www.thebeckerteam.com/mountain-home-loans',
-  telephone: '(720) 492-3335',
-  email: 'Jamie@thebeckerteam.com',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '201 Columbine Street, Suite 300',
-    addressLocality: 'Denver',
-    addressRegion: 'CO',
-    postalCode: '80206',
-    addressCountry: 'US',
-  },
+  provider: teamReference,
   areaServed: [
     { '@type': 'City', name: 'Vail' },
     { '@type': 'City', name: 'Aspen' },
@@ -35,7 +27,6 @@ const jsonLd = {
     { '@type': 'City', name: 'Telluride' },
     { '@type': 'City', name: 'Crested Butte' },
   ],
-  founder: { '@type': 'Person', name: 'Jamie Becker', identifier: 'NMLS #794730' },
 }
 
 const breadcrumb = {
@@ -50,7 +41,7 @@ const breadcrumb = {
 const benefits = [
   { title: 'Jumbo Loan Programs', body: 'Compare the amount you plan to borrow with the specific county limit. Vail is in Eagle County, Aspen is in Pitkin County, and Breckenridge and Silverthorne are in Summit County.' },
   { title: 'Second Home Financing', body: 'Tell us when you plan to use the home and whether anyone else will control bookings. The lender reviews occupancy, and the town and HOA each have their own rental rules.' },
-  { title: 'Non-Warrantable Condo Programs', body: 'Many ski town condo associations have commercial space, heavy short-term rental concentration, or investor ownership above Fannie/Freddie limits. These are non-warrantable condos, and most banks cannot finance them. Jamie has specific programs that can.' },
+  { title: 'Non-Warrantable Condo Programs', body: 'For a ski condo, we can review the HOA documents and any rental agreements. Hotel-style services and restrictions on owner use can affect which lenders will consider the building.' },
   { title: 'Investment Property Loans', body: 'If you plan to rent your mountain home as a primary source of income, it qualifies as investment property. Different loan terms apply. Jamie will help you structure the purchase correctly from the start.' },
   { title: 'Flexible Income Documentation', body: 'Many mountain property buyers are business owners, retirees, or investors with complex income. Bank statement loans and asset qualifier programs are available when W-2 documentation does not tell the full story.' },
   { title: 'Pre-Approval Before You Shop', body: 'Talk through your budget and how you plan to use the home. If you’re looking at a resort condo, Jamie can explain what the lender will need to review about the building.' },
@@ -59,7 +50,7 @@ const benefits = [
 const faqs = [
   {
     q: 'Can I get a mortgage on a ski town condo in Colorado?',
-    a: 'Yes, but it depends on the condo complex. Standard (warrantable) condos in ski towns can be financed with conventional or jumbo loans. Non-warrantable condos, which are common in resort areas, require specialty programs. Jamie has lenders who work specifically in non-warrantable condo financing, so the answer is often yes even when a bank says no.',
+    a: 'Yes, depending on the building and your plans. Send us the listing and any agreements governing owner use, rental management and front-desk services. We can review the project before you commit to a loan or assume rental income will cover your payment.',
   },
   {
     q: 'What is a non-warrantable condo and why does it matter?',

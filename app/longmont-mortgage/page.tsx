@@ -1,3 +1,4 @@
+import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Check } from 'lucide-react'
@@ -12,20 +13,11 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'FinancialService',
+  '@type': 'Service',
   name: 'The Becker Team — Longmont Colorado Mortgage Broker',
   description: 'Local mortgage lender serving Longmont, Firestone, Frederick, Mead, and Berthoud on the northern Front Range.',
   url: 'https://www.thebeckerteam.com/longmont-mortgage',
-  telephone: '(720) 492-3335',
-  email: 'Jamie@thebeckerteam.com',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '201 Columbine Street, Suite 300',
-    addressLocality: 'Denver',
-    addressRegion: 'CO',
-    postalCode: '80206',
-    addressCountry: 'US',
-  },
+  provider: teamReference,
   areaServed: [
     { '@type': 'City', name: 'Longmont' },
     { '@type': 'City', name: 'Firestone' },
@@ -33,8 +25,6 @@ const jsonLd = {
     { '@type': 'City', name: 'Mead' },
     { '@type': 'City', name: 'Berthoud' },
   ],
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', reviewCount: '250', bestRating: '5' },
-  founder: { '@type': 'Person', name: 'Jamie Becker', identifier: 'NMLS #794730' },
 }
 
 const breadcrumb = {
@@ -49,7 +39,7 @@ const breadcrumb = {
 const programs = [
   { label: 'CHFA Loans', desc: 'Eligible CHFA first mortgages can include a grant or a deferred loan. The program and a participating lender determine eligibility.', href: '/chfa-loan-colorado' },
   { label: 'FHA Loans', desc: '3.5% down and flexible credit requirements. One of the most popular loan types for first-time buyers in Longmont, Firestone, and Frederick.', href: '/loan-programs/fha-loans' },
-  { label: 'Conventional Loans', desc: 'Competitive rates for Longmont buyers with good credit. Works for everything from townhomes to single-family homes in established neighborhoods.', href: '/loan-programs/conventional-loans' },
+  { label: 'Conventional Loans', desc: 'Explore conventional financing for a Longmont townhome or single-family home and see how your down payment changes the monthly cost.', href: '/loan-programs/conventional-loans' },
   { label: 'VA Loans', desc: 'Zero down payment for eligible veterans and service members. No PMI. Available throughout Longmont and the northern Front Range.', href: '/loan-programs/va-loans' },
   { label: 'USDA Loans', desc: 'Some rural areas near Mead and Berthoud qualify for USDA financing with zero down. Jamie can check eligibility for your specific property address.', href: '/loan-programs/conventional-loans' },
   { label: 'Self-Employed Loans', desc: 'Bank statement programs for Longmont tech freelancers, healthcare professionals, and business owners with non-traditional income.', href: '/loan-programs/self-employed-loans' },
@@ -74,7 +64,7 @@ const faqs = [
   },
   {
     q: 'What are current mortgage rates in Longmont, CO?',
-    a: 'Mortgage rates change daily based on market conditions. As a broker, Jamie shops your file across multiple wholesale lenders to find the most competitive rate for your credit profile and loan type. Reach out for a current personalized rate quote.',
+    a: 'A rate quote depends on the market, your loan type and your credit profile. Jamie can price the same loan with multiple lenders and show you the points and fees associated with each quote.',
   },
   {
     q: 'How long does it take to close a home loan in Longmont?',
@@ -171,7 +161,7 @@ export default function LongmontMortgagePage() {
             {[
               { title: 'Down Payment Assistance', body: 'We can help you compare cash needed with and without assistance. A CHFA participating lender determines eligibility and confirms the terms for your address.' },
               { title: 'First-Time Buyer Focus', body: 'Longmont attracts a lot of first-time buyers from Boulder and the Denver metro. Jamie walks you through the process clearly, no jargon, no pressure. Just straight answers about what you qualify for and what it will cost.' },
-              { title: 'Multiple Lender Options', body: 'As a broker, Jamie shops your loan across wholesale lenders. That means better rates and more flexibility. Especially valuable when you are trying to stretch a down payment in a market like Longmont.' },
+              { title: 'Multiple Lender Options', body: 'If you want to keep more cash for moving costs, ask Jamie to compare quotes with and without discount points. You can see how the upfront cost changes your monthly payment.' },
               { title: 'Planning Your Closing', body: 'Bring your target date when you request pre-approval. We can review what documents and lender decisions are still needed before you make an offer.' },
             ].map((item) => (
               <div key={item.title} className="flex gap-4">

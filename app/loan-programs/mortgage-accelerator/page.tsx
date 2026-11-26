@@ -1,3 +1,4 @@
+import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -54,41 +55,38 @@ const strongFit = [
 const faqs = [
   {
     q: 'What exactly is the Home Mortgage Accelerator?',
-    a: 'It is a cash-flow-driven mortgage strategy designed for borrowers with strong monthly net deposits. The goal is to use your actual financial flow more intentionally than a standard set-it-and-forget-it mortgage.',
+    a: 'The Accelerator uses a home equity line of credit. You deposit income into the line to lower the balance, then draw from it to pay bills. The dates and amounts affect the interest charged. The money you can leave there after paying expenses is what helps bring the balance down over time.',
   },
   {
     q: 'Who is this a good fit for?',
-    a: 'It tends to fit best for borrowers with strong, consistent net cash flow, disciplined spending habits and a serious interest in paying down their mortgage faster.',
+    a: 'It can fit someone who regularly has money left after bills and can leave that money against the balance. Look at several months, including the ones with car repairs, travel or tax payments. If you often need to draw the money back out, the projected payoff can change considerably.',
   },
   {
     q: 'Can this work for a purchase or just a refinance?',
-    a: 'This can be positioned for both purchase and refinance scenarios, depending on the borrower and the opportunity.',
+    a: 'We can review it for a purchase or a refinance. For a purchase, we compare the proposed line with a mortgage for the same home. For a refinance, we start with the rate, balance and time left on your current mortgage so the comparison includes what you’d give up and any new closing costs.',
   },
   {
     q: 'How can I estimate my payoff date?',
-    a: 'Start with your current balance, loan terms and the amount left after your bills. Jamie can use those figures to compare payoff schedules and show what changes if your rate goes up or your income drops.',
+    a: 'Start with your balance, the rate and fees on the proposed line, and the dates money would go in and come out. We compare that schedule with paying the same extra cash toward a standard mortgage. We can also show how a higher rate or a month with less income affects the estimate.',
   },
   {
     q: 'Will you recommend this even if it does not fit?',
-    a: 'No. If the strategy does not fit your goals or cash-flow profile, our team will tell you that directly.',
+    a: 'No. If you need predictable payments, have little left over most months or would rather keep your savings separate, tell us. We’ll walk through what happens if you keep your current loan and put extra toward principal when you can. That gives you a comparison based on your own budget.',
   },
   {
     q: 'What information do I need to get started?',
-    a: 'A realistic snapshot of your mortgage, monthly deposits, major expenses, available savings and payoff goals.',
+    a: 'Bring your latest mortgage statement if you own a home, or the purchase price and planned down payment if you’re buying. A few months of take-home pay, bills and savings activity will help us see the timing. Include big expenses you expect and how much emergency cash you want to keep available.',
   },
 ]
 
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: [
-    { '@type': 'Question', name: 'What exactly is the Home Mortgage Accelerator?', acceptedAnswer: { '@type': 'Answer', text: 'It is a cash-flow-driven mortgage strategy designed for borrowers with strong monthly net deposits. The goal is to use your actual financial flow more intentionally than a standard set-it-and-forget-it mortgage.' } },
-    { '@type': 'Question', name: 'Who is this a good fit for?', acceptedAnswer: { '@type': 'Answer', text: 'It tends to fit best for borrowers with strong, consistent net cash flow, disciplined spending habits and a serious interest in paying down their mortgage faster.' } },
-    { '@type': 'Question', name: 'Can this work for a purchase or just a refinance?', acceptedAnswer: { '@type': 'Answer', text: 'This can be positioned for both purchase and refinance scenarios, depending on the borrower and the opportunity.' } },
-    { '@type': 'Question', name: 'How can I estimate my payoff date?', acceptedAnswer: { '@type': 'Answer', text: 'Start with your current balance, loan terms and the amount left after your bills. Jamie can use those figures to compare payoff schedules and show what changes if your rate goes up or your income drops.' } },
-    { '@type': 'Question', name: 'Will you recommend this even if it does not fit?', acceptedAnswer: { '@type': 'Answer', text: 'No. If the strategy does not fit your goals or cash-flow profile, our team will tell you that directly.' } },
-    { '@type': 'Question', name: 'What information do I need to get started?', acceptedAnswer: { '@type': 'Answer', text: 'A realistic snapshot of your mortgage, monthly deposits, major expenses, available savings and payoff goals.' } }
-  ],
+  mainEntity: faqs.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
 }
 
 const breadcrumbJsonLd = {
@@ -107,20 +105,7 @@ const loanJsonLd = {
   name: 'Home Mortgage Accelerator',
   description: 'Proprietary mortgage accelerator program designed to pay off your home loan faster and reduce total interest paid. NMLS #794730.',
   url: 'https://www.thebeckerteam.com/loan-programs/mortgage-accelerator',
-  provider: {
-    '@type': 'FinancialService',
-    name: 'The Becker Team - Xpert Home Lending',
-    url: 'https://www.thebeckerteam.com',
-    telephone: '(720) 492-3335',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '201 Columbine Street, Suite 300',
-      addressLocality: 'Denver',
-      addressRegion: 'CO',
-      postalCode: '80206',
-      addressCountry: 'US',
-    },
-  },
+  provider: teamReference,
   areaServed: { '@type': 'State', name: 'Colorado' },
 }
 

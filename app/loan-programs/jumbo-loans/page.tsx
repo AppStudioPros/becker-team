@@ -1,3 +1,4 @@
+import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -52,11 +53,11 @@ const fitProfiles = [
 const faqs = [
   {
     q: 'What makes a loan a jumbo loan?',
-    a: 'A jumbo loan exceeds the conforming loan limit for the county, number of units and applicable year. A mortgage exactly at the limit is still within the size limit. Credit, income and property requirements are reviewed separately.',
+    a: 'A mortgage is jumbo when the amount you borrow exceeds the conforming limit for that county, property size and year. A loan exactly at the limit stays within it. Subtract your down payment from the purchase price first. Two buyers bidding on the same house could need different loan types.',
   },
   {
     q: 'What credit score do I need for a jumbo loan?',
-    a: 'Jumbo lenders set their own credit requirements. We can check which options fit your credit profile, the amount you want to borrow and how you plan to use the property.',
+    a: 'Jumbo lenders set their own minimum credit scores. The amount you borrow, the down payment and whether you’ll live in the home can change which programs are available. If you share those details with us, we can check the lender’s requirements before you decide how much to offer.',
   },
   {
     q: 'How much down payment is required?',
@@ -64,15 +65,15 @@ const faqs = [
   },
   {
     q: 'Are jumbo loans fixed or adjustable rate?',
-    a: 'Both options are available. Fixed-rate jumbo loans provide payment stability over the life of the loan. Adjustable-rate jumbo loans may offer a lower initial rate for borrowers with a defined hold timeline.',
+    a: 'You can get a fixed or adjustable rate on a jumbo loan. A fixed rate keeps the principal and interest payment steady. An adjustable rate can change after its initial period. We can show you when the first change is possible, how large it could be and what that payment would look like.',
   },
   {
     q: 'Do jumbo loans require mortgage insurance?',
-    a: 'Mortgage insurance requirements vary by lender and loan structure. Ask for a payment estimate that shows any mortgage insurance and a breakdown of the cash you would need at closing.',
+    a: 'It depends on the lender and how your jumbo loan is set up. When you compare offers, look at the mortgage insurance charge, interest rate, monthly payment and cash due at closing together. That lets you see whether putting more down would actually reduce your costs enough to justify using the cash.',
   },
   {
     q: 'Can jumbo loans be used for second homes or investment properties?',
-    a: 'Yes, jumbo financing can apply to second homes and investment properties in many cases, subject to higher down payment and reserve requirements.',
+    a: 'Yes, some jumbo programs finance second homes or investment properties. Lenders can have different down payment and reserve requirements for each. If you plan to spend some weekends there and rent it out the rest of the year, tell us before you apply so we can check which occupancy rules fit.',
   },
 ]
 
@@ -102,20 +103,7 @@ const loanJsonLd = {
   name: 'Jumbo Loans',
   description: 'Colorado jumbo mortgages for primary residences, second homes and investment properties. Compare one-unit conforming limits by county with Jamie Becker, NMLS #794730.',
   url: 'https://www.thebeckerteam.com/loan-programs/jumbo-loans',
-  provider: {
-    '@type': 'FinancialService',
-    name: 'The Becker Team - Xpert Home Lending',
-    url: 'https://www.thebeckerteam.com',
-    telephone: '(720) 492-3335',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '201 Columbine Street, Suite 300',
-      addressLocality: 'Denver',
-      addressRegion: 'CO',
-      postalCode: '80206',
-      addressCountry: 'US',
-    },
-  },
+  provider: teamReference,
   areaServed: { '@type': 'State', name: 'Colorado' },
 }
 

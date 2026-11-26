@@ -36,8 +36,8 @@ const selfEmployedKeyFeatures = [
     desc: '12 or 24 months of personal or business bank statements used to calculate income. Great for borrowers whose deposits reflect true cash flow.',
   },
   {
-    title: 'Asset Depletion Option',
-    desc: 'Divide eligible assets over a set period to establish qualifying income. Useful for asset-rich borrowers with minimal documented income.',
+    title: 'Asset Qualifier Option',
+    desc: 'If you have substantial savings or investments, we can also review our Asset Qualifier. It uses the eligible balance left after closing.',
   },
 ]
 

@@ -1,3 +1,4 @@
+import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Check } from 'lucide-react'
@@ -12,22 +13,12 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'FinancialService',
+  '@type': 'Service',
   name: 'The Becker Team — Self-Employed Mortgage Colorado',
   description: 'Bank statement loans, asset qualifier programs, and non-QM mortgage options for self-employed buyers in Colorado.',
   url: 'https://www.thebeckerteam.com/self-employed-mortgage-colorado',
-  telephone: '(720) 492-3335',
-  email: 'Jamie@thebeckerteam.com',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '201 Columbine Street, Suite 300',
-    addressLocality: 'Denver',
-    addressRegion: 'CO',
-    postalCode: '80206',
-    addressCountry: 'US',
-  },
+  provider: teamReference,
   areaServed: [{ '@type': 'State', name: 'Colorado' }],
-  founder: { '@type': 'Person', name: 'Jamie Becker', identifier: 'NMLS #794730' },
 }
 
 const breadcrumb = {

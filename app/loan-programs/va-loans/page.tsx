@@ -1,3 +1,4 @@
+import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -63,11 +64,11 @@ const faqs = [
   },
   {
     q: 'Can I use my VA benefit more than once?',
-    a: 'Yes. VA loan entitlement can be restored and reused. If you have paid off a previous VA loan and sold the property, you may be able to restore your full entitlement.',
+    a: 'Yes. If you sold the home you bought with a VA loan and paid that loan in full, you can generally ask VA to restore the entitlement you used. If you still own that home or have an outstanding VA loan, we can check your Certificate of Eligibility to see what entitlement remains.',
   },
   {
     q: 'What types of properties can I buy with a VA loan?',
-    a: 'VA loans are for primary residences only. This includes single-family homes, eligible condos, and multi-unit properties up to four units if the borrower occupies one unit.',
+    a: 'A VA purchase loan can cover a house, a condo in a VA-approved project or a property with up to four units when you plan to live in one. If you’re looking at a condo, give us the project name early so we can check its approval before you make an offer.',
   },
   {
     q: 'Do VA loans have loan limits?',
@@ -101,20 +102,7 @@ const loanJsonLd = {
   name: 'VA Loans',
   description: 'VA-backed home loans in Colorado for eligible veterans, service members and surviving spouses. Jamie Becker helps buyers compare lender rates and fees.',
   url: 'https://www.thebeckerteam.com/loan-programs/va-loans',
-  provider: {
-    '@type': 'FinancialService',
-    name: 'The Becker Team - Xpert Home Lending',
-    url: 'https://www.thebeckerteam.com',
-    telephone: '(720) 492-3335',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '201 Columbine Street, Suite 300',
-      addressLocality: 'Denver',
-      addressRegion: 'CO',
-      postalCode: '80206',
-      addressCountry: 'US',
-    },
-  },
+  provider: teamReference,
   areaServed: { '@type': 'State', name: 'Colorado' },
 }
 

@@ -1,3 +1,4 @@
+import { beckerTeam } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import { jamieLicensedStates } from '@/lib/jamieLicenses'
 import Image from 'next/image'
@@ -44,20 +45,8 @@ const contactCards = [
 
 const localBusinessJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'MortgageLender',
-  name: 'The Becker Team',
+  ...beckerTeam,
   description: 'Jamie Becker (Individual NMLS #794730) is a Colorado mortgage broker with 21+ years of experience in VA, FHA, jumbo, self-employed and specialty loan programs.',
-  url: 'https://www.thebeckerteam.com',
-  telephone: '+17204923335',
-  email: 'Jamie@thebeckerteam.com',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '201 Columbine Street, Suite 300',
-    addressLocality: 'Denver',
-    addressRegion: 'CO',
-    postalCode: '80206',
-    addressCountry: 'US',
-  },
   geo: {
     '@type': 'GeoCoordinates',
     latitude: 39.71981,
@@ -66,12 +55,6 @@ const localBusinessJsonLd = {
   openingHours: 'Mo-Fr 09:00-18:00',
   priceRange: '$$',
   areaServed: jamieLicensedStates,
-  founder: {
-    '@type': 'Person',
-    name: 'Jamie Becker',
-    identifier: 'NMLS #794730',
-  },
-  sameAs: ['https://www.thebeckerteam.com'],
 }
 
 export default function ContactPage() {

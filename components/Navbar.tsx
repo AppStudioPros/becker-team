@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useId, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
@@ -15,9 +15,24 @@ const navLinks = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
+  const menuId = useId()
+  const toggleRef = useRef<HTMLButtonElement>(null)
 
   return (
-    <nav className="sticky top-0 z-50" style={{ backgroundColor: '#1F2E2A' }}>
+    <nav
+      className="sticky top-0 z-50"
+      aria-label="Main navigation"
+      style={{ backgroundColor: '#1F2E2A' }}
+      onKeyDown={event => {
+        if (event.key === 'Escape' && open) {
+          setOpen(false)
+          toggleRef.current?.focus()
+        }
+      }}
+      onBlur={event => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false)
+      }}
+    >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-28">
         {/* Logo — left aligned, contained within nav height */}
         <Link href="/" className="shrink-0 flex items-center h-full py-3">
@@ -56,40 +71,43 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
+          ref={toggleRef}
+          type="button"
+          aria-controls={menuId}
+          aria-expanded={open}
           className="md:hidden text-white p-1"
           onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
+          aria-label={open ? 'Close menu' : 'Open menu'}
         >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile menu */}
-      {open && (
-        <div
-          className="md:hidden px-6 pb-8 flex flex-col gap-2 border-t border-white/10"
-          style={{ backgroundColor: '#1F2E2A' }}
-        >
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-white text-base tracking-wide py-3 border-b border-white/10"
-              onClick={() => setOpen(false)}
-            >
-              {link.label}
-            </Link>
-          ))}
-          <a
-            href="https://2179191.my1003app.com/794730/register"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white text-[#1F2E2A] text-sm font-semibold px-6 py-4 rounded text-center uppercase tracking-widest mt-2"
+      <div
+        id={menuId}
+        className={`${open ? 'flex' : 'hidden'} md:hidden px-6 pb-8 flex-col gap-2 border-t border-white/10`}
+        style={{ backgroundColor: '#1F2E2A' }}
+      >
+        {navLinks.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className="text-white text-base tracking-wide py-3 border-b border-white/10"
+            onClick={() => setOpen(false)}
           >
-            Apply
-          </a>
-        </div>
-      )}
+            {link.label}
+          </Link>
+        ))}
+        <a
+          href="https://2179191.my1003app.com/794730/register"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-white text-[#1F2E2A] text-sm font-semibold px-6 py-4 rounded text-center uppercase tracking-widest mt-2"
+        >
+          Apply
+        </a>
+      </div>
     </nav>
   )
 }

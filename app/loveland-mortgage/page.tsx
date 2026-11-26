@@ -1,3 +1,4 @@
+import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Check } from 'lucide-react'
@@ -12,20 +13,11 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'FinancialService',
+  '@type': 'Service',
   name: 'The Becker Team — Loveland Colorado Mortgage Lender',
   description: 'Local mortgage lender serving Loveland, Berthoud, Johnstown, Milliken, and Windsor in northern Colorado.',
   url: 'https://www.thebeckerteam.com/loveland-mortgage',
-  telephone: '(720) 492-3335',
-  email: 'Jamie@thebeckerteam.com',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '201 Columbine Street, Suite 300',
-    addressLocality: 'Denver',
-    addressRegion: 'CO',
-    postalCode: '80206',
-    addressCountry: 'US',
-  },
+  provider: teamReference,
   areaServed: [
     { '@type': 'City', name: 'Loveland' },
     { '@type': 'City', name: 'Berthoud' },
@@ -33,8 +25,6 @@ const jsonLd = {
     { '@type': 'City', name: 'Milliken' },
     { '@type': 'City', name: 'Windsor' },
   ],
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', reviewCount: '250', bestRating: '5' },
-  founder: { '@type': 'Person', name: 'Jamie Becker', identifier: 'NMLS #794730' },
 }
 
 const breadcrumb = {
@@ -47,7 +37,7 @@ const breadcrumb = {
 }
 
 const programs = [
-  { label: 'Conventional Loans', desc: 'The most common choice for Loveland buyers. Competitive rates and flexible terms whether you are buying in town or in one of the surrounding communities.', href: '/loan-programs/conventional-loans' },
+  { label: 'Conventional Loans', desc: 'Compare conventional mortgage terms for a home in Loveland or the surrounding communities. Jamie can explain how the loan amount and upfront costs affect your payment.', href: '/loan-programs/conventional-loans' },
   { label: 'FHA Loans', desc: '3.5% down and flexible credit requirements. Popular with first-time buyers in Loveland and the surrounding area who are stepping into homeownership.', href: '/loan-programs/fha-loans' },
   { label: 'VA Loans', desc: 'Zero down for eligible veterans and active-duty service members. No PMI. Loveland has a strong veteran community and VA loans are a major part of the market.', href: '/loan-programs/va-loans' },
   { label: 'USDA Loans', desc: 'Many properties in rural areas around Johnstown, Milliken, and parts of Berthoud qualify for USDA zero-down financing. Jamie can check property eligibility quickly.', href: '/loan-programs/conventional-loans' },

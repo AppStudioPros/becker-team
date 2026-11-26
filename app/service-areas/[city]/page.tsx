@@ -1,3 +1,4 @@
+import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import LocalMortgageGuide from '@/components/LocalMortgageGuide'
@@ -39,7 +40,7 @@ export default async function MortgageServiceAreaPage({ params }: Props) {
       '@type': 'City', name: area.city,
       containedInPlace: { '@type': 'State', name: 'Colorado' },
     },
-    provider: { '@type': 'Organization', name: 'The Becker Team', url: 'https://www.thebeckerteam.com' },
+    provider: teamReference,
   }
 
   return (

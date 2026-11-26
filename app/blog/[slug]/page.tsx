@@ -1,3 +1,5 @@
+import { lastPublishedEdit } from '@/lib/blogDates'
+import { jamieBecker, siteUrl, teamLogo, teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
@@ -51,18 +53,20 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       canonical: `https://www.thebeckerteam.com/blog/${post.slug}`,
     },
     openGraph: {
+      url: siteUrl + '/blog/' + post.slug,
       title: post.title,
       description: post.meta_description || undefined,
       type: 'article',
       publishedTime: post.published_at || undefined,
-      authors: ['Jamie Becker'],
-      images: post.feature_image ? [{ url: post.feature_image, width: 1200, height: 630 }] : undefined,
+      modifiedTime: lastPublishedEdit(post.published_at, post.updated_at),
+      authors: [jamieBecker.url],
+      images: [new URL(post.feature_image || '/opengraph-image', siteUrl)],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.meta_description || undefined,
-      images: post.feature_image ? [post.feature_image] : undefined,
+      images: [new URL(post.feature_image || '/opengraph-image', siteUrl)],
     },
   }
 }
@@ -82,31 +86,18 @@ export default async function BlogPostPage({ params }: Params) {
 
   if (!post) notFound()
 
-  const BASE = 'https://www.thebeckerteam.com'
-
   const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.meta_description || undefined,
-    image: post.feature_image || undefined,
-    url: `${BASE}/blog/${post.slug}`,
-    mainEntityOfPage: { '@type': 'WebPage', '@id': `${BASE}/blog/${post.slug}` },
+    image: new URL(post.feature_image || '/opengraph-image', siteUrl).href,
+    url: `${siteUrl}/blog/${post.slug}`,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${siteUrl}/blog/${post.slug}` },
     datePublished: post.published_at || undefined,
-    dateModified: post.updated_at || post.published_at || undefined,
-    author: {
-      '@type': 'Person',
-      name: 'Jamie Becker',
-      url: `${BASE}/about`,
-      identifier: 'NMLS #794730',
-      sameAs: ['https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/794730'],
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'The Becker Team',
-      url: BASE,
-      logo: { '@type': 'ImageObject', url: `${BASE}/images/becker-team-logo.png` },
-    },
+    dateModified: lastPublishedEdit(post.published_at, post.updated_at),
+    author: jamieBecker,
+    publisher: { ...teamReference, logo: teamLogo },
     ...(post.category ? { articleSection: post.category } : {}),
   }
 
@@ -114,16 +105,16 @@ export default async function BlogPostPage({ params }: Params) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: BASE },
-      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${BASE}/blog` },
-      { '@type': 'ListItem', position: 3, name: post.title, item: `${BASE}/blog/${post.slug}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${siteUrl}/blog` },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `${siteUrl}/blog/${post.slug}` },
     ],
   }
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd).replace(/</g, '\\u003c') }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, '\\u003c') }} />
       {/* Feature Image */}
       {post.feature_image && (
         <div className="relative w-full h-64 md:h-96 overflow-hidden">

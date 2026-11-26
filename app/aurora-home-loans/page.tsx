@@ -1,3 +1,4 @@
+import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Check } from 'lucide-react'
@@ -12,20 +13,11 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'FinancialService',
+  '@type': 'Service',
   name: 'The Becker Team — Aurora Colorado Mortgage Broker',
   description: 'Local mortgage lender serving Aurora, Centennial, Parker, and the Denver metro east corridor.',
   url: 'https://www.thebeckerteam.com/aurora-home-loans',
-  telephone: '(720) 492-3335',
-  email: 'Jamie@thebeckerteam.com',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '201 Columbine Street, Suite 300',
-    addressLocality: 'Denver',
-    addressRegion: 'CO',
-    postalCode: '80206',
-    addressCountry: 'US',
-  },
+  provider: teamReference,
   areaServed: [
     { '@type': 'City', name: 'Aurora' },
     { '@type': 'City', name: 'Centennial' },
@@ -34,8 +26,6 @@ const jsonLd = {
     { '@type': 'City', name: 'Foxfield' },
     { '@type': 'City', name: 'Lone Tree' },
   ],
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', reviewCount: '250', bestRating: '5' },
-  founder: { '@type': 'Person', name: 'Jamie Becker', identifier: 'NMLS #794730' },
 }
 
 const breadcrumb = {
@@ -50,7 +40,7 @@ const breadcrumb = {
 const programs = [
   { label: 'VA Loans', desc: "Zero down for eligible veterans, active-duty members, and surviving spouses — Aurora has a large military community near Buckley Space Force Base, and VA loans are one of Jamie's specialties.", href: '/loan-programs/va-loans' },
   { label: 'FHA Loans', desc: "Popular with Aurora first-time buyers. 3.5% down, flexible credit standards, and access to Colorado's large FHA loan limits.", href: '/loan-programs/fha-loans' },
-  { label: 'Conventional Loans', desc: "Standard conforming loans with competitive rates — the most common choice for Aurora move-up buyers and families.", href: '/loan-programs/conventional-loans' },
+  { label: 'Conventional Loans', desc: "Compare conventional loans for an Aurora home, including the effect of your down payment on mortgage insurance and the monthly payment.", href: '/loan-programs/conventional-loans' },
   { label: 'Jumbo Loans', desc: 'Financing above conforming limits for higher-value Centennial, Parker, and Aurora properties.', href: '/loan-programs/jumbo-loans' },
   { label: 'Self-Employed Loans', desc: 'Bank statement programs for Aurora small business owners and self-employed professionals. No tax returns required.', href: '/loan-programs/self-employed-loans' },
   { label: 'Asset Qualifier Loans', desc: 'Qualify using liquid assets and investment accounts instead of traditional income documentation.', href: '/loan-programs/asset-qualifier-loans' },

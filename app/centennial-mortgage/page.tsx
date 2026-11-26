@@ -1,3 +1,4 @@
+import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { dollars, oneUnitLimits } from '@/lib/conformingLimits'
@@ -13,20 +14,11 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'FinancialService',
+  '@type': 'Service',
   name: 'The Becker Team — Centennial Colorado Mortgage Lender',
   description: 'Local mortgage lender serving Centennial, Greenwood Village, Parker, Lone Tree, and Highlands Ranch in Arapahoe County.',
   url: 'https://www.thebeckerteam.com/centennial-mortgage',
-  telephone: '(720) 492-3335',
-  email: 'Jamie@thebeckerteam.com',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '201 Columbine Street, Suite 300',
-    addressLocality: 'Denver',
-    addressRegion: 'CO',
-    postalCode: '80206',
-    addressCountry: 'US',
-  },
+  provider: teamReference,
   areaServed: [
     { '@type': 'City', name: 'Centennial' },
     { '@type': 'City', name: 'Greenwood Village' },
@@ -34,8 +26,6 @@ const jsonLd = {
     { '@type': 'City', name: 'Lone Tree' },
     { '@type': 'City', name: 'Highlands Ranch' },
   ],
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', reviewCount: '250', bestRating: '5' },
-  founder: { '@type': 'Person', name: 'Jamie Becker', identifier: 'NMLS #794730' },
 }
 
 const breadcrumb = {
@@ -48,8 +38,8 @@ const breadcrumb = {
 }
 
 const programs = [
-  { label: 'Conventional Loans', desc: 'The standard choice for most Centennial, Parker, and Highlands Ranch buyers. Competitive rates and flexible terms for purchase and refinance.', href: '/loan-programs/conventional-loans' },
-  { label: 'Jumbo Loans', desc: 'Greenwood Village and Lone Tree homes regularly exceed conforming limits. Competitive jumbo programs with flexible underwriting for the south tech corridor.', href: '/loan-programs/jumbo-loans' },
+  { label: 'Conventional Loans', desc: 'Compare conventional loan terms for a purchase or refinance in Centennial, Parker or Highlands Ranch.', href: '/loan-programs/conventional-loans' },
+  { label: 'Jumbo Loans', desc: 'For a purchase in Greenwood Village or Lone Tree, compare the amount you need to borrow with the one-unit limit for the county where the home sits.', href: '/loan-programs/jumbo-loans' },
   { label: 'VA Loans', desc: 'Zero down for eligible veterans and active-duty service members throughout the south Denver metro. No PMI. Buckley SFB veterans welcome.', href: '/loan-programs/va-loans' },
   { label: 'Self-Employed Loans', desc: 'Bank statement programs for Centennial and Greenwood Village professionals, business owners, and executives with non-W-2 income.', href: '/loan-programs/self-employed-loans' },
   { label: 'Asset Qualifier Loans', desc: 'Qualify using investment accounts and liquid assets instead of pay stubs. A strong fit for high-net-worth buyers in Greenwood Village and Parker.', href: '/loan-programs/asset-qualifier-loans' },
@@ -170,9 +160,9 @@ export default function CentennialMortgagePage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { title: 'Complex Income Expertise', body: 'The south tech corridor buyer often has RSUs, quarterly bonuses, or deferred compensation. Standard bank underwriting can flag these as complicated. Jamie has the programs and the experience to document and qualify non-standard income correctly.' },
-              { title: 'Jumbo Loan Access', body: 'Greenwood Village and Lone Tree push beyond conforming limits regularly. Jamie shops your jumbo loan across wholesale lenders for better pricing and fewer restrictions than single-bank jumbo products.' },
-              { title: 'Multiple Lender Options', body: 'One application, multiple lender quotes. As a broker, Jamie finds the best fit for your credit profile and property type. At Centennial price points, small rate differences are worth real money.' },
+              { title: 'Complex Income Expertise', body: 'If part of your pay comes from stock awards, quarterly bonuses or deferred compensation, we can identify what documents a lender needs to count it.' },
+              { title: 'Jumbo Loan Access', body: 'If your loan amount exceeds the county limit, Jamie can compare jumbo options and explain how much cash each lender wants you to keep after closing.' },
+              { title: 'Multiple Lender Options', body: 'Compare the rate and lender fees together. If one offer charges points upfront, Jamie can show how long a lower payment would take to cover that cost.' },
               { title: 'Closing Date Planning', body: 'Bring the seller’s proposed closing date. Jamie will walk through the loan requirements and the time needed to review your documents.' },
             ].map((item) => (
               <div key={item.title} className="flex gap-4">

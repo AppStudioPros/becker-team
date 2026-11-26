@@ -1,3 +1,4 @@
+import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -25,11 +26,11 @@ const jsonLd = {
 const highlights = [
   {
     title: 'Qualify with Just One Year of Tax Returns',
-    body: 'Instead of the standard 2-year requirement, self-employed borrowers may qualify using just one year of personal or business tax returns — ideal for newer businesses or those with improving income trends.',
+    body: 'Some borrowers can qualify using one year of tax returns. We’ll check the lender’s requirements for your business history, income and supporting records.',
   },
   {
     title: 'Alternative Documentation Accepted',
-    body: 'No W-2? No problem. Qualifying options include 12-month rolling P&L statements, 12-24 months of bank statements, and asset depletion — so your income picture doesn\'t have to fit a conventional mold.',
+    body: 'Depending on the loan, a lender may review a 12-month profit and loss statement or 12 or 24 months of bank statements. We can help you choose the records that best document your business income.',
   },
   {
     title: 'Flexible Debt-to-Income Calculations',
@@ -44,7 +45,7 @@ const highlights = [
 const qualPaths = [
   {
     title: 'Tax Return Program',
-    body: 'Qualify with just one year of personal or business tax returns — perfect for newer businesses or those with improving income trends.',
+    body: 'Some loans accept one year of returns from eligible borrowers. The lender also reviews your business history and how consistently you earn that income.',
   },
   {
     title: 'P&L Statement Option',
@@ -55,56 +56,53 @@ const qualPaths = [
     body: 'Qualify using 12-24 months of business or personal bank statements to show your actual cash flow and deposits.',
   },
   {
-    title: 'Asset Depletion Option',
-    body: 'Combine with our asset depletion program if you have substantial assets but variable income.',
+    title: 'Asset Qualifier Option',
+    body: 'If you have substantial savings or investments, we can also review our Asset Qualifier. It uses the eligible balance left after closing.',
   },
 ]
 
 const fitProfiles = [
   { label: 'Freelancers and independent contractors', body: 'Your income is real — it just doesn\'t come with a W-2. We have qualification paths built around how you actually earn.' },
   { label: 'Small business owners', body: 'Whether you\'re a sole proprietor or run a growing operation, your business cash flow can count toward qualification.' },
-  { label: 'Entrepreneurs with newer businesses', body: 'One year of tax returns instead of two means you don\'t have to wait as long to qualify.' },
+  { label: 'Entrepreneurs with newer businesses', body: 'We’ll look at when you started your business, your prior work and which income records you have.' },
   { label: 'High earners with complex tax returns', body: 'If your tax strategy minimizes income on paper, alternative documentation lets us look at the full financial picture.' },
 ]
 
 const faqs = [
   {
     q: 'Do I need two years of self-employment history?',
-    a: 'Not always. Our programs allow qualification with as little as one year of tax returns for borrowers who meet other qualifying criteria.',
+    a: 'The length of time you’ve worked for yourself and the number of tax returns you need are separate questions. A lender may accept one year of returns for an eligible borrower and still ask for a longer business history. Tell us when the business started and what work you did before.',
   },
   {
     q: 'What documentation can I use instead of W-2s?',
-    a: 'Depending on the program, you may qualify using one year of tax returns, a 12-month rolling P&L statement, 12-24 months of bank statements, or asset depletion calculations.',
+    a: 'Start with how you pay yourself. If you have tax returns that reflect your income, we can review those first. If customer payments go into your business account, a lender may consider bank statements or a profit and loss statement. We’ll help you identify which documents fit your business and the loan.',
   },
   {
     q: 'What is the P&L Statement Option?',
-    a: 'A CPA or licensed accountant prepares a 12-month Profit & Loss statement that documents your business income. This can be used in place of tax returns to qualify.',
+    a: 'A profit and loss statement shows what your business earned and what it spent. Some programs accept a statement covering the most recent 12 months, prepared by a qualified accountant. Before you pay to have one prepared, we’ll check who the lender accepts and what supporting records it wants.',
   },
   {
     q: 'What is the Bank Statement Program?',
-    a: 'Instead of tax returns, we use 12-24 months of personal or business bank statements to calculate average monthly income based on actual deposits.',
+    a: 'A bank statement loan uses qualifying deposits to help document income from your business. The lender may ask for 12 or 24 months of personal or business statements and review business expenses. Moving money between your own accounts doesn’t create new income, so be ready to explain transfers and unusual deposits.',
   },
   {
     q: 'Can I use these programs for investment properties?',
-    a: 'Yes. Self-employed loan programs are available for primary residences, second homes and investment properties, subject to program-specific down payment and reserve requirements.',
+    a: 'Some self-employed loan programs can finance a rental property. Tell us whether you’ll live there, whether it already has tenants and which records show your income. The property’s use and the lender’s requirements affect how much you can borrow, the down payment and how much money you’ll need left after closing.',
   },
   {
     q: 'What loan amounts are available?',
-    a: 'Loan amounts up to $3 million are available through our self-employed programs, with down payment options starting at 10% for qualified borrowers.',
+    a: 'We offer self-employed loan options up to $3 million, with down payments starting at 10% for qualifying borrowers. The largest loan and smallest down payment may apply to different programs. Share the purchase price, down payment and how you document income so we can check the combination that fits your purchase.',
   },
 ]
 
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: [
-    { '@type': 'Question', name: 'Do I need two years of self-employment history?', acceptedAnswer: { '@type': 'Answer', text: 'Not always. Our programs allow qualification with as little as one year of tax returns for borrowers who meet other qualifying criteria.' } },
-    { '@type': 'Question', name: 'What documentation can I use instead of W-2s?', acceptedAnswer: { '@type': 'Answer', text: 'Depending on the program, you may qualify using one year of tax returns, a 12-month rolling P&L statement, 12-24 months of bank statements, or asset depletion calculations.' } },
-    { '@type': 'Question', name: 'What is the P&L Statement Option?', acceptedAnswer: { '@type': 'Answer', text: 'A CPA or licensed accountant prepares a 12-month Profit & Loss statement that documents your business income. This can be used in place of tax returns to qualify.' } },
-    { '@type': 'Question', name: 'What is the Bank Statement Program?', acceptedAnswer: { '@type': 'Answer', text: 'Instead of tax returns, we use 12-24 months of personal or business bank statements to calculate average monthly income based on actual deposits.' } },
-    { '@type': 'Question', name: 'Can I use these programs for investment properties?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Self-employed loan programs are available for primary residences, second homes and investment properties, subject to program-specific down payment and reserve requirements.' } },
-    { '@type': 'Question', name: 'What loan amounts are available?', acceptedAnswer: { '@type': 'Answer', text: 'Loan amounts up to $3 million are available through our self-employed programs, with down payment options starting at 10% for qualified borrowers.' } }
-  ],
+  mainEntity: faqs.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
 }
 
 const breadcrumbJsonLd = {
@@ -123,20 +121,7 @@ const loanJsonLd = {
   name: 'Self Employed Loans',
   description: 'Mortgage loans for self-employed borrowers using bank statements or alternative income documentation. Colorado. NMLS #794730.',
   url: 'https://www.thebeckerteam.com/loan-programs/self-employed-loans',
-  provider: {
-    '@type': 'FinancialService',
-    name: 'The Becker Team - Xpert Home Lending',
-    url: 'https://www.thebeckerteam.com',
-    telephone: '(720) 492-3335',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '201 Columbine Street, Suite 300',
-      addressLocality: 'Denver',
-      addressRegion: 'CO',
-      postalCode: '80206',
-      addressCountry: 'US',
-    },
-  },
+  provider: teamReference,
   areaServed: { '@type': 'State', name: 'Colorado' },
 }
 

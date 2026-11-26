@@ -3,6 +3,12 @@ import type { NextConfig } from 'next'
 const nextConfig: NextConfig = {
   async redirects() {
     return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'thebeckerteam\\.com' }],
+        destination: 'https://www.thebeckerteam.com/:path*',
+        permanent: true,
+      },
       // Old Squarespace homepage slug
       { source: '/home', destination: '/', permanent: true },
       { source: '/giving-back', destination: '/about#givingback', permanent: true },

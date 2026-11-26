@@ -1,3 +1,4 @@
+import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Check } from 'lucide-react'
@@ -12,12 +13,11 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'FinancialService',
+  '@type': 'Service',
   name: 'The Becker Team — VA Loans Colorado Springs',
   description: 'VA mortgage specialist serving veterans and service members in Colorado Springs, Fort Carson, Peterson SFB, Schriever SFB, and USAFA.',
   url: 'https://www.thebeckerteam.com/colorado-springs-va-loans',
-  telephone: '(720) 492-3335',
-  email: 'Jamie@thebeckerteam.com',
+  provider: teamReference,
   areaServed: [
     { '@type': 'City', name: 'Colorado Springs' },
     { '@type': 'AdministrativeArea', name: 'Fort Carson' },
@@ -25,7 +25,6 @@ const jsonLd = {
     { '@type': 'AdministrativeArea', name: 'Schriever Space Force Base' },
     { '@type': 'AdministrativeArea', name: 'United States Air Force Academy' },
   ],
-  founder: { '@type': 'Person', name: 'Jamie Becker', identifier: 'NMLS #794730' },
 }
 
 const breadcrumb = {

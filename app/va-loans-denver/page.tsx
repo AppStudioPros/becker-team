@@ -1,3 +1,4 @@
+import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { dollars, oneUnitLimits } from '@/lib/conformingLimits'
@@ -13,20 +14,11 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'FinancialService',
+  '@type': 'Service',
   name: 'The Becker Team — VA Loans Denver',
   description: 'VA mortgage specialist serving veterans and active-duty service members in the Denver metro area.',
   url: 'https://www.thebeckerteam.com/va-loans-denver',
-  telephone: '(720) 492-3335',
-  email: 'Jamie@thebeckerteam.com',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '201 Columbine Street, Suite 300',
-    addressLocality: 'Denver',
-    addressRegion: 'CO',
-    postalCode: '80206',
-    addressCountry: 'US',
-  },
+  provider: teamReference,
   areaServed: [
     { '@type': 'City', name: 'Denver' },
     { '@type': 'City', name: 'Aurora' },
@@ -35,7 +27,6 @@ const jsonLd = {
     { '@type': 'City', name: 'Westminster' },
     { '@type': 'City', name: 'Centennial' },
   ],
-  founder: { '@type': 'Person', name: 'Jamie Becker', identifier: 'NMLS #794730' },
 }
 
 const breadcrumb = {

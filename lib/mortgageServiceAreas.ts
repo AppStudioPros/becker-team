@@ -1,3 +1,5 @@
+import { dollars, oneUnitLimits } from './conformingLimits'
+
 export const mortgageServiceAreas = [
   {
     city: 'Boulder', slug: 'boulder',
@@ -24,19 +26,23 @@ export const mortgageServiceAreas = [
     href: '/mountain-home-loans', label: 'Explore Colorado mountain home loans',
   },
   {
+    // Realie public parcel-record aggregates and Aspen Glenwood MLS sales through October 2026.
+    // https://www.realie.ai/data/CO/PITKIN/ASPEN
+    // https://monthaus.com/market-reports/october-2026/aspen
     city: 'Aspen', slug: 'aspen',
     focus: 'Talk through loan size, cash at closing, and property use before making an offer on an Aspen home.',
-    question: 'What should I compare when the purchase may require a jumbo loan?',
-    answer: 'Ask for a side-by-side estimate of the down payment, closing costs, monthly payment, and cash you may need to keep in reserve. If you plan to use business or investment income to qualify, tell Jamie up front so you know what records to gather.',
-    detail: 'For an Aspen condo, send the building details along with the price. Occupancy and how the building operates can affect the financing review even when you have already discussed the loan amount.',
+    question: 'What do Aspen properties sell for, and when would I need a jumbo loan?',
+    answer: 'From May 7, 2025, through October 28, 2026, the middle 80% of recorded property sale amounts in Aspen ran from $126,500 to $5.94 million. If you are looking for a whole home, local MLS sales from January through October 2026 give a useful comparison. The median was about $3.85 million for condos and townhomes and $10.6 million for single-family homes.',
+    detail: `In Pitkin County, a mortgage on a one-unit home is jumbo above ${dollars.format(oneUnitLimits.Pitkin[2026])} for both 2026 and 2027. Subtract your down payment from the purchase price first. For an Aspen condo, send us the HOA rules and any rental agreement so we can review whether you control when you stay there.`,
     href: '/loan-programs/jumbo-loans', label: 'Explore jumbo loans',
   },
   {
+    // https://www.realie.ai/data/CO/LAKE/LEADVILLE
     city: 'Leadville', slug: 'leadville',
     focus: 'Get a financing plan for a Leadville home, including older properties and homes outside town.',
-    question: 'What should I flag if the house needs work?',
-    answer: 'Share known issues with the roof, heat, water supply, or access before you settle on a loan program. Ask which repairs could affect financing and which costs you should budget for after closing.',
-    detail: 'If the property is outside town, ask how road access and snow removal are handled and whether it uses a private well or septic system. Bring those details into the financing conversation before agreeing to a tight closing timeline.',
+    question: 'What should I budget for a Leadville home?',
+    answer: 'From May 7, 2025, through October 28, 2026, the middle 80% of recorded property sale amounts in Leadville ran from $319,800 to $922,500. If you are considering an older house, include any roof or heating repairs in your budget. Outside town, ask who maintains the road and whether the house uses a private well or septic system.',
+    detail: `For a one-unit home in Lake County, the conforming loan limit is ${dollars.format(oneUnitLimits.Lake[2026])} for 2026 and ${dollars.format(oneUnitLimits.Lake[2027])} for 2027. Compare the mortgage you need after your down payment with the limit for the applicable year. A loan above that amount is jumbo.`,
     href: '/home-loan-process-guide', label: 'See the home loan process',
   },
   {

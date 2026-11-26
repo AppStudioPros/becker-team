@@ -1,3 +1,4 @@
+import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Check } from 'lucide-react'
@@ -12,20 +13,11 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'FinancialService',
+  '@type': 'Service',
   name: 'The Becker Team — Thornton Colorado Mortgage Broker',
   description: 'Local mortgage lender serving Thornton, Northglenn, Commerce City, Brighton, and Henderson in the north Denver metro.',
   url: 'https://www.thebeckerteam.com/thornton-mortgage',
-  telephone: '(720) 492-3335',
-  email: 'Jamie@thebeckerteam.com',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '201 Columbine Street, Suite 300',
-    addressLocality: 'Denver',
-    addressRegion: 'CO',
-    postalCode: '80206',
-    addressCountry: 'US',
-  },
+  provider: teamReference,
   areaServed: [
     { '@type': 'City', name: 'Thornton' },
     { '@type': 'City', name: 'Northglenn' },
@@ -33,8 +25,6 @@ const jsonLd = {
     { '@type': 'City', name: 'Brighton' },
     { '@type': 'City', name: 'Henderson' },
   ],
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', reviewCount: '250', bestRating: '5' },
-  founder: { '@type': 'Person', name: 'Jamie Becker', identifier: 'NMLS #794730' },
 }
 
 const breadcrumb = {
@@ -49,9 +39,9 @@ const breadcrumb = {
 const programs = [
   { label: 'FHA Loans', desc: '3.5% down and flexible credit. The most popular loan type for Thornton first-time buyers entering the market at this price point.', href: '/loan-programs/fha-loans' },
   { label: 'CHFA Loans', desc: 'Colorado Housing and Finance Authority down payment assistance can help Thornton buyers close with less cash upfront. Pairs with FHA and conventional.', href: '/chfa-loan-colorado' },
-  { label: 'Conventional Loans', desc: 'For Thornton buyers with solid credit and at least 3-5% down. Lower long-term costs than FHA when you can qualify.', href: '/loan-programs/conventional-loans' },
+  { label: 'Conventional Loans', desc: 'Compare conventional and FHA payments for your Thornton home, including mortgage insurance and closing costs for each option.', href: '/loan-programs/conventional-loans' },
   { label: 'VA Loans', desc: 'Zero down for eligible veterans and active-duty service members. No PMI. Thornton and Brighton have strong veteran communities.', href: '/loan-programs/va-loans' },
-  { label: 'New Construction Loans', desc: 'Brighton and Henderson corridors have active new construction. Jamie works with builders and can lock your rate through the construction timeline.', href: '/loan-programs/conventional-loans' },
+  { label: 'New Construction Loans', desc: 'Buying a new home in Brighton or Henderson? Ask when you can lock the rate, how long the lock lasts and what an extension costs.', href: '/loan-programs/conventional-loans' },
   { label: 'Self-Employed Loans', desc: 'Bank statement programs for Thornton small business owners and contractors. Non-traditional income documentation accepted.', href: '/loan-programs/self-employed-loans' },
 ]
 
@@ -170,7 +160,7 @@ export default function ThorntonMortgagePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               { title: 'First-Time Buyer Specialists', body: 'Thornton is a primary entry point into the Denver metro for first-time buyers. Jamie walks you through FHA, CHFA, and conventional options in plain language, then recommends what actually makes sense for your situation.' },
-              { title: 'New Construction Experience', body: 'The Brighton and Henderson corridors are active new construction markets. Jamie works with builders, can often lock your rate during construction, and helps you avoid the pitfalls of builder financing that is not always in your best interest.' },
+              { title: 'New Construction Experience', body: 'When comparing a builder incentive with a separate loan offer, check the lender credit, rate and lock period. We can put the numbers side by side for your planned closing date.' },
               { title: 'Multiple Lender Options', body: 'Jamie can compare rates, lender fees and how much cash you’d need at closing with different wholesale lenders.' },
               { title: 'Closing Date Planning', body: 'Jamie can help you factor underwriting and appraisal into your offer. For a new build, bring the builder’s expected completion date.' },
             ].map((item) => (

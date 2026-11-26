@@ -1,3 +1,4 @@
+import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -51,11 +52,11 @@ const fitProfiles = [
 const faqs = [
   {
     q: 'What is an FHA loan?',
-    a: 'An FHA loan is a mortgage insured by the Federal Housing Administration. The government backing allows private lenders to offer more flexible terms to borrowers who may not qualify for conventional financing.',
+    a: 'An FHA loan is a mortgage that a private lender makes and the Federal Housing Administration insures. It can be an option if you have a smaller down payment or a shorter credit history. We can show you how the mortgage insurance affects both your cash at closing and your monthly payment.',
   },
   {
     q: 'What credit score do I need for an FHA loan?',
-    a: 'For a typical FHA purchase, a qualifying score of at least 580 may allow 3.5% down. With a score of 500 to 579, FHA generally requires at least 10% down. Lenders may set stricter requirements and also review income, debts and the property.',
+    a: 'For a typical purchase with an FHA case number assigned in 2026, a qualifying credit score of 580 or higher can allow 3.5% down. Scores from 500 through 579 generally require at least 10% down. Lenders may have stricter requirements and will also review your income, debts and property.',
   },
   {
     q: 'What is mortgage insurance on an FHA loan?',
@@ -63,7 +64,7 @@ const faqs = [
   },
   {
     q: 'Can I use an FHA loan to buy any type of home?',
-    a: 'FHA loans are intended for primary residences only. The property must meet FHA minimum property standards, which can affect eligibility for some fixer-uppers or unique property types.',
+    a: 'A standard FHA purchase loan is for a home you plan to live in. Eligible properties can include a house, an eligible condo or a building with up to four units if you occupy one. The appraisal also checks the home’s condition. Some needed repairs can affect which loan works.',
   },
   {
     q: 'How does FHA differ from conventional?',
@@ -71,7 +72,7 @@ const faqs = [
   },
   {
     q: 'Are there loan limits for FHA loans?',
-    a: 'Yes. FHA loan limits vary by county and are updated annually. Our team can confirm current limits for your area and purchase price.',
+    a: 'Yes. FHA sets mortgage limits by county and by the number of units in the property. The limit applies to the base loan amount. If you’re comparing homes across a county line or considering a duplex, we can check both limits before you decide on your down payment.',
   },
 ]
 
@@ -101,20 +102,7 @@ const loanJsonLd = {
   name: 'FHA Loans',
   description: 'FHA-insured home loans for eligible buyers. Jamie Becker explains credit requirements, down payments and mortgage insurance. NMLS #794730.',
   url: 'https://www.thebeckerteam.com/loan-programs/fha-loans',
-  provider: {
-    '@type': 'FinancialService',
-    name: 'The Becker Team - Xpert Home Lending',
-    url: 'https://www.thebeckerteam.com',
-    telephone: '(720) 492-3335',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '201 Columbine Street, Suite 300',
-      addressLocality: 'Denver',
-      addressRegion: 'CO',
-      postalCode: '80206',
-      addressCountry: 'US',
-    },
-  },
+  provider: teamReference,
   areaServed: { '@type': 'State', name: 'Colorado' },
 }
 

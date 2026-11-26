@@ -224,6 +224,7 @@ export default async function BlogPostPage({ params }: Params) {
               .
             </p>
           )}
+          <p className="mt-6 text-[#1c3023]">Jamie Becker - The Becker Team - Denver, CO</p>
         </div>
 
         {/* CTA Section */}

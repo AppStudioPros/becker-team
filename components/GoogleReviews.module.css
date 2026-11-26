@@ -53,8 +53,7 @@ a.author:hover span { text-decoration: underline; text-decoration-thickness: 1px
 .source { gap: 8px 16px; }
 .more { font-weight: 600; }
 .maps { width: 98px; height: 18px; margin: 10px 10px 5px; }
-.attribution, .notice { font-size: 13px; color: #54615b; }
-.section .notice { margin: 10px 0 0; text-align: left; }
+.attribution { font-size: 13px; color: #54615b; }
 .controls { gap: 6px; }
 .controls span { font-size: 13px; font-variant-numeric: tabular-nums; margin-right: 5px; }
 .controls button { display: grid; place-items: center; width: 40px; height: 40px; background: white; color: var(--ink); border: 1px solid #c7c7ba; border-radius: 50%; cursor: pointer; }

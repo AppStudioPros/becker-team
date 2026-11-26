@@ -134,7 +134,7 @@ export default function GoogleReviews() {
     <section ref={section} id="google-reviews" className={styles.section} aria-label={count ? label : 'More reviews'}
       onPointerEnter={e => { if (e.pointerType !== 'touch') setHovered(true) }}
       onPointerLeave={() => setHovered(false)}
-      onFocus={e => { if (e.target.matches(':focus-visible')) setKeyboardFocus(true) }}
+      onFocus={e => setKeyboardFocus(e.target !== e.currentTarget && e.target.matches(':focus-visible'))}
       onBlur={e => { if (!e.currentTarget.contains(e.relatedTarget)) setKeyboardFocus(false) }}
       onKeyDown={e => {
         setKeyboardFocus(true)
@@ -199,7 +199,6 @@ export default function GoogleReviews() {
             </div>
           )}
         </div>
-        {google && <p className={styles.notice}>Showing five-star reviews with comments, ordered by Google relevance.</p>}
         <span className="sr-only" role="status">{scrollable && position.manual ? `Review ${position.index + 1} of ${count}, ${reviews[position.index].name}` : ''}</span>
       </div>
     </section>

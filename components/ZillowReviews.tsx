@@ -14,6 +14,7 @@ const total = reviews.length
 
 export default function ZillowReviews() {
   const track = useRef<HTMLUListElement>(null)
+  const animation = useRef<Animation | null>(null)
   const touch = useRef<{ x: number; y: number } | null>(null)
   const [position, setPosition] = useState({ index: 0, direction: 0, manual: false })
   const [columns, setColumns] = useState(3)
@@ -23,6 +24,7 @@ export default function ZillowReviews() {
   const [touching, setTouching] = useState(false)
   const [inView, setInView] = useState(false)
   const [pageVisible, setPageVisible] = useState(true)
+  const hold = paused || hovered || keyboardFocus || touching || !inView || !pageVisible
 
   function move(direction: number, manual = true) {
     setPosition(({ index }) => ({ index: (index + direction + total) % total, direction, manual }))
@@ -53,10 +55,10 @@ export default function ZillowReviews() {
   }, [])
 
   useEffect(() => {
-    if (paused || hovered || keyboardFocus || touching || !inView || !pageVisible) return
+    if (hold) return
     const timer = window.setTimeout(() => move(1, false), 6500)
     return () => window.clearTimeout(timer)
-  }, [position, paused, hovered, keyboardFocus, touching, inView, pageVisible])
+  }, [position, hold])
 
   useLayoutEffect(() => {
     const list = track.current
@@ -66,11 +68,24 @@ export default function ZillowReviews() {
       [{ transform: `translateX(${step * position.direction}px)` }, { transform: 'translateX(0)' }],
       { duration: 440, easing: 'cubic-bezier(.2,.7,.2,1)' },
     )
-    return () => slide.cancel()
+    animation.current = slide
+    return () => { slide.cancel(); animation.current = null }
   }, [position])
 
+  useLayoutEffect(() => {
+    const slide = animation.current
+    if (!slide || position.manual || slide.playState === 'finished') return
+    if (hold) slide.pause()
+    else if (slide.playState === 'paused') slide.play()
+  }, [hold, position])
+
   return (
-    <section id="becker-home-reviews" className={styles.section} aria-labelledby="becker-voices-title">
+    <section id="becker-home-reviews" className={styles.section} aria-labelledby="becker-voices-title"
+      onPointerEnter={e => { if (e.pointerType !== 'touch') setHovered(true) }}
+      onPointerLeave={() => setHovered(false)}
+      onFocus={e => setKeyboardFocus(e.target !== e.currentTarget && e.target.matches(':focus-visible'))}
+      onBlur={e => { if (!e.currentTarget.contains(e.relatedTarget)) setKeyboardFocus(false) }}
+    >
       <header className={styles.intro}>
         <div>
           <p className={styles.eyebrow}>Reviews on Zillow</p>
@@ -80,10 +95,6 @@ export default function ZillowReviews() {
       </header>
       <div
         className={styles.carousel} role="region" aria-roledescription="carousel" aria-label="Jamie Becker’s Zillow reviews"
-        onPointerEnter={e => { if (e.pointerType !== 'touch') setHovered(true) }}
-        onPointerLeave={() => setHovered(false)}
-        onFocus={e => setKeyboardFocus(e.target.matches(':focus-visible'))}
-        onBlur={e => { if (!e.currentTarget.contains(e.relatedTarget)) setKeyboardFocus(false) }}
         onKeyDown={e => {
           setKeyboardFocus(true)
           if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {

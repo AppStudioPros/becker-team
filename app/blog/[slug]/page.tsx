@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { createAdminClient } from '@/lib/supabase'
+import { previewBlogPosts } from '@/lib/previewBlogPosts'
 import { Calendar, ChevronLeft } from 'lucide-react'
 
 export const revalidate = 60
@@ -18,10 +19,10 @@ async function getPostBySlug(slug: string) {
     .select('*')
     .eq('slug', slug)
     .eq('status', 'published')
-    .single()
+    .maybeSingle()
 
-  if (error || !data) return null
-  return data
+  if (error) return null
+  return data ?? previewBlogPosts.find(post => post.slug === slug) ?? null
 }
 
 export async function generateStaticParams() {
@@ -31,7 +32,9 @@ export async function generateStaticParams() {
     .select('slug')
     .eq('status', 'published')
 
-  return (data || []).map((post) => ({ slug: post.slug }))
+  const slugs = new Set((data || []).map(post => post.slug))
+  for (const post of previewBlogPosts) slugs.add(post.slug)
+  return Array.from(slugs, slug => ({ slug }))
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
@@ -41,6 +44,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 
   return {
     title: post.title,
+    robots: post.status === 'draft' ? { index: false, follow: false } : undefined,
     description: post.meta_description || undefined,
     keywords: post.keywords || undefined,
     alternates: {

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { createAdminClient } from '@/lib/supabase'
+import { previewBlogPosts } from '@/lib/previewBlogPosts'
 import BlogClient from '@/components/BlogClient'
 
 export const metadata: Metadata = {
@@ -36,7 +37,13 @@ async function getPublishedPosts(): Promise<BlogPost[]> {
     console.error('Blog index fetch error:', error)
     return []
   }
-  return data || []
+  const published = data || []
+  const publishedSlugs = new Set(published.map(post => post.slug))
+  const previewCards = previewBlogPosts
+    .filter(post => !publishedSlugs.has(post.slug))
+    .map(({ id, title, slug, published_at, feature_image, meta_description, category, hero_position }) =>
+      ({ id, title, slug, published_at, feature_image, meta_description, category, hero_position }))
+  return [...previewCards, ...published]
 }
 
 function formatDate(dateStr: string | null): string {

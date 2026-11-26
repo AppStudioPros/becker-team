@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 import { jamieLicensedStates } from '@/lib/jamieLicenses'
-import { Suspense } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import FaqAccordion from '@/components/FaqAccordion'
 import ZillowReviews from '@/components/ZillowReviews'
+import GoogleReviews from '@/components/GoogleReviews'
 
 export const metadata: Metadata = {
   title: { absolute: 'Colorado Mortgage Broker | The Becker Team' },
@@ -97,99 +97,6 @@ const speakableJsonLd = {
   },
 }
 
-
-const googleReviewsUrl = 'https://www.google.com/maps?cid=14064244300182174262'
-
-type GoogleReview = {
-  reviewId: string
-  reviewer?: { displayName?: string }
-  starRating: 'ONE' | 'TWO' | 'THREE' | 'FOUR' | 'FIVE'
-  comment?: string
-}
-
-const featuredGoogleReviews = [
-  { name: 'Jon Dwight', excerpt: 'Everything was seamless and we didn’t have to worry when we got to the closing table.' },
-  { name: 'Sally Johnston', excerpt: 'He was always there to help and anticipated any challenges we could have had.' },
-  { name: 'Brianna Trujillo', excerpt: 'They worked hard from the start of the process all the way to the end.' },
-]
-
-function ReviewCard({ name, rating, quote }: { name: string; rating: number; quote: string }) {
-  return (
-    <li className="flex flex-col items-center rounded-lg border border-[#ede4cc] border-t-2 border-t-[#B98942] bg-[#F5EFE6] px-6 py-8 text-center">
-      <p className="text-xl font-semibold md:text-2xl">{name}</p>
-      <div className="mt-2 text-lg leading-none tracking-widest text-[#8A601F]" role="img" aria-label={`${rating} of 5 stars`}>
-        <span aria-hidden="true">{'★'.repeat(rating)}{'☆'.repeat(5 - rating)}</span>
-      </div>
-      <blockquote className="mt-5 max-w-xs whitespace-pre-line break-words border-t border-[#dfd1b8] pt-5 text-sm leading-relaxed">
-        “{quote}”
-      </blockquote>
-    </li>
-  )
-}
-
-function FeaturedGoogleReviews() {
-  return (
-    <div className="mt-8">
-      <p className="mb-5 text-sm">See what past clients have to say</p>
-      <ul className="grid gap-5 md:grid-cols-3">
-        {featuredGoogleReviews.map(({ name, excerpt }) => (
-          <ReviewCard key={name} name={name} rating={5} quote={excerpt} />
-        ))}
-      </ul>
-    </div>
-  )
-}
-
-async function GoogleReviewCards() {
-  const { GOOGLE_GBP_CLIENT_ID, GOOGLE_GBP_CLIENT_SECRET, GOOGLE_GBP_REFRESH_TOKEN, GOOGLE_GBP_ACCOUNT_ID, GOOGLE_GBP_LOCATION_ID } = process.env
-  if (!GOOGLE_GBP_CLIENT_ID || !GOOGLE_GBP_CLIENT_SECRET || !GOOGLE_GBP_REFRESH_TOKEN ||
-      !GOOGLE_GBP_ACCOUNT_ID || !GOOGLE_GBP_LOCATION_ID) return <FeaturedGoogleReviews />
-
-  const signal = AbortSignal.timeout(4000)
-  try {
-    const tokenResponse = await fetch('https://oauth2.googleapis.com/token', {
-      method: 'POST',
-      body: new URLSearchParams({
-        grant_type: 'refresh_token',
-        client_id: GOOGLE_GBP_CLIENT_ID,
-        client_secret: GOOGLE_GBP_CLIENT_SECRET,
-        refresh_token: GOOGLE_GBP_REFRESH_TOKEN,
-      }),
-      cache: 'no-store',
-      signal,
-    })
-    if (!tokenResponse.ok) return null
-    const { access_token } = await tokenResponse.json()
-    if (typeof access_token !== 'string') return null
-
-    const account = encodeURIComponent(GOOGLE_GBP_ACCOUNT_ID)
-    const location = encodeURIComponent(GOOGLE_GBP_LOCATION_ID)
-    const response = await fetch(
-      `https://mybusiness.googleapis.com/v4/accounts/${account}/locations/${location}/reviews?pageSize=6&orderBy=updateTime%20desc`,
-      { headers: { Authorization: `Bearer ${access_token}` }, cache: 'no-store', signal },
-    )
-    if (!response.ok) return null
-    const { reviews = [] }: { reviews?: GoogleReview[] } = await response.json()
-    const ratings = { ONE: 1, TWO: 2, THREE: 3, FOUR: 4, FIVE: 5 }
-    const cards = reviews.filter(({ comment }) => comment?.trim()).slice(0, 3)
-    if (cards.length === 0) return null
-
-    return (
-      <ul className="mt-8 grid gap-5 md:grid-cols-3">
-        {cards.map((review) => (
-          <ReviewCard
-            key={review.reviewId}
-            name={review.reviewer?.displayName || 'Google reviewer'}
-            rating={ratings[review.starRating]}
-            quote={review.comment ?? ''}
-          />
-        ))}
-      </ul>
-    )
-  } catch {
-    return null
-  }
-}
 
 export default function HomePage() {
   return (
@@ -387,18 +294,7 @@ export default function HomePage() {
         </Link>
       </section>
 
-      <section id="google-reviews" className="scroll-mt-24 bg-white px-6 py-16 text-center text-[#1F2E2A]">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="mb-4 text-3xl md:text-4xl">Google Reviews</h2>
-          <p className="mb-3 text-lg">5.0 out of 5 from 232 Google reviews as of November 2026.</p>
-          <a href={googleReviewsUrl} className="font-semibold underline underline-offset-4">
-            More reviews
-          </a>
-          <Suspense fallback={null}>
-            <GoogleReviewCards />
-          </Suspense>
-        </div>
-      </section>
+      <GoogleReviews />
 
       <section id="mortgage-faq" aria-labelledby="mortgage-faq-heading" style={{ backgroundColor: '#F5EFE6' }} className="scroll-mt-24 py-16 md:py-20 px-6">
         <div className="max-w-3xl mx-auto">

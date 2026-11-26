@@ -43,7 +43,7 @@
 a.author:hover span { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
 .avatar { display: block; width: 40px; height: 40px; object-fit: cover; border-radius: 50%; }
 .stars { color: #997021; margin-top: 8px; letter-spacing: .06em; }
-.card blockquote { margin: 16px 0 0; padding: 0; border: 0; text-align: center; white-space: pre-line; line-height: 1.55; }
+.card blockquote, .topic { margin: 16px 0 0; padding: 0; border: 0; text-align: center; white-space: pre-line; line-height: 1.55; }
 .excerpt { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 6; overflow: hidden; }
 .full, .more, a.attribution { text-decoration: underline; text-underline-offset: 3px; }
 .full { padding-top: 16px; margin-top: auto; font-size: 14px; font-weight: 600; }

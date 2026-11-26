@@ -1,6 +1,6 @@
 import type { ReviewCardData, ReviewsPayload } from '@/lib/googleReviewTypes'
 // The agency's monthly five-card fallback is maintained in this shared module.
-import { staticGoogleReviews } from '@/lib/approvedGoogleReviews'
+import { staticGoogleReviews } from '@/lib/monthlyGoogleReviews'
 
 export const dynamic = 'force-dynamic'
 

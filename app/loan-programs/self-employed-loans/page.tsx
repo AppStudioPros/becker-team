@@ -3,9 +3,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Check, ChevronLeft, ChevronRight } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
+import ProgramReviews from '@/components/ProgramReviews'
 
 export const metadata: Metadata = {
-  title: 'Self-Employed Mortgage Colorado | Bank Statement Mortgage Program | The Becker Team',
+  title: 'Bank Statement Mortgages for Self-Employed Buyers',
   description:
     'Explore bank statement mortgages and other loan options for self-employed Colorado buyers with Jamie Becker of The Becker Team. NMLS #794730.',
   alternates: { canonical: '/loan-programs/self-employed-loans' },
@@ -136,11 +137,7 @@ const loanJsonLd = {
       addressCountry: 'US',
     },
   },
-  areaServed: [
-    { '@type': 'State', name: 'Colorado' },
-    { '@type': 'State', name: 'Georgia' },
-    { '@type': 'State', name: 'Oregon' },
-  ],
+  areaServed: { '@type': 'State', name: 'Colorado' },
 }
 
 export default function SelfEmployedLoansPage() {
@@ -301,8 +298,41 @@ export default function SelfEmployedLoansPage() {
         </div>
       </section>
 
+      <section className="bg-white py-12 px-6">
+        <div className="max-w-3xl mx-auto text-[#1F2E2A]">
+          <h2 className="text-2xl font-bold mb-4" style={{ fontFamily: 'var(--font-playfair), Georgia, serif' }}>
+            What to gather for a bank statement mortgage
+          </h2>
+          <ul className="list-disc pl-6 space-y-2 mb-5">
+            <li>Personal or business bank statements covering 12 or 24 months, depending on the program.</li>
+            <li>Your business name, ownership percentage, and when you started working for yourself.</li>
+            <li>Basic details about the home you plan to buy and the funds available for a down payment.</li>
+          </ul>
+          <p className="mb-4">
+            For example, a self-employed contractor whose customer payments go into a business checking account could start by gathering those statements. Jamie can help identify which deposits the lender may count and what other documents it may ask for.
+          </p>
+          <Link href="/blog/bank-statement-loans-colorado" className="font-semibold underline underline-offset-4">
+            Read the Colorado bank statement loan guide
+          </Link>
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section style={{ backgroundColor: '#F5EFE6' }} className="py-16 md:py-20 px-6">
+        <div className="max-w-3xl mx-auto">
+          <h2
+            data-reveal
+            className="text-3xl md:text-5xl font-bold text-center mb-10"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
+          >
+            Frequently Asked Questions
+          </h2>
+          <FaqAccordion items={faqs} />
+        </div>
+      </section>
+
       {/* ── Why Work with Jamie ── */}
-      <section className="bg-white py-16 md:py-24 px-6">
+      <section id="why-work-with-jamie" className="bg-white py-16 md:py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <h2
             data-reveal
@@ -340,39 +370,7 @@ export default function SelfEmployedLoansPage() {
               />
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-white py-12 px-6">
-        <div className="max-w-3xl mx-auto text-[#1F2E2A]">
-          <h2 className="text-2xl font-bold mb-4" style={{ fontFamily: 'var(--font-playfair), Georgia, serif' }}>
-            What to gather for a bank statement mortgage
-          </h2>
-          <ul className="list-disc pl-6 space-y-2 mb-5">
-            <li>Personal or business bank statements covering 12 or 24 months, depending on the program.</li>
-            <li>Your business name, ownership percentage, and when you started working for yourself.</li>
-            <li>Basic details about the home you plan to buy and the funds available for a down payment.</li>
-          </ul>
-          <p className="mb-4">
-            For example, a self-employed contractor whose customer payments go into a business checking account could start by gathering those statements. Jamie can help identify which deposits the lender may count and what other documents it may ask for.
-          </p>
-          <Link href="/blog/bank-statement-loans-colorado" className="font-semibold underline underline-offset-4">
-            Read the Colorado bank statement loan guide
-          </Link>
-        </div>
-      </section>
-
-      {/* ── FAQ ── */}
-      <section style={{ backgroundColor: '#F5EFE6' }} className="py-16 md:py-20 px-6">
-        <div className="max-w-3xl mx-auto">
-          <h2
-            data-reveal
-            className="text-3xl md:text-5xl font-bold text-center mb-10"
-            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
-          >
-            Frequently Asked Questions
-          </h2>
-          <FaqAccordion items={faqs} />
+          <ProgramReviews reviewers={['lala7499', '4belle1rose5']} />
         </div>
       </section>
 

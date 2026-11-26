@@ -4,7 +4,7 @@ import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Self-Employed Mortgage Colorado | Bank Statement Loans | The Becker Team',
+  title: 'Colorado Mortgage Options for Self-Employed Buyers',
   description:
     'Self-employed mortgage programs in Colorado. Bank statement loans, asset qualifier loans, and non-QM options for freelancers, 1099 workers, and business owners. Jamie Becker NMLS #794730.',
   alternates: { canonical: 'https://www.thebeckerteam.com/self-employed-mortgage-colorado' },

@@ -58,9 +58,6 @@ export function mortgageLoanSchema(name: string, desc: string, url: string) {
       { '@type': 'City', name: 'Aspen', containedIn: { '@type': 'State', name: 'Colorado' } },
       { '@type': 'City', name: 'Breckenridge', containedIn: { '@type': 'State', name: 'Colorado' } },
       { '@type': 'City', name: 'Steamboat Springs', containedIn: { '@type': 'State', name: 'Colorado' } },
-      // Additional states
-      { '@type': 'State', name: 'Georgia' },
-      { '@type': 'State', name: 'Oregon' },
     ],
   }
 }

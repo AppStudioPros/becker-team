@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { dollars, oneUnitLimits } from '@/lib/conformingLimits'
 import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Mountain Home Loans Colorado | Vail, Aspen, Breckenridge Mortgage | The Becker Team',
+  title: 'Colorado Mountain Home Loans for Ski Towns',
   description:
     'Mountain home loans for Colorado ski towns. Jumbo loans, second home financing, non-warrantable condo programs for Vail, Aspen, Breckenridge, Steamboat, Telluride, and Crested Butte. Jamie Becker NMLS #794730.',
   alternates: { canonical: 'https://www.thebeckerteam.com/mountain-home-loans' },
@@ -47,8 +48,8 @@ const breadcrumb = {
 }
 
 const benefits = [
-  { title: 'Jumbo Loan Programs', body: 'Vail homes commonly sell for $1.5M-$5M or more. Aspen can easily exceed $10M. Standard conforming limits do not apply here. Jamie has access to multiple jumbo programs with competitive rates and flexible underwriting.' },
-  { title: 'Second Home Financing', body: 'Mountain properties purchased as second homes qualify for lower rates than investment properties. Minimum 10% down, and you can still rent the property part-time. Understanding the distinction matters for your rate.' },
+  { title: 'Jumbo Loan Programs', body: 'Compare the amount you plan to borrow with the specific county limit. Vail is in Eagle County, Aspen is in Pitkin County, and Breckenridge and Silverthorne are in Summit County.' },
+  { title: 'Second Home Financing', body: 'Tell us when you plan to use the home and whether anyone else will control bookings. The lender reviews occupancy, and the town and HOA each have their own rental rules.' },
   { title: 'Non-Warrantable Condo Programs', body: 'Many ski town condo associations have commercial space, heavy short-term rental concentration, or investor ownership above Fannie/Freddie limits. These are non-warrantable condos, and most banks cannot finance them. Jamie has specific programs that can.' },
   { title: 'Investment Property Loans', body: 'If you plan to rent your mountain home as a primary source of income, it qualifies as investment property. Different loan terms apply. Jamie will help you structure the purchase correctly from the start.' },
   { title: 'Flexible Income Documentation', body: 'Many mountain property buyers are business owners, retirees, or investors with complex income. Bank statement loans and asset qualifier programs are available when W-2 documentation does not tell the full story.' },
@@ -62,11 +63,11 @@ const faqs = [
   },
   {
     q: 'What is a non-warrantable condo and why does it matter?',
-    a: 'A non-warrantable condo is one that does not meet Fannie Mae or Freddie Mac guidelines. This usually happens when a development has more than 35% investor ownership, includes significant commercial space, or has high short-term rental concentration. These are extremely common in Colorado ski towns. Most conventional lenders cannot finance them, but portfolio lenders and specialty programs can. If you are buying in a resort condo complex, Jamie will check warrantability early in the process.',
+    a: 'The building may be ineligible for standard condo financing because of its condition or operation. For example, a mandatory rental pool or unresolved critical repairs can affect eligibility. Send us the project name, association documents and any management agreement so we can identify the available options.',
   },
   {
     q: 'What is the difference between a second home loan and an investment property loan?',
-    a: 'A second home is a property you intend to use personally for part of the year. You can rent it when you are not there, but it should not be managed as a full-time rental business. Second home loans typically require 10% down and carry lower interest rates than investment property loans. An investment property is purchased primarily to generate rental income. It requires at least 15-25% down and has higher rates. Getting this classification right from the start affects your financing and your taxes.',
+    a: 'A second home is for your own use during part of the year. For a Fannie Mae second-home loan, you must retain control of occupancy, and you cannot use rent from the home to qualify. If your plan depends on rental income, we can evaluate investment-property financing.',
   },
   {
     q: 'What are jumbo loan requirements in Colorado mountain towns?',
@@ -74,11 +75,11 @@ const faqs = [
   },
   {
     q: 'Can I rent out my mountain home on Airbnb if I finance it as a second home?',
-    a: 'Yes, within limits. You can rent a second home when you are not personally using it. The distinction the lender and IRS care about is whether you are using the property yourself for a meaningful portion of the year. If you rent it out 365 days a year and never stay there yourself, it is likely an investment property, not a second home. For part-time personal use with occasional rentals, second home financing typically applies. Jamie will help you understand how to structure this correctly.',
+    a: 'Check the rules for the exact address and the HOA’s rental policy before advertising. Personal use, a rental management contract and whether you need rent to qualify all affect the financing review. A municipal license does not establish eligibility for a second-home mortgage.',
   },
   {
     q: 'Do Eagle County and Pitkin County have higher conforming loan limits?',
-    a: 'Yes. Eagle County (Vail area) and several other high-cost Colorado mountain counties have higher conforming loan limits set by the FHFA. In 2026, Eagle County\'s limit is $1,149,825 for a single-family home. Pitkin County (Aspen) has similar elevated limits. However, many mountain properties still exceed even these higher limits, requiring true jumbo financing. Jamie will determine which limit applies to your specific county and purchase price.',
+    a: `For one-unit homes, the 2026 limit is ${dollars.format(oneUnitLimits.Eagle[2026])} in Eagle County and ${dollars.format(oneUnitLimits.Pitkin[2026])} in Pitkin County. The published 2027 limits are ${dollars.format(oneUnitLimits.Eagle[2027])} and ${dollars.format(oneUnitLimits.Pitkin[2027])}, respectively. Compare the limit with your loan amount after your down payment.`,
   },
 ]
 
@@ -152,7 +153,7 @@ export default function MountainHomeLoansPage() {
             Mountain Properties Need a Lender Who Knows Them
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            Colorado ski town real estate is a completely different animal from buying a primary residence in the Denver suburbs. Homes in Vail regularly trade between $1.5M and $5M. Aspen properties can go far higher. Breckenridge and Steamboat have seen prices climb sharply as remote work expanded who could buy there. And in nearly every resort condo complex, you will encounter non-warrantable condo issues that most banks cannot handle at all. Jamie Becker (NMLS #794730) has spent 21+ years building relationships with lenders who work specifically in resort markets. That means access to jumbo programs, second home financing, non-warrantable condo solutions, and the experience to know which one fits your situation.
+            A Vail condo with a management agreement can raise different questions from a detached house in Silverthorne. Start with the town, the county where the home sits, and the amount you plan to borrow. Our <Link href="/loan-programs/jumbo-loans#county-loan-limits" className="font-semibold underline">Colorado county loan limits</Link> and local guides to <Link href="/service-areas/vail#local-buying-guide" className="font-semibold underline">Vail</Link>, <Link href="/service-areas/breckenridge#local-buying-guide" className="font-semibold underline">Breckenridge</Link> and <Link href="/service-areas/silverthorne#local-buying-guide" className="font-semibold underline">Silverthorne</Link> can help you compare properties.
           </p>
         </div>
       </section>

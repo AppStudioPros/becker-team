@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Current Mortgage Interest Rates | The Becker Team Colorado',
+  title: 'Current Mortgage Interest Rates',
   description:
-    'View current mortgage interest rates in Colorado. Contact Jamie Becker for a personalized rate quote. NMLS #794730.',
+    'See national mortgage rate averages and ask Colorado mortgage broker Jamie Becker for a quote based on your loan, down payment and property.',
 }
 
 export default function InterestRatesPage() {
@@ -19,7 +19,7 @@ export default function InterestRatesPage() {
           Current Mortgage Rates
         </h1>
         <p className="text-white/80 max-w-xl mx-auto">
-          Rates change daily. Contact Jamie for a personalized quote based on your credit, loan type, and property.
+          See how rates are moving nationally. For a quote on your home, we’ll compare lenders using your loan amount, down payment and credit history.
         </p>
       </section>
 
@@ -28,9 +28,12 @@ export default function InterestRatesPage() {
         <div className="max-w-3xl mx-auto">
 
           <div className="mx-auto mb-12 max-w-[680px] overflow-hidden rounded-lg border border-[#ede4cc] bg-white">
-            <h2 className="px-4 pt-5 text-center font-serif text-2xl font-bold text-[#1F2E2A]">
+            <h2 className="px-4 pt-5 text-center text-2xl font-bold text-[#1F2E2A]">
               National Mortgage Rate Averages
             </h2>
+            <p className="mx-auto mt-2 max-w-xl px-4 text-center text-sm text-gray-600">
+              Mortgage News Daily tracks rates across lenders. Your Loan Estimate shows your own interest rate, annual percentage rate (APR) and closing costs.
+            </p>
             <div className="py-3">
               <iframe
                 title="Mortgage News Daily rates and 30-year rate chart"
@@ -64,11 +67,11 @@ export default function InterestRatesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
             {[
-              { title: 'Credit Score', body: 'Higher credit scores generally mean lower rates. The difference between a 680 and a 760 score can move your rate by half a point or more.' },
+              { title: 'Credit Score', body: 'Lenders use your credit history when pricing a mortgage. The effect on your rate depends on the lender and the loan you choose.' },
               { title: 'Loan Type', body: 'Conventional, FHA, VA, and jumbo loans each carry different rate structures. Specialty and non-QM products are priced differently as well.' },
-              { title: 'Down Payment', body: 'Larger down payments reduce lender risk and can result in better pricing. 20% or more often unlocks the most competitive rates on conventional loans.' },
+              { title: 'Down Payment', body: 'Your down payment changes how much you borrow relative to the home’s value. That can affect both your interest rate and whether you pay mortgage insurance.' },
               { title: 'Loan Term', body: 'Shorter loan terms (15-year vs. 30-year) typically come with lower rates but higher monthly payments. The right term depends on your goals.' },
-              { title: 'Property Type', body: 'Primary residences get the best rates. Second homes and investment properties carry a pricing adjustment.' },
+              { title: 'Property Type', body: 'Lenders consider how you’ll use the home. Pricing can differ for a primary residence, a second home and a rental property.' },
               { title: 'Market Conditions', body: 'Mortgage rates move with the bond market, Federal Reserve policy, and broader economic data. Rates can shift daily.' },
             ].map((item) => (
               <div

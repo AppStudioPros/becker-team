@@ -4,7 +4,7 @@ import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Longmont CO Mortgage Broker | Home Loans Longmont Colorado | The Becker Team',
+  title: 'Longmont, CO Mortgage Broker and Home Loans',
   description:
     'Longmont CO mortgage broker Jamie Becker (NMLS #794730). CHFA, FHA, conventional, and VA loans for Longmont, Firestone, Frederick, Mead, and Berthoud. First-time buyer specialists. Fast pre-approvals.',
   alternates: { canonical: 'https://www.thebeckerteam.com/longmont-mortgage' },

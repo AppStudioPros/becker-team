@@ -3,9 +3,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Check, ChevronLeft, ChevronRight } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
+import ProgramReviews from '@/components/ProgramReviews'
 
 export const metadata: Metadata = {
-  title: 'Best VA Mortgage Rates Colorado | VA Loans Colorado Springs | The Becker Team',
+  title: 'Colorado VA Home Loans',
   description:
     'VA home loans for veterans, active-duty service members and eligible surviving spouses. No down payment, no PMI, competitive rates. Jamie Becker, NMLS #794730.',
   alternates: { canonical: '/loan-programs/va-loans' },
@@ -101,7 +102,7 @@ const loanJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LoanOrCredit',
   name: 'VA Loans',
-  description: 'Best VA mortgage rates in Colorado for veterans, active-duty service members, and eligible surviving spouses. Serving Colorado Springs, Fort Carson, Peterson SFB, Denver, and statewide. No down payment required. Jamie Becker NMLS #794730.',
+  description: 'VA-backed home loans in Colorado for eligible veterans, service members and surviving spouses. Jamie Becker helps buyers compare lender rates and fees.',
   url: 'https://www.thebeckerteam.com/loan-programs/va-loans',
   provider: {
     '@type': 'FinancialService',
@@ -117,11 +118,7 @@ const loanJsonLd = {
       addressCountry: 'US',
     },
   },
-  areaServed: [
-    { '@type': 'State', name: 'Colorado' },
-    { '@type': 'State', name: 'Georgia' },
-    { '@type': 'State', name: 'Oregon' },
-  ],
+  areaServed: { '@type': 'State', name: 'Colorado' },
 }
 
 export default function VaLoansPage() {
@@ -247,8 +244,22 @@ export default function VaLoansPage() {
         </div>
       </section>
 
+      {/* ── FAQ ── */}
+      <section style={{ backgroundColor: '#F5EFE6' }} className="py-16 md:py-20 px-6">
+        <div className="max-w-3xl mx-auto">
+          <h2
+            data-reveal
+            className="text-3xl md:text-5xl font-bold text-center mb-10"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
+          >
+            Frequently Asked Questions
+          </h2>
+          <FaqAccordion items={faqs} />
+        </div>
+      </section>
+
       {/* ── Why Work with Jamie ── */}
-      <section className="bg-white py-16 md:py-24 px-6">
+      <section id="why-work-with-jamie" className="bg-white py-16 md:py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <h2
             data-reveal
@@ -286,20 +297,7 @@ export default function VaLoansPage() {
               />
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ── FAQ ── */}
-      <section style={{ backgroundColor: '#F5EFE6' }} className="py-16 md:py-20 px-6">
-        <div className="max-w-3xl mx-auto">
-          <h2
-            data-reveal
-            className="text-3xl md:text-5xl font-bold text-center mb-10"
-            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
-          >
-            Frequently Asked Questions
-          </h2>
-          <FaqAccordion items={faqs} />
+          <ProgramReviews reviewers={['missmelissab19', 'user4272651']} />
         </div>
       </section>
 

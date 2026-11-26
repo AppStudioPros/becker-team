@@ -3,11 +3,12 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Check, ChevronLeft, ChevronRight } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
+import ProgramReviews from '@/components/ProgramReviews'
 
 export const metadata: Metadata = {
-  title: 'Best Conventional Mortgage Rates Colorado | Denver Mortgage Broker | The Becker Team',
+  title: 'Colorado Conventional Home Loans',
   description:
-    'Conventional home loans from private lenders with flexible terms and competitive rates. As low as 3-5% down. Jamie Becker, NMLS #794730.',
+    'Compare fixed and adjustable conventional mortgages in Colorado with Jamie Becker. Learn how your down payment affects mortgage insurance and cash to close.',
   alternates: { canonical: '/loan-programs/conventional-loans' },
 }
 
@@ -24,7 +25,7 @@ const jsonLd = {
 const highlights = [
   {
     title: 'Low Down Payment Entry',
-    body: 'Down payments as low as 3-5% make conventional loans accessible for first-time buyers and those who prefer to keep more cash in reserve.',
+    body: 'Eligible buyers may be able to put 3% down on a one-unit primary home. The loan program determines whether income limits or first-time buyer requirements apply.',
   },
   {
     title: 'Rates Based on Your Creditworthiness',
@@ -54,11 +55,11 @@ const faqs = [
   },
   {
     q: 'What credit score do I need?',
-    a: 'Most conventional loans require a minimum credit score around 620, though stronger credit scores unlock better rates and terms.',
+    a: 'Credit requirements vary by lender and program. Your credit history, down payment and other application details affect which loans and rates are available to you.',
   },
   {
     q: 'How much down payment is required?',
-    a: 'Down payments can be as low as 3-5%. However, putting down 20% eliminates the requirement for private mortgage insurance.',
+    a: 'Some conventional programs allow 3% down on a one-unit primary home. Eligibility depends on the program and may include income limits or first-time buyer requirements. With 20% down, private mortgage insurance is generally unnecessary.',
   },
   {
     q: 'Do I need mortgage insurance?',
@@ -79,8 +80,8 @@ const faqJsonLd = {
   '@type': 'FAQPage',
   mainEntity: [
     { '@type': 'Question', name: 'What is a conventional loan?', acceptedAnswer: { '@type': 'Answer', text: 'A conventional loan is a mortgage not insured or guaranteed by a government agency such as the FHA or VA. It is originated and serviced by a private lender, with terms based on the borrower\'s credit profile and financials.' } },
-    { '@type': 'Question', name: 'What credit score do I need?', acceptedAnswer: { '@type': 'Answer', text: 'Most conventional loans require a minimum credit score around 620, though stronger credit scores unlock better rates and terms.' } },
-    { '@type': 'Question', name: 'How much down payment is required?', acceptedAnswer: { '@type': 'Answer', text: 'Down payments can be as low as 3-5%. However, putting down 20% eliminates the requirement for private mortgage insurance.' } },
+    { '@type': 'Question', name: 'What credit score do I need?', acceptedAnswer: { '@type': 'Answer', text: 'Credit requirements vary by lender and program. Your credit history, down payment and other application details affect which loans and rates are available to you.' } },
+    { '@type': 'Question', name: 'How much down payment is required?', acceptedAnswer: { '@type': 'Answer', text: 'Some conventional programs allow 3% down on a one-unit primary home. Eligibility depends on the program and may include income limits or first-time buyer requirements. With 20% down, private mortgage insurance is generally unnecessary.' } },
     { '@type': 'Question', name: 'Do I need mortgage insurance?', acceptedAnswer: { '@type': 'Answer', text: 'If your down payment is less than 20%, private mortgage insurance (PMI) is typically required. It can be removed once you reach 20% equity in the home.' } },
     { '@type': 'Question', name: 'What is the difference between conventional and FHA?', acceptedAnswer: { '@type': 'Answer', text: 'Conventional loans are not government-backed and typically require stronger credit. FHA loans are government-insured and allow lower credit scores, but require mortgage insurance for the life of the loan in most cases.' } },
     { '@type': 'Question', name: 'Can I use a conventional loan for an investment property?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Conventional loans can be used for primary residences, second homes, and investment properties, subject to down payment and reserve requirements.' } }
@@ -101,7 +102,7 @@ const loanJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LoanOrCredit',
   name: 'Conventional Loans',
-  description: 'Best conventional mortgage rates in Colorado. Local Denver mortgage broker Jamie Becker (NMLS #794730) offers 30-year fixed, 15-year fixed, and adjustable-rate conventional loans. Serving Denver, Aurora, Lakewood, Littleton, and the Front Range with as little as 3% down.',
+  description: 'Colorado mortgage broker Jamie Becker helps buyers compare fixed and adjustable rates, lender fees and down payment options for a conventional home loan.',
   url: 'https://www.thebeckerteam.com/loan-programs/conventional-loans',
   provider: {
     '@type': 'FinancialService',
@@ -117,11 +118,7 @@ const loanJsonLd = {
       addressCountry: 'US',
     },
   },
-  areaServed: [
-    { '@type': 'State', name: 'Colorado' },
-    { '@type': 'State', name: 'Georgia' },
-    { '@type': 'State', name: 'Oregon' },
-  ],
+  areaServed: { '@type': 'State', name: 'Colorado' },
 }
 
 export default function ConventionalLoansPage() {
@@ -152,7 +149,7 @@ export default function ConventionalLoansPage() {
           Conventional Loans
         </h1>
         <p className="text-white/80 max-w-xl mx-auto text-lg mb-8">
-          Mortgage loans from private lenders with flexible terms, competitive rates and down payments as low as 3-5%.
+          Compare fixed and adjustable rates and see how your down payment affects the cost of a conventional home loan.
         </p>
         <a
           href="https://2179191.my1003app.com/794730/register"
@@ -171,7 +168,7 @@ export default function ConventionalLoansPage() {
           className="text-center text-lg md:text-2xl leading-relaxed"
           style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
         >
-          Flexible terms and repayment options&nbsp;&bull;&nbsp;Competitive rates based on creditworthiness&nbsp;&bull;&nbsp;As low as 3-5% down
+          Fixed or adjustable rates&nbsp;&bull;&nbsp;Flexible repayment terms&nbsp;&bull;&nbsp;Low down payment options
         </p>
       </section>
 
@@ -247,8 +244,22 @@ export default function ConventionalLoansPage() {
         </div>
       </section>
 
+      {/* ── FAQ ── */}
+      <section style={{ backgroundColor: '#F5EFE6' }} className="py-16 md:py-20 px-6">
+        <div className="max-w-3xl mx-auto">
+          <h2
+            data-reveal
+            className="text-3xl md:text-5xl font-bold text-center mb-10"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
+          >
+            Frequently Asked Questions
+          </h2>
+          <FaqAccordion items={faqs} />
+        </div>
+      </section>
+
       {/* ── Why Work with Jamie ── */}
-      <section className="bg-white py-16 md:py-24 px-6">
+      <section id="why-work-with-jamie" className="bg-white py-16 md:py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <h2
             data-reveal
@@ -286,20 +297,7 @@ export default function ConventionalLoansPage() {
               />
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ── FAQ ── */}
-      <section style={{ backgroundColor: '#F5EFE6' }} className="py-16 md:py-20 px-6">
-        <div className="max-w-3xl mx-auto">
-          <h2
-            data-reveal
-            className="text-3xl md:text-5xl font-bold text-center mb-10"
-            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
-          >
-            Frequently Asked Questions
-          </h2>
-          <FaqAccordion items={faqs} />
+          <ProgramReviews reviewers={['Emily Drennan', 'lala7499']} />
         </div>
       </section>
 

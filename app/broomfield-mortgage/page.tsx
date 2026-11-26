@@ -4,7 +4,7 @@ import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Broomfield CO Mortgage Broker | Home Loans Broomfield Colorado | The Becker Team',
+  title: 'Broomfield, CO Mortgage Broker and Home Loans',
   description:
     'Broomfield CO mortgage broker Jamie Becker (NMLS #794730). Conventional, FHA, VA, and jumbo loans for Broomfield, Westminster, Superior, and Louisville. Tech corridor specialists. Fast pre-approvals.',
   alternates: { canonical: 'https://www.thebeckerteam.com/broomfield-mortgage' },

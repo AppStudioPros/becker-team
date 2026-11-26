@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { dollars, oneUnitLimits } from '@/lib/conformingLimits'
 import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Jumbo Loans Boulder CO | Jumbo Mortgage Vail, Aspen, Breckenridge | The Becker Team',
+  title: 'Boulder Jumbo Loans and Mountain Home Financing',
   description:
-    'Best jumbo mortgage rates in Boulder, Aspen, Vail, Breckenridge, and Colorado mountain resort towns. Second home, luxury property, and investment jumbo financing. Jamie Becker NMLS #794730.',
+    'Jumbo mortgages in Boulder, Aspen, Vail, Breckenridge and Colorado mountain resort towns. Second home, luxury property, and investment jumbo financing. Jamie Becker NMLS #794730.',
   alternates: { canonical: 'https://www.thebeckerteam.com/boulder-jumbo-loans' },
 }
 
@@ -50,7 +51,7 @@ const programs = [
 ]
 
 const faqs = [
-  { q: 'What counts as a jumbo loan in Colorado?', a: 'A jumbo loan exceeds the conforming loan limits set by Fannie Mae and Freddie Mac. In most Colorado counties, the 2024 conforming limit is $766,550. In high-cost areas (like Eagle County/Vail and some Boulder and Denver zip codes), the limit is higher. Any loan above the applicable limit for your county is a jumbo loan.' },
+  { q: 'What counts as a jumbo loan in Colorado?', a: `For a one-unit property in Boulder County, a loan above ${dollars.format(oneUnitLimits.Boulder[2026])} exceeds the 2026 limit. The 2027 limit is ${dollars.format(oneUnitLimits.Boulder[2027])}. Use the loan amount after your down payment and the county where the property is located.` },
   { q: 'What are current jumbo mortgage rates in Colorado?', a: 'Jumbo rates are competitive and change daily with the market. Historically, jumbo rates are close to — and sometimes lower than — conforming rates, depending on the lender and loan profile. Contact Jamie for a current quote based on your property type, down payment, and credit profile.' },
   { q: 'How much down payment do I need for a jumbo loan?', a: 'Most jumbo loans require 10-20% down. Some programs allow 10% down for well-qualified borrowers with strong credit and reserves. Investment property and second home jumbo loans typically require 15-25% down.' },
   { q: 'Can I get a jumbo loan for a condo in Vail or Breckenridge?', a: 'Yes, but resort area condos often fall into the non-warrantable category — meaning they don\'t meet standard Fannie/Freddie condo guidelines due to high investor concentration or resort-hotel features. The Becker Team has access to specialty programs specifically designed for non-warrantable condo financing in mountain resort buildings.' },
@@ -94,7 +95,7 @@ export default function BoulderJumboPage() {
           Jumbo Loans for Colorado's Luxury Market
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Best jumbo mortgage rates in Boulder, Vail, Aspen, Breckenridge, and Summit County. Primary residences, second homes, and non-warrantable resort condos.
+          Compare jumbo financing for a primary residence, a second home or a resort condo in Boulder and the Colorado mountains.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -134,10 +135,10 @@ export default function BoulderJumboPage() {
             className="text-3xl md:text-4xl font-bold mb-6"
             style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
           >
-            Colorado's Mountain Markets Require a Different Kind of Lender
+            How much would you need to borrow in Boulder?
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            Boulder's tech corridor, Aspen's luxury market, Vail's ski chalets, and Summit County's resort condos all share one thing: most properties require jumbo financing, and many require specialty programs that standard lenders can't handle. Jamie Becker (NMLS #794730) has deep experience in Colorado's high-value markets — including non-warrantable condo financing, second-home programs, and high-net-worth lending solutions. Whether you're buying a primary residence in Boulder or a ski property in Breckenridge, we have the programs and wholesale relationships to get it done.
+            A high-priced Boulder home can still be within the conforming loan limit after your down payment. If you are comparing it with a Vail or Breckenridge property, the county limit and condo review can both change. See <Link href="/service-areas/boulder#local-buying-guide" className="font-semibold underline">Boulder sale prices and condo considerations</Link> or <Link href="/loan-programs/jumbo-loans#county-loan-limits" className="font-semibold underline">compare county loan limits</Link>.
           </p>
         </div>
       </section>

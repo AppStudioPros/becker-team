@@ -35,6 +35,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/loan-programs`, lastModified: now, changeFrequency: 'weekly', priority: 0.95 },
     { url: `${BASE}/loan-programs/mortgage-accelerator`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE}/loan-programs/mortgage-accelerator/guide`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/loan-programs/asset-qualifier-loans`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/loan-programs/conventional-loans`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/loan-programs/fha-loans`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },

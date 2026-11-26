@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import LocalMortgageGuide from '@/components/LocalMortgageGuide'
 import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Denver Mortgage Broker | Local Mortgage Lender Denver CO | The Becker Team',
+  title: 'Denver Mortgage Broker and Home Loans',
   description:
-    'Local Denver mortgage broker Jamie Becker (NMLS #794730) offers conventional, FHA, VA, jumbo, and specialty loans. Best mortgage rates in Denver. Fast pre-approvals, personal service. Serving Denver, Aurora, Lakewood, Littleton, and the Front Range.',
+    'Denver mortgage broker Jamie Becker compares home loans from multiple lenders. See how rates, lender fees and down payments affect your Denver purchase.',
   alternates: { canonical: 'https://www.thebeckerteam.com/denver-mortgage' },
 }
 
@@ -47,8 +48,8 @@ const breadcrumb = {
 }
 
 const programs = [
-  { label: 'Conventional Loans', desc: '3-5% down, 30-year fixed or adjustable rate — the most common loan for Denver buyers.', href: '/loan-programs/conventional-loans' },
-  { label: 'FHA Loans', desc: 'Government-backed with flexible credit requirements and 3.5% down — great for first-time Denver buyers.', href: '/loan-programs/fha-loans' },
+  { label: 'Conventional Loans', desc: 'Choose between a fixed or adjustable rate based on your budget and how long you plan to own the home.', href: '/loan-programs/conventional-loans' },
+  { label: 'FHA Loans', desc: 'FHA-insured financing for a primary home, with flexible credit and down payment options.', href: '/loan-programs/fha-loans' },
   { label: 'VA Loans', desc: 'Zero down for eligible veterans and service members. No PMI required.', href: '/loan-programs/va-loans' },
   { label: 'Jumbo Loans', desc: 'Financing above conforming limits for Denver luxury and high-value properties.', href: '/loan-programs/jumbo-loans' },
   { label: 'Self-Employed / Bank Statement', desc: 'Qualify using bank statements instead of tax returns — built for Denver entrepreneurs and remote workers.', href: '/loan-programs/self-employed-loans' },
@@ -56,11 +57,11 @@ const programs = [
 ]
 
 const faqs = [
-  { q: 'What is the best mortgage lender in Denver?', a: 'The best Denver mortgage lender is one who knows the local market, offers competitive rates, and gives you personal service — not a call center. Jamie Becker at The Becker Team has been serving Denver buyers for over 20 years, offering conventional, FHA, VA, jumbo, and specialty loan programs with same-day pre-approvals.' },
+  { q: 'How do I compare mortgage lenders in Denver?', a: 'Compare written Loan Estimates for the same loan amount and term. Look at the rate, lender fees and cash you’ll need at closing. We’ll walk you through the differences and talk through the closing date in your offer.' },
   { q: 'What are current mortgage rates in Denver, CO?', a: 'Mortgage rates in Denver change daily based on market conditions. Your actual rate depends on your credit score, loan type, down payment, and loan term. Contact Jamie for a current rate quote tailored to your specific situation — rates are available for conventional, FHA, VA, and jumbo loans.' },
-  { q: 'How much do I need for a down payment in Denver?', a: 'Denver down payments vary by loan type. FHA loans start at 3.5%. Conventional loans can be as low as 3-5% for first-time buyers. VA loans require zero down for eligible veterans. Jumbo loans typically require 10-20%. Given Denver\'s price points, CHFA down payment assistance is also available for qualifying buyers.' },
-  { q: 'What is the CHFA program and can I use it in Denver?', a: 'CHFA (Colorado Housing and Finance Authority) offers below-market rate loans and down payment assistance to qualifying first-time buyers and some repeat buyers throughout Colorado, including Denver. Income and purchase price limits apply. Jamie can tell you quickly if you qualify.' },
-  { q: 'How long does a mortgage take to close in Denver?', a: 'The Becker Team can close most straightforward purchases in 10-21 days. Complex files or specialty programs may take 21-30 days. In Denver\'s competitive market, a fast, reliable close matters — Jamie\'s pre-approval letters carry weight with local sellers.' },
+  { q: 'How much do I need for a down payment in Denver?', a: 'Denver down payments vary by loan type. FHA purchase loans may allow 3.5% down with a qualifying credit score of at least 580. Certain conventional programs allow 3% down on a one-unit primary home. Eligible VA buyers can often purchase with no down payment. Jumbo loans typically require 10-20%. Given Denver\'s price points, CHFA down payment assistance is also available for qualifying buyers.' },
+  { q: 'What is the CHFA program and can I use it in Denver?', a: 'CHFA (Colorado Housing and Finance Authority) offers mortgage programs and down payment assistance to qualifying buyers in Denver and elsewhere in Colorado. Income and purchase price limits apply. Jamie can tell you quickly if you qualify.' },
+  { q: 'How long does a mortgage take to close in Denver?', a: 'If the seller has a closing date in mind, bring it to us before you sign the contract. We’ll check what your lender still needs and how much time to allow for title work and any required appraisal.' },
   { q: 'Do you serve the entire Denver metro?', a: 'Yes. The Becker Team serves all of Denver and the surrounding metro — including Aurora, Lakewood, Littleton, Centennial, Englewood, Highlands Ranch, Parker, Castle Rock, Broomfield, and Westminster. As a local lender, Jamie knows the neighborhoods and can move quickly.' },
 ]
 
@@ -100,7 +101,7 @@ export default function DenverMortgagePage() {
           Local Denver Mortgage Broker
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Best mortgage rates in Denver. Personal service, fast pre-approvals, and every loan program you need — from a lender who knows this market.
+          Buying a home in Denver? We compare mortgage rates and lender fees side by side so you can see what you’ll pay each month and what you’ll need at closing.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -126,9 +127,9 @@ export default function DenverMortgagePage() {
       <section className="bg-white py-5 px-6 border-b border-stone-200">
         <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-2 text-sm font-semibold" style={{ color: '#1F2E2A' }}>
           <span>✦ Local Denver Lender</span>
-          <span>✦ Best Mortgage Rates Colorado</span>
+          <span>✦ Compare Mortgage Rates</span>
           <span>✦ Mortgage Broker Near Me</span>
-          <span>✦ Same-Day Pre-Approvals</span>
+          <span>✦ Purchase Pre-Approvals</span>
         </div>
       </section>
 
@@ -143,10 +144,12 @@ export default function DenverMortgagePage() {
             Denver's Local Mortgage Expert
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            Jamie Becker (NMLS #794730) has been helping Denver buyers, homeowners, and investors navigate one of the country's most competitive housing markets for over 20 years. As a local mortgage broker — not a national chain — Jamie shops your loan across multiple wholesale lenders to find the best rate and program for your situation. Whether you're buying your first home in Aurora, moving up in Lakewood, or investing in the Denver metro, you get direct access to an expert who picks up the phone.
+            Jamie Becker (NMLS #794730) has been helping Denver buyers, homeowners, and investors navigate one of the country's most competitive housing markets for over 20 years. Jamie compares loan options from multiple wholesale lenders and walks you through the rate, monthly payment and closing costs. Whether you're buying your first home in Aurora, moving up in Lakewood, or investing in the Denver metro, you get direct access to an expert who picks up the phone.
           </p>
         </div>
       </section>
+
+      <LocalMortgageGuide city="denver" />
 
       {/* Loan programs */}
       <section style={{ backgroundColor: '#F5EFE6' }} className="py-16 md:py-20 px-6">
@@ -191,8 +194,8 @@ export default function DenverMortgagePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               { title: 'We Know the Denver Market', body: "Denver's neighborhoods, price points, and competitive dynamics are all familiar territory. We've helped buyers win in multiple-offer situations across the metro for two decades." },
-              { title: 'Multiple Lender Options', body: "As a broker — not a bank — we shop your loan to multiple wholesale lenders. That means better rates and more flexibility than going to a single institution." },
-              { title: 'Fast, Reliable Pre-Approvals', body: "In Denver's competitive market, a strong pre-approval matters. We issue same-day pre-approval letters that sellers trust." },
+              { title: 'Multiple Lender Options', body: "We can request pricing from more than one wholesale lender. We’ll show you what each lender charges upfront for the rate it quotes." },
+              { title: 'Pre-Approval for Your Offer', body: "If you’re preparing an offer, send us the date you plan to submit it. We’ll tell you what we need to review for a pre-approval letter." },
               { title: 'You Deal With Jamie, Not a Queue', body: "No handoffs to processors or call centers. Jamie handles your loan personally from application to closing." },
             ].map((item) => (
               <div key={item.title} className="flex gap-4">

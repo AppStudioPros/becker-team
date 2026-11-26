@@ -4,7 +4,7 @@ import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Thornton CO Mortgage Broker | Home Loans Thornton Colorado | The Becker Team',
+  title: 'Thornton, CO Mortgage Broker and Home Loans',
   description:
     'Thornton CO mortgage broker Jamie Becker (NMLS #794730). FHA, conventional, VA, and CHFA loans for Thornton, Northglenn, Commerce City, Brighton, and Henderson. Fast pre-approvals.',
   alternates: { canonical: 'https://www.thebeckerteam.com/thornton-mortgage' },

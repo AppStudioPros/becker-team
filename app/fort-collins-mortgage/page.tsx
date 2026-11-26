@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import LocalMortgageGuide from '@/components/LocalMortgageGuide'
 import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Fort Collins Mortgage Broker | Home Loans Fort Collins CO | The Becker Team',
+  title: 'Fort Collins, CO Mortgage Broker and Home Loans',
   description:
     'Local Fort Collins mortgage broker Jamie Becker (NMLS #794730) offers conventional, FHA, VA, jumbo, and specialty loans. Fast pre-approvals, competitive rates, personal service. Serving Fort Collins, Loveland, Greeley, Windsor, and Northern Colorado.',
   alternates: { canonical: 'https://www.thebeckerteam.com/fort-collins-mortgage' },
@@ -57,7 +58,7 @@ const programs = [
 ]
 
 const faqs = [
-  { q: 'Is Fort Collins a good place to buy a home?', a: "Fort Collins consistently ranks among the best places to live in the U.S. With a thriving tech and biotech sector, Colorado State University, a strong outdoor lifestyle, and a stable housing market, it's a smart long-term investment. The Northern Colorado market has seen steady appreciation with strong demand from young professionals and families relocating from Denver." },
+  { q: 'How do I compare a Fort Collins condo with a house?', a: 'Start with the full monthly payment for each home. For a condo, include HOA dues and check what insurance and maintenance the association pays for. For a detached house, budget for those costs yourself. We can compare both payments using the same down payment and loan term.' },
   { q: 'What are mortgage rates in Fort Collins, CO?', a: 'Mortgage rates in Fort Collins track the national market daily and vary based on your credit score, loan type, down payment, and loan term. As a broker, Jamie shops your loan across multiple lenders to find the most competitive rate for your situation. Contact the team for a personalized rate quote.' },
   { q: 'Do you offer VA loans in Fort Collins?', a: 'Yes. VA loans are available for eligible veterans, active-duty service members, and surviving spouses throughout Northern Colorado. Zero down payment, no PMI, and competitive rates. Jamie can walk you through the Certificate of Eligibility process and get you pre-approved quickly.' },
   { q: 'Can I get a mortgage in Fort Collins if I am self-employed?', a: 'Absolutely. Many Fort Collins professionals run their own businesses or work as consultants in the tech and biotech industries. Jamie specializes in bank statement loans and asset qualifier programs designed for borrowers who cannot show traditional W-2 income.' },
@@ -123,10 +124,12 @@ export default function FortCollinsMortgagePage() {
             Northern Colorado's Mortgage Expert
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            Fort Collins is one of the fastest-growing housing markets in Colorado — and one of the most competitive. Jamie Becker (NMLS #794730) has spent over two decades helping buyers, professionals, veterans, and first-timers across Northern Colorado get the right loan at the right rate. As a broker rather than a bank, Jamie shops your file across multiple wholesale lenders, which means more options and better pricing than going to a single institution. Whether you're buying near CSU, relocating for a tech job, or upsizing into a Timnath or Windsor home, you deal directly with Jamie from start to close.
+            Whether you’re looking near CSU, moving closer to work, or comparing a Fort Collins address with a home in Timnath or Windsor, bring us the listings. We can compare the loan amount, property taxes, insurance and any HOA dues for each home so you can see what fits your budget.
           </p>
         </div>
       </section>
+
+      <LocalMortgageGuide city="fort-collins" />
 
       {/* Programs */}
       <section style={{ backgroundColor: '#F5EFE6' }} className="py-16 md:py-20 px-6">

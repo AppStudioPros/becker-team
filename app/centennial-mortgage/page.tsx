@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { dollars, oneUnitLimits } from '@/lib/conformingLimits'
 import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Centennial CO Mortgage Lender | Home Loans Centennial Colorado | The Becker Team',
+  title: 'Centennial, CO Mortgage Lender and Home Loans',
   description:
     'Centennial CO mortgage lender Jamie Becker (NMLS #794730). Conventional, jumbo, and VA loans for Centennial, Greenwood Village, Parker, Lone Tree, and Highlands Ranch. South Denver tech corridor specialists.',
   alternates: { canonical: 'https://www.thebeckerteam.com/centennial-mortgage' },
@@ -66,7 +67,7 @@ const faqs = [
   },
   {
     q: 'Are jumbo loans common in the Centennial area?',
-    a: 'Yes, particularly in Greenwood Village, parts of Lone Tree, and higher-end Centennial neighborhoods. The 2026 conforming loan limit in Colorado is $806,500 for most counties. Homes above that price in Arapahoe County require jumbo financing. Jamie has access to competitive jumbo programs through multiple wholesale lenders, typically with better pricing than what a single bank can offer.',
+    a: `The 2026 one-unit conforming loan limit in Arapahoe County is ${dollars.format(oneUnitLimits.Arapahoe[2026])}. Subtract the down payment from your purchase price. If the mortgage is above the county limit, we can compare jumbo options.`,
   },
   {
     q: 'What about the I-25 south tech corridor?',

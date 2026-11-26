@@ -3,11 +3,12 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Check, ChevronLeft, ChevronRight } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
+import ProgramReviews from '@/components/ProgramReviews'
 
 export const metadata: Metadata = {
-  title: 'Asset Qualifier Loans | The Becker Team',
+  title: 'Colorado Asset Qualifier Loans',
   description:
-    'Qualify for a mortgage using your assets instead of traditional income documentation. Ideal for retirees, investors, and high-net-worth borrowers. Jamie Becker, NMLS #794730.',
+    'Explore asset-based mortgages in Colorado with Jamie Becker. See which accounts we review and how our Asset Qualifier loan differs from an asset depletion loan.',
   alternates: { canonical: '/loan-programs/asset-qualifier-loans' },
 }
 
@@ -28,7 +29,7 @@ const highlights = [
   },
   {
     title: 'Qualify on Your Balance Sheet',
-    body: 'Only need 125% of the loan amount in assets. No income documentation, no W-2s, no tax return requirements.',
+    body: 'We compare your eligible assets after closing with a benchmark of 125% of your loan amount. You can qualify without W-2s or tax returns.',
   },
   {
     title: 'No DTI. No Collateralization.',
@@ -72,6 +73,14 @@ const faqs = [
     a: 'Current materials highlight 125% of the loan amount in assets as a key benchmark, but exact requirements depend on the borrower and current program guidelines.',
   },
   {
+    q: 'What credit score do I need?',
+    a: 'Before you make an offer, we can review your credit and tell you the minimum score for the loan you are considering. Meeting the asset benchmark is one part of qualifying.',
+  },
+  {
+    q: 'Is an Asset Qualifier loan the same as an asset depletion loan?',
+    a: 'An asset depletion loan uses eligible assets to calculate monthly qualifying income. Some lenders call that approach asset utilization. For our Asset Qualifier loan, we compare the eligible balance left after closing with the amount you want to borrow. Our benchmark is 125% of the loan amount.',
+  },
+  {
     q: 'How many months of statements are required?',
     a: 'The current example used four months of portfolio statements. Our team will tell you exactly what applies to your situation.',
   },
@@ -88,15 +97,11 @@ const faqs = [
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: [
-    { '@type': 'Question', name: 'What is an Asset Qualifier loan?', acceptedAnswer: { '@type': 'Answer', text: 'It is a mortgage option that uses eligible assets rather than traditional income documentation for qualification.' } },
-    { '@type': 'Question', name: 'What documentation is typically required?', acceptedAnswer: { '@type': 'Answer', text: 'In the current example, the file was qualified with asset statements only. Your exact documentation will depend on the program and your scenario.' } },
-    { '@type': 'Question', name: 'Who tends to be a strong fit?', acceptedAnswer: { '@type': 'Answer', text: 'High-net-worth borrowers, retirees, and clients with complex tax returns are often strong fits.' } },
-    { '@type': 'Question', name: 'How much in assets do I need?', acceptedAnswer: { '@type': 'Answer', text: 'Current materials highlight 125% of the loan amount in assets as a key benchmark, but exact requirements depend on the borrower and current program guidelines.' } },
-    { '@type': 'Question', name: 'How many months of statements are required?', acceptedAnswer: { '@type': 'Answer', text: 'The current example used four months of portfolio statements. Our team will tell you exactly what applies to your situation.' } },
-    { '@type': 'Question', name: 'How fast can this close?', acceptedAnswer: { '@type': 'Answer', text: 'Timelines vary, but one current example closed in 3 weeks.' } },
-    { '@type': 'Question', name: 'Can this be used for a refinance?', acceptedAnswer: { '@type': 'Answer', text: 'This program is primarily positioned as a purchase-led solution, especially for borrowers who do not fit traditional underwriting well.' } }
-  ],
+  mainEntity: faqs.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
 }
 
 const breadcrumbJsonLd = {
@@ -129,11 +134,7 @@ const loanJsonLd = {
       addressCountry: 'US',
     },
   },
-  areaServed: [
-    { '@type': 'State', name: 'Colorado' },
-    { '@type': 'State', name: 'Georgia' },
-    { '@type': 'State', name: 'Oregon' },
-  ],
+  areaServed: { '@type': 'State', name: 'Colorado' },
 }
 
 export default function AssetQualifierPage() {
@@ -195,10 +196,10 @@ export default function AssetQualifierPage() {
             className="text-3xl md:text-5xl font-bold mb-5 text-center"
             style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
           >
-            What This Program Does — and Why It Matters
+            How an Asset-Based Mortgage Works
           </h2>
           <p className="text-gray-700 leading-relaxed mb-12 max-w-3xl text-center mx-auto">
-            Some borrowers are financially strong but look difficult on paper. A tax return that is highly optimized, a retirement that removed the paycheck, a portfolio that dwarfs the loan request — none of that shows up cleanly in a conventional file. Asset Qualifier starts with the balance sheet and builds from there, removing the documentation burden for the borrowers who need it least.
+            If you’ve retired or your income varies from year to year, you may have substantial investments and little income on your tax return. An asset depletion loan can use those investments to calculate monthly income. With our Asset Qualifier loan, we look at how much you’ll have left in eligible accounts after closing.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {highlights.map((h, i) => (
@@ -278,7 +279,7 @@ export default function AssetQualifierPage() {
             How The Asset Qualifier Review Works
           </h2>
           <p className="text-gray-700 text-sm leading-relaxed mb-12 max-w-2xl text-center mx-auto">
-            No guesswork, no buried requirements. Here is exactly what happens when you start the conversation.
+            If you’re comparing asset utilization loans, two questions are worth asking up front. Which accounts count, and how much of each balance can you use? Here’s how we review your accounts for our Asset Qualifier program.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {steps.map((s, i) => (
@@ -299,11 +300,115 @@ export default function AssetQualifierPage() {
               </div>
             ))}
           </div>
+
+          <div id="eligible-assets" className="mx-auto mt-12 max-w-3xl scroll-mt-28 rounded bg-white p-6 text-center md:p-8" style={{ border: '2px solid #1F2E2A' }}>
+            <h3 className="mb-3 text-2xl font-bold" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}>
+              Which accounts can I use for an asset-based mortgage?
+            </h3>
+            <p className="mx-auto mb-5 max-w-xl leading-relaxed text-gray-700">
+              We start with the accounts you own and the funds you can access. We typically review three kinds of accounts.
+            </p>
+            <ul className="space-y-2 text-gray-700">
+              <li><strong>Bank accounts</strong> such as checking, savings and money market accounts.</li>
+              <li><strong>Investment accounts</strong> holding stocks, bonds, mutual funds or exchange-traded funds.</li>
+              <li><strong>Retirement accounts</strong> such as IRAs and vested 401(k) balances.</li>
+            </ul>
+            <p className="mx-auto mt-5 max-w-xl leading-relaxed text-gray-700">
+              Your statements help us determine which funds count and how much will still be available after your down payment and closing costs.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Real-World Example ── */}
+      <section style={{ backgroundColor: '#F5EFE6' }} className="py-16 md:py-24 px-6">
+        <div className="max-w-3xl mx-auto">
+          <h2
+            data-reveal
+            className="text-3xl md:text-5xl font-bold mb-5 text-center"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
+          >
+            Real-World Example
+          </h2>
+          <p className="text-gray-600 text-base leading-relaxed mb-10 text-center max-w-xl mx-auto">
+            Here’s how one buyer financed a $1 million purchase with 20% down.
+          </p>
+
+          {/* Grid — explicit placement so equal row heights work */}
+          <div className="grid grid-cols-3 grid-rows-3 gap-3">
+            {/* Col 1 — rows 1-3 */}
+            <div className="col-start-1 row-start-1 rounded bg-white p-5 flex flex-col gap-3" style={{ border: '2px solid #1F2E2A' }}>
+              <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#1F2E2A' }}>Purchase Price</p>
+              <p className="text-sm text-gray-600">$1,000,000</p>
+            </div>
+            <div className="col-start-1 row-start-2 rounded bg-white p-5 flex flex-col gap-3" style={{ border: '2px solid #1F2E2A' }}>
+              <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#1F2E2A' }}>Loan Amount</p>
+              <p className="text-sm text-gray-600">$800,000</p>
+            </div>
+            <div className="col-start-1 row-start-3 rounded bg-white p-5 flex flex-col gap-3" style={{ border: '2px solid #1F2E2A' }}>
+              <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#1F2E2A' }}>Statements Required</p>
+              <p className="text-sm text-gray-600">4 months of portfolio statements</p>
+            </div>
+
+            {/* Col 2 — rows 1-3 */}
+            <div className="col-start-2 row-start-1 rounded bg-white p-5 flex flex-col gap-3" style={{ border: '2px solid #1F2E2A' }}>
+              <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#1F2E2A' }}>Down Payment</p>
+              <p className="text-sm text-gray-600">20%</p>
+            </div>
+            <div className="col-start-2 row-start-2 rounded bg-white p-5 flex flex-col gap-3" style={{ border: '2px solid #1F2E2A' }}>
+              <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#1F2E2A' }}>Required Assets Post-Closing</p>
+              <p className="text-sm text-gray-600">$1,008,000</p>
+            </div>
+            <div className="col-start-2 row-start-3 rounded bg-white p-5 flex flex-col gap-3" style={{ border: '2px solid #1F2E2A' }}>
+              <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#1F2E2A' }}>Required Paperwork</p>
+              <p className="text-sm text-gray-600">Asset statements only</p>
+            </div>
+
+            {/* Col 3 — amber timeline spans all 3 rows */}
+            <div
+              className="col-start-3 row-start-1 row-span-3 rounded flex flex-col items-center justify-center text-center p-6"
+              style={{ backgroundColor: '#B98942' }}
+            >
+              <p className="text-white/80 text-xs font-semibold uppercase tracking-widest mb-4">Timeline:</p>
+              <p className="text-white/80 text-sm mb-2">Closed in</p>
+              <p className="text-white font-bold leading-none" style={{ fontFamily: '"Playfair Display", Georgia, serif', fontSize: '5rem' }}>3</p>
+              <p className="text-white font-bold text-3xl leading-tight" style={{ fontFamily: '"Playfair Display", Georgia, serif' }}>Weeks</p>
+            </div>
+          </div>
+
+          <div id="colorado-example" className="mx-auto mt-12 max-w-2xl scroll-mt-28 text-center">
+            <h3 className="mb-4 text-2xl font-bold md:text-3xl" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}>
+              Buying a home in Loveland after retirement
+            </h3>
+            <p className="mb-4 leading-relaxed text-gray-700">
+              If you’re retired and shopping in Loveland, how much would you need to keep in your accounts after closing? Consider a $486,000 home, the median sale price in Loveland for the three months ending in October 2026.
+            </p>
+            <p className="mb-4 leading-relaxed text-gray-700">
+              With 25% down, you’d put <strong>$121,500</strong> toward the purchase and borrow <strong>$364,500</strong>. At 125% of that loan amount, the benchmark is <strong>$455,625</strong> in eligible assets after closing.
+            </p>
+            <p className="leading-relaxed text-gray-700">
+              If you plan to use your investment or retirement accounts, we’d review the balance you can access after paying the down payment and closing costs. The money you spend at closing can’t also count toward the $455,625.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section className="bg-white py-16 md:py-20 px-6">
+        <div className="max-w-3xl mx-auto">
+          <h2
+            data-reveal
+            className="text-3xl md:text-5xl font-bold text-center mb-10"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
+          >
+            Frequently Asked Questions
+          </h2>
+          <FaqAccordion items={faqs} />
         </div>
       </section>
 
       {/* ── Why Work with Jamie ── */}
-      <section className="bg-white py-16 md:py-24 px-6">
+      <section id="why-work-with-jamie" className="bg-white py-16 md:py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <h2
             data-reveal
@@ -341,86 +446,7 @@ export default function AssetQualifierPage() {
               />
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ── Real-World Example ── */}
-      <section style={{ backgroundColor: '#F5EFE6' }} className="py-16 md:py-24 px-6">
-        <div className="max-w-3xl mx-auto">
-          <h2
-            data-reveal
-            className="text-3xl md:text-5xl font-bold mb-5 text-center"
-            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
-          >
-            Real-World Example
-          </h2>
-          <p className="text-gray-600 text-base leading-relaxed mb-10 text-center max-w-xl mx-auto">
-            One example from current Asset Qualifier materials shows how clean this process can be for the right borrower.
-          </p>
-
-          {/* Grid — explicit placement so equal row heights work */}
-          <div className="grid grid-cols-3 grid-rows-3 gap-3">
-            {/* Col 1 — rows 1-3 */}
-            <div className="col-start-1 row-start-1 rounded bg-white p-5 flex flex-col gap-3" style={{ border: '2px solid #1F2E2A' }}>
-              <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#1F2E2A' }}>Purchase Price</p>
-              <p className="text-sm text-gray-600">$1,000,000</p>
-            </div>
-            <div className="col-start-1 row-start-2 rounded bg-white p-5 flex flex-col gap-3" style={{ border: '2px solid #1F2E2A' }}>
-              <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#1F2E2A' }}>Loan Amount</p>
-              <p className="text-sm text-gray-600">$800,000</p>
-            </div>
-            <div className="col-start-1 row-start-3 rounded bg-white p-5 flex flex-col gap-3" style={{ border: '2px solid #1F2E2A' }}>
-              <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#1F2E2A' }}>Statements Required</p>
-              <p className="text-sm text-gray-600">4 months of portfolio statements</p>
-            </div>
-
-            {/* Col 2 — rows 1-3 */}
-            <div className="col-start-2 row-start-1 rounded bg-white p-5 flex flex-col gap-3" style={{ border: '2px solid #1F2E2A' }}>
-              <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#1F2E2A' }}>Down Payment</p>
-              <p className="text-sm text-gray-600">20%</p>
-            </div>
-            <div className="col-start-2 row-start-2 rounded bg-white p-5 flex flex-col gap-3" style={{ border: '2px solid #1F2E2A' }}>
-              <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#1F2E2A' }}>Required Assets Post-Closing</p>
-              <p className="text-sm text-gray-600">$1,008,000 (125% of loan)</p>
-            </div>
-            <div className="col-start-2 row-start-3 rounded bg-white p-5 flex flex-col gap-3" style={{ border: '2px solid #1F2E2A' }}>
-              <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#1F2E2A' }}>Required Paperwork</p>
-              <p className="text-sm text-gray-600">Asset statements only</p>
-            </div>
-
-            {/* Col 3 — amber timeline spans all 3 rows */}
-            <div
-              className="col-start-3 row-start-1 row-span-3 rounded flex flex-col items-center justify-center text-center p-6"
-              style={{ backgroundColor: '#B98942' }}
-            >
-              <p className="text-white/80 text-xs font-semibold uppercase tracking-widest mb-4">Timeline:</p>
-              <p className="text-white/80 text-sm mb-2">Closed in</p>
-              <p className="text-white font-bold leading-none" style={{ fontFamily: '"Playfair Display", Georgia, serif', fontSize: '5rem' }}>3</p>
-              <p className="text-white font-bold text-3xl leading-tight" style={{ fontFamily: '"Playfair Display", Georgia, serif' }}>Weeks</p>
-            </div>
-          </div>
-
-          {/* Bottom note */}
-          <div
-            className="mt-3 rounded bg-white px-6 py-4 text-center text-sm text-gray-600 italic"
-            style={{ border: '2px solid #1F2E2A' }}
-          >
-            No tax returns, no income documents and no employment information.
-          </div>
-        </div>
-      </section>
-
-      {/* ── FAQ ── */}
-      <section className="bg-white py-16 md:py-20 px-6">
-        <div className="max-w-3xl mx-auto">
-          <h2
-            data-reveal
-            className="text-3xl md:text-5xl font-bold text-center mb-10"
-            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
-          >
-            Frequently Asked Questions
-          </h2>
-          <FaqAccordion items={faqs} />
+          <ProgramReviews reviewers={['4belle1rose5', 'Dina Mckinley']} />
         </div>
       </section>
 

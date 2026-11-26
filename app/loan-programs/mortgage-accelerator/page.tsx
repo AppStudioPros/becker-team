@@ -4,9 +4,10 @@ import Image from 'next/image'
 import { Check, ChevronRight } from 'lucide-react'
 import StrategyReviewModal from '@/components/StrategyReviewModal'
 import FaqAccordion from '@/components/FaqAccordion'
+import ProgramReviews from '@/components/ProgramReviews'
 
 export const metadata: Metadata = {
-  title: 'Home Mortgage Accelerator Strategy | The Becker Team',
+  title: 'Home Mortgage Accelerator Strategy',
   description:
     'A cash-flow-driven mortgage strategy for homeowners with strong monthly net deposits. Use your cash flow intentionally to pay down your mortgage faster. Jamie Becker, NMLS #794730.',
   alternates: { canonical: '/loan-programs/mortgage-accelerator' },
@@ -64,8 +65,8 @@ const faqs = [
     a: 'This can be positioned for both purchase and refinance scenarios, depending on the borrower and the opportunity.',
   },
   {
-    q: 'Have I seen this advertised as paying off a 30-year mortgage in 5-7 years?',
-    a: 'No. That came from one illustrative comparison based on specific assumptions. Your results depend on your numbers, timing and behavior.',
+    q: 'How can I estimate my payoff date?',
+    a: 'Start with your current balance, loan terms and the amount left after your bills. Jamie can use those figures to compare payoff schedules and show what changes if your rate goes up or your income drops.',
   },
   {
     q: 'Will you recommend this even if it does not fit?',
@@ -84,7 +85,7 @@ const faqJsonLd = {
     { '@type': 'Question', name: 'What exactly is the Home Mortgage Accelerator?', acceptedAnswer: { '@type': 'Answer', text: 'It is a cash-flow-driven mortgage strategy designed for borrowers with strong monthly net deposits. The goal is to use your actual financial flow more intentionally than a standard set-it-and-forget-it mortgage.' } },
     { '@type': 'Question', name: 'Who is this a good fit for?', acceptedAnswer: { '@type': 'Answer', text: 'It tends to fit best for borrowers with strong, consistent net cash flow, disciplined spending habits and a serious interest in paying down their mortgage faster.' } },
     { '@type': 'Question', name: 'Can this work for a purchase or just a refinance?', acceptedAnswer: { '@type': 'Answer', text: 'This can be positioned for both purchase and refinance scenarios, depending on the borrower and the opportunity.' } },
-    { '@type': 'Question', name: 'Have I seen this advertised as paying off a 30-year mortgage in 5-7 years?', acceptedAnswer: { '@type': 'Answer', text: 'No. That came from one illustrative comparison based on specific assumptions. Your results depend on your numbers, timing and behavior.' } },
+    { '@type': 'Question', name: 'How can I estimate my payoff date?', acceptedAnswer: { '@type': 'Answer', text: 'Start with your current balance, loan terms and the amount left after your bills. Jamie can use those figures to compare payoff schedules and show what changes if your rate goes up or your income drops.' } },
     { '@type': 'Question', name: 'Will you recommend this even if it does not fit?', acceptedAnswer: { '@type': 'Answer', text: 'No. If the strategy does not fit your goals or cash-flow profile, our team will tell you that directly.' } },
     { '@type': 'Question', name: 'What information do I need to get started?', acceptedAnswer: { '@type': 'Answer', text: 'A realistic snapshot of your mortgage, monthly deposits, major expenses, available savings and payoff goals.' } }
   ],
@@ -120,11 +121,7 @@ const loanJsonLd = {
       addressCountry: 'US',
     },
   },
-  areaServed: [
-    { '@type': 'State', name: 'Colorado' },
-    { '@type': 'State', name: 'Georgia' },
-    { '@type': 'State', name: 'Oregon' },
-  ],
+  areaServed: { '@type': 'State', name: 'Colorado' },
 }
 
 export default function MortgageAcceleratorPage() {
@@ -293,8 +290,52 @@ export default function MortgageAcceleratorPage() {
         </div>
       </section>
 
-      {/* ── Why Work with Jamie ── */}
+      {/* ── FAQ ── */}
+      <section style={{ backgroundColor: '#F5EFE6' }} className="py-16 md:py-20 px-6">
+        <div className="max-w-3xl mx-auto">
+          <h2
+            data-reveal
+            className="text-3xl md:text-5xl font-bold text-center mb-10"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
+          >
+            Frequently Asked Questions
+          </h2>
+          <FaqAccordion items={faqs} />
+        </div>
+      </section>
+
+      {/* ── Payoff example ── */}
       <section className="bg-white py-16 md:py-24 px-6">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2
+            data-reveal
+            className="text-3xl md:text-5xl font-bold mb-6"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
+          >
+            Compare Payoff Options on a $425,000 Mortgage
+          </h2>
+          <p className="text-gray-500 text-sm uppercase tracking-widest mb-6">
+            One Month of Interest and Principal
+          </p>
+          <div className="prose-becker text-left mb-10">
+            <p>
+              We’ll show you how much of a payment goes to interest and how much pays down your home.
+              See what changes when you put the same $8,500 toward the Accelerator and a traditional
+              mortgage, and how paying every two weeks compares with paying extra principal.
+            </p>
+          </div>
+          <Link
+            href="/loan-programs/mortgage-accelerator/guide"
+            className="inline-block uppercase tracking-widest text-sm font-semibold px-14 py-5 rounded btn-hover"
+            style={{ backgroundColor: '#1F2E2A', color: '#F5EFE6' }}
+          >
+            Read the Home Mortgage Accelerator Guide
+          </Link>
+        </div>
+      </section>
+
+      {/* ── Why Work with Jamie ── */}
+      <section id="why-work-with-jamie" className="bg-white py-16 md:py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <h2
             data-reveal
@@ -339,54 +380,7 @@ export default function MortgageAcceleratorPage() {
               />
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ── FAQ ── */}
-      <section style={{ backgroundColor: '#F5EFE6' }} className="py-16 md:py-20 px-6">
-        <div className="max-w-3xl mx-auto">
-          <h2
-            data-reveal
-            className="text-3xl md:text-5xl font-bold text-center mb-10"
-            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
-          >
-            Frequently Asked Questions
-          </h2>
-          <FaqAccordion items={faqs} />
-        </div>
-      </section>
-
-      {/* ── See a Real Example ── */}
-      <section className="bg-white py-16 md:py-24 px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2
-            data-reveal
-            className="text-3xl md:text-5xl font-bold mb-6"
-            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
-          >
-            See a Real Home Mortgage Accelerator Example
-          </h2>
-          <p className="text-gray-500 text-sm uppercase tracking-widest mb-6">
-            See How the Strategy Can Change the Numbers
-          </p>
-          <div className="prose-becker text-left mb-10">
-            <p>
-              Every homeowner&apos;s situation is different. Rather than relying on theory, we build
-              personalized comparisons that show how different mortgage structures can affect interest
-              paid, payoff timeline, and monthly cash flow. Below is an example of one modeled
-              scenario. It isn&apos;t a promise of results. It&apos;s an illustration of what can happen when
-              the right borrower uses the right strategy.
-            </p>
-          </div>
-          <a
-            href="/mortgage-accelerator-example.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block uppercase tracking-widest text-sm font-semibold px-14 py-5 rounded btn-hover"
-            style={{ backgroundColor: '#B98942', color: '#fff' }}
-          >
-            Review and Download Here
-          </a>
+          <ProgramReviews reviewers={['user4272651', '4belle1rose5']} />
         </div>
       </section>
 
@@ -397,7 +391,7 @@ export default function MortgageAcceleratorPage() {
             className="text-xl font-bold mb-4"
             style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
           >
-            Important Program Notes
+            What affects your results?
           </h2>
           <p className="text-sm leading-relaxed italic" style={{ color: '#4a5e53' }}>
             This strategy is not a guarantee of savings, interest reduction or payoff timeline. Results vary

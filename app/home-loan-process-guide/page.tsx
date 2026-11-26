@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Home Loan Process Guide | The Becker Team Colorado',
+  title: 'Colorado Home Loan Process Guide',
   description:
     'A step-by-step guide to the home loan process with The Becker Team. From pre-qualification to closing — Jamie Becker, NMLS #794730.',
 }
@@ -46,7 +46,7 @@ const howToJsonLd = {
       '@type': 'HowToStep',
       position: 5,
       name: 'Closing',
-      text: 'Sign your final loan documents, pay closing costs, and receive the keys. The Becker Team can close in as little as 10 days.',
+      text: 'Review the Closing Disclosure before signing the final loan documents. Check the amount you need to bring and confirm the date with your closing agent.',
       url: 'https://www.thebeckerteam.com/home-loan-process-guide#step-5',
     },
   ],
@@ -327,16 +327,14 @@ export default function ProcessGuidePage() {
             At Closing, Be Prepared To:
           </h2>
           <p className="text-white/80 mb-8 max-w-2xl leading-relaxed">
-            Closing is the final step where you sign all loan documents and officially take ownership. The
-            process takes 1–2 hours. You&apos;ll receive a Closing Disclosure at least 3 business days
-            before closing — review it carefully.
+            Before you sign, compare the interest rate, monthly payment and cash to close on your Closing Disclosure with your Loan Estimate. For most home purchases, you must receive the Closing Disclosure at least three business days before signing.
           </p>
 
           <ul className="flex flex-col gap-3 mb-10">
             {[
               'Bring a valid government-issued photo ID',
               'Bring a cashier\'s check or confirm wire transfer for closing costs',
-              'Review the Closing Disclosure (sent 3 days prior)',
+              'Ask your lender about any costs that changed since your Loan Estimate',
               'All parties on the loan must be present or have Power of Attorney',
               'Be prepared for a final walkthrough of the property',
             ].map((item) => (

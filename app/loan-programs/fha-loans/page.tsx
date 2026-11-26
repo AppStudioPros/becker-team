@@ -3,11 +3,12 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Check, ChevronLeft, ChevronRight } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
+import ProgramReviews from '@/components/ProgramReviews'
 
 export const metadata: Metadata = {
-  title: 'Best FHA Mortgage Rates Colorado | FHA Loans Denver | The Becker Team',
+  title: 'Colorado FHA Home Loans',
   description:
-    'Government-insured FHA loans with as little as 3.5% down and more flexible credit requirements. Great for first-time buyers. Jamie Becker, NMLS #794730.',
+    'Explore Colorado FHA loans with Jamie Becker. See how your credit score affects the down payment and how FHA mortgage insurance works.',
   alternates: { canonical: '/loan-programs/fha-loans' },
 }
 
@@ -23,8 +24,8 @@ const jsonLd = {
 
 const highlights = [
   {
-    title: 'As Low as 3.5% Down',
-    body: 'FHA loans allow down payments as low as 3.5% for borrowers with a qualifying credit score, making homeownership more accessible with less upfront capital.',
+    title: 'FHA Down Payment Options',
+    body: 'For an FHA purchase, 3.5% down may be available with a qualifying credit score of at least 580. Your lender also reviews your income, debts and the property.',
   },
   {
     title: 'More Flexible Credit Requirements',
@@ -101,7 +102,7 @@ const loanJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LoanOrCredit',
   name: 'FHA Loans',
-  description: 'FHA-insured mortgage loans with down payments as low as 3.5%. Available in Colorado, Georgia, and Oregon. NMLS #794730.',
+  description: 'FHA-insured home loans for eligible buyers. Jamie Becker explains credit requirements, down payments and mortgage insurance. NMLS #794730.',
   url: 'https://www.thebeckerteam.com/loan-programs/fha-loans',
   provider: {
     '@type': 'FinancialService',
@@ -117,11 +118,7 @@ const loanJsonLd = {
       addressCountry: 'US',
     },
   },
-  areaServed: [
-    { '@type': 'State', name: 'Colorado' },
-    { '@type': 'State', name: 'Georgia' },
-    { '@type': 'State', name: 'Oregon' },
-  ],
+  areaServed: { '@type': 'State', name: 'Colorado' },
 }
 
 export default function FhaLoansPage() {
@@ -171,7 +168,7 @@ export default function FhaLoansPage() {
           className="text-center text-lg md:text-2xl leading-relaxed"
           style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
         >
-          Government-insured&nbsp;&bull;&nbsp;As low as 3.5% down&nbsp;&bull;&nbsp;More flexible credit requirements
+          Government-insured&nbsp;&bull;&nbsp;Low down payment options&nbsp;&bull;&nbsp;Flexible credit requirements
         </p>
       </section>
 
@@ -247,8 +244,22 @@ export default function FhaLoansPage() {
         </div>
       </section>
 
+      {/* ── FAQ ── */}
+      <section style={{ backgroundColor: '#F5EFE6' }} className="py-16 md:py-20 px-6">
+        <div className="max-w-3xl mx-auto">
+          <h2
+            data-reveal
+            className="text-3xl md:text-5xl font-bold text-center mb-10"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
+          >
+            Frequently Asked Questions
+          </h2>
+          <FaqAccordion items={faqs} />
+        </div>
+      </section>
+
       {/* ── Why Work with Jamie ── */}
-      <section className="bg-white py-16 md:py-24 px-6">
+      <section id="why-work-with-jamie" className="bg-white py-16 md:py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <h2
             data-reveal
@@ -286,20 +297,7 @@ export default function FhaLoansPage() {
               />
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ── FAQ ── */}
-      <section style={{ backgroundColor: '#F5EFE6' }} className="py-16 md:py-20 px-6">
-        <div className="max-w-3xl mx-auto">
-          <h2
-            data-reveal
-            className="text-3xl md:text-5xl font-bold text-center mb-10"
-            style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
-          >
-            Frequently Asked Questions
-          </h2>
-          <FaqAccordion items={faqs} />
+          <ProgramReviews reviewers={['user4272651', 'Dina Mckinley']} />
         </div>
       </section>
 

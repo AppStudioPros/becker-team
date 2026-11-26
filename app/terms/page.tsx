@@ -2,12 +2,12 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Terms of Use | The Becker Team',
+  title: 'Terms of Use',
   description:
     'Terms of use for thebeckerteam.com — limitations of liability, content accuracy, and conditions for use of mortgage information provided on this site.',
 }
 
-const EFFECTIVE = 'September 1, 2026'
+const EFFECTIVE = 'November 26, 2026'
 
 export default function TermsPage() {
   return (
@@ -63,6 +63,7 @@ export default function TermsPage() {
             <h2 style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }} className="text-xl font-bold mb-3">6. Third-Party Links and Services</h2>
             <p>This Site may contain links to third-party websites and services, including our loan application portal (operated by Xpert Home Lending via my1003app.com) and third-party rate widgets. These third-party sites have their own privacy policies and terms of use. We are not responsible for the content, accuracy, or practices of any third-party site.</p>
             <p>Links to third-party sites are provided for your convenience and do not constitute an endorsement.</p>
+            <p>Our homepage can display reviews from Google Maps. Use of Google Maps features and content is subject to the current <a href="https://maps.google.com/help/terms_maps/" className="underline">Google Maps Additional Terms of Service</a> and <a href="https://policies.google.com/privacy" className="underline">Google Privacy Policy</a>.</p>
           </div>
 
           <div>

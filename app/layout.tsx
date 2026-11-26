@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     images: ["https://www.thebeckerteam.com/opengraph-image"],
   },
   alternates: {
-    canonical: "https://www.thebeckerteam.com",
+    canonical: "./",
   },
   robots: {
     index: true,

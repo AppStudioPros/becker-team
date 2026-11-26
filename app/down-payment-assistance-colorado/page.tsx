@@ -4,7 +4,7 @@ import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Down Payment Assistance Colorado | Colorado First-Time Buyer Programs | The Becker Team',
+  title: 'Colorado Down Payment Assistance for Homebuyers',
   description:
     'Complete guide to Colorado down payment assistance programs: CHFA, Metro DPA, Denver HOAP, and more. Grants, second loans, and income limits for 2026. Jamie Becker NMLS #794730.',
   alternates: { canonical: 'https://www.thebeckerteam.com/down-payment-assistance-colorado' },

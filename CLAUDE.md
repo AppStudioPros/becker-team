@@ -2,7 +2,7 @@
 
 ## Project
 Faithful rebuild of thebeckerteam.com in Next.js 16 + Tailwind v4 + Vercel.
-Client: Jamie Becker / The Becker Team (Xpert Home Lending, NMLS #794730)
+Client: Jamie Becker / The Becker Team (Jamie Becker, Individual NMLS #794730 / Xpert Home Lending, Inc., Company NMLS #2179191)
 
 ## Brand Colors
 - Forest green: #1c3023 (nav, footer, hero sections)
@@ -16,6 +16,7 @@ Client: Jamie Becker / The Becker Team (Xpert Home Lending, NMLS #794730)
 - Body: Inter (sans-serif)
 
 ## Rules
+- Match new sections to the structure, typography, spacing, and interactions of comparable sections on the site. Reuse their shared components, including `FaqAccordion` for FAQ sections like the one on the Mortgage Accelerator page.
 - No em dashes (—) anywhere in content
 - No AI-tell words (seamlessly, leverage, delve, tapestry, etc.)
 - All pages must have unique <title> tags with Colorado + mortgage keywords
@@ -27,11 +28,12 @@ Client: Jamie Becker / The Becker Team (Xpert Home Lending, NMLS #794730)
 ## Contact Info
 - Phone: (720) 492-3335
 - Email: Jamie@thebeckerteam.com
-- NMLS: #794730
-- Company: Xpert Home Lending, NMLS 2179191
-- Office: 100 Highpoint Park Way, Suite 202, Braselton, GA 30517
-- Corp phone: (470) 660-5693
-- Licenses: CA-DOC794730 | CO-100027807 | FL-LO147810 | ID-MLO-2080794730 | IN-74355 | LA | MI-794730 | TX
+- Jamie Becker: Individual NMLS #794730
+- Xpert Home Lending, Inc.: Company NMLS #2179191
+- Denver office: 201 Columbine St, Suite 300, Denver, CO 80206
+- Corporate office (compliance footer): 100 Highpoint Park Way, Suite 202, Braselton, GA 30517
+- Corporate phone (compliance footer): (470) 660-5693
+- Jamie Becker’s licenses: CA-DFPI794730 | CO-100027807 | FL-LO147810 | ID-MLO-2080794730 | IN-74355 | LA | MI-794730 | TX
 
 ## URL Structure (must match originals for Cloudflare redirect)
 /about

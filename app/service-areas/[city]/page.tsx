@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import LocalMortgageGuide from '@/components/LocalMortgageGuide'
 import { notFound } from 'next/navigation'
 import { mortgageServiceAreas } from '@/lib/mortgageServiceAreas'
 
@@ -45,7 +46,7 @@ export default async function MortgageServiceAreaPage({ params }: Props) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(service) }} />
       <section className="bg-[#1F2E2A] px-6 py-20 text-center text-white">
-        <h1 className="mb-5 font-serif text-4xl md:text-6xl">{area.city}, Colorado Mortgage Broker</h1>
+        <h1 className="mb-5 text-4xl md:text-6xl">{area.city}, Colorado Mortgage Broker</h1>
         <p className="mx-auto mb-7 max-w-xl text-lg text-white/90">{area.focus}</p>
         <Link href="/contact" className="inline-block rounded bg-[#F5EFE6] px-6 py-3 font-semibold text-[#1F2E2A]">
           Talk to Jamie
@@ -53,7 +54,7 @@ export default async function MortgageServiceAreaPage({ params }: Props) {
       </section>
       <section className="bg-[#F5EFE6] px-6 py-14 text-[#1F2E2A]">
         <div className="mx-auto max-w-3xl">
-          <h2 className="mb-4 font-serif text-3xl">{area.question}</h2>
+          <h2 className="mb-4 text-3xl">{area.question}</h2>
           <p className="mb-5 leading-relaxed">{area.answer}</p>
           <p className="mb-6 leading-relaxed">{area.detail}</p>
           <Link href={area.href} className="font-semibold underline underline-offset-4">{area.label}</Link>
@@ -63,6 +64,7 @@ export default async function MortgageServiceAreaPage({ params }: Props) {
           </p>
         </div>
       </section>
+      <LocalMortgageGuide city={area.slug} />
     </>
   )
 }

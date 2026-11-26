@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'Mortgage Loan Programs | The Becker Team Colorado',
+  title: 'Colorado Mortgage Loan Programs',
   description:
     'VA, FHA, conventional, jumbo, self-employed, asset qualifier, and Mortgage Accelerator loans in Colorado and beyond. Jamie Becker, NMLS #794730.',
   alternates: { canonical: '/loan-programs' },

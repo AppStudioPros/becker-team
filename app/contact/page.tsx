@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
+import { jamieLicensedStates } from '@/lib/jamieLicenses'
 import Link from 'next/link'
 import { Phone, Mail, Building2, MapPin } from 'lucide-react'
 import ContactForm from '@/components/ContactForm'
 
 export const metadata: Metadata = {
-  title: 'Contact | The Becker Team | Colorado Mortgage Broker',
+  title: 'Contact Jamie Becker, Colorado Mortgage Broker',
   description:
     'Contact Jamie Becker to discuss your mortgage needs. Call (720) 492-3335 or email Jamie@thebeckerteam.com. NMLS #794730.',
 }
@@ -21,14 +22,13 @@ const contactCards = [
     icon: Mail,
     label: 'Email Me',
     value: 'Jamie@thebeckerteam.com',
-    sub: "I'll respond within 24 hours",
     href: 'mailto:Jamie@thebeckerteam.com',
   },
   {
     icon: Building2,
-    label: 'Company',
-    value: 'The Becker Team',
-    sub: 'NMLS #794730',
+    label: 'Licensing',
+    value: 'Jamie Becker · Individual NMLS #794730',
+    sub: 'Xpert Home Lending, Inc. · Company NMLS #2179191',
     href: null,
   },
   {
@@ -44,7 +44,7 @@ const localBusinessJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'MortgageLender',
   name: 'The Becker Team',
-  description: 'Colorado mortgage broker Jamie Becker — 21+ years experience, VA, FHA, Jumbo, Self-Employed, and specialty loan programs. NMLS #794730.',
+  description: 'Jamie Becker (Individual NMLS #794730) is a Colorado mortgage broker with 21+ years of experience in VA, FHA, jumbo, self-employed and specialty loan programs.',
   url: 'https://www.thebeckerteam.com',
   telephone: '+17204923335',
   email: 'Jamie@thebeckerteam.com',
@@ -63,7 +63,7 @@ const localBusinessJsonLd = {
   },
   openingHours: 'Mo-Fr 09:00-18:00',
   priceRange: '$$',
-  areaServed: ['Colorado', 'California', 'Texas'],
+  areaServed: jamieLicensedStates,
   founder: {
     '@type': 'Person',
     name: 'Jamie Becker',
@@ -101,8 +101,8 @@ export default function ContactPage() {
         </p>
       </section>
 
-      {/* ── Contact Info + Quick Actions ── */}
-      <section className="py-14 md:py-20 px-6" style={{ backgroundColor: '#1F2E2A' }}>
+      {/* ── Contact Information ── */}
+      <section id="contact-information" className="scroll-mt-20 py-14 md:py-20 px-6" style={{ backgroundColor: '#1F2E2A' }}>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Left */}
           <div>
@@ -117,11 +117,10 @@ export default function ContactPage() {
               Whether you have a specific loan in mind or just want to talk through your situation,
               Jamie is ready to connect. Reach out any time.
             </p>
-            <p className="text-white/50 mb-4 text-xs font-bold uppercase tracking-widest">Quick Actions</p>
-            <div className="flex flex-col gap-3">
+            <div className="grid w-fit max-w-full gap-3">
               <Link
                 href="/mortgage-calculator"
-                className="block w-full text-center uppercase tracking-widest text-sm font-semibold py-4 px-6 rounded btn-hover"
+                className="inline-block text-center uppercase tracking-widest text-sm font-semibold px-10 py-4 rounded btn-hover"
                 style={{ backgroundColor: 'transparent', color: '#F5EFE6', border: '2px solid #F5EFE6' }}
               >
                 Calculate Payment
@@ -130,14 +129,14 @@ export default function ContactPage() {
                 href="https://2179191.my1003app.com/794730/register"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full text-center uppercase tracking-widest text-sm font-semibold py-4 px-6 rounded btn-hover"
+                className="inline-block text-center uppercase tracking-widest text-sm font-semibold px-10 py-4 rounded btn-hover"
                 style={{ backgroundColor: '#B98942', color: '#fff', border: '2px solid #B98942' }}
               >
                 Get Pre-Approved
               </a>
               <Link
                 href="/mortgage-interest-rates"
-                className="block w-full text-center uppercase tracking-widest text-sm font-semibold py-4 px-6 rounded btn-hover"
+                className="inline-block text-center uppercase tracking-widest text-sm font-semibold px-10 py-4 rounded btn-hover"
                 style={{ backgroundColor: 'transparent', color: '#F5EFE6', border: '2px solid #F5EFE6' }}
               >
                 Check Rates
@@ -164,7 +163,7 @@ export default function ContactPage() {
                   ) : (
                     <p className="text-sm font-semibold mb-1" style={{ color: '#1F2E2A' }}>{card.value}</p>
                   )}
-                  <p className="text-xs" style={{ color: '#4a5e53' }}>{card.sub}</p>
+                  {card.sub && <p className="text-xs" style={{ color: '#4a5e53' }}>{card.sub}</p>}
                 </div>
               )
             })}

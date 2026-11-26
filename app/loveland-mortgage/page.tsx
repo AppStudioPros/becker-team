@@ -4,7 +4,7 @@ import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Loveland CO Mortgage Lender | Home Loans Loveland Colorado | The Becker Team',
+  title: 'Loveland, CO Mortgage Broker and Home Loans',
   description:
     'Loveland CO mortgage lender Jamie Becker (NMLS #794730). Conventional, FHA, VA, and USDA loans for Loveland, Berthoud, Johnstown, Milliken, and Windsor. Northern Colorado home loan experts.',
   alternates: { canonical: 'https://www.thebeckerteam.com/loveland-mortgage' },

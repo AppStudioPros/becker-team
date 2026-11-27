@@ -1,3 +1,4 @@
+import SectionBackdrop from '@/components/SectionBackdrop'
 import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -45,17 +46,17 @@ const programs = [
   { title: 'Second Home & Vacation Property', body: 'Finance a ski chalet in Vail, a mountain retreat in Aspen, or a summer home in Summit County — second home jumbo programs available.' },
   { title: 'Investment Property Jumbo', body: 'Expand your portfolio with investment property jumbo financing. Ideal for rental properties in high-demand Colorado resort and tech corridors.' },
   { title: 'Non-Warrantable Condo Financing', body: 'Many Colorado mountain resort condos don\'t meet conventional or conforming guidelines. We have specialty programs for non-warrantable condo purchases in resort buildings.' },
-  { title: 'Jumbo ARM Programs', body: 'Adjustable-rate jumbo loans can offer lower initial rates — a strategic fit for buyers who plan to sell or refinance within 5-7 years.' },
+  { title: 'Jumbo ARM Programs', body: 'An adjustable-rate loan may start with a lower rate. We can compare that payment with a fixed-rate loan and show what happens if the rate adjusts before you sell or refinance.' },
   { title: 'Asset Qualifier / High Net Worth', body: 'Qualify based on investment accounts and assets rather than traditional income — useful for buyers with complex or non-standard financial profiles.' },
 ]
 
 const faqs = [
   { q: 'What counts as a jumbo loan in Colorado?', a: `For a one-unit property in Boulder County, a loan above ${dollars.format(oneUnitLimits.Boulder[2026])} exceeds the 2026 limit. The 2027 limit is ${dollars.format(oneUnitLimits.Boulder[2027])}. Use the loan amount after your down payment and the county where the property is located.` },
   { q: 'What are current jumbo mortgage rates in Colorado?', a: 'Jumbo rates change with the market and depend on the lender, property type, down payment and credit profile. Jamie can help you compare current quotes, including lender fees and cash to close.' },
-  { q: 'How much down payment do I need for a jumbo loan?', a: 'Most jumbo loans require 10-20% down. Some programs allow 10% down for well-qualified borrowers with strong credit and reserves. Investment property and second home jumbo loans typically require 15-25% down.' },
-  { q: 'Can I get a jumbo loan for a condo in Vail or Breckenridge?', a: 'Yes, but resort area condos often fall into the non-warrantable category — meaning they don\'t meet standard Fannie/Freddie condo guidelines due to high investor concentration or resort-hotel features. The Becker Team has access to specialty programs specifically designed for non-warrantable condo financing in mountain resort buildings.' },
+  { q: 'How much down payment do I need for a jumbo loan?', a: 'Each lender sets its own down payment and reserve requirements. How much you want to borrow, the type of property and whether it’s your primary home, second home or rental all affect what’s available.' },
+  { q: 'Can I get a jumbo loan for a condo in Vail or Breckenridge?', a: 'Possibly. A lender reviews both your finances and the condo building. Hotel-style services, required rental programs or restrictions on when owners can stay there can affect financing. Send us the building name and rental agreement so we can review your options.' },
   { q: 'What credit score do I need for a jumbo loan?', a: 'Credit and reserve requirements depend on the lender, loan amount, down payment and property. Jamie can tell you what a lender will review and how much it expects you to have left after closing.' },
-  { q: 'Do you offer jumbo loans for second homes in Colorado?', a: 'Yes. Second home jumbo financing is available for Colorado mountain properties — ski homes, cabins, and resort condos. These typically require 10-20% down and that the property be used personally for a portion of the year (not rented full-time, which would classify it as investment property).' },
+  { q: 'Do you offer jumbo loans for second homes in Colorado?', a: 'Yes. We can review jumbo financing for a mountain house, cabin or resort condo you plan to use yourself. Lenders set the down payment and decide how they treat rental use. Share your schedule and any rental agreement so we can check which loans fit.' },
 ]
 
 
@@ -78,14 +79,9 @@ export default function BoulderJumboPage() {
 
       {/* Hero */}
       <section
-        className="relative py-28 md:py-40 px-6 text-white text-center"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.60), rgba(20,35,25,0.60)), url("/images/boulder-hero.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 30%',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-28 md:py-40 px-6 text-white text-center"
       >
+        <SectionBackdrop src="/images/boulder-hero.jpg" shade={0.6} position="center 30%" hero />
         <p className="text-sm uppercase tracking-widest font-semibold mb-4 text-white/70">Boulder · Vail · Aspen · Breckenridge · Summit County</p>
         <h1
           className="text-4xl md:text-6xl font-bold mb-6"
@@ -184,14 +180,9 @@ export default function BoulderJumboPage() {
 
       {/* Mountain CTA */}
       <section
-        className="relative py-24 md:py-36 px-6 text-white text-center"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.55), rgba(20,35,25,0.55)), url("/images/cta-mountain.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-24 md:py-36 px-6 text-white text-center"
       >
+        <SectionBackdrop src="/images/cta-mountain.jpg" shade={0.55} />
         <h2
           data-reveal="fade"
           className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5"

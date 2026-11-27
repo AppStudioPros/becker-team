@@ -1,3 +1,4 @@
+import SectionBackdrop from '@/components/SectionBackdrop'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
@@ -83,16 +84,9 @@ export default async function LoanProgramPage({ params }: Props) {
 
       {/* ── Hero ── */}
       <section
-        className="relative py-14 md:py-24 px-6 text-center text-white"
-        style={{
-          backgroundImage: isMortgageAccelerator
-            ? 'linear-gradient(rgba(20,35,25,0.6), rgba(20,35,25,0.6)), url("/images/mortgage-accelerator-hero.jpg")'
-            : 'linear-gradient(rgba(20,35,25,0.6), rgba(20,35,25,0.6)), url("/images/squarespace/jamie-ranch-0001_websize.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: isMortgageAccelerator ? 'center 55%' : 'center',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-14 md:py-24 px-6 text-center text-white"
       >
+        <SectionBackdrop src={isMortgageAccelerator ? '/images/mortgage-accelerator-hero.jpg' : '/images/squarespace/jamie-ranch-0001_websize.jpg'} shade={0.6} position={isMortgageAccelerator ? 'center 55%' : 'center'} hero />
         <h1
           className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
@@ -238,14 +232,9 @@ export default async function LoanProgramPage({ params }: Props) {
 
       {/* ── CTA ── */}
       <section
-        className="relative py-24 md:py-36 px-6 text-white text-center"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.55), rgba(20,35,25,0.55)), url("/images/cta-mountain.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-24 md:py-36 px-6 text-white text-center"
       >
+        <SectionBackdrop src="/images/cta-mountain.jpg" shade={0.55} />
         <h2
           className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}

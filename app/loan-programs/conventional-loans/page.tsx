@@ -1,3 +1,4 @@
+import SectionBackdrop from '@/components/SectionBackdrop'
 import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -38,7 +39,7 @@ const highlights = [
   },
   {
     title: 'No Government Insurance Required',
-    body: 'With 20% down, no private mortgage insurance is required — giving strong-credit buyers a cleaner, lower-cost path to homeownership.',
+    body: 'Private mortgage insurance generally applies when you put down less than 20%. We can compare the monthly costs and cash needed at different down payments.',
   },
 ]
 
@@ -46,7 +47,7 @@ const fitProfiles = [
   { label: 'First-time homebuyers', body: 'Low down payment options make it a practical entry point for buyers stepping into homeownership.' },
   { label: 'Buyers with strong credit', body: 'Good credit translates directly into more competitive rates and better long-term cost.' },
   { label: 'Move-up and repeat buyers', body: 'Flexible terms and no government overlays make conventional a clean fit for experienced buyers.' },
-  { label: '20% down buyers avoiding PMI', body: 'Put down 20% and skip mortgage insurance entirely — keeping monthly costs as low as possible.' },
+  { label: '20% down buyers avoiding PMI', body: 'Putting down 20% generally lets you avoid private mortgage insurance. Ask us to compare that with keeping more of your savings for other expenses.' },
 ]
 
 const faqs = [
@@ -119,14 +120,9 @@ export default function ConventionalLoansPage() {
 
       {/* ── Hero ── */}
       <section
-        className="relative py-14 md:py-24 px-6 text-center text-white"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.6), rgba(20,35,25,0.6)), url("/images/conv-hero.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 40%',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-14 md:py-24 px-6 text-center text-white"
       >
+        <SectionBackdrop src="/images/conv-hero.jpg" shade={0.6} position="center 40%" hero />
         <h1
           className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
@@ -278,7 +274,7 @@ export default function ConventionalLoansPage() {
                 fill
                 className="object-cover"
                 style={{ objectPosition: 'center 55%' }}
-                priority
+                sizes="(min-width: 768px) 420px, calc(100vw - 3rem)"
               />
             </div>
           </div>
@@ -319,17 +315,12 @@ export default function ConventionalLoansPage() {
 
       {/* ── Mountain CTA ── */}
       <section
-        className="relative py-24 md:py-36 px-6 text-white text-center"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.55), rgba(20,35,25,0.55)), url("/images/cta-mountain.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-24 md:py-36 px-6 text-white text-center"
       >
+        <SectionBackdrop src="/images/cta-mountain.jpg" shade={0.55} />
         <h2
           data-reveal="fade"
-          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5"
+          className="-mx-2 mb-5 text-4xl font-bold sm:mx-0 md:text-5xl lg:text-6xl"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
         >
           The Straightforward Path to Homeownership

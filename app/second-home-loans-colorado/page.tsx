@@ -37,7 +37,7 @@ const breadcrumb = {
 }
 
 const benefits = [
-  { title: '10% Minimum Down Payment', body: 'Second home loans typically require just 10% down, lower than investment property minimums. This makes vacation property ownership more accessible for buyers who have equity in their primary residence.' },
+  { title: 'Down Payment Options', body: 'Some conventional second-home loans allow as little as 10% down. The property and loan program determine how much you’ll need. If you’re buying a resort condo or borrowing above the county limit, we can check whether you’ll need more.' },
   { title: 'How Occupancy Affects Pricing', body: 'Tell us how you will use the home. A home you visit for part of the year and a property you buy to rent out can have different pricing and down payment requirements.' },
   { title: 'Conventional and Jumbo Options', body: 'We can compare the amount you plan to borrow with the conforming loan limit for that county and explain when a jumbo second-home mortgage applies.' },
   { title: 'Non-Warrantable Condo Solutions', body: 'For a resort condo, share any rental agreement and HOA documents. Hotel services or limits on your personal use can affect whether a particular lender will finance the unit.' },
@@ -48,7 +48,7 @@ const benefits = [
 const faqs = [
   {
     q: 'What is the minimum down payment for a second home in Colorado?',
-    a: 'Most second home loan programs require a minimum of 10% down. Some buyers choose to put down more to lower the monthly payment or get a better rate, but 10% is the standard floor. For jumbo second home purchases (above the conforming limit), some programs may require 15-20% depending on the loan amount and property type.',
+    a: 'Some conventional loans allow as little as 10% down on an eligible second home. Jumbo loans and resort condos may require more. Share the purchase price, property type and how you’ll use the home so we can check what you’ll need for the down payment and closing costs.',
   },
   {
     q: 'How is a second home loan different from a primary residence mortgage?',
@@ -56,15 +56,15 @@ const faqs = [
   },
   {
     q: 'Can I rent out my Colorado second home on Airbnb or VRBO?',
-    a: 'It depends on the property, loan program, local license rules and HOA covenants. For a Fannie Mae second-home loan, you must personally occupy the home during part of the year, retain control over occupancy and qualify without the rental income. If rentals are essential to your budget, we can review investment-property options.',
+    a: 'Possibly. The loan, local licensing rules and homeowners association all matter. For a standard conventional second-home loan, plan to stay in the home for part of the year and keep control over when you can use it. You generally need to qualify without the rent. If you want to use the home primarily as a rental, we can review investment-property financing.',
   },
   {
-    q: 'What areas in Colorado qualify for second home financing?',
-    a: 'The property needs to be a reasonable distance from your primary residence and in a location that functions as a vacation or recreational destination. Most Colorado mountain properties qualify: Summit County (Breckenridge, Keystone, Dillon), Grand County (Grand Lake, Winter Park), Eagle County (Vail, Beaver Creek), Larimer County (Estes Park), Routt County (Steamboat), Pitkin County (Aspen), and Gunnison County (Crested Butte). Jamie can confirm eligibility for your specific property location.',
+    q: 'Does a second home have to be a certain distance from my primary home?',
+    a: 'There’s no single mileage rule for every loan. A lender may ask why the location makes sense as a second home and how you’ll use it. For a standard conventional second-home loan, the property is typically a single home or condo you can occupy year-round. Send us the address and any HOA or rental agreement so we can review the property with you.',
   },
   {
     q: 'Can I finance a second home if I still have a mortgage on my primary residence?',
-    a: 'Yes. Most second home buyers still have a primary mortgage. The lender will consider both payments when calculating your debt-to-income ratio. Many Colorado buyers use equity from their primary home appreciation to fund the down payment on a second property, either through savings or through a home equity line of credit.',
+    a: 'Yes. Your lender generally counts both housing payments when reviewing your monthly debts. If you plan to borrow against your current home for the down payment, tell us before you make an offer. The lender will need to review the source of the funds and the new payment as well.',
   },
   {
     q: 'What credit score do I need for a second home loan?',
@@ -127,7 +127,7 @@ export default function SecondHomeLoansPage() {
         <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-2 text-sm font-semibold" style={{ color: '#1F2E2A' }}>
           <span>✦ 10% Down Payment Options</span>
           <span>✦ Ski Town Condo Specialists</span>
-          <span>✦ Part-Time Rental Allowed</span>
+          <span>✦ Personal Use and Rental Rules</span>
           <span>✦ 21+ Years Experience</span>
         </div>
       </section>

@@ -41,7 +41,7 @@ const breadcrumb = {
 const programs = [
   { label: 'Conventional Loans', desc: 'Compare conventional loans for a Fort Collins home and see how a larger or smaller down payment affects monthly costs.', href: '/loan-programs/conventional-loans' },
   { label: 'FHA Loans', desc: 'Great for first-time buyers and CSU graduates entering the Fort Collins market. 3.5% down, flexible credit.', href: '/loan-programs/fha-loans' },
-  { label: 'VA Loans', desc: 'Zero down for eligible veterans and active-duty service members in Northern Colorado.', href: '/loan-programs/va-loans' },
+  { label: 'VA Loans', desc: 'Eligible veterans and service members in Northern Colorado may qualify with no down payment.', href: '/loan-programs/va-loans' },
   { label: 'Jumbo Loans', desc: 'Financing above conforming limits for higher-value Fort Collins and Northern Colorado properties.', href: '/loan-programs/jumbo-loans' },
   { label: 'Self-Employed / Bank Statement', desc: 'Built for Fort Collins entrepreneurs, tech professionals, and small business owners who prefer not to use tax returns.', href: '/loan-programs/self-employed-loans' },
   { label: 'Asset Qualifier Loans', desc: 'Qualify using investment accounts and liquid assets instead of traditional income documentation.', href: '/loan-programs/asset-qualifier-loans' },

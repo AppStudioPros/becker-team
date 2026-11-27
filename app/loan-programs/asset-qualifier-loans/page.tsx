@@ -1,3 +1,4 @@
+import SectionBackdrop from '@/components/SectionBackdrop'
 import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -134,14 +135,9 @@ export default function AssetQualifierPage() {
 
       {/* ── Hero ── */}
       <section
-        className="relative py-14 md:py-24 px-6 text-center text-white"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.6), rgba(20,35,25,0.6)), url("/images/aq-hero.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 40%',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-14 md:py-24 px-6 text-center text-white"
       >
+        <SectionBackdrop src="/images/aq-hero.jpg" shade={0.6} position="center 40%" hero />
         <h1
           className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
@@ -209,14 +205,9 @@ export default function AssetQualifierPage() {
 
       {/* ── Is This Right for You? ── */}
       <section
-        className="py-16 md:py-24 px-6"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.82), rgba(20,35,25,0.82)), url("/images/aq-dirt-road.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-16 md:py-24 px-6"
       >
+        <SectionBackdrop src="/images/aq-dirt-road.jpg" shade={0.82} />
         <div className="max-w-5xl mx-auto">
           <h2
             data-reveal
@@ -318,43 +309,42 @@ export default function AssetQualifierPage() {
             One buyer financed a $1 million purchase with 20% down. The 125% asset benchmark for the $800,000 loan is $1 million in eligible assets after closing.
           </p>
 
-          {/* Grid — explicit placement so equal row heights work */}
-          <div className="grid grid-cols-3 grid-rows-3 gap-3">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:grid-rows-3">
             {/* Col 1 — rows 1-3 */}
-            <div className="col-start-1 row-start-1 rounded bg-white p-5 flex flex-col gap-3" style={{ border: '2px solid #1F2E2A' }}>
+            <div className="col-start-1 row-start-1 flex flex-col gap-3 rounded bg-white p-3 sm:p-5" style={{ border: '2px solid #1F2E2A' }}>
               <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#1F2E2A' }}>Purchase Price</p>
               <p className="text-sm text-gray-600">$1,000,000</p>
             </div>
-            <div className="col-start-1 row-start-2 rounded bg-white p-5 flex flex-col gap-3" style={{ border: '2px solid #1F2E2A' }}>
+            <div className="col-start-1 row-start-2 flex flex-col gap-3 rounded bg-white p-3 sm:p-5" style={{ border: '2px solid #1F2E2A' }}>
               <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#1F2E2A' }}>Loan Amount</p>
               <p className="text-sm text-gray-600">$800,000</p>
             </div>
-            <div className="col-start-1 row-start-3 rounded bg-white p-5 flex flex-col gap-3" style={{ border: '2px solid #1F2E2A' }}>
+            <div className="col-start-1 row-start-3 flex flex-col gap-3 rounded bg-white p-3 sm:p-5" style={{ border: '2px solid #1F2E2A' }}>
               <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#1F2E2A' }}>Statements Used</p>
               <p className="text-sm text-gray-600">4 months of portfolio statements</p>
             </div>
 
             {/* Col 2 — rows 1-3 */}
-            <div className="col-start-2 row-start-1 rounded bg-white p-5 flex flex-col gap-3" style={{ border: '2px solid #1F2E2A' }}>
+            <div className="col-start-2 row-start-1 flex flex-col gap-3 rounded bg-white p-3 sm:p-5" style={{ border: '2px solid #1F2E2A' }}>
               <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#1F2E2A' }}>Down Payment</p>
               <p className="text-sm text-gray-600">20%</p>
             </div>
-            <div className="col-start-2 row-start-2 rounded bg-white p-5 flex flex-col gap-3" style={{ border: '2px solid #1F2E2A' }}>
+            <div className="col-start-2 row-start-2 flex flex-col gap-3 rounded bg-white p-3 sm:p-5" style={{ border: '2px solid #1F2E2A' }}>
               <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#1F2E2A' }}>Asset Benchmark After Closing</p>
               <p className="text-sm text-gray-600">$1,000,000</p>
             </div>
-            <div className="col-start-2 row-start-3 rounded bg-white p-5 flex flex-col gap-3" style={{ border: '2px solid #1F2E2A' }}>
-              <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#1F2E2A' }}>Documentation Used</p>
+            <div className="col-start-2 row-start-3 flex flex-col gap-3 rounded bg-white p-3 sm:p-5" style={{ border: '2px solid #1F2E2A' }}>
+              <p className="text-xs font-semibold uppercase tracking-wide [overflow-wrap:anywhere]" style={{ color: '#1F2E2A' }}>Documentation Used</p>
               <p className="text-sm text-gray-600">Asset statements only</p>
             </div>
 
-            {/* Col 3 — amber timeline spans all 3 rows */}
+            {/* Timeline below the cards on phones, beside them on wider screens */}
             <div
-              className="col-start-3 row-start-1 row-span-3 rounded flex flex-col items-center justify-center text-center p-6"
+              className="col-span-2 flex flex-col items-center justify-center rounded p-6 text-center sm:col-span-1 sm:col-start-3 sm:row-span-3 sm:row-start-1"
               style={{ backgroundColor: '#B98942' }}
             >
-              <p className="text-white/80 text-xs font-semibold uppercase tracking-widest mb-4">Timeline:</p>
-              <p className="text-white/80 text-sm mb-2">Closed in</p>
+              <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[#1F2E2A]">Timeline:</p>
+              <p className="mb-2 text-sm text-[#1F2E2A]">Closed in</p>
               <p className="text-white font-bold leading-none" style={{ fontFamily: '"Playfair Display", Georgia, serif', fontSize: '5rem' }}>3</p>
               <p className="text-white font-bold text-3xl leading-tight" style={{ fontFamily: '"Playfair Display", Georgia, serif' }}>Weeks</p>
             </div>
@@ -365,7 +355,7 @@ export default function AssetQualifierPage() {
               Buying a home in Loveland after retirement
             </h3>
             <p className="mb-4 leading-relaxed text-gray-700">
-              If you’re retired and shopping in Loveland, how much would you need to keep in your accounts after closing? Consider a $486,000 home, the median sale price in Loveland for the three months ending in October 2026.
+              If you’re retired and shopping in Loveland, how much would you need to keep in your accounts after closing? Consider a $486,000 home, close to the $485,726 median sale price across all home types in Loveland from August through October 2026.
             </p>
             <p className="mb-4 leading-relaxed text-gray-700">
               With 25% down, you’d put <strong>$121,500</strong> toward the purchase and borrow <strong>$364,500</strong>. At 125% of that loan amount, the benchmark is <strong>$455,625</strong> in eligible assets after closing.
@@ -426,7 +416,7 @@ export default function AssetQualifierPage() {
                 fill
                 className="object-cover"
                 style={{ objectPosition: 'center 55%' }}
-                priority
+                sizes="(min-width: 768px) 420px, calc(100vw - 3rem)"
               />
             </div>
           </div>
@@ -467,14 +457,9 @@ export default function AssetQualifierPage() {
 
       {/* ── Mountain CTA ── */}
       <section
-        className="relative py-24 md:py-36 px-6 text-white text-center"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.55), rgba(20,35,25,0.55)), url("/images/cta-mountain.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-24 md:py-36 px-6 text-white text-center"
       >
+        <SectionBackdrop src="/images/cta-mountain.jpg" shade={0.55} />
         <h2
           data-reveal="fade"
           className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5"

@@ -1,3 +1,4 @@
+import SectionBackdrop from '@/components/SectionBackdrop'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ChevronLeft } from 'lucide-react'
@@ -27,13 +28,8 @@ const section = 'px-6 py-14 md:py-20'
 export default function MortgageAcceleratorGuide() {
   return (
     <article className="bg-white text-center text-forest [&_.prose-becker_p]:text-center!">
-      <header
-        className="bg-forest bg-cover px-6 py-14 text-center text-white md:py-24"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.66), rgba(20,35,25,0.66)), url("/images/mortgage-accelerator-hero.jpg")',
-          backgroundPosition: 'center 55%',
-        }}
-      >
+      <header className="relative isolate bg-forest px-6 py-14 text-center text-white md:py-24">
+        <SectionBackdrop src="/images/mortgage-accelerator-hero.jpg" shade={0.66} position="center 55%" hero />
         <Link href={overview} className="mb-5 inline-flex items-center gap-1 text-sm font-semibold text-cream underline-offset-4 hover:underline">
           <ChevronLeft size={16} aria-hidden="true" /> Home Mortgage Accelerator overview
         </Link>
@@ -146,9 +142,9 @@ export default function MortgageAcceleratorGuide() {
       </section>
 
       <section
-        className={section + ' bg-forest bg-cover bg-center text-white'}
-        style={{ backgroundImage: 'linear-gradient(rgba(20,35,25,0.88), rgba(20,35,25,0.88)), url("/images/ma-coins-houses.jpg")' }}
+        className={section + ' relative isolate bg-forest text-white'}
       >
+        <SectionBackdrop src="/images/ma-coins-houses.jpg" shade={0.88} />
         <div className="mx-auto max-w-5xl">
           <h2 id="who-it-fits" tabIndex={-1} className={heading} style={displayFont}>Who is likely to find it useful?</h2>
           <div className="mx-auto grid gap-6 text-base leading-relaxed text-white/90 md:grid-cols-2 md:gap-12">

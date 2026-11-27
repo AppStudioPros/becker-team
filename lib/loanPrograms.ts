@@ -219,7 +219,7 @@ export const loanPrograms: LoanProgram[] = [
     body: [
       'Jumbo loans are mortgage loans that exceed the conforming loan limits set by the Federal Housing Finance Agency (FHFA). Compare the original loan amount with the limit for the county, number of units and year. A loan exactly at the limit is within the conforming size limit.',
       'Jumbo lenders set their own credit, income, down payment and reserve requirements. Ask which rules apply to the loan amount and the way you plan to occupy the home.',
-      'Despite stricter qualification, jumbo loans are widely available and offer competitive interest rates for well-qualified borrowers. In some market conditions, jumbo rates are actually lower than conforming rates due to the higher creditworthiness of jumbo borrowers.',
+      'Jumbo and conforming rates can differ by lender, market and loan terms. Compare written quotes for the same property, loan amount and term to see the rate, fees and cash needed at closing.',
       'Jumbo loans can be used for primary residences, second homes, and investment properties. They are available as fixed-rate and adjustable-rate products, with terms typically ranging from 15 to 30 years.',
       'In Colorado, luxury properties in the Denver metro area, mountain communities, and other high-demand markets frequently exceed conforming loan limits. The Becker Team has experience financing high-value properties and working with lenders that specialize in jumbo and super-jumbo products.',
       'If you are purchasing or refinancing a high-value home and need a loan above the conforming limit, contact The Becker Team to discuss your options and get a clear picture of what you qualify for.',
@@ -231,7 +231,7 @@ export const loanPrograms: LoanProgram[] = [
       },
       {
         q: 'How much do I need to put down on a jumbo loan?',
-        a: 'Down payments typically start at 10% and go up to 20% or more depending on the lender and loan amount. Reserve requirements are also higher than for conforming loans.',
+        a: 'Jumbo lenders set their own down payment and reserve requirements. We can check the program based on your loan amount, property type and whether you’ll live there.',
       },
       {
         q: 'Are jumbo rates higher than conventional rates?',

@@ -40,7 +40,7 @@ const breadcrumb = {
 const programs = [
   { label: 'Conventional Loans', desc: "Compare conventional mortgage options for your next Littleton or Highlands Ranch home, including how much cash you can keep after closing.", href: '/loan-programs/conventional-loans' },
   { label: 'Jumbo Loans', desc: "Look at jumbo financing for a Lone Tree or Highlands Ranch property if the mortgage amount exceeds its county loan limit.", href: '/loan-programs/jumbo-loans' },
-  { label: 'VA Loans', desc: "Zero down for eligible veterans and service members throughout the south Denver metro.", href: '/loan-programs/va-loans' },
+  { label: 'VA Loans', desc: "Eligible veterans and service members in the south Denver metro may qualify with no down payment.", href: '/loan-programs/va-loans' },
   { label: 'FHA Loans', desc: "For first-time buyers entering the Littleton and Englewood market with limited down payment funds or flexible credit requirements.", href: '/loan-programs/fha-loans' },
   { label: 'Self-Employed Loans', desc: 'Littleton and Castle Rock business owners can explore loans that use eligible bank deposits to document income.', href: '/loan-programs/self-employed-loans' },
   { label: 'Asset Qualifier Loans', desc: "Qualify using investment accounts and liquid assets — a strong fit for Lone Tree and Highlands Ranch buyers with significant net worth.", href: '/loan-programs/asset-qualifier-loans' },

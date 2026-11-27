@@ -1,3 +1,4 @@
+import SectionBackdrop from '@/components/SectionBackdrop'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -31,7 +32,7 @@ const faqs = [
   {
     category: 'Down Payments & Credit',
     items: [
-      { q: 'How much of a down payment do I need?', a: 'It depends on the loan type. Eligible VA buyers can often purchase with no down payment. FHA purchase loans may allow 3.5% down with a qualifying credit score of at least 580. Some conventional programs allow 3% down on a one-unit primary home. Jumbo loans typically require 10-20%.' },
+      { q: 'How much of a down payment do I need?', a: 'It depends on the loan. Eligible VA buyers can often purchase with no down payment. FHA purchase loans may allow 3.5% down with a qualifying credit score of at least 580. Some conventional programs allow 3% down on a one-unit primary home. Jumbo lenders set their own down payment requirements.' },
       { q: 'What credit score do I need to buy a home?', a: 'It depends on the program and lender. FHA may allow 3.5% down with a qualifying score of 580 or higher. CHFA generally requires a 620 mid-credit score, with possible exceptions for borrowers who have no score. VA sets no minimum score, though individual lenders may set one.' },
       { q: 'Can I buy a home with bad credit?', a: 'Some programs may work with lower scores. Under FHA rules, buyers with a qualifying score of 500 to 579 may be eligible with at least 10% down. Lenders can set higher minimums and also review your finances and credit history.' },
       { q: 'Can down payment funds come from a gift?', a: 'Yes — gift funds from family members are acceptable on most loan programs including FHA and conventional loans. VA loans also allow gift funds. Proper documentation of the gift is required.' },
@@ -54,7 +55,7 @@ const faqs = [
       { q: 'How are mortgage rates determined?', a: 'Rates are influenced by the broader bond market, the Federal Reserve\'s policy decisions, the loan program, your credit score, down payment, loan term, and property type. Rates change daily.' },
       { q: 'Should I lock my rate?', a: 'A rate lock generally protects your quoted rate if you close before it expires and your application stays the same. Check the top of page one of your Loan Estimate to see whether the rate is locked and when it expires. We can help you weigh the timing and cost of the lock.' },
       { q: 'What are closing costs?', a: 'Closing costs can include lender fees, an appraisal and title services. Your Loan Estimate also shows prepaid items, such as homeowners insurance, and estimates how much cash you’ll need at closing.' },
-      { q: 'Can closing costs be rolled into the loan?', a: 'In some cases yes — seller concessions, lender credits, or certain loan structures allow closing costs to be covered without cash at closing. This trades a slightly higher rate for reduced upfront costs.' },
+      { q: 'Can closing costs be rolled into the loan?', a: 'Some loans let you add certain costs to your balance. Seller or lender credits can help cover closing costs and are shown separately on your Loan Estimate. A lender credit may come with a higher rate. We can compare how each option affects your cash at closing, payment and total cost.' },
     ],
   },
 ]
@@ -88,13 +89,9 @@ export default function FaqPage() {
 
       {/* Hero */}
       <section
-        className="py-16 px-6 text-center text-white"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.75), rgba(20,35,25,0.75)), url("/images/squarespace/hero-mountain.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
+        className="relative isolate py-16 px-6 text-center text-white"
       >
+        <SectionBackdrop src="/images/squarespace/hero-mountain.jpg" shade={0.75} hero />
         <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#C4A35A' }}>
           Mortgage Questions, Answered
         </p>

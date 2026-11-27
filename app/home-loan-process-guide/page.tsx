@@ -1,3 +1,4 @@
+import SectionBackdrop from '@/components/SectionBackdrop'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -70,7 +71,7 @@ export default function ProcessGuidePage() {
       </section>
 
       {/* ── Step 1 — Find Out How Much You Can Borrow ── */}
-      <section className="py-14 md:py-20 px-6 bg-white">
+      <section id="step-1" className="py-14 md:py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           {/* Left — step number + heading + description */}
           <div>
@@ -121,7 +122,7 @@ export default function ProcessGuidePage() {
       </section>
 
       {/* ── Step 2 — Select the Right Loan Program ── */}
-      <section className="py-14 md:py-20 px-6" style={{ backgroundColor: '#1F2E2A' }}>
+      <section id="step-2" className="py-14 md:py-20 px-6" style={{ backgroundColor: '#1F2E2A' }}>
         <div className="max-w-7xl mx-auto">
           <p
             className="text-8xl font-bold leading-none mb-2 select-none"
@@ -197,7 +198,7 @@ export default function ProcessGuidePage() {
       </section>
 
       {/* ── Step 3 — Apply for a Loan ── */}
-      <section className="py-14 md:py-20 px-6" style={{ backgroundColor: '#F5EFE6' }}>
+      <section id="step-3" className="py-14 md:py-20 px-6" style={{ backgroundColor: '#F5EFE6' }}>
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           {/* Left */}
           <div>
@@ -263,7 +264,7 @@ export default function ProcessGuidePage() {
       </section>
 
       {/* ── Step 4 — Begin Loan Processing ── */}
-      <section className="py-14 md:py-20 px-6 bg-white">
+      <section id="step-4" className="py-14 md:py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           {/* Left */}
           <div>
@@ -312,7 +313,7 @@ export default function ProcessGuidePage() {
       </section>
 
       {/* ── Step 5 — Closing ── */}
-      <section className="py-14 md:py-20 px-6" style={{ backgroundColor: '#1F2E2A' }}>
+      <section id="step-5" className="py-14 md:py-20 px-6" style={{ backgroundColor: '#1F2E2A' }}>
         <div className="max-w-7xl mx-auto">
           <p
             className="text-8xl font-bold leading-none mb-2 select-none"
@@ -333,10 +334,10 @@ export default function ProcessGuidePage() {
           <ul className="flex flex-col gap-3 mb-10">
             {[
               'Bring a valid government-issued photo ID',
-              'Bring a cashier\'s check or confirm wire transfer for closing costs',
+              'Ask your closing agent how to pay the amount due at closing',
               'Ask your lender about any costs that changed since your Loan Estimate',
-              'All parties on the loan must be present or have Power of Attorney',
-              'Be prepared for a final walkthrough of the property',
+              'Confirm who needs to sign and where. Ask about your options if someone cannot attend.',
+              'Arrange the final walkthrough with your agent before closing if you’re buying a home',
             ].map((item) => (
               <li key={item} className="text-sm flex items-start gap-3" style={{ color: '#F5EFE6' }}>
                 <span
@@ -357,9 +358,8 @@ export default function ProcessGuidePage() {
             }}
           >
             <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.9)' }}>
-              <span className="font-semibold text-white">Note:</span> There is a mandatory
-              3-business-day waiting period after you receive your Closing Disclosure before you can
-              close. Plan accordingly.
+              <span className="font-semibold text-white">Before sending a wire,</span> call your closing
+              agent at a number you’ve already verified. Confirm the account details by phone or in person.
             </p>
           </div>
         </div>
@@ -367,14 +367,9 @@ export default function ProcessGuidePage() {
 
       {/* ── Final CTA ── */}
       <section
-        className="relative py-24 md:py-36 px-6 text-white text-center"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.55), rgba(20,35,25,0.55)), url("/images/cta-mountain.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-24 md:py-36 px-6 text-white text-center"
       >
+        <SectionBackdrop src="/images/cta-mountain.jpg" shade={0.55} />
         <h2
           className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
@@ -382,7 +377,7 @@ export default function ProcessGuidePage() {
           Ready to get started?
         </h2>
         <p className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Let&apos;s discuss your unique situation and find the perfect loan for you
+          Tell us where you are in the process. We can help you compare loan options and decide on your next step.
         </p>
         <a
           href="https://2179191.my1003app.com/794730/register"

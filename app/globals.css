@@ -91,22 +91,31 @@ h1, h2, h3, h4, h5 {
 
 /* ─────────────────────────────────────────
    Scroll Reveal System
-   AnimationProvider (client) adds .in-view
+   AnimationProvider prepares below-fold elements after first paint.
 ───────────────────────────────────────── */
 [data-reveal] {
-  opacity: 0;
-  transform: translateY(30px);
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
-[data-reveal="fade"]  { transform: none; }
-[data-reveal="left"]  { transform: translateX(-30px); }
-[data-reveal="right"] { transform: translateX(30px); }
-[data-reveal="scale"] { transform: scale(0.95); opacity: 0; }
 
-[data-reveal].in-view {
+[data-reveal].reveal-pending { opacity: 0; transform: translateY(30px); }
+[data-reveal="fade"].reveal-pending  { transform: none; }
+[data-reveal="left"].reveal-pending  { transform: translateX(-30px); }
+[data-reveal="right"].reveal-pending { transform: translateX(30px); }
+[data-reveal="scale"].reveal-pending { transform: scale(0.95); }
+
+[data-reveal].in-view,
+[data-reveal].reveal-pending:focus-within {
   opacity: 1 !important;
   transform: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal].reveal-pending {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* Allow hover transforms to work on already-revealed elements */

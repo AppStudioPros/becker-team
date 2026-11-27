@@ -42,7 +42,7 @@ const benefits = [
   { title: 'Jumbo Loan Programs', body: 'Compare the amount you plan to borrow with the specific county limit. Vail is in Eagle County, Aspen is in Pitkin County, and Breckenridge and Silverthorne are in Summit County.' },
   { title: 'Second Home Financing', body: 'Tell us when you plan to use the home and whether anyone else will control bookings. The lender reviews occupancy, and the town and HOA each have their own rental rules.' },
   { title: 'Non-Warrantable Condo Programs', body: 'For a ski condo, we can review the HOA documents and any rental agreements. Hotel-style services and restrictions on owner use can affect which lenders will consider the building.' },
-  { title: 'Investment Property Loans', body: 'If you plan to rent your mountain home as a primary source of income, it qualifies as investment property. Different loan terms apply. Jamie will help you structure the purchase correctly from the start.' },
+  { title: 'Investment Property Loans', body: 'If you plan to use the property mainly as a rental, tell us upfront. We can compare investment-property loan options and check how the planned rental use affects the financing.' },
   { title: 'Flexible Income Documentation', body: 'Many mountain property buyers are business owners, retirees, or investors with complex income. Bank statement loans and asset qualifier programs are available when W-2 documentation does not tell the full story.' },
   { title: 'Pre-Approval Before You Shop', body: 'Talk through your budget and how you plan to use the home. If you’re looking at a resort condo, Jamie can explain what the lender will need to review about the building.' },
 ]
@@ -62,7 +62,7 @@ const faqs = [
   },
   {
     q: 'What are jumbo loan requirements in Colorado mountain towns?',
-    a: 'Jumbo loans in Colorado mountain markets typically require 10-20% down depending on the loan amount and property type, a credit score of 700+, and documented income or assets sufficient to support the payment. Some programs allow lower down payments on jumbo amounts. Requirements vary by lender, which is why shopping across multiple programs matters. Jamie works with several wholesale lenders who specialize in mountain and resort property jumbo financing.',
+    a: 'Jumbo lenders set their own credit, down payment and reserve requirements. The loan amount, property type and how you plan to use the home can change those requirements. Give us the price and planned down payment so we can compare what lenders would ask you to document.',
   },
   {
     q: 'Can I rent out my mountain home on Airbnb if I finance it as a second home?',

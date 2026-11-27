@@ -40,9 +40,9 @@ export default function FairLendingPage() {
               <li>Marital status</li>
               <li>Age (provided the applicant is of legal age to contract)</li>
               <li>Receipt of income from public assistance programs</li>
-              <li>Exercise of any right under the Consumer Credit Protection Act</li>
+              <li>Good-faith exercise of a right under the Consumer Credit Protection Act</li>
             </ul>
-            <p>The federal agency that administers compliance with this law regarding The Becker Team and Xpert Home Lending is the <strong>Consumer Financial Protection Bureau (CFPB)</strong>, 1700 G Street NW, Washington, DC 20552.</p>
+            <p>If you have a concern about credit discrimination, you can submit a complaint to the Consumer Financial Protection Bureau using the contact information below.</p>
           </div>
 
           <div>
@@ -53,8 +53,8 @@ export default function FairLendingPage() {
               <li>National origin</li>
               <li>Religion</li>
               <li>Sex</li>
-              <li>Familial status (having children under 18 years of age)</li>
-              <li>Disability or handicap</li>
+              <li>Familial status, including households with children under 18, pregnancy and seeking legal custody of a child</li>
+              <li>Disability</li>
             </ul>
             <p>We are proud to display the Equal Housing Opportunity logo and to uphold the principles it represents.</p>
           </div>
@@ -71,7 +71,7 @@ export default function FairLendingPage() {
 
           <div>
             <h2 style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }} className="text-xl font-bold mb-3">Our Fair Lending Practices</h2>
-            <p>The Becker Team applies consistent underwriting standards and criteria to all loan applications. We evaluate applications based solely on creditworthiness criteria, including:</p>
+            <p>We apply our fair lending practices consistently when helping borrowers review loan options. The lender determines which underwriting standards apply. In making its decision, a lender may consider:</p>
             <ul className="list-disc pl-6 space-y-1 text-sm" style={{ color: '#3a5a4a' }}>
               <li>Credit history and credit score</li>
               <li>Debt-to-income ratio</li>
@@ -80,7 +80,7 @@ export default function FairLendingPage() {
               <li>Property value and type</li>
               <li>Loan-to-value ratio</li>
             </ul>
-            <p>These criteria are applied uniformly to all applicants regardless of any characteristic protected by law.</p>
+            <p>We treat applicants fairly and do not discriminate on any basis prohibited by law.</p>
           </div>
 
           <div>

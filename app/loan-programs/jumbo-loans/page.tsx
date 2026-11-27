@@ -1,3 +1,4 @@
+import SectionBackdrop from '@/components/SectionBackdrop'
 import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -120,14 +121,9 @@ export default function JumboLoansPage() {
 
       {/* ── Hero ── */}
       <section
-        className="relative py-14 md:py-24 px-6 text-center text-white"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.6), rgba(20,35,25,0.6)), url("/images/jumbo-hero.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 40%',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-14 md:py-24 px-6 text-center text-white"
       >
+        <SectionBackdrop src="/images/jumbo-hero.jpg" shade={0.6} position="center 40%" hero />
         <h1
           className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
@@ -202,17 +198,17 @@ export default function JumboLoansPage() {
               <caption className="sr-only">Maximum one-unit conforming loan amounts by county for 2026 and 2027</caption>
               <thead className="bg-[#1F2E2A] text-white">
                 <tr>
-                  <th scope="col" className="px-3 py-3 sm:px-5">Location</th>
-                  <th scope="col" className="px-3 py-3 sm:px-5">2026</th>
-                  <th scope="col" className="px-3 py-3 sm:px-5">2027</th>
+                  <th scope="col" className="px-1.5 py-3 sm:px-5">Location</th>
+                  <th scope="col" className="px-1.5 py-3 sm:px-5">2026</th>
+                  <th scope="col" className="px-1.5 py-3 sm:px-5">2027</th>
                 </tr>
               </thead>
               <tbody>
                 {Object.entries(oneUnitLimits).map(([area, limits]) => (
                   <tr key={area} className="border-t border-[#ded4be] even:bg-[#F5EFE6]">
-                    <th scope="row" className="px-3 py-3 font-medium sm:px-5">{area === 'U.S. baseline' ? area : area + ' County'}</th>
-                    <td className="whitespace-nowrap px-3 py-3 sm:px-5">{dollars.format(limits[2026])}</td>
-                    <td className="whitespace-nowrap px-3 py-3 sm:px-5">{dollars.format(limits[2027])}</td>
+                    <th scope="row" className="px-1.5 py-3 font-medium sm:px-5">{area === 'U.S. baseline' ? area : area + ' County'}</th>
+                    <td className="whitespace-nowrap px-1.5 py-3 sm:px-5">{dollars.format(limits[2026])}</td>
+                    <td className="whitespace-nowrap px-1.5 py-3 sm:px-5">{dollars.format(limits[2027])}</td>
                   </tr>
                 ))}
               </tbody>
@@ -318,7 +314,7 @@ export default function JumboLoansPage() {
                 fill
                 className="object-cover"
                 style={{ objectPosition: 'center 55%' }}
-                priority
+                sizes="(min-width: 768px) 420px, calc(100vw - 3rem)"
               />
             </div>
           </div>
@@ -352,21 +348,16 @@ export default function JumboLoansPage() {
             className="inline-flex items-center gap-2 font-semibold"
             style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
           >
-            Self Employed Loans <ChevronRight size={18} />
+            Self-Employed Loans <ChevronRight size={18} />
           </Link>
         </div>
       </section>
 
       {/* ── Mountain CTA ── */}
       <section
-        className="relative py-24 md:py-36 px-6 text-white text-center"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.55), rgba(20,35,25,0.55)), url("/images/cta-mountain.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-24 md:py-36 px-6 text-white text-center"
       >
+        <SectionBackdrop src="/images/cta-mountain.jpg" shade={0.55} />
         <h2
           data-reveal="fade"
           className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5"

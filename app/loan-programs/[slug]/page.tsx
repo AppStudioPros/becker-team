@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const selfEmployedKeyFeatures = [
   {
     title: 'Tax Return Program',
-    desc: 'Use 2 years of personal and business tax returns. Best for borrowers with consistent income and straightforward write-offs.',
+    desc: 'Two years of tax returns is common. One year may be enough if your business and ownership history meet the lender’s requirements.',
   },
   {
     title: 'P&L Statement Option',
@@ -33,7 +33,7 @@ const selfEmployedKeyFeatures = [
   },
   {
     title: 'Bank Statement Program',
-    desc: '12 or 24 months of personal or business bank statements used to calculate income. Great for borrowers whose deposits reflect true cash flow.',
+    desc: 'A lender can review eligible deposits from 12 or 24 months of personal or business bank statements to calculate qualifying income.',
   },
   {
     title: 'Asset Qualifier Option',

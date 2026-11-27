@@ -7,7 +7,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 export const metadata: Metadata = {
   title: 'Longmont, CO Mortgage Broker and Home Loans',
   description:
-    'Longmont CO mortgage broker Jamie Becker (NMLS #794730). CHFA, FHA, conventional, and VA loans for Longmont, Firestone, Frederick, Mead, and Berthoud. First-time buyer specialists. Purchase financing.',
+    'Compare financing for a Longmont townhome or house. See how a down payment affects your costs and explore first-time buyer options.',
   alternates: { canonical: 'https://www.thebeckerteam.com/longmont-mortgage' },
 }
 
@@ -45,10 +45,13 @@ const programs = [
   { label: 'Self-Employed Loans', desc: 'Bank statement programs for Longmont tech freelancers, healthcare professionals, and business owners with non-traditional income.', href: '/loan-programs/self-employed-loans' },
 ]
 
+// City sales for the three months ending October 2026: https://www.redfin.com/city/30791/CO/Longmont/housing-market
+const marketPrice = 'From August through October 2026, the median sale price across all home types in Longmont was $550,862.'
+
 const faqs = [
   {
-    q: 'Why are buyers choosing Longmont over Boulder?',
-    a: 'Boulder\'s median home price has pushed well above $800,000 for single-family homes, putting it out of reach for most first-time and middle-income buyers. Longmont sits about 15 miles north on US 287 with a median closer to $480,000-$530,000 in 2026. Many Boulder-area tech and healthcare workers commute from Longmont because the cost difference is significant. The city has also grown its own employer base with companies like Digital Globe and Seagate having major operations nearby.',
+    q: 'What is the median home price in Longmont?',
+    a: `${marketPrice} For a closer comparison, look for recent sales of similar homes on the same side of town.`,
   },
   {
     q: 'What mortgage programs are best for Longmont first-time buyers?',
@@ -123,10 +126,10 @@ export default function LongmontMortgagePage() {
       <section className="bg-white py-16 md:py-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <h2 data-reveal className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}>
-            The Smart Alternative to Boulder
+            Comparing Homes in Longmont and Boulder
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            Longmont has become one of the fastest-growing cities on the northern Front Range for a simple reason: it is significantly more affordable than Boulder while still offering quick access to Boulder jobs and culture. Buyers priced out of Boulder find that Longmont gives them a real house, a real yard, and often better schools, for a fraction of the price. The median home price sits around $480,000-$530,000 in 2026, and the city has been building out its own tech and healthcare employer base. Jamie Becker (NMLS #794730) has 21+ years of experience helping first-time buyers and move-up buyers find the right loan in markets like this, with deep knowledge of CHFA programs that can help reduce the upfront cost of getting into a home.
+            {marketPrice} If you’re searching in both Longmont and Boulder, send us a listing from each city. We can use the same down payment for both and show how the loan amount, property taxes and monthly payment compare.
           </p>
         </div>
       </section>

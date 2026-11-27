@@ -40,7 +40,7 @@ export default function Footer() {
 
         <div className="space-y-8">
           <div>
-            <h4 className="text-base font-semibold mb-5 tracking-wide">Quick Links</h4>
+            <h2 className="text-base font-semibold mb-5 tracking-wide">Quick Links</h2>
             <ul className="flex flex-col gap-3">
               {[
                 { label: 'Home', href: '/' },
@@ -58,7 +58,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="text-base font-semibold mb-5 tracking-wide">Popular Programs</h4>
+            <h2 className="text-base font-semibold mb-5 tracking-wide">Popular Programs</h2>
 
             <ul className="flex flex-col gap-3">
               {[
@@ -76,7 +76,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="text-base font-semibold mb-5 tracking-wide">Connect</h4>
+          <h2 className="text-base font-semibold mb-5 tracking-wide">Connect</h2>
           <ul className="flex flex-col gap-3">
             <li>
               <a href="tel:7204923335" className="text-sm hover:text-white transition-colors" style={{ color: '#B98942' }}>
@@ -106,7 +106,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="text-base font-semibold mb-5 tracking-wide">Service Areas</h4>
+          <h2 className="text-base font-semibold mb-5 tracking-wide">Service Areas</h2>
           <ul className="columns-2 gap-6 [&>li]:mb-2 [&>li]:break-inside-avoid" data-footer-service-areas>
             {[
               { label: 'Denver', href: '/denver-mortgage' },

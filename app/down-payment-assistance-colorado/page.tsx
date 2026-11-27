@@ -5,7 +5,7 @@ import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Colorado Down Payment Assistance for Homebuyers',
+  title: 'Colorado Down Payment Assistance',
   description:
     'Explore Colorado down payment assistance, including CHFA grants, deferred second mortgages and Denver metroDPA. Compare cash at closing and repayment terms.',
   alternates: { canonical: 'https://www.thebeckerteam.com/down-payment-assistance-colorado' },
@@ -136,7 +136,7 @@ export default function DownPaymentAssistancePage() {
             Which Programs Cover Your Address?
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            A Denver mailing address alone does not determine which local programs cover the home. Start with the city or county where the property is located, then ask a participating lender to compare assistance with an unassisted loan. Use both the upfront savings and the ongoing payment to decide what fits your budget.
+            If you’re buying in the metro area, our <Link href="/blog/down-payment-assistance-denver" className="font-semibold underline underline-offset-4">Denver down payment assistance guide</Link> explains why the property’s location matters. Start with the city or county where the property is located, then ask a participating lender to compare assistance with an unassisted loan. Use both the upfront savings and the ongoing payment to decide what fits your budget.
           </p>
         </div>
       </section>

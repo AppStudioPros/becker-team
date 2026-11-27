@@ -45,18 +45,21 @@ const programs = [
   { label: 'Self-Employed Loans', desc: 'Bank statement programs for Thornton small business owners and contractors. Non-traditional income documentation accepted.', href: '/loan-programs/self-employed-loans' },
 ]
 
+// City sales for the three months ending October 2026: https://www.redfin.com/city/30790/CO/Thornton/housing-market
+const marketPrice = 'From August through October 2026, the median sale price across all home types in Thornton was $514,142.'
+
 const faqs = [
   {
-    q: 'What makes Thornton one of Colorado\'s fastest-growing cities?',
-    a: 'Thornton has grown rapidly because it offers Denver metro access at prices well below the city itself. The median sits around $430,000-$470,000 in 2026, and you get established neighborhoods, expanding light rail access, and proximity to the Denver metro job market. Brighton and Henderson to the northeast have also grown quickly, with new construction developments drawing buyers who want more square footage for their dollar.',
+    q: 'What is the median home price in Thornton?',
+    a: `${marketPrice} When you compare listings, look at recent sales of the same type of home in the neighborhood you’re considering.`,
   },
   {
     q: 'What mortgage programs are most common in Thornton?',
     a: 'FHA loans are very common in Thornton because the price point is accessible and the 3.5% down requirement matches what many first-time buyers have saved. CHFA programs pair well with FHA here to reduce upfront costs further. Conventional loans are the right move when a buyer has good credit and at least 5% down because you avoid FHA\'s upfront mortgage insurance premium and can drop PMI later.',
   },
   {
-    q: 'Is light rail expanding in Thornton?',
-    a: 'Yes. The North Metro light rail line has expanded through Thornton, connecting residents to downtown Denver and the rest of the RTD system. Neighborhoods near stations tend to hold value well and attract buyers who commute downtown without wanting to pay downtown prices.',
+    q: 'Can I commute from Thornton to downtown Denver by train?',
+    a: 'Yes. The RTD N Line connects Thornton with Union Station in downtown Denver. If you’re looking near a station, check the route between the home and the platform and the train schedule for your usual commute.',
   },
   {
     q: 'Do you serve Brighton and Northglenn?',
@@ -123,10 +126,10 @@ export default function ThorntonMortgagePage() {
       <section className="bg-white py-16 md:py-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <h2 data-reveal className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}>
-            Denver Metro Affordability, Without the Denver Price Tag
+            Buying a Home in Thornton
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            Thornton is one of the fastest-growing cities in Colorado for a practical reason: it gives buyers access to the Denver metro job market and infrastructure at a price point that is still attainable for first-time buyers and working families. Median home prices around $430,000-$470,000 in 2026 put ownership within reach for buyers who would be priced out of Denver proper. The North Metro light rail expansion has made commuting more practical, and the Brighton corridor to the northeast has exploded with new construction for buyers who want more space. Jamie Becker (NMLS #794730) has 21+ years working with first-time buyers across the north Denver metro, with deep knowledge of FHA, CHFA, and conventional programs that work in this market.
+            {marketPrice} We can estimate the payment on a resale home and a new build using the taxes, insurance and association dues for each address. For a new build, ask whether the tax estimate includes the finished home.
           </p>
         </div>
       </section>

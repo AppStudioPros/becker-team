@@ -8,7 +8,7 @@ import { dollars, oneUnitLimits } from '@/lib/conformingLimits'
 export const metadata: Metadata = {
   title: 'Broomfield, CO Mortgage Broker and Home Loans',
   description:
-    'Broomfield CO mortgage broker Jamie Becker (NMLS #794730). Conventional, FHA, VA, and jumbo loans for Broomfield, Westminster, Superior, and Louisville. Tech corridor specialists.',
+    'Compare Broomfield mortgage options with Jamie Becker. Review the county loan limit and how lenders may treat stock compensation or contract income.',
   alternates: { canonical: 'https://www.thebeckerteam.com/broomfield-mortgage' },
 }
 
@@ -129,7 +129,7 @@ export default function BroomfieldMortgagePage() {
             Broomfield: Where Denver Meets Boulder
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            Broomfield is both a city and a county along US 36 between Denver and Boulder. If you plan to use equity from a home sale for your next down payment, we can compare the amount you expect to borrow with the county loan limit. For buyers with stock compensation or contract income, we can also review what the lender will count toward that purchase. Jamie Becker (NMLS #794730) has 21+ years of experience navigating exactly this kind of market, with programs designed for tech professionals, executives, contractors, and first-time buyers alike.
+            Broomfield is both a city and a county along US 36. If your home search also includes neighboring <Link href="/westminster-mortgage" className="font-semibold underline underline-offset-4">Westminster</Link>, check which county each property is in before comparing loan limits. If you plan to use equity from a home sale for your next down payment, we can compare the amount you expect to borrow with the county loan limit. For buyers with stock compensation or contract income, we can also review what the lender will count toward that purchase. Jamie Becker (NMLS #794730) has 21+ years of experience navigating exactly this kind of market, with programs designed for tech professionals, executives, contractors, and first-time buyers alike.
           </p>
         </div>
       </section>

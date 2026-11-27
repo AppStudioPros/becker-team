@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Accessibility Statement',
   description:
-    'Accessibility statement for thebeckerteam.com — our commitment to WCAG 2.1 compliance and ensuring our website is usable by all visitors, including those with disabilities.',
+    'Read The Becker Team’s accessibility statement, get help using the site, or report a barrier you encountered.',
 }
 
 const EFFECTIVE = 'September 1, 2026'

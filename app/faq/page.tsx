@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Colorado Mortgage FAQ',
   description:
-    'Answers to the most common mortgage questions — down payments, credit scores, VA loans, FHA loans, closing timelines, and more. Jamie Becker, NMLS #794730, Denver CO.',
+    'Find answers to Colorado mortgage questions about down payments, credit, VA and FHA loans, and what to expect before closing.',
   alternates: { canonical: 'https://www.thebeckerteam.com/faq' },
 }
 
@@ -15,7 +15,7 @@ const faqs = [
       { q: 'What is the CHFA loan program in Colorado?', a: 'The Colorado Housing and Finance Authority offers first mortgages through participating lenders. Eligible buyers may pair a CHFA first mortgage with a down payment assistance grant or a second mortgage. Income limits and first-time buyer rules vary by program, and homebuyer education is required.' },
       { q: 'Does The Becker Team offer VA loans in Colorado Springs?', a: "Absolutely. Colorado Springs has one of the largest military concentrations in the country — Fort Carson, Peterson SFB, Schriever AFB, and the Air Force Academy. VA loans are a specialty at The Becker Team. Eligible veterans, active-duty service members, and surviving spouses can purchase with no down payment in many cases and no monthly mortgage insurance. Each lender sets its own rate and fees. Jamie works with military clients at all Colorado installations and statewide." },
       { q: 'Can I get a jumbo loan for a mountain property in Vail, Aspen, or Boulder?', a: "Yes. The Becker Team specializes in jumbo loans for Colorado's mountain resort markets. Vail, Aspen, Breckenridge, Boulder, and Summit County all qualify. Mountain resort properties sometimes require specialty financing including non-warrantable condo programs — Jamie has experience navigating all of it." },
-      { q: 'Do you offer mortgages for self-employed borrowers in Colorado?', a: "Yes. The Bank Statement Mortgage Program lets self-employed buyers, business owners, and freelancers qualify using 12-24 months of bank statements instead of tax returns. P&L and asset depletion options are also available — ideal for Colorado's large population of remote workers and tech entrepreneurs." },
+      { q: 'Do you offer mortgages for self-employed borrowers in Colorado?', a: 'Yes. We can review bank statement loans with business owners and freelancers. Some lenders use eligible deposits from 12 or 24 months of bank statements to document income. We can also discuss profit and loss statements or the Asset Qualifier if those options fit your situation.' },
       { q: 'What Colorado cities does The Becker Team serve?', a: "The Becker Team is based in Denver and serves all of Colorado — including Denver, Aurora, Lakewood, Littleton, Colorado Springs, Boulder, Fort Collins, Vail, Aspen, Breckenridge, Steamboat Springs, Summit County, and the Western Slope. Jamie can work remotely with clients anywhere in the state." },
     ],
   },
@@ -23,7 +23,7 @@ const faqs = [
     category: 'Getting Started',
     items: [
       { q: 'How do I know how much home I can afford?', a: 'Start by deciding what monthly payment and cash at closing fit your budget. Jamie can review your income, debts, assets and credit to estimate a purchase range.' },
-      { q: 'What is the difference between pre-qualification and pre-approval?', a: 'Pre-qualification is a quick estimate based on self-reported information. Pre-approval is a verified review of your financials with a formal credit pull — sellers take pre-approvals more seriously.' },
+      { q: 'What is the difference between pre-qualification and pre-approval?', a: 'Pre-qualification gives you an early borrowing estimate. A pre-approval letter shows what a lender is tentatively willing to lend after reviewing your information. The lender still needs to approve the loan and property. Locking the rate is a separate step.' },
       { q: 'How long does the mortgage process take?', a: 'Your closing date depends on when your lender approves the loan, whether the home needs an appraisal, and when the title work is complete. Tell us the date you’re considering and we’ll walk you through what needs to happen before then. For most home purchases, you also need to receive your Closing Disclosure at least three business days before signing.' },
       { q: 'Do I need to sell my current home before buying a new one?', a: 'Not necessarily. Bridge loans, contingent offers, or properly timed closings can allow you to buy before you sell. We help structure the right solution for your situation.' },
     ],
@@ -44,15 +44,15 @@ const faqs = [
       { q: 'What is an FHA loan?', a: 'An FHA loan is a mortgage insured by the Federal Housing Administration. Buyers may qualify with as little as 3.5% down and a qualifying credit score of at least 580. FHA loans require mortgage insurance.' },
       { q: 'What is a jumbo loan?', a: 'A jumbo loan exceeds the conforming loan limit for the property’s county, number of units and applicable year. Compare the amount you plan to borrow after the down payment with the FHFA county limit.' },
       { q: 'What is an asset qualifier loan?', a: 'This loan uses the eligible assets you have left after closing to help you qualify. Our benchmark is 125% of the loan amount. This can help buyers with substantial savings or investments, including retirees and buyers with complex tax returns.' },
-      { q: 'I am self-employed — can I still get a mortgage?', a: 'Absolutely. We specialize in self-employed borrowers. Bank statement loans use 12-24 months of deposits instead of tax returns to determine qualifying income — a strong option when write-offs reduce taxable income on paper.' },
-      { q: 'What is the Mortgage Accelerator program?', a: 'The Accelerator uses a line of credit secured by your home for everyday banking. Deposits reduce the balance and withdrawals increase it. Paying down the balance faster depends on how much extra cash you can leave after bills and interest. Compare both loans using the same amount of money before deciding.' },
+      { q: 'I am self-employed — can I still get a mortgage?', a: 'Yes. We can review your tax returns for a conventional loan or explore bank statement loans that count eligible deposits. The right option depends on your business history and the records you have.' },
+      { q: 'What is the Mortgage Accelerator program?', guide: '/loan-programs/mortgage-accelerator/guide#worked-example', a: 'The Accelerator uses a line of credit secured by your home for everyday banking. Deposits reduce the balance and withdrawals increase it. Paying down the balance faster depends on how much extra cash you can leave after bills and interest. Compare both loans using the same amount of money before deciding.' },
     ],
   },
   {
     category: 'Rates & Costs',
     items: [
       { q: 'How are mortgage rates determined?', a: 'Rates are influenced by the broader bond market, the Federal Reserve\'s policy decisions, the loan program, your credit score, down payment, loan term, and property type. Rates change daily.' },
-      { q: 'Should I lock my rate?', a: 'Rate locks protect you from rate increases during processing. We advise on timing based on current market conditions and your closing timeline. Lock periods typically range from 30-60 days.' },
+      { q: 'Should I lock my rate?', a: 'A rate lock generally protects your quoted rate if you close before it expires and your application stays the same. Check the top of page one of your Loan Estimate to see whether the rate is locked and when it expires. We can help you weigh the timing and cost of the lock.' },
       { q: 'What are closing costs?', a: 'Closing costs can include lender fees, an appraisal and title services. Your Loan Estimate also shows prepaid items, such as homeowners insurance, and estimates how much cash you’ll need at closing.' },
       { q: 'Can closing costs be rolled into the loan?', a: 'In some cases yes — seller concessions, lender credits, or certain loan structures allow closing costs to be covered without cash at closing. This trades a slightly higher rate for reduced upfront costs.' },
     ],
@@ -127,6 +127,11 @@ export default function FaqPage() {
                     {item.q}
                   </h3>
                   <p className="text-gray-600 leading-relaxed">{item.a}</p>
+                  {'guide' in item && item.guide && (
+                    <Link href={item.guide} className="mt-2 inline-block font-semibold underline underline-offset-4">
+                      See the one-month Accelerator payoff example
+                    </Link>
+                  )}
                 </div>
               ))}
             </div>

@@ -9,6 +9,9 @@ const nextConfig: NextConfig = {
         destination: 'https://www.thebeckerteam.com/:path*',
         permanent: true,
       },
+      { source: '/rates', destination: '/mortgage-interest-rates', permanent: true },
+      { source: '/programs/va', destination: '/loan-programs/va-loans', permanent: true },
+      { source: '/programs/asset-qualifier', destination: '/loan-programs/asset-qualifier-loans', permanent: true },
       // Old Squarespace homepage slug
       { source: '/home', destination: '/', permanent: true },
       { source: '/giving-back', destination: '/about#givingback', permanent: true },

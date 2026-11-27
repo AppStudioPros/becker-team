@@ -6,9 +6,9 @@ import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Boulder Jumbo Loans and Mountain Home Financing',
+  title: 'Boulder Jumbo Loans and Mountain Financing',
   description:
-    'Jumbo mortgages in Boulder, Aspen, Vail, Breckenridge and Colorado mountain resort towns. Second home, luxury property, and investment jumbo financing. Jamie Becker NMLS #794730.',
+    'Compare jumbo financing for a Boulder home or a Colorado ski condo. See how county loan limits, down payments and condo rules affect your options.',
   alternates: { canonical: 'https://www.thebeckerteam.com/boulder-jumbo-loans' },
 }
 

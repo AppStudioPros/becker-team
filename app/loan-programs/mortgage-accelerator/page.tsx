@@ -10,7 +10,7 @@ import ProgramReviews from '@/components/ProgramReviews'
 export const metadata: Metadata = {
   title: 'Home Mortgage Accelerator Strategy',
   description:
-    'A cash-flow-driven mortgage strategy for homeowners with strong monthly net deposits. Use your cash flow intentionally to pay down your mortgage faster. Jamie Becker, NMLS #794730.',
+    'See how depositing income and paying expenses can affect your mortgage balance. We’ll help you decide if the Accelerator fits your cash flow.',
   alternates: { canonical: '/loan-programs/mortgage-accelerator' },
 }
 
@@ -182,12 +182,12 @@ export default function MortgageAcceleratorPage() {
                 className="rounded bg-white p-8 card-hover"
                 style={{ border: '2px solid #1F2E2A' }}
               >
-                <h4
-                  className="text-lg font-semibold mb-3"
+                <h3
+                  className="strategy-reason-title text-lg font-semibold mb-3"
                   style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
                 >
                   {r.title}
-                </h4>
+                </h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{r.body}</p>
               </div>
             ))}
@@ -347,8 +347,7 @@ export default function MortgageAcceleratorPage() {
               </div>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest"
-                style={{ color: '#B98942' }}
+                className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-bronze-ink"
               >
                 Learn More About Jamie <ChevronRight size={16} />
               </Link>

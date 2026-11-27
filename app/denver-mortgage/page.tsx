@@ -4,6 +4,7 @@ import Link from 'next/link'
 import LocalMortgageGuide from '@/components/LocalMortgageGuide'
 import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
+import SectionBackdrop from '@/components/SectionBackdrop'
 
 export const metadata: Metadata = {
   title: 'Denver Mortgage Broker and Home Loans',
@@ -76,14 +77,10 @@ export default function DenverMortgagePage() {
 
       {/* Hero */}
       <section
-        className="relative py-28 md:py-40 px-6 text-white text-center"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.60), rgba(20,35,25,0.60)), url("/images/denver-hero.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 40%',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate py-28 md:py-40 px-6 text-white text-center"
+        style={{ backgroundColor: '#1F2E2A' }}
       >
+        <SectionBackdrop src="/images/denver-hero.jpg" shade={0.6} position="center 40%" hero />
         <p className="text-sm uppercase tracking-widest font-semibold mb-4 text-white/70">Denver, Colorado</p>
         <h1
           className="text-4xl md:text-6xl font-bold mb-6"
@@ -135,7 +132,7 @@ export default function DenverMortgagePage() {
             Denver&apos;s Local Mortgage Expert
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            Jamie Becker (NMLS #794730) has been helping Denver buyers, homeowners, and investors navigate one of the country&apos;s most competitive housing markets for over 20 years. Jamie compares loan options from multiple wholesale lenders and walks you through the rate, monthly payment and closing costs. Whether you&apos;re buying your first home in Aurora, moving up in Lakewood, or investing in the Denver metro, you get direct access to an expert who picks up the phone.
+            Jamie Becker (NMLS #794730) has been helping Denver buyers, homeowners, and investors finance homes across the metro area for over 20 years. Jamie compares loan options from multiple wholesale lenders and walks you through the rate, monthly payment and closing costs. Whether you&apos;re buying your first home in <Link href="/aurora-home-loans" className="font-semibold underline underline-offset-4">Aurora</Link>, moving up in <Link href="/lakewood-mortgage" className="font-semibold underline underline-offset-4">Lakewood</Link>, or investing in the Denver metro, you get direct access to an expert who picks up the phone.
           </p>
         </div>
       </section>
@@ -169,6 +166,9 @@ export default function DenverMortgagePage() {
               </Link>
             ))}
           </div>
+          <p className="mt-6 text-center leading-relaxed" style={{ color: '#4a5e53' }}>
+            Self-employed in Denver? See <Link href="/blog/bank-statement-loans-colorado" className="font-semibold underline underline-offset-4">which deposits can count toward a Colorado bank statement loan</Link>.
+          </p>
         </div>
       </section>
 
@@ -217,14 +217,10 @@ export default function DenverMortgagePage() {
 
       {/* Mountain CTA */}
       <section
-        className="relative py-24 md:py-36 px-6 text-white text-center"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.55), rgba(20,35,25,0.55)), url("/images/cta-mountain.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate py-24 md:py-36 px-6 text-white text-center"
+        style={{ backgroundColor: '#1F2E2A' }}
       >
+        <SectionBackdrop src="/images/cta-mountain.jpg" shade={0.55} />
         <h2
           data-reveal="fade"
           className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5"

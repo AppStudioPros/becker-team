@@ -5,7 +5,7 @@ import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Colorado CHFA Loans and Down Payment Assistance',
+  title: 'CHFA Loans and Assistance in Colorado',
   description:
     'Compare Colorado Housing and Finance Authority home loans, income limits, grants and deferred second mortgages with Jamie Becker, NMLS #794730.',
   alternates: { canonical: 'https://www.thebeckerteam.com/chfa-loan-colorado' },

@@ -76,7 +76,7 @@ export default function RootLayout({
       <body>
         <AnimationProvider />
         <ConditionalLayout>
-          <main>{children}</main>
+          <main id="main-content" tabIndex={-1}>{children}</main>
         </ConditionalLayout>
         <AccessibilityWidget />
         <ChatWidget />

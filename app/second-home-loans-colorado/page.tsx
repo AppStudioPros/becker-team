@@ -142,7 +142,7 @@ export default function SecondHomeLoansPage() {
             Colorado Is Built for Second Homes
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            Whether it is a ski condo in Breckenridge, a cabin near Grand Lake, a retreat outside Estes Park, or a family place in Steamboat, Colorado draws second home buyers from across the country. The financing is different from buying your primary home. Your plans for personal use and rentals can affect which loans are available. For a ski condo, we can also look at whether hotel services, rental management or building insurance change your financing options. Jamie Becker (NMLS #794730) has 21+ years of experience helping buyers structure second home purchases correctly, with access to multiple lenders who specialize in vacation and resort property financing.
+            Whether it is a ski condo in Breckenridge, a cabin near Grand Lake, a retreat outside Estes Park, or a family place in Steamboat, Colorado draws second home buyers from across the country. The financing is different from buying your primary home. Your plans for personal use and rentals can affect which loans are available. If you plan to use a ski condo yourself and rent it between visits, our <Link href="/service-areas/breckenridge#condo-financing" className="font-semibold underline underline-offset-4">Breckenridge condo financing guide</Link> explains what to check in the rental agreement before you make an offer. Jamie Becker (NMLS #794730) has 21+ years of experience helping buyers structure second home purchases correctly, with access to multiple lenders who specialize in vacation and resort property financing.
           </p>
         </div>
       </section>

@@ -31,16 +31,26 @@ export default function LocalMortgageGuide({ city }: { city: string }) {
             <dd className="mt-2 text-2xl font-semibold">{market.detached}</dd>
           </div>
         </dl>
+        {city === 'denver' && (
+          <p className="mb-6 leading-relaxed">
+            Saving for a down payment? See <Link className={linkStyle} href="/blog/down-payment-assistance-denver">how down payment assistance works in Denver</Link>.
+          </p>
+        )}
         <h3 className="mb-3 text-2xl font-bold">When does a loan become jumbo in {market.county} County?</h3>
         <p className="leading-relaxed">
           For a one-unit home, the 2026 conforming loan limit is <strong>{dollars.format(limit[2026])}</strong>.
           {' '}{limit[2026] === limit[2027] ? 'The 2027 limit stays at ' : 'The 2027 limit rises to '}
           <strong>{dollars.format(limit[2027])}</strong>. A mortgage above the applicable limit is jumbo.
         </p>
-        <p className="mt-3 leading-relaxed">{market.financing}</p>
+        <p className="mt-3 leading-relaxed">
+          {market.financing}
+          {city === 'denver' && (
+            <> Our <Link className={linkStyle} href="/blog/jumbo-loan-limit-denver-county">Denver County jumbo loan guide</Link> shows how your down payment affects the amount you borrow.</>
+          )}
+        </p>
         <Link href="/loan-programs/jumbo-loans#county-loan-limits" className={`${linkStyle} mt-3 inline-block`}>Compare Colorado county loan limits</Link>
 
-        <h3 className="mb-3 mt-9 text-2xl font-bold">{market.condoHeading}</h3>
+        <h3 id="condo-financing" className="mb-3 mt-9 scroll-mt-24 text-2xl font-bold">{market.condoHeading}</h3>
         <p className="leading-relaxed">{market.condo}</p>
 
         <h3 className="mb-3 mt-9 text-2xl font-bold">{market.occupancyHeading}</h3>

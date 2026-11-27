@@ -7,7 +7,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 export const metadata: Metadata = {
   title: 'Westminster, CO Mortgage Broker and Home Loans',
   description:
-    'Westminster CO mortgage broker Jamie Becker (NMLS #794730). Conventional, FHA, VA, jumbo, and specialty loans for Westminster buyers. Serving Westminster, Broomfield, Thornton, and the Denver-Boulder corridor.',
+    'Buying in Westminster? See how the county loan limit, your down payment and the type of home you choose can affect your loan options.',
   alternates: { canonical: 'https://www.thebeckerteam.com/westminster-mortgage' },
 }
 

@@ -74,19 +74,21 @@ export default function BlogClient({ posts, categories }: { posts: BlogPost[], c
             <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2" style={{ color: '#aaa' }} />
             <input
               type="text"
+              aria-label="Search blog posts"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search posts..."
-              className="w-full pl-9 pr-4 py-2.5 text-sm rounded-lg border outline-none transition-colors focus:border-[#1c3023]"
+              className="w-full pl-9 pr-4 py-2.5 text-sm rounded-lg border focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest"
               style={{ borderColor: '#ede4cc', color: '#1c3023' }}
             />
           </div>
 
           {/* Category filter */}
           <select
+            aria-label="Filter posts by category"
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="px-3 py-2.5 text-sm rounded-lg border outline-none cursor-pointer"
+            className="px-3 py-2.5 text-sm rounded-lg border cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest"
             style={{ borderColor: '#ede4cc', color: '#1c3023', minWidth: '160px' }}
           >
             <option value="All">All Categories</option>
@@ -97,9 +99,10 @@ export default function BlogClient({ posts, categories }: { posts: BlogPost[], c
 
           {/* Sort */}
           <select
+            aria-label="Sort posts by date"
             value={sort}
             onChange={(e) => setSort(e.target.value as 'newest' | 'oldest')}
-            className="px-3 py-2.5 text-sm rounded-lg border outline-none cursor-pointer"
+            className="px-3 py-2.5 text-sm rounded-lg border cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest"
             style={{ borderColor: '#ede4cc', color: '#1c3023', minWidth: '130px' }}
           >
             <option value="newest">Newest First</option>
@@ -151,7 +154,8 @@ export default function BlogClient({ posts, categories }: { posts: BlogPost[], c
                     fill
                     className="object-cover"
                     style={{ objectPosition: post.hero_position || 'center center' }}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    fetchPriority="low"
+                    sizes="(min-width: 1072px) 320px, (min-width: 1024px) 31vw, (min-width: 768px) 46vw, calc(100vw - 3rem)"
                   />
                 </div>
               ) : (

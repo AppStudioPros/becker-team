@@ -11,7 +11,7 @@ export default function FairLendingPage() {
   return (
     <section style={{ backgroundColor: '#F5EFE6' }} className="py-20 px-6 pt-28">
       <div className="max-w-3xl mx-auto">
-        <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#B98942' }}>Legal</p>
+        <p className="text-xs font-bold uppercase tracking-widest mb-3 text-bronze-ink">Legal</p>
         <h1
           className="text-4xl md:text-5xl font-bold mb-3"
           style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
@@ -23,7 +23,7 @@ export default function FairLendingPage() {
         <div className="prose-becker space-y-8">
 
           <div className="rounded p-6" style={{ backgroundColor: '#1F2E2A', color: '#F5EFE6' }}>
-            <p className="font-semibold text-lg mb-2" style={{ fontFamily: '"Playfair Display", Georgia, serif' }}>Our Commitment to Equal Opportunity</p>
+            <p className="font-semibold text-lg mb-2" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#F5EFE6' }}>Our Commitment to Equal Opportunity</p>
             <p className="text-sm leading-relaxed" style={{ color: 'rgba(245,239,230,0.85)' }}>
               The Becker Team is committed to providing equal credit opportunity to all applicants. We do not discriminate on any basis prohibited by law, and we are committed to the principles of fair lending in everything we do.
             </p>

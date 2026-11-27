@@ -16,7 +16,7 @@ export default function PrivacyPage() {
   return (
     <section style={{ backgroundColor: '#F5EFE6' }} className="py-20 px-6 pt-28">
       <div className="max-w-3xl mx-auto">
-        <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#B98942' }}>Legal</p>
+        <p className="text-xs font-bold uppercase tracking-widest mb-3 text-bronze-ink">Legal</p>
         <h1
           className="text-4xl md:text-5xl font-bold mb-3"
           style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}

@@ -1,7 +1,7 @@
 import { beckerTeam } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import { jamieLicensedStates } from '@/lib/jamieLicenses'
-import Image from 'next/image'
+import SectionBackdrop from '@/components/SectionBackdrop'
 import Link from 'next/link'
 import { Phone, Mail, Building2, MapPin } from 'lucide-react'
 import ContactForm from '@/components/ContactForm'
@@ -69,21 +69,7 @@ export default function ContactPage() {
         className="relative isolate py-16 md:py-28 px-6 text-center text-white"
         style={{ backgroundColor: '#1F2E2A' }}
       >
-        <Image
-          src="/images/contact-hero.jpg"
-          alt=""
-          fill
-          sizes="100vw"
-          loading="eager"
-          fetchPriority="high"
-          className="-z-20 object-cover"
-          style={{ objectPosition: 'center 55%' }}
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 -z-10"
-          style={{ backgroundImage: 'linear-gradient(rgba(20,35,25,0.62), rgba(20,35,25,0.62))' }}
-        />
+        <SectionBackdrop src="/images/contact-hero.jpg" shade={0.62} position="center 55%" hero />
         <h1
           data-reveal="fade"
           className="text-4xl md:text-6xl lg:text-7xl font-bold"
@@ -226,18 +212,7 @@ export default function ContactPage() {
         className="relative isolate py-24 md:py-36 px-6 text-white text-center"
         style={{ backgroundColor: '#1F2E2A' }}
       >
-        <Image
-          src="/images/cta-mountain.jpg"
-          alt=""
-          fill
-          sizes="100vw"
-          className="-z-20 object-cover"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 -z-10"
-          style={{ backgroundImage: 'linear-gradient(rgba(20,35,25,0.55), rgba(20,35,25,0.55))' }}
-        />
+        <SectionBackdrop src="/images/cta-mountain.jpg" shade={0.55} />
         <h2
           data-reveal="fade"
           className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5"

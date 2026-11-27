@@ -194,7 +194,7 @@ export default function AboutPage() {
               If you are looking for a mortgage expert who can help you think beyond the standard
               loan application, I&apos;d be happy to connect.
             </p>
-            <Link data-reveal="fade" data-delay="1100" href="/contact" className="underline font-medium inline-block" style={{ color: '#B98942' }}>
+            <Link data-reveal="fade" data-delay="1100" href="/contact" className="underline font-medium inline-block text-bronze-ink">
               Contact The Becker Team to start a conversation.
             </Link>
           </div>

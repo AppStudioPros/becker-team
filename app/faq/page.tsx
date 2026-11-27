@@ -148,8 +148,8 @@ export default function FaqPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-block px-8 py-4 font-bold text-sm uppercase tracking-widest rounded"
-            style={{ backgroundColor: '#B98942', color: '#fff' }}
+            className="gold-cta inline-block px-8 py-4 font-bold text-sm uppercase tracking-widest rounded"
+            style={{ backgroundColor: '#B98942' }}
           >
             Talk to Jamie
           </Link>

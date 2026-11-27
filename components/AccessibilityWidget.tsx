@@ -210,7 +210,7 @@ function AccessibilityPanel() {
             <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.5)', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 8, display: 'flex', alignItems: 'center', gap: 6 }}>
               <Contrast size={12} /> Contrast
             </div>
-            <div style={{ display: 'flex', gap: 6 }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
               {(['normal', 'high', 'inverted'] as const).map(c => (
                 <button key={c} onClick={() => setSettings(p => ({ ...p, contrast: c }))}
                   style={btnStyle(settings.contrast === c)} aria-pressed={settings.contrast === c}>

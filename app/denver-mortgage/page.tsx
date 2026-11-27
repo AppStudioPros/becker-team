@@ -17,7 +17,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'The Becker Team — Denver Mortgage Broker',
-  description: 'Local mortgage lender serving Denver, Aurora, Lakewood, Littleton, and the Colorado Front Range.',
+  description: 'Local mortgage broker serving Denver, Aurora, Lakewood, Littleton, and the Colorado Front Range.',
   url: 'https://www.thebeckerteam.com/denver-mortgage',
   provider: teamReference,
   areaServed: [
@@ -50,11 +50,11 @@ const programs = [
 
 const faqs = [
   { q: 'How do I compare mortgage lenders in Denver?', a: 'Compare written Loan Estimates for the same loan amount and term. Look at the rate, lender fees and cash you’ll need at closing. We’ll walk you through the differences and talk through the closing date in your offer.' },
-  { q: 'What are current mortgage rates in Denver, CO?', a: 'Mortgage rates in Denver change daily based on market conditions. Your actual rate depends on your credit score, loan type, down payment, and loan term. Contact Jamie for a current rate quote tailored to your specific situation — rates are available for conventional, FHA, VA, and jumbo loans.' },
+  { q: 'What are current mortgage rates in Denver, CO?', a: 'Mortgage rates in Denver change daily based on market conditions. Your actual rate depends on your credit score, loan type, down payment, and loan term. Ask Jamie for quotes using the same loan amount, term and lock period so you can compare the fees and rate together.' },
   { q: 'How much do I need for a down payment in Denver?', a: 'FHA purchase loans may allow 3.5% down with a qualifying credit score of at least 580. Some conventional programs allow 3% down on a one-unit primary home, and eligible VA buyers can often purchase with no down payment. Jumbo lenders set their own requirements. Eligible buyers can ask a participating lender about CHFA down payment assistance.' },
   { q: 'What is the CHFA program and can I use it in Denver?', a: 'Colorado Housing and Finance Authority first mortgages and down payment assistance may be available to eligible Denver buyers. A CHFA participating lender checks program-specific income, occupancy and any purchase price limits for your address.' },
   { q: 'How long does a mortgage take to close in Denver?', a: 'If the seller has a closing date in mind, bring it to us before you sign the contract. We’ll check what your lender still needs and how much time to allow for title work and any required appraisal.' },
-  { q: 'Do you serve the entire Denver metro?', a: 'Yes. The Becker Team serves all of Denver and the surrounding metro — including Aurora, Lakewood, Littleton, Centennial, Englewood, Highlands Ranch, Parker, Castle Rock, Broomfield, and Westminster. As a local lender, Jamie knows the neighborhoods and can move quickly.' },
+  { q: 'Do you serve the entire Denver metro?', a: 'Yes. The Becker Team serves all of Denver and the surrounding metro — including Aurora, Lakewood, Littleton, Centennial, Englewood, Highlands Ranch, Parker, Castle Rock, Broomfield, and Westminster. Jamie can help you compare quotes and work out which documents you need before you make an offer.' },
 ]
 
 
@@ -132,7 +132,7 @@ export default function DenverMortgagePage() {
             Denver&apos;s Local Mortgage Expert
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            Jamie Becker (NMLS #794730) has been helping Denver buyers, homeowners, and investors finance homes across the metro area for over 20 years. Jamie compares loan options from multiple wholesale lenders and walks you through the rate, monthly payment and closing costs. Whether you&apos;re buying your first home in <Link href="/aurora-home-loans" className="font-semibold underline underline-offset-4">Aurora</Link>, moving up in <Link href="/lakewood-mortgage" className="font-semibold underline underline-offset-4">Lakewood</Link>, or investing in the Denver metro, you get direct access to an expert who picks up the phone.
+            Jamie Becker (NMLS #794730) has been helping Denver buyers, homeowners, and investors finance homes across the metro area for over 20 years. Jamie compares loan options from multiple wholesale lenders and walks you through the rate, monthly payment and closing costs. Whether you&apos;re buying your first home in <Link href="/aurora-home-loans" className="font-semibold underline underline-offset-4">Aurora</Link>, moving up in <Link href="/lakewood-mortgage" className="font-semibold underline underline-offset-4">Lakewood</Link>, or investing in the Denver metro, you can ask Jamie what to budget and how to compare your quotes.
           </p>
         </div>
       </section>
@@ -184,7 +184,7 @@ export default function DenverMortgagePage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { title: 'We Know the Denver Market', body: "Denver's neighborhoods, price points, and competitive dynamics are all familiar territory. We've helped buyers win in multiple-offer situations across the metro for two decades." },
+              { title: 'We Know the Denver Market', body: "If you’re getting ready to make an offer, we can check whether your pre-approval letter and proposed closing date fit the purchase." },
               { title: 'Multiple Lender Options', body: "We can request pricing from more than one wholesale lender. We’ll show you what each lender charges upfront for the rate it quotes." },
               { title: 'Pre-Approval for Your Offer', body: "If you’re preparing an offer, send us the date you plan to submit it. We’ll tell you what we need to review for a pre-approval letter." },
               { title: 'You Deal With Jamie, Not a Queue', body: "No handoffs to processors or call centers. Jamie handles your loan personally from application to closing." },
@@ -229,7 +229,7 @@ export default function DenverMortgagePage() {
           Ready to Buy in Denver?
         </h2>
         <p data-reveal="fade" data-delay="150" className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Get pre-approved today and move fast in Denver&apos;s market. Jamie picks up the phone.
+          Start your pre-approval before you make an offer, or ask Jamie which documents you’ll need.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a

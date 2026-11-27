@@ -14,6 +14,22 @@ interface Params {
   params: Promise<{ slug: string }>
 }
 
+function articleAction(href: string | null) {
+  if (!href || !URL.canParse(href, siteUrl)) return null
+  const url = new URL(href, siteUrl)
+  if (url.protocol === 'tel:') return { href: url.href, label: 'Call', external: false }
+  if (url.protocol === 'mailto:') return { href: url.href, label: 'Send an Email', external: false }
+  if (!['https:', 'http:'].includes(url.protocol)) return null
+
+  const local = ['www.thebeckerteam.com', 'thebeckerteam.com'].includes(url.hostname)
+  const path = url.pathname.replace(/\/$/, '')
+  const application = url.origin === 'https://2179191.my1003app.com' && path === '/794730/register'
+  let label = 'Learn More'
+  if (local && path === '/contact') label = 'Contact Jamie'
+  if (application) label = 'Start Your Application'
+  return { href: local ? url.pathname + url.search + url.hash : url.href, label, external: !local }
+}
+
 async function getPostBySlug(slug: string) {
   const admin = createAdminClient()
   const { data, error } = await admin
@@ -42,7 +58,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params
   const post = await getPostBySlug(slug)
-  if (!post) return { title: 'Post Not Found | The Becker Team' }
+  if (!post) return { title: 'Post Not Found' }
 
   return {
     title: post.title,
@@ -85,6 +101,8 @@ export default async function BlogPostPage({ params }: Params) {
   const post = await getPostBySlug(slug)
 
   if (!post) notFound()
+
+  const action = articleAction(post.cta_url)
 
   const articleJsonLd = {
     '@context': 'https://schema.org',
@@ -235,15 +253,15 @@ export default async function BlogPostPage({ params }: Params) {
               >
                 {post.cta_text}
               </h2>
-              {post.cta_url && (
+              {action && (
                 <a
-                  href={post.cta_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={action.href}
+                  target={action.external ? '_blank' : undefined}
+                  rel={action.external ? 'noopener noreferrer' : undefined}
                   className="gold-cta inline-block px-8 py-4 rounded-lg font-semibold text-sm tracking-wide uppercase"
                   style={{ backgroundColor: '#c8972b' }}
                 >
-                  Get Started
+                  {action.label}
                 </a>
               )}
             </div>
@@ -261,10 +279,10 @@ export default async function BlogPostPage({ params }: Params) {
                 className="text-2xl font-bold text-white mb-4"
                 style={{ fontFamily: 'var(--font-playfair)' }}
               >
-                Have Questions About Your Home Loan?
+                Ready to Apply for a Mortgage?
               </h2>
               <p className="text-white/75 mb-8">
-                Jamie Becker has helped Colorado families close on their dream homes for over 21 years. Let us help you next.
+                Start your application online so we can review your income, down payment and plans for the home.
               </p>
               <a
                 href="https://2179191.my1003app.com/794730/register"

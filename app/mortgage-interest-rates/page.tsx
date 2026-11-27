@@ -59,10 +59,10 @@ export default function InterestRatesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
             {[
               { title: 'Credit Score', body: 'Lenders use your credit history when pricing a mortgage. The effect on your rate depends on the lender and the loan you choose.' },
-              { title: 'Loan Type', body: 'Conventional, FHA, VA, and jumbo loans each carry different rate structures. Specialty and non-QM products are priced differently as well.' },
+              { title: 'Loan Type', body: 'The same borrower can get different rates on a conventional, FHA, VA or jumbo loan. Compare fees and monthly payments along with the rate.' },
               { title: 'Down Payment', body: 'Your down payment changes how much you borrow relative to the home’s value. That can affect both your interest rate and whether you pay mortgage insurance.' },
-              { title: 'Loan Term', body: 'Shorter loan terms (15-year vs. 30-year) typically come with lower rates but higher monthly payments. The right term depends on your goals.' },
-              { title: 'Property Type', body: 'Lenders consider how you’ll use the home. Pricing can differ for a primary residence, a second home and a rental property.' },
+              { title: 'Loan Term', body: 'For the same loan amount, a 15-year mortgage usually has a higher monthly payment than a 30-year mortgage, even when its interest rate is lower.' },
+              { title: 'How You’ll Use the Home', body: 'Lenders consider how you’ll use the home. Pricing can differ for a primary residence, a second home and a rental property.' },
               { title: 'Market Conditions', body: 'Mortgage rates move with the bond market, Federal Reserve policy, and broader economic data. Rates can shift daily.' },
             ].map((item) => (
               <div
@@ -83,14 +83,14 @@ export default function InterestRatesPage() {
 
           <div className="text-center">
             <p className="text-gray-600 mb-6">
-              Ready to find out what rate you qualify for?
+              What rate could you get for the home you have in mind?
             </p>
             <Link
               href="/contact#contact-form"
               className="inline-block uppercase tracking-widest text-sm font-semibold px-14 py-5 rounded btn-hover"
               style={{ backgroundColor: '#1F2E2A', color: '#F5EFE6', border: '2px solid #1F2E2A' }}
             >
-              Get a Rate Quote
+              Request a Rate Quote
             </Link>
           </div>
         </div>
@@ -105,10 +105,10 @@ export default function InterestRatesPage() {
           className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
         >
-          Ready to get started?
+          Ready to apply?
         </h2>
         <p className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Let&apos;s discuss your unique situation and find the perfect loan for you
+          Tell us about the home you want to buy or refinance. We’ll use your application to compare loan options with you.
         </p>
         <a
           href="https://2179191.my1003app.com/794730/register"
@@ -117,7 +117,7 @@ export default function InterestRatesPage() {
           className="inline-block uppercase tracking-widest text-sm font-semibold px-14 py-5 rounded btn-hover"
           style={{ backgroundColor: '#1F2E2A', color: '#F5EFE6', border: '2px solid #F5EFE6' }}
         >
-          Get Pre-Approved Now
+          Start Your Application
         </a>
       </section>
     </>

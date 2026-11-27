@@ -16,7 +16,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'The Becker Team — Broomfield Colorado Mortgage Broker',
-  description: 'Local mortgage lender serving Broomfield, Westminster, Thornton, Superior, and Louisville in the Denver-Boulder tech corridor.',
+  description: 'Local mortgage broker serving Broomfield, Westminster, Thornton, Superior, and Louisville in the Denver-Boulder tech corridor.',
   url: 'https://www.thebeckerteam.com/broomfield-mortgage',
   provider: teamReference,
   areaServed: [
@@ -59,7 +59,7 @@ const faqs = [
   },
   {
     q: 'Do you serve Superior and Louisville?',
-    a: 'Yes. The Becker Team serves all communities along the US 36 corridor including Broomfield, Westminster, Thornton, Superior, and Louisville. Superior has seen significant rebuilding and growth since 2021 and has become a strong market for buyers who want Boulder proximity at a more accessible price point.',
+    a: 'Yes. The Becker Team serves all communities along the US 36 corridor including Broomfield, Westminster, Thornton, Superior, and Louisville. Share the exact property address so we can check which county’s loan limit applies.',
   },
   {
     q: 'How does being a mortgage broker help Broomfield buyers?',
@@ -129,7 +129,7 @@ export default function BroomfieldMortgagePage() {
             Broomfield: Where Denver Meets Boulder
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            Broomfield is both a city and a county along US 36. If your home search also includes neighboring <Link href="/westminster-mortgage" className="font-semibold underline underline-offset-4">Westminster</Link>, check which county each property is in before comparing loan limits. If you plan to use equity from a home sale for your next down payment, we can compare the amount you expect to borrow with the county loan limit. For buyers with stock compensation or contract income, we can also review what the lender will count toward that purchase. Jamie Becker (NMLS #794730) has 21+ years of experience navigating exactly this kind of market, with programs designed for tech professionals, executives, contractors, and first-time buyers alike.
+            Broomfield is both a city and a county along US 36. If your home search also includes neighboring <Link href="/westminster-mortgage" className="font-semibold underline underline-offset-4">Westminster</Link>, check which county each property is in before comparing loan limits. If you plan to use equity from a home sale for your next down payment, we can compare the amount you expect to borrow with the county loan limit. For buyers with stock compensation or contract income, we can also review what the lender will count toward that purchase. Jamie Becker (NMLS #794730) can go over the documents lenders ask for before you apply.
           </p>
         </div>
       </section>

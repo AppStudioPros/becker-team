@@ -11,10 +11,10 @@ export default function Footer() {
         {/* Col 1 — Licensing */}
         <div className="md:col-span-1">
           <p className="text-sm text-gray-300 leading-relaxed mb-4">
-            Licensed Mortgage Lender. The Becker Team is powered by Xpert Home Lending.
+            The Becker Team is powered by Xpert Home Lending, a licensed mortgage lender.
           </p>
           <p className="text-sm text-gray-300 leading-relaxed mb-4">
-            Xpert Home Lending, Inc. is a Real Estate Broker Licensed by the California Department of Real Estate
+            Xpert Home Lending, Inc. is a real estate broker licensed by the California Department of Real Estate.
           </p>
           <p className="text-sm text-gray-300 mb-1">DRE #02166758 &nbsp; Company NMLS #2179191</p>
           <a

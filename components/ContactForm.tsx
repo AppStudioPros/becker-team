@@ -222,10 +222,10 @@ export default function ContactForm() {
         {submitted && (
           <>
             <p className="text-xl font-semibold mb-2" style={{ color: '#1F2E2A' }}>
-              Message sent!
+              Message sent
             </p>
             <p className="text-gray-600">
-              Thank you for reaching out. Jamie will be in touch with you shortly.
+              Thanks for reaching out to The Becker Team.
             </p>
           </>
         )}

@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'The Becker Team — Loveland Colorado Mortgage Lender',
-  description: 'Local mortgage lender serving Loveland, Berthoud, Johnstown, Milliken, and Windsor in northern Colorado.',
+  name: 'The Becker Team — Loveland Colorado Mortgage Broker',
+  description: 'Local mortgage broker serving Loveland, Berthoud, Johnstown, Milliken, and Windsor in northern Colorado.',
   url: 'https://www.thebeckerteam.com/loveland-mortgage',
   provider: teamReference,
   areaServed: [
@@ -95,7 +95,7 @@ export default function LovelandMortgagePage() {
       <section className="relative py-28 md:py-40 px-6 text-white text-center" style={{ background: 'linear-gradient(135deg, #1c3023 0%, #0f1e14 60%, #162518 100%)' }}>
         <p className="text-sm uppercase tracking-widest font-semibold mb-4 text-white/70">Loveland, Colorado</p>
         <h1 className="text-4xl md:text-6xl font-bold mb-6" style={{ fontFamily: '"Playfair Display", Georgia, serif' }}>
-          Loveland Mortgage Lender
+          Loveland Mortgage Broker
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/80 leading-relaxed">
           Explore home loans in Loveland, Berthoud, Johnstown, Milliken and Windsor. We can help you check whether the home you’re considering qualifies for rural financing.
@@ -165,7 +165,7 @@ export default function LovelandMortgagePage() {
               { title: 'USDA Eligibility Check', body: 'If you’re looking near Milliken, Johnstown or Berthoud, check the exact property address. We can also discuss the program’s household income limit and how the loan compares with your other options.' },
               { title: 'Retiree Programs', body: 'Loveland draws a lot of retirees who have significant assets but limited current income. Asset qualifier programs let you qualify using investment and retirement accounts. This is not a niche product, it is exactly what these programs were built for.' },
               { title: 'Multiple Lender Options', body: 'Jamie compares rates, fees and loan terms from multiple wholesale lenders. You work directly with Jamie throughout the process.' },
-              { title: 'Northern Colorado Expertise', body: 'Jamie has worked with buyers throughout northern Colorado and understands the market dynamics in Loveland, Windsor, and the surrounding communities. Local knowledge matters when you are navigating property types and price points unique to the region.' },
+              { title: 'Northern Colorado Expertise', body: 'Share the address and which type of home you’re considering in Loveland, Windsor or nearby. We can check the applicable county loan limit and what the lender needs to review for that property.' },
             ].map((item) => (
               <div key={item.title} className="flex gap-4">
                 <Check size={22} className="flex-shrink-0 mt-1" style={{ color: '#1F2E2A' }} />

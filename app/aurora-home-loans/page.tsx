@@ -15,7 +15,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'The Becker Team — Aurora Colorado Mortgage Broker',
-  description: 'Local mortgage lender serving Aurora, Centennial, Parker, and the Denver metro east corridor.',
+  description: 'Local mortgage broker serving Aurora, Centennial, Parker, and the Denver metro east corridor.',
   url: 'https://www.thebeckerteam.com/aurora-home-loans',
   provider: teamReference,
   areaServed: [
@@ -51,9 +51,9 @@ const faqs = [
   { q: 'Are VA loans available in Aurora, CO?', a: 'Yes. Eligible veterans, active-duty service members and surviving spouses in Aurora may qualify for a VA-backed loan with no down payment and no monthly mortgage insurance. A funding fee may apply.' },
   // City-level sales: https://www.redfin.com/city/30839/CO/Aurora/housing-market
   { q: 'What is the median home price in Aurora, CO?', a: 'From August through October 2026, the median sale price across all home types in Aurora was $449,687. If you’re comparing neighborhoods, look at recent sales of the same type of home in each one.' },
-  { q: 'Do you offer FHA loans in Aurora?', a: 'Yes. FHA loans are a strong option for Aurora first-time buyers with limited down payment funds or credit scores in the 580+ range. Colorado FHA loan limits accommodate a wide range of Aurora home prices.' },
+  { q: 'Do you offer FHA loans in Aurora?', a: 'Yes. FHA may allow a smaller down payment for eligible buyers. Share the address and how much you need to borrow so we can check the FHA limit for that county and compare the cash due at closing.' },
   { q: 'How fast can I close on an Aurora home?', a: 'The timing depends on underwriting, any required appraisal and title work. If the seller has a specific date in mind, Jamie can walk you through what needs to happen before you agree to it.' },
-  { q: 'Do you serve Centennial and Parker?', a: 'Yes. The Becker Team serves all of the Denver metro south and east — Aurora, Centennial, Parker, Lone Tree, Englewood, Foxfield, and surrounding communities.' },
+  { q: 'Do you serve Centennial and Parker?', a: 'Yes. We serve Aurora, Centennial, Parker, Lone Tree, Englewood, Foxfield and nearby communities.' },
 ]
 
 
@@ -144,7 +144,7 @@ export default function AuroraHomeLoansPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { title: 'VA Loan Expertise', body: "Aurora's military community is one of Colorado's largest. Jamie has helped hundreds of veterans use their VA benefit and understands the nuances of the COE process, funding fee exemptions, and VA appraisals." },
+              { title: 'VA Loan Expertise', body: "If you’re using a VA loan in Aurora, ask Jamie how to get your Certificate of Eligibility, whether you might be exempt from the funding fee and what to expect from the VA appraisal." },
               { title: 'Multiple Lender Options', body: 'Jamie compares loan options from multiple wholesale lenders and explains the rate, fees and cash due at closing.' },
               { title: 'First-Time Buyer Programs', body: "Aurora offers some of the most accessible entry-level pricing in the Denver metro. FHA loans, CHFA assistance programs, and conventional 3% down options are all available for qualifying buyers." },
               { title: 'Direct Access to Jamie', body: 'Jamie reviews your financing with you and explains what the lender still needs before closing.' },
@@ -175,7 +175,7 @@ export default function AuroraHomeLoansPage() {
           Ready to Buy in Aurora?
         </h2>
         <p data-reveal="fade" data-delay="150" className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Get pre-approved today. Jamie picks up the phone.
+          Start your pre-approval or talk through your home purchase with Jamie.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="https://2179191.my1003app.com/794730/register" target="_blank" rel="noopener noreferrer"

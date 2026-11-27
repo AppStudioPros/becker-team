@@ -54,8 +54,8 @@ export default function PostForm({ initialData, isEdit }: PostFormProps) {
   const [bodyTop, setBodyTop] = useState(initialData?.body_top || '')
   const [midImage, setMidImage] = useState(initialData?.mid_image || '')
   const [bodyBottom, setBodyBottom] = useState(initialData?.body_bottom || '')
-  const [ctaText, setCtaText] = useState(initialData?.cta_text || 'Schedule a Free Strategy Call')
-  const [ctaUrl, setCtaUrl] = useState(initialData?.cta_url || 'https://thebeckerteam.com/contact')
+  const [ctaText, setCtaText] = useState(initialData?.cta_text ?? 'Have a question about your mortgage?')
+  const [ctaUrl, setCtaUrl] = useState(initialData?.cta_url ?? 'https://www.thebeckerteam.com/contact#contact-form')
   const [category, setCategory] = useState(initialData?.category || '')
   const [keywords, setKeywords] = useState(initialData?.keywords || '')
   const [heroPosition, setHeroPosition] = useState(initialData?.hero_position || 'center center')
@@ -356,7 +356,7 @@ export default function PostForm({ initialData, isEdit }: PostFormProps) {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className={labelClass} style={colorStyle}>
-                CTA Button Text
+                CTA Heading
               </label>
               <input
                 type="text"
@@ -364,7 +364,7 @@ export default function PostForm({ initialData, isEdit }: PostFormProps) {
                 onChange={(e) => setCtaText(e.target.value)}
                 className={inputClass}
                 style={borderStyle}
-                placeholder="Get Pre-Approved Today"
+                placeholder="Have a question about your mortgage?"
               />
             </div>
             <div>

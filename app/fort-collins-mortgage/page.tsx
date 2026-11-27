@@ -16,7 +16,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'The Becker Team — Fort Collins Mortgage Broker',
-  description: 'Local mortgage lender serving Fort Collins, Loveland, Greeley, Windsor, and Northern Colorado.',
+  description: 'Local mortgage broker serving Fort Collins, Loveland, Greeley, Windsor, and Northern Colorado.',
   url: 'https://www.thebeckerteam.com/fort-collins-mortgage',
   provider: teamReference,
   areaServed: [
@@ -51,7 +51,7 @@ const faqs = [
   { q: 'How do I compare a Fort Collins condo with a house?', a: 'Start with the full monthly payment for each home. For a condo, include HOA dues and check what insurance and maintenance the association pays for. For a detached house, budget for those costs yourself. We can compare both payments using the same down payment and loan term.' },
   { q: 'What are mortgage rates in Fort Collins, CO?', a: 'Rates change with the market and depend on the loan type, credit profile, down payment and term. Jamie can compare current quotes from multiple lenders for the same loan amount and term.' },
   { q: 'Do you offer VA loans in Fort Collins?', a: 'Yes. We can help eligible veterans, service members and surviving spouses in northern Colorado review their VA loan options. Start with your Certificate of Eligibility so we can check your entitlement and discuss down payment requirements for the home you want.' },
-  { q: 'Can I get a mortgage in Fort Collins if I am self-employed?', a: 'Absolutely. Many Fort Collins professionals run their own businesses or work as consultants in the tech and biotech industries. Jamie specializes in bank statement loans and asset qualifier programs designed for borrowers who cannot show traditional W-2 income.' },
+  { q: 'Can I get a mortgage in Fort Collins if I am self-employed?', a: 'Yes, if you meet the loan requirements. If you own a business or work as an independent consultant, we can compare loans that use eligible bank deposits to document income or review your eligible assets.' },
   { q: 'How fast can I close on a home in Fort Collins?', a: 'Closing depends on underwriting, any required appraisal and title work. If your Fort Collins offer has a proposed closing date, Jamie can review whether it fits the loan and the property.' },
   { q: 'Do you serve Loveland and Greeley as well?', a: 'Yes. The Becker Team serves all of Northern Colorado — Fort Collins, Loveland, Greeley, Windsor, Timnath, Wellington, and surrounding communities. Colorado licensing covers the full state.' },
 ]
@@ -184,7 +184,7 @@ export default function FortCollinsMortgagePage() {
           Ready to Buy in Fort Collins?
         </h2>
         <p data-reveal="fade" data-delay="150" className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Get pre-approved today and be ready to move in Northern Colorado&apos;s competitive market.
+          Start your pre-approval or ask Jamie what costs to budget for in Fort Collins.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="https://2179191.my1003app.com/794730/register" target="_blank" rel="noopener noreferrer"

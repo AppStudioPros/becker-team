@@ -43,7 +43,7 @@ const vaBenefits = [
   { title: 'Compare VA Loan Rates', body: 'Each lender sets its own rate and fees. We’ll help you compare what you would pay at closing and each month.' },
   { title: 'Flexible Credit Requirements', body: 'VA sets no minimum credit score. Your lender reviews your credit history and income and may have its own credit score requirement.' },
   { title: 'Reusable Benefit', body: 'If you have used your benefit before, your Certificate of Eligibility helps the lender determine what entitlement is still available for another home.' },
-  { title: 'No Prepayment Penalty', body: 'Pay off your loan early without penalty — helpful if you receive BAH allowances or want to build equity faster.' },
+  { title: 'No Prepayment Penalty', body: 'A VA-backed purchase loan has no early payoff penalty. If you send extra money, ask your servicer how to apply it directly to principal.' },
 ]
 
 const faqs = [
@@ -140,7 +140,7 @@ export default function ColoradoSpringsVaPage() {
             Colorado Springs Is Military Country
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            Colorado Springs is home to one of the largest concentrations of military installations in the United States — Fort Carson, Peterson Space Force Base, Schriever Space Force Base, and the United States Air Force Academy. That means VA loans are a critical part of the local housing market, and the best lenders here understand them deeply. Jamie Becker (NMLS #794730) has worked with active-duty members, veterans, and military families throughout El Paso County and statewide. The VA loan benefit is one of the most powerful tools available — and most users never fully use it.
+            If you’re buying near Fort Carson, Peterson Space Force Base, Schriever Space Force Base or the U.S. Air Force Academy, Jamie Becker (NMLS #794730) can help you compare VA loan options. We work with active-duty service members, veterans and military families across El Paso County and Colorado. If you’ve used a VA loan before, tell us so we can review your remaining entitlement and the cash you would need to close.
           </p>
         </div>
       </section>
@@ -187,7 +187,7 @@ export default function ColoradoSpringsVaPage() {
             <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-2">
               <li><a className="underline" href="https://www.va.gov/housing-assistance/home-loans/loan-types/purchase-loan/">VA purchase loans</a></li>
               <li><a className="underline" href="https://www.va.gov/housing-assistance/home-loans/how-to-request-coe/">Request a Certificate of Eligibility</a></li>
-              <li><a className="underline" href="https://benefits.va.gov/WARMS/docs/admin26/pamphlet/pam26_7/vap26-7-chapter3-the-va-loan-and-guaranty.pdf#page=11">VA occupancy rules (PDF)</a></li>
+              <li><a className="underline" href="https://department.va.gov/wp-content/uploads/2026/09/2026-Federal-Benefits-for-Veterans-Dependents-and-Survivors_web.pdf?v=429#page=59">VA occupancy requirements (PDF, page 59)</a></li>
             </ul>
           </div>
         </div>

@@ -293,10 +293,10 @@ export default function JumboLoansPage() {
             <div className="flex-1 flex flex-col justify-between p-10 md:p-12" style={{ backgroundColor: '#F5EFE6' }}>
               <div className="prose-becker mb-10">
                 <p>
-                  Jumbo purchases are high-stakes transactions. The property is larger, the loan is larger, and the margin for error is smaller. Jamie Becker brings 21 years of mortgage experience — including complex, high-value files — and the financial advisory background to match loan structure with long-term strategy.
+                  Jamie Becker brings 21 years of mortgage experience, including jumbo loans, and experience as a financial advisor. He can help you compare your payment and how much cash each lender expects you to keep after closing.
                 </p>
                 <p>
-                  Whether you are choosing between fixed and adjustable rates or navigating stricter documentation requirements, our team will make the process clear from the first conversation.
+                  If you’re comparing a fixed and an adjustable rate, we’ll go over when the rate can change and which documents each lender needs.
                 </p>
               </div>
               <Link

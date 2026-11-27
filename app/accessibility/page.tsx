@@ -26,45 +26,45 @@ export default function AccessibilityPage() {
 
           <div>
             <h2 style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }} className="text-xl font-bold mb-3">Our Commitment</h2>
-            <p>The Becker Team, powered by Xpert Home Lending, is committed to ensuring that thebeckerteam.com is accessible to the widest possible audience, including individuals with disabilities. We strive to meet or exceed the requirements of the <strong>Web Content Accessibility Guidelines (WCAG) 2.1, Level AA</strong> — the recognized standard for web accessibility.</p>
-            <p>We believe that access to mortgage information and services should be available to everyone, and we are continuously working to improve the accessibility of this Site.</p>
+            <p>The Becker Team, powered by Xpert Home Lending, works to make this site accessible to people with disabilities. Our goal is to meet the <strong>Web Content Accessibility Guidelines (WCAG) 2.1, Level AA</strong>.</p>
+            <p>We continue to improve the site so more people can use our mortgage information and services.</p>
           </div>
 
           <div>
             <h2 style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }} className="text-xl font-bold mb-3">Accessibility Features</h2>
-            <p>This Site has been designed and built with accessibility in mind, including:</p>
+            <p>We use and test features that support accessibility, including the following.</p>
             <ul className="list-disc pl-6 space-y-2 text-sm" style={{ color: '#3a5a4a' }}>
-              <li><strong>Semantic HTML structure</strong> — proper heading hierarchy (H1–H4) and landmark elements for screen reader navigation</li>
-              <li><strong>Alt text for images</strong> — descriptive alternative text for meaningful images throughout the Site</li>
-              <li><strong>Color contrast</strong> — text and interactive elements meet or exceed WCAG 2.1 AA contrast ratios</li>
-              <li><strong>Keyboard navigation</strong> — all interactive elements are accessible via keyboard without requiring a mouse</li>
-              <li><strong>Focus indicators</strong> — visible focus states on interactive elements for keyboard users</li>
-              <li><strong>Responsive design</strong> — the Site adapts to all screen sizes and zoom levels up to 200% without loss of functionality</li>
-              <li><strong>Plain language</strong> — we aim to write clearly and avoid unnecessary jargon</li>
-              <li><strong>No auto-play media</strong> — audio or video content is not set to play automatically</li>
-              <li><strong>HTTPS encryption</strong> — all data transmitted on this Site is encrypted for security</li>
+              <li><strong>Page structure.</strong> Headings and landmarks help screen reader users move through pages.</li>
+              <li><strong>Alt text.</strong> We provide descriptions for images that convey information.</li>
+              <li><strong>Color contrast.</strong> We check text and controls against WCAG 2.1 AA contrast ratios.</li>
+              <li><strong>Keyboard navigation.</strong> A skip link moves focus to the main content. We check interactive features for keyboard access.</li>
+              <li><strong>Focus indicators.</strong> We use visible focus indicators on controls.</li>
+              <li><strong>Responsive design.</strong> We check pages at different screen sizes and when text is enlarged.</li>
+              <li><strong>Plain language.</strong> We aim to write clearly and explain unfamiliar terms.</li>
+              <li><strong>Media controls.</strong> Audio and video require you to start playback.</li>
+              <li><strong>HTTPS encryption.</strong> This site uses an encrypted connection.</li>
             </ul>
           </div>
 
           <div>
             <h2 style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }} className="text-xl font-bold mb-3">Known Limitations</h2>
             <p>We work toward meeting WCAG 2.1 AA. The rate widget and loan application portal are operated by third parties and may have accessibility limitations. If you have trouble using either tool, please contact us for help.</p>
-            <p>If you encounter any specific accessibility barriers on this Site, please contact us and we will work to address them.</p>
+            <p>Please tell us about any barriers you encounter so we can work to address them.</p>
           </div>
 
           <div>
             <h2 style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }} className="text-xl font-bold mb-3">Legal Framework</h2>
-            <p>This accessibility commitment reflects our obligations under:</p>
+            <p>Our accessibility work is informed by these laws and standards.</p>
             <ul className="list-disc pl-6 space-y-2 text-sm" style={{ color: '#3a5a4a' }}>
-              <li><strong>Americans with Disabilities Act (ADA), Title III</strong> — which has been interpreted by federal courts to apply to websites of businesses open to the public</li>
-              <li><strong>Section 508 of the Rehabilitation Act</strong> — to the extent applicable</li>
-              <li><strong>WCAG 2.1 Level AA</strong> — the international standard for digital accessibility</li>
+              <li><strong>Title III of the Americans with Disabilities Act (ADA).</strong> It covers businesses open to the public, including ways they provide goods and services online.</li>
+              <li><strong>Section 508 of the Rehabilitation Act,</strong> to the extent applicable.</li>
+              <li><strong>WCAG 2.1 Level AA.</strong> These guidelines describe how to make web content more accessible.</li>
             </ul>
           </div>
 
           <div>
             <h2 style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }} className="text-xl font-bold mb-3">Alternative Access to Services</h2>
-            <p>If you are unable to access any content or functionality on this Site due to a disability, we are happy to provide information and assistance through alternative means. Please contact us and we will respond promptly:</p>
+            <p>If a disability makes it difficult to use this site, contact us for help. We can assist you in the following ways.</p>
             <ul className="list-disc pl-6 space-y-1 text-sm" style={{ color: '#3a5a4a' }}>
               <li>We can provide mortgage information by phone, email, or in person at our Denver office</li>
               <li>Loan applications can be completed with staff assistance by phone</li>
@@ -76,8 +76,8 @@ export default function AccessibilityPage() {
             <h2 style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }} className="text-xl font-bold mb-3">Feedback and Contact</h2>
             <p>We welcome your feedback on the accessibility of this Site. If you experience any accessibility barriers or have suggestions for improvement, please contact us:</p>
             <div className="rounded p-5 mt-2" style={{ backgroundColor: '#fff', border: '1px solid #ded6c4' }}>
-              <p className="font-semibold" style={{ color: '#1F2E2A' }}>The Becker Team — Xpert Home Lending</p>
-              <p style={{ color: '#4a5e53' }}>NMLS #794730 | Company NMLS #2179191</p>
+              <p className="font-semibold" style={{ color: '#1F2E2A' }}>The Becker Team, powered by Xpert Home Lending</p>
+              <p style={{ color: '#4a5e53' }}>Individual NMLS #794730 | Company NMLS #2179191</p>
               <p style={{ color: '#4a5e53' }}>201 Columbine Street, Suite 300, Denver, CO 80206</p>
               <p><a href="tel:7204923335" style={{ color: '#1F2E2A' }}>(720) 492-3335</a></p>
               <p><a href="mailto:Jamie@thebeckerteam.com" style={{ color: '#1F2E2A' }}>Jamie@thebeckerteam.com</a></p>

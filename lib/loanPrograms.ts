@@ -13,14 +13,14 @@ export const loanPrograms: LoanProgram[] = [
     slug: 'conventional-loans',
     title: 'Conventional Loans in Colorado',
     shortTitle: 'Conventional Loans',
-    tagline: 'Mortgage loans from private lenders with as little as 3-5% down',
-    heroSubtitle: 'Flexible financing for borrowers with strong credit and steady income',
+    tagline: 'Compare fixed and adjustable conventional mortgages and down payments',
+    heroSubtitle: 'Compare conventional mortgage rates, down payments and closing costs',
     body: [
-      'Conventional loans are mortgage loans issued by private lenders and not backed by a federal government agency. They typically offer competitive interest rates, flexible terms, and a wide range of loan amounts — making them the most commonly used mortgage product for home purchases and refinances.',
+      'Conventional mortgages come from private lenders without federal mortgage insurance or a federal loan guarantee. You can use them to buy a home or refinance and compare fixed and adjustable rates.',
       'Lenders review your credit history, debts and down payment. Some conventional programs allow eligible borrowers to put 3% down on a one-unit primary home. Income limits or first-time buyer requirements can apply. With less than 20% down, monthly private mortgage insurance is common.',
-      'Conventional loans come in two main categories: conforming and non-conforming. Conforming loans meet the loan limits set by the Federal Housing Finance Agency (FHFA). The applicable limit depends on the county, number of units and year. A loan above that amount is jumbo.',
+      'Conventional loans come in two main categories: conforming and non-conforming. Conforming loans must meet a size limit and other loan requirements. The applicable limit depends on the county, number of units and year. A loan above that amount is jumbo.',
       'Conventional mortgages can finance a primary residence, second home or investment property, with different terms for each use. On most covered loans, you can request PMI cancellation at 80% of the original home value if you meet the conditions. It generally ends automatically when the balance is scheduled to reach 78% and payments are current.',
-      'At The Becker Team, we work with a wide network of lenders to find the right conventional loan for your situation. Whether you are a first-time buyer, upgrading to a larger home, or refinancing an existing mortgage, we can walk you through your options and help you close quickly.',
+      'We can help you compare conventional loan terms from multiple lenders, including the costs you’d pay at closing.',
       'If you are self-employed, a conventional lender can review your tax returns and business records. If that approach does not fit, ask about bank statement programs or asset-based alternatives and compare their terms with the conventional offer.',
     ],
     faqs: [
@@ -49,13 +49,13 @@ export const loanPrograms: LoanProgram[] = [
     tagline: 'We make it easier for business owners and entrepreneurs',
     heroSubtitle: 'Mortgage solutions designed for the way you actually earn',
     body: [
-      'Self-employed borrowers and business owners often have strong finances but face challenges qualifying for a mortgage the traditional way. Tax returns show deductions that reduce taxable income — which looks great on a tax bill but makes income appear lower than it actually is to a conventional underwriter.',
+      'If you’re self-employed or own a business, ask how lenders would use your tax returns and business records to calculate qualifying income. It may differ from what your business brings in before expenses.',
       'At The Becker Team, we specialize in mortgage solutions that work around that problem. We offer bank statement loans, profit and loss statement loans, and asset qualifier programs designed specifically for business owners, contractors, freelancers, and anyone with nontraditional income.',
       'A bank statement loan can document your business income with 12 or 24 months of personal or business statements. The lender averages eligible deposits and may adjust for business expenses. Transfers between your own accounts don’t create new income.',
       'Profit and loss statement loans use a CPA-prepared P&L as the primary income document. This is a strong option for borrowers whose business has grown in recent years or who have fluctuating income from month to month.',
       'Asset-based qualifying is another option for high-net-worth borrowers who can demonstrate sufficient assets to cover the loan — even without traditional income documentation. We can also explore DSCR (debt-service coverage ratio) loans for investment property purchases, where the rental income of the property qualifies the loan rather than your personal income.',
       'Jamie Becker brings a background in financial advising and real estate investing to every self-employed mortgage conversation. He understands how business income works, how to read a P&L, and how to structure a loan application that reflects your actual financial strength.',
-      'If you have been turned down elsewhere or told you cannot qualify because you are self-employed, there is a good chance we have a program that fits. Contact The Becker Team to discuss your situation.',
+      'If you were turned down, tell us what the lender needed and which records you have. We can check whether there’s another option you can compare.',
     ],
     faqs: [
       {
@@ -115,7 +115,7 @@ export const loanPrograms: LoanProgram[] = [
     title: 'Mortgage Accelerator Program in Colorado',
     shortTitle: 'Mortgage Accelerator',
     tagline: 'Accelerate mortgage payoff before retirement',
-    heroSubtitle: 'A strategic approach to eliminating your mortgage faster and building equity sooner',
+    heroSubtitle: 'Compare a home equity line with paying extra principal on a standard loan',
     body: [
       'The Mortgage Accelerator uses a credit line secured by your home. Deposits lower the balance, while withdrawals to pay bills increase it. The amount you leave on the line after expenses and interest determines your principal reduction.',
       'Interest on the line depends on the rate and outstanding balance as deposits and withdrawals post. Compare it with your current mortgage using the same starting debt and the same money available for principal and interest.',
@@ -150,9 +150,9 @@ export const loanPrograms: LoanProgram[] = [
     tagline: 'VA purchase loans with low or no down payment for eligible borrowers',
     heroSubtitle: 'Home financing for eligible veterans, service members and surviving spouses',
     body: [
-      'VA loans are mortgage loans guaranteed by the U.S. Department of Veterans Affairs and available to eligible veterans, active-duty service members, National Guard and Reserve members, and surviving spouses. They are one of the most powerful home financing tools available — and one of the most underutilized.',
+      'VA loans are mortgage loans guaranteed by the U.S. Department of Veterans Affairs and available to eligible veterans, active-duty service members, National Guard and Reserve members, and surviving spouses.',
       'With full entitlement, eligible buyers can generally finance a primary home up to its appraised value without a down payment. An appraisal gap or remaining entitlement may require cash. VA loans do not require monthly private mortgage insurance.',
-      'VA loans generally offer competitive interest rates, often lower than conventional rates for comparable borrowers. They also carry more flexible credit and income guidelines, making them accessible to veterans who may not qualify for a conventional loan.',
+      'Compare a VA quote with other loan offers using the same loan amount, term and lock period. Include the rate, fees and cash needed at closing.',
       'Most VA purchase loans have a one-time funding fee based on the down payment and prior use of the benefit. You can pay it at closing or finance it. Veterans receiving VA compensation for a service-connected disability are among those exempt. Ask the lender to verify your status.',
       'VA loans can be used to purchase a primary residence — including single-family homes, condos, and multi-unit properties up to four units — or to refinance an existing VA loan through the VA Interest Rate Reduction Refinance Loan (IRRRL), also known as a VA streamline refinance.',
       'At The Becker Team, Jamie Becker has helped dozens of veterans and active-duty service members access their VA benefit in Colorado and other licensed states. We walk you through eligibility, Certificate of Eligibility (COE) requirements, and the full loan process from application through closing.',
@@ -186,10 +186,10 @@ export const loanPrograms: LoanProgram[] = [
     body: [
       'FHA loans are mortgages insured by the Federal Housing Administration and issued by approved private lenders. They are designed to make homeownership more accessible, particularly for first-time buyers or borrowers who may not qualify for a conventional loan.',
       'For a typical FHA purchase, a qualifying credit score of at least 580 may allow a 3.5% down payment. With a score of 500 to 579, FHA generally requires at least 10% down. Lenders can set higher requirements and also check your income, debts and property.',
-      'FHA loans require two forms of mortgage insurance: an upfront mortgage insurance premium (UFMIP) of 1.75% of the loan amount, typically rolled into the loan, and an annual mortgage insurance premium (MIP) paid monthly. Unlike PMI on a conventional loan, FHA MIP remains for the life of the loan if your down payment is less than 10%.',
-      'FHA loans are only available for primary residences. They can be used to purchase single-family homes, 2-4 unit properties, condos that are FHA-approved, and manufactured homes. FHA loan limits are set by county and adjusted annually.',
-      'Gift funds from family members are fully allowed for the down payment on an FHA loan, making it a practical option for buyers receiving financial help from relatives.',
-      'At The Becker Team, we help first-time buyers, buyers with past credit challenges, and borrowers who need a lower down payment option find the right FHA loan. We explain all costs upfront, including mortgage insurance, so there are no surprises at closing.',
+      'Most FHA purchase loans have an upfront mortgage insurance premium and an annual premium collected monthly. On a new standard 30-year FHA loan, the annual premium lasts 11 years when the original loan-to-value ratio is 90% or lower. Above 90%, it generally lasts for the loan term.',
+      'For an FHA purchase, you generally must live in the home as your primary residence. Eligible properties can include houses, properties with up to four units, condos and manufactured homes. Condo approval may be for the whole project or for an eligible individual unit. FHA loan limits vary by county and year.',
+      'An eligible donor, such as a family member, can provide gift funds for an FHA down payment. Ask us what records the lender needs to document the gift.',
+      'We can help you compare the down payment, mortgage insurance and closing costs on FHA and conventional loan offers.',
     ],
     faqs: [
       {
@@ -221,7 +221,7 @@ export const loanPrograms: LoanProgram[] = [
       'Jumbo lenders set their own credit, income, down payment and reserve requirements. Ask which rules apply to the loan amount and the way you plan to occupy the home.',
       'Jumbo and conforming rates can differ by lender, market and loan terms. Compare written quotes for the same property, loan amount and term to see the rate, fees and cash needed at closing.',
       'Jumbo loans can be used for primary residences, second homes, and investment properties. They are available as fixed-rate and adjustable-rate products, with terms typically ranging from 15 to 30 years.',
-      'In Colorado, luxury properties in the Denver metro area, mountain communities, and other high-demand markets frequently exceed conforming loan limits. The Becker Team has experience financing high-value properties and working with lenders that specialize in jumbo and super-jumbo products.',
+      'If you’re shopping in the Denver metro or the mountains, start with the amount you’d borrow after the down payment. We can check which limit applies to the property and compare jumbo options if you’d exceed it.',
       'If you are purchasing or refinancing a high-value home and need a loan above the conforming limit, contact The Becker Team to discuss your options and get a clear picture of what you qualify for.',
     ],
     faqs: [
@@ -235,7 +235,7 @@ export const loanPrograms: LoanProgram[] = [
       },
       {
         q: 'Are jumbo rates higher than conventional rates?',
-        a: 'Not always. Jumbo rates are often competitive with or close to conforming rates. The difference depends on market conditions and your overall borrower profile.',
+        a: 'It varies by lender, loan amount, property and market. Compare written quotes for the same loan term and lock period to see the rate and upfront costs together.',
       },
       {
         q: 'Can I get a jumbo loan for a vacation home or investment property?',

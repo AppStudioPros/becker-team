@@ -67,10 +67,10 @@ export default function PrivacyPage() {
             <p>Under the Gramm-Leach-Bliley Act, we are required to tell you about the circumstances under which we may share your nonpublic personal information.</p>
             <p><strong>We may share your information with:</strong></p>
             <ul className="list-disc pl-6 space-y-2 text-sm" style={{ color: '#3a5a4a' }}>
-              <li><strong>Lenders and loan investors</strong> — to process, underwrite, and fund your mortgage loan</li>
-              <li><strong>Service providers</strong> — such as title companies, appraisers, credit bureaus, and document processors who assist with your transaction</li>
-              <li><strong>Government agencies and regulators</strong> — as required by law, court order, or regulatory requirement</li>
-              <li><strong>Fraud prevention and compliance services</strong> — to protect against fraud and verify information accuracy</li>
+              <li><strong>Lenders and loan investors.</strong> They help process, underwrite, and fund your mortgage loan.</li>
+              <li><strong>Service providers.</strong> Title companies, appraisers, credit bureaus, and document processors may assist with your transaction.</li>
+              <li><strong>Government agencies and regulators.</strong> We share information with them as required by law, court order, or regulation.</li>
+              <li><strong>Fraud prevention and compliance services.</strong> They help protect against fraud and verify the accuracy of information.</li>
             </ul>
             <p><strong>We do not sell your personal information</strong> to third parties for their own marketing purposes.</p>
             <p><strong>We do not share your information</strong> with unaffiliated third parties for marketing purposes without your authorization.</p>
@@ -78,10 +78,10 @@ export default function PrivacyPage() {
 
           <div>
             <h2 style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }} className="text-xl font-bold mb-3">5. Your Opt-Out Rights</h2>
-            <p>Federal law gives you the right to limit certain — but not all — sharing of your personal financial information. You may opt out of sharing that is not required for servicing your account or required by law. To opt out or ask questions about information sharing, contact us at:</p>
+            <p>Federal law gives you the right to limit certain types of sharing of your personal financial information. You may opt out of sharing that is not required for servicing your account or required by law. Contact us to opt out or ask questions about information sharing.</p>
             <ul className="list-none pl-0 space-y-1 text-sm" style={{ color: '#3a5a4a' }}>
-              <li>📞 <a href={`tel:${CONTACT_PHONE.replace(/\D/g, '')}`} style={{ color: '#1F2E2A' }}>{CONTACT_PHONE}</a></li>
-              <li>📧 <a href={`mailto:${CONTACT_EMAIL}`} style={{ color: '#1F2E2A' }}>{CONTACT_EMAIL}</a></li>
+              <li>Phone <a href={`tel:${CONTACT_PHONE.replace(/\D/g, '')}`} style={{ color: '#1F2E2A' }}>{CONTACT_PHONE}</a></li>
+              <li>Email <a href={`mailto:${CONTACT_EMAIL}`} style={{ color: '#1F2E2A' }}>{CONTACT_EMAIL}</a></li>
             </ul>
           </div>
 
@@ -127,8 +127,8 @@ export default function PrivacyPage() {
             <h2 style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }} className="text-xl font-bold mb-3">12. Contact Us</h2>
             <p>If you have questions about this Privacy Policy or wish to exercise any of your rights, please contact us:</p>
             <div className="rounded p-5 mt-2" style={{ backgroundColor: '#fff', border: '1px solid #ded6c4' }}>
-              <p className="font-semibold" style={{ color: '#1F2E2A' }}>The Becker Team — Xpert Home Lending</p>
-              <p style={{ color: '#4a5e53' }}>NMLS #794730 | Company NMLS #2179191</p>
+              <p className="font-semibold" style={{ color: '#1F2E2A' }}>The Becker Team, powered by Xpert Home Lending</p>
+              <p style={{ color: '#4a5e53' }}>Individual NMLS #794730 | Company NMLS #2179191</p>
               <p style={{ color: '#4a5e53' }}>201 Columbine Street, Suite 300, Denver, CO 80206</p>
               <p><a href={`tel:${CONTACT_PHONE.replace(/\D/g, '')}`} style={{ color: '#1F2E2A' }}>{CONTACT_PHONE}</a></p>
               <p><a href={`mailto:${CONTACT_EMAIL}`} style={{ color: '#1F2E2A' }}>{CONTACT_EMAIL}</a></p>

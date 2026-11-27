@@ -11,12 +11,12 @@ const drafts = [
     feature_image: "/images/squarespace/ChatGPT_Image_Jun_12__2026__06_27_45_PM.jpg",
     hero_position: "center center",
     cta_text: "Have questions about your Denver home budget?",
-    cta_url: "/contact",
+    cta_url: "https://www.thebeckerteam.com/contact#contact-form",
     body_top: `<p>Yes. If you’re buying a home in Denver to live in, the city’s metroDPA program can help eligible buyers cover a down payment and some closing costs. You can apply even if you’ve owned a home before. The first things I’d check are the property address, how much cash you want to keep after closing, and when you expect to move again.</p>
 <h2>Does the home have to be in Denver County?</h2>
 <p>The regular metroDPA program covers Denver and other participating Front Range communities. You can live somewhere else now. It’s the home you’re buying that needs to be in an eligible area. If the address is in the City and County of Denver, ask a participating lender about Denver Advantage, too. That distinction matters if your search includes both city neighborhoods and nearby suburbs.</p>
 <p>A metroDPA-approved lender has to arrange the first mortgage and check your income, credit and plans to occupy the home. Homebuyer education is also required. If you’re considering a condo, give the lender the building address along with the unit price so they can check the property as well as your application.</p>
-<h2>What can the assistance actually pay for?</h2>
+<h2>What expenses can the assistance cover?</h2>
 <p>It can go toward the required down payment, eligible closing costs and certain expenses paid in advance, such as homeowners insurance. An appraisal gap is a separate part of your offer to discuss with your agent and lender. If you offer $425,000 and the home appraises for $415,000, ask how that $10,000 difference affects your loan and the cash you’d need to bring.</p>`,
     body_bottom: `<h2>When would I have to pay it back?</h2>
 <p>The standard assistance comes as a second mortgage. There’s no interest or scheduled monthly payment on that second loan. The balance comes due when you sell, pay off or refinance the first mortgage, stop using the home as your primary residence, or reach the end of the 30-year assistance term.</p>
@@ -36,8 +36,8 @@ const drafts = [
     feature_image: "/images/squarespace/lp-jumbo.jpg",
     hero_position: "center center",
     cta_text: "Want to compare loan options for a Denver home?",
-    cta_url: "/contact",
-    body_top: `<p>For a house or an individual condo in Denver County, a conventional first mortgage goes into jumbo territory when you borrow more than <strong>$862,500</strong>. Denver’s one-unit limit is the same for 2026 and 2027. If you’re shopping near that number, start with what you’ll borrow after your down payment. Even a $950,000 home can fit under the limit.</p>
+    cta_url: "https://www.thebeckerteam.com/contact#contact-form",
+    body_top: `<p>For a house or an individual condo in Denver County, a conventional first mortgage exceeds the conforming loan limit when you borrow more than <strong>$862,500</strong>. Denver’s one-unit limit is the same for 2026 and 2027. If you’re shopping near that number, start with what you’ll borrow after your down payment. Even on a $950,000 home, the amount you borrow can fall within the limit.</p>
 <h2>How much would I need to put down on a $950,000 home?</h2>
 <p>Here’s how I’d run the numbers for a Denver buyer comparing two down payments on the same house.</p>
 <ul><li><strong>With $80,000 down,</strong> the first mortgage is $870,000. That puts it $7,500 above Denver County’s one-unit limit.</li><li><strong>With $87,500 down,</strong> the first mortgage is exactly $862,500. A loan right at the limit is still within the conforming range.</li></ul>

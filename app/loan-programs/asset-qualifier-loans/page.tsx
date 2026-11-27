@@ -27,7 +27,7 @@ const jsonLd = {
 const highlights = [
   {
     title: 'Low Down Payment Entry',
-    body: 'As low as 10% down with no employment verification required. Your assets do the talking — not your pay stubs.',
+    body: 'Eligible buyers may be able to put as little as 10% down. The lender reviews eligible assets without requiring employment verification.',
   },
   {
     title: 'Qualify on Your Balance Sheet',
@@ -38,23 +38,23 @@ const highlights = [
     body: 'There is no debt-to-income calculation and your assets are never pledged or collateralized to secure the loan.',
   },
   {
-    title: 'Built for Complex Financial Profiles',
-    body: 'Designed for retirees, investors, and clients with tax-optimized returns who are financially strong but look difficult on paper.',
+    title: 'An Option for Retirees and Investors',
+    body: 'This can help retirees, investors and other buyers whose tax returns don’t show the savings or investments they can access.',
   },
 ]
 
 const fitProfiles = [
-  { label: 'High-net-worth borrowers', body: 'For clients whose assets tell a much stronger story than their taxable income.' },
-  { label: 'Complex tax-return scenarios', body: 'A smart fit when traditional documentation becomes the obstacle.' },
+  { label: 'High-net-worth borrowers', body: 'This can be an option if you have substantial savings or investments and limited taxable income.' },
+  { label: 'Complex tax-return scenarios', body: 'Ask whether your eligible assets can be used if your tax returns are difficult to use for a conventional loan.' },
   { label: 'Retired borrowers', body: 'Especially useful when the client has substantial investments but limited conventional income.' },
-  { label: 'Buyers who value speed and simplicity', body: 'Ideal when eligible assets already support the file and a long underwriting process is unnecessary.' },
+  { label: 'Buyers keeping assets after closing', body: 'We look at what you’ll still have available after the down payment and closing costs.' },
 ]
 
 const steps = [
-  { n: 1, body: 'Start with the scenario. Our team reviews the purchase or financing goal, timing and borrower profile.' },
-  { n: 2, body: 'Review eligible assets. We look at the asset picture first — not just traditional income paperwork.' },
-  { n: 3, body: 'Determine whether the program fits. If the balance sheet and structure line up, we map out next steps clearly.' },
-  { n: 4, body: 'Move with streamlined documentation. For qualified borrowers, the process is designed to be simpler and cleaner than conventional underwriting.' },
+  { n: 1, body: 'Tell us what you want to finance, what it costs and when you plan to close.' },
+  { n: 2, body: 'We’ll review your accounts and check which available funds the lender can count.' },
+  { n: 3, body: 'We’ll compare the amount left in your accounts after closing with the benchmark for the loan you want.' },
+  { n: 4, body: 'If the program looks like a fit, we’ll tell you which statements and other documents the lender needs to review.' },
 ]
 
 const faqs = [
@@ -145,7 +145,7 @@ export default function AssetQualifierPage() {
           Qualify with Assets, Not Income
         </h1>
         <p className="text-white/80 max-w-xl mx-auto text-lg mb-8">
-          For high-net-worth borrowers, retirees and clients with complex tax returns — a simpler path to financing built around what you actually have.
+          An option for buyers and retirees who have eligible savings or investments and want to use them to qualify for a mortgage.
         </p>
         <a
           href="https://2179191.my1003app.com/794730/register"
@@ -164,7 +164,7 @@ export default function AssetQualifierPage() {
           className="text-center text-lg md:text-2xl leading-relaxed"
           style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
         >
-          Minimal paperwork&nbsp;&bull;&nbsp;Built for complex financial profiles&nbsp;&bull;&nbsp;Strategy-led review with The Becker Team
+          Asset statements&nbsp;&bull;&nbsp;Funds available after closing&nbsp;&bull;&nbsp;Loan review with The Becker Team
         </p>
       </section>
 
@@ -217,7 +217,7 @@ export default function AssetQualifierPage() {
             Is This Program Right for You?
           </h2>
           <p className="text-white/70 text-sm leading-relaxed mb-12 max-w-2xl text-center mx-auto">
-            Asset Qualifier is not a universal fit — but for the right borrower, it removes friction that would otherwise block a strong financial profile from moving forward.
+            This may be worth comparing if you’ll have substantial savings or investments after you pay your down payment and closing costs.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {fitProfiles.map((p, i) => (
@@ -395,10 +395,10 @@ export default function AssetQualifierPage() {
             <div className="flex-1 flex flex-col justify-between p-10 md:p-12" style={{ backgroundColor: '#F5EFE6' }}>
               <div className="prose-becker mb-10">
                 <p>
-                  Jamie Becker brings 21 years in mortgages, experience as a financial advisor and real-world real estate ownership. That combination matters when the file is more about financial structure than standard documentation.
+                  Jamie Becker brings 21 years in mortgages, experience as a financial advisor and firsthand experience owning real estate.
                 </p>
                 <p>
-                  He understands how a balance sheet, tax strategy and real estate goal interact — and he knows how to explain it clearly. For the right borrower, that means less friction, faster clarity and a much better experience from the first conversation forward.
+                  He can help you work out how much cash you’d need to bring to closing and how much would remain in your accounts to qualify.
                 </p>
               </div>
               <Link
@@ -464,10 +464,10 @@ export default function AssetQualifierPage() {
           className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
         >
-          Let Your Balance Sheet Tell the Story
+          See If Your Assets Can Help You Qualify
         </h2>
         <p data-reveal="fade" data-delay="150" className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
-          If your financial picture is strong but your paperwork is messy, The Becker Team can help you review whether Asset Qualifier is the right path.
+          Tell us what you plan to buy and which accounts you’d use. We can review which funds may count.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a

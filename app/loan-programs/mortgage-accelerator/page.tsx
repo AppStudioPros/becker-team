@@ -28,29 +28,29 @@ const jsonLd = {
 const reasons = [
   {
     title: 'Pay down before retirement',
-    body: 'If you are 7 to 10 years from retirement, we can help you model whether your current mortgage path is still the best one, and change gears if needed.',
+    body: 'If retirement is 7 to 10 years away, we can estimate what you’d still owe on your current mortgage and compare ways to pay it down.',
   },
   {
-    title: 'Make monthly cash flow work harder',
-    body: 'Instead of only focusing on rate, our team helps you see how deposits, spending, and structure affect the full cost of the loan over time.',
+    title: 'See how deposits and withdrawals affect interest',
+    body: 'We can compare how your deposit and withdrawal dates would affect the balance and interest you pay.',
   },
   {
-    title: 'Keep flexibility',
-    body: 'This is designed for borrowers who want a more active payoff approach without feeling locked into a one-note plan.',
+    title: 'Plan for months with higher expenses',
+    body: 'Look at how much you’d need to draw for an unexpected expense and how that would change your balance and payoff estimate.',
   },
   {
     title: 'See the math first',
-    body: 'We review the numbers and compare scenarios so you can decide based on clarity, not concepts.',
+    body: 'We compare the interest, payments and remaining balance using the same household budget.',
   },
 ]
 
 const strongFit = [
-  'You consistently deposit meaningful net income each month.',
-  'You usually maintain positive monthly cash flow.',
-  'You prefer a strategy conversation over a generic mortgage quote.',
+  'You can count on regular deposits during the month.',
+  'You usually have money left after paying your bills.',
+  'You can track when income arrives and bills are due.',
   'You want to compare a faster payoff path before retirement.',
-  'You want to model a purchase or refinance through the lens of cash flow.',
-  'You are a financial advisor or real estate professional with a cash-flow-strong client who needs someone who can review the numbers strategically and give a direct answer on whether this structure fits.',
+  'You want to compare how a purchase or refinance would fit your monthly budget.',
+  'You advise a client who regularly has money left after bills and wants to compare ways to pay down their mortgage.',
 ]
 
 const faqs = [
@@ -133,7 +133,7 @@ export default function MortgageAcceleratorPage() {
           Home Mortgage Accelerator
         </h1>
         <p className="text-white/80 max-w-xl mx-auto text-lg mb-8">
-          A strategic approach to eliminating your mortgage faster and building equity sooner
+          Compare using a home equity line to pay down your mortgage with paying extra on a standard loan.
         </p>
         <a
           href="https://2179191.my1003app.com/794730/register"
@@ -167,7 +167,7 @@ export default function MortgageAcceleratorPage() {
             What This Strategy Does — and Why It Matters
           </h2>
           <p className="prose-becker mb-12 text-gray-700 leading-relaxed max-w-3xl text-center mx-auto">
-            Most mortgages are passive. You make the payment and let time do the rest. This approach is different — for the right borrower, it uses the way money already moves through your household to attack the mortgage more intentionally. Below are the four reasons disciplined homeowners take it seriously.
+            With the Home Mortgage Accelerator, you deposit income into a home equity line and draw from it to pay bills. We can compare how that would work for your household with paying extra principal on a standard mortgage.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {reasons.map((r, i) => (
@@ -205,7 +205,7 @@ export default function MortgageAcceleratorPage() {
             Is This Strategy Right for You?
           </h2>
           <p className="text-white/70 text-sm leading-relaxed mb-12 max-w-2xl text-center mx-auto">
-            This works best for a specific type of borrower. Before recommending anything, our team looks at your full financial picture to see whether the structure actually fits — not just whether you qualify.
+            We look at what you owe, how much you have left after expenses and how often you might need to borrow again. That helps us compare the strategy with your other options.
           </p>
 
           <div className="flex flex-col md:flex-row gap-12 md:gap-20">
@@ -326,14 +326,11 @@ export default function MortgageAcceleratorPage() {
               <div className="prose-becker mb-10">
                 <p>
                   Jamie Becker brings 21 years of mortgage experience, a financial advisory background
-                  and hands-on real estate ownership. He approaches this as a broader financial
-                  conversation, not just a product sale. The Home Mortgage Accelerator strategy is not
-                  about finding the lowest advertised rate, it is about understanding how the right loan
-                  structure interacts with the way a financially disciplined household actually operates.
+                  and experience owning real estate. He can help you compare how each loan would work
+                  with your regular income, bills and savings.
                 </p>
                 <p>
-                  Our goal is simple: help you compare clearly, decide intelligently and move only if
-                  the strategy truly makes sense for you.
+                  We’ll compare the costs and how the payoff estimate changes if your income or expenses change.
                 </p>
               </div>
               <Link

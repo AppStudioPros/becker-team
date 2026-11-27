@@ -18,7 +18,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Conventional Mortgage Loans',
-  description: 'Mortgage loans from private lenders with flexible terms and competitive rates.',
+  description: 'Private-lender mortgages with fixed or adjustable rates and several down payment options.',
   provider: { '@type': 'Person', name: 'Jamie Becker', identifier: 'NMLS #794730' },
   areaServed: 'Colorado',
   url: 'https://www.thebeckerteam.com/loan-programs/conventional-loans',
@@ -30,8 +30,8 @@ const highlights = [
     body: 'Eligible buyers may be able to put 3% down on a one-unit primary home. The loan program determines whether income limits or first-time buyer requirements apply.',
   },
   {
-    title: 'Rates Based on Your Creditworthiness',
-    body: 'Competitive interest rates determined by your credit profile — borrowers with strong credit typically access the most favorable terms.',
+    title: 'Compare Rates and Fees',
+    body: 'Credit, down payment, loan term and any discount points you pay can all affect the rate you’re quoted.',
   },
   {
     title: 'Flexible Loan Terms',
@@ -45,8 +45,8 @@ const highlights = [
 
 const fitProfiles = [
   { label: 'First-time homebuyers', body: 'Low down payment options make it a practical entry point for buyers stepping into homeownership.' },
-  { label: 'Buyers with strong credit', body: 'Good credit translates directly into more competitive rates and better long-term cost.' },
-  { label: 'Move-up and repeat buyers', body: 'Flexible terms and no government overlays make conventional a clean fit for experienced buyers.' },
+  { label: 'Buyers with strong credit', body: 'A strong credit history may help you qualify for a lower rate. Compare the rate with the fees each lender charges.' },
+  { label: 'Move-up and repeat buyers', body: 'If you’re selling one home and buying another, compare what you can put down with the cash you want to keep for the move.' },
   { label: '20% down buyers avoiding PMI', body: 'Putting down 20% generally lets you avoid private mortgage insurance. Ask us to compare that with keeping more of your savings for other expenses.' },
 ]
 
@@ -57,7 +57,7 @@ const faqs = [
   },
   {
     q: 'What credit score do I need?',
-    a: 'There’s no single credit score that covers every conventional loan. Fannie Mae’s automated review considers your credit history and the rest of your application without a universal score cutoff. Individual lenders and programs can set minimums. We can review your credit alongside your income, debts and available down payment.',
+    a: 'There’s no single credit score that covers every conventional loan. Some conventional loans use an automated review that considers your credit history and the rest of your application without a single score cutoff. Individual lenders and programs can set minimums. We can review your credit alongside your income, debts and available down payment.',
   },
   {
     q: 'How much down payment is required?',
@@ -164,7 +164,7 @@ export default function ConventionalLoansPage() {
             What This Program Does — and Why It Matters
           </h2>
           <p className="text-gray-700 leading-relaxed mb-12 max-w-3xl text-center mx-auto">
-            Conventional loans are the most widely used mortgage option in the country — and for good reason. Without government backing comes more flexibility, cleaner underwriting for qualified borrowers, and the ability to avoid mortgage insurance entirely with the right down payment. They are the straightforward path for buyers who meet the credit and income benchmarks.
+            Conventional loans come from private lenders without federal mortgage insurance or a federal loan guarantee. You can compare fixed and adjustable rates and different down payments. Private mortgage insurance usually applies when you put down less than 20%.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {highlights.map((h, i) => (
@@ -253,10 +253,10 @@ export default function ConventionalLoansPage() {
             <div className="flex-1 flex flex-col justify-between p-10 md:p-12" style={{ backgroundColor: '#F5EFE6' }}>
               <div className="prose-becker mb-10">
                 <p>
-                  With 21 years in the mortgage business, Jamie has guided borrowers through conventional loans at every price point — first purchases, move-up homes, investment properties and everything in between.
+                  Jamie has spent 21 years in mortgages and has helped borrowers use conventional loans to buy a first home, move to another home or finance an investment property.
                 </p>
                 <p>
-                  The goal is always the same: match the right structure to the right borrower, explain it clearly, and move efficiently. A conventional loan is often the cleanest path — and our team knows how to keep it that way.
+                  We’ll show you the monthly payment, cash due at closing and any mortgage insurance so you can compare conventional loans with your other options.
                 </p>
               </div>
               <Link
@@ -322,10 +322,10 @@ export default function ConventionalLoansPage() {
           className="-mx-2 mb-5 text-4xl font-bold sm:mx-0 md:text-5xl lg:text-6xl"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
         >
-          The Straightforward Path to Homeownership
+          Compare Your Conventional Loan Options
         </h2>
         <p data-reveal="fade" data-delay="150" className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
-          If you meet the credit and income benchmarks, a conventional loan is often the cleanest and most cost-effective option. Let us show you what it looks like for your situation.
+          Tell us what you plan to buy or refinance. We’ll compare how the down payment, rate and fees affect your monthly payment and cash at closing.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a

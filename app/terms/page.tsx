@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Terms of Use',
   description:
-    'Terms of use for thebeckerteam.com — limitations of liability, content accuracy, and conditions for use of mortgage information provided on this site.',
+    'Read The Becker Team’s website terms, including how you may use the site and its mortgage information and estimates.',
 }
 
 const EFFECTIVE = 'November 26, 2026'
@@ -56,7 +56,7 @@ export default function TermsPage() {
 
           <div>
             <h2 style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }} className="text-xl font-bold mb-3">5. Intellectual Property</h2>
-            <p>All content on this Site — including text, graphics, logos, images, and software — is the property of The Becker Team or its content suppliers and is protected by applicable intellectual property laws. You may not reproduce, distribute, modify, or create derivative works without our prior written consent.</p>
+            <p>All content on this Site, including text, graphics, logos, images, and software, is the property of The Becker Team or its content suppliers and is protected by applicable intellectual property laws. You may not reproduce, distribute, modify, or create derivative works without our prior written consent.</p>
           </div>
 
           <div>
@@ -80,7 +80,7 @@ export default function TermsPage() {
 
           <div>
             <h2 style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }} className="text-xl font-bold mb-3">8. Limitation of Liability</h2>
-            <p>To the maximum extent permitted by applicable law, The Becker Team and Xpert Home Lending shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of your use of, or inability to use, this Site or its content — including, without limitation, any errors or omissions in content, loss of data, or any other loss.</p>
+            <p>To the maximum extent permitted by applicable law, The Becker Team and Xpert Home Lending shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of your use of, or inability to use, this Site or its content, including, without limitation, any errors or omissions in content, loss of data, or any other loss.</p>
             <p>Our total liability to you for any claim arising from your use of this Site shall not exceed $100.</p>
           </div>
 
@@ -96,10 +96,10 @@ export default function TermsPage() {
 
           <div>
             <h2 style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }} className="text-xl font-bold mb-3">11. Contact</h2>
-            <p>Questions about these Terms of Use may be directed to:</p>
+            <p>Contact us with questions about these Terms of Use.</p>
             <div className="rounded p-5 mt-2" style={{ backgroundColor: '#fff', border: '1px solid #ded6c4' }}>
-              <p className="font-semibold" style={{ color: '#1F2E2A' }}>The Becker Team — Xpert Home Lending</p>
-              <p style={{ color: '#4a5e53' }}>NMLS #794730 | Company NMLS #2179191</p>
+              <p className="font-semibold" style={{ color: '#1F2E2A' }}>The Becker Team, powered by Xpert Home Lending</p>
+              <p style={{ color: '#4a5e53' }}>Individual NMLS #794730 | Company NMLS #2179191</p>
               <p style={{ color: '#4a5e53' }}>201 Columbine Street, Suite 300, Denver, CO 80206</p>
               <p><a href="tel:7204923335" style={{ color: '#1F2E2A' }}>(720) 492-3335</a></p>
               <p><a href="mailto:Jamie@thebeckerteam.com" style={{ color: '#1F2E2A' }}>Jamie@thebeckerteam.com</a></p>

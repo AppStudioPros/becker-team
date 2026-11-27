@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'The Becker Team — Englewood Colorado Mortgage Lender',
-  description: 'Local mortgage lender serving Englewood, Sheridan, Cherry Hills Village, Greenwood Village, and Centennial.',
+  name: 'The Becker Team — Englewood Colorado Mortgage Broker',
+  description: 'Local mortgage broker serving Englewood, Sheridan, Cherry Hills Village, Greenwood Village, and Centennial.',
   url: 'https://www.thebeckerteam.com/englewood-mortgage',
   provider: teamReference,
   areaServed: [
@@ -37,7 +37,7 @@ const breadcrumb = {
 }
 
 const programs = [
-  { label: 'FHA Loans', desc: '3.5% down and flexible credit requirements make FHA a great entry point for Englewood and Sheridan first-time buyers. Strong demand in this market.', href: '/loan-programs/fha-loans' },
+  { label: 'FHA Loans', desc: 'Eligible Englewood and Sheridan buyers can compare an FHA loan with a conventional loan, including how the mortgage insurance affects the monthly payment.', href: '/loan-programs/fha-loans' },
   { label: 'Conventional Loans', desc: 'The most common loan type in Englewood. Works well across the full range from starter condos to luxury single-family homes in Cherry Hills Village.', href: '/loan-programs/conventional-loans' },
   { label: 'VA Loans', desc: 'Eligible Englewood buyers may qualify with no down payment and no monthly mortgage insurance.', href: '/loan-programs/va-loans' },
   { label: 'Jumbo Loans', desc: 'For a home in Cherry Hills Village or Greenwood Village, compare jumbo options if your expected mortgage exceeds the county limit.', href: '/loan-programs/jumbo-loans' },
@@ -95,7 +95,7 @@ export default function EnglewoodMortgagePage() {
       <section className="relative py-28 md:py-40 px-6 text-white text-center" style={{ background: 'linear-gradient(135deg, #1c3023 0%, #0f1e14 60%, #162518 100%)' }}>
         <p className="text-sm uppercase tracking-widest font-semibold mb-4 text-white/70">Englewood, Colorado</p>
         <h1 className="text-4xl md:text-6xl font-bold mb-6" style={{ fontFamily: '"Playfair Display", Georgia, serif' }}>
-          Englewood Mortgage Lender
+          Englewood Mortgage Broker
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/80 leading-relaxed">
           Buying in Englewood, Sheridan, Cherry Hills Village, Greenwood Village or Centennial? Compare FHA, conventional, VA and jumbo mortgages with Jamie Becker.
@@ -162,7 +162,7 @@ export default function EnglewoodMortgagePage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { title: 'Full Range Coverage', body: 'Whether you are buying a starter condo in Englewood or a luxury estate in Cherry Hills Village, Jamie has the right loan program. Not every lender covers both ends of the market well.' },
+              { title: 'Full Range Coverage', body: 'If you’re considering an Englewood condo, we can check the building’s eligibility. For a home in Cherry Hills Village, we can check whether the amount you need to borrow calls for a jumbo loan.' },
               { title: 'First-Time Buyer Guidance', body: 'Englewood is a popular entry point into the south Denver market. Jamie helps first-time buyers understand FHA, CHFA assistance, and conventional options so they start strong.' },
               { title: 'Multiple Lender Options', body: 'Jamie compares loan terms from multiple wholesale lenders. A condo and a Cherry Hills single-family home may call for different options.' },
               { title: 'Closing Date Planning', body: 'Jamie can review your proposed closing date and explain what the title company and lender still need before signing.' },

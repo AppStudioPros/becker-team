@@ -18,7 +18,7 @@ const contactCards = [
     icon: Phone,
     label: 'Call Me',
     value: '(720) 492-3335',
-    sub: 'Available Mon–Fri, 9am–6pm MST',
+    sub: 'Monday to Friday, 9 a.m. to 6 p.m. Mountain time',
     href: 'tel:7204923335',
   },
   {
@@ -78,7 +78,7 @@ export default function ContactPage() {
           Get In Touch
         </h1>
         <p data-reveal="fade" data-delay="150" className="mt-4 text-white/80 max-w-xl mx-auto text-lg">
-          Ready to start? Have a question? Jamie Becker is here to help.
+          Talk with Jamie Becker about buying a home, refinancing, or comparing loan options.
         </p>
       </section>
 
@@ -95,8 +95,8 @@ export default function ContactPage() {
               Contact Information
             </h2>
             <p data-reveal="fade" data-delay="100" className="text-white/70 mb-10 leading-relaxed">
-              Whether you have a specific loan in mind or just want to talk through your situation,
-              Jamie is ready to connect. Reach out any time.
+              Call, email, or send a message below. If you’re still comparing options, start with the
+              calculator or check example rates.
             </p>
             <div className="grid w-fit max-w-full gap-3">
               <Link
@@ -178,14 +178,14 @@ export default function ContactPage() {
             Find Us
           </h2>
           <p data-reveal="fade" data-delay="80" className="text-center text-gray-500 text-sm mb-8">
-            Visit our office in Denver, Colorado — 201 Columbine Street, Suite 300
+            Our Denver office is at 201 Columbine Street, Suite 300.
           </p>
           <ContactMap />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
-              { title: 'Parking', desc: 'Free parking available in the building lot.' },
-              { title: 'Public Transit', desc: 'Accessible via RTD bus routes.' },
-              { title: 'Hours', desc: 'Monday – Friday: 9:00 AM – 6:00 PM MST' },
+              { title: 'Parking', desc: 'Call us for parking information before your visit.' },
+              { title: 'Public Transit', desc: 'Check RTD for current routes and service times.' },
+              { title: 'Hours', desc: 'Monday to Friday, 9 a.m. to 6 p.m. Mountain time.' },
             ].map((item, i) => (
               <div
                 key={item.title}
@@ -221,7 +221,7 @@ export default function ContactPage() {
           Ready to Get Started?
         </h2>
         <p data-reveal="fade" data-delay="150" className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Whether you&apos;re buying, refinancing, or just exploring your options, The Becker Team is here to help make your home loan journey smooth and successful.
+          Start the online pre-approval application or use the calculator to estimate a payment.
         </p>
         <div data-reveal="fade" data-delay="280" className="flex flex-col sm:flex-row gap-4 justify-center">
           <a

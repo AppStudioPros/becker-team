@@ -34,28 +34,28 @@ const jsonLd = {
 const processSteps = [
   {
     title: 'Pre-Qualification',
-    desc: 'We start by determining how much you can borrow based on your financial situation. This helps you focus on properties within your range and strengthens your position with sellers.',
-    points: ['Quick online pre-qualification', 'Clear understanding of your buying power', 'Strengthen negotiation position'],
+    desc: 'We start with an estimate of what you might be able to borrow. That gives you a price range to shop in and a starting point for pre-approval.',
+    points: ['Start online', 'Estimate a price range', 'Talk through the next steps'],
   },
   {
     title: 'Loan Program Selection',
-    desc: 'We help you choose the right loan program based on your goals, finances, and timeline. Whether conventional, FHA, VA, or specialty lending, we find the right fit.',
-    points: ['Expert guidance on loan options', 'Personalized recommendations', 'Clear explanation of terms and benefits'],
+    desc: 'We compare conventional, FHA, VA, and specialty loans based on your finances, plans, and timeline.',
+    points: ['Compare loan programs', 'See how the costs differ', 'Review the terms together'],
   },
   {
     title: 'Application & Documentation',
-    desc: 'Submit your application with our streamlined online process. We guide you through the required documentation and keep you informed every step of the way.',
-    points: ['Simple online application', 'Clear documentation checklist', 'Direct communication with your loan officer'],
+    desc: 'Submit your application online. We’ll explain which records to provide and let you know what happens next.',
+    points: ['Apply online', 'Get a document checklist', 'Talk directly with your loan officer'],
   },
   {
     title: 'Processing & Underwriting',
-    desc: 'Our experienced team handles processing efficiently, verifying documentation and working with underwriters to ensure smooth approval.',
-    points: ['Fast processing times', 'Proactive communication', 'Expert problem-solving if issues arise'],
+    desc: 'We review your paperwork and work with the lender’s underwriter. If the lender needs more information, we’ll explain what to provide.',
+    points: ['Review your paperwork', 'Get updates as we go', 'Understand follow-up requests'],
   },
   {
     title: 'Closing',
-    desc: 'Once approved, we coordinate with all parties to ensure a smooth closing. You sign the final documents and get the keys to your home.',
-    points: ['Clear closing instructions', 'Coordination with all parties', 'Celebration of your success'],
+    desc: 'Once the lender clears the loan to close, we coordinate with the parties involved. We’ll tell you what to review, bring, and sign.',
+    points: ['Review your closing instructions', 'Confirm the timing', 'Sign the final documents'],
   },
 ]
 
@@ -99,28 +99,23 @@ export default function AboutPage() {
                 className="text-lg font-semibold mb-5"
                 style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
               >
-                About Jamie Becker:
+                Meet Jamie Becker
               </h2>
               <p data-reveal="fade" data-delay="80">
-                With more than 21 years of experience in the mortgage industry, I&apos;ve helped over
-                3,500 families navigate one of the most important financial decisions of their lives: how
-                to finance a home, an investment property, or the next stage of their real estate journey.
+                I’ve spent more than 21 years in mortgage lending and helped over 3,500 families
+                with home and investment property financing.
               </p>
               <p data-reveal="fade" data-delay="120">
-                I&apos;m Jamie Becker, founder of The Becker Team, and I believe the best mortgage
-                guidance starts with understanding the full picture.
+                I’m Jamie Becker, founder of The Becker Team. I start by learning what you’re buying,
+                how you earn your income, and what payment you’re comfortable with.
               </p>
               <p data-reveal="fade" data-delay="160">
-                A mortgage is not just a rate, a payment, or a stack of documents. It is part of a
-                larger financial strategy. That is why my background is different from that of the
-                typical loan officer. In addition to more than two decades in mortgage lending, I also
-                bring experience as a financial advisor, real estate investor, commercial property owner,
-                and developer.
+                My work as a financial advisor, real estate investor, commercial property owner,
+                and developer shapes the way I compare mortgages with borrowers.
               </p>
               <p data-reveal="fade" data-delay="200">
-                That perspective allows me to help clients think through more than whether they can
-                qualify. I help them consider how the mortgage fits into their cash flow, assets,
-                liquidity, real estate goals, and long-term financial plan.
+                We can talk through how a mortgage would affect your monthly budget, how much money
+                you’d keep available after closing, and what you want to do next.
               </p>
             </div>
 
@@ -146,10 +141,9 @@ export default function AboutPage() {
           {/* ── Single column: remaining bio ── */}
           <div className="prose-becker">
             <p data-reveal="fade" data-delay="400">
-              At The Becker Team, we specialize in mortgage strategies for borrowers whose financial
-              picture may not fit neatly into traditional underwriting guidelines. That may include
-              business owners, retirees, real estate investors, high-asset borrowers, or clients with
-              strong financial profiles but nontraditional income.
+              At The Becker Team, we specialize in helping borrowers who need a different way to
+              document their finances. That can include business owners, retirees, real estate
+              investors, and borrowers who want a lender to consider their assets.
             </p>
             <p data-reveal="fade" data-delay="470">
               Because I work as a mortgage broker, I have access to a wide range of lenders and
@@ -158,19 +152,16 @@ export default function AboutPage() {
               the Home Mortgage Accelerator.
             </p>
             <p data-reveal="fade" data-delay="540">
-              Over the years, I&apos;ve seen almost every type of mortgage scenario: credit challenges,
-              complicated income, multiple gift sources, co-signers, investment properties, second
-              homes, retirement transitions, and borrowers who simply need a better path through
-              underwriting. That experience has shaped my approach.
+              I’ve helped borrowers with credit challenges, complex income, gifts from multiple sources,
+              co-signers, investment properties, second homes, and transitions into retirement. Those
+              situations often come down to which documents the lender needs and when.
             </p>
             <p data-reveal="fade" data-delay="610">
-              My philosophy is simple: client first, always. I believe in doing the right thing,
-              giving honest guidance, and recommending the same solution I would choose for myself.
+              I want you to understand the cost and trade-offs of your options before you choose a loan.
             </p>
             <p data-reveal="fade" data-delay="680">
-              Whether you are a borrower, financial advisor, CPA, attorney, or real estate
-              professional, my goal is to be a practical and trusted mortgage resource who can help
-              identify the right path forward with clarity and confidence.
+              I work with borrowers and the people advising them, including financial advisors, CPAs,
+              attorneys, and real estate professionals.
             </p>
             <p data-reveal="fade" data-delay="750">
               Outside of mortgage lending, giving back has been an important part of my life.
@@ -191,8 +182,8 @@ export default function AboutPage() {
               spending time with my Silver Lab, Blue.
             </p>
             <p data-reveal="fade" data-delay="1030">
-              If you are looking for a mortgage expert who can help you think beyond the standard
-              loan application, I&apos;d be happy to connect.
+              If you’re unsure how to document your income or which loans you can compare, let’s talk
+              through what you’re working with.
             </p>
             <Link data-reveal="fade" data-delay="1100" href="/contact" className="underline font-medium inline-block text-bronze-ink">
               Contact The Becker Team to start a conversation.
@@ -255,10 +246,10 @@ export default function AboutPage() {
                 Giving Back
               </h2>
               <p data-reveal="fade" data-delay="80" className="text-white/80 text-sm uppercase tracking-widest mb-8">
-                Keep Climbing Foundation — Board Member
+                Board Member, Keep Climbing Foundation
               </p>
               <p data-reveal="fade" data-delay="160" className="text-gray-200 leading-relaxed mb-5">
-                Jamie Becker has been an integral part of the{' '}
+                I’ve been involved with the{' '}
                 <a
                   href="https://keepclimbingfoundation.org/"
                   target="_blank"
@@ -267,16 +258,13 @@ export default function AboutPage() {
                 >
                   Keep Climbing Foundation
                 </a>{' '}
-                since 2019, joining the Climb for the Kids team with unwavering dedication. Over the
-                years, Jamie has taken on remarkable challenges, including climbing Chimborazo and
-                Cotopaxi, conquering numerous Colorado 14ers, and exploring the Alaska Range, all while
-                raising tens of thousands of dollars for the foundation&apos;s charitable partners.
+                since 2019. Through Climb for the Kids, I’ve raised tens of thousands of dollars
+                for the foundation’s charitable partners. I’ve climbed Chimborazo, Cotopaxi, and
+                numerous Colorado 14ers, and explored the Alaska Range.
               </p>
               <p className="text-gray-200 leading-relaxed mb-8">
-                An avid adventurer, Jamie is a competitive mountain biker who has completed some of the
-                world&apos;s toughest races, including the grueling Leadville 100 MTB. When winter
-                arrives, you can find Jamie snowmobiling through deep powder in some of the nation&apos;s
-                most remote backcountry terrain.
+                I also race mountain bikes and have finished the Leadville 100 MTB. In winter, I like
+                to snowmobile in the backcountry.
               </p>
               <a
                 href="https://keepclimbingfoundation.org/"
@@ -291,7 +279,6 @@ export default function AboutPage() {
 
             {/* YouTube embed */}
             <div className="aspect-video w-full rounded overflow-hidden bg-black/50">
-              {/* Replace VIDEO_ID with the actual YouTube video ID */}
               <iframe
                 width="100%"
                 height="100%"
@@ -317,8 +304,7 @@ export default function AboutPage() {
             Our Process
           </h2>
           <p data-reveal="fade" data-delay="100" className="text-gray-300 text-center mb-12 max-w-xl mx-auto">
-            We&apos;ve streamlined the home loan process to make it as simple and efficient as possible.
-            Here&apos;s how we work with you from start to finish.
+            Here’s what we’ll work through together, from your first estimate to signing at closing.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {processSteps.map((step, i) => (
@@ -383,7 +369,7 @@ export default function AboutPage() {
               Mortgage Calculator
             </h3>
             <p className="text-xs leading-relaxed" style={{ color: '#4a5e53' }}>
-              Calculate your monthly payments and explore different loan scenarios.
+              Estimate your monthly payment and see how it changes when you adjust the loan amount or rate.
             </p>
           </Link>
 
@@ -399,7 +385,7 @@ export default function AboutPage() {
               Current Rates
             </h3>
             <p className="text-xs leading-relaxed" style={{ color: '#4a5e53' }}>
-              View today&apos;s mortgage interest rates for all major loan types.
+              See example mortgage rates and the assumptions behind them.
             </p>
           </Link>
 
@@ -417,7 +403,7 @@ export default function AboutPage() {
               Get Pre-Approved
             </h3>
             <p className="text-xs leading-relaxed" style={{ color: '#4a5e53' }}>
-              Start your application online and get moving toward your next home.
+              Start the online application for mortgage pre-approval.
             </p>
           </a>
         </div>
@@ -436,7 +422,7 @@ export default function AboutPage() {
           Ready to get started?
         </h2>
         <p data-reveal="fade" data-delay="150" className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Let&apos;s discuss your unique situation and find the perfect loan for you
+          Tell us what you’re planning. We’ll help you compare loan options and costs.
         </p>
         <a
           data-reveal="scale"

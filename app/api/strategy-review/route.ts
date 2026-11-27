@@ -67,7 +67,7 @@ export async function POST(req: Request) {
   try {
     const resend = new Resend(process.env.RESEND_API_KEY ?? '')
     const { data, error } = await resend.emails.send({
-      from: 'Becker Team Site <noreply@webdesignpros365.com>',
+      from: 'Becker Team Website <noreply@mail.thebeckerteam.com>',
       to: ['Jamie@thebeckerteam.com'],
       replyTo: email,
       subject: `Strategy Review Request from ${firstName} ${lastName}`.replace(/[\r\n]+/g, ' '),

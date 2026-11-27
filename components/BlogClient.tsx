@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Calendar, Search, X } from 'lucide-react'
@@ -23,10 +23,26 @@ function formatDate(dateStr: string | null): string {
   })
 }
 
+function PostImage({ src, title, position }: { src: string; title: string; position: string | null }) {
+  return (
+    <Image
+      src={src}
+      alt={title}
+      fill
+      className="object-cover"
+      style={{ objectPosition: position || 'center center' }}
+      fetchPriority="low"
+      sizes="(min-width: 1072px) 320px, (min-width: 1024px) 31vw, (min-width: 768px) 46vw, calc(100vw - 3rem)"
+    />
+  )
+}
+
 export default function BlogClient({ posts, categories }: { posts: BlogPost[], categories: string[] }) {
   const [search, setSearch] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('All')
   const [sort, setSort] = useState<'newest' | 'oldest'>('newest')
+  const [visibleImages, setVisibleImages] = useState<Set<string>>(() => new Set())
+  const gridRef = useRef<HTMLDivElement>(null)
 
   const filtered = useMemo(() => {
     let result = [...posts]
@@ -55,6 +71,30 @@ export default function BlogClient({ posts, categories }: { posts: BlogPost[], c
 
     return result
   }, [posts, search, selectedCategory, sort])
+
+  useEffect(() => {
+    const pending = gridRef.current?.querySelectorAll<HTMLElement>('[data-pending-image]')
+    if (!pending?.length) return
+
+    function showImages(elements: Iterable<HTMLElement>) {
+      const imageIds = [...elements].flatMap(element => element.dataset.pendingImage || [])
+      if (imageIds.length) setVisibleImages(previous => new Set([...previous, ...imageIds]))
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      showImages(pending)
+      return
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      const nearby = entries.filter(entry => entry.isIntersecting).map(entry => entry.target as HTMLElement)
+      nearby.forEach(element => observer.unobserve(element))
+      showImages(nearby)
+    }, { rootMargin: '192px 0px' })
+
+    pending.forEach(element => observer.observe(element))
+    return () => observer.disconnect()
+  }, [filtered])
 
   const hasFilters = search.trim() || selectedCategory !== 'All' || sort !== 'newest'
 
@@ -139,24 +179,26 @@ export default function BlogClient({ posts, categories }: { posts: BlogPost[], c
           </button>
         </div>
       ) : (
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div ref={gridRef} className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filtered.map((post) => (
             <Link
               key={post.id}
               href={`/blog/${post.slug}`}
+              prefetch={false}
               className="block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer"
             >
               {post.feature_image ? (
-                <div className="relative h-48 w-full overflow-hidden">
-                  <Image
-                    src={post.feature_image}
-                    alt={post.title}
-                    fill
-                    className="object-cover"
-                    style={{ objectPosition: post.hero_position || 'center center' }}
-                    fetchPriority="low"
-                    sizes="(min-width: 1072px) 320px, (min-width: 1024px) 31vw, (min-width: 768px) 46vw, calc(100vw - 3rem)"
-                  />
+                <div
+                  className="relative h-48 w-full overflow-hidden"
+                  data-pending-image={visibleImages.has(post.id) ? undefined : post.id}
+                >
+                  {visibleImages.has(post.id) ? (
+                    <PostImage src={post.feature_image} title={post.title} position={post.hero_position} />
+                  ) : (
+                    <noscript>
+                      <PostImage src={post.feature_image} title={post.title} position={post.hero_position} />
+                    </noscript>
+                  )}
                 </div>
               ) : (
                 <div className="h-48 flex items-center justify-center" style={{ backgroundColor: '#ede4cc' }}>

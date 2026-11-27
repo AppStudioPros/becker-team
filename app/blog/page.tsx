@@ -47,17 +47,10 @@ async function getPublishedPosts(): Promise<BlogPost[]> {
   return [...previewCards, ...published]
 }
 
-async function getCategories(): Promise<string[]> {
-  const admin = createAdminClient()
-  const { data } = await admin
-    .from('becker_blog_categories')
-    .select('name')
-    .order('name', { ascending: true })
-  return (data || []).map(c => c.name)
-}
-
 export default async function BlogPage() {
-  const [posts, categories] = await Promise.all([getPublishedPosts(), getCategories()])
+  const posts = await getPublishedPosts()
+  const categories = [...new Set(posts.flatMap(post => post.category ? [post.category] : []))]
+    .sort((first, second) => first.localeCompare(second))
 
   return (
     <>

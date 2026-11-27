@@ -34,12 +34,12 @@ const highlights = [
     body: 'VA purchase loans do not require monthly private mortgage insurance. If you compare loan offers, include the VA funding fee and any mortgage insurance quoted on the conventional loan.',
   },
   {
-    title: 'Competitive Rates and Flexible Terms',
-    body: 'VA-backed loans typically offer competitive interest rates and flexible credit and income guidelines compared to conventional financing.',
+    title: 'Compare the Full Loan Cost',
+    body: 'Ask for quotes using the same loan amount, term and lock period. Include the funding fee and any mortgage insurance when comparing a VA loan with other options.',
   },
   {
-    title: 'VA Funding Fee in Place of Insurance',
-    body: 'Instead of monthly PMI, most VA borrowers pay a one-time funding fee at closing. It can often be rolled into the loan — and some veterans are exempt entirely.',
+    title: 'VA Funding Fee',
+    body: 'A one-time VA funding fee generally applies unless you qualify for an exemption. You can usually pay it at closing or add it to the loan.',
   },
 ]
 
@@ -47,7 +47,7 @@ const fitProfiles = [
   { label: 'Veterans', body: 'VA considers when and how long you served, your type of service and character of discharge. Qualifying service can include Guard and Reserve duty.' },
   { label: 'Active-duty service members', body: 'Current members of the Armed Forces who meet service length requirements can use their VA benefit while still serving.' },
   { label: 'Eligible surviving spouses', body: 'Certain surviving spouses can qualify based on the veteran’s service or circumstances of death. VA also has specific rules about remarriage.' },
-  { label: 'Buyers who want to maximize purchasing power', body: 'If you qualify without a down payment, remember to budget separately for closing costs and any funding fee you pay upfront.' },
+  { label: 'Buyers considering no down payment', body: 'If you qualify without a down payment, remember to budget separately for closing costs and any funding fee you pay upfront.' },
 ]
 
 const faqs = [
@@ -322,10 +322,10 @@ export default function VaLoansPage() {
           className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
         >
-          You Earned This Benefit. Let&apos;s Use It.
+          See What Your VA Loan Benefit Can Cover
         </h2>
         <p data-reveal="fade" data-delay="150" className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
-          If you or your spouse served, a VA loan may be one of the most powerful financial tools available to you. Let The Becker Team walk you through exactly what you qualify for.
+          If you or your spouse served, talk with us about VA eligibility, the funding fee and what you’d need to bring to closing.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a

@@ -124,7 +124,8 @@ export default function AccessibilityWidget() {
           aria-modal="true"
           style={{
             position: 'fixed', bottom: 152, right: 24, zIndex: 9997,
-            width: 300, background: '#1c3023',
+            width: 300, maxWidth: 'calc(100vw - 36px)',
+            maxHeight: 'calc(100dvh - 164px)', overflowY: 'auto', background: '#1c3023',
             border: '1px solid rgba(185,137,66,0.35)',
             borderRadius: 10, boxShadow: '0 12px 40px rgba(0,0,0,0.45)',
             padding: 20, color: '#fff',

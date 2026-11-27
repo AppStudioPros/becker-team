@@ -14,8 +14,8 @@ const faqs = [
     category: 'Colorado Market',
     items: [
       { q: 'What is the CHFA loan program in Colorado?', a: 'The Colorado Housing and Finance Authority offers first mortgages through participating lenders. Eligible buyers may pair a CHFA first mortgage with a down payment assistance grant or a second mortgage. Income limits and first-time buyer rules vary by program, and homebuyer education is required.' },
-      { q: 'Does The Becker Team offer VA loans in Colorado Springs?', a: "Absolutely. Colorado Springs has one of the largest military concentrations in the country — Fort Carson, Peterson SFB, Schriever AFB, and the Air Force Academy. VA loans are a specialty at The Becker Team. Eligible veterans, active-duty service members, and surviving spouses can purchase with no down payment in many cases and no monthly mortgage insurance. Each lender sets its own rate and fees. Jamie works with military clients at all Colorado installations and statewide." },
-      { q: 'Can I get a jumbo loan for a mountain property in Vail, Aspen, or Boulder?', a: "Yes. The Becker Team specializes in jumbo loans for Colorado's mountain resort markets. Vail, Aspen, Breckenridge, Boulder, and Summit County all qualify. Mountain resort properties sometimes require specialty financing including non-warrantable condo programs — Jamie has experience navigating all of it." },
+      { q: 'Does The Becker Team offer VA loans in Colorado Springs?', a: 'Yes. We work with military buyers near Fort Carson, Peterson Space Force Base, Schriever Space Force Base and the Air Force Academy. Eligible veterans, active-duty service members and surviving spouses may qualify with no down payment and no monthly mortgage insurance. We can compare the rate, lender fees and any VA funding fee.' },
+      { q: 'Can I get a jumbo loan for a mountain property in Vail, Aspen, or Boulder?', a: 'We can compare jumbo options for homes in these areas. Your loan amount determines whether you’re above the county’s conforming limit. The lender also reviews how you’ll use the home. For a resort condo, check whether a rental agreement restricts when you can stay there.' },
       { q: 'Do you offer mortgages for self-employed borrowers in Colorado?', a: 'Yes. We can review bank statement loans with business owners and freelancers. Some lenders use eligible deposits from 12 or 24 months of bank statements to document income. We can also discuss profit and loss statements or the Asset Qualifier if those options fit your situation.' },
       { q: 'What Colorado cities does The Becker Team serve?', a: "The Becker Team is based in Denver and serves all of Colorado — including Denver, Aurora, Lakewood, Littleton, Colorado Springs, Boulder, Fort Collins, Vail, Aspen, Breckenridge, Steamboat Springs, Summit County, and the Western Slope. Jamie can work remotely with clients anywhere in the state." },
     ],
@@ -35,7 +35,7 @@ const faqs = [
       { q: 'How much of a down payment do I need?', a: 'It depends on the loan. Eligible VA buyers can often purchase with no down payment. FHA purchase loans may allow 3.5% down with a qualifying credit score of at least 580. Some conventional programs allow 3% down on a one-unit primary home. Jumbo lenders set their own down payment requirements.' },
       { q: 'What credit score do I need to buy a home?', a: 'It depends on the program and lender. FHA may allow 3.5% down with a qualifying score of 580 or higher. CHFA generally requires a 620 mid-credit score, with possible exceptions for borrowers who have no score. VA sets no minimum score, though individual lenders may set one.' },
       { q: 'Can I buy a home with bad credit?', a: 'Some programs may work with lower scores. Under FHA rules, buyers with a qualifying score of 500 to 579 may be eligible with at least 10% down. Lenders can set higher minimums and also review your finances and credit history.' },
-      { q: 'Can down payment funds come from a gift?', a: 'Yes — gift funds from family members are acceptable on most loan programs including FHA and conventional loans. VA loans also allow gift funds. Proper documentation of the gift is required.' },
+      { q: 'Can down payment funds come from a gift?', a: 'Some FHA, conventional and VA loans allow gift funds from an eligible donor. Before anyone sends the money, ask your lender who can give it and what records you’ll need to document the gift.' },
     ],
   },
   {
@@ -43,9 +43,9 @@ const faqs = [
     items: [
       { q: 'What is a VA loan and who qualifies?', a: 'The Department of Veterans Affairs backs these loans for eligible veterans, active-duty service members and surviving spouses. Eligible buyers may qualify with no down payment and no monthly mortgage insurance. A VA funding fee may apply.' },
       { q: 'What is an FHA loan?', a: 'An FHA loan is a mortgage insured by the Federal Housing Administration. Buyers may qualify with as little as 3.5% down and a qualifying credit score of at least 580. FHA loans require mortgage insurance.' },
-      { q: 'What is a jumbo loan?', a: 'A jumbo loan exceeds the conforming loan limit for the property’s county, number of units and applicable year. Compare the amount you plan to borrow after the down payment with the FHFA county limit.' },
+      { q: 'What is a jumbo loan?', a: 'A jumbo loan exceeds the conforming loan limit for the property’s county, number of units and applicable year. Compare the amount you plan to borrow after the down payment with that limit.' },
       { q: 'What is an asset qualifier loan?', a: 'This loan uses the eligible assets you have left after closing to help you qualify. Our benchmark is 125% of the loan amount. This can help buyers with substantial savings or investments, including retirees and buyers with complex tax returns.' },
-      { q: 'I am self-employed — can I still get a mortgage?', a: 'Yes. We can review your tax returns for a conventional loan or explore bank statement loans that count eligible deposits. The right option depends on your business history and the records you have.' },
+      { q: 'Can I get a mortgage if I’m self-employed?', a: 'Yes. We can review your tax returns for a conventional loan or explore bank statement loans that count eligible deposits. The right option depends on your business history and the records you have.' },
       { q: 'What is the Mortgage Accelerator program?', guide: '/loan-programs/mortgage-accelerator/guide#worked-example', a: 'The Accelerator uses a line of credit secured by your home for everyday banking. Deposits reduce the balance and withdrawals increase it. Paying down the balance faster depends on how much extra cash you can leave after bills and interest. Compare both loans using the same amount of money before deciding.' },
     ],
   },
@@ -99,7 +99,7 @@ export default function FaqPage() {
           Frequently Asked Questions
         </h1>
         <p className="text-lg max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.8)' }}>
-          Everything you need to know about the mortgage process, loan programs, and working with The Becker Team.
+          Get answers about loan options, down payments, credit and what happens before closing.
         </p>
       </section>
 

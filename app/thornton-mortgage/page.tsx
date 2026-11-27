@@ -15,7 +15,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'The Becker Team — Thornton Colorado Mortgage Broker',
-  description: 'Local mortgage lender serving Thornton, Northglenn, Commerce City, Brighton, and Henderson in the north Denver metro.',
+  description: 'Local mortgage broker serving Thornton, Northglenn, Commerce City, Brighton, and Henderson in the north Denver metro.',
   url: 'https://www.thebeckerteam.com/thornton-mortgage',
   provider: teamReference,
   areaServed: [
@@ -37,11 +37,11 @@ const breadcrumb = {
 }
 
 const programs = [
-  { label: 'FHA Loans', desc: '3.5% down and flexible credit. The most popular loan type for Thornton first-time buyers entering the market at this price point.', href: '/loan-programs/fha-loans' },
+  { label: 'FHA Loans', desc: 'Eligible Thornton buyers can compare an FHA loan with a conventional loan, including the down payment and mortgage insurance for each.', href: '/loan-programs/fha-loans' },
   { label: 'CHFA Loans', desc: 'Colorado Housing and Finance Authority down payment assistance can help Thornton buyers close with less cash upfront. Pairs with FHA and conventional.', href: '/chfa-loan-colorado' },
   { label: 'Conventional Loans', desc: 'Compare conventional and FHA payments for your Thornton home, including mortgage insurance and closing costs for each option.', href: '/loan-programs/conventional-loans' },
   { label: 'VA Loans', desc: 'Eligible Thornton and Brighton buyers may qualify with no down payment and no monthly mortgage insurance.', href: '/loan-programs/va-loans' },
-  { label: 'New Construction Loans', desc: 'Buying a new home in Brighton or Henderson? Ask when you can lock the rate, how long the lock lasts and what an extension costs.', href: '/loan-programs/conventional-loans' },
+  { label: 'Financing a New Build', desc: 'Buying a new home in Brighton or Henderson? Ask when you can lock the rate, how long the lock lasts and what an extension costs.', href: '/contact#contact-form' },
   { label: 'Self-Employed Loans', desc: 'Bank statement programs for Thornton small business owners and contractors. Non-traditional income documentation accepted.', href: '/loan-programs/self-employed-loans' },
 ]
 

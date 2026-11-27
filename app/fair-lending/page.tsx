@@ -18,14 +18,14 @@ export default function FairLendingPage() {
         >
           Fair Lending Notice
         </h1>
-        <p className="text-sm mb-10" style={{ color: '#4a5e53' }}>The Becker Team — Xpert Home Lending | NMLS #794730</p>
+        <p className="text-sm mb-10" style={{ color: '#4a5e53' }}>The Becker Team, powered by Xpert Home Lending | Individual NMLS #794730</p>
 
         <div className="prose-becker space-y-8">
 
           <div className="rounded p-6" style={{ backgroundColor: '#1F2E2A', color: '#F5EFE6' }}>
             <p className="font-semibold text-lg mb-2" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#F5EFE6' }}>Our Commitment to Equal Opportunity</p>
             <p className="text-sm leading-relaxed" style={{ color: 'rgba(245,239,230,0.85)' }}>
-              The Becker Team is committed to providing equal credit opportunity to all applicants. We do not discriminate on any basis prohibited by law, and we are committed to the principles of fair lending in everything we do.
+              The Becker Team is committed to equal credit opportunity for all applicants. We uphold fair lending standards and do not discriminate on any basis prohibited by law.
             </p>
           </div>
 
@@ -47,7 +47,7 @@ export default function FairLendingPage() {
 
           <div>
             <h2 style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }} className="text-xl font-bold mb-3">Fair Housing Act</h2>
-            <p>The Fair Housing Act (42 U.S.C. § 3601 et seq.) prohibits discrimination in residential real estate transactions — including mortgage lending — on the basis of:</p>
+            <p>The Fair Housing Act (42 U.S.C. § 3601 et seq.) prohibits discrimination in residential real estate transactions, including mortgage lending, on the basis of:</p>
             <ul className="list-disc pl-6 space-y-1 text-sm" style={{ color: '#3a5a4a' }}>
               <li>Race or color</li>
               <li>National origin</li>
@@ -111,10 +111,10 @@ export default function FairLendingPage() {
 
           <div>
             <h2 style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }} className="text-xl font-bold mb-3">Contact Us</h2>
-            <p>If you have questions about our fair lending practices or believe you have experienced discrimination in connection with a mortgage application, please contact us directly:</p>
+            <p>Contact us directly if you have questions about fair lending or believe you experienced discrimination related to a mortgage application.</p>
             <div className="rounded p-5 mt-2" style={{ backgroundColor: '#fff', border: '1px solid #ded6c4' }}>
-              <p className="font-semibold" style={{ color: '#1F2E2A' }}>The Becker Team — Xpert Home Lending</p>
-              <p style={{ color: '#4a5e53' }}>NMLS #794730 | Company NMLS #2179191</p>
+              <p className="font-semibold" style={{ color: '#1F2E2A' }}>The Becker Team, powered by Xpert Home Lending</p>
+              <p style={{ color: '#4a5e53' }}>Individual NMLS #794730 | Company NMLS #2179191</p>
               <p style={{ color: '#4a5e53' }}>201 Columbine Street, Suite 300, Denver, CO 80206</p>
               <p><a href="tel:7204923335" style={{ color: '#1F2E2A' }}>(720) 492-3335</a></p>
               <p><a href="mailto:Jamie@thebeckerteam.com" style={{ color: '#1F2E2A' }}>Jamie@thebeckerteam.com</a></p>

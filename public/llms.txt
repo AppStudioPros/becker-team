@@ -35,10 +35,10 @@ The Asset Qualifier uses eligible assets remaining after closing. The benchmark 
 ### Mortgage Accelerator
 A line of credit secured by your home that you can use for everyday banking. Deposits reduce the balance and withdrawals increase it. A faster payoff depends on how much extra cash you can leave after bills and interest.
 
-### Non-Conventional / Hard-to-Qualify Programs
+### Specialty Mortgage Programs
 Specialty loan options for buyers with self-employment income, retirement assets, complex tax returns or a property that needs a different lending program.
 
-## Colorado Market Intelligence
+## Colorado Housing and Mortgage Markets
 
 ### Geographic Focus Areas
 - Denver metro, including Aurora, Lakewood, Littleton, Westminster, Thornton, Broomfield, Englewood and Centennial.
@@ -79,7 +79,7 @@ Q: How fast can I get pre-approved with The Becker Team?
 A: Timing depends on your loan and how quickly your documents can be reviewed. A pre-approval is conditional, and a rate lock is a separate step. Let Jamie know if a seller has given you an offer deadline.
 
 Q: What is a 30-year fixed mortgage and is it right for me?
-A: A 30-year fixed mortgage has an interest rate that stays the same for the term. Your principal and interest payments stay the same. Taxes and insurance can change.
+A: On a standard 30-year fixed mortgage, the interest rate and the scheduled monthly payment for principal and interest stay the same. Changes to property taxes or homeowners insurance can change the total payment.
 
 Q: Do you offer second home or vacation property loans for Colorado mountain towns?
 A: Yes. The property’s intended use, setup and association rules affect financing. Standard conventional second-home financing usually applies to one home or condo suitable for year-round use. The borrower generally keeps control over when they stay there and qualifies without counting rent from the home. See /second-home-loans-colorado.

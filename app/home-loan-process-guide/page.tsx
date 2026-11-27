@@ -281,8 +281,7 @@ export default function ProcessGuidePage() {
               Begin Loan Processing
             </h2>
             <p className="text-gray-600 leading-relaxed">
-              After your application is submitted, your file moves to processing. An underwriter reviews
-              everything to confirm you meet the loan guidelines.
+              After you apply, the lender reviews your documents and the property to see whether the loan meets its requirements.
             </p>
           </div>
 
@@ -292,15 +291,15 @@ export default function ProcessGuidePage() {
               className="text-lg font-bold mb-5"
               style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
             >
-              Tips for Smooth Approval
+              What to Do During Underwriting
             </h3>
             <ul className="flex flex-col gap-3">
               {[
-                "Don't make large deposits without documentation",
-                "Don't open new credit accounts",
-                "Don't make major purchases (cars, furniture)",
-                "Don't change jobs during the process",
-                'Do respond quickly to any requests for additional documents',
+                'Keep records for any large deposits',
+                'Check with us before opening a new credit account',
+                'Talk to us before financing a major purchase',
+                'Let us know if your job or income changes',
+                'Respond promptly if the lender requests more documents',
               ].map((tip) => (
                 <li key={tip} className="text-sm flex items-start gap-2">
                   <span className="mt-0.5 shrink-0">&#10003;</span>
@@ -386,7 +385,7 @@ export default function ProcessGuidePage() {
           className="inline-block uppercase tracking-widest text-sm font-semibold px-14 py-5 rounded btn-hover"
           style={{ backgroundColor: '#1F2E2A', color: '#F5EFE6', border: '2px solid #F5EFE6' }}
         >
-          Get Pre-Approved Now
+          Start Your Application
         </a>
       </section>
     </>

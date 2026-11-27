@@ -15,7 +15,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'The Becker Team — Littleton Colorado Mortgage Broker',
-  description: 'Local mortgage lender serving Littleton, Highlands Ranch, Lone Tree, Castle Rock, and the south Denver suburbs.',
+  description: 'Local mortgage broker serving Littleton, Highlands Ranch, Lone Tree, Castle Rock, and the south Denver suburbs.',
   url: 'https://www.thebeckerteam.com/littleton-mortgage',
   provider: teamReference,
   areaServed: [
@@ -47,13 +47,13 @@ const programs = [
 ]
 
 const faqs = [
-  { q: 'Is Littleton CO a good place to buy a home?', a: "Littleton is one of the most established and family-friendly communities in the Denver metro. Downtown Littleton has a genuine walkable character, and neighborhoods like Highlands Ranch, Columbine, and South Platte Park hold value consistently. It's a suburb with real long-term staying power, especially for families prioritizing school districts and quality of life." },
+  { q: 'What should I compare when buying in Littleton or nearby?', a: "If you’re comparing homes near downtown Littleton, South Platte Park or in surrounding communities, use each listing’s address to check taxes and any HOA dues. Those costs affect your monthly budget even when two homes have the same asking price." },
   // City-level sales: https://www.redfin.com/city/30816/CO/Littleton/housing-market
   { q: 'What is the median home price in Littleton, CO?', a: 'From August through October 2026, the median sale price across all home types in Littleton was $605,579. For a condo or townhome, include any association dues when you estimate the monthly cost.' },
   { q: 'Do you offer jumbo loans in Highlands Ranch and Lone Tree?', a: "Yes. Let us know the address, price and down payment you are considering. We can check the one-unit limit for that county and explain how jumbo lenders would review the loan and your cash reserves." },
   { q: 'When should I get pre-approved for a Littleton mortgage?', a: 'Start before you make an offer. Jamie can review your documents and let you know when a pre-approval letter may be ready. Share any offer deadline when you get in touch.' },
   { q: 'What is the mortgage process like for Littleton buyers?', a: 'Start with pre-approval before you make an offer. After you go under contract, the lender reviews the loan and property, coordinates any required appraisal and works with the title company to prepare for closing.' },
-  { q: 'Do you serve Castle Rock and Centennial?', a: 'Yes. The Becker Team serves all of the south Denver corridor — Littleton, Highlands Ranch, Lone Tree, Castle Rock, Centennial, Englewood, and surrounding communities.' },
+  { q: 'Do you serve Castle Rock and Centennial?', a: 'Yes. We serve Littleton, Highlands Ranch, Lone Tree, Castle Rock, Centennial, Englewood and nearby communities.' },
 ]
 
 
@@ -98,7 +98,7 @@ export default function LittletonMortgagePage() {
 
       <section className="bg-white py-5 px-6 border-b border-stone-200">
         <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-2 text-sm font-semibold" style={{ color: '#1F2E2A' }}>
-          <span>✦ South Denver Mortgage Lender</span>
+          <span>✦ South Denver Mortgage Broker</span>
           <span>✦ Highlands Ranch Home Loans</span>
           <span>✦ Purchase Pre-Approval</span>
           <span>✦ 21+ Years Experience</span>
@@ -175,7 +175,7 @@ export default function LittletonMortgagePage() {
           Ready to Buy in Littleton?
         </h2>
         <p data-reveal="fade" data-delay="150" className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Get pre-approved today and move fast in the south Denver market.
+          Start your pre-approval or ask us what to budget for a specific property.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="https://2179191.my1003app.com/794730/register" target="_blank" rel="noopener noreferrer"

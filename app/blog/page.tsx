@@ -7,7 +7,7 @@ import BlogClient from '@/components/BlogClient'
 export const metadata: Metadata = {
   title: 'Colorado Mortgage Blog',
   description:
-    'Mortgage tips, market updates, and home loan insights from Jamie Becker and The Becker Team. Colorado mortgage broker with 21+ years of experience.',
+    'Jamie Becker answers Colorado homebuyers’ questions about credit, down payments, loan programs and the cash needed at closing.',
   alternates: {
     canonical: 'https://www.thebeckerteam.com/blog',
   },
@@ -68,7 +68,7 @@ export default async function BlogPage() {
             Mortgage Insights
           </h1>
           <p className="text-lg" style={{ color: 'rgba(255,255,255,0.8)' }}>
-            Tips, updates, and real talk on home loans from Jamie Becker and The Becker Team.
+            Jamie Becker answers your questions about buying a home and comparing mortgages in Colorado.
           </p>
         </div>
       </section>
@@ -93,10 +93,10 @@ export default async function BlogPage() {
             className="text-3xl font-bold text-white mb-4"
             style={{ fontFamily: 'var(--font-playfair)' }}
           >
-            Ready to Talk About Your Home Loan?
+            Ready to Apply for a Mortgage?
           </h2>
           <p className="text-white/75 mb-8">
-            Jamie Becker has helped Colorado families close on their dream homes for over 21 years. Let us help you next.
+            Start your application online so we can review your income, down payment and plans for the home.
           </p>
           <a
             href="https://2179191.my1003app.com/794730/register"

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: "%s | The Becker Team",
   },
   description:
-    "Jamie Becker is a Colorado mortgage broker with 21+ years of experience. VA, FHA, Jumbo, Self-Employed, and specialty loan programs. Fast closings. NMLS #794730.",
+    "Compare home loans in Colorado with Jamie Becker, NMLS #794730. Explore VA, FHA, conventional and jumbo loans, plus options for self-employed borrowers.",
   metadataBase: new URL("https://www.thebeckerteam.com"),
   openGraph: {
     type: "website",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
         url: "https://www.thebeckerteam.com/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "The Becker Team — Colorado Mortgage Broker",
+        alt: "The Becker Team, Colorado mortgage broker",
       },
     ],
   },

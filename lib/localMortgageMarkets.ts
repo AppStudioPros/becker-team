@@ -117,7 +117,7 @@ export const localMortgageMarkets: Partial<Record<string, LocalMarket>> = {
     condoHeading: 'Who controls the calendar for a Vail resort condo?',
     condo: 'Ask whether you can occupy the unit when you choose, whether a management company controls bookings and which parts of the building the HOA insures. Bring the management agreement to us before you commit to a second-home loan.',
     occupancyHeading: 'Can I use the home for ski weekends and rent it out?',
-    occupancy: 'Check the deed for any primary-residence restriction before making a vacation-home offer. Vail requires registration before an eligible home is advertised for short-term rental. We can review your intended personal use alongside the building’s rules and rental contract.',
+    occupancy: 'Within the Town of Vail, you need an approved license before advertising or operating a short-term rental. Check the deed for occupancy restrictions and ask whether a fire inspection applies. Tell us when you plan to use the property and share the building’s rules or rental contract.',
     // Local rental rules: https://www.vail.gov/government/departments/finance/short-term-rentals
     review: 'In a Vail review, Adam W described working with our team on several refinances and an investment-property mortgage.',
   },

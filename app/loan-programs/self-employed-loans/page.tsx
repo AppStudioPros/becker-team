@@ -35,7 +35,7 @@ const highlights = [
   },
   {
     title: 'Flexible Debt-to-Income Calculations',
-    body: 'We use calculations that reflect your actual cash flow and business reality — not just what shows up on a simplified tax return.',
+    body: 'We can compare how different programs count eligible income and expenses using the records you have.',
   },
   {
     title: 'Broad Property and Loan Range',
@@ -63,7 +63,7 @@ const qualPaths = [
 ]
 
 const fitProfiles = [
-  { label: 'Freelancers and independent contractors', body: 'Your income is real — it just doesn\'t come with a W-2. We have qualification paths built around how you actually earn.' },
+  { label: 'Freelancers and independent contractors', body: 'If clients pay you directly, ask which records you can use to show what you earn.' },
   { label: 'Small business owners', body: 'Whether you\'re a sole proprietor or run a growing operation, your business cash flow can count toward qualification.' },
   { label: 'Entrepreneurs with newer businesses', body: 'We’ll look at when you started your business, your prior work and which income records you have.' },
   { label: 'High earners with complex tax returns', body: 'If your tax strategy minimizes income on paper, alternative documentation lets us look at the full financial picture.' },
@@ -253,7 +253,7 @@ export default function SelfEmployedLoansPage() {
             Who This Tends to Fit Best
           </h2>
           <p className="text-gray-700 text-sm leading-relaxed mb-12 max-w-2xl text-center mx-auto">
-            If your income is real but your paperwork makes it hard to prove, this program was designed for you.
+            Whether you work for yourself or own a business, we can review which records show your income.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {fitProfiles.map((p, i) => (
@@ -326,10 +326,10 @@ export default function SelfEmployedLoansPage() {
             <div className="flex-1 flex flex-col justify-between p-10 md:p-12" style={{ backgroundColor: '#F5EFE6' }}>
               <div className="prose-becker mb-10">
                 <p>
-                  Self-employed files are more complex than standard W-2 loans — and they require a lender who understands the difference between what a tax return shows and what a borrower actually earns. Jamie Becker brings 21 years of mortgage experience and a financial advisory background to every file.
+                  Jamie Becker brings 21 years of mortgage experience and a financial advisory background. If you’re self-employed, he can review how you’re paid and what documents you have.
                 </p>
                 <p>
-                  He knows how to read the full financial picture, select the right qualification path, and explain the process clearly. For self-employed borrowers, that combination makes a real difference.
+                  We’ll explain how lenders may count your income and what you’d need to provide before you choose a loan.
                 </p>
               </div>
               <Link
@@ -388,7 +388,7 @@ export default function SelfEmployedLoansPage() {
           className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
         >
-          Your Income Is Real. Let&apos;s Prove It.
+          Compare Loans for Self-Employed Borrowers
         </h2>
         <p data-reveal="fade" data-delay="150" className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
           If traditional lenders have said no because of how your income looks on paper, there may be another path. Let The Becker Team take a look at your full financial picture.

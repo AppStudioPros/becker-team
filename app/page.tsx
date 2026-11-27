@@ -26,18 +26,18 @@ const homeFaqs = [
   },
   {
     q: 'Can I get a mortgage if I’m self-employed?',
-    a: 'Yes. If you work for yourself, we’ll start by asking how you get paid. Tax returns may document your income, and some loan programs also accept personal or business bank statements. We’ll help you compare those options and explain which records the lender will need from you.',
+    a: 'Yes. If you work for yourself, we’ll ask how you get paid. Some loans use tax returns to document your income, and some let you use personal or business bank statements. We’ll explain the options and which records the lender may need.',
   },
 ]
 
 const loanProgramCells = [
-  { title: 'Asset Qualifier Loans',     tagline: 'Qualify with assets, not income — flexible alternative lending',       href: '/loan-programs/asset-qualifier-loans' },
-  { title: 'Home Mortgage Accelerator',      tagline: 'Accelerate mortgage payoff before retirement',                          href: '/loan-programs/mortgage-accelerator' },
+  { title: 'Asset Qualifier Loans',     tagline: 'See how eligible assets can help you qualify',                          href: '/loan-programs/asset-qualifier-loans' },
+  { title: 'Home Mortgage Accelerator',      tagline: 'See whether your cash flow could help you pay off your mortgage sooner', href: '/loan-programs/mortgage-accelerator' },
   { title: 'Conventional Loans',        tagline: 'Compare fixed and adjustable rates for your home purchase',       href: '/loan-programs/conventional-loans' },
   { title: 'FHA Loans',                 tagline: 'FHA-insured home loans with flexible credit requirements',                      href: '/loan-programs/fha-loans' },
   { title: 'VA Loans',                  tagline: 'Low or no down payment for eligible veterans and service members',        href: '/loan-programs/va-loans' },
-  { title: 'Jumbo Loans',               tagline: 'Loans exceeding conforming limits for luxury and high-cost homes',       href: '/loan-programs/jumbo-loans' },
-  { title: 'Self-Employed Loans',       tagline: 'We make it easier for business owners and entrepreneurs',                href: '/loan-programs/self-employed-loans' },
+  { title: 'Jumbo Loans',               tagline: 'Financing above your county’s conforming loan limit',                      href: '/loan-programs/jumbo-loans' },
+  { title: 'Self-Employed Loans',       tagline: 'Mortgage options for business owners and independent workers',             href: '/loan-programs/self-employed-loans' },
   { title: 'Which Loan Fits?',      tagline: "Tell me about your plans, and I’ll help you compare your options.",              href: '/contact' },
 ]
 
@@ -104,10 +104,9 @@ export default function HomePage() {
           className="text-lg md:text-xl max-w-2xl mb-8 text-white/90 leading-relaxed"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
         >
-          <span className="mb-3 block">I’m Jamie Becker, a Denver mortgage broker with The Becker Team.</span>
-          We are dedicated to helping advisors, agents &amp; households solve mortgage problems
-          that traditional underwriting can&apos;t. Let&apos;s find the right solution for your
-          client or personal needs.
+          <span className="mb-3 block">I’m Jamie Becker, a Denver mortgage broker with The Becker Team.</span>{' '}
+          We help buyers, homeowners, and their advisors compare loan options, including ones
+          that can work when your income or finances are hard to document.
         </p>
 
         {/* Closing timeline */}
@@ -167,7 +166,7 @@ export default function HomePage() {
               <div className="relative group overflow-hidden rounded" style={{ height: '220px' }}>
                 <Image
                   src={card.img}
-                  alt={card.label}
+                  alt=""
                   fill
                   sizes="(min-width: 1328px) 416px, (min-width: 768px) 33vw, calc(100vw - 3rem)"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -306,7 +305,7 @@ export default function HomePage() {
           Ready to get started?
         </h2>
         <p data-reveal="fade" data-delay="150" className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Let&apos;s discuss your unique situation and find the perfect loan for you
+          Tell us what you’re planning. We’ll help you compare loan options and costs.
         </p>
         <a
           data-reveal="scale"

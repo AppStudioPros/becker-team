@@ -58,7 +58,7 @@ const faqs = [
   },
   {
     q: 'What is the difference between a second home loan and an investment property loan?',
-    a: 'A second home is for your own use during part of the year. For a Fannie Mae second-home loan, you must retain control of occupancy, and you cannot use rent from the home to qualify. If your plan depends on rental income, we can evaluate investment-property financing.',
+    a: 'A second home is for your own use during part of the year. For a standard conventional second-home loan, plan to control when you can stay in the home and qualify without its rent. If your plan depends on rental income, we can evaluate investment-property financing.',
   },
   {
     q: 'What are jumbo loan requirements in Colorado mountain towns?',

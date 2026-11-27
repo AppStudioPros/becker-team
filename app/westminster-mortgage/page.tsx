@@ -15,7 +15,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'The Becker Team — Westminster Colorado Mortgage Broker',
-  description: 'Local mortgage lender serving Westminster, Broomfield, Thornton, and the Denver-Boulder corridor.',
+  description: 'Local mortgage broker serving Westminster, Broomfield, Thornton, and the Denver-Boulder corridor.',
   url: 'https://www.thebeckerteam.com/westminster-mortgage',
   provider: teamReference,
   areaServed: [
@@ -43,14 +43,14 @@ const programs = [
   { label: 'VA Loans', desc: "Eligible veterans and service members in the north Denver metro may qualify with no down payment.", href: '/loan-programs/va-loans' },
   { label: 'Jumbo Loans', desc: "For a Westminster home, compare the loan amount after your down payment with the limit for the county where the property sits.", href: '/loan-programs/jumbo-loans' },
   { label: 'Self-Employed Loans', desc: "Bank statement programs for Westminster tech workers, contractors, and business owners who prefer alternatives to traditional income documentation.", href: '/loan-programs/self-employed-loans' },
-  { label: 'Asset Qualifier Loans', desc: "Qualify using liquid assets and investment accounts — ideal for buyers with substantial net worth and non-traditional income.", href: '/loan-programs/asset-qualifier-loans' },
+  { label: 'Asset Qualifier Loans', desc: "Ask whether eligible cash and investments can help you qualify if your income is hard to document.", href: '/loan-programs/asset-qualifier-loans' },
 ]
 
 const faqs = [
-  { q: 'Is Westminster CO a good place to buy a home?', a: "Westminster sits in one of the most strategically positioned corridors in Colorado — halfway between Denver and Boulder, with access to both employment centers and a lower price point than either city. The US 36 tech corridor runs directly through Westminster and Broomfield, which has driven strong demand from tech and biotech professionals who want more space without sacrificing commute access. It's a solid long-term market." },
+  { q: 'What costs should I compare when shopping in Westminster?', a: "If you’re comparing listings along US 36, look at the payment, property taxes, insurance and any HOA dues for each address. A lower asking price can still come with higher monthly costs." },
   { q: 'What are current mortgage rates in Westminster, CO?', a: 'Your rate depends on your loan amount, credit, down payment and the terms you choose. We can compare quotes for the same lock period and show how much you would pay upfront for each rate.' },
   { q: 'Do you offer VA loans in Westminster and Thornton?', a: 'Yes. VA loans are available for eligible veterans, active-duty service members, and surviving spouses throughout the north Denver metro including Westminster, Thornton, and Northglenn. Eligible buyers can often purchase without a down payment or monthly mortgage insurance. A funding fee may apply.' },
-  { q: 'Can tech workers in Broomfield qualify for special mortgage programs?', a: "Many Broomfield and Westminster tech workers are W-2 employees who qualify easily for conventional loans. But if you're a contractor, work on equity compensation, or have variable bonus income, those income structures can create complications. Jamie has programs for non-standard income situations and can often find solutions that standard bank underwriting won't accommodate." },
+  { q: 'Can tech workers in Broomfield qualify for special mortgage programs?', a: "Possibly. If you’re a contractor or some of your pay comes from stock or bonuses, show Jamie how you’re paid and which records you have. We can check what lenders may count before you set a purchase budget." },
   { q: 'How long does it take to close a mortgage in Westminster, CO?', a: 'The timing depends on underwriting, any required appraisal and title work. Share the seller’s proposed date with Jamie so you can plan for those steps before you sign.' },
   { q: 'Do you serve Broomfield, Thornton, and Northglenn?', a: 'Yes. The Becker Team serves all of the north Denver metro — Westminster, Broomfield, Thornton, Northglenn, Federal Heights, Commerce City, and surrounding communities.' },
 ]
@@ -97,7 +97,7 @@ export default function WestminsterMortgagePage() {
 
       <section className="bg-white py-5 px-6 border-b border-stone-200">
         <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-2 text-sm font-semibold" style={{ color: '#1F2E2A' }}>
-          <span>✦ Denver-Boulder Corridor Lender</span>
+          <span>✦ Denver-Boulder Corridor Mortgage Broker</span>
           <span>✦ Westminster Home Loans</span>
           <span>✦ Purchase Pre-Approval</span>
           <span>✦ 21+ Years Experience</span>
@@ -145,7 +145,7 @@ export default function WestminsterMortgagePage() {
             {[
               { title: 'Tech Corridor Expertise', body: "If you earn bonuses, stock compensation or contract income, we can help you identify the pay history and records a lender will review." },
               { title: 'Multiple Lender Access', body: 'Jamie compares rates, lender fees and loan terms from multiple wholesale lenders, including options for higher loan amounts.' },
-              { title: 'First-Time Buyer Programs', body: "Thornton and parts of Westminster offer entry-level pricing that's accessible with FHA loans and CHFA assistance programs. Jamie can identify which programs you qualify for quickly." },
+              { title: 'First-Time Buyer Programs', body: "If you’re buying your first home in Westminster or Thornton, look at how an FHA loan or down payment assistance would change the cash you need at closing. Eligibility varies by program." },
               { title: 'Pre-Approval and Closing', body: 'Jamie can review the documents needed for pre-approval and check a proposed closing date when you’re ready to make an offer.' },
             ].map((item) => (
               <div key={item.title} className="flex gap-4">
@@ -174,7 +174,7 @@ export default function WestminsterMortgagePage() {
           Ready to Buy in Westminster?
         </h2>
         <p data-reveal="fade" data-delay="150" className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Get pre-approved today and move with confidence in the Denver-Boulder corridor.
+          Start your pre-approval or ask what to budget for a home between Denver and Boulder.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="https://2179191.my1003app.com/794730/register" target="_blank" rel="noopener noreferrer"

@@ -44,7 +44,7 @@ const breadcrumb = {
 const programs = [
   { title: 'Primary Residence Jumbo', body: 'Compare rates, lender fees and reserve requirements for a purchase or refinance when your mortgage exceeds the county limit.' },
   { title: 'Second Home & Vacation Property', body: 'Finance a ski chalet in Vail, a mountain retreat in Aspen, or a summer home in Summit County — second home jumbo programs available.' },
-  { title: 'Investment Property Jumbo', body: 'Expand your portfolio with investment property jumbo financing. Ideal for rental properties in high-demand Colorado resort and tech corridors.' },
+  { title: 'Investment Property Jumbo', body: 'If you’ll use the property primarily as a rental, compare investment-property financing. Tell us how you plan to rent it so we can check lender requirements.' },
   { title: 'Non-Warrantable Condo Financing', body: 'Many Colorado mountain resort condos don\'t meet conventional or conforming guidelines. We have specialty programs for non-warrantable condo purchases in resort buildings.' },
   { title: 'Jumbo ARM Programs', body: 'An adjustable-rate loan may start with a lower rate. We can compare that payment with a fixed-rate loan and show what happens if the rate adjusts before you sell or refinance.' },
   { title: 'Asset Qualifier / High Net Worth', body: 'Qualify based on investment accounts and assets rather than traditional income — useful for buyers with complex or non-standard financial profiles.' },
@@ -188,7 +188,7 @@ export default function BoulderJumboPage() {
           className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
         >
-          The Mountain Property You Want Is Within Reach
+          Compare Financing for Your Mountain Property
         </h2>
         <p data-reveal="fade" data-delay="150" className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
           Jumbo financing for Colorado&apos;s most sought-after markets. Let&apos;s talk through your numbers.

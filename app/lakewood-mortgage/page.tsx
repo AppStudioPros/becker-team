@@ -15,7 +15,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'The Becker Team — Lakewood Colorado Mortgage Broker',
-  description: 'Local mortgage lender serving Lakewood, Wheat Ridge, Golden, Morrison, and west Denver communities.',
+  description: 'Local mortgage broker serving Lakewood, Wheat Ridge, Golden, Morrison, and west Denver communities.',
   url: 'https://www.thebeckerteam.com/lakewood-mortgage',
   provider: teamReference,
   areaServed: [
@@ -43,15 +43,15 @@ const programs = [
   { label: 'VA Loans', desc: 'Eligible veterans and service members in the west Denver metro may qualify with no down payment.', href: '/loan-programs/va-loans' },
   { label: 'Jumbo Loans', desc: 'Financing above conforming limits for Golden foothills properties and higher-value Lakewood homes near Green Mountain.', href: '/loan-programs/jumbo-loans' },
   { label: 'Self-Employed Loans', desc: 'Bank statement programs for Lakewood business owners and independent professionals who prefer alternatives to tax returns.', href: '/loan-programs/self-employed-loans' },
-  { label: 'Mortgage Accelerator', desc: 'A structured program to pay off your mortgage faster — ideal for Lakewood homeowners planning for retirement.', href: '/loan-programs/mortgage-accelerator' },
+  { label: 'Mortgage Accelerator', desc: 'Compare using a home equity line with paying extra principal on your current mortgage.', href: '/loan-programs/mortgage-accelerator' },
 ]
 
 const faqs = [
-  { q: 'Is Lakewood CO a good place to buy a home?', a: "Lakewood is one of the most desirable suburbs in the Denver metro — close to the mountains, well-connected by light rail, and more affordable than central Denver for comparable square footage. Green Mountain, Belmar, and the Union corridor have all seen strong demand. Long-term, Lakewood holds value well because of its location between Denver and the foothills." },
+  { q: 'What should I budget for when buying in Lakewood?', a: "As you compare homes in Green Mountain, Belmar and the Union corridor, look beyond the asking price. Get estimates for property taxes, homeowners insurance and any HOA dues so you can compare the monthly cost of specific homes." },
   { q: 'What are current mortgage rates in Lakewood, CO?', a: 'Rates change daily. We can compare mortgage quotes for your Lakewood home using the same loan amount and term. Ask about the lock period, points and fees so you can compare what each option would cost.' },
   { q: 'Do you offer jumbo loans for Golden and Green Mountain properties?', a: 'Yes. Start with the amount you plan to borrow after your down payment. We can check the county limit for the address, then compare the terms and reserve requirements for jumbo financing if your loan exceeds it.' },
   { q: 'Can I use a VA loan in Lakewood, CO?', a: 'Yes. Eligible Lakewood buyers may qualify for a VA-backed loan with no down payment and no monthly mortgage insurance. Jamie can help you understand the eligibility and loan requirements.' },
-  { q: 'Are there programs for Lakewood condos and townhomes?', a: "Yes, though condo financing has specific eligibility requirements depending on the complex. FHA and VA condo loans require the complex to be on the approved lists. Conventional condo loans have more flexibility. Jamie can quickly determine which programs apply to a specific property before you make an offer." },
+  { q: 'Are there programs for Lakewood condos and townhomes?', a: "Options depend on how the property is legally classified and how the lender reviews it. For condos, VA requires project approval. FHA can approve a project or an eligible individual unit. Share the address early so we can check what your loan would require." },
   { q: 'Do you serve Wheat Ridge, Golden, and Arvada?', a: 'Yes. The Becker Team serves all of the west Denver metro including Lakewood, Wheat Ridge, Golden, Morrison, Edgewater, Arvada, and surrounding communities.' },
 ]
 
@@ -97,7 +97,7 @@ export default function LakewoodMortgagePage() {
 
       <section className="bg-white py-5 px-6 border-b border-stone-200">
         <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-2 text-sm font-semibold" style={{ color: '#1F2E2A' }}>
-          <span>✦ West Denver Mortgage Lender</span>
+          <span>✦ West Denver Mortgage Broker</span>
           <span>✦ Lakewood Home Loans</span>
           <span>✦ Purchase Pre-Approval</span>
           <span>✦ 21+ Years Experience</span>

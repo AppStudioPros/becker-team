@@ -6,7 +6,7 @@ import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Centennial, CO Mortgage Lender and Home Loans',
+  title: 'Centennial, CO Mortgage Broker and Home Loans',
   description:
     'Compare conventional and jumbo home loans in Centennial. See how county loan limits, your down payment and income documentation affect your options.',
   alternates: { canonical: 'https://www.thebeckerteam.com/centennial-mortgage' },
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'The Becker Team — Centennial Colorado Mortgage Lender',
-  description: 'Local mortgage lender serving Centennial, Greenwood Village, Parker, Lone Tree, and Highlands Ranch in Arapahoe County.',
+  name: 'The Becker Team — Centennial Colorado Mortgage Broker',
+  description: 'Local mortgage broker serving Centennial, Greenwood Village, Parker, Lone Tree, and Highlands Ranch in Arapahoe County.',
   url: 'https://www.thebeckerteam.com/centennial-mortgage',
   provider: teamReference,
   areaServed: [
@@ -96,7 +96,7 @@ export default function CentennialMortgagePage() {
       <section className="relative py-28 md:py-40 px-6 text-white text-center" style={{ background: 'linear-gradient(135deg, #1c3023 0%, #0f1e14 60%, #162518 100%)' }}>
         <p className="text-sm uppercase tracking-widest font-semibold mb-4 text-white/70">Centennial, Colorado</p>
         <h1 className="text-4xl md:text-6xl font-bold mb-6" style={{ fontFamily: '"Playfair Display", Georgia, serif' }}>
-          Centennial Mortgage Lender
+          Centennial Mortgage Broker
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/80 leading-relaxed">
           Compare conventional, jumbo and VA home loans in Centennial, Greenwood Village, Parker, Lone Tree and Highlands Ranch with Jamie Becker.

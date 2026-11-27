@@ -133,7 +133,7 @@ export default function LoanProgramsPage() {
           Not Sure Which Program is Right for You?
         </h2>
         <p className="text-lg max-w-xl mx-auto mb-10 leading-relaxed" style={{ color: '#4a5e53' }}>
-          Let&apos;s discuss your unique situation and find the perfect loan solution
+          Tell us what you’re planning so we can compare loan options and costs.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -167,7 +167,7 @@ export default function LoanProgramsPage() {
           Ready to get started?
         </h2>
         <p className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Let&apos;s discuss your unique situation and find the perfect loan for you
+          Ask us which loan terms you can compare and what you’d need to apply.
         </p>
         <a
           href="https://2179191.my1003app.com/794730/register"
@@ -176,7 +176,7 @@ export default function LoanProgramsPage() {
           className="inline-block uppercase tracking-widest text-sm font-semibold px-14 py-5 rounded btn-hover"
           style={{ backgroundColor: '#1F2E2A', color: '#F5EFE6', border: '2px solid #F5EFE6' }}
         >
-          Get Pre-Approved Now
+          Start Your Application
         </a>
       </section>
     </>

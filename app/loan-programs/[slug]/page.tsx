@@ -30,7 +30,7 @@ const selfEmployedKeyFeatures = [
   },
   {
     title: 'P&L Statement Option',
-    desc: 'A CPA-prepared profit and loss statement can substitute for tax returns. Ideal when returns don\'t reflect current business performance.',
+    desc: 'Some programs can use a CPA-prepared profit and loss statement to document business income. Ask what other records the lender needs.',
   },
   {
     title: 'Bank Statement Program',
@@ -242,7 +242,7 @@ export default async function LoanProgramPage({ params }: Props) {
           Ready to get started?
         </h2>
         <p className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Let&apos;s discuss your unique situation and find the perfect loan for you
+          Tell us what you’re planning so we can compare loan options and costs.
         </p>
         <a
           href="https://2179191.my1003app.com/794730/register"
@@ -251,7 +251,7 @@ export default async function LoanProgramPage({ params }: Props) {
           className="inline-block uppercase tracking-widest text-sm font-semibold px-14 py-5 rounded btn-hover"
           style={{ backgroundColor: '#1F2E2A', color: '#F5EFE6', border: '2px solid #F5EFE6' }}
         >
-          Get Pre-Approved Now
+          Start Your Application
         </a>
       </section>
     </>

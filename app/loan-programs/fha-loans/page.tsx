@@ -31,23 +31,23 @@ const highlights = [
   },
   {
     title: 'More Flexible Credit Requirements',
-    body: 'FHA loans are available to borrowers with credit scores as low as 580, and sometimes lower with a larger down payment — opening the door for buyers who don\'t yet meet conventional standards.',
+    body: 'FHA may allow a lower credit score with a larger down payment. Individual lenders can set higher minimum scores.',
   },
   {
     title: 'Government-Insured, Private Lender',
-    body: 'The FHA insures the loan — your private lender funds it. That government backing gives lenders more flexibility to approve borrowers who might not qualify conventionally.',
+    body: 'A private lender makes the loan and the FHA insures it. We can compare FHA rules with those for a conventional loan.',
   },
   {
-    title: 'Easier Qualification Standards',
-    body: 'Debt-to-income ratios and documentation requirements can be more forgiving than conventional loans, making FHA a practical path for borrowers with complex or limited financial histories.',
+    title: 'Review Income and Debts',
+    body: 'The lender compares your monthly debts with your qualifying income and reviews the rest of your application. We can explain what records you’ll need.',
   },
 ]
 
 const fitProfiles = [
   { label: 'First-time homebuyers', body: 'If you’re buying your first home, compare FHA with conventional financing. We can show you the down payment, mortgage insurance and cash needed for each.' },
-  { label: 'Buyers with lower credit scores', body: 'If your credit is still developing, FHA\'s lower floor makes approval possible while you continue building your profile.' },
-  { label: 'Buyers with limited savings', body: 'A 3.5% down payment means more buyers can get into a home without depleting all of their reserves.' },
-  { label: 'Borrowers with higher debt-to-income ratios', body: 'FHA underwriting can accommodate DTI ratios that might not pass a conventional review.' },
+  { label: 'Buyers with lower credit scores', body: 'Ask how your credit history and down payment affect the FHA and conventional options you can compare.' },
+  { label: 'Buyers with limited savings', body: 'A smaller down payment can leave more of your savings available. Include mortgage insurance and other closing costs in your comparison.' },
+  { label: 'Borrowers with higher debt-to-income ratios', body: 'Ask us to compare how lenders would review your monthly debts and income for an FHA loan and a conventional loan.' },
 ]
 
 const faqs = [
@@ -253,10 +253,10 @@ export default function FhaLoansPage() {
             <div className="flex-1 flex flex-col justify-between p-10 md:p-12" style={{ backgroundColor: '#F5EFE6' }}>
               <div className="prose-becker mb-10">
                 <p>
-                  First-time buyers and buyers rebuilding their financial profile deserve the same clear, honest guidance as any other client. Jamie Becker brings 21 years of mortgage experience to every conversation — and that includes knowing exactly when an FHA loan is the right move and when a different path makes more sense.
+                  Jamie Becker has 21 years of mortgage experience. He can help you compare FHA and conventional financing using the same purchase price, including the down payment, mortgage insurance and cash due at closing.
                 </p>
                 <p>
-                  No pressure, no upsell. If FHA is your best option right now, we will make it as clean and straightforward as possible.
+                  We can also show how long the mortgage insurance lasts and what would change if you put more money down.
                 </p>
               </div>
               <Link

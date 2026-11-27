@@ -138,6 +138,9 @@ export default function GoogleReviews() {
                 ))}
               </ul>
             </div>
+            {source === 'google' && (
+              <p className={styles.selectionNote}>* We feature five-star written reviews in Google’s order of relevance.</p>
+            )}
           </>
         )}
         <div className={styles.footer} data-empty={count === 0}>

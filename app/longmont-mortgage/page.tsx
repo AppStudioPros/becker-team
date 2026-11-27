@@ -15,7 +15,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'The Becker Team — Longmont Colorado Mortgage Broker',
-  description: 'Local mortgage lender serving Longmont, Firestone, Frederick, Mead, and Berthoud on the northern Front Range.',
+  description: 'Local mortgage broker serving Longmont, Firestone, Frederick, Mead, and Berthoud on the northern Front Range.',
   url: 'https://www.thebeckerteam.com/longmont-mortgage',
   provider: teamReference,
   areaServed: [
@@ -38,7 +38,7 @@ const breadcrumb = {
 
 const programs = [
   { label: 'CHFA Loans', desc: 'Eligible CHFA first mortgages can include a grant or a deferred loan. The program and a participating lender determine eligibility.', href: '/chfa-loan-colorado' },
-  { label: 'FHA Loans', desc: '3.5% down and flexible credit requirements. One of the most popular loan types for first-time buyers in Longmont, Firestone, and Frederick.', href: '/loan-programs/fha-loans' },
+  { label: 'FHA Loans', desc: 'If you’re buying in Longmont, Firestone or Frederick, compare your down payment, mortgage insurance and cash due at closing with other loan options.', href: '/loan-programs/fha-loans' },
   { label: 'Conventional Loans', desc: 'Explore conventional financing for a Longmont townhome or single-family home and see how your down payment changes the monthly cost.', href: '/loan-programs/conventional-loans' },
   { label: 'VA Loans', desc: 'Eligible Longmont buyers may qualify with no down payment and no monthly mortgage insurance.', href: '/loan-programs/va-loans' },
   { label: 'USDA Loans', desc: 'An eligible rural address and household income may make a no-down-payment USDA loan possible.', href: '/contact' },

@@ -220,12 +220,12 @@ function ChatPanel() {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div className={`fixed bottom-6 right-6 flex flex-col items-end gap-3 ${open ? 'z-[9999]' : 'z-50'}`}>
       {/* Chat panel */}
       {open && (
         <div
           className="flex flex-col rounded-2xl shadow-2xl overflow-hidden"
-          style={{ width: '340px', height: '480px', backgroundColor: '#fff', border: '1px solid #ede4cc' }}
+          style={{ width: '340px', maxWidth: 'calc(100vw - 3rem)', height: '480px', maxHeight: 'calc(100dvh - 6.5rem)', backgroundColor: '#fff', border: '1px solid #ede4cc' }}
         >
           {/* Header */}
           <div className="shrink-0" style={{ backgroundColor: '#1c3023' }}>
@@ -249,7 +249,7 @@ function ChatPanel() {
                     Clear
                   </button>
                 )}
-                <button onClick={() => setOpen(false)} className="p-1 rounded hover:bg-white/10 transition-colors">
+                <button onClick={() => setOpen(false)} aria-label="Minimize chat" className="p-1 rounded hover:bg-white/10 transition-colors">
                   <ChevronDown size={18} color="rgba(245,236,216,0.8)" />
                 </button>
               </div>
@@ -261,7 +261,7 @@ function ChatPanel() {
               style={{ backgroundColor: '#c8972b', color: '#fff' }}
             >
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 10.5 19.79 19.79 0 0 1 1.61 2 2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 7.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              Call Now — (720) 492-3335
+              Call Now (720) 492-3335
             </a>
           </div>
 
@@ -304,11 +304,11 @@ function ChatPanel() {
                 </div>
                 {m.role === 'assistant' && i === messages.length - 1 && (
                   <a
-                    href="/contact"
+                    href="/contact#contact-form"
                     className="mt-2 text-xs font-semibold px-3 py-1.5 rounded-lg transition-opacity hover:opacity-90"
                     style={{ backgroundColor: '#1c3023', color: '#f5ecd8' }}
                   >
-                    Schedule a Free Call →
+                    Send Jamie a Message →
                   </a>
                 )}
               </div>
@@ -353,12 +353,14 @@ function ChatPanel() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Type a message..."
+                  aria-label="Your message"
                   disabled={loading}
-                  className="flex-1 text-sm px-3 py-2.5 rounded-lg border outline-none disabled:opacity-50"
+                  className="min-w-0 flex-1 text-sm px-3 py-2.5 rounded-lg border outline-none disabled:opacity-50"
                   style={{ borderColor: '#ede4cc', color: '#1c3023' }}
                 />
                 <button
                   type="submit"
+                  aria-label="Send message"
                   disabled={!input.trim() || loading}
                   className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 disabled:opacity-40 transition-opacity"
                   style={{ backgroundColor: '#1c3023' }}
@@ -377,6 +379,7 @@ function ChatPanel() {
         className="relative w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-105 active:scale-95"
         style={{ background: 'radial-gradient(circle at 35% 30%, #3a6b4a, #1c3023 55%, #0e1a12)', border: '1px solid rgba(255,255,255,0.12)', boxShadow: 'inset 0 1px 3px rgba(255,255,255,0.18), inset 0 -2px 4px rgba(0,0,0,0.3)' }}
         aria-label="Chat with us"
+        aria-expanded={open}
       >
         {open ? (
           <X size={22} color="#f5ecd8" />

@@ -1,4 +1,5 @@
 import SectionBackdrop from '@/components/SectionBackdrop'
+import FaqAccordion from '@/components/FaqAccordion'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -46,7 +47,7 @@ const faqs = [
       { q: 'What is a jumbo loan?', a: 'A jumbo loan exceeds the conforming loan limit for the property’s county, number of units and applicable year. Compare the amount you plan to borrow after the down payment with that limit.' },
       { q: 'What is an asset qualifier loan?', a: 'This loan uses the eligible assets you have left after closing to help you qualify. Our benchmark is 125% of the loan amount. This can help buyers with substantial savings or investments, including retirees and buyers with complex tax returns.' },
       { q: 'Can I get a mortgage if I’m self-employed?', a: 'Yes. We can review your tax returns for a conventional loan or explore bank statement loans that count eligible deposits. The right option depends on your business history and the records you have.' },
-      { q: 'What is the Mortgage Accelerator program?', guide: '/loan-programs/mortgage-accelerator/guide#worked-example', a: 'The Accelerator uses a line of credit secured by your home for everyday banking. Deposits reduce the balance and withdrawals increase it. Paying down the balance faster depends on how much extra cash you can leave after bills and interest. Compare both loans using the same amount of money before deciding.' },
+      { q: 'What is the Mortgage Accelerator program?', link: { href: '/loan-programs/mortgage-accelerator/guide#worked-example', label: 'See the one-month Accelerator payoff example' }, a: 'The Accelerator uses a line of credit secured by your home for everyday banking. Deposits reduce the balance and withdrawals increase it. Paying down the balance faster depends on how much extra cash you can leave after bills and interest. Compare both loans using the same amount of money before deciding.' },
     ],
   },
   {
@@ -104,7 +105,7 @@ export default function FaqPage() {
       </section>
 
       {/* FAQ Content */}
-      <section className="py-16 px-6 max-w-4xl mx-auto">
+      <section className="py-16 px-6 max-w-4xl mx-auto [--faq-question-font:var(--font-display)] [&_.faq-question]:text-lg [&_.faq-answer]:text-base [&_.faq-answer]:leading-relaxed">
         {faqs.map(cat => (
           <div key={cat.category} className="mb-12">
             <h2
@@ -117,21 +118,7 @@ export default function FaqPage() {
             >
               {cat.category}
             </h2>
-            <div className="space-y-6">
-              {cat.items.map(item => (
-                <div key={item.q} className="border-b border-gray-100 pb-6">
-                  <h3 className="text-lg font-semibold mb-2" style={{ color: '#1F2E2A' }}>
-                    {item.q}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">{item.a}</p>
-                  {'guide' in item && item.guide && (
-                    <Link href={item.guide} className="mt-2 inline-block font-semibold underline underline-offset-4">
-                      See the one-month Accelerator payoff example
-                    </Link>
-                  )}
-                </div>
-              ))}
-            </div>
+            <FaqAccordion items={cat.items} />
           </div>
         ))}
 

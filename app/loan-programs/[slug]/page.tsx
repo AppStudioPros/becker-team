@@ -1,4 +1,5 @@
 import SectionBackdrop from '@/components/SectionBackdrop'
+import FaqAccordion from '@/components/FaqAccordion'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
@@ -120,7 +121,7 @@ export default async function LoanProgramPage({ params }: Props) {
       )}
 
       {/* ── Content ── */}
-      <section style={{ backgroundColor: '#F5EFE6' }} className="py-12 md:py-16 px-6">
+      <section style={{ backgroundColor: '#F5EFE6' }} className="py-12 md:py-16 px-6 [&_.faq-question]:text-lg">
         <div className="max-w-3xl mx-auto">
           <p className="text-center text-gray-600 mb-6 italic">{program.tagline}</p>
           <div className="divider" />
@@ -189,19 +190,7 @@ export default async function LoanProgramPage({ params }: Props) {
           >
             Frequently Asked Questions
           </h2>
-          <div className="flex flex-col gap-6">
-            {program.faqs.map((faq) => (
-              <div key={faq.q} className="border-b border-[#ede4cc] pb-6">
-                <h3
-                  className="font-semibold mb-2 text-lg"
-                  style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
-                >
-                  {faq.q}
-                </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">{faq.a}</p>
-              </div>
-            ))}
-          </div>
+          <FaqAccordion items={program.faqs} />
         </div>
       </section>
 

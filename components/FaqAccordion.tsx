@@ -1,10 +1,12 @@
 'use client'
 
 import { useId, useState } from 'react'
+import Link from 'next/link'
 
 interface FaqItem {
   q: string
   a: string
+  link?: { href: string; label: string }
 }
 
 interface Props {
@@ -16,33 +18,36 @@ function FaqItem({ faq, isOpen, onToggle }: { faq: FaqItem; isOpen: boolean; onT
 
   return (
     <div style={{ borderTop: '1px solid #ded6c4' }}>
-      <button
-        type="button"
-        aria-expanded={isOpen}
-        aria-controls={answerId}
-        onClick={onToggle}
-        className="w-full flex items-center justify-between text-left py-5 gap-6 group"
-      >
-        <span
-          className="text-base md:text-lg font-semibold transition-colors duration-200"
-          style={{
-            fontFamily: '"Playfair Display", Georgia, serif',
-            color: isOpen ? '#B98942' : '#1F2E2A',
-          }}
+      <h3>
+        <button
+          type="button"
+          aria-expanded={isOpen}
+          aria-controls={answerId}
+          onClick={onToggle}
+          className="w-full flex items-center justify-between text-left py-5 gap-6 group font-sans"
         >
-          {faq.q}
-        </span>
-        <span
-          aria-hidden="true"
-          className="shrink-0 text-2xl leading-none transition-transform duration-300"
-          style={{ color: '#B98942', transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)' }}
-        >
-          +
-        </span>
-      </button>
+          <span
+            className="faq-question text-base md:text-lg font-semibold transition-colors duration-200"
+            style={{
+              fontFamily: 'var(--faq-question-font, "Playfair Display", Georgia, serif)',
+              color: isOpen ? 'var(--color-bronze-ink)' : '#1F2E2A',
+            }}
+          >
+            {faq.q}
+          </span>
+          <span
+            aria-hidden="true"
+            className="shrink-0 text-2xl leading-none transition-transform duration-300"
+            style={{ color: 'var(--color-bronze-ink)', transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)' }}
+          >
+            +
+          </span>
+        </button>
+      </h3>
       <div
         id={answerId}
         aria-hidden={!isOpen}
+        inert={!isOpen}
         style={{
           display: 'grid',
           gridTemplateRows: isOpen ? '1fr' : '0fr',
@@ -51,7 +56,14 @@ function FaqItem({ faq, isOpen, onToggle }: { faq: FaqItem; isOpen: boolean; onT
         }}
       >
         <div className="min-h-0 overflow-hidden pr-10">
-          <p className="pb-5 text-sm text-gray-600 leading-relaxed">{faq.a}</p>
+          <div className="faq-answer pb-5 text-sm text-gray-600 leading-relaxed">
+            <p>{faq.a}</p>
+            {faq.link && (
+              <Link href={faq.link.href} className="mt-2 inline-block font-semibold text-forest underline underline-offset-4">
+                {faq.link.label}
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </div>
@@ -65,7 +77,7 @@ export default function FaqAccordion({ items }: Props) {
     <div className="flex flex-col" style={{ borderBottom: '1px solid #ded6c4' }}>
       {items.map((faq, i) => (
         <FaqItem
-          key={i}
+          key={faq.q}
           faq={faq}
           isOpen={openIndex === i}
           onToggle={() => setOpenIndex(openIndex === i ? null : i)}

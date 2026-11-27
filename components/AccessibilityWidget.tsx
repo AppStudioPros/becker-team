@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { usePathname } from 'next/navigation'
 import { X, Type, Contrast, Eye, RotateCcw } from 'lucide-react'
 
@@ -40,19 +40,31 @@ interface A11ySettings {
 
 const DEFAULT: A11ySettings = { fontSize: 1, contrast: 'normal', underlineLinks: false, highlightFocus: false, reducedMotion: false }
 
+function readSettings(): A11ySettings {
+  if (typeof window === 'undefined') return DEFAULT
+  try {
+    const saved = localStorage.getItem('becker-a11y-settings')
+    return saved ? { ...DEFAULT, ...JSON.parse(saved) } : DEFAULT
+  } catch {
+    return DEFAULT
+  }
+}
+
 export default function AccessibilityWidget() {
   const pathname = usePathname()
-  const [open, setOpen] = useState(false)
-  const [settings, setSettings] = useState<A11ySettings>(DEFAULT)
-
   if (pathname?.startsWith('/admin')) return null
+  return <AccessibilityPanel />
+}
+
+function AccessibilityPanel() {
+  const [open, setOpen] = useState(false)
+  const [settings, setSettings] = useState(readSettings)
+  const launcherRef = useRef<HTMLButtonElement>(null)
+  const dialogRef = useRef<HTMLDialogElement>(null)
 
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem('becker-a11y-settings')
-      if (saved) setSettings(JSON.parse(saved))
-    } catch { /* ignore */ }
-  }, [])
+    if (open) dialogRef.current?.showModal()
+  }, [open])
 
   useEffect(() => {
     const html = document.documentElement
@@ -60,10 +72,12 @@ export default function AccessibilityWidget() {
     html.classList.remove('a11y-high-contrast', 'a11y-inverted')
     if (settings.contrast === 'high') html.classList.add('a11y-high-contrast')
     if (settings.contrast === 'inverted') html.classList.add('a11y-inverted')
-    settings.underlineLinks ? html.classList.add('a11y-underline-links') : html.classList.remove('a11y-underline-links')
-    settings.highlightFocus ? html.classList.add('a11y-focus-highlight') : html.classList.remove('a11y-focus-highlight')
-    settings.reducedMotion ? html.classList.add('a11y-reduce-motion') : html.classList.remove('a11y-reduce-motion')
-    localStorage.setItem('becker-a11y-settings', JSON.stringify(settings))
+    html.classList.toggle('a11y-underline-links', settings.underlineLinks)
+    html.classList.toggle('a11y-focus-highlight', settings.highlightFocus)
+    html.classList.toggle('a11y-reduce-motion', settings.reducedMotion)
+    try {
+      localStorage.setItem('becker-a11y-settings', JSON.stringify(settings))
+    } catch { /* The controls still work when storage is unavailable. */ }
   }, [settings])
 
   const reset = () => setSettings(DEFAULT)
@@ -71,7 +85,7 @@ export default function AccessibilityWidget() {
   const btnStyle = (active: boolean): React.CSSProperties => ({
     background: active ? '#B98942' : 'rgba(255,255,255,0.08)',
     border: `1px solid ${active ? '#B98942' : 'rgba(255,255,255,0.15)'}`,
-    color: active ? '#fff' : 'rgba(255,255,255,0.75)',
+    color: active ? '#111a14' : 'rgba(255,255,255,0.75)',
     borderRadius: 6, padding: '8px 12px', cursor: 'pointer',
     fontSize: '0.8rem', fontWeight: 600, transition: 'all 0.15s',
     display: 'flex', alignItems: 'center', gap: 6,
@@ -87,6 +101,7 @@ export default function AccessibilityWidget() {
   return (
     <>
       <style>{`
+        .a11y-settings-dialog::backdrop { background: transparent; }
         .a11y-high-contrast { filter: contrast(1.5); }
         .a11y-inverted { filter: invert(1) hue-rotate(180deg); }
         .a11y-underline-links a { text-decoration: underline !important; }
@@ -98,8 +113,10 @@ export default function AccessibilityWidget() {
 
       {/* Floating button */}
       <button
-        onClick={() => setOpen(!open)}
+        ref={launcherRef}
+        onClick={() => setOpen(true)}
         aria-label="Accessibility options"
+        aria-haspopup="dialog"
         aria-expanded={open}
         title="Accessibility Options"
         style={{
@@ -118,12 +135,38 @@ export default function AccessibilityWidget() {
 
       {/* Panel */}
       {open && (
-        <div
-          role="dialog"
+        <dialog
+          ref={dialogRef}
+          className="a11y-settings-dialog"
           aria-label="Accessibility settings"
           aria-modal="true"
+          onClose={() => {
+            setOpen(false)
+            launcherRef.current?.focus({ preventScroll: true })
+          }}
+          onKeyDown={event => {
+            if (event.key !== 'Tab') return
+            const controls = event.currentTarget.querySelectorAll<HTMLElement>('button:enabled, a[href]')
+            const first = controls[0]
+            const last = controls[controls.length - 1]
+            if (event.shiftKey && event.target === first) {
+              event.preventDefault()
+              last.focus()
+            } else if (!event.shiftKey && event.target === last) {
+              event.preventDefault()
+              first.focus()
+            }
+          }}
+          onClick={event => {
+            if (event.target !== event.currentTarget) return
+            const bounds = event.currentTarget.getBoundingClientRect()
+            if (event.clientX < bounds.left || event.clientX >= bounds.right ||
+                event.clientY < bounds.top || event.clientY >= bounds.bottom) {
+              event.currentTarget.close()
+            }
+          }}
           style={{
-            position: 'fixed', bottom: 152, right: 24, zIndex: 9997,
+            position: 'fixed', inset: 'auto 24px 152px auto', margin: 0,
             width: 300, maxWidth: 'calc(100vw - 36px)',
             maxHeight: 'calc(100dvh - 164px)', overflowY: 'auto', background: '#1c3023',
             border: '1px solid rgba(185,137,66,0.35)',
@@ -141,7 +184,7 @@ export default function AccessibilityWidget() {
               <button onClick={reset} title="Reset all" style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.5)', cursor: 'pointer', padding: 4 }}>
                 <RotateCcw size={14} />
               </button>
-              <button onClick={() => setOpen(false)} aria-label="Close" style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.5)', cursor: 'pointer', padding: 4 }}>
+              <button onClick={() => dialogRef.current?.close()} aria-label="Close" style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.5)', cursor: 'pointer', padding: 4 }}>
                 <X size={16} />
               </button>
             </div>
@@ -200,11 +243,11 @@ export default function AccessibilityWidget() {
 
           {/* Accessibility Statement */}
           <div style={{ marginTop: 16, paddingTop: 14, borderTop: '1px solid rgba(255,255,255,0.08)', textAlign: 'center' }}>
-            <a href="/accessibility" style={{ color: '#B98942', fontSize: '0.78rem', textDecoration: 'underline' }}>
+            <a href="/accessibility" style={{ color: '#e8c97a', fontSize: '0.78rem', textDecoration: 'underline' }}>
               Accessibility Statement
             </a>
           </div>
-        </div>
+        </dialog>
       )}
     </>
   )

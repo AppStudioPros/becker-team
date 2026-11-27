@@ -239,7 +239,7 @@ export default function JumboLoansPage() {
             Who This Tends to Fit Best
           </h2>
           <p className="text-white/70 text-sm leading-relaxed mb-12 max-w-2xl text-center mx-auto">
-            Jumbo loans reward financial strength. Qualified borrowers get access to financing that conventional programs simply can&apos;t provide.
+            A jumbo loan may fit if the mortgage you need is above your county’s conforming loan limit. We’ll help you compare the down payment, monthly payment and cash you’ll need to keep after closing.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {fitProfiles.map((p, i) => (
@@ -365,7 +365,7 @@ export default function JumboLoansPage() {
           Financing That Matches Your Property
         </h2>
         <p data-reveal="fade" data-delay="150" className="text-lg md:text-xl max-w-xl mx-auto mb-10 text-white/80 leading-relaxed">
-          If the property you want exceeds conventional loan limits, let&apos;s talk through what jumbo financing looks like for your situation.
+          Tell us the purchase price, your down payment and how many units the property has. We’ll check the amount you need to borrow against the conforming limit for that county and year, then walk you through your options.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a

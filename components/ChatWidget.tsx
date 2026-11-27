@@ -1,9 +1,9 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { X, Send, ChevronDown } from 'lucide-react'
-import ReactMarkdown from 'react-markdown'
+const ChatReply = lazy(() => import('./ChatReply'))
 
 // ── 4-Node Orb (Becker colors) ──────────────────────────────────────────────
 
@@ -56,8 +56,14 @@ function NodeOrb({ className }: { className?: string }) {
       rafRef.current = window.requestAnimationFrame(step)
     }
 
-    rafRef.current = window.requestAnimationFrame(step)
-    return () => { if (rafRef.current != null) window.cancelAnimationFrame(rafRef.current) }
+    const start = () => { rafRef.current = window.requestAnimationFrame(step) }
+    if (document.readyState === 'complete') start()
+    else window.addEventListener('load', start, { once: true })
+
+    return () => {
+      window.removeEventListener('load', start)
+      if (rafRef.current != null) window.cancelAnimationFrame(rafRef.current)
+    }
   }, [])
 
   // Connect nodes in a ring: 0-1, 1-2, 2-3, 3-0, plus diagonals 0-2, 1-3
@@ -112,9 +118,14 @@ const STARTERS = [
 
 export default function ChatWidget() {
   const pathname = usePathname()
-  const [open, setOpen] = useState(false)
 
   if (pathname?.startsWith('/admin')) return null
+
+  return <ChatPanel />
+}
+
+function ChatPanel() {
+  const [open, setOpen] = useState(false)
   const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
@@ -259,7 +270,7 @@ export default function ChatWidget() {
             {messages.length === 0 && (
               <div>
                 <p className="text-sm mb-4 leading-relaxed" style={{ color: '#555' }}>
-                  Hey there! I'm here to answer questions about our loan programs, the team, and how we can help you get into a home. What's on your mind?
+                  Hey there! I’m here to answer questions about our loan programs, the team, and how we can help you get into a home. What’s on your mind?
                 </p>
                 <div className="flex flex-col gap-2">
                   {STARTERS.map(s => (
@@ -285,18 +296,10 @@ export default function ChatWidget() {
                     : { backgroundColor: '#fff', color: '#333', border: '1px solid #ede4cc', borderBottomLeftRadius: '4px' }
                   }
                 >
-                  {m.role === 'user' ? m.content : (
-                    <ReactMarkdown
-                      components={{
-                        p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
-                        strong: ({ children }) => <strong className="font-semibold" style={{ color: '#1c3023' }}>{children}</strong>,
-                        ul: ({ children }) => <ul className="mt-1 mb-2 space-y-1 pl-3">{children}</ul>,
-                        li: ({ children }) => <li className="flex gap-1.5"><span style={{ color: '#c8972b' }}>•</span><span>{children}</span></li>,
-                        a: ({ children, href }) => <a href={href} className="underline" style={{ color: '#1c3023' }}>{children}</a>,
-                      }}
-                    >
-                      {m.content}
-                    </ReactMarkdown>
+                  {m.role === 'user' || !m.content ? m.content : (
+                    <Suspense fallback={m.content}>
+                      <ChatReply content={m.content} />
+                    </Suspense>
                   )}
                 </div>
                 {m.role === 'assistant' && i === messages.length - 1 && (

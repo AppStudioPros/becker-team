@@ -1,3 +1,4 @@
+import SectionBackdrop from '@/components/SectionBackdrop'
 import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -103,7 +104,7 @@ const loanJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LoanOrCredit',
   name: 'Home Mortgage Accelerator',
-  description: 'Proprietary mortgage accelerator program designed to pay off your home loan faster and reduce total interest paid. NMLS #794730.',
+  description: 'A strategy using a home equity line of credit. Payoff timing and interest depend on the balance, rate, fees and when you deposit or withdraw money.',
   url: 'https://www.thebeckerteam.com/loan-programs/mortgage-accelerator',
   provider: teamReference,
   areaServed: { '@type': 'State', name: 'Colorado' },
@@ -122,14 +123,9 @@ export default function MortgageAcceleratorPage() {
 
       {/* ── Hero ── */}
       <section
-        className="relative py-14 md:py-24 px-6 text-center text-white"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.6), rgba(20,35,25,0.6)), url("/images/mortgage-accelerator-hero.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 55%',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-14 md:py-24 px-6 text-center text-white"
       >
+        <SectionBackdrop src="/images/mortgage-accelerator-hero.jpg" shade={0.6} position="center 55%" hero />
         <h1
           className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
@@ -197,14 +193,9 @@ export default function MortgageAcceleratorPage() {
 
       {/* ── Is This Right For You? (unified section, image overlay) ── */}
       <section
-        className="py-16 md:py-24 px-6"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.88), rgba(20,35,25,0.88)), url("/images/ma-coins-houses.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-16 md:py-24 px-6"
       >
+        <SectionBackdrop src="/images/ma-coins-houses.jpg" shade={0.88} />
         <div className="max-w-5xl mx-auto">
           <h2
             data-reveal
@@ -360,7 +351,7 @@ export default function MortgageAcceleratorPage() {
                 fill
                 className="object-cover"
                 style={{ objectPosition: 'center 55%' }}
-                priority
+                sizes="(min-width: 768px) 420px, calc(100vw - 3rem)"
               />
             </div>
           </div>
@@ -397,14 +388,9 @@ export default function MortgageAcceleratorPage() {
 
       {/* ── Bottom CTA ── */}
       <section
-        className="relative py-24 md:py-36 px-6 text-white text-center"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.55), rgba(20,35,25,0.55)), url("/images/cta-mountain.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-24 md:py-36 px-6 text-white text-center"
       >
+        <SectionBackdrop src="/images/cta-mountain.jpg" shade={0.55} />
         <h2
           data-reveal="fade"
           className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5"

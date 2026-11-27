@@ -1,3 +1,4 @@
+import SectionBackdrop from '@/components/SectionBackdrop'
 import { jamieBecker } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import { jamieLicenses } from '@/lib/jamieLicenses'
@@ -132,6 +133,7 @@ export default function AboutPage() {
                 <Image
                   src="/images/squarespace/jamie-fishing.jpg"
                   alt="Jamie Becker, Colorado Mortgage Broker"
+                  sizes="(min-width: 768px) 480px, 80vw"
                   width={480}
                   height={480}
                   priority
@@ -233,15 +235,9 @@ export default function AboutPage() {
       {/* ── Giving Back ── */}
       <section
         id="givingback"
-        className="relative py-12 md:py-20 px-6"
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(20,35,25,0.55), rgba(20,35,25,0.55)), url("/images/giving-back-bg.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-12 md:py-20 px-6"
       >
+        <SectionBackdrop src="/images/giving-back-bg.jpg" shade={0.55} />
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div
@@ -429,15 +425,9 @@ export default function AboutPage() {
 
       {/* ── Ready to get started? ── */}
       <section
-        className="relative py-24 md:py-36 px-6 text-white text-center"
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(20,35,25,0.55), rgba(20,35,25,0.55)), url("/images/cta-mountain.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-24 md:py-36 px-6 text-white text-center"
       >
+        <SectionBackdrop src="/images/cta-mountain.jpg" shade={0.55} />
         <h2
           data-reveal="fade"
           className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5"

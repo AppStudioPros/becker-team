@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import ConditionalLayout from "@/components/ConditionalLayout";
+import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
 import AccessibilityWidget from "@/components/AccessibilityWidget";
 import AnimationProvider from "@/components/AnimationProvider";
@@ -75,14 +76,13 @@ export default function RootLayout({
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <body>
         <AnimationProvider />
-        <ConditionalLayout>
+        <ConditionalLayout footer={<Footer />}>
           <main id="main-content" tabIndex={-1}>{children}</main>
         </ConditionalLayout>
         <AccessibilityWidget />
         <ChatWidget />
         <Analytics />
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-J1L8L67WJT" strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="beforeInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -90,6 +90,7 @@ export default function RootLayout({
             gtag('config', 'G-J1L8L67WJT');
           `}
         </Script>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-J1L8L67WJT" strategy="lazyOnload" />
       </body>
     </html>
   );

@@ -1,3 +1,4 @@
+import SectionBackdrop from '@/components/SectionBackdrop'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -17,7 +18,7 @@ const programCells = [
   { title: 'FHA Loans',                 href: '/loan-programs/fha-loans',             image: '/images/squarespace/lp-mortgage-accelerator.jpg' },
   { title: 'VA Loans',                  href: '/loan-programs/va-loans',              image: '/images/squarespace/lp-va.jpg' },
   { title: 'Jumbo Loans',               href: '/loan-programs/jumbo-loans',           image: '/images/squarespace/lp-fha.jpg' },
-  { title: 'Self Employed Loans',       href: '/loan-programs/self-employed-loans',   image: '/images/squarespace/lp-jumbo.jpg' },
+  { title: 'Self-Employed Loans',       href: '/loan-programs/self-employed-loans',   image: '/images/squarespace/lp-jumbo.jpg' },
 ]
 
 const itemListJsonLd = {
@@ -33,7 +34,7 @@ const itemListJsonLd = {
     { '@type': 'ListItem', position: 4, name: 'FHA Loans', url: 'https://www.thebeckerteam.com/loan-programs/fha-loans' },
     { '@type': 'ListItem', position: 5, name: 'VA Loans', url: 'https://www.thebeckerteam.com/loan-programs/va-loans' },
     { '@type': 'ListItem', position: 6, name: 'Jumbo Loans', url: 'https://www.thebeckerteam.com/loan-programs/jumbo-loans' },
-    { '@type': 'ListItem', position: 7, name: 'Self Employed Loans', url: 'https://www.thebeckerteam.com/loan-programs/self-employed-loans' },
+    { '@type': 'ListItem', position: 7, name: 'Self-Employed Loans', url: 'https://www.thebeckerteam.com/loan-programs/self-employed-loans' },
   ],
 }
 
@@ -43,15 +44,9 @@ export default function LoanProgramsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       {/* ── Header ── */}
       <section
-        className="relative py-12 md:py-20 px-6 text-center text-white"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.65), rgba(20,35,25,0.65)), url("/images/loan-programs-hero.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-12 md:py-20 px-6 text-center text-white"
       >
+        <SectionBackdrop src="/images/loan-programs-hero.jpg" shade={0.65} hero />
         <h1
           className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
@@ -81,7 +76,7 @@ export default function LoanProgramsPage() {
                   src={cell.image}
                   alt={cell.title}
                   fill
-                  priority
+                  sizes="(min-width: 1328px) 416px, (min-width: 768px) 33vw, calc(100vw - 3rem)"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/55 group-hover:bg-black/40 transition-colors duration-300" />
@@ -111,7 +106,7 @@ export default function LoanProgramsPage() {
                   src={cell.image}
                   alt={cell.title}
                   fill
-                  priority
+                  sizes="(min-width: 1328px) 416px, (min-width: 768px) 33vw, calc(100vw - 3rem)"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/55 group-hover:bg-black/40 transition-colors duration-300" />
@@ -162,14 +157,9 @@ export default function LoanProgramsPage() {
 
       {/* ── CTA ── */}
       <section
-        className="relative py-24 md:py-36 px-6 text-white text-center"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.55), rgba(20,35,25,0.55)), url("/images/cta-mountain.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-24 md:py-36 px-6 text-white text-center"
       >
+        <SectionBackdrop src="/images/cta-mountain.jpg" shade={0.55} />
         <h2
           className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}

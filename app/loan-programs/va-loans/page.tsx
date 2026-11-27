@@ -1,3 +1,4 @@
+import SectionBackdrop from '@/components/SectionBackdrop'
 import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -26,7 +27,7 @@ const jsonLd = {
 const highlights = [
   {
     title: 'Low or No Down Payment',
-    body: 'Eligible borrowers can purchase a home with zero down — one of the most significant financial benefits available to veterans and active-duty service members.',
+    body: 'Eligible borrowers with full entitlement can often buy without a down payment when the price is within the home’s appraised value.',
   },
   {
     title: 'No Private Mortgage Insurance',
@@ -46,7 +47,7 @@ const fitProfiles = [
   { label: 'Veterans', body: 'VA considers when and how long you served, your type of service and character of discharge. Qualifying service can include Guard and Reserve duty.' },
   { label: 'Active-duty service members', body: 'Current members of the Armed Forces who meet service length requirements can use their VA benefit while still serving.' },
   { label: 'Eligible surviving spouses', body: 'Certain surviving spouses can qualify based on the veteran’s service or circumstances of death. VA also has specific rules about remarriage.' },
-  { label: 'Buyers who want to maximize purchasing power', body: 'Zero down payment means more capital preserved — a meaningful advantage for buyers who qualify.' },
+  { label: 'Buyers who want to maximize purchasing power', body: 'If you qualify without a down payment, remember to budget separately for closing costs and any funding fee you pay upfront.' },
 ]
 
 const faqs = [
@@ -119,14 +120,9 @@ export default function VaLoansPage() {
 
       {/* ── Hero ── */}
       <section
-        className="relative py-14 md:py-24 px-6 text-center text-white"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.6), rgba(20,35,25,0.6)), url("/images/va-hero.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 40%',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-14 md:py-24 px-6 text-center text-white"
       >
+        <SectionBackdrop src="/images/va-hero.jpg" shade={0.6} position="center 40%" hero />
         <h1
           className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
@@ -278,7 +274,7 @@ export default function VaLoansPage() {
                 fill
                 className="object-cover"
                 style={{ objectPosition: 'center 55%' }}
-                priority
+                sizes="(min-width: 768px) 420px, calc(100vw - 3rem)"
               />
             </div>
           </div>
@@ -319,14 +315,9 @@ export default function VaLoansPage() {
 
       {/* ── Mountain CTA ── */}
       <section
-        className="relative py-24 md:py-36 px-6 text-white text-center"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.55), rgba(20,35,25,0.55)), url("/images/cta-mountain.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-24 md:py-36 px-6 text-white text-center"
       >
+        <SectionBackdrop src="/images/cta-mountain.jpg" shade={0.55} />
         <h2
           data-reveal="fade"
           className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5"

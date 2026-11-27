@@ -1,3 +1,4 @@
+import SectionBackdrop from '@/components/SectionBackdrop'
 import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -37,7 +38,7 @@ const breadcrumb = {
 }
 
 const vaBenefits = [
-  { title: 'Low or No Down Payment', body: 'Eligible veterans can purchase a home with no down payment — preserving cash for moving, furnishing, or emergency reserves.' },
+  { title: 'Low or No Down Payment', body: 'Eligible borrowers with full entitlement can often purchase without a down payment if the appraisal supports the purchase price.' },
   { title: 'No Private Mortgage Insurance', body: 'VA purchase loans have no monthly private mortgage insurance. A one-time funding fee may apply, depending on your exemption status.' },
   { title: 'Compare VA Loan Rates', body: 'Each lender sets its own rate and fees. We’ll help you compare what you would pay at closing and each month.' },
   { title: 'Flexible Credit Requirements', body: 'VA sets no minimum credit score. Your lender reviews your credit history and income and may have its own credit score requirement.' },
@@ -85,14 +86,9 @@ export default function ColoradoSpringsVaPage() {
 
       {/* Hero */}
       <section
-        className="relative py-28 md:py-40 px-6 text-white text-center"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.60), rgba(20,35,25,0.60)), url("/images/va-hero.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 40%',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-28 md:py-40 px-6 text-white text-center"
       >
+        <SectionBackdrop src="/images/va-hero.jpg" shade={0.6} position="center 40%" hero />
         <p className="text-sm uppercase tracking-widest font-semibold mb-4 text-white/70">Colorado Springs, Colorado</p>
         <h1
           className="text-4xl md:text-6xl font-bold mb-6"
@@ -199,14 +195,9 @@ export default function ColoradoSpringsVaPage() {
 
       {/* Mountain CTA */}
       <section
-        className="relative py-24 md:py-36 px-6 text-white text-center"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.55), rgba(20,35,25,0.55)), url("/images/va-hero.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-24 md:py-36 px-6 text-white text-center"
       >
+        <SectionBackdrop src="/images/va-hero.jpg" shade={0.55} />
         <h2
           data-reveal="fade"
           className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5"

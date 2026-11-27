@@ -41,7 +41,7 @@ const programs = [
   { label: 'Conventional Loans', desc: 'Compare a conventional mortgage for a Broomfield or Superior home. Ask how your down payment affects the payment, mortgage insurance and cash due at closing.', href: '/loan-programs/conventional-loans' },
   { label: 'Jumbo Loans', desc: 'Explore jumbo financing when the amount you plan to borrow exceeds the conforming loan limit for your property.', href: '/loan-programs/jumbo-loans' },
   { label: 'FHA Loans', desc: '3.5% down and flexible credit requirements for Thornton and Broomfield first-time buyers stepping into the market.', href: '/loan-programs/fha-loans' },
-  { label: 'VA Loans', desc: 'Zero down for eligible veterans and active-duty service members. No PMI ever. Available throughout Broomfield and the north metro.', href: '/loan-programs/va-loans' },
+  { label: 'VA Loans', desc: 'Eligible Broomfield buyers may qualify with no down payment and no monthly mortgage insurance.', href: '/loan-programs/va-loans' },
   { label: 'Self-Employed Loans', desc: 'Bank statement programs for contractors, consultants, and tech professionals whose income does not fit the standard W-2 mold.', href: '/loan-programs/self-employed-loans' },
   { label: 'Asset Qualifier Loans', desc: 'Qualify using investment accounts and liquid assets instead of income documentation. A strong fit for Broomfield executives and retirees.', href: '/loan-programs/asset-qualifier-loans' },
 ]

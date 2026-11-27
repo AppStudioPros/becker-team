@@ -40,8 +40,8 @@ const programs = [
   { label: 'CHFA Loans', desc: 'Eligible CHFA first mortgages can include a grant or a deferred loan. The program and a participating lender determine eligibility.', href: '/chfa-loan-colorado' },
   { label: 'FHA Loans', desc: '3.5% down and flexible credit requirements. One of the most popular loan types for first-time buyers in Longmont, Firestone, and Frederick.', href: '/loan-programs/fha-loans' },
   { label: 'Conventional Loans', desc: 'Explore conventional financing for a Longmont townhome or single-family home and see how your down payment changes the monthly cost.', href: '/loan-programs/conventional-loans' },
-  { label: 'VA Loans', desc: 'Zero down payment for eligible veterans and service members. No PMI. Available throughout Longmont and the northern Front Range.', href: '/loan-programs/va-loans' },
-  { label: 'USDA Loans', desc: 'Some rural areas near Mead and Berthoud qualify for USDA financing with zero down. Jamie can check eligibility for your specific property address.', href: '/loan-programs/conventional-loans' },
+  { label: 'VA Loans', desc: 'Eligible Longmont buyers may qualify with no down payment and no monthly mortgage insurance.', href: '/loan-programs/va-loans' },
+  { label: 'USDA Loans', desc: 'An eligible rural address and household income may make a no-down-payment USDA loan possible.', href: '/contact' },
   { label: 'Self-Employed Loans', desc: 'Bank statement programs for Longmont tech freelancers, healthcare professionals, and business owners with non-traditional income.', href: '/loan-programs/self-employed-loans' },
 ]
 
@@ -59,11 +59,11 @@ const faqs = [
   },
   {
     q: 'Do you serve Firestone, Frederick, and Mead?',
-    a: 'Yes. The Becker Team serves all of the northern Front Range including Longmont, Firestone, Frederick, Mead, and Berthoud. These communities south and west of Longmont have seen strong growth from buyers priced out of Boulder and Denver suburbs.',
+    a: 'Yes. We work with buyers in Longmont, Firestone, Frederick, Mead and Berthoud. Send us the address so we can check the county’s loan limits and discuss which financing may fit.',
   },
   {
     q: 'Are there USDA loan options near Longmont?',
-    a: 'Some properties in the rural areas surrounding Longmont, particularly near Mead and parts of Berthoud, may qualify for USDA Rural Development loans with zero down payment. Eligibility is property-specific. Jamie can check USDA eligibility for your target address as part of your pre-approval process.',
+    a: 'Some properties outside Longmont may qualify. USDA financing can allow no down payment if the address is in an eligible rural area, your household meets the income limit and you’ll occupy the home as your primary residence. Send us the address to check.',
   },
   {
     q: 'What are current mortgage rates in Longmont, CO?',
@@ -98,7 +98,7 @@ export default function LongmontMortgagePage() {
           Longmont Mortgage Broker
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Home loans for Longmont, Firestone, Frederick, Mead, and Berthoud. Boulder-area affordability. First-time buyer specialists. CHFA, FHA, VA, and conventional.
+          Compare home loans for Longmont, Firestone, Frederick, Mead and Berthoud. We’ll help you estimate the cash you’ll need to buy your first home or move into your next one.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="https://2179191.my1003app.com/794730/register" target="_blank" rel="noopener noreferrer"

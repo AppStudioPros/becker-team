@@ -1,3 +1,4 @@
+import SectionBackdrop from '@/components/SectionBackdrop'
 import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -111,14 +112,14 @@ const breadcrumbJsonLd = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.thebeckerteam.com' },
     { '@type': 'ListItem', position: 2, name: 'Loan Programs', item: 'https://www.thebeckerteam.com/loan-programs' },
-    { '@type': 'ListItem', position: 3, name: 'Self Employed Loans', item: 'https://www.thebeckerteam.com/loan-programs/self-employed-loans' },
+    { '@type': 'ListItem', position: 3, name: 'Self-Employed Loans', item: 'https://www.thebeckerteam.com/loan-programs/self-employed-loans' },
   ],
 }
 
 const loanJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LoanOrCredit',
-  name: 'Self Employed Loans',
+  name: 'Self-Employed Loans',
   description: 'Mortgage loans for self-employed borrowers using bank statements or alternative income documentation. Colorado. NMLS #794730.',
   url: 'https://www.thebeckerteam.com/loan-programs/self-employed-loans',
   provider: teamReference,
@@ -138,19 +139,14 @@ export default function SelfEmployedLoansPage() {
 
       {/* ── Hero ── */}
       <section
-        className="relative py-14 md:py-24 px-6 text-center text-white"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.6), rgba(20,35,25,0.6)), url("/images/se-hero.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 35%',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-14 md:py-24 px-6 text-center text-white"
       >
+        <SectionBackdrop src="/images/se-hero.jpg" shade={0.6} position="center 35%" hero />
         <h1
           className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
         >
-          Self Employed Loans
+          Self-Employed Loans
         </h1>
         <p className="text-white/80 max-w-xl mx-auto text-lg mb-8">
           Jamie Becker helps self-employed Colorado homebuyers explore bank statement mortgages through The Becker Team at Xpert Home Lending. Depending on the program, you may be able to document your income with personal or business bank statements.
@@ -351,7 +347,7 @@ export default function SelfEmployedLoansPage() {
                 fill
                 className="object-cover"
                 style={{ objectPosition: 'center 55%' }}
-                priority
+                sizes="(min-width: 768px) 420px, calc(100vw - 3rem)"
               />
             </div>
           </div>
@@ -385,14 +381,9 @@ export default function SelfEmployedLoansPage() {
 
       {/* ── Mountain CTA ── */}
       <section
-        className="relative py-24 md:py-36 px-6 text-white text-center"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.55), rgba(20,35,25,0.55)), url("/images/cta-mountain.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-24 md:py-36 px-6 text-white text-center"
       >
+        <SectionBackdrop src="/images/cta-mountain.jpg" shade={0.55} />
         <h2
           data-reveal="fade"
           className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5"

@@ -1,3 +1,4 @@
+import SectionBackdrop from '@/components/SectionBackdrop'
 import { teamReference } from '@/lib/siteIdentity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -43,7 +44,7 @@ const highlights = [
 ]
 
 const fitProfiles = [
-  { label: 'First-time homebuyers', body: 'Low down payment and flexible credit requirements make FHA the most common path for buyers purchasing their first home.' },
+  { label: 'First-time homebuyers', body: 'If you’re buying your first home, compare FHA with conventional financing. We can show you the down payment, mortgage insurance and cash needed for each.' },
   { label: 'Buyers with lower credit scores', body: 'If your credit is still developing, FHA\'s lower floor makes approval possible while you continue building your profile.' },
   { label: 'Buyers with limited savings', body: 'A 3.5% down payment means more buyers can get into a home without depleting all of their reserves.' },
   { label: 'Borrowers with higher debt-to-income ratios', body: 'FHA underwriting can accommodate DTI ratios that might not pass a conventional review.' },
@@ -56,7 +57,7 @@ const faqs = [
   },
   {
     q: 'What credit score do I need for an FHA loan?',
-    a: 'For a typical purchase with an FHA case number assigned in 2026, a qualifying credit score of 580 or higher can allow 3.5% down. Scores from 500 through 579 generally require at least 10% down. Lenders may have stricter requirements and will also review your income, debts and property.',
+    a: 'For a standard FHA purchase, a qualifying credit score of 580 or higher can allow 3.5% down. Scores from 500 through 579 generally require at least 10% down. Lenders may have stricter requirements and will also review your income, debts and property.',
   },
   {
     q: 'What is mortgage insurance on an FHA loan?',
@@ -119,14 +120,9 @@ export default function FhaLoansPage() {
 
       {/* ── Hero ── */}
       <section
-        className="relative py-14 md:py-24 px-6 text-center text-white"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.6), rgba(20,35,25,0.6)), url("/images/fha-hero.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 35%',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-14 md:py-24 px-6 text-center text-white"
       >
+        <SectionBackdrop src="/images/fha-hero.jpg" shade={0.6} position="center 35%" hero />
         <h1
           className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
@@ -278,7 +274,7 @@ export default function FhaLoansPage() {
                 fill
                 className="object-cover"
                 style={{ objectPosition: 'center 55%' }}
-                priority
+                sizes="(min-width: 768px) 420px, calc(100vw - 3rem)"
               />
             </div>
           </div>
@@ -319,17 +315,12 @@ export default function FhaLoansPage() {
 
       {/* ── Mountain CTA ── */}
       <section
-        className="relative py-24 md:py-36 px-6 text-white text-center"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.55), rgba(20,35,25,0.55)), url("/images/cta-mountain.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-24 md:py-36 px-6 text-white text-center"
       >
+        <SectionBackdrop src="/images/cta-mountain.jpg" shade={0.55} />
         <h2
           data-reveal="fade"
-          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5"
+          className="-mx-2 mb-5 text-4xl font-bold sm:mx-0 md:text-5xl lg:text-6xl"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
         >
           A Real Path to Homeownership

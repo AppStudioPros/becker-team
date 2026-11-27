@@ -140,7 +140,7 @@ export default function Footer() {
           alt="Equal Housing Opportunity"
           width={40}
           height={40}
-          loading="eager"
+          loading="lazy"
           className="object-contain w-8 md:w-[50px] h-auto"
         />
         <Image
@@ -148,7 +148,7 @@ export default function Footer() {
           alt="Equal Housing Lender"
           width={40}
           height={40}
-          loading="eager"
+          loading="lazy"
           className="object-contain w-8 md:w-[50px] h-auto"
         />
         <Image
@@ -156,7 +156,7 @@ export default function Footer() {
           alt="Xpert Home Lending"
           width={50}
           height={40}
-          loading="eager"
+          loading="lazy"
           className="object-contain w-10 md:w-[60px] h-auto"
         />
       </div>

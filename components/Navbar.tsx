@@ -75,7 +75,7 @@ export default function Navbar() {
           type="button"
           aria-controls={menuId}
           aria-expanded={open}
-          className="md:hidden text-white p-1"
+          className="-mr-1.5 inline-flex min-h-11 min-w-11 items-center justify-center text-white md:hidden"
           onClick={() => setOpen(!open)}
           aria-label={open ? 'Close menu' : 'Open menu'}
         >
@@ -86,14 +86,14 @@ export default function Navbar() {
       {/* Mobile menu */}
       <div
         id={menuId}
-        className={`${open ? 'flex' : 'hidden'} md:hidden px-6 pb-8 flex-col gap-2 border-t border-white/10`}
+        className={`${open ? 'flex' : 'hidden'} max-h-[calc(100dvh-7rem)] flex-col gap-2 overflow-y-auto overscroll-contain border-t border-white/10 px-6 pb-8 md:hidden`}
         style={{ backgroundColor: '#1F2E2A' }}
       >
         {navLinks.map((link) => (
           <Link
             key={link.href}
             href={link.href}
-            className="text-white text-base tracking-wide py-3 border-b border-white/10"
+            className="shrink-0 border-b border-white/10 py-3 text-base tracking-wide text-white"
             onClick={() => setOpen(false)}
           >
             {link.label}
@@ -103,7 +103,7 @@ export default function Navbar() {
           href="https://2179191.my1003app.com/794730/register"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-white text-[#1F2E2A] text-sm font-semibold px-6 py-4 rounded text-center uppercase tracking-widest mt-2"
+          className="mt-2 shrink-0 rounded bg-white px-6 py-4 text-center text-sm font-semibold uppercase tracking-widest text-[#1F2E2A]"
         >
           Apply
         </a>

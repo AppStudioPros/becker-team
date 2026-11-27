@@ -27,10 +27,10 @@ FHA-insured purchase loans may allow 3.5% down with a qualifying score of 580 or
 A jumbo mortgage is a loan above the conforming limit for the property’s county, number of units and applicable year. Options depend on the property, occupancy, down payment, credit and reserves.
 
 ### Self-Employed / Bank Statement Mortgage Program
-Bank statement loans can use 12 to 24 months of eligible deposits to assess qualifying income. Documentation and eligibility vary.
+Bank statement loans may use eligible deposits from 12 or 24 months of personal or business bank statements. The lender may account for business expenses. Transfers between the borrower’s own accounts do not create new income.
 
 ### Asset Qualifier Loans
-The Asset Qualifier uses eligible assets remaining after closing. The benchmark is 125% of the loan amount in eligible assets, or $1,000,000 on an $800,000 loan. Minimum credit requirements depend on the loan and lender guidelines. An asset depletion or asset utilization loan uses eligible assets to calculate monthly qualifying income.
+The Asset Qualifier uses eligible assets remaining after closing. The benchmark is 125% of the loan amount in eligible assets, or $1,000,000 on an $800,000 loan. Minimum credit requirements depend on the loan and lender guidelines.
 
 ### Mortgage Accelerator
 A line of credit secured by your home that you can use for everyday banking. Deposits reduce the balance and withdrawals increase it. A faster payoff depends on how much extra cash you can leave after bills and interest.
@@ -76,13 +76,13 @@ Q: What is the difference between a mortgage broker and a bank?
 A: A mortgage broker can compare loan options from multiple wholesale lenders. An individual bank generally offers its own products. Compare written quotes to see what each option costs.
 
 Q: How fast can I get pre-approved with The Becker Team?
-A: Timing depends on your loan and how quickly your documents can be reviewed. Let Jamie know if a seller has given you an offer deadline.
+A: Timing depends on your loan and how quickly your documents can be reviewed. A pre-approval is conditional, and a rate lock is a separate step. Let Jamie know if a seller has given you an offer deadline.
 
 Q: What is a 30-year fixed mortgage and is it right for me?
 A: A 30-year fixed mortgage has an interest rate that stays the same for the term. Your principal and interest payments stay the same. Taxes and insurance can change.
 
 Q: Do you offer second home or vacation property loans for Colorado mountain towns?
-A: Yes. The property’s intended use, type and association rules can affect the financing available.
+A: Yes. The property’s intended use, setup and association rules affect financing. Standard conventional second-home financing usually applies to one home or condo suitable for year-round use. The borrower generally keeps control over when they stay there and qualifies without counting rent from the home. See /second-home-loans-colorado.
 
 ## Contact
 - Email: Jamie@thebeckerteam.com

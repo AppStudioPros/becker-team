@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import type { Metadata } from 'next'
 import { createAdminClient } from '@/lib/supabase'
 import { previewBlogPosts } from '@/lib/previewBlogPosts'
@@ -46,15 +47,6 @@ async function getPublishedPosts(): Promise<BlogPost[]> {
   return [...previewCards, ...published]
 }
 
-function formatDate(dateStr: string | null): string {
-  if (!dateStr) return ''
-  return new Date(dateStr).toLocaleDateString('en-US', {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
-  })
-}
-
 async function getCategories(): Promise<string[]> {
   const admin = createAdminClient()
   const { data } = await admin
@@ -74,10 +66,7 @@ export default async function BlogPage() {
         className="relative py-24 px-6 flex items-center justify-center overflow-hidden"
         style={{ minHeight: '320px' }}
       >
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url("/blog-hero.jpg")' }}
-        />
+        <Image src="/blog-hero.jpg" alt="" fill sizes="100vw" loading="eager" fetchPriority="high" className="object-cover object-center" />
         <div className="absolute inset-0" style={{ backgroundColor: 'rgba(11,30,61,0.72)' }} />
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <h1

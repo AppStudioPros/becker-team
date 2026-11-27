@@ -42,7 +42,7 @@ const breadcrumb = {
 const programs = [
   { label: 'Conventional Loans', desc: 'Choose between a fixed or adjustable rate based on your budget and how long you plan to own the home.', href: '/loan-programs/conventional-loans' },
   { label: 'FHA Loans', desc: 'FHA-insured financing for a primary home, with flexible credit and down payment options.', href: '/loan-programs/fha-loans' },
-  { label: 'VA Loans', desc: 'Zero down for eligible veterans and service members. No PMI required.', href: '/loan-programs/va-loans' },
+  { label: 'VA Loans', desc: 'Eligible veterans and service members may qualify with no down payment and no monthly mortgage insurance.', href: '/loan-programs/va-loans' },
   { label: 'Jumbo Loans', desc: 'Financing above conforming limits for Denver luxury and high-value properties.', href: '/loan-programs/jumbo-loans' },
   { label: 'Self-Employed / Bank Statement', desc: 'Qualify using bank statements instead of tax returns — built for Denver entrepreneurs and remote workers.', href: '/loan-programs/self-employed-loans' },
   { label: 'Asset Qualifier Loans', desc: 'Qualify using your investment accounts, not your income — no employment required.', href: '/loan-programs/asset-qualifier-loans' },
@@ -51,7 +51,7 @@ const programs = [
 const faqs = [
   { q: 'How do I compare mortgage lenders in Denver?', a: 'Compare written Loan Estimates for the same loan amount and term. Look at the rate, lender fees and cash you’ll need at closing. We’ll walk you through the differences and talk through the closing date in your offer.' },
   { q: 'What are current mortgage rates in Denver, CO?', a: 'Mortgage rates in Denver change daily based on market conditions. Your actual rate depends on your credit score, loan type, down payment, and loan term. Contact Jamie for a current rate quote tailored to your specific situation — rates are available for conventional, FHA, VA, and jumbo loans.' },
-  { q: 'How much do I need for a down payment in Denver?', a: 'Denver down payments vary by loan type. FHA purchase loans may allow 3.5% down with a qualifying credit score of at least 580. Certain conventional programs allow 3% down on a one-unit primary home. Eligible VA buyers can often purchase with no down payment. Jumbo loans typically require 10-20%. Given Denver\'s price points, CHFA down payment assistance is also available for qualifying buyers.' },
+  { q: 'How much do I need for a down payment in Denver?', a: 'FHA purchase loans may allow 3.5% down with a qualifying credit score of at least 580. Some conventional programs allow 3% down on a one-unit primary home, and eligible VA buyers can often purchase with no down payment. Jumbo lenders set their own requirements. Eligible buyers can ask a participating lender about CHFA down payment assistance.' },
   { q: 'What is the CHFA program and can I use it in Denver?', a: 'Colorado Housing and Finance Authority first mortgages and down payment assistance may be available to eligible Denver buyers. A CHFA participating lender checks program-specific income, occupancy and any purchase price limits for your address.' },
   { q: 'How long does a mortgage take to close in Denver?', a: 'If the seller has a closing date in mind, bring it to us before you sign the contract. We’ll check what your lender still needs and how much time to allow for title work and any required appraisal.' },
   { q: 'Do you serve the entire Denver metro?', a: 'Yes. The Becker Team serves all of Denver and the surrounding metro — including Aurora, Lakewood, Littleton, Centennial, Englewood, Highlands Ranch, Parker, Castle Rock, Broomfield, and Westminster. As a local lender, Jamie knows the neighborhoods and can move quickly.' },
@@ -116,7 +116,7 @@ export default function DenverMortgagePage() {
         <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-2 text-sm font-semibold" style={{ color: '#1F2E2A' }}>
           <span>✦ Local Denver Lender</span>
           <span>✦ Compare Mortgage Rates</span>
-          <span>✦ Mortgage Broker Near Me</span>
+          <span>✦ Denver Mortgage Broker</span>
           <span>✦ Purchase Pre-Approvals</span>
         </div>
       </section>

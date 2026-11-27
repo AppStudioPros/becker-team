@@ -1,5 +1,6 @@
 'use client'
 
+import SectionBackdrop from '@/components/SectionBackdrop'
 import { useState } from 'react'
 
 function formatCurrency(n: number): string {
@@ -30,7 +31,7 @@ export default function CalculatorPage() {
       {/* ── Header ── */}
       <section style={{ backgroundColor: '#1F2E2A' }} className="py-20 px-6 text-center text-white">
         <h1
-          className="text-6xl md:text-7xl font-bold mb-4"
+          className="-mx-3 mb-4 text-6xl font-bold sm:mx-0 md:text-7xl"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
         >
           Mortgage Calculator
@@ -67,7 +68,7 @@ export default function CalculatorPage() {
                   step={field.step}
                   value={field.value}
                   onChange={(e) => field.setter(Number(e.target.value))}
-                  className="w-full h-2 rounded appearance-none cursor-pointer"
+                  className="h-2 w-full cursor-pointer rounded appearance-none pointer-coarse:h-8 pointer-coarse:appearance-auto"
                   style={{ accentColor: '#1F2E2A' }}
                 />
               </div>
@@ -148,14 +149,9 @@ export default function CalculatorPage() {
 
       {/* ── CTA ── */}
       <section
-        className="relative py-24 md:py-36 px-6 text-white text-center"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(20,35,25,0.55), rgba(20,35,25,0.55)), url("/images/cta-mountain.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate bg-[#1F2E2A] py-24 md:py-36 px-6 text-white text-center"
       >
+        <SectionBackdrop src="/images/cta-mountain.jpg" shade={0.55} />
         <h2
           className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}

@@ -2,9 +2,8 @@
 
 import { usePathname } from 'next/navigation'
 import Navbar from './Navbar'
-import Footer from './Footer'
 
-export default function ConditionalLayout({ children }: { children: React.ReactNode }) {
+export default function ConditionalLayout({ children, footer }: { children: React.ReactNode; footer: React.ReactNode }) {
   const pathname = usePathname()
   const isAdmin = pathname?.startsWith('/admin')
 
@@ -17,7 +16,7 @@ export default function ConditionalLayout({ children }: { children: React.ReactN
       <a href="#main-content" className="skip-to-content">Skip to content</a>
       <Navbar />
       {children}
-      <Footer />
+      {footer}
     </>
   )
 }

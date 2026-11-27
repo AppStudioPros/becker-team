@@ -40,7 +40,7 @@ const programs = [
   { label: 'FHA Loans', desc: '3.5% down and flexible credit. The most popular loan type for Thornton first-time buyers entering the market at this price point.', href: '/loan-programs/fha-loans' },
   { label: 'CHFA Loans', desc: 'Colorado Housing and Finance Authority down payment assistance can help Thornton buyers close with less cash upfront. Pairs with FHA and conventional.', href: '/chfa-loan-colorado' },
   { label: 'Conventional Loans', desc: 'Compare conventional and FHA payments for your Thornton home, including mortgage insurance and closing costs for each option.', href: '/loan-programs/conventional-loans' },
-  { label: 'VA Loans', desc: 'Zero down for eligible veterans and active-duty service members. No PMI. Thornton and Brighton have strong veteran communities.', href: '/loan-programs/va-loans' },
+  { label: 'VA Loans', desc: 'Eligible Thornton and Brighton buyers may qualify with no down payment and no monthly mortgage insurance.', href: '/loan-programs/va-loans' },
   { label: 'New Construction Loans', desc: 'Buying a new home in Brighton or Henderson? Ask when you can lock the rate, how long the lock lasts and what an extension costs.', href: '/loan-programs/conventional-loans' },
   { label: 'Self-Employed Loans', desc: 'Bank statement programs for Thornton small business owners and contractors. Non-traditional income documentation accepted.', href: '/loan-programs/self-employed-loans' },
 ]
@@ -54,8 +54,8 @@ const faqs = [
     a: `${marketPrice} When you compare listings, look at recent sales of the same type of home in the neighborhood you’re considering.`,
   },
   {
-    q: 'What mortgage programs are most common in Thornton?',
-    a: 'FHA loans are very common in Thornton because the price point is accessible and the 3.5% down requirement matches what many first-time buyers have saved. CHFA programs pair well with FHA here to reduce upfront costs further. Conventional loans are the right move when a buyer has good credit and at least 5% down because you avoid FHA\'s upfront mortgage insurance premium and can drop PMI later.',
+    q: 'How should Thornton buyers compare FHA and conventional loans?',
+    a: 'Compare cash needed at closing, the full monthly payment and how long mortgage insurance lasts. Some conventional programs allow 3% down, and eligible FHA buyers may qualify with 3.5% down. A CHFA participating lender can check whether you’re eligible for assistance and how it changes the cost.',
   },
   {
     q: 'Can I commute from Thornton to downtown Denver by train?',
@@ -98,7 +98,7 @@ export default function ThorntonMortgagePage() {
           Thornton Mortgage Broker
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Home loans for Thornton, Northglenn, Commerce City, Brighton, and Henderson. First-time buyer specialists. FHA, CHFA, VA, and conventional.
+          Buying in Thornton, Northglenn, Commerce City, Brighton or Henderson? We can help you compare down payments and monthly costs for the loans you qualify for.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="https://2179191.my1003app.com/794730/register" target="_blank" rel="noopener noreferrer"

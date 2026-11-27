@@ -1,6 +1,7 @@
+import SectionBackdrop from '@/components/SectionBackdrop'
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Home, Phone, ArrowRight } from 'lucide-react'
+import { Home, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Page Not Found | The Becker Team',
@@ -11,13 +12,9 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <section
-      className="min-h-screen flex items-center justify-center px-6 py-20"
-      style={{
-        backgroundImage: 'linear-gradient(rgba(20,35,25,0.82), rgba(20,35,25,0.82)), url("/images/squarespace/jamie-fishing.jpg")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
+      className="relative isolate min-h-screen flex items-center justify-center px-6 py-20"
     >
+      <SectionBackdrop src="/images/squarespace/jamie-fishing.jpg" shade={0.82} hero />
       <div className="text-center text-white max-w-lg mx-auto" data-reveal="fade">
         <p
           className="text-xs font-bold uppercase tracking-widest mb-4"

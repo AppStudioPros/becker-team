@@ -40,7 +40,7 @@ const breadcrumb = {
 const programs = [
   { label: 'Conventional Loans', desc: "Compare conventional loan options for a home in Westminster or Broomfield, including how your down payment changes monthly costs.", href: '/loan-programs/conventional-loans' },
   { label: 'FHA Loans', desc: "3.5% down and flexible credit — a great fit for Thornton and Westminster first-time buyers entering the market.", href: '/loan-programs/fha-loans' },
-  { label: 'VA Loans', desc: "Zero down for eligible veterans and active-duty service members throughout the north Denver metro.", href: '/loan-programs/va-loans' },
+  { label: 'VA Loans', desc: "Eligible veterans and service members in the north Denver metro may qualify with no down payment.", href: '/loan-programs/va-loans' },
   { label: 'Jumbo Loans', desc: "For a Westminster home, compare the loan amount after your down payment with the limit for the county where the property sits.", href: '/loan-programs/jumbo-loans' },
   { label: 'Self-Employed Loans', desc: "Bank statement programs for Westminster tech workers, contractors, and business owners who prefer alternatives to traditional income documentation.", href: '/loan-programs/self-employed-loans' },
   { label: 'Asset Qualifier Loans', desc: "Qualify using liquid assets and investment accounts — ideal for buyers with substantial net worth and non-traditional income.", href: '/loan-programs/asset-qualifier-loans' },
@@ -49,7 +49,7 @@ const programs = [
 const faqs = [
   { q: 'Is Westminster CO a good place to buy a home?', a: "Westminster sits in one of the most strategically positioned corridors in Colorado — halfway between Denver and Boulder, with access to both employment centers and a lower price point than either city. The US 36 tech corridor runs directly through Westminster and Broomfield, which has driven strong demand from tech and biotech professionals who want more space without sacrificing commute access. It's a solid long-term market." },
   { q: 'What are current mortgage rates in Westminster, CO?', a: 'Your rate depends on your loan amount, credit, down payment and the terms you choose. We can compare quotes for the same lock period and show how much you would pay upfront for each rate.' },
-  { q: 'Do you offer VA loans in Westminster and Thornton?', a: 'Yes. VA loans are available for eligible veterans, active-duty service members, and surviving spouses throughout the north Denver metro including Westminster, Thornton, and Northglenn. Zero down payment, no PMI required.' },
+  { q: 'Do you offer VA loans in Westminster and Thornton?', a: 'Yes. VA loans are available for eligible veterans, active-duty service members, and surviving spouses throughout the north Denver metro including Westminster, Thornton, and Northglenn. Eligible buyers can often purchase without a down payment or monthly mortgage insurance. A funding fee may apply.' },
   { q: 'Can tech workers in Broomfield qualify for special mortgage programs?', a: "Many Broomfield and Westminster tech workers are W-2 employees who qualify easily for conventional loans. But if you're a contractor, work on equity compensation, or have variable bonus income, those income structures can create complications. Jamie has programs for non-standard income situations and can often find solutions that standard bank underwriting won't accommodate." },
   { q: 'How long does it take to close a mortgage in Westminster, CO?', a: 'The timing depends on underwriting, any required appraisal and title work. Share the seller’s proposed date with Jamie so you can plan for those steps before you sign.' },
   { q: 'Do you serve Broomfield, Thornton, and Northglenn?', a: 'Yes. The Becker Team serves all of the north Denver metro — Westminster, Broomfield, Thornton, Northglenn, Federal Heights, Commerce City, and surrounding communities.' },
@@ -110,7 +110,7 @@ export default function WestminsterMortgagePage() {
             The Denver-Boulder Corridor&apos;s Mortgage Expert
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            Westminster and Broomfield attract buyers who want the best of both worlds — Denver employment access and Boulder proximity, without paying Boulder prices. The US 36 tech corridor has made this one of the fastest-growing employment areas in Colorado, which means more buyers with tech compensation structures, equity, and non-standard income. Jamie Becker (NMLS #794730) has 21+ years of experience helping buyers across the Denver metro, with specialty programs designed for exactly those situations. Jamie compares quotes from multiple lenders and explains how their fees and terms affect your payment.
+            If your pay includes stock or bonuses, ask which income the lender can use before you set a purchase budget. Jamie Becker (NMLS #794730) can help you review the records you have, compare lenders and see how much cash you would need to buy in Westminster or Broomfield.
           </p>
         </div>
       </section>

@@ -48,7 +48,7 @@ export default function AccessibilityPage() {
 
           <div>
             <h2 style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }} className="text-xl font-bold mb-3">Known Limitations</h2>
-            <p>While we strive for full WCAG 2.1 AA compliance, some third-party tools and embedded content integrated into this Site — such as our mortgage calculator, rate widgets, and loan application portal — are operated by third-party providers and may not fully conform to accessibility standards. We encourage these providers to improve their accessibility and will continue to evaluate alternatives where appropriate.</p>
+            <p>We work toward meeting WCAG 2.1 AA. The rate widget and loan application portal are operated by third parties and may have accessibility limitations. If you have trouble using either tool, please contact us for help.</p>
             <p>If you encounter any specific accessibility barriers on this Site, please contact us and we will work to address them.</p>
           </div>
 

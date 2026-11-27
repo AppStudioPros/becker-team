@@ -134,11 +134,6 @@ export default function PrivacyPage() {
               <p><a href={`mailto:${CONTACT_EMAIL}`} style={{ color: '#1F2E2A' }}>{CONTACT_EMAIL}</a></p>
             </div>
           </div>
-
-          <p className="text-xs italic" style={{ color: '#5a6e64' }}>
-            This privacy policy has been prepared for informational purposes. The Becker Team recommends periodic review by a qualified compliance professional to ensure continued compliance with applicable federal and state laws.
-          </p>
-
         </div>
 
         <div className="mt-12 flex gap-4">

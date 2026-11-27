@@ -40,7 +40,7 @@ const breadcrumb = {
 const programs = [
   { label: 'Conventional Loans', desc: 'Compare conventional loan terms for a purchase or refinance in Centennial, Parker or Highlands Ranch.', href: '/loan-programs/conventional-loans' },
   { label: 'Jumbo Loans', desc: 'For a purchase in Greenwood Village or Lone Tree, compare the amount you need to borrow with the one-unit limit for the county where the home sits.', href: '/loan-programs/jumbo-loans' },
-  { label: 'VA Loans', desc: 'Zero down for eligible veterans and active-duty service members throughout the south Denver metro. No PMI. Buckley SFB veterans welcome.', href: '/loan-programs/va-loans' },
+  { label: 'VA Loans', desc: 'Eligible veterans and service members in the south Denver metro may qualify with no down payment and no monthly mortgage insurance.', href: '/loan-programs/va-loans' },
   { label: 'Self-Employed Loans', desc: 'Bank statement programs for Centennial and Greenwood Village professionals, business owners, and executives with non-W-2 income.', href: '/loan-programs/self-employed-loans' },
   { label: 'Asset Qualifier Loans', desc: 'Qualify using investment accounts and liquid assets instead of pay stubs. A strong fit for high-net-worth buyers in Greenwood Village and Parker.', href: '/loan-programs/asset-qualifier-loans' },
   { label: 'FHA Loans', desc: '3.5% down and flexible credit. Less common in Centennial\'s higher price ranges but a solid option for entry-level purchases in Parker and outer communities.', href: '/loan-programs/fha-loans' },
@@ -99,7 +99,7 @@ export default function CentennialMortgagePage() {
           Centennial Mortgage Lender
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Home loans for Centennial, Greenwood Village, Parker, Lone Tree, and Highlands Ranch. Conventional, jumbo, and VA. Personal service from an experienced lender.
+          Compare conventional, jumbo and VA home loans in Centennial, Greenwood Village, Parker, Lone Tree and Highlands Ranch with Jamie Becker.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="https://2179191.my1003app.com/794730/register" target="_blank" rel="noopener noreferrer"

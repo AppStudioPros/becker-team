@@ -35,10 +35,10 @@ const loanProgramCells = [
   { title: 'Home Mortgage Accelerator',      tagline: 'Accelerate mortgage payoff before retirement',                          href: '/loan-programs/mortgage-accelerator' },
   { title: 'Conventional Loans',        tagline: 'Compare fixed and adjustable rates for your home purchase',       href: '/loan-programs/conventional-loans' },
   { title: 'FHA Loans',                 tagline: 'FHA-insured home loans with flexible credit requirements',                      href: '/loan-programs/fha-loans' },
-  { title: 'VA Loans',                  tagline: 'No down payment loans for eligible veterans and service members',        href: '/loan-programs/va-loans' },
+  { title: 'VA Loans',                  tagline: 'Low or no down payment for eligible veterans and service members',        href: '/loan-programs/va-loans' },
   { title: 'Jumbo Loans',               tagline: 'Loans exceeding conforming limits for luxury and high-cost homes',       href: '/loan-programs/jumbo-loans' },
-  { title: 'Self Employed Loans',       tagline: 'We make it easier for business owners and entrepreneurs',                href: '/loan-programs/self-employed-loans' },
-  { title: 'Not Sure, I Can Help',      tagline: "Not sure what you can apply for? I can help, let's chat.",              href: '/contact' },
+  { title: 'Self-Employed Loans',       tagline: 'We make it easier for business owners and entrepreneurs',                href: '/loan-programs/self-employed-loans' },
+  { title: 'Which Loan Fits?',      tagline: "Tell me about your plans, and I’ll help you compare your options.",              href: '/contact' },
 ]
 
 const serviceAreaJsonLd = {
@@ -64,7 +64,7 @@ const serviceAreaJsonLd = {
       { '@type': 'Offer', itemOffered: { '@type': 'LoanOrCredit', name: 'FHA Loans' } },
       { '@type': 'Offer', itemOffered: { '@type': 'LoanOrCredit', name: 'Conventional Loans' } },
       { '@type': 'Offer', itemOffered: { '@type': 'LoanOrCredit', name: 'Jumbo Loans' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'LoanOrCredit', name: 'Self Employed Loans' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'LoanOrCredit', name: 'Self-Employed Loans' } },
       { '@type': 'Offer', itemOffered: { '@type': 'LoanOrCredit', name: 'Asset Qualifier Loans' } },
       { '@type': 'Offer', itemOffered: { '@type': 'LoanOrCredit', name: 'Mortgage Accelerator' } },
     ],
@@ -169,7 +169,7 @@ export default function HomePage() {
                   src={card.img}
                   alt={card.label}
                   fill
-                  priority
+                  sizes="(min-width: 1328px) 416px, (min-width: 768px) 33vw, calc(100vw - 3rem)"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 {/* Overlay */}

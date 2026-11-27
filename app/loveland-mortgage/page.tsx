@@ -39,8 +39,8 @@ const breadcrumb = {
 const programs = [
   { label: 'Conventional Loans', desc: 'Compare conventional mortgage terms for a home in Loveland or the surrounding communities. Jamie can explain how the loan amount and upfront costs affect your payment.', href: '/loan-programs/conventional-loans' },
   { label: 'FHA Loans', desc: '3.5% down and flexible credit requirements. Popular with first-time buyers in Loveland and the surrounding area who are stepping into homeownership.', href: '/loan-programs/fha-loans' },
-  { label: 'VA Loans', desc: 'Zero down for eligible veterans and active-duty service members. No PMI. Loveland has a strong veteran community and VA loans are a major part of the market.', href: '/loan-programs/va-loans' },
-  { label: 'USDA Loans', desc: 'Many properties in rural areas around Johnstown, Milliken, and parts of Berthoud qualify for USDA zero-down financing. Jamie can check property eligibility quickly.', href: '/loan-programs/conventional-loans' },
+  { label: 'VA Loans', desc: 'Eligible Loveland buyers may qualify with no down payment and no monthly mortgage insurance.', href: '/loan-programs/va-loans' },
+  { label: 'USDA Loans', desc: 'An eligible rural address and household income may make a no-down-payment USDA loan possible.', href: '/contact' },
   { label: 'CHFA Loans', desc: 'Colorado Housing and Finance Authority programs provide down payment assistance for first-time buyers in Loveland and Larimer County.', href: '/chfa-loan-colorado' },
   { label: 'Self-Employed Loans', desc: 'Bank statement programs for Loveland small business owners, artists, and contractors with non-traditional income documentation.', href: '/loan-programs/self-employed-loans' },
 ]
@@ -55,15 +55,15 @@ const faqs = [
   },
   {
     q: 'Do you serve Windsor, Johnstown, and Milliken?',
-    a: 'Yes. The Becker Team serves all of Larimer and Weld counties including Loveland, Windsor, Johnstown, Milliken, and Berthoud. These communities have grown quickly as buyers move north from the Denver metro seeking more affordable prices and smaller-town feel.',
+    a: 'Yes. The Becker Team serves all of Larimer and Weld counties including Loveland, Windsor, Johnstown, Milliken, and Berthoud.',
   },
   {
     q: 'Are there USDA loan options near Loveland?',
-    a: 'Yes. Several areas around Milliken, Johnstown, and parts of Berthoud qualify for USDA Rural Development loans with zero down payment. These are income-limited programs, but many Loveland-area buyers who think they earn too much are surprised to find they qualify. Jamie checks property eligibility for free as part of the pre-approval process.',
+    a: 'Some homes outside Loveland may qualify for a USDA Rural Development loan. No down payment may be possible if the address is in an eligible area, your household meets the income limit and you plan to live there as your primary home. Check the exact address before you make an offer.',
   },
   {
     q: 'What mortgage programs are good for Loveland retirees?',
-    a: 'Retirees often have significant assets but limited W-2 income, which can make qualifying with traditional documentation tricky. Jamie has asset qualifier programs that let you qualify using retirement accounts and investment portfolios rather than pay stubs. These programs are purpose-built for exactly this situation.',
+    a: 'We can review how you receive retirement income and which documents a lender may accept. If you have savings or investments, we can also look at the eligible assets you’ll have left after closing under our Asset Qualifier program.',
   },
   {
     q: 'What are current mortgage rates in Loveland, CO?',
@@ -98,7 +98,7 @@ export default function LovelandMortgagePage() {
           Loveland Mortgage Lender
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Home loans for Loveland, Berthoud, Johnstown, Milliken, and Windsor. Northern Colorado experts. Conventional, FHA, VA, and USDA programs.
+          Explore home loans in Loveland, Berthoud, Johnstown, Milliken and Windsor. We can help you check whether the home you’re considering qualifies for rural financing.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="https://2179191.my1003app.com/794730/register" target="_blank" rel="noopener noreferrer"
@@ -162,7 +162,7 @@ export default function LovelandMortgagePage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { title: 'USDA Eligibility Check', body: 'Many buyers in the Loveland area are surprised to find that rural properties near Milliken, Johnstown, and Berthoud qualify for USDA zero-down loans. Jamie checks property eligibility as part of every pre-approval consultation.' },
+              { title: 'USDA Eligibility Check', body: 'If you’re looking near Milliken, Johnstown or Berthoud, check the exact property address. We can also discuss the program’s household income limit and how the loan compares with your other options.' },
               { title: 'Retiree Programs', body: 'Loveland draws a lot of retirees who have significant assets but limited current income. Asset qualifier programs let you qualify using investment and retirement accounts. This is not a niche product, it is exactly what these programs were built for.' },
               { title: 'Multiple Lender Options', body: 'Jamie compares rates, fees and loan terms from multiple wholesale lenders. You work directly with Jamie throughout the process.' },
               { title: 'Northern Colorado Expertise', body: 'Jamie has worked with buyers throughout northern Colorado and understands the market dynamics in Loveland, Windsor, and the surrounding communities. Local knowledge matters when you are navigating property types and price points unique to the region.' },

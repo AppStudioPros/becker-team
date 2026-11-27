@@ -39,7 +39,7 @@ const breadcrumb = {
 const programs = [
   { label: 'FHA Loans', desc: '3.5% down and flexible credit requirements make FHA a great entry point for Englewood and Sheridan first-time buyers. Strong demand in this market.', href: '/loan-programs/fha-loans' },
   { label: 'Conventional Loans', desc: 'The most common loan type in Englewood. Works well across the full range from starter condos to luxury single-family homes in Cherry Hills Village.', href: '/loan-programs/conventional-loans' },
-  { label: 'VA Loans', desc: 'Zero down for eligible veterans and active-duty service members. No PMI. Available throughout Englewood and the south Denver metro.', href: '/loan-programs/va-loans' },
+  { label: 'VA Loans', desc: 'Eligible Englewood buyers may qualify with no down payment and no monthly mortgage insurance.', href: '/loan-programs/va-loans' },
   { label: 'Jumbo Loans', desc: 'For a home in Cherry Hills Village or Greenwood Village, compare jumbo options if your expected mortgage exceeds the county limit.', href: '/loan-programs/jumbo-loans' },
   { label: 'Self-Employed Loans', desc: 'Bank statement programs for Englewood business owners, freelancers, and contractors who prefer alternatives to W-2 income documentation.', href: '/loan-programs/self-employed-loans' },
   { label: 'Asset Qualifier Loans', desc: 'Qualify using liquid assets and investment accounts — a strong fit for Cherry Hills and Greenwood Village buyers with substantial net worth.', href: '/loan-programs/asset-qualifier-loans' },
@@ -98,7 +98,7 @@ export default function EnglewoodMortgagePage() {
           Englewood Mortgage Lender
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/80 leading-relaxed">
-          Home loans for Englewood, Sheridan, Cherry Hills Village, Greenwood Village, and Centennial. FHA, conventional, VA, and jumbo. Personal service from an experienced local lender.
+          Buying in Englewood, Sheridan, Cherry Hills Village, Greenwood Village or Centennial? Compare FHA, conventional, VA and jumbo mortgages with Jamie Becker.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="https://2179191.my1003app.com/794730/register" target="_blank" rel="noopener noreferrer"

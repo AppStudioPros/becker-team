@@ -40,7 +40,7 @@ const breadcrumb = {
 const programs = [
   { label: 'Conventional Loans', desc: "Explore conventional financing for a detached home, townhome or condo in Lakewood. We can compare down payment options for the property you choose.", href: '/loan-programs/conventional-loans' },
   { label: 'FHA Loans', desc: 'Flexible credit and 3.5% down — a strong option for first-time Lakewood buyers entering the market.', href: '/loan-programs/fha-loans' },
-  { label: 'VA Loans', desc: 'Zero down for eligible veterans and service members. Available throughout the west Denver metro.', href: '/loan-programs/va-loans' },
+  { label: 'VA Loans', desc: 'Eligible veterans and service members in the west Denver metro may qualify with no down payment.', href: '/loan-programs/va-loans' },
   { label: 'Jumbo Loans', desc: 'Financing above conforming limits for Golden foothills properties and higher-value Lakewood homes near Green Mountain.', href: '/loan-programs/jumbo-loans' },
   { label: 'Self-Employed Loans', desc: 'Bank statement programs for Lakewood business owners and independent professionals who prefer alternatives to tax returns.', href: '/loan-programs/self-employed-loans' },
   { label: 'Mortgage Accelerator', desc: 'A structured program to pay off your mortgage faster — ideal for Lakewood homeowners planning for retirement.', href: '/loan-programs/mortgage-accelerator' },
@@ -110,7 +110,7 @@ export default function LakewoodMortgagePage() {
             Your Lakewood Mortgage Expert
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            Lakewood sits at the intersection of Denver convenience and mountain access — and the housing market reflects it. Buyers here want a mortgage partner who can move quickly, knows the west-side neighborhoods, and has the programs to handle everything from a Belmar condo to a Green Mountain single-family home. Jamie Becker (NMLS #794730) has spent 21+ years helping buyers across the Denver metro, including Lakewood, Wheat Ridge, Golden, and Arvada. As a broker, Jamie works with multiple wholesale lenders to compare rates, lender fees and closing costs.
+            If you’re deciding between a Belmar condo and a house in Green Mountain, compare the association dues, insurance and taxes for each address. Two listings with the same price can leave you with different monthly bills. Jamie Becker (NMLS #794730) can show you the loan payment for each and walk you through written quotes from multiple lenders.
           </p>
         </div>
       </section>

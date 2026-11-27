@@ -38,7 +38,7 @@ const breadcrumb = {
 }
 
 const programs = [
-  { label: 'VA Loans', desc: "Zero down for eligible veterans, active-duty members, and surviving spouses — Aurora has a large military community near Buckley Space Force Base, and VA loans are one of Jamie's specialties.", href: '/loan-programs/va-loans' },
+  { label: 'VA Loans', desc: "Eligible veterans, service members and surviving spouses near Buckley Space Force Base may qualify with no down payment.", href: '/loan-programs/va-loans' },
   { label: 'FHA Loans', desc: "Popular with Aurora first-time buyers. 3.5% down, flexible credit standards, and access to Colorado's large FHA loan limits.", href: '/loan-programs/fha-loans' },
   { label: 'Conventional Loans', desc: "Compare conventional loans for an Aurora home, including the effect of your down payment on mortgage insurance and the monthly payment.", href: '/loan-programs/conventional-loans' },
   { label: 'Jumbo Loans', desc: 'Financing above conforming limits for higher-value Centennial, Parker, and Aurora properties.', href: '/loan-programs/jumbo-loans' },
@@ -47,7 +47,7 @@ const programs = [
 ]
 
 const faqs = [
-  { q: 'Is Aurora CO a good place to buy a home?', a: "Aurora is one of Colorado's fastest-growing cities and consistently offers more affordable entry points than central Denver while still being close to major employment centers, DIA, and the Denver metro. The city has strong long-term fundamentals — diverse neighborhoods, improving infrastructure, and steady demand from military families, healthcare workers, and young professionals." },
+  { q: 'How can I compare the cost of two homes in Aurora?', a: 'Start with the property taxes for each address, an insurance quote and any association dues. Then compare the estimated monthly payments using the same loan term and down payment. That will give you a more useful comparison than the listing prices alone.' },
   { q: 'Are VA loans available in Aurora, CO?', a: 'Yes. Eligible veterans, active-duty service members and surviving spouses in Aurora may qualify for a VA-backed loan with no down payment and no monthly mortgage insurance. A funding fee may apply.' },
   // City-level sales: https://www.redfin.com/city/30839/CO/Aurora/housing-market
   { q: 'What is the median home price in Aurora, CO?', a: 'From August through October 2026, the median sale price across all home types in Aurora was $449,687. If you’re comparing neighborhoods, look at recent sales of the same type of home in each one.' },
@@ -111,7 +111,7 @@ export default function AuroraHomeLoansPage() {
             Serving Aurora and the Denver Metro East
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            Aurora is one of Colorado&apos;s most dynamic cities — large, diverse, and offering some of the best value in the Denver metro. Jamie Becker (NMLS #794730) has worked with Aurora buyers across every price range and loan type for more than 20 years. The military community near Buckley Space Force Base makes Aurora one of the strongest VA loan markets in Colorado, and that&apos;s an area where Jamie has deep expertise. Whether you&apos;re a veteran using your benefit for the first time, a growing family looking for more space east of Denver, or an investor building a portfolio, the right loan structure makes a real difference.
+            If you’re buying near Buckley Space Force Base, we can help you compare a VA loan with a conventional mortgage. Bring the listing price and the amount you want to put down. Jamie Becker (NMLS #794730) can show you the estimated cash due at closing and the monthly payment for each option.
           </p>
         </div>
       </section>

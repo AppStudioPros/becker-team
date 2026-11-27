@@ -16,7 +16,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'The Becker Team — Centennial Colorado Mortgage Broker',
-  description: 'Local mortgage broker serving Centennial, Greenwood Village, Parker, Lone Tree, and Highlands Ranch in Arapahoe County.',
+  description: 'Local mortgage broker serving the south Denver metro, including Centennial, Greenwood Village, Parker, Lone Tree and Highlands Ranch.',
   url: 'https://www.thebeckerteam.com/centennial-mortgage',
   provider: teamReference,
   areaServed: [

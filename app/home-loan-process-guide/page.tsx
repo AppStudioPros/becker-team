@@ -13,7 +13,6 @@ const howToJsonLd = {
   name: 'How to Get a Home Loan — Step-by-Step Process',
   description: 'A complete step-by-step guide to the home loan process with The Becker Team. From pre-qualification to closing.',
   url: 'https://www.thebeckerteam.com/home-loan-process-guide',
-  estimatedCost: { '@type': 'MonetaryAmount', currency: 'USD', value: '0', description: 'Free consultation' },
   step: [
     {
       '@type': 'HowToStep',

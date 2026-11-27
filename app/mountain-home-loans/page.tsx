@@ -8,7 +8,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 export const metadata: Metadata = {
   title: 'Colorado Mountain Home Loans for Ski Towns',
   description:
-    'Mountain home loans for Colorado ski towns. Jumbo loans, second home financing, non-warrantable condo programs for Vail, Aspen, Breckenridge, Steamboat, Telluride, and Crested Butte. Jamie Becker NMLS #794730.',
+    'Compare financing for a Colorado cabin, ski condo or second home. Learn how county loan limits, HOA rules and rental plans can affect your options.',
   alternates: { canonical: 'https://www.thebeckerteam.com/mountain-home-loans' },
 }
 
@@ -144,7 +144,7 @@ export default function MountainHomeLoansPage() {
             Mountain Properties Need a Lender Who Knows Them
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            A Vail condo with a management agreement can raise different questions from a detached house in Silverthorne. Start with the town, the county where the home sits, and the amount you plan to borrow. Our <Link href="/loan-programs/jumbo-loans#county-loan-limits" className="font-semibold underline">Colorado county loan limits</Link> and local guides to <Link href="/service-areas/vail#local-buying-guide" className="font-semibold underline">Vail</Link>, <Link href="/service-areas/breckenridge#local-buying-guide" className="font-semibold underline">Breckenridge</Link> and <Link href="/service-areas/silverthorne#local-buying-guide" className="font-semibold underline">Silverthorne</Link> can help you compare properties.
+            A Vail condo with a management agreement can raise different questions from a detached house in Silverthorne. Start with the town, the county where the home sits, and the amount you plan to borrow. Our <Link href="/loan-programs/jumbo-loans#county-loan-limits" className="font-semibold underline">Colorado county loan limits</Link> and local guides to <Link href="/service-areas/vail#local-buying-guide" className="font-semibold underline">Vail</Link>, <Link href="/service-areas/breckenridge#local-buying-guide" className="font-semibold underline">Breckenridge</Link> and <Link href="/service-areas/silverthorne#local-buying-guide" className="font-semibold underline">Silverthorne</Link> can help you compare properties. We also cover financing for homes in <Link href="/service-areas/aspen" className="font-semibold underline underline-offset-4">Aspen</Link> and <Link href="/service-areas/leadville" className="font-semibold underline underline-offset-4">Leadville</Link>.
           </p>
         </div>
       </section>

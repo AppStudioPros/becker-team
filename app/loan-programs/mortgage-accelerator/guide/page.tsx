@@ -5,7 +5,7 @@ import { ChevronLeft } from 'lucide-react'
 const overview = '/loan-programs/mortgage-accelerator'
 
 export const metadata: Metadata = {
-  title: 'Home Mortgage Accelerator Guide and Payoff Example',
+  title: 'Mortgage Accelerator Payoff Example',
   description: 'See how deposits, spending and interest affect a $425,000 mortgage balance. Compare our Accelerator with biweekly payments and paying extra principal.',
   alternates: { canonical: '/loan-programs/mortgage-accelerator/guide' },
 }

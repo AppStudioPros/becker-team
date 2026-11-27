@@ -121,8 +121,8 @@ export default async function BlogPage() {
             href="https://2179191.my1003app.com/794730/register"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-4 rounded-lg font-semibold text-sm tracking-wide uppercase transition-opacity hover:opacity-90"
-            style={{ backgroundColor: '#c8972b', color: '#fff' }}
+            className="gold-cta inline-block px-8 py-4 rounded-lg font-semibold text-sm tracking-wide uppercase"
+            style={{ backgroundColor: '#c8972b' }}
           >
             Start Your Application
           </a>

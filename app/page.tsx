@@ -4,6 +4,7 @@ import { jamieLicensedStates } from '@/lib/jamieLicenses'
 import Link from 'next/link'
 import Image from 'next/image'
 import FaqAccordion from '@/components/FaqAccordion'
+import SectionBackdrop from '@/components/SectionBackdrop'
 import ZillowReviews from '@/components/ZillowReviews'
 import GoogleReviews from '@/components/GoogleReviews'
 
@@ -89,15 +90,10 @@ export default function HomePage() {
 
       {/* ── Hero ── */}
       <section
-        className="relative py-16 md:py-32 flex flex-col items-center justify-center text-center text-white px-6"
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(20,35,25,0.65), rgba(20,35,25,0.65)), url("/images/squarespace/hero-mountain.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate py-16 md:py-32 flex flex-col items-center justify-center text-center text-white px-6"
+        style={{ backgroundColor: '#1F2E2A' }}
       >
+        <SectionBackdrop src="/images/squarespace/hero-mountain.jpg" shade={0.65} hero />
         <h1
           className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 leading-tight"
           style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
@@ -117,8 +113,8 @@ export default function HomePage() {
         {/* Closing timeline */}
         <a
           href="#fast-closings"
-          className="inline-block px-6 py-2 rounded-full text-xs font-semibold uppercase tracking-widest mb-10"
-          style={{ backgroundColor: '#B98942', color: '#fff' }}
+          className="gold-cta inline-block px-6 py-2 rounded-full text-xs font-semibold uppercase tracking-widest mb-10"
+          style={{ backgroundColor: '#B98942' }}
         >
           How fast can I close?
         </a>
@@ -245,16 +241,10 @@ export default function HomePage() {
       {/* ── Fast Closings ── */}
       <section
         id="fast-closings"
-        className="relative scroll-mt-24 py-16 md:py-28 px-6 text-white text-center"
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(20,35,25,0.65), rgba(20,35,25,0.65)), url("/images/squarespace/fast-closings-bg.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate scroll-mt-24 py-16 md:py-28 px-6 text-white text-center"
+        style={{ backgroundColor: '#1F2E2A' }}
       >
+        <SectionBackdrop src="/images/squarespace/fast-closings-bg.jpg" shade={0.65} />
         <h2
           data-reveal="fade"
           className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4"
@@ -304,15 +294,10 @@ export default function HomePage() {
 
       {/* ── Bottom CTA ── */}
       <section
-        className="relative py-24 md:py-36 px-6 text-white text-center"
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(20,35,25,0.55), rgba(20,35,25,0.55)), url("/images/cta-mountain.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundColor: '#1F2E2A',
-        }}
+        className="relative isolate py-24 md:py-36 px-6 text-white text-center"
+        style={{ backgroundColor: '#1F2E2A' }}
       >
+        <SectionBackdrop src="/images/cta-mountain.jpg" shade={0.55} />
         <h2
           data-reveal="fade"
           className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5"

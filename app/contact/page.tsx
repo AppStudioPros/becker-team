@@ -124,8 +124,8 @@ export default function ContactPage() {
                 href="https://2179191.my1003app.com/794730/register"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block text-center uppercase tracking-widest text-sm font-semibold px-10 py-4 rounded btn-hover"
-                style={{ backgroundColor: '#B98942', color: '#fff', border: '2px solid #B98942' }}
+                className="gold-cta inline-block text-center uppercase tracking-widest text-sm font-semibold px-10 py-4 rounded btn-hover"
+                style={{ backgroundColor: '#B98942', border: '2px solid #B98942' }}
               >
                 Get Pre-Approved
               </a>

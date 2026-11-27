@@ -160,9 +160,9 @@ export default async function BlogPostPage({ params }: Params) {
                 </span>
               )}
               {post.published_at && (
-                <div className="flex items-center gap-1.5 text-sm" style={{ color: '#888' }}>
+                <div className="flex items-center gap-1.5 text-sm text-muted-ink">
                   <Calendar size={14} />
-                  <span>{formatDate(post.published_at)}</span>
+                  <time dateTime={post.published_at}>{formatDate(post.published_at)}</time>
                 </div>
               )}
             </div>
@@ -240,8 +240,8 @@ export default async function BlogPostPage({ params }: Params) {
                   href={post.cta_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-8 py-4 rounded-lg font-semibold text-sm tracking-wide uppercase transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: '#c8972b', color: '#fff' }}
+                  className="gold-cta inline-block px-8 py-4 rounded-lg font-semibold text-sm tracking-wide uppercase"
+                  style={{ backgroundColor: '#c8972b' }}
                 >
                   Get Started
                 </a>
@@ -270,8 +270,8 @@ export default async function BlogPostPage({ params }: Params) {
                 href="https://2179191.my1003app.com/794730/register"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-8 py-4 rounded-lg font-semibold text-sm tracking-wide uppercase transition-opacity hover:opacity-90"
-                style={{ backgroundColor: '#c8972b', color: '#fff' }}
+                className="gold-cta inline-block px-8 py-4 rounded-lg font-semibold text-sm tracking-wide uppercase"
+                style={{ backgroundColor: '#c8972b' }}
               >
                 Start Your Application
               </a>

@@ -51,7 +51,7 @@ export const loanPrograms: LoanProgram[] = [
     body: [
       'Self-employed borrowers and business owners often have strong finances but face challenges qualifying for a mortgage the traditional way. Tax returns show deductions that reduce taxable income — which looks great on a tax bill but makes income appear lower than it actually is to a conventional underwriter.',
       'At The Becker Team, we specialize in mortgage solutions that work around that problem. We offer bank statement loans, profit and loss statement loans, and asset qualifier programs designed specifically for business owners, contractors, freelancers, and anyone with nontraditional income.',
-      'Bank statement loans allow you to qualify using 12 or 24 months of personal or business bank statements instead of tax returns. Lenders calculate your average monthly deposits to determine qualifying income. This approach often allows self-employed borrowers to qualify for significantly more than they could through conventional underwriting.',
+      'A bank statement loan can document your business income with 12 or 24 months of personal or business statements. The lender averages eligible deposits and may adjust for business expenses. Transfers between your own accounts don’t create new income.',
       'Profit and loss statement loans use a CPA-prepared P&L as the primary income document. This is a strong option for borrowers whose business has grown in recent years or who have fluctuating income from month to month.',
       'Asset-based qualifying is another option for high-net-worth borrowers who can demonstrate sufficient assets to cover the loan — even without traditional income documentation. We can also explore DSCR (debt-service coverage ratio) loans for investment property purchases, where the rental income of the property qualifies the loan rather than your personal income.',
       'Jamie Becker brings a background in financial advising and real estate investing to every self-employed mortgage conversation. He understands how business income works, how to read a P&L, and how to structure a loan application that reflects your actual financial strength.',
@@ -60,19 +60,19 @@ export const loanPrograms: LoanProgram[] = [
     faqs: [
       {
         q: 'Do I need two years of self-employment history to qualify?',
-        a: 'Most programs want to see two years of self-employment history. Some bank statement programs accept one year if you can show prior employment in the same field.',
+        a: 'Time in business and the number of tax returns you need are separate questions. Two years of returns is common for conventional loans. One year may be enough if the lender’s business and ownership requirements are met. We can also review your previous work if you recently became self-employed.',
       },
       {
         q: 'How many months of bank statements do I need?',
-        a: 'Most bank statement loan programs require 12 or 24 months of statements. Lenders average your monthly deposits over that period to determine qualifying income.',
+        a: 'A lender may ask for 12 or 24 months of statements. It averages eligible deposits over that period and may review business expenses.',
       },
       {
         q: 'Can I use business bank statements instead of personal statements?',
-        a: 'Yes. Many programs accept business bank statements, though lenders typically apply an expense factor — usually 50% — to account for business overhead costs.',
+        a: 'Yes, some programs accept business statements. The lender may adjust eligible deposits for business expenses using the rules and documentation it accepts.',
       },
       {
         q: 'Will I pay a higher interest rate on a bank statement loan?',
-        a: 'Non-QM loan rates are generally higher than conventional rates, but the difference has narrowed in recent years. The right program depends on your overall financial picture.',
+        a: 'The rate depends on the loan, your financial profile and the lender. Ask for written quotes based on the same loan amount and term so you can compare the rate, fees and cash due at closing.',
       },
     ],
   },

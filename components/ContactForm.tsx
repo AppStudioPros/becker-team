@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { trackWebsiteLead } from '@/lib/leadAnalytics'
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -50,6 +51,7 @@ export default function ContactForm() {
       })
       if (response.ok && (await response.json())?.success === true) {
         setSubmitted(true)
+        trackWebsiteLead('Contact form')
       } else {
         setFailed(true)
       }

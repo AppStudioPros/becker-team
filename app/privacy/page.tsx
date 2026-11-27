@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
-    'Privacy policy for The Becker Team powered by Xpert Home Lending — how we collect, use, and protect your personal and financial information under the Gramm-Leach-Bliley Act.',
+    'Read The Becker Team’s privacy policy, including how we handle personal and financial information and how to ask about your privacy choices.',
 }
 
 const EFFECTIVE = 'November 26, 2026'

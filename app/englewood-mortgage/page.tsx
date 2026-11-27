@@ -7,7 +7,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 export const metadata: Metadata = {
   title: 'Englewood, CO Mortgage Broker and Home Loans',
   description:
-    'Englewood CO mortgage lender Jamie Becker (NMLS #794730). FHA, conventional, VA, and jumbo loans for Englewood, Sheridan, Cherry Hills Village, Greenwood Village, and Centennial.',
+    'Compare financing for an Englewood condo or house. See when the county loan limit makes a jumbo mortgage worth considering.',
   alternates: { canonical: 'https://www.thebeckerteam.com/englewood-mortgage' },
 }
 
@@ -45,10 +45,13 @@ const programs = [
   { label: 'Asset Qualifier Loans', desc: 'Qualify using liquid assets and investment accounts — a strong fit for Cherry Hills and Greenwood Village buyers with substantial net worth.', href: '/loan-programs/asset-qualifier-loans' },
 ]
 
+// City sales for the three months ending October 2026: https://www.redfin.com/city/6382/CO/Englewood/housing-market
+const marketPrice = 'From August through October 2026, the median sale price across all home types in Englewood was $524,635.'
+
 const faqs = [
   {
-    q: 'What is the housing market like in Englewood, CO?',
-    a: 'Englewood sits just south of Denver with light rail access and a diverse range of housing. You can find starter condos in the $300s, townhomes in the $400s, and larger single-family homes approaching $600k. The community has been revitalizing with new development along South Broadway. It draws a mix of first-time buyers, young professionals, and move-up buyers who want south metro proximity without Cherry Hills prices.',
+    q: 'What is the median home price in Englewood?',
+    a: `${marketPrice} If you’re looking at a condo, compare recent condo sales in the same building or neighborhood.`,
   },
   {
     q: 'Do you serve Cherry Hills Village and Greenwood Village?',
@@ -60,7 +63,7 @@ const faqs = [
   },
   {
     q: 'How does light rail access affect buying in Englewood?',
-    a: 'Englewood has strong RTD light rail access via the C and D lines, connecting residents to downtown Denver and the Tech Center. Neighborhoods near the light rail tend to have stronger resale values and attract buyers who commute or do not want to depend on I-25 traffic daily.',
+    a: 'If you plan to commute by rail, check the walk or bus ride from the home to Englewood Station. Compare the schedule for your work hours and include parking or transit costs in your budget.',
   },
   {
     q: 'What are current mortgage rates in Englewood, CO?',
@@ -123,10 +126,10 @@ export default function EnglewoodMortgagePage() {
       <section className="bg-white py-16 md:py-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <h2 data-reveal className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}>
-            South Denver&apos;s Most Diverse Housing Market
+            Buying a Condo or House in Englewood
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            Englewood is one of the south metro&apos;s most flexible markets for buyers. The housing stock runs from entry-level condos to established single-family neighborhoods to luxury estates in neighboring Cherry Hills Village, all within a few miles of each other. Light rail access makes Englewood a practical choice for commuters who want to avoid I-25, and ongoing development along South Broadway has brought new restaurants, retail, and attention from buyers who want an urban feel without downtown Denver prices. Median home prices sit around $450,000-$500,000 in 2026, making this an attainable market for a wide range of buyers. Jamie Becker (NMLS #794730) has 21+ years of experience helping buyers across all price points in the south metro find the right loan.
+            {marketPrice} Two homes at the same price can have different monthly costs. For a condo, check the association dues and what they cover. For a detached house, get an insurance quote for the property and leave room in your budget for upkeep. You can also <Link href="/littleton-mortgage" className="font-semibold underline underline-offset-4">compare buying a home in Littleton</Link> if you’re looking farther south.
           </p>
         </div>
       </section>

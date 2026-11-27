@@ -7,9 +7,9 @@ import FaqAccordion from '@/components/FaqAccordion'
 import ProgramReviews from '@/components/ProgramReviews'
 
 export const metadata: Metadata = {
-  title: 'Bank Statement Mortgages for Self-Employed Buyers',
+  title: 'Colorado Bank Statement Mortgages',
   description:
-    'Explore bank statement mortgages and other loan options for self-employed Colorado buyers with Jamie Becker of The Becker Team. NMLS #794730.',
+    'Explore how bank statement mortgages can work for self-employed Colorado buyers and which income records a lender may ask you to provide.',
   alternates: { canonical: '/loan-programs/self-employed-loans' },
 }
 
@@ -25,7 +25,7 @@ const jsonLd = {
 
 const highlights = [
   {
-    title: 'Qualify with Just One Year of Tax Returns',
+    title: 'One-Year Tax Return Option',
     body: 'Some borrowers can qualify using one year of tax returns. We’ll check the lender’s requirements for your business history, income and supporting records.',
   },
   {
@@ -53,7 +53,7 @@ const qualPaths = [
   },
   {
     title: 'Bank Statement Program',
-    body: 'Qualify using 12-24 months of business or personal bank statements to show your actual cash flow and deposits.',
+    body: 'The lender may review 12 or 24 months of personal or business bank statements and use eligible deposits to calculate qualifying income.',
   },
   {
     title: 'Asset Qualifier Option',
@@ -172,7 +172,7 @@ export default function SelfEmployedLoansPage() {
           className="text-center text-lg md:text-2xl leading-relaxed"
           style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
         >
-          Qualify with 1 year of tax returns&nbsp;&bull;&nbsp;Alternative documentation accepted&nbsp;&bull;&nbsp;No W-2 required
+          One year of tax returns for eligible borrowers&nbsp;&bull;&nbsp;Alternative documentation options&nbsp;&bull;&nbsp;Options without W-2s
         </p>
       </section>
 
@@ -187,7 +187,7 @@ export default function SelfEmployedLoansPage() {
             What This Program Does — and Why It Matters
           </h2>
           <p className="text-gray-700 leading-relaxed mb-12 max-w-3xl text-center mx-auto">
-            Self-employed borrowers often face an unfair disadvantage: their tax returns understate income on paper because a smart tax strategy is doing its job. Conventional lenders see that and say no. This program looks at the actual financial picture — through tax returns, bank statements, P&L statements, or assets — and finds a qualification path that reflects what you actually earn.
+            If your business expenses reduce the income shown on your tax returns, we can help you compare other ways to qualify. Depending on the loan, lenders may review eligible deposits on your bank statements, a profit and loss statement, or assets you’ll have left after closing.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {highlights.map((h, i) => (

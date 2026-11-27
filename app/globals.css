@@ -12,6 +12,8 @@
   --color-cream: #F5EFE6;
   --color-cream-dark: #ede4cc;
   --color-cream-border: #d9cfb8;
+  --color-bronze-ink: #795623;
+  --color-muted-ink: #655F52;
   --font-display: var(--font-playfair), Georgia, serif;
   --font-sans: var(--font-inter), system-ui, sans-serif;
 }
@@ -25,6 +27,28 @@ body {
 
 h1, h2, h3, h4, h5 {
   font-family: var(--font-display);
+}
+
+.skip-to-content {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+  transform: translateY(calc(-100% - 2rem));
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  background: var(--color-forest);
+  color: var(--color-cream);
+}
+
+.skip-to-content:focus {
+  transform: none;
+  outline: 2px solid var(--color-cream);
+  outline-offset: 2px;
+}
+
+#main-content {
+  scroll-margin-top: 5.5rem;
 }
 
 .prose-becker p {
@@ -142,6 +166,23 @@ a[style*="#B98942"] {
 }
 a[style*="#B98942"]:hover {
   opacity: 0.75;
+}
+
+a.gold-cta {
+  color: var(--color-forest);
+}
+
+a.gold-cta:hover {
+  opacity: 1;
+}
+
+a.gold-cta:focus-visible {
+  outline: 2px solid var(--color-cream);
+  outline-offset: 3px;
+}
+
+.strategy-reason-title {
+  text-align: left;
 }
 
 /* Image sections — subtle zoom on hover (for card images) */

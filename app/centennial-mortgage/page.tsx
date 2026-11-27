@@ -8,7 +8,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 export const metadata: Metadata = {
   title: 'Centennial, CO Mortgage Lender and Home Loans',
   description:
-    'Centennial CO mortgage lender Jamie Becker (NMLS #794730). Conventional, jumbo, and VA loans for Centennial, Greenwood Village, Parker, Lone Tree, and Highlands Ranch. South Denver tech corridor specialists.',
+    'Compare conventional and jumbo home loans in Centennial. See how county loan limits, your down payment and income documentation affect your options.',
   alternates: { canonical: 'https://www.thebeckerteam.com/centennial-mortgage' },
 }
 
@@ -46,22 +46,25 @@ const programs = [
   { label: 'FHA Loans', desc: '3.5% down and flexible credit. Less common in Centennial\'s higher price ranges but a solid option for entry-level purchases in Parker and outer communities.', href: '/loan-programs/fha-loans' },
 ]
 
+// City sales for the three months ending October 2026: https://www.redfin.com/city/3327/CO/Centennial/housing-market
+const marketPrice = 'From August through October 2026, the median sale price across all home types in Centennial was $619,569.'
+
 const faqs = [
   {
-    q: 'What is the housing market like in Centennial, CO?',
-    a: 'Centennial is Arapahoe County\'s largest city and one of the south metro\'s most sought-after addresses. Great school districts, easy I-25 access, and a mature community feel draw families who are willing to pay for quality. Median home prices run $550,000-$650,000 in 2026, with Greenwood Village and Lone Tree pushing higher. This is a move-up buyer market more than a first-time buyer market, and the income and credit profiles here are typically strong.',
+    q: 'What is the median home price in Centennial?',
+    a: `${marketPrice} Use recent sales of similar homes in the neighborhood to narrow your search.`,
   },
   {
     q: 'Do you serve Parker, Lone Tree, and Highlands Ranch?',
-    a: 'Yes. The Becker Team serves all of the south Denver metro including Centennial, Greenwood Village, Parker, Lone Tree, and Highlands Ranch. These communities sit along the I-25 south tech corridor and share similar buyer profiles: established families, tech professionals, and executives who want the best schools and community infrastructure the metro offers.',
+    a: 'Yes. We help buyers in Centennial, Greenwood Village, Parker, Lone Tree and Highlands Ranch. If you’re comparing two properties, we can estimate the mortgage payment for each address.',
   },
   {
     q: 'Are jumbo loans common in the Centennial area?',
     a: `The 2026 one-unit conforming loan limit in Arapahoe County is ${dollars.format(oneUnitLimits.Arapahoe[2026])}. Subtract the down payment from your purchase price. If the mortgage is above the county limit, we can compare jumbo options.`,
   },
   {
-    q: 'What about the I-25 south tech corridor?',
-    a: 'The stretch of I-25 from Centennial through Lone Tree and Castle Rock has become a secondary tech and financial services hub for the Denver metro. Companies in finance, healthcare, and technology have significant offices along this corridor, which draws high-income buyers who want to minimize commute time. That concentration of corporate employers means more buyers with complex income: RSUs, bonuses, deferred compensation. Jamie has programs designed for exactly those situations.',
+    q: 'Can I use bonuses or stock compensation to qualify?',
+    a: 'If part of your pay comes from bonuses or restricted stock, tell us how often you receive it. We can review your pay history and vesting schedule to see which income a lender can count toward a mortgage.',
   },
   {
     q: 'What are current mortgage rates in Centennial, CO?',
@@ -124,10 +127,10 @@ export default function CentennialMortgagePage() {
       <section className="bg-white py-16 md:py-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <h2 data-reveal className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}>
-            South Denver&apos;s Premier Family Market
+            Buying Your Next Home in Centennial
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            Centennial consistently ranks among the best cities in Colorado for families, and the data backs that up. Cherry Creek School District, low crime, and well-maintained community infrastructure draw buyers who are making a long-term investment, not just a transaction. Median home prices run $550,000-$650,000 in 2026, with Greenwood Village pushing well above that. The I-25 south tech and financial services corridor has added a significant population of high-income professionals whose income is often anything but simple: RSUs, bonuses, deferred comp, and equity participation. Jamie Becker (NMLS #794730) has 21+ years navigating exactly these situations, with access to programs that make sense for the buyer profile this area attracts.
+            {marketPrice} If you plan to use the proceeds from selling your current home, we can estimate how much you’ll have for a down payment after paying off your mortgage and covering selling costs. That gives you a budget to work with before you make an offer.
           </p>
         </div>
       </section>

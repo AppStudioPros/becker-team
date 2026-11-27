@@ -7,7 +7,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 export const metadata: Metadata = {
   title: 'Littleton, CO Mortgage Broker and Home Loans',
   description:
-    'Littleton CO mortgage broker Jamie Becker (NMLS #794730). Conventional, FHA, VA, jumbo, and specialty loans for Littleton buyers. Serving Littleton, Highlands Ranch, Lone Tree, Castle Rock, and the south Denver metro.',
+    'Compare Littleton home loans with Jamie Becker. Review down payments, county loan limits and financing for a home in the south Denver metro.',
   alternates: { canonical: 'https://www.thebeckerteam.com/littleton-mortgage' },
 }
 
@@ -42,13 +42,14 @@ const programs = [
   { label: 'Jumbo Loans', desc: "Look at jumbo financing for a Lone Tree or Highlands Ranch property if the mortgage amount exceeds its county loan limit.", href: '/loan-programs/jumbo-loans' },
   { label: 'VA Loans', desc: "Zero down for eligible veterans and service members throughout the south Denver metro.", href: '/loan-programs/va-loans' },
   { label: 'FHA Loans', desc: "For first-time buyers entering the Littleton and Englewood market with limited down payment funds or flexible credit requirements.", href: '/loan-programs/fha-loans' },
-  { label: 'Self-Employed Loans', desc: "Bank statement programs for Littleton and Castle Rock business owners. No tax returns required — qualify on actual cash flow.", href: '/loan-programs/self-employed-loans' },
+  { label: 'Self-Employed Loans', desc: 'Littleton and Castle Rock business owners can explore loans that use eligible bank deposits to document income.', href: '/loan-programs/self-employed-loans' },
   { label: 'Asset Qualifier Loans', desc: "Qualify using investment accounts and liquid assets — a strong fit for Lone Tree and Highlands Ranch buyers with significant net worth.", href: '/loan-programs/asset-qualifier-loans' },
 ]
 
 const faqs = [
   { q: 'Is Littleton CO a good place to buy a home?', a: "Littleton is one of the most established and family-friendly communities in the Denver metro. Downtown Littleton has a genuine walkable character, and neighborhoods like Highlands Ranch, Columbine, and South Platte Park hold value consistently. It's a suburb with real long-term staying power, especially for families prioritizing school districts and quality of life." },
-  { q: 'What are typical home prices in Littleton, CO?', a: "Littleton home prices vary widely depending on the neighborhood — from entry-level condos near the light rail to $800K+ Highlands Ranch and Lone Tree properties. Prices shift with the broader market. Contact Jamie for a current pre-approval range based on your budget and the specific area you're targeting." },
+  // City-level sales: https://www.redfin.com/city/30816/CO/Littleton/housing-market
+  { q: 'What is the median home price in Littleton, CO?', a: 'From August through October 2026, the median sale price across all home types in Littleton was $605,579. For a condo or townhome, include any association dues when you estimate the monthly cost.' },
   { q: 'Do you offer jumbo loans in Highlands Ranch and Lone Tree?', a: "Yes. Let us know the address, price and down payment you are considering. We can check the one-unit limit for that county and explain how jumbo lenders would review the loan and your cash reserves." },
   { q: 'When should I get pre-approved for a Littleton mortgage?', a: 'Start before you make an offer. Jamie can review your documents and let you know when a pre-approval letter may be ready. Share any offer deadline when you get in touch.' },
   { q: 'What is the mortgage process like for Littleton buyers?', a: 'Start with pre-approval before you make an offer. After you go under contract, the lender reviews the loan and property, coordinates any required appraisal and works with the title company to prepare for closing.' },
@@ -110,7 +111,7 @@ export default function LittletonMortgagePage() {
             The South Metro&apos;s Mortgage Expert
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            The Littleton and Highlands Ranch market draws families who want top-rated schools, established neighborhoods, and access to both Denver and the mountains. It also tends to attract buyers with more complex financial profiles — business owners, dual-income professionals, and move-up buyers with existing equity to work with. Jamie Becker (NMLS #794730) has been helping buyers navigate this market for over 21 years, with programs that go well beyond standard bank products. As a broker, Jamie works with multiple wholesale lenders to find the right rate and structure for your specific situation.
+            When you compare homes in Littleton, Highlands Ranch or nearby <Link href="/englewood-mortgage" className="font-semibold underline underline-offset-4">Englewood</Link>, look at the full monthly payment. Taxes, insurance and association dues can change how much house fits your budget. If you’re selling a home to make your next down payment, Jamie Becker (NMLS #794730) can walk you through how the proceeds affect your loan amount.
           </p>
         </div>
       </section>

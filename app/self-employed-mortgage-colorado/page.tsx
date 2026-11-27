@@ -5,9 +5,9 @@ import { Check } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Colorado Mortgage Options for Self-Employed Buyers',
+  title: 'Self-Employed Mortgage Options in Colorado',
   description:
-    'Self-employed mortgage programs in Colorado. Bank statement loans, asset qualifier loans, and non-QM options for freelancers, 1099 workers, and business owners. Jamie Becker NMLS #794730.',
+    'Self-employed in Colorado? Compare bank statement loans and other mortgage options, and learn which documents each approach may require.',
   alternates: { canonical: 'https://www.thebeckerteam.com/self-employed-mortgage-colorado' },
 }
 
@@ -31,38 +31,38 @@ const breadcrumb = {
 }
 
 const benefits = [
-  { title: 'Bank Statement Loans', body: '12 or 24 months of personal or business bank statements replace tax returns for income verification. Deposits are averaged to calculate qualifying income. No W-2s required.' },
-  { title: 'Asset Qualifier Loans', body: 'Qualify using liquid assets and investment accounts instead of income documentation at all. If you have significant savings, retirement accounts, or investment portfolios, this program may work for you.' },
+  { title: 'Bank Statement Loans', body: 'The lender can use 12 or 24 months of personal or business bank statements to review your income. It averages eligible deposits and may adjust for business expenses.' },
+  { title: 'Asset Qualifier Loans', body: 'This option uses eligible assets left after closing. If you have significant savings, retirement funds or investments, we can help you review which accounts may count.' },
   { title: '1099 Income Programs', body: 'Freelancers and independent contractors with consistent 1099 income can often qualify using 1-2 years of 1099 forms instead of full tax returns, avoiding the impact of business deductions on qualifying income.' },
   { title: 'Profit and Loss Statement Loans', body: 'CPA-prepared or borrower-prepared profit and loss statements can be used with some non-QM programs to document income without tax return scrutiny.' },
   { title: 'DSCR Investment Loans', body: 'For real estate investors, DSCR (Debt Service Coverage Ratio) loans qualify based on property rental income rather than personal income. No tax returns, no W-2s.' },
-  { title: 'Conventional with Two-Year History', body: 'If you have two full years of self-employment documented on tax returns and your net income is strong enough, conventional loans are still available and usually the lowest-cost option.' },
+  { title: 'Conventional Loans', body: 'A lender commonly reviews two years of tax returns. One year may be enough if your business and ownership history meet the loan requirements. We can compare the terms with other options.' },
 ]
 
 const faqs = [
   {
     q: 'Can self-employed people get a mortgage in Colorado?',
-    a: 'Yes. Self-employed buyers have multiple paths to mortgage financing. The main challenge is that traditional lenders use tax return net income for qualification, and self-employed borrowers often show lower net income due to legitimate business deductions. Bank statement loans, asset qualifier programs, and 1099-based qualification are all alternatives that work around this problem. Jamie has placed hundreds of self-employed borrowers into homes across Colorado.',
+    a: 'Yes. We can look at a conventional loan if your tax returns support the income you need to qualify. If another option fits better, we can review eligible bank deposits or other records. The right choice depends on how you earn, the property you’re buying and the loan terms.',
   },
   {
     q: 'What is a bank statement loan?',
-    a: 'A bank statement loan uses 12 or 24 months of bank deposit history to calculate your income instead of tax returns. The lender takes your average monthly deposits, applies an expense ratio (often 50% for business accounts), and uses the result as your qualifying income. This approach often shows significantly higher income than a tax return for self-employed borrowers who write off substantial business expenses. Personal and business account statements can both be used.',
+    a: 'A bank statement loan can document business income with 12 or 24 months of personal or business bank statements. The lender averages eligible deposits and may account for business expenses. Transfers between your own accounts don’t create new income. We can help you identify which deposits the lender may count.',
   },
   {
     q: 'How many years of self-employment do I need to qualify?',
-    a: 'For bank statement loans and most non-QM programs, lenders typically want to see 2 years of self-employment history. Some programs will consider 1 year with strong supporting documentation. For conventional loans using tax returns, you need 2 years of returns showing self-employment income. If you recently transitioned to self-employment from a W-2 role in the same field, some lenders are more flexible. Jamie will assess your specific timeline and match you to the right program.',
+    a: 'Your time in business and the number of tax returns a lender needs are separate. Two years of returns is common for a conventional loan. A lender may accept one year if your business and ownership history meet the rules. If you recently started a business in your field, tell us about your prior work so we can check which loan options fit.',
   },
   {
     q: 'Can I use business bank statements instead of personal?',
-    a: 'Yes. Business bank statements are accepted by most bank statement loan programs. Because business accounts typically show higher deposit volumes than personal accounts, lenders apply an expense ratio to estimate actual net income. Common expense ratios are 50% for service businesses and up to 50-60% for businesses with higher operating costs. Some programs allow you to use your CPA or accountant\'s letter to set a different expense ratio that better reflects your actual profit margins.',
+    a: 'Yes, some programs accept business bank statements. A lender may subtract a share of eligible deposits to account for business expenses. That calculation depends on the program and the records the lender accepts. Before you pay for an accountant’s letter, ask us whether it would help document your expenses.',
   },
   {
     q: 'What is an asset qualifier loan?',
-    a: 'An asset qualifier (or asset depletion) loan lets you qualify based on your net worth rather than your current income. The lender takes your liquid assets, divides them over a set period (often the remaining loan term), and uses that as your monthly income for qualification purposes. If you have $2M in liquid assets, for example, that can translate into substantial qualifying income. These programs are designed for retirees, investors, and high-net-worth buyers whose balance sheets are strong but current income is limited.',
+    a: 'Our Asset Qualifier looks at eligible assets you’ll have left after paying your down payment and closing costs. The lender checks which accounts you own and can access. This may be an option if you have substantial savings or investments and limited income from a paycheck.',
   },
   {
-    q: 'What Colorado industries have the most self-employed buyers?',
-    a: 'Colorado has a high concentration of self-employed buyers in tech and software consulting, cannabis industry operators and owners, real estate investors, remote workers with LLC structures, restaurant and hospitality entrepreneurs, healthcare practitioners (therapists, dentists, chiropractors), and outdoor industry professionals. Jamie has worked with buyers across all of these sectors and understands how income is structured in each.',
+    q: 'What should I bring if my self-employment income varies?',
+    a: 'Start with how and when you’re paid. If you invoice clients or earn more in some seasons, bring the records that show those patterns. We can help you work out which statements, returns or business records a lender may need.',
   },
 ]
 
@@ -138,7 +138,7 @@ export default function SelfEmployedMortgagePage() {
             Your Tax Return Is Not Your Income
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            Traditional mortgage underwriting was built around the W-2 worker with a predictable paycheck and a simple tax return. That system works fine for employees. It often breaks down completely for self-employed buyers. If you run a business, work as a contractor, freelance, or have any income structure that involves write-offs and deductions, your taxable income is almost certainly lower than your actual earning power. Colorado has one of the highest concentrations of self-employed workers in the country — remote tech consultants, cannabis business owners, real estate investors, restaurant operators, healthcare practitioners — and all of them need access to mortgage programs that reflect how they actually earn. Jamie Becker (NMLS #794730) specializes in exactly these situations, with bank statement loans, asset qualifier programs, and non-QM options that work the way your income does.
+            If you run a business or work for yourself, your tax returns may show lower net income after business expenses. We’ll review how you earn and which records you have. That gives us a place to start when comparing a conventional mortgage with a bank statement loan or another option for self-employed buyers.
           </p>
         </div>
       </section>

@@ -110,8 +110,8 @@ export default function BlogClient({ posts, categories }: { posts: BlogPost[], c
           {hasFilters && (
             <button
               onClick={clearFilters}
-              className="flex items-center gap-1.5 text-sm px-3 py-2.5 rounded-lg transition-colors hover:bg-gray-50 whitespace-nowrap"
-              style={{ color: '#888', border: '1px solid #ede4cc' }}
+              className="flex items-center gap-1.5 text-sm px-3 py-2.5 rounded-lg transition-colors hover:bg-gray-50 whitespace-nowrap text-muted-ink"
+              style={{ border: '1px solid #ede4cc' }}
             >
               <X size={13} /> Clear
             </button>
@@ -120,7 +120,7 @@ export default function BlogClient({ posts, categories }: { posts: BlogPost[], c
 
         {/* Results count when filtering */}
         {hasFilters && (
-          <p className="text-sm mt-3 px-1" style={{ color: '#888' }}>
+          <p className="text-sm mt-3 px-1 text-muted-ink">
             {filtered.length} {filtered.length === 1 ? 'post' : 'posts'} found
           </p>
         )}
@@ -130,8 +130,8 @@ export default function BlogClient({ posts, categories }: { posts: BlogPost[], c
       {filtered.length === 0 ? (
         <div className="max-w-5xl mx-auto text-center py-16">
           <p className="text-lg font-medium mb-2" style={{ color: '#1c3023' }}>No posts found</p>
-          <p className="text-sm mb-4" style={{ color: '#888' }}>Try adjusting your search or filters</p>
-          <button onClick={clearFilters} className="text-sm underline" style={{ color: '#c8972b' }}>
+          <p className="text-sm mb-4 text-muted-ink">Try adjusting your search or filters</p>
+          <button onClick={clearFilters} className="text-sm underline text-bronze-ink">
             Clear filters
           </button>
         </div>
@@ -168,9 +168,9 @@ export default function BlogClient({ posts, categories }: { posts: BlogPost[], c
                     </span>
                   )}
                   {post.published_at && (
-                    <div className="flex items-center gap-1.5 text-xs" style={{ color: '#888' }}>
+                    <div className="flex items-center gap-1.5 text-xs text-muted-ink">
                       <Calendar size={12} />
-                      <span>{formatDate(post.published_at)}</span>
+                      <time dateTime={post.published_at}>{formatDate(post.published_at)}</time>
                     </div>
                   )}
                 </div>

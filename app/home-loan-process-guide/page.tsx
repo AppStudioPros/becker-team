@@ -18,7 +18,7 @@ const howToJsonLd = {
       '@type': 'HowToStep',
       position: 1,
       name: 'Find Out How Much You Can Borrow',
-      text: 'Start with a pre-qualification or pre-approval to understand your budget. Jamie reviews your income, assets, and credit to determine how much home you can afford.',
+      text: 'Start with an estimate of what you can borrow and a monthly payment you’re comfortable with. A pre-approval letter can support your offer. The lender still needs to approve the loan and property.',
       url: 'https://www.thebeckerteam.com/home-loan-process-guide#step-1',
     },
     {
@@ -32,7 +32,7 @@ const howToJsonLd = {
       '@type': 'HowToStep',
       position: 3,
       name: 'Apply for a Loan',
-      text: 'Complete your formal mortgage application. Provide documentation including income verification, tax returns, bank statements, and identification.',
+      text: 'Complete your mortgage application. We’ll tell you which income, asset and identification documents your lender needs for the loan you’re applying for.',
       url: 'https://www.thebeckerteam.com/home-loan-process-guide#step-3',
     },
     {
@@ -87,9 +87,9 @@ export default function ProcessGuidePage() {
               Find Out How Much You Can Borrow
             </h2>
             <p className="text-gray-600 leading-relaxed">
-              Before you start shopping for homes, it&apos;s essential to understand your borrowing capacity.
-              Pre-qualification gives you a realistic budget, helps you avoid wasted time, and signals to
-              sellers that you&apos;re a serious buyer.
+              Start with what you may be able to borrow and a monthly payment you feel comfortable with.
+              If you&apos;re ready to make an offer, a pre-approval letter can show the seller what a lender
+              is tentatively willing to lend.
             </p>
           </div>
 
@@ -111,9 +111,9 @@ export default function ProcessGuidePage() {
                 More on Pre-Qualification
               </p>
               <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                Pre-qualification is a quick assessment based on self-reported income, assets, and debts.
-                It gives you an estimated loan amount and shows sellers you&apos;re serious. It does not
-                affect your credit score.
+                Pre-qualification gives you an early estimate. Ask what information and credit review
+                the lender needs for pre-approval. The lender still needs to approve the loan and
+                property. Locking your rate is a separate step.
               </p>
             </div>
           </div>
@@ -155,7 +155,7 @@ export default function ProcessGuidePage() {
               <ul className="flex flex-col gap-3">
                 {[
                   'Your interest rate stays the same for the life of the loan',
-                  'Monthly payments are predictable and stable',
+                  'Your principal and interest payment stays the same. Taxes and insurance can change.',
                   'Best for buyers planning to stay long-term',
                   'Rates are typically slightly higher than initial ARM rates',
                 ].map((pt) => (
@@ -180,9 +180,9 @@ export default function ProcessGuidePage() {
               </h3>
               <ul className="flex flex-col gap-3">
                 {[
-                  'Rate is fixed for an initial period (3, 5, 7, or 10 years), then adjusts annually',
+                  'After the initial fixed period, the rate can adjust on the schedule in your loan agreement. Some loans adjust every six months.',
                   'Initial rates are often lower than fixed rates',
-                  'Best for buyers who plan to sell or refinance before the adjustment period',
+                  'Check whether you could afford a higher payment if your plans to sell or refinance change',
                   'Rate caps limit how much your rate can increase',
                 ].map((pt) => (
                   <li key={pt} className="text-sm flex items-start gap-2" style={{ color: '#1F2E2A' }}>
@@ -221,15 +221,15 @@ export default function ProcessGuidePage() {
               className="text-xs font-bold uppercase tracking-widest mb-3"
               style={{ color: '#1F2E2A' }}
             >
-              What You&apos;ll Need:
+              Documents You May Need:
             </p>
             <ul className="flex flex-col gap-2">
               {[
-                'W-2s and tax returns (2 years)',
-                'Recent pay stubs (30 days)',
-                'Bank statements (2–3 months)',
+                'W-2s, tax returns or other records that document your income',
+                'Recent pay stubs if you earn wages',
+                'Bank statements for the period your lender requests',
                 'Photo ID',
-                'Employment history (2 years)',
+                'Employment or business history',
               ].map((item) => (
                 <li key={item} className="text-sm flex items-start gap-2 text-gray-700">
                   <span className="mt-0.5 shrink-0" style={{ color: '#B98942' }}>&#10003;</span>

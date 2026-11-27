@@ -7,7 +7,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 export const metadata: Metadata = {
   title: 'Aurora, CO Mortgage Broker and Home Loans',
   description:
-    'Aurora CO mortgage broker Jamie Becker (NMLS #794730) offers VA, FHA, conventional, jumbo, and specialty loans. Serving Aurora, Centennial, Parker, and the Denver metro.',
+    'Compare Aurora home loans with Jamie Becker, including VA options for eligible buyers near Buckley and financing for first-time buyers.',
   alternates: { canonical: 'https://www.thebeckerteam.com/aurora-home-loans' },
 }
 
@@ -42,14 +42,15 @@ const programs = [
   { label: 'FHA Loans', desc: "Popular with Aurora first-time buyers. 3.5% down, flexible credit standards, and access to Colorado's large FHA loan limits.", href: '/loan-programs/fha-loans' },
   { label: 'Conventional Loans', desc: "Compare conventional loans for an Aurora home, including the effect of your down payment on mortgage insurance and the monthly payment.", href: '/loan-programs/conventional-loans' },
   { label: 'Jumbo Loans', desc: 'Financing above conforming limits for higher-value Centennial, Parker, and Aurora properties.', href: '/loan-programs/jumbo-loans' },
-  { label: 'Self-Employed Loans', desc: 'Bank statement programs for Aurora small business owners and self-employed professionals. No tax returns required.', href: '/loan-programs/self-employed-loans' },
+  { label: 'Self-Employed Loans', desc: 'Aurora business owners and self-employed buyers can explore loans that use eligible bank deposits to document income.', href: '/loan-programs/self-employed-loans' },
   { label: 'Asset Qualifier Loans', desc: 'Qualify using liquid assets and investment accounts instead of traditional income documentation.', href: '/loan-programs/asset-qualifier-loans' },
 ]
 
 const faqs = [
   { q: 'Is Aurora CO a good place to buy a home?', a: "Aurora is one of Colorado's fastest-growing cities and consistently offers more affordable entry points than central Denver while still being close to major employment centers, DIA, and the Denver metro. The city has strong long-term fundamentals — diverse neighborhoods, improving infrastructure, and steady demand from military families, healthcare workers, and young professionals." },
   { q: 'Are VA loans available in Aurora, CO?', a: 'Yes. Eligible veterans, active-duty service members and surviving spouses in Aurora may qualify for a VA-backed loan with no down payment and no monthly mortgage insurance. A funding fee may apply.' },
-  { q: 'What is the median home price in Aurora, CO?', a: "Aurora's median home prices are generally lower than central Denver, making it one of the more accessible entry points into the Denver metro. Exact pricing changes with the market — contact Jamie for current data and a pre-approval range based on your budget." },
+  // City-level sales: https://www.redfin.com/city/30839/CO/Aurora/housing-market
+  { q: 'What is the median home price in Aurora, CO?', a: 'From August through October 2026, the median sale price across all home types in Aurora was $449,687. If you’re comparing neighborhoods, look at recent sales of the same type of home in each one.' },
   { q: 'Do you offer FHA loans in Aurora?', a: 'Yes. FHA loans are a strong option for Aurora first-time buyers with limited down payment funds or credit scores in the 580+ range. Colorado FHA loan limits accommodate a wide range of Aurora home prices.' },
   { q: 'How fast can I close on an Aurora home?', a: 'The timing depends on underwriting, any required appraisal and title work. If the seller has a specific date in mind, Jamie can walk you through what needs to happen before you agree to it.' },
   { q: 'Do you serve Centennial and Parker?', a: 'Yes. The Becker Team serves all of the Denver metro south and east — Aurora, Centennial, Parker, Lone Tree, Englewood, Foxfield, and surrounding communities.' },

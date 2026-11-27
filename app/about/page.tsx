@@ -6,9 +6,9 @@ import Image from 'next/image'
 import { Calculator, TrendingUp, CheckCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'About Jamie Becker | Colorado Mortgage Broker',
+  title: 'About Jamie Becker, Colorado Mortgage Broker',
   description:
-    'Jamie Becker is a Colorado mortgage broker and financial strategist with 21+ years of experience and 3,500+ families served. Learn about his background, philosophy, and Keep Climbing Foundation work.',
+    'Meet Jamie Becker, founder of The Becker Team. Learn how his background in lending and financial advising informs the way he compares loan options.',
 }
 
 const jsonLd = {

@@ -7,7 +7,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 export const metadata: Metadata = {
   title: 'Loveland, CO Mortgage Broker and Home Loans',
   description:
-    'Loveland CO mortgage lender Jamie Becker (NMLS #794730). Conventional, FHA, VA, and USDA loans for Loveland, Berthoud, Johnstown, Milliken, and Windsor. Northern Colorado home loan experts.',
+    'Compare home loans and upfront costs for a purchase in Loveland, Berthoud or nearby communities with Colorado mortgage broker Jamie Becker.',
   alternates: { canonical: 'https://www.thebeckerteam.com/loveland-mortgage' },
 }
 
@@ -45,10 +45,13 @@ const programs = [
   { label: 'Self-Employed Loans', desc: 'Bank statement programs for Loveland small business owners, artists, and contractors with non-traditional income documentation.', href: '/loan-programs/self-employed-loans' },
 ]
 
+// City sales for the three months ending October 2026: https://www.redfin.com/city/11858/CO/Loveland/housing-market
+const marketPrice = 'From August through October 2026, the median sale price across all home types in Loveland was $485,726.'
+
 const faqs = [
   {
-    q: 'What is the housing market like in Loveland, CO?',
-    a: 'Loveland is one of northern Colorado\'s most livable cities. Known for its arts scene, Loveland is also a gateway to Rocky Mountain National Park and has been drawing retirees, first-time buyers, and remote workers who want more space at a lower price than Fort Collins. The median home price sits around $430,000-$480,000 in 2026, which is meaningfully lower than Fort Collins. Johnstown and Windsor offer even more affordable options, and rural areas outside Milliken and Berthoud can qualify for USDA zero-down loans.',
+    q: 'What is the median home price in Loveland?',
+    a: `${marketPrice} A rural property outside city limits can have a different price and different financing options.`,
   },
   {
     q: 'Do you serve Windsor, Johnstown, and Milliken?',
@@ -123,10 +126,10 @@ export default function LovelandMortgagePage() {
       <section className="bg-white py-16 md:py-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <h2 data-reveal className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}>
-            Northern Colorado&apos;s Affordable Alternative
+            Budgeting for a Loveland Home
           </h2>
           <p className="text-base md:text-lg leading-relaxed" style={{ color: '#4a5e53' }}>
-            Loveland has carved out a strong identity as a place where people actually want to live. The arts scene is real, the mountain access is excellent, and the price point is noticeably lower than Fort Collins just to the north. Median home prices around $430,000-$480,000 in 2026 attract first-time buyers, retirees relocating from higher-cost states, and remote workers who do not need to commute daily. The surrounding communities of Johnstown, Windsor, and Milliken have also grown quickly, with rural areas that can qualify for USDA zero-down financing. Jamie Becker (NMLS #794730) has 21+ years working with Colorado buyers across all loan types, including the rural and small-town markets that bigger lenders often do not understand as well.
+            {marketPrice} If you’re also looking outside Loveland, share the address with us. We can check rural loan eligibility for that property and compare the cash you would need at closing with other financing options.
           </p>
         </div>
       </section>

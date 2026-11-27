@@ -77,7 +77,7 @@ export default function ProcessGuidePage() {
           <div>
             <p
               className="text-8xl font-bold leading-none mb-2 select-none"
-              style={{ color: '#1F2E2A', opacity: 0.08 }}
+              style={{ color: '#1F2E2A', opacity: 0.54 }}
             >
               01
             </p>
@@ -100,8 +100,8 @@ export default function ProcessGuidePage() {
               href="https://2179191.my1003app.com/794730/register"
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full text-center uppercase tracking-widest text-sm font-semibold px-6 py-4 rounded mb-8 transition-colors hover:opacity-90"
-              style={{ backgroundColor: '#B98942', color: '#fff' }}
+              className="gold-cta block w-full text-center uppercase tracking-widest text-sm font-semibold px-6 py-4 rounded mb-8 transition-colors hover:opacity-90"
+              style={{ backgroundColor: '#B98942' }}
             >
               Pre-Qualify Now
             </a>
@@ -126,7 +126,7 @@ export default function ProcessGuidePage() {
         <div className="max-w-7xl mx-auto">
           <p
             className="text-8xl font-bold leading-none mb-2 select-none"
-            style={{ color: '#ffffff', opacity: 0.08 }}
+            style={{ color: '#ffffff', opacity: 0.36 }}
           >
             02
           </p>
@@ -204,7 +204,7 @@ export default function ProcessGuidePage() {
           <div>
             <p
               className="text-8xl font-bold leading-none mb-2 select-none"
-              style={{ color: '#1F2E2A', opacity: 0.08 }}
+              style={{ color: '#1F2E2A', opacity: 0.54 }}
             >
               03
             </p>
@@ -254,8 +254,8 @@ export default function ProcessGuidePage() {
               href="https://2179191.my1003app.com/794730/register"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block uppercase tracking-widest text-sm font-semibold px-10 py-4 rounded transition-colors hover:opacity-90"
-              style={{ backgroundColor: '#B98942', color: '#fff' }}
+              className="gold-cta inline-block uppercase tracking-widest text-sm font-semibold px-10 py-4 rounded transition-colors hover:opacity-90"
+              style={{ backgroundColor: '#B98942' }}
             >
               Apply for a Loan
             </a>
@@ -270,7 +270,7 @@ export default function ProcessGuidePage() {
           <div>
             <p
               className="text-8xl font-bold leading-none mb-2 select-none"
-              style={{ color: '#1F2E2A', opacity: 0.08 }}
+              style={{ color: '#1F2E2A', opacity: 0.54 }}
             >
               04
             </p>
@@ -287,9 +287,9 @@ export default function ProcessGuidePage() {
           </div>
 
           {/* Right — amber tips card */}
-          <div className="rounded p-8" style={{ backgroundColor: '#B98942' }}>
+          <div className="rounded p-8 text-forest" style={{ backgroundColor: '#B98942' }}>
             <h3
-              className="text-lg font-bold text-white mb-5"
+              className="text-lg font-bold mb-5"
               style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
             >
               Tips for Smooth Approval
@@ -302,7 +302,7 @@ export default function ProcessGuidePage() {
                 "Don't change jobs during the process",
                 'Do respond quickly to any requests for additional documents',
               ].map((tip) => (
-                <li key={tip} className="text-sm flex items-start gap-2 text-white">
+                <li key={tip} className="text-sm flex items-start gap-2">
                   <span className="mt-0.5 shrink-0">&#10003;</span>
                   {tip}
                 </li>
@@ -317,7 +317,7 @@ export default function ProcessGuidePage() {
         <div className="max-w-7xl mx-auto">
           <p
             className="text-8xl font-bold leading-none mb-2 select-none"
-            style={{ color: '#ffffff', opacity: 0.08 }}
+            style={{ color: '#ffffff', opacity: 0.36 }}
           >
             05
           </p>

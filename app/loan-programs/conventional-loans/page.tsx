@@ -175,12 +175,12 @@ export default function ConventionalLoansPage() {
                 className="rounded bg-white p-8 card-hover"
                 style={{ border: '2px solid #1F2E2A' }}
               >
-                <h4
+                <h3
                   className="text-lg font-semibold mb-3"
-                  style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
+                  style={{ textAlign: 'left', fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
                 >
                   {h.title}
-                </h4>
+                </h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{h.body}</p>
               </div>
             ))}
@@ -261,8 +261,7 @@ export default function ConventionalLoansPage() {
               </div>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest"
-                style={{ color: '#B98942' }}
+                className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-bronze-ink"
               >
                 Learn More About Jamie <ChevronRight size={16} />
               </Link>

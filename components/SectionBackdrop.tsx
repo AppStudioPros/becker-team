@@ -1,13 +1,21 @@
 import Image from 'next/image'
 
+function heroSources(name: string, widths: number[]) {
+  return widths.map(width => `/images/responsive/${name}-${width}.avif ${width}w`).join(', ')
+}
+
 const preparedHeroSources: Partial<Record<string, string>> = {
-  '/images/squarespace/hero-mountain.jpg': [640, 768, 828, 1024, 1280, 1400].map(width => `/images/responsive/home-hero-${width}.avif ${width}w`).join(', '),
-  '/images/denver-hero.jpg': [640, 768, 828, 1024, 1280, 1920].map(width => `/images/responsive/denver-hero-${width}.avif ${width}w`).join(', '),
+  '/images/squarespace/hero-mountain.jpg': heroSources('home-hero', [640, 768, 828, 1024, 1280, 1400]),
+  '/images/denver-hero.jpg': heroSources('denver-hero', [640, 768, 828, 1024, 1280, 1920]),
+  '/blog-hero.jpg': heroSources('blog-hero', [480, 640, 768, 1024, 1920]),
+  '/images/contact-hero.jpg': heroSources('contact-hero', [480, 640, 768, 1024, 1400]),
+  '/images/aq-hero.jpg': heroSources('asset-hero', [480, 640, 768, 1024, 1400]),
 }
 
 type SectionBackdropProps = {
   src: string
   shade: number
+  tint?: string
   position?: string
   hero?: boolean
 }
@@ -16,6 +24,7 @@ export default function SectionBackdrop({
   src,
   shade,
   position = 'center',
+  tint = '20,35,25',
   hero = false,
 }: SectionBackdropProps) {
   const preparedSource = hero ? preparedHeroSources[src] : undefined
@@ -46,7 +55,7 @@ export default function SectionBackdrop({
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10"
-        style={{ backgroundColor: `rgba(20,35,25,${shade})` }}
+        style={{ backgroundColor: `rgba(${tint},${shade})` }}
       />
     </>
   )

@@ -194,12 +194,12 @@ export default function SelfEmployedLoansPage() {
                 className="rounded bg-white p-8 card-hover"
                 style={{ border: '2px solid #1F2E2A' }}
               >
-                <h4
+                <h3
                   className="text-lg font-semibold mb-3"
-                  style={{ fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
+                  style={{ textAlign: 'left', fontFamily: '"Playfair Display", Georgia, serif', color: '#1F2E2A' }}
                 >
                   {h.title}
-                </h4>
+                </h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{h.body}</p>
               </div>
             ))}
@@ -229,12 +229,12 @@ export default function SelfEmployedLoansPage() {
                 className="rounded p-8 card-hover-dark"
                 style={{ backgroundColor: 'rgba(245,239,230,0.07)', border: '1px solid rgba(245,239,230,0.2)' }}
               >
-                <h4
+                <h3
                   className="text-lg font-semibold mb-3 text-white"
-                  style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
+                  style={{ textAlign: 'left', fontFamily: '"Playfair Display", Georgia, serif' }}
                 >
                   {q.title}
-                </h4>
+                </h3>
                 <p className="text-white/70 text-sm leading-relaxed">{q.body}</p>
               </div>
             ))}
@@ -334,8 +334,7 @@ export default function SelfEmployedLoansPage() {
               </div>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest"
-                style={{ color: '#B98942' }}
+                className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-bronze-ink"
               >
                 Learn More About Jamie <ChevronRight size={16} />
               </Link>

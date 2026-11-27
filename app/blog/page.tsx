@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import SectionBackdrop from '@/components/SectionBackdrop'
 import type { Metadata } from 'next'
 import { createAdminClient } from '@/lib/supabase'
 import { previewBlogPosts } from '@/lib/previewBlogPosts'
@@ -63,11 +63,10 @@ export default async function BlogPage() {
     <>
       {/* Hero */}
       <section
-        className="relative py-24 px-6 flex items-center justify-center overflow-hidden"
+        className="relative isolate py-24 px-6 flex items-center justify-center overflow-hidden"
         style={{ minHeight: '320px' }}
       >
-        <Image src="/blog-hero.jpg" alt="" fill sizes="100vw" loading="eager" fetchPriority="high" className="object-cover object-center" />
-        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(11,30,61,0.72)' }} />
+        <SectionBackdrop src="/blog-hero.jpg" shade={0.72} tint="11,30,61" hero />
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <h1
             className="text-4xl md:text-5xl font-bold text-white mb-4"
